@@ -25,6 +25,16 @@ python fragmentar.py            # escribe salida/fragmentos.jsonl (no va a git, 
 
 Cada fragmento lleva `huella` (sha256 del contenido) para volver a vectorizar solo lo que cambió, y `version_kb` (versión del índice más el commit de git).
 
-## Pendiente
+## Vectorizar y subir
 
-El esquema de Supabase y la carga de los vectores dependen del modelo de embeddings, que todavía no está decidido.
+| Paso | Comando | Qué hace |
+|---|---|---|
+| 1 | `python fragmentar.py` | Fragmentos en `salida/fragmentos.jsonl` |
+| 2 | `python vectorizar.py` | Vectores con `bge-m3` de Ollama (1.024 dimensiones, multilingüe) en `salida/vectores.jsonl`. Es incremental: solo recalcula lo que cambió |
+| 3 | `python probar_busqueda.py` | Mide si 20 preguntas en español traen la ficha correcta entre las 5 primeras |
+| 4 | `npx supabase db push` | Aplica `supabase/migrations/` (tabla, índices, `traer_fichas()` y `buscar_kb()`) al proyecto enlazado |
+| 5 | `python subir.py` | Sube todo con upsert. Lee `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY` del `.env` de la raíz |
+
+**El modelo de las consultas tiene que ser el mismo que el de los vectores.** En el VPS, el agente vectoriza cada pregunta con `bge-m3` (unos 1,2 GB de RAM). Si se cambia de modelo, se cambia la dimensión en el SQL y se vectoriza todo de nuevo.
+
+La tabla tiene RLS activo y ninguna política pública: solo el servidor, con la llave `service_role`, la lee y escribe.
