@@ -13,7 +13,7 @@ Es la única fuente de conocimiento clínico del motor. Tiene cuatro tipos de pi
 | Pieza | Cuántas | Qué contiene |
 | :---- | :---- | :---- |
 | Ficha de biomarcador | 100 existentes más 34 por escribir | Definición, unidades, umbrales separados (laboratorio, decisión clínica, tamizaje), interpretación, confusores, seguridad y bloque RAG_INSTRUCTIONS |
-| Ficha de condición | 50 incluidas y 27 de apoyo | Regla estructurada: criterios, contexto obligatorio, coincidencia, escalamiento, guía y frases permitidas y prohibidas |
+| Ficha de condición | 50 incluidas y 26 de apoyo (desnutrición se cuenta una sola vez, en M6) | Regla estructurada: criterios, contexto obligatorio, coincidencia, escalamiento, guía y frases permitidas y prohibidas |
 | Relación entre módulos | Una por relación decidida en 03.7 | Biomarcadores, dirección, mecanismo, fuerza de evidencia, confusores, acción permitida y prohibida, fuente |
 | Regla transversal | Vitaminas, objetivos, confusores, wearables, seguridad | Reglas que aplican a muchos biomarcadores a la vez |
 

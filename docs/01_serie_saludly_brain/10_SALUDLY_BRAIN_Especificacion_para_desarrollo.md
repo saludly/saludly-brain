@@ -141,8 +141,8 @@ Todas las rutas exigen autenticación, revisan el rol y quedan en auditoría.
 
 ```
 knowledge-base/
-  biomarcadores/        # 134 fichas, una por biomarcador
-  condiciones/M1 … M6/  # 50 incluidas y 27 de apoyo
+  biomarcadores/        # 133 fichas, una por biomarcador
+  condiciones/M1 … M6/  # 50 incluidas y 26 de apoyo
   relaciones/           # patrones y vigilar entre módulos
   reglas/               # vitaminas, objetivos, confusores, wearables, seguridad
   recomendaciones/      # catálogo de recomendaciones

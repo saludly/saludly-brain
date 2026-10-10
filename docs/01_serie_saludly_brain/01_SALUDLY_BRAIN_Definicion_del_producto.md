@@ -32,7 +32,7 @@ Nada más que tres cosas: dar la muestra en su casa (en ayunas y en la mañana),
 | Elemento | Alcance |
 | :---- | :---- |
 | Catálogo | 99 analitos medidos, 12 calculados y la edad biológica (PhenoAge): 111 valores por mujer y 109 por hombre, más 18 pruebas reflejas que el laboratorio corre solo cuando un resultado las activa |
-| Conocimiento clínico | 12 especialidades en 6 módulos, 50 condiciones incluidas y 27 de apoyo, más las relaciones entre módulos |
+| Conocimiento clínico | 12 especialidades en 6 módulos, 50 condiciones incluidas y 26 de apoyo, más las relaciones entre módulos |
 | Informe | Seis partes: resumen general, lo que está bien, lo que merece atención, qué podría significar, qué puedes hacer y cuándo consultar |
 | Vista médica | Valores, clasificación, guías, reflejas, conflictos entre guías, datos faltantes y preguntas para el profesional |
 | Recomendaciones | Alimentación, hidratación, actividad física, sueño, hábitos, actividades saludables, vitaminas y terapias, ordenadas según el objetivo de salud |

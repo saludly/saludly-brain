@@ -59,8 +59,9 @@
   {
    "ficha": "COND-M1-CA-003",
    "estado": "activa",
-   "coincidencia": "alta",
-   "escalamiento": 1
+   "coincidencia": "moderada",
+   "escalamiento": 1,
+   "nota": "sin dato de alcohol en 48 horas: coincidencia moderada (regla de la ficha)"
   },
   {
    "ficha": "COND-M1-EM-003",

@@ -50,9 +50,9 @@
   {
    "ficha": "COND-M3-HE-001",
    "estado": "activa",
-   "coincidencia": "alta",
+   "coincidencia": "moderada",
    "escalamiento": 2,
-   "nota": "anemia moderada; hemoglobina ajustada 9,4"
+   "nota": "anemia moderada; hemoglobina ajustada 9,4; sin dato de tabaquismo: coincidencia moderada (regla de la ficha)"
   },
   {
    "ficha": "COND-M3-HE-002",
