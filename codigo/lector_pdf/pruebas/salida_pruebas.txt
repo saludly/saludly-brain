@@ -1,0 +1,5 @@
+E2E-01: 1497/1497 campos correctos (100.0 %)
+E2E-02: 1615/1615 campos correctos (100.0 %)
+Orden equivocada: rechazado · El PDF no coincide con la visita: PDF CC 0000000002 / LCD-2026-100124, visita CC 0000000002 / LCD-2026-999999
+Documento equivocado: rechazado · El PDF no coincide con la visita: PDF CC 0000000002 / LCD-2026-100124, visita CC 0000000001 / LCD-2026-100124
+PDF con páginas de dos pacientes: rechazado · Las páginas no son del mismo paciente u orden: documentos ['CC 0000000001', 'CC 0000000002'], órdenes ['LCD-2026-100123', 'LCD-2026-100124']

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secretos y credenciales (llaves de DeepSeek, Supabase, VPS): nunca al repositorio
+.env
+.env.*
+*.pem
+*.key
+secretos/
+
+# Datos reales de pacientes: este repositorio solo admite datos sintéticos
+datos_reales/
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*

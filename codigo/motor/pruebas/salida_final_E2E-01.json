@@ -1,0 +1,258 @@
+{
+ "orden": "LCD-2026-100123",
+ "estado": "analisis_completo",
+ "escalamiento_maximo": 2,
+ "canal": "revisión médica antes de publicar",
+ "llamadas": [],
+ "hallazgos_informe": [
+  {
+   "tipo": "condicion",
+   "id": "COND-M4-GA-005",
+   "nombre": "Infección por H. pylori",
+   "escalamiento": 2,
+   "coincidencia": "alta",
+   "nivel_lenguaje": "condicion_requiere_evaluacion",
+   "nota": "incluir la limitación del antígeno fecal frente a la prueba de aliento",
+   "fuerza": "guia",
+   "patrones": []
+  },
+  {
+   "tipo": "patron",
+   "id": "REL-001",
+   "nombre": "Patrón cardiometabólico",
+   "escalamiento": 1,
+   "coincidencia": "alta",
+   "miembros": [
+    "COND-M1-EM-001",
+    "COND-M1-EM-003",
+    "COND-M1-CA-003"
+   ],
+   "relacionado_con": [],
+   "frase_permitida": "Varios de tus resultados (glucosa, triglicéridos, colesterol HDL e insulina) apuntan en la misma dirección: el cuerpo está teniendo más trabajo para manejar el azúcar. Por eso los explicamos juntos.",
+   "fuerza": "guía (ADA, declaración armonizada de síndrome metabólico)"
+  },
+  {
+   "tipo": "condicion",
+   "id": "COND-M1-CA-001",
+   "nombre": "Dislipidemia aterogénica",
+   "escalamiento": 1,
+   "coincidencia": "alta",
+   "nivel_lenguaje": "riesgo_potencial",
+   "nota": null,
+   "fuerza": "guia",
+   "patrones": [
+    {
+     "id": "REL-003",
+     "nombre": "Patrón aterogénico",
+     "relacionado_con": []
+    }
+   ]
+  },
+  {
+   "tipo": "condicion",
+   "id": "COND-M4-IN-002",
+   "nombre": "Hepatitis B y estado frente a la vacuna",
+   "escalamiento": 1,
+   "coincidencia": "alta",
+   "nivel_lenguaje": "condicion_requiere_evaluacion",
+   "nota": "recomendar vacuna",
+   "fuerza": "guia",
+   "patrones": []
+  },
+  {
+   "tipo": "condicion",
+   "id": "COND-M6-RE-001",
+   "nombre": "Ácido úrico alto sin síntomas",
+   "escalamiento": 1,
+   "coincidencia": "alta",
+   "nivel_lenguaje": "resultado_observado",
+   "nota": null,
+   "fuerza": "guia",
+   "patrones": []
+  },
+  {
+   "tipo": "condicion",
+   "id": "COND-M2-NE-002",
+   "nombre": "Albuminuria con TFG normal",
+   "escalamiento": 1,
+   "coincidencia": "moderada",
+   "nivel_lenguaje": "patron_compatible",
+   "nota": null,
+   "fuerza": "guia",
+   "patrones": []
+  },
+  {
+   "tipo": "condicion",
+   "id": "COND-M4-GA-002",
+   "nombre": "Alteración hepatocelular",
+   "escalamiento": 1,
+   "coincidencia": "moderada",
+   "nivel_lenguaje": "patron_compatible",
+   "nota": null,
+   "fuerza": "guia",
+   "patrones": [
+    {
+     "id": "REL-006",
+     "nombre": "Patrón hepático metabólico",
+     "relacionado_con": [
+      "COND-M1-EM-001",
+      "COND-M1-CA-003"
+     ]
+    }
+   ]
+  },
+  {
+   "tipo": "condicion",
+   "id": "COND-M3-NU-A03",
+   "nombre": "Vitamina D baja",
+   "escalamiento": 0,
+   "coincidencia": null,
+   "nivel_lenguaje": null,
+   "nota": "recomendación alimentaria y de sol, sin dosis",
+   "fuerza": "guia",
+   "patrones": []
+  }
+ ],
+ "vista_medica": {
+  "vigilar": [
+   {
+    "id": "COND-M3-HE-006",
+    "nombre": "Posible sobrecarga de hierro",
+    "nota": "ferritina alta con saturación normal; ligada a enzimas hepáticas altas"
+   },
+   {
+    "id": "REL-002",
+    "nombre": "Patrón cardiometabólico con inflamación",
+    "nota": "hs-CRP 3.4"
+   },
+   {
+    "id": "REL-021",
+    "nombre": "Vitamina D baja con hs-CRP alta",
+    "nota": null
+   }
+  ],
+  "apoyos": [
+   {
+    "id": "COND-M1-CA-A02",
+    "nombre": "Inflamación de bajo grado",
+    "nota": "a confirmar con una segunda medición"
+   },
+   {
+    "id": "COND-M1-EM-A02",
+    "nombre": "Resistencia a la insulina por HOMA-IR",
+    "nota": "HOMA-IR 5.48: refuerza COND-M1-EM-001, COND-M1-EM-003"
+   },
+   {
+    "id": "COND-M6-MI-A01",
+    "nombre": "Lectura por edad del panel",
+    "nota": null
+   }
+  ],
+  "control": [],
+  "pendientes_refleja": [
+   {
+    "id": "COND-M4-GA-006",
+    "nota": "el laboratorio debe correr IgA total y anti-tTG IgA (COND-M4-GA-002)"
+   }
+  ],
+  "incompletas": [
+   {
+    "id": "COND-M1-CA-005",
+    "faltan": [
+     "presion_sistolica",
+     "tabaquismo"
+    ]
+   },
+   {
+    "id": "COND-M1-CA-006",
+    "faltan": [
+     "presion_enfermera"
+    ]
+   },
+   {
+    "id": "COND-M1-EM-004",
+    "faltan": [
+     "peso_kg",
+     "talla_m"
+    ]
+   },
+   {
+    "id": "COND-M1-EM-A01",
+    "faltan": [
+     "findrisc_puntaje"
+    ]
+   },
+   {
+    "id": "COND-M4-GA-A02",
+    "faltan": [
+     "consumo de alcohol"
+    ]
+   },
+   {
+    "id": "COND-M6-MI-001",
+    "faltan": [
+     "peso_kg",
+     "talla_m",
+     "pérdida de peso"
+    ]
+   }
+  ],
+  "no_interpretables": [],
+  "no_calculables": [],
+  "revision_medica_obligatoria": [
+   "acth",
+   "cortisol",
+   "hs_troponin",
+   "igf1",
+   "nrbc",
+   "osmolality"
+  ],
+  "datos_faltantes": [
+   "alcohol_48h",
+   "cintura",
+   "consumo de alcohol",
+   "findrisc_puntaje",
+   "peso_kg",
+   "presion",
+   "presion_enfermera",
+   "presion_sistolica",
+   "pérdida de peso",
+   "segunda medición",
+   "segunda muestra",
+   "tabaquismo",
+   "talla_m"
+  ],
+  "dudas_lectura": [
+   "Antígeno de Helicobacter pylori en heces: El laboratorio marcó este resultado con una observación (*)."
+  ]
+ },
+ "recordatorios": [],
+ "edad_biologica": {
+  "phenoage": 44.3,
+  "diferencia": -1.7,
+  "nota": null
+ },
+ "calculados": {
+  "imc": null,
+  "homa_ir": 5.48,
+  "non_hdl_c": 192.0,
+  "remnant_cholesterol": 50.0,
+  "tc_hdl_ratio": 6.33,
+  "transferrin_saturation": 37.0,
+  "egfr": 96.0,
+  "testosterone_free": null,
+  "indice_androgenos_libres": null,
+  "globulin": 2.7,
+  "ag_ratio": 1.7,
+  "bun_creatinine_ratio": 15.3,
+  "apob_apoa1_ratio": 1.05,
+  "calcio_corregido": 9.02,
+  "brecha_osmolar": 0.4,
+  "sodio_corregido": null,
+  "eosinofilos_abs": 0.25,
+  "fib4": 0.89,
+  "psa_libre_porcentaje": null,
+  "hemoglobina_ajustada": 14.4,
+  "phenoage": 44.3
+ }
+}

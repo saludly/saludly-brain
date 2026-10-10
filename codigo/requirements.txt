@@ -1,0 +1,4 @@
+pdfplumber
+pyyaml
+# solo para regenerar los PDF de ejemplo (pdf_ejemplo/generar_pdf_ejemplo.py)
+reportlab

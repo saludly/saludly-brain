@@ -1,0 +1,5 @@
+probar_parte1.py: 90 de 90
+probar_parte2.py: 167 de 167
+probar_parte3.py: 175 de 175
+probar_parte4.py: 76 de 76
+TOTAL: 508 de 508

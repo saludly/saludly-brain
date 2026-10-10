@@ -1,0 +1,3637 @@
+{
+ "relaciones": {
+  "REL-001": {
+   "nombre": "Patrón cardiometabólico",
+   "tipo": "patron",
+   "biomarcadores": [
+    "glucose",
+    "hba1c",
+    "insulin",
+    "homa_ir",
+    "triglycerides",
+    "hdl_c"
+   ],
+   "implementada_por": [
+    "COND-M1-EM-001",
+    "COND-M1-EM-002",
+    "COND-M1-EM-003",
+    "COND-M1-CA-003",
+    "COND-M1-EM-A02"
+   ]
+  },
+  "REL-002": {
+   "nombre": "Patrón cardiometabólico con inflamación",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "hs_crp"
+   ],
+   "implementada_por": [
+    "COND-M1-CA-A02"
+   ]
+  },
+  "REL-003": {
+   "nombre": "Patrón aterogénico",
+   "tipo": "patron",
+   "biomarcadores": [
+    "apob",
+    "ldl_c",
+    "non_hdl_c",
+    "lpa"
+   ],
+   "implementada_por": [
+    "COND-M1-CA-001",
+    "COND-M1-CA-002",
+    "COND-M1-CA-004",
+    "COND-M1-CA-A01"
+   ]
+  },
+  "REL-004": {
+   "nombre": "Inflamación cardiovascular inespecífica",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "hs_crp",
+    "fibrinogen",
+    "homocysteine"
+   ],
+   "implementada_por": []
+  },
+  "REL-005": {
+   "nombre": "NT-proBNP o troponina altas",
+   "tipo": "fuera_de_patrones",
+   "biomarcadores": [
+    "nt_probnp",
+    "hs_troponin"
+   ],
+   "implementada_por": [
+    "COND-M1-CA-007",
+    "SEG-001",
+    "SEG-010"
+   ]
+  },
+  "REL-006": {
+   "nombre": "Patrón hepático metabólico",
+   "tipo": "patron",
+   "biomarcadores": [
+    "alt",
+    "ggt",
+    "triglycerides",
+    "homa_ir",
+    "hba1c"
+   ],
+   "implementada_por": [
+    "COND-M4-GA-002",
+    "COND-M4-GA-001",
+    "COND-M1-EM-001",
+    "COND-M1-CA-003"
+   ]
+  },
+  "REL-007": {
+   "nombre": "Inflamación sistémica inespecífica",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "hs_crp",
+    "esr",
+    "fibrinogen"
+   ],
+   "implementada_por": [
+    "COND-M6-RE-A02"
+   ]
+  },
+  "REL-008": {
+   "nombre": "Patrón muscular",
+   "tipo": "patron",
+   "biomarcadores": [
+    "ck_cpk",
+    "ast",
+    "ldh"
+   ],
+   "implementada_por": [
+    "SEG-007",
+    "COND-M4-GA-002"
+   ]
+  },
+  "REL-009": {
+   "nombre": "Patrón de hemólisis",
+   "tipo": "patron",
+   "biomarcadores": [
+    "bilirubin_total",
+    "bilirubin_direct",
+    "ldh",
+    "hemoglobin",
+    "reticulocytes_pct",
+    "reticulocytes_abs"
+   ],
+   "implementada_por": [
+    "COND-M3-HE-001",
+    "COND-M4-GA-A01"
+   ]
+  },
+  "REL-010": {
+   "nombre": "Daño renal: albuminuria con TFG baja",
+   "tipo": "patron",
+   "biomarcadores": [
+    "uacr",
+    "egfr"
+   ],
+   "implementada_por": [
+    "COND-M2-NE-001",
+    "COND-M2-NE-003"
+   ]
+  },
+  "REL-011": {
+   "nombre": "TFG discordante entre creatinina y cistatina C",
+   "tipo": "patron",
+   "biomarcadores": [
+    "egfr",
+    "cystatin_c",
+    "creatinine"
+   ],
+   "implementada_por": [
+    "COND-M2-NE-A02"
+   ]
+  },
+  "REL-012": {
+   "nombre": "PTH alta con TFG baja",
+   "tipo": "patron",
+   "biomarcadores": [
+    "pth",
+    "egfr"
+   ],
+   "implementada_por": [
+    "COND-M2-NE-001",
+    "COND-M3-NU-A02"
+   ]
+  },
+  "REL-013": {
+   "nombre": "Patrón de déficit de hierro",
+   "tipo": "patron",
+   "biomarcadores": [
+    "transferrin_saturation",
+    "ferritin",
+    "rdw",
+    "mcv",
+    "mch"
+   ],
+   "implementada_por": [
+    "COND-M3-HE-002",
+    "COND-M3-HE-003"
+   ]
+  },
+  "REL-014": {
+   "nombre": "Anemia con perfil inflamatorio",
+   "tipo": "patron",
+   "biomarcadores": [
+    "ferritin",
+    "transferrin_saturation",
+    "hs_crp",
+    "hemoglobin"
+   ],
+   "implementada_por": [
+    "COND-M3-HE-A01"
+   ]
+  },
+  "REL-015": {
+   "nombre": "B12 o folato bajos con homocisteína alta",
+   "tipo": "patron",
+   "biomarcadores": [
+    "vitamin_b12",
+    "folate",
+    "homocysteine",
+    "methylmalonic_acid"
+   ],
+   "implementada_por": [
+    "COND-M3-NU-001",
+    "COND-M3-NU-002",
+    "COND-M3-NU-A01",
+    "COND-M3-HE-004"
+   ]
+  },
+  "REL-016": {
+   "nombre": "Hierro bajo con anticuerpos tiroideos",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "ferritin",
+    "anti_tpo",
+    "anti_tg"
+   ],
+   "implementada_por": []
+  },
+  "REL-017": {
+   "nombre": "Patrón tiroideo autoinmune",
+   "tipo": "patron",
+   "biomarcadores": [
+    "tsh",
+    "free_t4",
+    "anti_tpo",
+    "anti_tg"
+   ],
+   "implementada_por": [
+    "COND-M2-TI-001",
+    "COND-M2-TI-002",
+    "COND-M2-TI-A01"
+   ]
+  },
+  "REL-018": {
+   "nombre": "TSH alta con colesterol, CK u homocisteína altos",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "tsh",
+    "total_cholesterol",
+    "ldl_c",
+    "ck_cpk",
+    "homocysteine"
+   ],
+   "implementada_por": []
+  },
+  "REL-019": {
+   "nombre": "TSH alterada con hierro bajo",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "tsh",
+    "ferritin",
+    "transferrin_saturation"
+   ],
+   "implementada_por": []
+  },
+  "REL-020": {
+   "nombre": "Vitamina D baja con PTH alta y calcio o fósforo alterados",
+   "tipo": "patron",
+   "biomarcadores": [
+    "vitamin_d",
+    "pth",
+    "calcium",
+    "phosphorus"
+   ],
+   "implementada_por": [
+    "COND-M3-NU-A02",
+    "COND-M3-NU-A03"
+   ]
+  },
+  "REL-021": {
+   "nombre": "Vitamina D baja con hs-CRP alta",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "vitamin_d",
+    "hs_crp"
+   ],
+   "implementada_por": []
+  },
+  "REL-022": {
+   "nombre": "Vitamina D baja con ferritina o hemoglobina bajas",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "vitamin_d",
+    "ferritin",
+    "hemoglobin"
+   ],
+   "implementada_por": []
+  },
+  "REL-023": {
+   "nombre": "Cortisol alto con glucosa, presión y frecuencia cardíaca altas",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "cortisol",
+    "glucose",
+    "hba1c"
+   ],
+   "implementada_por": []
+  },
+  "REL-024": {
+   "nombre": "Testosterona baja con SHBG y gonadotropinas alteradas",
+   "tipo": "patron",
+   "biomarcadores": [
+    "testosterone_total",
+    "testosterone_free",
+    "shbg",
+    "lh"
+   ],
+   "implementada_por": [
+    "COND-M5-UR-002",
+    "COND-M5-UR-A01"
+   ]
+  },
+  "REL-025": {
+   "nombre": "Estradiol o progesterona alterados con temperatura de muñeca",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "estradiol",
+    "progesterone"
+   ],
+   "implementada_por": []
+  },
+  "REL-026": {
+   "nombre": "TSH alterada con frecuencia cardíaca, sueño o actividad alterados",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "tsh"
+   ],
+   "implementada_por": []
+  },
+  "REL-027": {
+   "nombre": "Prolactina alta con TSH alterada o medicamentos",
+   "tipo": "patron",
+   "biomarcadores": [
+    "prolactin",
+    "tsh",
+    "macroprolactin"
+   ],
+   "implementada_por": [
+    "COND-M5-MU-003",
+    "COND-M2-TI-001"
+   ]
+  }
+ },
+ "version": "1",
+ "generado": "2026-10-06",
+ "biomarcadores": {
+  "acth": {
+   "nombre": "ACTH",
+   "unidad": "pg/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "ACTH",
+    "Corticotropina",
+    "Hormona adrenocorticotropa",
+    "ACTH (Hormona Adrenocorticotropa)",
+    "Adrenocorticotropic Hormone"
+   ],
+   "reglas": [
+    "SEG-002"
+   ]
+  },
+  "ag_ratio": {
+   "nombre": "Relación Albúmina/Globulina",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Relación albúmina/globulina",
+    "Relación A/G",
+    "Relación Albúmina/Globulina",
+    "Relación Albúmina/Globulina (A/G ratio)",
+    "A/G",
+    "Albumin/Globulin Ratio"
+   ],
+   "reglas": [
+    "SEG-009"
+   ]
+  },
+  "albumin": {
+   "nombre": "Albúmina",
+   "unidad": "g/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Albúmina",
+    "Albúmina sérica",
+    "ALB",
+    "Albumin"
+   ],
+   "reglas": [
+    "COND-M2-TI-007",
+    "COND-M5-UR-A01",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "aldosterone": {
+   "nombre": "Aldosterona sérica o plasmática",
+   "unidad": "ng/dL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Aldosterona",
+    "Aldosterona sérica",
+    "Aldosterona plasmática",
+    "PAC",
+    "Aldosterone"
+   ],
+   "reglas": [
+    "COND-M2-TI-008"
+   ]
+  },
+  "alp": {
+   "nombre": "Fosfatasa Alcalina",
+   "unidad": "U/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Fosfatasa alcalina",
+    "FA",
+    "ALP",
+    "FAL",
+    "Fosfatasa Alcalina",
+    "ALP / FA",
+    "Alkaline Phosphatase"
+   ],
+   "reglas": [
+    "COND-M4-GA-003",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "alt": {
+   "nombre": "ALT (Alanina Aminotransferasa)",
+   "unidad": "U/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "ALT",
+    "TGP",
+    "ALAT",
+    "Alanina aminotransferasa",
+    "Transaminasa pirúvica",
+    "ALT (Alanina Aminotransferasa)",
+    "ALT (Alanine Aminotransferase)"
+   ],
+   "reglas": [
+    "COND-M4-GA-002"
+   ]
+  },
+  "ana_hep2": {
+   "nombre": "Anticuerpos antinucleares por inmunofluorescencia indirecta en células HEp-2",
+   "unidad": "título (1:x) y patrón (AC-xx)",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "ANA",
+    "Anticuerpos antinucleares",
+    "AAN",
+    "ANA IFI",
+    "ANA HEp-2",
+    "FAN"
+   ],
+   "reglas": [
+    "COND-M6-RE-A01"
+   ]
+  },
+  "anti_hbc": {
+   "nombre": "Anticuerpos totales contra el antígeno core de hepatitis B",
+   "unidad": "índice",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Anti-HBc total",
+    "Anti core hepatitis B",
+    "AcHBc total",
+    "HBcAb total",
+    "Anticuerpos totales contra core hepatitis B (anti-HBc)",
+    "Anticuerpos totales contra core hepatitis B"
+   ],
+   "reglas": [
+    "COND-M4-IN-002"
+   ]
+  },
+  "anti_hbs": {
+   "nombre": "Anticuerpos contra el antígeno de superficie de hepatitis B",
+   "unidad": "mUI/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Anti-HBs",
+    "AcHBs",
+    "Anticuerpos anti antígeno de superficie",
+    "HBsAb",
+    "Anticuerpos contra antígeno de superficie (anti-HBs)",
+    "Anticuerpos contra antígeno de superficie"
+   ],
+   "reglas": [
+    "COND-M4-IN-002"
+   ]
+  },
+  "anti_hcv": {
+   "nombre": "Anticuerpos contra el virus de la hepatitis C",
+   "unidad": "índice (S/CO)",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Anti-VHC",
+    "Anti HCV",
+    "Anticuerpos hepatitis C",
+    "HCV Ab",
+    "Hepatitis C anticuerpos totales",
+    "Anticuerpos contra hepatitis C (anti-VHC)",
+    "Anticuerpos contra hepatitis C"
+   ],
+   "reglas": [
+    "COND-M4-IN-001"
+   ]
+  },
+  "anti_tg": {
+   "nombre": "Anticuerpos Antitiroglobulina",
+   "unidad": "UI/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Anti-Tg",
+    "Anticuerpos antitiroglobulina",
+    "Anticuerpos Antitiroglobulina",
+    "Anti-Tg / TgAb",
+    "Anti-Thyroglobulin Antibodies"
+   ],
+   "reglas": [
+    "COND-M2-TI-A01"
+   ]
+  },
+  "anti_tpo": {
+   "nombre": "Anticuerpos Anti-Peroxidasa Tiroidea",
+   "unidad": "UI/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Anti-TPO",
+    "Anticuerpos antiperoxidasa",
+    "Ac anti TPO",
+    "Anticuerpos Anti-Peroxidasa Tiroidea",
+    "Anticuerpos Anti-TPO",
+    "Anti-TPO / TPOAb",
+    "Anti-Thyroid Peroxidase Antibodies"
+   ],
+   "reglas": [
+    "COND-M2-TI-A01"
+   ]
+  },
+  "anti_ttg_iga": {
+   "nombre": "Anti-tTG IgA",
+   "unidad": "U/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Anti-transglutaminasa IgA",
+    "tTG IgA",
+    "Anti-tTG IgA",
+    "Anticuerpos Anti-Transglutaminasa Tisular IgA (Cribado Celíaco)",
+    "tTG-IgA",
+    "Anti-Tissue Transglutaminase IgA"
+   ],
+   "reglas": [
+    "COND-M4-GA-006"
+   ]
+  },
+  "apoa1": {
+   "nombre": "Apolipoproteína A1",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Apolipoproteína A1",
+    "ApoA1",
+    "Apo A1",
+    "Apolipoprotein A1"
+   ],
+   "reglas": [
+    "SEG-014"
+   ]
+  },
+  "apob": {
+   "nombre": "Apolipoproteína B",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Apolipoproteína B",
+    "ApoB",
+    "Apo B",
+    "Apolipoproteína B (ApoB)",
+    "Apolipoprotein B"
+   ],
+   "reglas": [
+    "COND-M1-CA-A01"
+   ]
+  },
+  "apob_apoa1_ratio": {
+   "nombre": "Relación ApoB/ApoA1",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Relación ApoB/ApoA1",
+    "ApoB/ApoA1",
+    "ApoB/ApoA1 Ratio"
+   ],
+   "reglas": [
+    "SEG-014"
+   ]
+  },
+  "ast": {
+   "nombre": "AST (Aspartato Aminotransferasa)",
+   "unidad": "U/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "AST",
+    "TGO",
+    "ASAT",
+    "Aspartato aminotransferasa",
+    "Transaminasa oxalacética",
+    "AST (Aspartato Aminotransferasa)",
+    "AST (Aspartate Aminotransferase)"
+   ],
+   "reglas": [
+    "COND-M4-GA-002"
+   ]
+  },
+  "basophils_pct": {
+   "nombre": "Basófilos %",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Basófilos %",
+    "BASO%",
+    "Baso%",
+    "Basophils %"
+   ],
+   "reglas": [
+    "SEG-012"
+   ]
+  },
+  "bicarbonate": {
+   "nombre": "Bicarbonato / CO2",
+   "unidad": "mmol/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Bicarbonato",
+    "CO2 total",
+    "HCO3",
+    "Bicarbonato / CO2",
+    "HCO3- / CO2",
+    "Bicarbonate / CO2"
+   ],
+   "reglas": [
+    "COND-M2-NE-A03"
+   ]
+  },
+  "bilirubin_direct": {
+   "nombre": "Bilirrubina Directa",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Bilirrubina directa",
+    "BD",
+    "Bilirrubina conjugada",
+    "Bilirrubina Directa",
+    "Direct (Conjugated) Bilirubin"
+   ],
+   "reglas": [
+    "COND-M4-GA-003",
+    "COND-M4-GA-A01"
+   ]
+  },
+  "bilirubin_total": {
+   "nombre": "Bilirrubina Total",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Bilirrubina total",
+    "BT",
+    "Bilirrubina Total",
+    "Total Bilirubin"
+   ],
+   "reglas": [
+    "COND-M4-GA-A01"
+   ]
+  },
+  "biotin": {
+   "nombre": "Biotina (vitamina B7)",
+   "unidad": "ng/L",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Biotina",
+    "Vitamina B7",
+    "Vitamina H",
+    "Biotin"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "bun": {
+   "nombre": "BUN / Urea",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "BUN",
+    "Nitrógeno ureico",
+    "Nitrógeno ureico en sangre",
+    "BUN / Urea",
+    "Blood Urea Nitrogen"
+   ],
+   "reglas": [
+    "SEG-014"
+   ]
+  },
+  "bun_creatinine_ratio": {
+   "nombre": "Relación BUN/Creatinina",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Relación BUN/creatinina",
+    "Relación BUN/Creatinina",
+    "BUN/Cr",
+    "BUN/Creatinine Ratio"
+   ],
+   "reglas": [
+    "SEG-014"
+   ]
+  },
+  "c_peptide": {
+   "nombre": "Péptido C",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Péptido C",
+    "CP",
+    "C-Peptide"
+   ],
+   "reglas": [
+    "SEG-010"
+   ]
+  },
+  "calcium": {
+   "nombre": "Calcio Sérico",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Calcio",
+    "Calcio total",
+    "Ca",
+    "Calcio Sérico",
+    "Serum Calcium"
+   ],
+   "reglas": [
+    "COND-M2-TI-007",
+    "COND-M3-NU-A02"
+   ]
+  },
+  "chagas_elisa_recombinante": {
+   "nombre": "ELISA de Trypanosoma cruzi con antígenos recombinantes",
+   "unidad": "índice",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "ELISA recombinante Chagas",
+    "Segunda ELISA Chagas",
+    "Chagas antígenos recombinantes",
+    "T. cruzi ELISA recombinante"
+   ],
+   "reglas": [
+    "COND-M4-IN-003"
+   ]
+  },
+  "chagas_elisa_total": {
+   "nombre": "Anticuerpos IgG contra Trypanosoma cruzi (ELISA de antígenos totales)",
+   "unidad": "índice",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "ELISA Chagas",
+    "Anticuerpos T. cruzi",
+    "Chagas IgG",
+    "Serología para Chagas",
+    "Trypanosoma cruzi anticuerpos",
+    "Anticuerpos IgG Trypanosoma cruzi (Chagas)",
+    "Anticuerpos IgG Trypanosoma cruzi"
+   ],
+   "reglas": [
+    "COND-M4-IN-003"
+   ]
+  },
+  "chloride": {
+   "nombre": "Cloro",
+   "unidad": "mmol/L",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Cloro",
+    "Cl",
+    "Cloruro",
+    "Cl-",
+    "Chloride"
+   ],
+   "reglas": [
+    "SEG-008"
+   ]
+  },
+  "ck_cpk": {
+   "nombre": "Creatina Quinasa",
+   "unidad": "U/L",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "CK",
+    "CPK",
+    "Creatina quinasa",
+    "Creatinfosfoquinasa",
+    "Creatina Quinasa",
+    "CK / CPK (Creatina Quinasa)",
+    "CK / CPK",
+    "Creatine Kinase"
+   ],
+   "reglas": [
+    "SEG-007"
+   ]
+  },
+  "coq10": {
+   "nombre": "Coenzima Q10",
+   "unidad": "µg/mL",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Coenzima Q10",
+    "CoQ10",
+    "Ubiquinona",
+    "Ubiquinol"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "cortisol": {
+   "nombre": "Cortisol",
+   "unidad": "µg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Cortisol",
+    "Cortisol matutino",
+    "Cortisol AM",
+    "CORT"
+   ],
+   "reglas": [
+    "SEG-002"
+   ]
+  },
+  "creatinine": {
+   "nombre": "Creatinina Sérica",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Creatinina",
+    "Creatinina sérica",
+    "CREA",
+    "Creatinina Sérica",
+    "Serum Creatinine"
+   ],
+   "reglas": [
+    "COND-M2-NE-001",
+    "COND-M2-NE-A02",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "cystatin_c": {
+   "nombre": "Cistatina C",
+   "unidad": "mg/L",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Cistatina C",
+    "CysC",
+    "Cystatin C"
+   ],
+   "reglas": [
+    "COND-M2-NE-A02"
+   ]
+  },
+  "dhea_s": {
+   "nombre": "DHEA-S",
+   "unidad": "µg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "DHEA-S",
+    "Sulfato de dehidroepiandrosterona",
+    "DHEAS",
+    "DHEA-S (Sulfato de Dehidroepiandrosterona)",
+    "Dehydroepiandrosterone Sulfate"
+   ],
+   "reglas": [
+    "SEG-011"
+   ]
+  },
+  "egfr": {
+   "nombre": "eGFR",
+   "unidad": "mL/min/1,73 m²",
+   "panel": "calculado",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "TFG estimada",
+    "TFGe",
+    "Tasa de filtración glomerular estimada",
+    "CKD-EPI",
+    "eGFR",
+    "eGFR (Tasa de Filtración Glomerular Estimada, CKD-EPI 2021)",
+    "eGFR / TFG",
+    "Estimated Glomerular Filtration Rate"
+   ],
+   "reglas": [
+    "COND-M2-NE-001",
+    "COND-M2-NE-002",
+    "COND-M2-NE-006",
+    "COND-M2-NE-A02",
+    "COND-M3-NU-A02"
+   ]
+  },
+  "eosinophils_pct": {
+   "nombre": "Eosinófilos %",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Eosinófilos %",
+    "EOS%",
+    "Eos%",
+    "Eosinophils %"
+   ],
+   "reglas": [
+    "COND-M3-HE-A03"
+   ]
+  },
+  "erythrocytes": {
+   "nombre": "Eritrocitos",
+   "unidad": "x10⁶/µL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Recuento de eritrocitos",
+    "Eritrocitos",
+    "Glóbulos rojos",
+    "RBC",
+    "Eritrocitos (conteo)",
+    "Red Blood Cell Count"
+   ],
+   "reglas": [
+    "SEG-012"
+   ]
+  },
+  "esr": {
+   "nombre": "VSG",
+   "unidad": "mm/h",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "VSG",
+    "Velocidad de sedimentación globular",
+    "Eritrosedimentación",
+    "VSG (Velocidad de Sedimentación Globular)",
+    "VSG / ESR",
+    "Erythrocyte Sedimentation Rate (ESR)"
+   ],
+   "reglas": [
+    "COND-M6-RE-A02"
+   ]
+  },
+  "estradiol": {
+   "nombre": "Estradiol",
+   "unidad": "pg/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Estradiol",
+    "E2",
+    "Estradiol (E2)"
+   ],
+   "reglas": [
+    "SEG-011"
+   ]
+  },
+  "ferritin": {
+   "nombre": "Ferritina",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Ferritina",
+    "Ferritina sérica",
+    "FERR"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "COND-M3-HE-003",
+    "COND-M3-HE-006",
+    "COND-M3-HE-A01"
+   ]
+  },
+  "fibrinogen": {
+   "nombre": "Fibrinógeno",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Fibrinógeno",
+    "FIB",
+    "Fibrinogen"
+   ],
+   "reglas": [
+    "SEG-006"
+   ]
+  },
+  "fit_stool": {
+   "nombre": "Sangre oculta en heces inmunoquímica",
+   "unidad": "cualitativo",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Sangre oculta en heces",
+    "SOH",
+    "SOMF inmunoquímica",
+    "Prueba inmunoquímica fecal",
+    "FIT",
+    "iFOBT"
+   ],
+   "reglas": [
+    "COND-M4-GA-004"
+   ]
+  },
+  "folate": {
+   "nombre": "Folato Sérico",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "vitamina con patrón",
+   "sinonimos": [
+    "Ácido fólico",
+    "Folato",
+    "Folato sérico",
+    "Folato Sérico",
+    "Folato (Ácido Fólico / Vitamina B9)",
+    "Folato / B9",
+    "Serum Folate"
+   ],
+   "reglas": [
+    "COND-M3-HE-004",
+    "COND-M3-NU-002"
+   ]
+  },
+  "free_t3": {
+   "nombre": "T3 Libre (Triyodotironina libre)",
+   "unidad": "pg/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "T3 libre",
+    "Triyodotironina libre",
+    "FT3",
+    "T3L",
+    "T3 Libre (Triyodotironina libre)",
+    "T3 Libre",
+    "T3L / FT3",
+    "Free T3 (Free Triiodothyronine)"
+   ],
+   "reglas": [
+    "COND-M2-TI-004",
+    "COND-M2-TI-005"
+   ]
+  },
+  "free_t4": {
+   "nombre": "T4 libre",
+   "unidad": "ng/dL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "T4 libre",
+    "Tiroxina libre",
+    "FT4",
+    "T4L",
+    "T4L / FT4",
+    "Free T4 (Free Thyroxine)"
+   ],
+   "reglas": [
+    "COND-M2-TI-001",
+    "COND-M2-TI-002",
+    "COND-M2-TI-003",
+    "COND-M2-TI-004",
+    "COND-M2-TI-005",
+    "COND-M2-TI-006"
+   ]
+  },
+  "fructosamine": {
+   "nombre": "Fructosamina",
+   "unidad": "µmol/L",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Fructosamina",
+    "FRUC",
+    "Fructosamine"
+   ],
+   "reglas": [
+    "SEG-010"
+   ]
+  },
+  "fsh": {
+   "nombre": "FSH",
+   "unidad": "mUI/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "FSH",
+    "Hormona folículo estimulante",
+    "FSH (Hormona Folículo Estimulante)",
+    "Follicle-Stimulating Hormone"
+   ],
+   "reglas": [
+    "COND-M5-MU-002"
+   ]
+  },
+  "ggt": {
+   "nombre": "Gamma-Glutamil Transferasa",
+   "unidad": "U/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "GGT",
+    "Gamma GT",
+    "Gamma glutamil transferasa",
+    "Gamma glutamil transpeptidasa",
+    "Gamma-Glutamil Transferasa",
+    "GGT (Gamma-Glutamil Transferasa)",
+    "Gamma-Glutamyl Transferase"
+   ],
+   "reglas": [
+    "COND-M4-GA-003",
+    "COND-M4-GA-A02"
+   ]
+  },
+  "globulin": {
+   "nombre": "Globulinas",
+   "unidad": "g/dL",
+   "panel": "calculado",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Globulinas",
+    "GLOB",
+    "Globulins"
+   ],
+   "reglas": [
+    "SEG-009"
+   ]
+  },
+  "glucose": {
+   "nombre": "Glucosa en ayunas",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Glucosa",
+    "Glicemia",
+    "Glucemia",
+    "Glucosa basal",
+    "Glucosa en ayunas",
+    "GLU"
+   ],
+   "reglas": [
+    "COND-M1-EM-001",
+    "COND-M1-EM-002",
+    "COND-M1-EM-003",
+    "COND-M1-EM-005",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "hba1c": {
+   "nombre": "Hemoglobina A1c (HbA1c)",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Hemoglobina glicosilada",
+    "Hemoglobina glucosilada",
+    "HbA1c",
+    "A1C",
+    "Hemoglobina A1c",
+    "Hemoglobina A1c (HbA1c)"
+   ],
+   "reglas": [
+    "COND-M1-EM-001",
+    "COND-M1-EM-002"
+   ]
+  },
+  "hbsag": {
+   "nombre": "Antígeno de superficie del virus de la hepatitis B",
+   "unidad": "índice",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "HBsAg",
+    "Antígeno de superficie hepatitis B",
+    "AgHBs",
+    "Antígeno Australia"
+   ],
+   "reglas": [
+    "COND-M4-IN-002"
+   ]
+  },
+  "hcv_rna": {
+   "nombre": "ARN del virus de la hepatitis C",
+   "unidad": "UI/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "ARN VHC",
+    "Carga viral hepatitis C",
+    "HCV RNA",
+    "PCR hepatitis C",
+    "Viremia VHC"
+   ],
+   "reglas": [
+    "COND-M4-IN-001"
+   ]
+  },
+  "hdl_c": {
+   "nombre": "Colesterol HDL (HDL-C)",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Colesterol HDL",
+    "HDL",
+    "HDL-C",
+    "Colesterol HDL (HDL-C)"
+   ],
+   "reglas": [
+    "COND-M1-CA-001",
+    "COND-M1-CA-005",
+    "COND-M1-EM-003"
+   ]
+  },
+  "hematocrit": {
+   "nombre": "Hematocrito",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Hematocrito",
+    "Hto",
+    "HCT",
+    "Hto / Hct",
+    "Hematocrit"
+   ],
+   "reglas": [
+    "SEG-012"
+   ]
+  },
+  "hemoglobin": {
+   "nombre": "Hemoglobina",
+   "unidad": "g/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Hemoglobina",
+    "Hb",
+    "HGB"
+   ],
+   "reglas": [
+    "COND-M3-HE-001",
+    "COND-M3-HE-002",
+    "COND-M3-HE-004",
+    "COND-M5-MU-A01"
+   ]
+  },
+  "homa_ir": {
+   "nombre": "HOMA-IR",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "HOMA-IR",
+    "Índice HOMA",
+    "HOMA-IR (Índice de Resistencia a la Insulina)",
+    "HOMA-IR (Homeostasis Model Assessment of Insulin Resistance)"
+   ],
+   "reglas": [
+    "COND-M1-EM-A02"
+   ]
+  },
+  "homocysteine": {
+   "nombre": "Homocisteína",
+   "unidad": "µmol/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Homocisteína",
+    "Hcy",
+    "Homocysteine"
+   ],
+   "reglas": [
+    "COND-M3-NU-A01"
+   ]
+  },
+  "hpylori_stool_ag": {
+   "nombre": "Antígeno de Helicobacter pylori en heces",
+   "unidad": "cualitativo",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Antígeno H. pylori en heces",
+    "H. pylori antígeno fecal",
+    "Helicobacter pylori Ag heces",
+    "HpSA"
+   ],
+   "reglas": [
+    "COND-M4-GA-005"
+   ]
+  },
+  "hs_crp": {
+   "nombre": "Proteína C Reactiva ultrasensible (hs-CRP)",
+   "unidad": "mg/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "PCR ultrasensible",
+    "PCR-us",
+    "hs-CRP",
+    "Proteína C reactiva de alta sensibilidad",
+    "PCR de alta sensibilidad",
+    "Proteína C Reactiva ultrasensible (hs-CRP)"
+   ],
+   "reglas": [
+    "COND-M1-CA-A02",
+    "COND-M3-HE-002",
+    "COND-M3-HE-003",
+    "COND-M3-HE-006",
+    "COND-M3-HE-A01",
+    "COND-M6-MI-001",
+    "COND-M6-MI-A02",
+    "COND-M6-RE-A02"
+   ]
+  },
+  "hs_troponin": {
+   "nombre": "Troponina cardíaca de alta sensibilidad",
+   "unidad": "ng/L",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Troponina de alta sensibilidad",
+    "Troponina I hs",
+    "Troponina T hs",
+    "hs-cTn",
+    "Troponina cardíaca de alta sensibilidad",
+    "hs-cTnI / hs-cTnT",
+    "Troponina I de alta sensibilidad",
+    "Troponina T de alta sensibilidad"
+   ],
+   "reglas": [
+    "SEG-001"
+   ]
+  },
+  "iga": {
+   "nombre": "Inmunoglobulina A",
+   "unidad": "mg/dL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Inmunoglobulina A",
+    "IgA",
+    "IgA total",
+    "IgA (Inmunoglobulina A)",
+    "Immunoglobulin A"
+   ],
+   "reglas": [
+    "COND-M4-GA-006"
+   ]
+  },
+  "igf1": {
+   "nombre": "IGF-1",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "IGF-1",
+    "Somatomedina C",
+    "IGF-1 (Factor de Crecimiento Similar a la Insulina Tipo 1)",
+    "Insulin-like Growth Factor 1"
+   ],
+   "reglas": [
+    "SEG-003"
+   ]
+  },
+  "igg": {
+   "nombre": "Inmunoglobulina G",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Inmunoglobulina G",
+    "IgG",
+    "IgG (Inmunoglobulina G)",
+    "Immunoglobulin G"
+   ],
+   "reglas": [
+    "SEG-009"
+   ]
+  },
+  "igm": {
+   "nombre": "Inmunoglobulina M",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Inmunoglobulina M",
+    "IgM",
+    "IgM (Inmunoglobulina M)",
+    "Immunoglobulin M"
+   ],
+   "reglas": [
+    "SEG-009"
+   ]
+  },
+  "inr": {
+   "nombre": "INR",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "INR",
+    "INR (Razón Internacional Normalizada)",
+    "International Normalized Ratio"
+   ],
+   "reglas": [
+    "SEG-006"
+   ]
+  },
+  "insulin": {
+   "nombre": "Insulina",
+   "unidad": "µUI/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Insulina",
+    "Insulina basal",
+    "Insulina en ayunas",
+    "INS",
+    "Insulin"
+   ],
+   "reglas": [
+    "COND-M1-EM-A02"
+   ]
+  },
+  "ldh": {
+   "nombre": "Lactato Deshidrogenasa",
+   "unidad": "U/L",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "LDH",
+    "Lactato deshidrogenasa",
+    "DHL",
+    "Lactato Deshidrogenasa",
+    "LDH (Lactato Deshidrogenasa)",
+    "Lactate Dehydrogenase"
+   ],
+   "reglas": [
+    "SEG-007"
+   ]
+  },
+  "ldl_c": {
+   "nombre": "Colesterol LDL (LDL-C)",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Colesterol LDL",
+    "LDL",
+    "LDL directo",
+    "LDL calculado",
+    "LDL-C",
+    "Colesterol LDL (LDL-C)"
+   ],
+   "reglas": [
+    "COND-M1-CA-001",
+    "COND-M1-CA-002",
+    "COND-M1-CA-A01"
+   ]
+  },
+  "lh": {
+   "nombre": "LH",
+   "unidad": "mUI/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "LH",
+    "Hormona luteinizante",
+    "LH (Hormona Luteinizante)",
+    "Luteinizing Hormone"
+   ],
+   "reglas": [
+    "SEG-011"
+   ]
+  },
+  "lpa": {
+   "nombre": "Lipoproteína(a)",
+   "unidad": "mg/dL o nmol/L (se guarda con la unidad del laboratorio, sin convertir)",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Lipoproteína (a)",
+    "Lp(a)",
+    "Lipoproteína a",
+    "Lipoproteína(a)",
+    "Lipoproteína(a) [Lp(a)]",
+    "Lipoprotein(a)"
+   ],
+   "reglas": [
+    "COND-M1-CA-004"
+   ]
+  },
+  "lymphocytes_abs": {
+   "nombre": "Linfocitos Absolutos",
+   "unidad": "x10³/µL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Linfocitos absolutos",
+    "LYM#",
+    "Linfocitos Absolutos",
+    "ALC",
+    "Absolute Lymphocyte Count"
+   ],
+   "reglas": [
+    "COND-M3-HE-A02"
+   ]
+  },
+  "lymphocytes_pct": {
+   "nombre": "Linfocitos %",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Linfocitos %",
+    "LYM%",
+    "Linf%",
+    "Lymphocytes %"
+   ],
+   "reglas": [
+    "COND-M6-MI-A02"
+   ]
+  },
+  "macroprolactin": {
+   "nombre": "Macroprolactina (prolactina tras precipitación con PEG)",
+   "unidad": "% de recuperación; prolactina monomérica en ng/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Macroprolactina",
+    "Prolactina post PEG",
+    "Prolactina monomérica",
+    "Recuperación de prolactina tras PEG"
+   ],
+   "reglas": [
+    "COND-M5-MU-003"
+   ]
+  },
+  "magnesium": {
+   "nombre": "Magnesio Sérico",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Magnesio",
+    "Mg",
+    "Magnesio Sérico",
+    "Serum Magnesium"
+   ],
+   "reglas": [
+    "SEG-008"
+   ]
+  },
+  "mch": {
+   "nombre": "Hemoglobina corpuscular media",
+   "unidad": "pg",
+   "panel": "estándar",
+   "nivel": "solo valor y rango (apoyo de condiciones)",
+   "sinonimos": [
+    "HCM",
+    "MCH",
+    "Hemoglobina corpuscular media",
+    "Hb corpuscular media"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "SEG-012"
+   ]
+  },
+  "mchc": {
+   "nombre": "CHCM",
+   "unidad": "g/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "CHCM",
+    "MCHC",
+    "Concentración de hemoglobina corpuscular media",
+    "CHCM (Concentración de Hemoglobina Corpuscular Media)",
+    "CHCM / MCHC",
+    "MCHC (Mean Corpuscular Hemoglobin Concentration)"
+   ],
+   "reglas": [
+    "SEG-012"
+   ]
+  },
+  "mcv": {
+   "nombre": "VCM (Volumen Corpuscular Medio)",
+   "unidad": "fL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "VCM",
+    "MCV",
+    "Volumen corpuscular medio",
+    "VCM (Volumen Corpuscular Medio)",
+    "VCM / MCV",
+    "MCV (Mean Corpuscular Volume)"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "COND-M3-HE-004",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "methylmalonic_acid": {
+   "nombre": "Ácido metilmalónico sérico",
+   "unidad": "µmol/L",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Ácido metilmalónico",
+    "AMM",
+    "MMA",
+    "Methylmalonic acid"
+   ],
+   "reglas": [
+    "COND-M3-HE-004",
+    "COND-M3-NU-001"
+   ]
+  },
+  "monocytes_pct": {
+   "nombre": "Monocitos %",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Monocitos %",
+    "MONO%",
+    "Mono%",
+    "Monocytes %"
+   ],
+   "reglas": [
+    "SEG-012"
+   ]
+  },
+  "mpv": {
+   "nombre": "VPM",
+   "unidad": "fL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "VPM",
+    "MPV",
+    "Volumen plaquetario medio",
+    "VPM/MPV (Volumen Plaquetario Medio)",
+    "VPM / MPV",
+    "MPV (Mean Platelet Volume)"
+   ],
+   "reglas": [
+    "SEG-012"
+   ]
+  },
+  "neutrophils_abs": {
+   "nombre": "Neutrófilos Absolutos",
+   "unidad": "x10³/µL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Neutrófilos absolutos",
+    "Recuento de neutrófilos",
+    "NEU#",
+    "Neutrófilos Absolutos",
+    "ANC",
+    "Absolute Neutrophil Count"
+   ],
+   "reglas": [
+    "COND-M3-HE-A02"
+   ]
+  },
+  "neutrophils_pct": {
+   "nombre": "Neutrófilos (porcentaje)",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "solo valor y rango (apoyo de condiciones)",
+   "sinonimos": [
+    "Neutrófilos %",
+    "Neutrófilos relativos",
+    "Segmentados %",
+    "Polimorfonucleares %",
+    "NEU%"
+   ],
+   "reglas": [
+    "COND-M3-HE-A02",
+    "SEG-012"
+   ]
+  },
+  "niacin": {
+   "nombre": "Niacina (vitamina B3)",
+   "unidad": "µg/mL",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Niacina",
+    "Vitamina B3",
+    "Ácido nicotínico",
+    "Nicotinamida",
+    "Niacin"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "non_hdl_c": {
+   "nombre": "Colesterol no-HDL",
+   "unidad": "mg/dL",
+   "panel": "calculado",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Colesterol no HDL",
+    "No-HDL",
+    "Non-HDL",
+    "Colesterol no-HDL",
+    "non-HDL-C",
+    "Non-HDL Cholesterol"
+   ],
+   "reglas": [
+    "COND-M1-CA-001"
+   ]
+  },
+  "nrbc": {
+   "nombre": "NRBC (Eritroblastos circulantes)",
+   "unidad": "/100 leucocitos",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Eritroblastos",
+    "NRBC",
+    "Glóbulos rojos nucleados",
+    "NRBC (Eritroblastos circulantes)",
+    "NRBC (Eritroblastos)",
+    "Nucleated Red Blood Cells"
+   ],
+   "reglas": [
+    "SEG-005"
+   ]
+  },
+  "nt_probnp": {
+   "nombre": "NT-proBNP (Fracción N-terminal del propéptido natriurético tipo B)",
+   "unidad": "pg/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "NT-proBNP",
+    "Péptido natriurético",
+    "Pro-BNP",
+    "NT-proBNP (Fracción N-terminal del propéptido natriurético tipo B)",
+    "N-terminal pro-B-type Natriuretic Peptide"
+   ],
+   "reglas": [
+    "COND-M1-CA-007",
+    "SEG-010"
+   ]
+  },
+  "omega3_index": {
+   "nombre": "Índice omega-3",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Índice omega-3",
+    "Omega-3 index",
+    "EPA+DHA en eritrocitos",
+    "Índice de omega 3"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "omega6_omega3_ratio": {
+   "nombre": "Relación omega-6/omega-3",
+   "unidad": "sin unidad",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Relación omega 6/omega 3",
+    "Ratio omega-6/omega-3",
+    "Cociente omega 6 omega 3"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "osmolality": {
+   "nombre": "Osmolalidad Sérica",
+   "unidad": "mOsm/kg",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Osmolalidad sérica",
+    "Osmolalidad",
+    "Osmolalidad Sérica",
+    "OSM",
+    "Serum Osmolality"
+   ],
+   "reglas": [
+    "SEG-004"
+   ]
+  },
+  "phenoage": {
+   "nombre": "Edad biológica (PhenoAge)",
+   "unidad": "años",
+   "panel": "calculado",
+   "nivel": "solo valor (pantalla aparte)",
+   "sinonimos": [
+    "Edad biológica",
+    "PhenoAge",
+    "Edad fenotípica",
+    "Phenotypic age"
+   ],
+   "reglas": [
+    "COND-M6-MI-A02"
+   ]
+  },
+  "phosphorus": {
+   "nombre": "Fósforo",
+   "unidad": "mg/dL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Fósforo",
+    "P",
+    "Fosfato",
+    "Phosphorus"
+   ],
+   "reglas": [
+    "SEG-008"
+   ]
+  },
+  "platelets": {
+   "nombre": "Plaquetas",
+   "unidad": "x10³/µL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Recuento de plaquetas",
+    "Plaquetas",
+    "PLT",
+    "Platelets"
+   ],
+   "reglas": [
+    "COND-M3-HE-005",
+    "SEG-006"
+   ]
+  },
+  "potassium": {
+   "nombre": "Potasio",
+   "unidad": "mmol/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Potasio",
+    "K",
+    "Potasio sérico",
+    "K+",
+    "Potassium"
+   ],
+   "reglas": [
+    "COND-M2-NE-004",
+    "COND-M2-NE-A01"
+   ]
+  },
+  "progesterone": {
+   "nombre": "Progesterona",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Progesterona",
+    "PROG",
+    "Progesterone"
+   ],
+   "reglas": [
+    "SEG-011"
+   ]
+  },
+  "prolactin": {
+   "nombre": "Prolactina",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Prolactina",
+    "PRL",
+    "Prolactin"
+   ],
+   "reglas": [
+    "COND-M5-MU-003"
+   ]
+  },
+  "psa_free": {
+   "nombre": "Antígeno prostático específico libre",
+   "unidad": "ng/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "PSA libre",
+    "fPSA",
+    "Antígeno prostático libre",
+    "PSA L"
+   ],
+   "reglas": [
+    "COND-M5-UR-A02"
+   ]
+  },
+  "psa_total": {
+   "nombre": "Antígeno prostático específico total",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "PSA",
+    "PSA total",
+    "Antígeno prostático específico",
+    "APE",
+    "Antígeno prostático total"
+   ],
+   "reglas": [
+    "COND-M5-UR-001"
+   ]
+  },
+  "pt": {
+   "nombre": "Tiempo de Protrombina",
+   "unidad": "s",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Tiempo de protrombina",
+    "TP",
+    "PT",
+    "Tiempo de Protrombina",
+    "Tiempo de Protrombina (PT)",
+    "Prothrombin Time"
+   ],
+   "reglas": [
+    "SEG-006"
+   ]
+  },
+  "pth": {
+   "nombre": "PTH (Hormona Paratiroidea)",
+   "unidad": "pg/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "PTH",
+    "Hormona paratiroidea",
+    "Paratohormona",
+    "PTH intacta",
+    "PTH (Hormona Paratiroidea)",
+    "Parathyroid Hormone"
+   ],
+   "reglas": [
+    "COND-M2-TI-007",
+    "COND-M3-NU-A02"
+   ]
+  },
+  "rdw": {
+   "nombre": "RDW",
+   "unidad": "%",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "RDW",
+    "RDW-CV",
+    "Ancho de distribución eritrocitaria",
+    "RDW (Ancho de Distribución Eritrocitaria)",
+    "Red Cell Distribution Width"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "remnant_cholesterol": {
+   "nombre": "Colesterol remanente",
+   "unidad": "mg/dL",
+   "panel": "calculado",
+   "nivel": "solo valor y rango (contexto)",
+   "sinonimos": [
+    "Colesterol remanente",
+    "Remnant cholesterol",
+    "Colesterol de lipoproteínas remanentes"
+   ],
+   "reglas": [
+    "COND-M1-CA-001",
+    "COND-M1-CA-003",
+    "SEG-014"
+   ]
+  },
+  "renin": {
+   "nombre": "Renina plasmática (actividad o concentración directa)",
+   "unidad": "ng/mL/h (actividad) o mU/L (concentración); se guarda con su tipo",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Renina",
+    "Actividad de renina plasmática",
+    "ARP",
+    "PRA",
+    "Renina directa",
+    "Concentración directa de renina",
+    "DRC"
+   ],
+   "reglas": [
+    "COND-M2-TI-008"
+   ]
+  },
+  "reticulocytes_abs": {
+   "nombre": "Reticulocitos Absolutos",
+   "unidad": "x10³/µL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Reticulocitos absolutos",
+    "Reticulocitos Absolutos",
+    "ARC",
+    "Absolute Reticulocyte Count"
+   ],
+   "reglas": [
+    "COND-M3-HE-001",
+    "COND-M4-GA-A01"
+   ]
+  },
+  "reticulocytes_pct": {
+   "nombre": "Reticulocitos %",
+   "unidad": "%",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Reticulocitos %",
+    "Retic%",
+    "Reticulocyte Percentage"
+   ],
+   "reglas": [
+    "COND-M3-HE-001",
+    "COND-M4-GA-A01"
+   ]
+  },
+  "serum_iron": {
+   "nombre": "Hierro sérico",
+   "unidad": "µg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Hierro sérico",
+    "Hierro",
+    "Fe",
+    "Serum Iron"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "COND-M3-HE-006"
+   ]
+  },
+  "shbg": {
+   "nombre": "SHBG",
+   "unidad": "nmol/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "SHBG",
+    "Globulina fijadora de hormonas sexuales",
+    "SHBG (Globulina Transportadora de Hormonas Sexuales)",
+    "Sex Hormone-Binding Globulin"
+   ],
+   "reglas": [
+    "COND-M5-MU-001",
+    "COND-M5-UR-002",
+    "COND-M5-UR-A01"
+   ]
+  },
+  "sodium": {
+   "nombre": "Sodio",
+   "unidad": "mmol/L",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Sodio",
+    "Na",
+    "Sodio sérico",
+    "Na+",
+    "Sodium"
+   ],
+   "reglas": [
+    "COND-M2-NE-005"
+   ]
+  },
+  "stool_exam": {
+   "nombre": "Coprológico",
+   "unidad": "cualitativo",
+   "panel": "estándar",
+   "nivel": "con patrón (parásitos) y solo valor (resto)",
+   "sinonimos": [
+    "Coprológico",
+    "Examen coprológico",
+    "Coproscópico",
+    "Parasitológico en heces",
+    "Examen directo de heces"
+   ],
+   "reglas": [
+    "COND-M4-IN-A02",
+    "SEG-013"
+   ]
+  },
+  "tc_hdl_ratio": {
+   "nombre": "Relación colesterol total/HDL",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango (contexto)",
+   "sinonimos": [
+    "Relación colesterol total/HDL",
+    "Índice de Castelli",
+    "Índice aterogénico",
+    "CT/HDL",
+    "TC/HDL ratio"
+   ],
+   "reglas": [
+    "COND-M1-CA-001",
+    "COND-M1-CA-005",
+    "SEG-014"
+   ]
+  },
+  "testosterone_free": {
+   "nombre": "Testosterona Libre",
+   "unidad": "pg/mL",
+   "panel": "calculado",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Testosterona libre",
+    "Testosterona libre calculada",
+    "Testosterona Libre",
+    "T libre",
+    "Free Testosterone"
+   ],
+   "reglas": [
+    "COND-M5-UR-A01"
+   ]
+  },
+  "testosterone_total": {
+   "nombre": "Testosterona Total",
+   "unidad": "ng/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Testosterona total",
+    "Testosterona Total",
+    "T total",
+    "Total Testosterone"
+   ],
+   "reglas": [
+    "COND-M5-MU-001",
+    "COND-M5-UR-002"
+   ]
+  },
+  "tibc": {
+   "nombre": "Capacidad total de fijación de hierro",
+   "unidad": "µg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "TIBC",
+    "CTFH",
+    "Capacidad total de fijación de hierro",
+    "Capacidad de fijación del hierro"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "COND-M3-HE-006"
+   ]
+  },
+  "total_cholesterol": {
+   "nombre": "Colesterol total",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Colesterol total",
+    "CT",
+    "Colesterol"
+   ],
+   "reglas": [
+    "COND-M1-CA-005"
+   ]
+  },
+  "total_protein": {
+   "nombre": "Proteínas totales",
+   "unidad": "g/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Proteínas totales",
+    "PT séricas",
+    "PT / TP",
+    "Total Protein"
+   ],
+   "reglas": [
+    "COND-M2-NE-005",
+    "SEG-009"
+   ]
+  },
+  "transferrin": {
+   "nombre": "Transferrina",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Transferrina",
+    "TRF",
+    "Transferrin"
+   ],
+   "reglas": [
+    "SEG-014"
+   ]
+  },
+  "transferrin_saturation": {
+   "nombre": "Saturación de transferrina",
+   "unidad": "%",
+   "panel": "calculado",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Saturación de transferrina",
+    "% de saturación de transferrina",
+    "IST",
+    "TSAT",
+    "Transferrin Saturation"
+   ],
+   "reglas": [
+    "COND-M3-HE-002",
+    "COND-M3-HE-006",
+    "COND-M3-HE-A01"
+   ]
+  },
+  "triglycerides": {
+   "nombre": "Triglicéridos",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Triglicéridos",
+    "TG",
+    "Triglicéridos séricos"
+   ],
+   "reglas": [
+    "COND-M1-CA-001",
+    "COND-M1-CA-003",
+    "COND-M1-CA-A01",
+    "COND-M1-EM-003",
+    "COND-M2-NE-005"
+   ]
+  },
+  "tsh": {
+   "nombre": "TSH (Hormona Estimulante de Tiroides)",
+   "unidad": "µUI/mL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "TSH",
+    "Hormona estimulante de tiroides",
+    "Tirotropina",
+    "TSH ultrasensible",
+    "TSH (Hormona Estimulante de Tiroides)"
+   ],
+   "reglas": [
+    "COND-M2-TI-001",
+    "COND-M2-TI-002",
+    "COND-M2-TI-003",
+    "COND-M2-TI-004",
+    "COND-M2-TI-005",
+    "COND-M2-TI-006"
+   ]
+  },
+  "uacr": {
+   "nombre": "UACR",
+   "unidad": "mg/g",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Relación albúmina/creatinina",
+    "RAC",
+    "Microalbuminuria",
+    "Índice albúmina/creatinina en orina",
+    "UACR",
+    "Relación Albúmina/Creatinina en Orina (UACR)",
+    "Urine Albumin-to-Creatinine Ratio",
+    "Relación albúmina/creatinina (RAC)"
+   ],
+   "reglas": [
+    "COND-M2-NE-001",
+    "COND-M2-NE-002",
+    "COND-M2-NE-006",
+    "COND-M2-NE-A02"
+   ]
+  },
+  "uric_acid": {
+   "nombre": "Ácido úrico",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Ácido úrico",
+    "Uricemia",
+    "AU",
+    "Uric Acid"
+   ],
+   "reglas": [
+    "COND-M6-RE-001"
+   ]
+  },
+  "urinalysis": {
+   "nombre": "Uroanálisis",
+   "unidad": "por campo (ver D)",
+   "panel": "estándar",
+   "nivel": "con patrón (hematíes) y solo valor (resto de campos)",
+   "sinonimos": [
+    "Uroanálisis",
+    "Parcial de orina",
+    "Examen general de orina",
+    "Citoquímico de orina",
+    "Orina completa",
+    "Urinalysis"
+   ],
+   "reglas": [
+    "COND-M2-NE-006",
+    "COND-M4-IN-A01",
+    "SEG-013"
+   ]
+  },
+  "vitamin_a": {
+   "nombre": "Vitamina A (retinol sérico)",
+   "unidad": "µg/dL",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Vitamina A",
+    "Retinol",
+    "Retinol sérico",
+    "Vit A"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "vitamin_b1": {
+   "nombre": "Vitamina B1 (Tiamina)",
+   "unidad": "nmol/L",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Vitamina B1",
+    "Tiamina",
+    "Vitamina B1 (Tiamina)",
+    "B1 / TDP",
+    "Vitamin B1 (Thiamine)"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "vitamin_b12": {
+   "nombre": "Vitamina B12",
+   "unidad": "pg/mL",
+   "panel": "estándar",
+   "nivel": "vitamina con patrón",
+   "sinonimos": [
+    "Vitamina B12",
+    "Cobalamina",
+    "Cianocobalamina",
+    "B12",
+    "Vitamin B12 (Cobalamin)"
+   ],
+   "reglas": [
+    "COND-M3-HE-004",
+    "COND-M3-NU-001"
+   ]
+  },
+  "vitamin_b6": {
+   "nombre": "Vitamina B6 (PLP)",
+   "unidad": "µg/L",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Vitamina B6",
+    "Piridoxal 5-fosfato",
+    "PLP",
+    "Vitamina B6 (PLP)",
+    "Vitamina B6 (Piridoxal-5-Fosfato)",
+    "B6 / PLP",
+    "Vitamin B6 (Pyridoxal 5-Phosphate)"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "vitamin_c": {
+   "nombre": "Vitamina C (ácido ascórbico)",
+   "unidad": "mg/dL",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Vitamina C",
+    "Ácido ascórbico",
+    "Ascorbato",
+    "Vit C"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "vitamin_d": {
+   "nombre": "25-Hidroxivitamina D",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "25-hidroxivitamina D",
+    "25-OH vitamina D",
+    "Vitamina D total",
+    "Vitamina D",
+    "25-Hidroxivitamina D",
+    "25-OH Vitamina D",
+    "25(OH)D",
+    "25-Hydroxyvitamin D"
+   ],
+   "reglas": [
+    "COND-M3-NU-A02",
+    "COND-M3-NU-A03"
+   ]
+  },
+  "vitamin_e": {
+   "nombre": "Vitamina E (alfa-tocoferol)",
+   "unidad": "mg/L",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Vitamina E",
+    "Alfa-tocoferol",
+    "Tocoferol",
+    "Vit E"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "vitamin_k1": {
+   "nombre": "Vitamina K1 (filoquinona)",
+   "unidad": "ng/mL",
+   "panel": "estándar",
+   "nivel": "vitamina",
+   "sinonimos": [
+    "Vitamina K1",
+    "Filoquinona",
+    "Vitamina K",
+    "Phylloquinone"
+   ],
+   "reglas": [
+    "COND-M3-NU-A04"
+   ]
+  },
+  "wbc": {
+   "nombre": "Leucocitos (conteo total)",
+   "unidad": "x10³/µL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "Recuento de leucocitos",
+    "Leucocitos",
+    "Glóbulos blancos",
+    "WBC",
+    "Leucocitos (conteo total)",
+    "WBC / Leucocitos",
+    "White Blood Cell Count (Total)"
+   ],
+   "reglas": [
+    "COND-M3-HE-A02",
+    "COND-M3-HE-A03",
+    "COND-M6-MI-A02"
+   ]
+  },
+  "zinc": {
+   "nombre": "Zinc Sérico",
+   "unidad": "µg/dL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango",
+   "sinonimos": [
+    "Zinc",
+    "Zn",
+    "Zinc Sérico",
+    "Serum Zinc"
+   ],
+   "reglas": [
+    "SEG-014"
+   ]
+  }
+ },
+ "condiciones": {
+  "COND-M1-CA-001": {
+   "id": "COND-M1-CA-001",
+   "nombre": "Dislipidemia aterogénica",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1",
+   "usa": [
+    "hdl_c",
+    "ldl_c",
+    "non_hdl_c",
+    "triglycerides"
+   ]
+  },
+  "COND-M1-CA-002": {
+   "id": "COND-M1-CA-002",
+   "nombre": "Hipercolesterolemia severa o sospecha de hipercolesterolemia familiar",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": [
+    "ldl_c"
+   ]
+  },
+  "COND-M1-CA-003": {
+   "id": "COND-M1-CA-003",
+   "nombre": "Hipertrigliceridemia",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "triglycerides"
+   ]
+  },
+  "COND-M1-CA-004": {
+   "id": "COND-M1-CA-004",
+   "nombre": "Lipoproteína(a) elevada",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1",
+   "usa": [
+    "lpa"
+   ]
+  },
+  "COND-M1-CA-005": {
+   "id": "COND-M1-CA-005",
+   "nombre": "Riesgo cardiovascular global elevado",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1, 2",
+   "usa": [
+    "hdl_c",
+    "total_cholesterol"
+   ]
+  },
+  "COND-M1-CA-006": {
+   "id": "COND-M1-CA-006",
+   "nombre": "Hipertensión arterial o presión elevada (sospecha)",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "1, 2, 3",
+   "usa": []
+  },
+  "COND-M1-CA-007": {
+   "id": "COND-M1-CA-007",
+   "nombre": "Riesgo de insuficiencia cardíaca en personas con diabetes",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "2",
+   "usa": [
+    "nt_probnp"
+   ]
+  },
+  "COND-M1-CA-A01": {
+   "id": "COND-M1-CA-A01",
+   "nombre": "Discordancia ApoB / LDL",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "apob",
+    "ldl_c",
+    "triglycerides"
+   ]
+  },
+  "COND-M1-CA-A02": {
+   "id": "COND-M1-CA-A02",
+   "nombre": "Inflamación de bajo grado",
+   "modulo": "M1",
+   "esp": "cardiologia",
+   "tipo": "apoyo",
+   "det": "D3",
+   "esc": "modifica",
+   "usa": [
+    "hs_crp"
+   ]
+  },
+  "COND-M1-EM-001": {
+   "id": "COND-M1-EM-001",
+   "nombre": "Prediabetes",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1",
+   "usa": [
+    "glucose",
+    "hba1c"
+   ]
+  },
+  "COND-M1-EM-002": {
+   "id": "COND-M1-EM-002",
+   "nombre": "Diabetes tipo 2 en rango diagnóstico",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2, 3",
+   "usa": [
+    "glucose",
+    "hba1c"
+   ]
+  },
+  "COND-M1-EM-003": {
+   "id": "COND-M1-EM-003",
+   "nombre": "Síndrome metabólico",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1",
+   "usa": [
+    "glucose",
+    "hdl_c",
+    "triglycerides"
+   ]
+  },
+  "COND-M1-EM-004": {
+   "id": "COND-M1-EM-004",
+   "nombre": "Obesidad y sobrepeso",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1, 2",
+   "usa": []
+  },
+  "COND-M1-EM-005": {
+   "id": "COND-M1-EM-005",
+   "nombre": "Glucosa baja en ayunas",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "1, 2, 3",
+   "usa": [
+    "glucose"
+   ]
+  },
+  "COND-M1-EM-A01": {
+   "id": "COND-M1-EM-A01",
+   "nombre": "Riesgo alto de diabetes por FINDRISC",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "apoyo",
+   "det": "D2",
+   "esc": "modifica",
+   "usa": []
+  },
+  "COND-M1-EM-A02": {
+   "id": "COND-M1-EM-A02",
+   "nombre": "Resistencia a la insulina por HOMA-IR",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "homa_ir",
+    "insulin"
+   ]
+  },
+  "COND-M2-NE-001": {
+   "id": "COND-M2-NE-001",
+   "nombre": "Enfermedad renal crónica (sospecha y estadio)",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "egfr",
+    "uacr"
+   ]
+  },
+  "COND-M2-NE-002": {
+   "id": "COND-M2-NE-002",
+   "nombre": "Albuminuria con TFG normal",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "egfr",
+    "uacr"
+   ]
+  },
+  "COND-M2-NE-003": {
+   "id": "COND-M2-NE-003",
+   "nombre": "Daño renal asociado a diabetes o hipertensión",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": []
+  },
+  "COND-M2-NE-004": {
+   "id": "COND-M2-NE-004",
+   "nombre": "Potasio alto",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "potassium"
+   ]
+  },
+  "COND-M2-NE-005": {
+   "id": "COND-M2-NE-005",
+   "nombre": "Sodio bajo",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "sodium",
+    "total_protein",
+    "triglycerides"
+   ]
+  },
+  "COND-M2-NE-006": {
+   "id": "COND-M2-NE-006",
+   "nombre": "Hematuria microscópica",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "egfr",
+    "uacr"
+   ]
+  },
+  "COND-M2-NE-A01": {
+   "id": "COND-M2-NE-A01",
+   "nombre": "Potasio bajo",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "potassium"
+   ]
+  },
+  "COND-M2-NE-A02": {
+   "id": "COND-M2-NE-A02",
+   "nombre": "Confirmación de TFG con cistatina C",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "egfr",
+    "uacr"
+   ]
+  },
+  "COND-M2-NE-A03": {
+   "id": "COND-M2-NE-A03",
+   "nombre": "Bicarbonato bajo",
+   "modulo": "M2",
+   "esp": "nefrologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "bicarbonate"
+   ]
+  },
+  "COND-M2-TI-001": {
+   "id": "COND-M2-TI-001",
+   "nombre": "Hipotiroidismo subclínico",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "free_t4",
+    "tsh"
+   ]
+  },
+  "COND-M2-TI-002": {
+   "id": "COND-M2-TI-002",
+   "nombre": "Hipotiroidismo primario",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2",
+   "usa": [
+    "free_t4",
+    "tsh"
+   ]
+  },
+  "COND-M2-TI-003": {
+   "id": "COND-M2-TI-003",
+   "nombre": "Sospecha de hipotiroidismo central",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2",
+   "usa": [
+    "free_t4",
+    "tsh"
+   ]
+  },
+  "COND-M2-TI-004": {
+   "id": "COND-M2-TI-004",
+   "nombre": "Hipertiroidismo subclínico",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "free_t3",
+    "free_t4",
+    "tsh"
+   ]
+  },
+  "COND-M2-TI-005": {
+   "id": "COND-M2-TI-005",
+   "nombre": "Hipertiroidismo manifiesto o T3-toxicosis",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2, 3",
+   "usa": [
+    "free_t3",
+    "free_t4",
+    "tsh"
+   ]
+  },
+  "COND-M2-TI-006": {
+   "id": "COND-M2-TI-006",
+   "nombre": "Disfunción tiroidea en el embarazo",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": [
+    "free_t4",
+    "tsh"
+   ]
+  },
+  "COND-M2-TI-007": {
+   "id": "COND-M2-TI-007",
+   "nombre": "Hiperparatiroidismo primario",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2, 3",
+   "usa": [
+    "pth"
+   ]
+  },
+  "COND-M2-TI-008": {
+   "id": "COND-M2-TI-008",
+   "nombre": "Hiperaldosteronismo primario (tamizaje en hipertensos)",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": [
+    "aldosterone",
+    "renin"
+   ]
+  },
+  "COND-M2-TI-A01": {
+   "id": "COND-M2-TI-A01",
+   "nombre": "Autoinmunidad tiroidea",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "anti_tg",
+    "anti_tpo"
+   ]
+  },
+  "COND-M3-HE-001": {
+   "id": "COND-M3-HE-001",
+   "nombre": "Anemia ajustada por altitud y tabaquismo",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1, 2, 3",
+   "usa": []
+  },
+  "COND-M3-HE-002": {
+   "id": "COND-M3-HE-002",
+   "nombre": "Anemia por déficit de hierro",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2",
+   "usa": [
+    "ferritin",
+    "hs_crp",
+    "mcv",
+    "rdw",
+    "transferrin_saturation"
+   ]
+  },
+  "COND-M3-HE-003": {
+   "id": "COND-M3-HE-003",
+   "nombre": "Déficit de hierro sin anemia",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "ferritin",
+    "hs_crp"
+   ]
+  },
+  "COND-M3-HE-004": {
+   "id": "COND-M3-HE-004",
+   "nombre": "Anemia por déficit de B12 o folato",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2",
+   "usa": [
+    "folate",
+    "mcv",
+    "vitamin_b12"
+   ]
+  },
+  "COND-M3-HE-005": {
+   "id": "COND-M3-HE-005",
+   "nombre": "Plaquetas bajas",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "platelets"
+   ]
+  },
+  "COND-M3-HE-006": {
+   "id": "COND-M3-HE-006",
+   "nombre": "Posible sobrecarga de hierro",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "2",
+   "usa": [
+    "ferritin",
+    "hs_crp",
+    "transferrin_saturation"
+   ]
+  },
+  "COND-M3-HE-A01": {
+   "id": "COND-M3-HE-A01",
+   "nombre": "Anemia con perfil inflamatorio",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "apoyo",
+   "det": "D3",
+   "esc": "modifica",
+   "usa": [
+    "ferritin",
+    "hs_crp",
+    "transferrin_saturation"
+   ]
+  },
+  "COND-M3-HE-A02": {
+   "id": "COND-M3-HE-A02",
+   "nombre": "Leucocitos, neutrófilos o linfocitos fuera de rango",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "lymphocytes_abs",
+    "neutrophils_abs",
+    "wbc"
+   ]
+  },
+  "COND-M3-HE-A03": {
+   "id": "COND-M3-HE-A03",
+   "nombre": "Eosinofilia",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "eosinophils_pct",
+    "wbc"
+   ]
+  },
+  "COND-M3-NU-001": {
+   "id": "COND-M3-NU-001",
+   "nombre": "Déficit de vitamina B12",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1, 2",
+   "usa": [
+    "methylmalonic_acid",
+    "vitamin_b12"
+   ]
+  },
+  "COND-M3-NU-002": {
+   "id": "COND-M3-NU-002",
+   "nombre": "Déficit de folato",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "folate"
+   ]
+  },
+  "COND-M3-NU-A01": {
+   "id": "COND-M3-NU-A01",
+   "nombre": "Homocisteína alta",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "homocysteine"
+   ]
+  },
+  "COND-M3-NU-A02": {
+   "id": "COND-M3-NU-A02",
+   "nombre": "PTH alta con calcio normal",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "apoyo",
+   "det": "D3",
+   "esc": "1",
+   "usa": [
+    "egfr",
+    "pth",
+    "vitamin_d"
+   ]
+  },
+  "COND-M3-NU-A03": {
+   "id": "COND-M3-NU-A03",
+   "nombre": "Vitamina D baja",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "0, 1",
+   "usa": [
+    "vitamin_d"
+   ]
+  },
+  "COND-M3-NU-A04": {
+   "id": "COND-M3-NU-A04",
+   "nombre": "Vitaminas informativas",
+   "modulo": "M3",
+   "esp": "nutricion_y_micronutrientes",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "—",
+   "usa": [
+    "biotin",
+    "coq10",
+    "niacin",
+    "omega3_index",
+    "omega6_omega3_ratio",
+    "vitamin_a",
+    "vitamin_b1",
+    "vitamin_b6",
+    "vitamin_c",
+    "vitamin_e",
+    "vitamin_k1"
+   ]
+  },
+  "COND-M4-GA-001": {
+   "id": "COND-M4-GA-001",
+   "nombre": "Riesgo de fibrosis por hígado graso metabólico (FIB-4)",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1, 2",
+   "usa": []
+  },
+  "COND-M4-GA-002": {
+   "id": "COND-M4-GA-002",
+   "nombre": "Alteración hepatocelular",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "alt",
+    "ast"
+   ]
+  },
+  "COND-M4-GA-003": {
+   "id": "COND-M4-GA-003",
+   "nombre": "Alteración colestásica",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "alp",
+    "bilirubin_direct",
+    "ggt"
+   ]
+  },
+  "COND-M4-GA-004": {
+   "id": "COND-M4-GA-004",
+   "nombre": "Sangre oculta en heces positiva",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "2",
+   "usa": [
+    "fit_stool"
+   ]
+  },
+  "COND-M4-GA-005": {
+   "id": "COND-M4-GA-005",
+   "nombre": "Infección por H. pylori",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2",
+   "usa": [
+    "hpylori_stool_ag"
+   ]
+  },
+  "COND-M4-GA-006": {
+   "id": "COND-M4-GA-006",
+   "nombre": "Enfermedad celíaca (prueba dirigida)",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "2",
+   "usa": [
+    "anti_ttg_iga",
+    "iga"
+   ]
+  },
+  "COND-M4-GA-A01": {
+   "id": "COND-M4-GA-A01",
+   "nombre": "Bilirrubina indirecta elevada aislada",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "—",
+   "usa": [
+    "bilirubin_direct",
+    "bilirubin_total"
+   ]
+  },
+  "COND-M4-GA-A02": {
+   "id": "COND-M4-GA-A02",
+   "nombre": "Alteración hepática con consumo de alcohol",
+   "modulo": "M4",
+   "esp": "gastroenterologia_hepatologia",
+   "tipo": "apoyo",
+   "det": "D2",
+   "esc": "modifica",
+   "usa": [
+    "ggt"
+   ]
+  },
+  "COND-M4-IN-001": {
+   "id": "COND-M4-IN-001",
+   "nombre": "Hepatitis C",
+   "modulo": "M4",
+   "esp": "infectologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "2",
+   "usa": [
+    "anti_hcv",
+    "hcv_rna"
+   ]
+  },
+  "COND-M4-IN-002": {
+   "id": "COND-M4-IN-002",
+   "nombre": "Hepatitis B y estado frente a la vacuna",
+   "modulo": "M4",
+   "esp": "infectologia",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "—",
+   "usa": []
+  },
+  "COND-M4-IN-003": {
+   "id": "COND-M4-IN-003",
+   "nombre": "Enfermedad de Chagas crónica",
+   "modulo": "M4",
+   "esp": "infectologia",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": [
+    "chagas_elisa_recombinante",
+    "chagas_elisa_total"
+   ]
+  },
+  "COND-M4-IN-A01": {
+   "id": "COND-M4-IN-A01",
+   "nombre": "Infección urinaria con síntomas",
+   "modulo": "M4",
+   "esp": "infectologia",
+   "tipo": "apoyo",
+   "det": "D2",
+   "esc": "1",
+   "usa": []
+  },
+  "COND-M4-IN-A02": {
+   "id": "COND-M4-IN-A02",
+   "nombre": "Parasitosis intestinal",
+   "modulo": "M4",
+   "esp": "infectologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "0, 1",
+   "usa": []
+  },
+  "COND-M5-MU-001": {
+   "id": "COND-M5-MU-001",
+   "nombre": "Andrógenos altos (posible SOP)",
+   "modulo": "M5",
+   "esp": "salud_de_la_mujer",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "1, 2",
+   "usa": [
+    "testosterone_total"
+   ]
+  },
+  "COND-M5-MU-002": {
+   "id": "COND-M5-MU-002",
+   "nombre": "FSH alta en menores de 40 años",
+   "modulo": "M5",
+   "esp": "salud_de_la_mujer",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "2",
+   "usa": [
+    "fsh"
+   ]
+  },
+  "COND-M5-MU-003": {
+   "id": "COND-M5-MU-003",
+   "nombre": "Prolactina alta",
+   "modulo": "M5",
+   "esp": "salud_de_la_mujer",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "0, 1, 2",
+   "usa": [
+    "macroprolactin",
+    "prolactin"
+   ]
+  },
+  "COND-M5-MU-A01": {
+   "id": "COND-M5-MU-A01",
+   "nombre": "Anemia en el embarazo",
+   "modulo": "M5",
+   "esp": "salud_de_la_mujer",
+   "tipo": "apoyo",
+   "det": "D2",
+   "esc": "modifica",
+   "usa": []
+  },
+  "COND-M5-UR-001": {
+   "id": "COND-M5-UR-001",
+   "nombre": "PSA elevado",
+   "modulo": "M5",
+   "esp": "urologia_y_salud_del_hombre",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "1, 2",
+   "usa": [
+    "psa_total"
+   ]
+  },
+  "COND-M5-UR-002": {
+   "id": "COND-M5-UR-002",
+   "nombre": "Testosterona baja",
+   "modulo": "M5",
+   "esp": "urologia_y_salud_del_hombre",
+   "tipo": "incluida",
+   "det": "D3",
+   "esc": "1, 2",
+   "usa": [
+    "testosterone_total"
+   ]
+  },
+  "COND-M5-UR-A01": {
+   "id": "COND-M5-UR-A01",
+   "nombre": "Testosterona libre calculada",
+   "modulo": "M5",
+   "esp": "urologia_y_salud_del_hombre",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": []
+  },
+  "COND-M5-UR-A02": {
+   "id": "COND-M5-UR-A02",
+   "nombre": "Relación PSA libre / total",
+   "modulo": "M5",
+   "esp": "urologia_y_salud_del_hombre",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": []
+  },
+  "COND-M6-MI-001": {
+   "id": "COND-M6-MI-001",
+   "nombre": "Riesgo de desnutrición",
+   "modulo": "M6",
+   "esp": "medicina_interna_y_envejecimiento",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "1, 2",
+   "usa": [
+    "hs_crp"
+   ]
+  },
+  "COND-M6-MI-A01": {
+   "id": "COND-M6-MI-A01",
+   "nombre": "Lectura por edad del panel",
+   "modulo": "M6",
+   "esp": "medicina_interna_y_envejecimiento",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "—",
+   "usa": []
+  },
+  "COND-M6-MI-A02": {
+   "id": "COND-M6-MI-A02",
+   "nombre": "Edad biológica (PhenoAge)",
+   "modulo": "M6",
+   "esp": "medicina_interna_y_envejecimiento",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "0",
+   "usa": [
+    "phenoage",
+    "rdw"
+   ]
+  },
+  "COND-M6-RE-001": {
+   "id": "COND-M6-RE-001",
+   "nombre": "Ácido úrico alto sin síntomas",
+   "modulo": "M6",
+   "esp": "reumatologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1",
+   "usa": [
+    "uric_acid"
+   ]
+  },
+  "COND-M6-RE-A01": {
+   "id": "COND-M6-RE-A01",
+   "nombre": "ANA positivo",
+   "modulo": "M6",
+   "esp": "reumatologia",
+   "tipo": "apoyo",
+   "det": "D3",
+   "esc": "1, 2",
+   "usa": [
+    "ana_hep2"
+   ]
+  },
+  "COND-M6-RE-A02": {
+   "id": "COND-M6-RE-A02",
+   "nombre": "VSG alta",
+   "modulo": "M6",
+   "esp": "reumatologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "1, 2",
+   "usa": [
+    "esr",
+    "hs_crp"
+   ]
+  }
+ },
+ "seguridad": {
+  "SEG-000": {
+   "id": "SEG-000",
+   "nombre": "Regla general para solo valor y rango",
+   "usa": []
+  },
+  "SEG-001": {
+   "id": "SEG-001",
+   "nombre": "Troponina de alta sensibilidad",
+   "usa": [
+    "hs_troponin"
+   ]
+  },
+  "SEG-002": {
+   "id": "SEG-002",
+   "nombre": "Cortisol y ACTH",
+   "usa": [
+    "acth",
+    "cortisol"
+   ]
+  },
+  "SEG-003": {
+   "id": "SEG-003",
+   "nombre": "IGF-1",
+   "usa": [
+    "igf1"
+   ]
+  },
+  "SEG-004": {
+   "id": "SEG-004",
+   "nombre": "Osmolalidad",
+   "usa": [
+    "osmolality"
+   ]
+  },
+  "SEG-005": {
+   "id": "SEG-005",
+   "nombre": "Eritroblastos circulantes",
+   "usa": [
+    "nrbc"
+   ]
+  },
+  "SEG-006": {
+   "id": "SEG-006",
+   "nombre": "Coagulación",
+   "usa": [
+    "fibrinogen",
+    "inr",
+    "platelets",
+    "pt"
+   ]
+  },
+  "SEG-007": {
+   "id": "SEG-007",
+   "nombre": "Músculo y tejidos",
+   "usa": [
+    "ck_cpk",
+    "ldh"
+   ]
+  },
+  "SEG-008": {
+   "id": "SEG-008",
+   "nombre": "Electrolitos sin condición",
+   "usa": [
+    "chloride",
+    "magnesium",
+    "phosphorus"
+   ]
+  },
+  "SEG-009": {
+   "id": "SEG-009",
+   "nombre": "Proteínas e inmunoglobulinas",
+   "usa": [
+    "ag_ratio",
+    "globulin",
+    "igg",
+    "igm",
+    "total_protein"
+   ]
+  },
+  "SEG-010": {
+   "id": "SEG-010",
+   "nombre": "Metabolismo sin condición",
+   "usa": [
+    "c_peptide",
+    "fructosamine",
+    "nt_probnp"
+   ]
+  },
+  "SEG-011": {
+   "id": "SEG-011",
+   "nombre": "Hormonas sin condición",
+   "usa": [
+    "dhea_s",
+    "estradiol",
+    "lh",
+    "progesterone"
+   ]
+  },
+  "SEG-012": {
+   "id": "SEG-012",
+   "nombre": "Hemograma sin condición",
+   "usa": [
+    "basophils_pct",
+    "erythrocytes",
+    "hematocrit",
+    "mch",
+    "mchc",
+    "monocytes_pct",
+    "mpv"
+   ]
+  },
+  "SEG-013": {
+   "id": "SEG-013",
+   "nombre": "Orina y heces sin condición",
+   "usa": [
+    "stool_mucus",
+    "stool_visible_blood",
+    "urinalysis_bilirubin",
+    "urinalysis_glucose",
+    "urinalysis_ketones",
+    "urinalysis_protein",
+    "urinalysis_urobilinogen"
+   ]
+  },
+  "SEG-014": {
+   "id": "SEG-014",
+   "nombre": "Contexto cardiovascular y nutricional",
+   "usa": [
+    "apoa1",
+    "apob_apoa1_ratio",
+    "bun",
+    "bun_creatinine_ratio",
+    "remnant_cholesterol",
+    "tc_hdl_ratio",
+    "transferrin",
+    "zinc"
+   ]
+  }
+ }
+}

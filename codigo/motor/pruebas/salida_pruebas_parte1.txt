@@ -1,0 +1,4 @@
+E2E-01 resumen de clases: {'en_rango': 102, 'alto': 11, 'bajo': 3, 'solo_valor': 10, 'alterado': 1}
+E2E-02 resumen de clases: {'bajo': 8, 'en_rango': 110, 'alto': 6, 'no_interpretable': 2, 'alterado': 1, 'solo_valor': 10}
+
+Pasan 90 de 90 comprobaciones

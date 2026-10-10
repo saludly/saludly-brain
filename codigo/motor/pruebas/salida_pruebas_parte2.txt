@@ -1,0 +1,2 @@
+Casos unitarios estructurados: 69 + 4 validaciones de SCORE2 contra el artículo
+Pasan 167 de 167 comprobaciones

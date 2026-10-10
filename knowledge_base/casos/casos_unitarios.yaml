@@ -1,0 +1,3016 @@
+- id: COND-M1-CA-001#01
+  ficha: COND-M1-CA-001
+  caso: Positivo · PDF hombre 46 años
+  datos: LDL 142, colesterol total 228, HDL 36 (no-HDL 192), triglicéridos 238
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-001#02
+  ficha: COND-M1-CA-001
+  caso: Positivo moderado · PDF mujer 34 años
+  datos: LDL 136, colesterol total 214, HDL 58 (no-HDL 156)
+  esperado: Activa, coincidencia moderada, escalamiento 1
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-001#03
+  ficha: COND-M1-CA-001
+  caso: Negativo
+  datos: LDL 110, colesterol total 185, HDL 50 (no-HDL 135)
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-001#04
+  ficha: COND-M1-CA-001
+  caso: Vigilar
+  datos: LDL 120, no-HDL 150, HDL 35 (hombre), triglicéridos 210
+  esperado: No activa como condición; se muestra como "vigilar"
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-002#01
+  ficha: COND-M1-CA-002
+  caso: Positivo alto
+  datos: LDL 205, padre con infarto a los 50 años
+  esperado: Activa, coincidencia alta, escalamiento 2; desplaza a CA-001
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-002#02
+  ficha: COND-M1-CA-002
+  caso: Positivo moderado
+  datos: LDL 196, sin dato de antecedente
+  esperado: Activa, coincidencia moderada, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-002#03
+  ficha: COND-M1-CA-002
+  caso: Negativo
+  datos: LDL 175
+  esperado: No activa (CA-001 sí puede activarse)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-002#04
+  ficha: COND-M1-CA-002
+  caso: Con confusor
+  datos: LDL 198, TSH 9,5
+  esperado: Activa; la vista médica muestra hipotiroidismo como posible causa secundaria
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-003#01
+  ficha: COND-M1-CA-003
+  caso: Positivo · PDF hombre 46 años
+  datos: Triglicéridos 238, ayuno 11 h
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-003#02
+  ficha: COND-M1-CA-003
+  caso: Muy alto
+  datos: Triglicéridos 620, ayuno 10 h
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-003#03
+  ficha: COND-M1-CA-003
+  caso: Severo
+  datos: Triglicéridos 1.150
+  esperado: Activa, escalamiento 2, frase de triglicéridos severos
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-003#04
+  ficha: COND-M1-CA-003
+  caso: Sin ayuno
+  datos: Triglicéridos 260, ayuno 4 h
+  esperado: No interpretable; no activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-003#05
+  ficha: COND-M1-CA-003
+  caso: Negativo · PDF mujer 34 años
+  datos: Triglicéridos 98
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-004#01
+  ficha: COND-M1-CA-004
+  caso: Positivo · PDF mujer 34 años
+  datos: Lp(a) 64 mg/dL
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-004#02
+  ficha: COND-M1-CA-004
+  caso: Negativo · PDF hombre 46 años
+  datos: Lp(a) 18 mg/dL
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-004#03
+  ficha: COND-M1-CA-004
+  caso: Unidad nmol/L
+  datos: Lp(a) 140 nmol/L
+  esperado: Activa; la vista médica menciona también el corte ACC/AHA
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-004#04
+  ficha: COND-M1-CA-004
+  caso: Sin unidad
+  datos: Lp(a) 70, unidad vacía
+  esperado: No interpretable; no activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-005#01
+  ficha: COND-M1-CA-005
+  caso: Incompleto · PDF hombre 46 años sin datos de la enfermera
+  datos: Edad 46, colesterol 228, HDL 36; falta presión y tabaquismo
+  esperado: No se calcula; se listan los factores y lo que falta
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-005#02
+  ficha: COND-M1-CA-005
+  caso: Bajo · PDF hombre 46 años con datos de la enfermera
+  datos: Presión 128, no fumador, colesterol 228, HDL 36
+  esperado: 2,2 %, bajo a moderado; no activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-005#03
+  ficha: COND-M1-CA-005
+  caso: Fuera de edad · PDF mujer 34 años
+  datos: Edad 34
+  esperado: No se calcula; se muestran factores sin porcentaje
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-005#04
+  ficha: COND-M1-CA-005
+  caso: Con diabetes
+  datos: Edad 58, HbA1c 7,1
+  esperado: No se calcula; la vista médica lo explica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-005#05
+  ficha: COND-M1-CA-005
+  caso: Muy alto
+  datos: Hombre 62 años, presión 152, fumador, colesterol 245, HDL 38
+  esperado: 13,1 % (21,5 % antes de recalibrar), muy alto, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-006#01
+  ficha: COND-M1-CA-006
+  caso: Positivo grado 1
+  datos: Promedio 134/84, sin automonitoreo
+  esperado: Activa, coincidencia moderada, escalamiento 1; activa aldosterona y renina
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-006#02
+  ficha: COND-M1-CA-006
+  caso: Positivo grado 2 con confirmación
+  datos: Promedio 146/92; Apple Health con promedio de 7 días 141/89
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-006#03
+  ficha: COND-M1-CA-006
+  caso: Severa
+  datos: Promedio 184/112
+  esperado: Activa, escalamiento 3, llamada el mismo día
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-006#04
+  ficha: COND-M1-CA-006
+  caso: Negativo
+  datos: Promedio 118/76
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-006#05
+  ficha: COND-M1-CA-006
+  caso: Hipertensión conocida
+  datos: Promedio 138/86, toma antihipertensivo
+  esperado: No activa como detección; la vista médica muestra control
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-007#01
+  ficha: COND-M1-CA-007
+  caso: Positivo
+  datos: HbA1c 7,2, glucosa 148, NT-proBNP 210
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-007#02
+  ficha: COND-M1-CA-007
+  caso: Con confusor
+  datos: Diabetes conocida, NT-proBNP 180, TFG 48
+  esperado: Activa, coincidencia moderada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-007#03
+  ficha: COND-M1-CA-007
+  caso: Negativo
+  datos: Diabetes conocida, NT-proBNP 60
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-007#04
+  ficha: COND-M1-CA-007
+  caso: Sin diabetes
+  datos: Sin diabetes; la prueba no se pidió
+  esperado: No aplica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A01#01
+  ficha: COND-M1-CA-A01
+  caso: Positivo
+  datos: ApoB 138, LDL 118, triglicéridos 240
+  esperado: Activa como apoyo destacado
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A01#02
+  ficha: COND-M1-CA-A01
+  caso: Negativo · PDF hombre 46 años
+  datos: ApoB 118, LDL 142
+  esperado: 'No activa (no hay discordancia: ambos altos)'
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A01#03
+  ficha: COND-M1-CA-A01
+  caso: Negativo
+  datos: ApoB 95, LDL 110
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A02#01
+  ficha: COND-M1-CA-A02
+  caso: Positivo · PDF hombre 46 años
+  datos: hs-CRP 3,4, sin infección declarada
+  esperado: Activa como apoyo, a confirmar
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A02#02
+  ficha: COND-M1-CA-A02
+  caso: Con confusor
+  datos: hs-CRP 4,1, infección respiratoria hace 1 semana
+  esperado: No activa; se sugiere repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A02#03
+  ficha: COND-M1-CA-A02
+  caso: Proceso agudo
+  datos: hs-CRP 18
+  esperado: No activa; se sugiere repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-CA-A02#04
+  ficha: COND-M1-CA-A02
+  caso: Negativo · PDF mujer 34 años
+  datos: hs-CRP 0,8
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-001#01
+  ficha: COND-M1-EM-001
+  caso: Positivo · PDF hombre 46 años
+  datos: Glucosa 112, HbA1c 6,0, ayuno 11 h
+  esperado: Activa, coincidencia alta, escalamiento 1; HOMA-IR 5,5 como apoyo
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-001#02
+  ficha: COND-M1-EM-001
+  caso: Positivo moderado
+  datos: Glucosa 94, HbA1c 5,9
+  esperado: Activa, coincidencia moderada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-001#03
+  ficha: COND-M1-EM-001
+  caso: Negativo · PDF mujer 34 años
+  datos: Glucosa 86, HbA1c 5,2
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-001#04
+  ficha: COND-M1-EM-001
+  caso: Con anemia
+  datos: Glucosa 92, HbA1c 5,8, hemoglobina 10,9
+  esperado: 'Activa con coincidencia baja ("vigilar"): la HbA1c pierde confianza con anemia'
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-001#05
+  ficha: COND-M1-EM-001
+  caso: Diabetes
+  datos: Glucosa 131, HbA1c 6,7
+  esperado: No activa (manda EM-002)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-002#01
+  ficha: COND-M1-EM-002
+  caso: Positivo alto
+  datos: Glucosa 138, HbA1c 6,9
+  esperado: Activa, coincidencia alta, escalamiento 2; activa NT-proBNP
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-002#02
+  ficha: COND-M1-EM-002
+  caso: Positivo moderado
+  datos: Glucosa 128, HbA1c 6,1
+  esperado: Activa, coincidencia moderada, frase de repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-002#03
+  ficha: COND-M1-EM-002
+  caso: Negativo · PDF hombre 46 años
+  datos: Glucosa 112, HbA1c 6,0
+  esperado: No activa (manda EM-001)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-002#04
+  ficha: COND-M1-EM-002
+  caso: Diabetes conocida
+  datos: Glucosa 150, HbA1c 7,4, metformina
+  esperado: No activa como detección; vista médica de control
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-003#01
+  ficha: COND-M1-EM-003
+  caso: Positivo moderado · PDF hombre 46 años sin datos de la enfermera
+  datos: Triglicéridos 238, HDL 36, glucosa 112; falta cintura y presión
+  esperado: Activa con 3 de 5, coincidencia moderada; dice que faltan cintura y presión
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-003#02
+  ficha: COND-M1-EM-003
+  caso: Positivo alto
+  datos: Lo anterior más cintura 98 cm y presión 128/82
+  esperado: Activa con 4 de 5, coincidencia alta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-003#03
+  ficha: COND-M1-EM-003
+  caso: Incompleto
+  datos: Triglicéridos 170, HDL 52 (hombre), glucosa 92; falta cintura y presión
+  esperado: No activa; se marca incompleto
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-003#04
+  ficha: COND-M1-EM-003
+  caso: Negativo · PDF mujer 34 años
+  datos: Triglicéridos 98, HDL 58, glucosa 86; cintura 74, presión 112/70
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-004#01
+  ficha: COND-M1-EM-004
+  caso: Obesidad
+  datos: Peso 92 kg, talla 1,75 m (IMC 30,0), cintura 104 cm, hombre
+  esperado: Activa como obesidad con adiposidad central, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-004#02
+  ficha: COND-M1-EM-004
+  caso: Sobrepeso
+  datos: Peso 70 kg, talla 1,62 m (IMC 26,7)
+  esperado: Activa como sobrepeso, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-004#03
+  ficha: COND-M1-EM-004
+  caso: Clase 3
+  datos: Peso 118 kg, talla 1,68 m (IMC 41,8)
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-004#04
+  ficha: COND-M1-EM-004
+  caso: Negativo
+  datos: Peso 63 kg, talla 1,68 m (IMC 22,3)
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-004#05
+  ficha: COND-M1-EM-004
+  caso: Sin medida
+  datos: Peso o talla faltante
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-005#01
+  ficha: COND-M1-EM-005
+  caso: Alerta
+  datos: Glucosa 64, tubo con fluoruro, procesada a tiempo
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-005#02
+  ficha: COND-M1-EM-005
+  caso: Significativa confiable
+  datos: Glucosa 50, tubo con fluoruro, a tiempo
+  esperado: Activa, escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-005#03
+  ficha: COND-M1-EM-005
+  caso: Significativa dudosa
+  datos: Glucosa 50, demora de 7 horas sin fluoruro
+  esperado: Activa, coincidencia moderada, escalamiento 2, pide repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-005#04
+  ficha: COND-M1-EM-005
+  caso: Con medicamento
+  datos: Glucosa 66, usa glibenclamida
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-005#05
+  ficha: COND-M1-EM-005
+  caso: Negativo
+  datos: Glucosa 86
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A01#01
+  ficha: COND-M1-EM-A01
+  caso: Refuerza
+  datos: FINDRISC 15, glucosa 108
+  esperado: Refuerza EM-001
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A01#02
+  ficha: COND-M1-EM-A01
+  caso: Vigilar
+  datos: FINDRISC 13, glucosa 88, HbA1c 5,4
+  esperado: Se muestra como vigilar
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A01#03
+  ficha: COND-M1-EM-A01
+  caso: Negativo
+  datos: FINDRISC 7
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A02#01
+  ficha: COND-M1-EM-A02
+  caso: Refuerza · PDF hombre 46 años
+  datos: Glucosa 112, insulina 19,8 (HOMA-IR 5,5)
+  esperado: Refuerza EM-001 y EM-003
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A02#02
+  ficha: COND-M1-EM-A02
+  caso: Vigilar
+  datos: Glucosa 90, insulina 14 (HOMA-IR 3,1), sin condiciones activas
+  esperado: Vigilar en la vista médica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A02#03
+  ficha: COND-M1-EM-A02
+  caso: Negativo · PDF mujer 34 años
+  datos: Glucosa 86, insulina 6,1 (HOMA-IR 1,3)
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M1-EM-A02#04
+  ficha: COND-M1-EM-A02
+  caso: No calculable
+  datos: Usa insulina
+  esperado: No se calcula
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-001#01
+  ficha: COND-M2-NE-001
+  caso: Sospecha G3a
+  datos: TFG 52, albúmina/creatinina 12
+  esperado: Activa, coincidencia moderada, G3a A1, escalamiento 1; activa cistatina C refleja
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-001#02
+  ficha: COND-M2-NE-001
+  caso: Sospecha G3b
+  datos: TFG 38, albúmina/creatinina 80
+  esperado: Activa, G3b A2, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-001#03
+  ficha: COND-M2-NE-001
+  caso: Avanzada
+  datos: TFG 22
+  esperado: Activa, G4, escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-001#04
+  ficha: COND-M2-NE-001
+  caso: No confirmada
+  datos: TFG 55 sin albuminuria; TFG combinada con cistatina 68
+  esperado: Coincidencia baja ("vigilar")
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-001#05
+  ficha: COND-M2-NE-001
+  caso: Negativo · PDF hombre 46 años
+  datos: TFG 96, albúmina/creatinina 45 (una toma)
+  esperado: No activa (pasa a NE-002)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-001#06
+  ficha: COND-M2-NE-001
+  caso: Negativo · PDF mujer 34 años
+  datos: TFG 112, albúmina/creatinina 8
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-002#01
+  ficha: COND-M2-NE-002
+  caso: Positivo · PDF hombre 46 años
+  datos: Albúmina/creatinina 45, TFG 96, una toma
+  esperado: Activa, coincidencia moderada, A2, escalamiento 1
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-002#02
+  ficha: COND-M2-NE-002
+  caso: A3
+  datos: Albúmina/creatinina 420, TFG 88
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-002#03
+  ficha: COND-M2-NE-002
+  caso: Con confusor
+  datos: Albúmina/creatinina 60, ejercicio intenso el día anterior
+  esperado: Activa con coincidencia baja; sugiere repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-002#04
+  ficha: COND-M2-NE-002
+  caso: Negativo · PDF mujer 34 años
+  datos: Albúmina/creatinina 8
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-003#01
+  ficha: COND-M2-NE-003
+  caso: Positivo
+  datos: Diabetes conocida, albúmina/creatinina 85, TFG 74
+  esperado: Activa, coincidencia moderada, A2, escalamiento 2; NE-002 no aparece en el informe del paciente
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-003#02
+  ficha: COND-M2-NE-003
+  caso: Hipertensión conocida
+  datos: Toma antihipertensivo, TFG 54, albúmina/creatinina 20
+  esperado: Activa, G3a, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-003#03
+  ficha: COND-M2-NE-003
+  caso: Vigilar · PDF hombre 46 años con presión 134/84 sin automonitoreo
+  datos: Albúmina/creatinina 45, CA-006 moderada
+  esperado: No activa; NE-002 sigue; vista médica marca vigilar
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-003#04
+  ficha: COND-M2-NE-003
+  caso: Negativo
+  datos: Sin diabetes ni hipertensión, albúmina/creatinina 45
+  esperado: No activa (manda NE-002)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-004#01
+  ficha: COND-M2-NE-004
+  caso: No interpretable · PDF mujer 34 años
+  datos: Potasio "No procesado", muestra hemolizada
+  esperado: No interpretable; pide nueva muestra; no activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-004#02
+  ficha: COND-M2-NE-004
+  caso: Leve
+  datos: Potasio 5,3, centrifugado a tiempo
+  esperado: Activa, coincidencia moderada, escalamiento 1; repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-004#03
+  ficha: COND-M2-NE-004
+  caso: Accionable
+  datos: Potasio 5,8, sin hemólisis, TFG 48, toma losartán
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-004#04
+  ficha: COND-M2-NE-004
+  caso: Crítico
+  datos: Potasio 6,6 con bandera crítica del laboratorio
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-004#05
+  ficha: COND-M2-NE-004
+  caso: Negativo · PDF hombre 46 años
+  datos: Potasio 4,3
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-005#01
+  ficha: COND-M2-NE-005
+  caso: Leve
+  datos: Sodio 132, glucosa 95
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-005#02
+  ficha: COND-M2-NE-005
+  caso: Moderado con tiazida
+  datos: Sodio 127, toma hidroclorotiazida
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-005#03
+  ficha: COND-M2-NE-005
+  caso: Profundo
+  datos: Sodio 121
+  esperado: Activa, escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-005#04
+  ficha: COND-M2-NE-005
+  caso: Corregido
+  datos: Sodio 131, glucosa 420 (corregido 136,1)
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-005#05
+  ficha: COND-M2-NE-005
+  caso: Pseudohiponatremia
+  datos: Sodio 129, triglicéridos 1.400, ISE indirecto
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-005#06
+  ficha: COND-M2-NE-005
+  caso: Negativo · PDF ejemplos
+  datos: Sodio 140 y 138
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-006#01
+  ficha: COND-M2-NE-006
+  caso: Bajo riesgo
+  datos: 6 hematíes por campo, sin albuminuria
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-006#02
+  ficha: COND-M2-NE-006
+  caso: Glomerular
+  datos: 10 hematíes por campo, albúmina/creatinina 140
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-006#03
+  ficha: COND-M2-NE-006
+  caso: Menstruación
+  datos: 15 hematíes por campo, menstruación actual
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-006#04
+  ficha: COND-M2-NE-006
+  caso: Solo tira
+  datos: Tira con sangre positiva, sedimento 0 a 2
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-006#05
+  ficha: COND-M2-NE-006
+  caso: Negativo · PDF ejemplos
+  datos: Sedimento 0 a 2 por campo
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A01#01
+  ficha: COND-M2-NE-A01
+  caso: Refuerza
+  datos: Potasio 3,3, presión 146/92
+  esperado: Refuerza TI-008 y CA-006
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A01#02
+  ficha: COND-M2-NE-A01
+  caso: Muy bajo
+  datos: Potasio 2,8
+  esperado: Resultado observado, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A01#03
+  ficha: COND-M2-NE-A01
+  caso: Con diurético
+  datos: Potasio 3,4, toma hidroclorotiazida
+  esperado: Refuerza con nota de diurético
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A01#04
+  ficha: COND-M2-NE-A01
+  caso: Negativo
+  datos: Potasio 4,3
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A02#01
+  ficha: COND-M2-NE-A02
+  caso: No confirma
+  datos: TFG creatinina 54, albúmina/creatinina 10, TFG combinada 66
+  esperado: NE-001 baja a vigilar
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A02#02
+  ficha: COND-M2-NE-A02
+  caso: Confirma
+  datos: TFG creatinina 52, TFG combinada 49
+  esperado: NE-001 se mantiene con G3a
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A02#03
+  ficha: COND-M2-NE-A02
+  caso: Masa muscular
+  datos: Objetivo "aumentar mi masa muscular", creatinina 1,35, TFG 68
+  esperado: Se pide cistatina C; se usa la combinada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A02#04
+  ficha: COND-M2-NE-A02
+  caso: No aplica
+  datos: TFG 96
+  esperado: No se pide
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A03#01
+  ficha: COND-M2-NE-A03
+  caso: Positivo
+  datos: Bicarbonato 19, NE-001 activa (G3b)
+  esperado: Activa como apoyo
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A03#02
+  ficha: COND-M2-NE-A03
+  caso: Sin ERC
+  datos: Bicarbonato 20, TFG 95
+  esperado: No activa; valor fuera de rango
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-NE-A03#03
+  ficha: COND-M2-NE-A03
+  caso: Negativo · PDF ejemplos
+  datos: Bicarbonato 25 y 24
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-001#01
+  ficha: COND-M2-TI-001
+  caso: Positivo · PDF mujer 34 años
+  datos: TSH 6,90, T4 libre 1,02 (0,93 a 1,70), anti-TPO 186
+  esperado: Activa, coincidencia alta, escalamiento 1; refuerzo autoinmune por TI-A01; frase para mujer en edad fértil
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-001#02
+  ficha: COND-M2-TI-001
+  caso: TSH 10 o más
+  datos: TSH 11,4, T4 libre normal
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-001#03
+  ficha: COND-M2-TI-001
+  caso: Vigilar
+  datos: TSH 4,6 (laboratorio hasta 4,2), edad 40
+  esperado: Coincidencia baja (vigilar)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-001#04
+  ficha: COND-M2-TI-001
+  caso: Mayor de 60
+  datos: TSH 5,6, edad 68
+  esperado: No activa (corte 6,0)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-001#05
+  ficha: COND-M2-TI-001
+  caso: Biotina
+  datos: TSH 7,2, suplemento de biotina
+  esperado: Bloqueada; pide repetir sin biotina
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-001#06
+  ficha: COND-M2-TI-001
+  caso: Negativo · PDF hombre 46 años
+  datos: TSH 2,10
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-002#01
+  ficha: COND-M2-TI-002
+  caso: Positivo
+  datos: TSH 14,2, T4 libre 0,71
+  esperado: Activa, coincidencia alta, escalamiento 2; desplaza a TI-001
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-002#02
+  ficha: COND-M2-TI-002
+  caso: Con amiodarona
+  datos: TSH 9,8, T4 libre 0,85, amiodarona
+  esperado: Activa, coincidencia moderada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-002#03
+  ficha: COND-M2-TI-002
+  caso: Negativo · PDF mujer 34 años
+  datos: TSH 6,90, T4 libre 1,02
+  esperado: No activa (es TI-001)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-003#01
+  ficha: COND-M2-TI-003
+  caso: Positivo
+  datos: T4 libre 0,68, TSH 1,4
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-003#02
+  ficha: COND-M2-TI-003
+  caso: Con corticoides
+  datos: T4 libre 0,80, TSH 0,9, prednisona
+  esperado: Activa, coincidencia moderada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-003#03
+  ficha: COND-M2-TI-003
+  caso: Negativo
+  datos: T4 libre 1,20, TSH 1,8
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-004#01
+  ficha: COND-M2-TI-004
+  caso: Leve
+  datos: TSH 0,18, T4 libre y T3 libre normales
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-004#02
+  ficha: COND-M2-TI-004
+  caso: Suprimida
+  datos: TSH 0,05, T4 libre y T3 libre normales
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-004#03
+  ficha: COND-M2-TI-004
+  caso: Biotina
+  datos: TSH 0,08, biotina en el cuestionario
+  esperado: Bloqueada; pide repetir sin biotina
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-004#04
+  ficha: COND-M2-TI-004
+  caso: Negativo · PDF ejemplos
+  datos: TSH 2,10
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-005#01
+  ficha: COND-M2-TI-005
+  caso: Manifiesto
+  datos: TSH < 0,01, T4 libre 2,9
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-005#02
+  ficha: COND-M2-TI-005
+  caso: T3-toxicosis
+  datos: TSH 0,02, T4 libre 1,5 (normal), T3 libre 6,1 (alta)
+  esperado: Activa, variante T3-toxicosis
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-005#03
+  ficha: COND-M2-TI-005
+  caso: Con levotiroxina
+  datos: TSH 0,03, T4 libre 2,1, toma levotiroxina
+  esperado: 'Bloqueada; vista médica: posible sobredosificación'
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-005#04
+  ficha: COND-M2-TI-005
+  caso: Negativo
+  datos: TSH 1,8
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-006#01
+  ficha: COND-M2-TI-006
+  caso: Positivo
+  datos: Embarazo de 10 semanas, TSH 4,8
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-006#02
+  ficha: COND-M2-TI-006
+  caso: Con T4 libre baja
+  datos: Embarazo de 22 semanas, TSH 6,5, T4 libre baja
+  esperado: Activa; vista médica destaca la T4 libre baja
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-006#03
+  ficha: COND-M2-TI-006
+  caso: TSH baja
+  datos: Embarazo de 9 semanas, TSH 0,2
+  esperado: No activa; resultado observado para el médico
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-006#04
+  ficha: COND-M2-TI-006
+  caso: No embarazada
+  datos: TSH 4,8
+  esperado: No aplica (va por TI-001)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-007#01
+  ficha: COND-M2-TI-007
+  caso: Positivo
+  datos: Calcio 10,9, albúmina 4,2 (corregido 10,7), PTH 78 (15 a 65)
+  esperado: Activa, coincidencia moderada, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-007#02
+  ficha: COND-M2-TI-007
+  caso: Muy alto
+  datos: Calcio corregido 12,4, PTH 140
+  esperado: Activa, escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-007#03
+  ficha: COND-M2-TI-007
+  caso: Corregido normal
+  datos: Calcio 10,4, albúmina 4,9 (corregido 9,7)
+  esperado: No activa; no se pide PTH
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-007#04
+  ficha: COND-M2-TI-007
+  caso: PTH suprimida
+  datos: Calcio corregido 11,0, PTH 8
+  esperado: 'No activa; vista médica: buscar otra causa de calcio alto'
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-007#05
+  ficha: COND-M2-TI-007
+  caso: Negativo · PDF ejemplos
+  datos: Calcio 9,5 y 9,2
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-008#01
+  ficha: COND-M2-TI-008
+  caso: Positivo
+  datos: Presión 148/94; aldosterona 18 ng/dL (inmunoensayo); ARP 0,4 ng/mL/h (relación 45); potasio 3,3
+  esperado: Activa, coincidencia alta, escalamiento 2; refuerzo por NE-A01
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-008#02
+  ficha: COND-M2-TI-008
+  caso: Con betabloqueador
+  datos: Aldosterona 12 ng/dL; ARP 0,5 (relación 24); toma metoprolol
+  esperado: Activa, coincidencia moderada; repetir tras retirar el betabloqueador si el médico lo considera seguro
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-008#03
+  ficha: COND-M2-TI-008
+  caso: Zona para repetir
+  datos: Aldosterona 7 ng/dL; ARP 0,3
+  esperado: No activa; repetir otro día
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-008#04
+  ficha: COND-M2-TI-008
+  caso: Negativo
+  datos: Presión 136/86; aldosterona 9 ng/dL; ARP 2,1 (relación 4,3)
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-008#05
+  ficha: COND-M2-TI-008
+  caso: Unidades de concentración
+  datos: Aldosterona 450 pmol/L; DRC 4 mU/L (relación 112)
+  esperado: Activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-008#06
+  ficha: COND-M2-TI-008
+  caso: Sin presión elevada · PDF ejemplos sin datos de la enfermera
+  datos: Aldosterona y renina no se pidieron
+  esperado: No aplica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-A01#01
+  ficha: COND-M2-TI-A01
+  caso: Positivo · PDF mujer 34 años
+  datos: Anti-TPO 186 (menor de 34), con TSH 6,90
+  esperado: Refuerza TI-001; se marca relación vigilar con ferritina baja
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-A01#02
+  ficha: COND-M2-TI-A01
+  caso: Anti-Tg
+  datos: Anti-TPO negativo, anti-Tg 210 (menor de 115), TSH 7,0
+  esperado: Refuerza TI-001
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M2-TI-A01#03
+  ficha: COND-M2-TI-A01
+  caso: Negativo
+  datos: Anti-TPO 12
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-001#01
+  ficha: COND-M3-HE-001
+  caso: Positivo · PDF mujer 34 años
+  datos: Hemoglobina 11,2; ajustada 9,4; no fuma
+  esperado: Activa, anemia moderada, coincidencia alta, escalamiento 2
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-001#02
+  ficha: COND-M3-HE-001
+  caso: Positivo oculto por la altura
+  datos: Mujer, hemoglobina 13,1; ajustada 11,3
+  esperado: Activa como leve, escalamiento 1 (sin ajuste habría salido normal)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-001#03
+  ficha: COND-M3-HE-001
+  caso: Negativo · PDF hombre 46 años
+  datos: Hemoglobina 16,2; ajustada 14,4
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-001#04
+  ficha: COND-M3-HE-001
+  caso: Severa
+  datos: Hombre, hemoglobina 9,4; ajustada 7,6
+  esperado: Activa, severa, escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-001#05
+  ficha: COND-M3-HE-001
+  caso: Embarazo
+  datos: 2.º trimestre, hemoglobina 12,0; ajustada 10,2
+  esperado: Activa (corte 10,5)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-002#01
+  ficha: COND-M3-HE-002
+  caso: Positivo · PDF mujer 34 años
+  datos: HE-001 activa; ferritina 7, hs-CRP 0,8, saturación 8,8 %, VCM 78,2, RDW 16,4
+  esperado: 'Activa, coincidencia alta, escalamiento 2; IgA y anti-tTG reflejas (negativas: sin señal de celiaquía)'
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-002#02
+  ficha: COND-M3-HE-002
+  caso: Con inflamación
+  datos: Anemia, ferritina 45, hs-CRP 12, saturación 12 %
+  esperado: Activa (corte 70), coincidencia alta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-002#03
+  ficha: COND-M3-HE-002
+  caso: Hombre
+  datos: Hombre 55 años, anemia, ferritina 9
+  esperado: Activa, escalamiento 2; la vista médica destaca descartar pérdida digestiva
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-002#04
+  ficha: COND-M3-HE-002
+  caso: Sin anemia
+  datos: Hemoglobina ajustada normal, ferritina 9
+  esperado: No activa (va a HE-003)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-003#01
+  ficha: COND-M3-HE-003
+  caso: Positivo
+  datos: Mujer 28 años, hemoglobina ajustada 12,6, ferritina 11
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-003#02
+  ficha: COND-M3-HE-003
+  caso: Hombre
+  datos: Hombre 50 años, hemoglobina ajustada 13,8, ferritina 12
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-003#03
+  ficha: COND-M3-HE-003
+  caso: Vigilar
+  datos: Mujer, ferritina 22, hs-CRP 1
+  esperado: Coincidencia baja (vigilar)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-003#04
+  ficha: COND-M3-HE-003
+  caso: Con anemia · PDF mujer 34 años
+  datos: Ferritina 7 con anemia
+  esperado: No activa (manda HE-002)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-003#05
+  ficha: COND-M3-HE-003
+  caso: Negativo · PDF hombre 46 años
+  datos: Ferritina 310
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-004#01
+  ficha: COND-M3-HE-004
+  caso: B12
+  datos: Anemia, VCM 108, B12 140
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-004#02
+  ficha: COND-M3-HE-004
+  caso: Indeterminada
+  datos: Anemia, VCM 104, B12 260, ácido metilmalónico alto
+  esperado: Activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-004#03
+  ficha: COND-M3-HE-004
+  caso: Folato
+  datos: Anemia, VCM 103, folato 2,8
+  esperado: Activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-004#04
+  ficha: COND-M3-HE-004
+  caso: Negativo · PDF mujer 34 años
+  datos: Anemia con VCM 78,2; B12 262 con ácido metilmalónico normal
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-005#01
+  ficha: COND-M3-HE-005
+  caso: Positivo
+  datos: Plaquetas 82
+  esperado: Activa, escalamiento 2; repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-005#02
+  ficha: COND-M3-HE-005
+  caso: Leve
+  datos: Plaquetas 128 (laboratorio 150 a 450)
+  esperado: Valor fuera de rango, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-005#03
+  ficha: COND-M3-HE-005
+  caso: Seudotrombocitopenia
+  datos: Plaquetas 64 con comentario de agregados
+  esperado: No interpretable; repetir con citrato
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-005#04
+  ficha: COND-M3-HE-005
+  caso: Crítico
+  datos: Plaquetas 14 con bandera crítica
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-005#05
+  ficha: COND-M3-HE-005
+  caso: Negativo · PDF ejemplos
+  datos: Plaquetas 265 y 330
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-006#01
+  ficha: COND-M3-HE-006
+  caso: Positivo
+  datos: Hombre, saturación 62 %, ferritina 640, hs-CRP 1
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-006#02
+  ficha: COND-M3-HE-006
+  caso: Vigilar · PDF hombre 46 años
+  datos: Ferritina 310, saturación 37 %, patrón hepático metabólico
+  esperado: Coincidencia baja (vigilar); la vista médica liga la ferritina al patrón hepático
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-006#03
+  ficha: COND-M3-HE-006
+  caso: Mujer
+  datos: Mujer 32 años, saturación 51 %, ferritina 260
+  esperado: Activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-006#04
+  ficha: COND-M3-HE-006
+  caso: Negativo · PDF mujer 34 años
+  datos: Ferritina 7
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A01#01
+  ficha: COND-M3-HE-A01
+  caso: Positivo
+  datos: Anemia, ferritina 180, saturación 14 %, hs-CRP 22
+  esperado: Activa; HE-001 con escalamiento 2 y sin recomendaciones de hierro
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A01#02
+  ficha: COND-M3-HE-A01
+  caso: Negativo · PDF mujer 34 años
+  datos: Anemia, ferritina 7, hs-CRP 0,8
+  esperado: No activa (manda HE-002)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A02#01
+  ficha: COND-M3-HE-A02
+  caso: Leve
+  datos: Neutrófilos 1,6 (laboratorio desde 1,8)
+  esperado: Valor fuera de rango, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A02#02
+  ficha: COND-M3-HE-A02
+  caso: Varias líneas
+  datos: Leucocitos 2,9, plaquetas 95, anemia
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A02#03
+  ficha: COND-M3-HE-A02
+  caso: Negativo · PDF ejemplos
+  datos: Leucocitos 7,8 y 6,1
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A03#01
+  ficha: COND-M3-HE-A03
+  caso: Positivo
+  datos: Leucocitos 8,0, eosinófilos 9 % (0,72)
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A03#02
+  ficha: COND-M3-HE-A03
+  caso: Con parásitos
+  datos: Lo anterior y coprológico con parásitos
+  esperado: Refuerza parasitosis (M4)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-HE-A03#03
+  ficha: COND-M3-HE-A03
+  caso: Negativo · PDF hombre 46 años
+  datos: Leucocitos 7,8, eosinófilos 3,2 % (0,25)
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-001#01
+  ficha: COND-M3-NU-001
+  caso: Positivo
+  datos: B12 150, toma metformina
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-001#02
+  ficha: COND-M3-NU-001
+  caso: Funcional
+  datos: B12 240, ácido metilmalónico alto
+  esperado: Activa, coincidencia alta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-001#03
+  ficha: COND-M3-NU-001
+  caso: Negativo · PDF mujer 34 años
+  datos: B12 262, ácido metilmalónico 0,28 (normal)
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-001#04
+  ficha: COND-M3-NU-001
+  caso: Negativo · PDF hombre 46 años
+  datos: B12 410
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-001#05
+  ficha: COND-M3-NU-001
+  caso: Anticonceptivo
+  datos: B12 165, anticonceptivo oral, sin factor de riesgo
+  esperado: Activa, coincidencia moderada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-002#01
+  ficha: COND-M3-NU-002
+  caso: Positivo
+  datos: Folato 2,6
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-002#02
+  ficha: COND-M3-NU-002
+  caso: Posible
+  datos: Folato 3,6
+  esperado: Activa, coincidencia moderada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-002#03
+  ficha: COND-M3-NU-002
+  caso: Embarazo
+  datos: Folato 3,2, embarazo de 8 semanas
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-002#04
+  ficha: COND-M3-NU-002
+  caso: Negativo · PDF ejemplos
+  datos: Folato 9,8 y 6,2
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A01#01
+  ficha: COND-M3-NU-A01
+  caso: Refuerza
+  datos: B12 220, homocisteína 19
+  esperado: NU-001 sube a coincidencia alta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A01#02
+  ficha: COND-M3-NU-A01
+  caso: Vigilar
+  datos: Homocisteína 17, B12 y folato normales, TFG 58
+  esperado: Vigilar; vista médica menciona TFG
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A01#03
+  ficha: COND-M3-NU-A01
+  caso: Negativo · PDF ejemplos
+  datos: Homocisteína 11,8 y 13,9
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A02#01
+  ficha: COND-M3-NU-A02
+  caso: Secundaria
+  datos: PTH 88, calcio corregido 9,4, vitamina D 14
+  esperado: 'Vigilar; causa probable: vitamina D baja'
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A02#02
+  ficha: COND-M3-NU-A02
+  caso: Sin causa
+  datos: PTH 82, calcio 9,8, vitamina D 34, TFG 95
+  esperado: Resultado observado para el médico, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A02#03
+  ficha: COND-M3-NU-A02
+  caso: No aplica · PDF ejemplos
+  datos: PTH no medida (calcio normal)
+  esperado: No aplica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A03#01
+  ficha: COND-M3-NU-A03
+  caso: Baja · PDF hombre 46 años
+  datos: Vitamina D 21,4 (laboratorio 30 a 100)
+  esperado: Marcada baja, escalamiento 0, recomendación alimentaria
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A03#02
+  ficha: COND-M3-NU-A03
+  caso: Baja · PDF mujer 34 años
+  datos: Vitamina D 17,8
+  esperado: Marcada baja; relación vigilar con ferritina y hemoglobina bajas
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A03#03
+  ficha: COND-M3-NU-A03
+  caso: Alta
+  datos: Vitamina D 140
+  esperado: Marcada alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A03#04
+  ficha: COND-M3-NU-A03
+  caso: En rango
+  datos: Vitamina D 42
+  esperado: Sin recomendación específica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A04#01
+  ficha: COND-M3-NU-A04
+  caso: Sin intervalo · PDF ejemplos
+  datos: Biotina, niacina, índice omega-3, omega-6/omega-3 y CoQ10 con "No establecido"
+  esperado: Solo valor, sin clase
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A04#02
+  ficha: COND-M3-NU-A04
+  caso: No apta · PDF mujer 34 años
+  datos: Vitamina C "Muestra no apta"
+  esperado: No interpretable
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A04#03
+  ficha: COND-M3-NU-A04
+  caso: En rango · PDF hombre 46 años
+  datos: B1, B6, A, E, K1, C en rango
+  esperado: Sin recomendación específica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A04#04
+  ficha: COND-M3-NU-A04
+  caso: Biotina declarada
+  datos: Suplemento de biotina para el cabello, TSH 0,08
+  esperado: Bloquea tiroides y B12; pide repetir sin el suplemento
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A04#05
+  ficha: COND-M3-NU-A04
+  caso: Vitamina A alta
+  datos: Vitamina A 112 (30 a 80)
+  esperado: Marcada alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M3-NU-A04#06
+  ficha: COND-M3-NU-A04
+  caso: Tiamina con síntomas
+  datos: B1 45, alcohol diario, confusión reciente
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-001#01
+  ficha: COND-M4-GA-001
+  caso: Bajo · PDF hombre 46 años
+  datos: Edad 46, AST 39, ALT 58, plaquetas 265 (FIB-4 0,89)
+  esperado: No activa; la vista médica muestra FIB-4 bajo
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-001#02
+  ficha: COND-M4-GA-001
+  caso: Indeterminado
+  datos: Edad 58, AST 48, ALT 52, plaquetas 190, diabetes (FIB-4 2,03)
+  esperado: Activa, coincidencia moderada, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-001#03
+  ficha: COND-M4-GA-001
+  caso: Alto
+  datos: Edad 62, AST 70, ALT 45, plaquetas 140 (FIB-4 4,62)
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-001#04
+  ficha: COND-M4-GA-001
+  caso: Mayor de 65
+  datos: Edad 70, FIB-4 1,1, diabetes
+  esperado: 'No activa; vista médica: no concluyente'
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-001#05
+  ficha: COND-M4-GA-001
+  caso: No aplica · PDF mujer 34 años
+  datos: Sin factores metabólicos, enzimas normales
+  esperado: No se calcula
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-002#01
+  ficha: COND-M4-GA-002
+  caso: Positivo · PDF hombre 46 años
+  datos: ALT 58 (laboratorio hasta 50), AST 39, CK normal
+  esperado: Activa, coincidencia moderada, escalamiento 1; ligada a la relación hepática metabólica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-002#02
+  ficha: COND-M4-GA-002
+  caso: Limítrofe
+  datos: Mujer, ALT 31 (laboratorio hasta 35)
+  esperado: Vigilar
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-002#03
+  ficha: COND-M4-GA-002
+  caso: Muy alta
+  datos: ALT 190 (laboratorio hasta 50)
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-002#04
+  ficha: COND-M4-GA-002
+  caso: Muscular
+  datos: ALT 48, AST 85, CK 2.400, ejercicio el día anterior
+  esperado: No activa; patrón muscular
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-002#05
+  ficha: COND-M4-GA-002
+  caso: Negativo · PDF mujer 34 años
+  datos: ALT 18
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-003#01
+  ficha: COND-M4-GA-003
+  caso: Positivo
+  datos: ALP 260 (hasta 129), GGT 180, ALT 40 (R 0,4)
+  esperado: Activa, escalamiento 2 (más del doble)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-003#02
+  ficha: COND-M4-GA-003
+  caso: Leve
+  datos: ALP 160, GGT 95, ALT 35
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-003#03
+  ficha: COND-M4-GA-003
+  caso: Óseo
+  datos: ALP 170, GGT 30
+  esperado: Vigilar; origen óseo probable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-003#04
+  ficha: COND-M4-GA-003
+  caso: Negativo · PDF hombre 46 años
+  datos: ALP 88, GGT 72 (hasta 71)
+  esperado: No activa (falta ALP alta)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-004#01
+  ficha: COND-M4-GA-004
+  caso: Positivo en edad
+  datos: Edad 58, FIT positivo
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-004#02
+  ficha: COND-M4-GA-004
+  caso: Positivo joven
+  datos: Edad 34, FIT positivo
+  esperado: Activa, escalamiento 2; la vista médica anota que está fuera de la franja formal
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-004#03
+  ficha: COND-M4-GA-004
+  caso: Con anemia
+  datos: FIT positivo y anemia por déficit de hierro (M3)
+  esperado: Activa; la vista médica los cruza
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-004#04
+  ficha: COND-M4-GA-004
+  caso: Negativo · PDF ejemplos
+  datos: FIT negativo
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-005#01
+  ficha: COND-M4-GA-005
+  caso: Positivo · PDF hombre 46 años
+  datos: Antígeno positivo
+  esperado: Activa, escalamiento 2; el informe incluye la limitación del método
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-005#02
+  ficha: COND-M4-GA-005
+  caso: Negativo con omeprazol
+  datos: Antígeno negativo, omeprazol diario
+  esperado: 'No activa; vista médica: negativo no concluyente'
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-005#03
+  ficha: COND-M4-GA-005
+  caso: Negativo · PDF mujer 34 años
+  datos: Antígeno negativo, sin medicamentos
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-006#01
+  ficha: COND-M4-GA-006
+  caso: Positivo
+  datos: Déficit de hierro, anti-tTG 48 (menor de 7), IgA normal, come gluten
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-006#02
+  ficha: COND-M4-GA-006
+  caso: Déficit de IgA
+  datos: Anti-tTG 2, IgA 5 (bajo)
+  esperado: No interpretable; sugiere pruebas basadas en IgG
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-006#03
+  ficha: COND-M4-GA-006
+  caso: Negativo · PDF mujer 34 años
+  datos: Anti-tTG 2,1, IgA 210
+  esperado: 'No activa: sin señal de celiaquía'
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-006#04
+  ficha: COND-M4-GA-006
+  caso: Sin gluten
+  datos: Anti-tTG 3, dieta sin gluten
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-A01#01
+  ficha: COND-M4-GA-A01
+  caso: Aislada
+  datos: Bilirrubina total 1,9, directa 0,3, resto normal, hemoglobina normal
+  esperado: Resultado observado, escalamiento 0
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-A01#02
+  ficha: COND-M4-GA-A01
+  caso: Con hemólisis
+  datos: Bilirrubina total 2,4, directa 0,3, anemia, reticulocitos altos, LDH alta
+  esperado: Activa relación hemólisis, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-A01#03
+  ficha: COND-M4-GA-A01
+  caso: Negativo · PDF ejemplos
+  datos: Bilirrubina total 0,80 y 0,50
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-A02#01
+  ficha: COND-M4-GA-A02
+  caso: Positivo
+  datos: Alcohol diario, AST 92, ALT 40, GGT 210
+  esperado: Activa; destaca AST/ALT de 2,3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-A02#02
+  ficha: COND-M4-GA-A02
+  caso: Solo GGT
+  datos: Alcohol los fines de semana, GGT 88
+  esperado: Activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-GA-A02#03
+  ficha: COND-M4-GA-A02
+  caso: Sin alcohol · PDF hombre 46 años
+  datos: Sin dato de alcohol (lo pregunta la enfermera), GGT 72
+  esperado: No activa hasta tener el dato
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-001#01
+  ficha: COND-M4-IN-001
+  caso: Activa
+  datos: Anti-VHC reactivo, ARN detectable
+  esperado: Activa, coincidencia alta, escalamiento 2, llamada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-001#02
+  ficha: COND-M4-IN-001
+  caso: Resuelta
+  datos: Anti-VHC reactivo, ARN no detectable
+  esperado: Activa, coincidencia baja, llamada con texto de resuelta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-001#03
+  ficha: COND-M4-IN-001
+  caso: Pendiente
+  datos: Anti-VHC reactivo, ARN en proceso
+  esperado: Informe en espera; llamada cuando llegue el ARN
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-001#04
+  ficha: COND-M4-IN-001
+  caso: Negativo · PDF ejemplos
+  datos: Anti-VHC no reactivo
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-002#01
+  ficha: COND-M4-IN-002
+  caso: Susceptible · PDF hombre 46 años
+  datos: HBsAg no reactivo, anti-HBc no reactivo, anti-HBs 4,2
+  esperado: Estado susceptible, escalamiento 1, recomendación de vacuna
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-002#02
+  ficha: COND-M4-IN-002
+  caso: Inmune · PDF mujer 34 años
+  datos: HBsAg y anti-HBc no reactivos, anti-HBs 85
+  esperado: Inmune por vacuna, escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-002#03
+  ficha: COND-M4-IN-002
+  caso: Activa
+  datos: HBsAg reactivo
+  esperado: Escalamiento 2, llamada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-002#04
+  ficha: COND-M4-IN-002
+  caso: Resuelta
+  datos: HBsAg no reactivo, anti-HBc reactivo, anti-HBs 120
+  esperado: Escalamiento 1, nota de reactivación
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-002#05
+  ficha: COND-M4-IN-002
+  caso: Anti-HBc aislado
+  datos: HBsAg no reactivo, anti-HBc reactivo, anti-HBs 3
+  esperado: Escalamiento 2, llamada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-003#01
+  ficha: COND-M4-IN-003
+  caso: Positivo
+  datos: Dos ELISA reactivas, nacido en municipio endémico
+  esperado: Activa, coincidencia alta, escalamiento 2, llamada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-003#02
+  ficha: COND-M4-IN-003
+  caso: Discordante
+  datos: ELISA total reactiva, recombinante no reactiva
+  esperado: Informe en espera de tercera prueba
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-003#03
+  ficha: COND-M4-IN-003
+  caso: Negativo · PDF ejemplos
+  datos: ELISA total no reactiva
+  esperado: No activa; no se corre la segunda
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A01#01
+  ficha: COND-M4-IN-A01
+  caso: Con síntomas
+  datos: Nitritos positivos, ardor al orinar
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A01#02
+  ficha: COND-M4-IN-A01
+  caso: Sin síntomas
+  datos: Esterasa positiva, sin síntomas, no embarazada
+  esperado: No se reporta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A01#03
+  ficha: COND-M4-IN-A01
+  caso: Embarazo
+  datos: Nitritos positivos, embarazo de 14 semanas
+  esperado: Vista médica, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A01#04
+  ficha: COND-M4-IN-A01
+  caso: Negativo · PDF ejemplos
+  datos: Uroanálisis normal
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A02#01
+  ficha: COND-M4-IN-A02
+  caso: Patógeno
+  datos: Quistes de Giardia
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A02#02
+  ficha: COND-M4-IN-A02
+  caso: Con eosinofilia
+  datos: Huevos de helminto, eosinófilos 0,9 × 10³/µL
+  esperado: Activa, reforzada por HE-A03
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A02#03
+  ficha: COND-M4-IN-A02
+  caso: Comensal
+  datos: Quistes de Entamoeba coli
+  esperado: Informativo, escalamiento 0
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M4-IN-A02#04
+  ficha: COND-M4-IN-A02
+  caso: Negativo · PDF ejemplos
+  datos: No se observaron parásitos
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-001#01
+  ficha: COND-M5-MU-001
+  caso: Positivo
+  datos: Mujer 27 años, testosterona 72 ng/dL (hasta 48), SHBG 22, sin anticonceptivo
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-001#02
+  ficha: COND-M5-MU-001
+  caso: Muy alta
+  datos: Testosterona 140 ng/dL
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-001#03
+  ficha: COND-M5-MU-001
+  caso: Anticonceptivo
+  datos: Testosterona 60, toma anticonceptivo oral
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-001#04
+  ficha: COND-M5-MU-001
+  caso: Negativo · PDF mujer 34 años
+  datos: Testosterona 32, SHBG 62 (índice 1,8), sin anticonceptivo
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-002#01
+  ficha: COND-M5-MU-002
+  caso: Positivo
+  datos: Mujer 33 años, FSH 38, sin anticonceptivo
+  esperado: Activa, coincidencia moderada, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-002#02
+  ficha: COND-M5-MU-002
+  caso: Edad 42
+  datos: FSH 30
+  esperado: Sin condición; contexto en la vista médica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-002#03
+  ficha: COND-M5-MU-002
+  caso: Edad 50
+  datos: FSH 60
+  esperado: No se interpreta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-002#04
+  ficha: COND-M5-MU-002
+  caso: Anticonceptivo
+  datos: Mujer 30 años, FSH 2, anticonceptivo oral
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-002#05
+  ficha: COND-M5-MU-002
+  caso: Negativo · PDF mujer 34 años
+  datos: FSH 6,1 en fase folicular
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-003#01
+  ficha: COND-M5-MU-003
+  caso: Positivo
+  datos: Prolactina 41 (hasta 23,3), macroprolactina no predominante
+  esperado: Activa, coincidencia moderada, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-003#02
+  ficha: COND-M5-MU-003
+  caso: Macroprolactina
+  datos: Prolactina 38, macroprolactina predominante
+  esperado: Escalamiento 0, frase de macroprolactina
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-003#03
+  ficha: COND-M5-MU-003
+  caso: Muy alta
+  datos: Prolactina 160
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-003#04
+  ficha: COND-M5-MU-003
+  caso: Con medicamento
+  datos: Prolactina 35, toma risperidona
+  esperado: Coincidencia baja
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-003#05
+  ficha: COND-M5-MU-003
+  caso: Embarazo
+  datos: Prolactina 120, embarazo de 20 semanas
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-003#06
+  ficha: COND-M5-MU-003
+  caso: Negativo · PDF mujer 34 años
+  datos: Prolactina 14,2
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-A01#01
+  ficha: COND-M5-MU-A01
+  caso: Positivo
+  datos: Embarazo de 26 semanas, hemoglobina 12,0 (ajustada 10,2)
+  esperado: Activa, escalamiento 2, ruta prenatal
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-A01#02
+  ficha: COND-M5-MU-A01
+  caso: Negativo
+  datos: Embarazo de 12 semanas, hemoglobina 13,5 (ajustada 11,7)
+  esperado: No activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-MU-A01#03
+  ficha: COND-M5-MU-A01
+  caso: No aplica · PDF mujer 34 años
+  datos: No embarazada
+  esperado: No aplica (va por HE-001)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-001#01
+  ficha: COND-M5-UR-001
+  caso: Tamizaje
+  datos: Hombre 58 años, PSA 5,6, con consentimiento
+  esperado: Activa, escalamiento 2; PSA libre refleja
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-001#02
+  ficha: COND-M5-UR-001
+  caso: Fuera de edad
+  datos: Hombre 44 años, PSA 4,8
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-001#03
+  ficha: COND-M5-UR-001
+  caso: Muy alto
+  datos: Hombre 66 años, PSA 14
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-001#04
+  ficha: COND-M5-UR-001
+  caso: Finasterida
+  datos: PSA 2,6 con finasterida (equivale a 5,2)
+  esperado: Activa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-001#05
+  ficha: COND-M5-UR-001
+  caso: Sin consentimiento
+  datos: Sin consentimiento de PSA
+  esperado: No medido
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-001#06
+  ficha: COND-M5-UR-001
+  caso: Negativo · PDF hombre 46 años
+  datos: PSA 1,10
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-002#01
+  ficha: COND-M5-UR-002
+  caso: Positivo
+  datos: Hombre 52 años, testosterona 228 a las 7:30, método certificado, libre baja
+  esperado: Activa, coincidencia alta, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-002#02
+  ficha: COND-M5-UR-002
+  caso: No certificado
+  datos: Testosterona 230, método sin certificación declarada
+  esperado: Resultado observado, sin etiqueta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-002#03
+  ficha: COND-M5-UR-002
+  caso: Muy baja
+  datos: Testosterona 120, certificado
+  esperado: Activa, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-002#04
+  ficha: COND-M5-UR-002
+  caso: Hora
+  datos: Testosterona 240 a las 15:00
+  esperado: No interpretable por hora
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-002#05
+  ficha: COND-M5-UR-002
+  caso: Negativo · PDF hombre 46 años
+  datos: Testosterona 412
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-A01#01
+  ficha: COND-M5-UR-A01
+  caso: Apoya
+  datos: Total 250, SHBG 22, albúmina 4,4; libre baja
+  esperado: UR-002 sube a coincidencia alta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-A01#02
+  ficha: COND-M5-UR-A01
+  caso: SHBG alta
+  datos: Total 330, SHBG 70; libre baja
+  esperado: Vigilar en la vista médica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-A01#03
+  ficha: COND-M5-UR-A01
+  caso: No se calcula · PDF hombre 46 años
+  datos: Total 412, SHBG 28, IMC sin dato
+  esperado: No se calcula salvo que el IMC sea 30 o más
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-A02#01
+  ficha: COND-M5-UR-A02
+  caso: Baja
+  datos: PSA total 6,2, libre 0,5 (8 %)
+  esperado: Refuerza UR-001 en la vista médica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-A02#02
+  ficha: COND-M5-UR-A02
+  caso: Alta
+  datos: PSA total 5,0, libre 1,5 (30 %)
+  esperado: Contextualiza UR-001
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M5-UR-A02#03
+  ficha: COND-M5-UR-A02
+  caso: No aplica · PDF hombre 46 años
+  datos: PSA total 1,10
+  esperado: No se mide
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-001#01
+  ficha: COND-M6-MI-001
+  caso: Positivo mayor
+  datos: Edad 74, IMC 20,8, hs-CRP 9
+  esperado: Activa, coincidencia alta, escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-001#02
+  ficha: COND-M6-MI-001
+  caso: Positivo joven
+  datos: Edad 40, IMC 18,6, come menos hace un mes
+  esperado: Activa, escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-001#03
+  ficha: COND-M6-MI-001
+  caso: Vigilar
+  datos: Edad 30, IMC 19,2, hs-CRP 0,6, ingesta normal
+  esperado: Vigilar
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-001#04
+  ficha: COND-M6-MI-001
+  caso: Sin medidas · PDF ejemplos
+  datos: Peso y talla aún no registrados
+  esperado: No interpretable
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A01#01
+  ficha: COND-M6-MI-A01
+  caso: Hombre 46 años
+  datos: —
+  esperado: SCORE2-PURE aplica; PSA y sangre oculta fuera de franja formal; sin recordatorios
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A01#02
+  ficha: COND-M6-MI-A01
+  caso: Mujer 34 años
+  datos: —
+  esperado: Sin SCORE2-PURE; FSH interpretable como condición; recordatorio de cuello uterino
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A01#03
+  ficha: COND-M6-MI-A01
+  caso: Persona de 17 años
+  datos: —
+  esperado: Fuera del alcance; no se procesa
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A02#01
+  ficha: COND-M6-MI-A02
+  caso: PDF hombre 46 años
+  datos: Albúmina 4,6, creatinina 0,98, glucosa 112, hs-CRP 3,4, linfocitos 31,0 %, VCM 89,9, RDW 13,1, fosfatasa alcalina 88, leucocitos 7,8
+  esperado: PhenoAge 44,3 años (1,7 menos que su edad)
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A02#02
+  ficha: COND-M6-MI-A02
+  caso: PDF mujer 34 años
+  datos: Albúmina 4,3, creatinina 0,72, glucosa 86, hs-CRP 0,8, linfocitos 35,0 %, VCM 78,2, RDW 16,4, fosfatasa alcalina 62, leucocitos 6,1
+  esperado: 'PhenoAge 34,1 años; advertencia: la anemia sube el RDW y puede inflar el valor'
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A02#03
+  ficha: COND-M6-MI-A02
+  caso: Falta un analito
+  datos: Sin fosfatasa alcalina
+  esperado: No se calcula; se dice qué falta
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-MI-A02#04
+  ficha: COND-M6-MI-A02
+  caso: Sin ayuno
+  datos: Ayuno de 4 horas
+  esperado: No se calcula
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-001#01
+  ficha: COND-M6-RE-001
+  caso: Positivo · PDF hombre 46 años
+  datos: Ácido úrico 7,6 (hasta 7,0), con prediabetes y síndrome metabólico
+  esperado: Activa, escalamiento 1; la vista médica lo liga al contexto cardiometabólico
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-001#02
+  ficha: COND-M6-RE-001
+  caso: Con diurético
+  datos: Ácido úrico 8,2, toma hidroclorotiazida
+  esperado: Activa; la vista médica menciona el diurético
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-001#03
+  ficha: COND-M6-RE-001
+  caso: Negativo · PDF mujer 34 años
+  datos: Ácido úrico 4,1
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A01#01
+  ficha: COND-M6-RE-A01
+  caso: Positivo · PDF mujer 34 años
+  datos: ANA positivo 1:160, patrón moteado fino (AC-4), anti-TPO 186
+  esperado: Escalamiento 2; la vista médica anota la autoinmunidad tiroidea
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A01#02
+  ficha: COND-M6-RE-A01
+  caso: Título bajo
+  datos: ANA 1:80, AC-2
+  esperado: Escalamiento 1; nota de patrón frecuente en sanos
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A01#03
+  ficha: COND-M6-RE-A01
+  caso: Sin título
+  datos: '"ANA positivo" sin título'
+  esperado: No interpretable; pedir título y patrón al laboratorio
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A01#04
+  ficha: COND-M6-RE-A01
+  caso: Negativo · PDF hombre 46 años
+  datos: ANA negativo (menor de 1:80)
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A02#01
+  ficha: COND-M6-RE-A02
+  caso: Aislada
+  datos: VSG 28 (hasta 15), hs-CRP 1,2
+  esperado: Escalamiento 1, repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A02#02
+  ficha: COND-M6-RE-A02
+  caso: Con inflamación
+  datos: VSG 35, hs-CRP 14
+  esperado: Refuerza la relación de inflamación
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A02#03
+  ficha: COND-M6-RE-A02
+  caso: Muy alta
+  datos: VSG 110
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: COND-M6-RE-A02#04
+  ficha: COND-M6-RE-A02
+  caso: Negativo · PDF ejemplos
+  datos: VSG 12 y 18
+  esperado: No activa
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-000#01
+  ficha: SEG-000
+  caso: En rango
+  datos: Cloro 103 (98 a 107)
+  esperado: Escalamiento 0
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-000#02
+  ficha: SEG-000
+  caso: Fuera de rango
+  datos: Cloro 110
+  esperado: Escalamiento 1, texto general
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-000#03
+  ficha: SEG-000
+  caso: Crítico
+  datos: Cualquier valor con bandera crítica
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-001#01
+  ficha: SEG-001
+  caso: No detectable · PDF ejemplos
+  datos: 'Troponina "< 3" ng/L (percentil 99: 14)'
+  esperado: En rango, escalamiento 0; revisión médica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-001#02
+  ficha: SEG-001
+  caso: Elevada
+  datos: Troponina 31 ng/L
+  esperado: Escalamiento 3, llamada el mismo día
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-001#03
+  ficha: SEG-001
+  caso: Límite
+  datos: Troponina 14 ng/L (igual al percentil 99)
+  esperado: En rango; revisión médica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-002#01
+  ficha: SEG-002
+  caso: En rango · PDF hombre 46 años
+  datos: Cortisol 14,2 a las 7:15; ACTH 24
+  esperado: Escalamiento 0; revisión médica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-002#02
+  ficha: SEG-002
+  caso: En rango · PDF mujer 34 años
+  datos: Cortisol 11,6 a las 7:40; ACTH 18
+  esperado: Escalamiento 0; revisión médica
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-002#03
+  ficha: SEG-002
+  caso: Fuera de horario
+  datos: Cortisol 9,0 a las 11:20
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-002#04
+  ficha: SEG-002
+  caso: Bajo
+  datos: Cortisol 4,1 a las 7:30
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-002#05
+  ficha: SEG-002
+  caso: ACTH sin cadena de frío
+  datos: ACTH sin registro de refrigeración
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-003#01
+  ficha: SEG-003
+  caso: En rango · PDF hombre 46 años
+  datos: IGF-1 168 (83 a 233 para 45 a 49 años)
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-003#02
+  ficha: SEG-003
+  caso: Sin intervalo por edad
+  datos: IGF-1 210 sin intervalo
+  esperado: Solo valor
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-003#03
+  ficha: SEG-003
+  caso: Con biotina
+  datos: IGF-1 400, biotina declarada
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-004#01
+  ficha: SEG-004
+  caso: Normal · PDF hombre 46 años
+  datos: Medida 292; calculada 291,6 (sodio 140, glucosa 112, BUN 15); brecha 0,4
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-004#02
+  ficha: SEG-004
+  caso: Normal · PDF mujer 34 años
+  datos: Medida 286; calculada 284,3; brecha 1,7
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-004#03
+  ficha: SEG-004
+  caso: Brecha alta
+  datos: Medida 312; calculada 290; brecha 22
+  esperado: Escalamiento 2, llamada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-005#01
+  ficha: SEG-005
+  caso: Normal · PDF ejemplos
+  datos: NRBC 0,0
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-005#02
+  ficha: SEG-005
+  caso: Positivo
+  datos: NRBC 1,5
+  esperado: Escalamiento 2, llamada
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-005#03
+  ficha: SEG-005
+  caso: Grave
+  datos: NRBC 3, hemoglobina ajustada 7,2
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-005#04
+  ficha: SEG-005
+  caso: Esplenectomía
+  datos: NRBC 0,8, esplenectomía declarada
+  esperado: Escalamiento 1
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-006#01
+  ficha: SEG-006
+  caso: Normal · PDF ejemplos
+  datos: TP 12,1 y 11,8; INR 1,02 y 0,98; fibrinógeno 360 y 310
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-006#02
+  ficha: SEG-006
+  caso: INR alto
+  datos: INR 1,6 sin anticoagulante
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-006#03
+  ficha: SEG-006
+  caso: Con warfarina
+  datos: INR 2,6, toma warfarina
+  esperado: Control en la vista médica
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-006#04
+  ficha: SEG-006
+  caso: Coagulopatía
+  datos: Fibrinógeno 120, TP 19, plaquetas 60
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-007#01
+  ficha: SEG-007
+  caso: Normal · PDF ejemplos
+  datos: CK 165 y 82; LDH 190 y 160
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-007#02
+  ficha: SEG-007
+  caso: Ejercicio
+  datos: CK 1.600 (hasta 308), maratón hace 2 días, sin síntomas
+  esperado: Escalamiento 1, repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-007#03
+  ficha: SEG-007
+  caso: Sin ejercicio
+  datos: CK 2.000, sin ejercicio
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-007#04
+  ficha: SEG-007
+  caso: Urgente
+  datos: CK 9.000, orina oscura
+  esperado: Escalamiento 3
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-007#05
+  ficha: SEG-007
+  caso: LDH hemolizada
+  datos: LDH 420, hemólisis reportada
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-008#01
+  ficha: SEG-008
+  caso: Normal · PDF ejemplos
+  datos: Magnesio 2,0 y 1,9; cloro 103 y 104; fósforo 3,2 y 3,6
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-008#02
+  ficha: SEG-008
+  caso: Magnesio con potasio bajo
+  datos: Magnesio 1,4, potasio 3,1
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-008#03
+  ficha: SEG-008
+  caso: Fósforo con TFG baja
+  datos: Fósforo 5,2, TFG 38
+  esperado: Se lee en M2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-009#01
+  ficha: SEG-009
+  caso: Normal · PDF ejemplos
+  datos: A/G 1,70 y 1,59; IgG 1.120 y 1.050; IgM 95 y 140
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-009#02
+  ficha: SEG-009
+  caso: Invertida
+  datos: Albúmina 3,6, globulinas 4,2 (A/G 0,86)
+  esperado: Escalamiento 1; vista médica sugiere electroforesis
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-009#03
+  ficha: SEG-009
+  caso: IgG muy alta
+  datos: IgG 3.600 sin infección
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-010#01
+  ficha: SEG-010
+  caso: Normal · PDF ejemplos
+  datos: Péptido C 3,4 y 1,8; fructosamina 268 y 230
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-010#02
+  ficha: SEG-010
+  caso: Fructosamina no confiable
+  datos: Fructosamina 210, albúmina 2,8
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-010#03
+  ficha: SEG-010
+  caso: Glucosa baja con péptido C alto
+  datos: Glucosa 48, péptido C 6,2
+  esperado: Escalamiento 3 (M1 EM-005)
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-011#01
+  ficha: SEG-011
+  caso: Fase folicular · PDF mujer 34 años
+  datos: Día 9, estradiol 68, LH 5,4, progesterona 0,4; DHEA-S 180
+  esperado: Todo en rango de fase, escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-011#02
+  ficha: SEG-011
+  caso: Hombre · PDF hombre 46 años
+  datos: Estradiol 28, LH 4,2 (intervalo masculino); DHEA-S 210
+  esperado: En rango
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-011#03
+  ficha: SEG-011
+  caso: Anticonceptivo
+  datos: Estradiol 15, anticonceptivo oral
+  esperado: No interpretable por fase
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-011#04
+  ficha: SEG-011
+  caso: DHEA-S muy alta
+  datos: Mujer, DHEA-S 820 (hasta 340)
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-012#01
+  ficha: SEG-012
+  caso: Normal · PDF hombre 46 años
+  datos: Monocitos 7,1 %, basófilos 0,5 %, VPM 9,8
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-012#02
+  ficha: SEG-012
+  caso: Apoyo de anemia · PDF mujer 34 años
+  datos: HCM 26,0 (bajo), hematocrito 35,0 (bajo)
+  esperado: Se leen dentro de M3; no forman hallazgo propio
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-012#03
+  ficha: SEG-012
+  caso: Basófilos altos
+  datos: Basófilos 3,5 %
+  esperado: Escalamiento 1, repetir
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-013#01
+  ficha: SEG-013
+  caso: Normal · PDF ejemplos
+  datos: Tira negativa, urobilinógeno 0,2, heces sin moco ni sangre
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-013#02
+  ficha: SEG-013
+  caso: Glucosa con medicamento
+  datos: Glucosa en orina positiva, toma empagliflozina
+  esperado: Escalamiento 0
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-013#03
+  ficha: SEG-013
+  caso: Cetonas con diabetes
+  datos: Cetonas positivas, glucosa 280
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-013#04
+  ficha: SEG-013
+  caso: Sangre visible
+  datos: Sangre macroscópica en heces
+  esperado: Escalamiento 2
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-014#01
+  ficha: SEG-014
+  caso: Normal · PDF ejemplos
+  datos: ApoA1 112 y 158; transferrina 256 y 346; zinc 82 y 71; BUN 15 y 10
+  esperado: Escalamiento 0
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: SEG-014#02
+  ficha: SEG-014
+  caso: Zinc sin tubo especial
+  datos: Zinc 140, tubo estándar
+  esperado: No interpretable
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: SEG-014#03
+  ficha: SEG-014
+  caso: BUN alto
+  datos: BUN 28, creatinina 0,9 (relación 31)
+  esperado: Vigilar hidratación
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: remnant_cholesterol#01
+  ficha: remnant_cholesterol
+  caso: PDF hombre 46 años
+  datos: Colesterol total 228, HDL 36, LDL medido 142
+  esperado: 50 mg/dL, solo valor
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: remnant_cholesterol#02
+  ficha: remnant_cholesterol
+  caso: PDF mujer 34 años
+  datos: Colesterol total 214, HDL 58, LDL medido 136
+  esperado: 20 mg/dL, solo valor
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: remnant_cholesterol#03
+  ficha: remnant_cholesterol
+  caso: LDL calculado
+  datos: LDL por Friedewald
+  esperado: No se calcula
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: tc_hdl_ratio#01
+  ficha: tc_hdl_ratio
+  caso: PDF hombre 46 años
+  datos: Colesterol total 228, HDL 36
+  esperado: 6,33, solo valor
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: tc_hdl_ratio#02
+  ficha: tc_hdl_ratio
+  caso: PDF mujer 34 años
+  datos: Colesterol total 214, HDL 58
+  esperado: 3,69, solo valor
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: tc_hdl_ratio#03
+  ficha: tc_hdl_ratio
+  caso: Sin HDL
+  datos: HDL no medido
+  esperado: No se calcula
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''
+- id: phenoage#01
+  ficha: phenoage
+  caso: PDF hombre 46 años
+  datos: Los 9 analitos del PDF
+  esperado: 44,3 años
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: phenoage#02
+  ficha: phenoage
+  caso: PDF mujer 34 años
+  datos: Los 9 analitos del PDF, con anemia
+  esperado: 34,1 años, con advertencia por anemia
+  usa_pdf: true
+  aprobado: ''
+  comentario: ''
+- id: phenoage#03
+  ficha: phenoage
+  caso: Falta un analito
+  datos: Sin fosfatasa alcalina
+  esperado: No se calcula
+  usa_pdf: false
+  aprobado: ''
+  comentario: ''

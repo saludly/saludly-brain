@@ -1,0 +1,5 @@
+Glucosa en mmol/L: 6.2 mmol/L -> 111.6992 mg/dL
+  duda: Ácido úrico: Unidad 'µmol/L' distinta de la canónica 'mg/dL' y sin regla de conversión.
+  duda: Lipoproteína X: Nombre no reconocido en el diccionario de sinónimos.
+  duda: Triglicéridos: Resultado duplicado (también en la página 1).
+  duda: Antígeno de Helicobacter pylori en heces: El laboratorio marcó este resultado con una observación (*).

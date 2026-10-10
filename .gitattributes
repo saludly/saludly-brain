@@ -1,0 +1,6 @@
+# Normaliza los saltos de línea: en Windows las pruebas reescriben las salidas con CRLF
+# y así git no las marca como cambiadas cuando el contenido es igual.
+* text=auto
+*.pdf binary
+*.png binary
+*.docx binary

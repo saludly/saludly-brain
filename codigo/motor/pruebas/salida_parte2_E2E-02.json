@@ -1,0 +1,613 @@
+{
+ "COND-M1-CA-001": {
+  "ficha": "COND-M1-CA-001",
+  "nombre": "Dislipidemia aterogénica",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "moderada",
+  "escalamiento": 1,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [
+   "ldl_alto"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "GPC Colombia dislipidemias 2014",
+   "ACC/AHA 2026, manejo de dislipidemia"
+  ]
+ },
+ "COND-M1-CA-002": {
+  "ficha": "COND-M1-CA-002",
+  "nombre": "Hipercolesterolemia severa o sospecha de hipercolesterolemia familiar",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "GPC Colombia dislipidemias 2014"
+  ]
+ },
+ "COND-M1-CA-003": {
+  "ficha": "COND-M1-CA-003",
+  "nombre": "Hipertrigliceridemia",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACC/AHA 2026, manejo de dislipidemia"
+  ]
+ },
+ "COND-M1-CA-004": {
+  "ficha": "COND-M1-CA-004",
+  "nombre": "Lipoproteína(a) elevada",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "alta",
+  "escalamiento": 1,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [
+   "lpa_alta"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ESC/EAS 2025, actualización de dislipidemias",
+   "ACC/AHA 2026"
+  ]
+ },
+ "COND-M1-CA-005": {
+  "ficha": "COND-M1-CA-005",
+  "nombre": "Riesgo cardiovascular global elevado",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_calculable",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "solo se calcula entre 40 y 69 años; se muestran los factores de riesgo",
+  "guias": [
+   "GPC Colombia HTA 2025 (Minsalud e IETS)",
+   "SCORE2 working group, Eur Heart J 2021",
+   "PURE-Colombia, Eur J Prev Cardiol 2025"
+  ]
+ },
+ "COND-M1-CA-006": {
+  "ficha": "COND-M1-CA-006",
+  "nombre": "Hipertensión arterial o presión elevada (sospecha)",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "incompleta",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [
+   "presion_enfermera"
+  ],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "GPC Colombia HTA 2025 (Minsalud e IETS)",
+   "AHA/ACC 2025, presión arterial alta"
+  ]
+ },
+ "COND-M1-CA-007": {
+  "ficha": "COND-M1-CA-007",
+  "nombre": "Riesgo de insuficiencia cardíaca en personas con diabetes",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "sin diabetes: el NT-proBNP no se mide",
+  "guias": [
+   "ADA Standards of Care (vía Diabetes Care 2025)"
+  ]
+ },
+ "COND-M1-CA-A01": {
+  "ficha": "COND-M1-CA-A01",
+  "nombre": "Discordancia ApoB / LDL",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACC/AHA 2026",
+   "NLA 2024 (consenso de expertos)"
+  ]
+ },
+ "COND-M1-CA-A02": {
+  "ficha": "COND-M1-CA-A02",
+  "nombre": "Inflamación de bajo grado",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ESC/EAS 2025 (modificador de riesgo)"
+  ]
+ },
+ "COND-M1-EM-002": {
+  "ficha": "COND-M1-EM-002",
+  "nombre": "Diabetes tipo 2 en rango diagnóstico",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ADA Standards of Care 2026, sección 2",
+   "GPC Colombia DM2 2016"
+  ]
+ },
+ "COND-M1-EM-001": {
+  "ficha": "COND-M1-EM-001",
+  "nombre": "Prediabetes",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ADA Standards of Care 2026, sección 2",
+   "GPC Colombia DM2 2016"
+  ]
+ },
+ "COND-M1-EM-003": {
+  "ficha": "COND-M1-EM-003",
+  "nombre": "Síndrome metabólico",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Declaración armonizada IDF/AHA/NHLBI 2009"
+  ]
+ },
+ "COND-M1-EM-004": {
+  "ficha": "COND-M1-EM-004",
+  "nombre": "Obesidad y sobrepeso",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "incompleta",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [
+   "peso_kg",
+   "talla_m"
+  ],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS, obesidad y sobrepeso"
+  ]
+ },
+ "COND-M1-EM-005": {
+  "ficha": "COND-M1-EM-005",
+  "nombre": "Glucosa baja en ayunas",
+  "modulo": "M1",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Clasificación ADA de hipoglucemia (Standards 2024, tabla 6.4)"
+  ]
+ },
+ "COND-M1-EM-A01": {
+  "ficha": "COND-M1-EM-A01",
+  "nombre": "Riesgo alto de diabetes por FINDRISC",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "incompleta",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [
+   "findrisc_puntaje"
+  ],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "GPC Colombia DM2 2016"
+  ]
+ },
+ "COND-M1-EM-A02": {
+  "ficha": "COND-M1-EM-A02",
+  "nombre": "Resistencia a la insulina por HOMA-IR",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Sin guía con umbral; ficha homa_ir del Knowledge Base"
+  ]
+ },
+ "COND-M2-NE-001": {
+  "ficha": "COND-M2-NE-001",
+  "nombre": "Enfermedad renal crónica (sospecha y estadio)",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "KDIGO 2024",
+   "GPC Colombia HTA 2025"
+  ],
+  "estadio": "G1 A1"
+ },
+ "COND-M2-NE-002": {
+  "ficha": "COND-M2-NE-002",
+  "nombre": "Albuminuria con TFG normal",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "KDIGO 2024"
+  ]
+ },
+ "COND-M2-NE-003": {
+  "ficha": "COND-M2-NE-003",
+  "nombre": "Daño renal asociado a diabetes o hipertensión",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "GPC Colombia DM2 2016",
+   "GPC Colombia HTA 2025",
+   "KDIGO 2024"
+  ]
+ },
+ "COND-M2-NE-004": {
+  "ficha": "COND-M2-NE-004",
+  "nombre": "Potasio alto",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_interpretable",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "potassium: resultado no válido según el laboratorio",
+  "guias": [
+   "KDIGO 2024"
+  ]
+ },
+ "COND-M2-NE-005": {
+  "ficha": "COND-M2-NE-005",
+  "nombre": "Sodio bajo",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Guía europea de hiponatremia 2014"
+  ]
+ },
+ "COND-M2-NE-006": {
+  "ficha": "COND-M2-NE-006",
+  "nombre": "Hematuria microscópica",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "AUA/SUFU 2020, enmendada 2025",
+   "KDIGO 2024"
+  ]
+ },
+ "COND-M2-NE-A01": {
+  "ficha": "COND-M2-NE-A01",
+  "nombre": "Potasio bajo",
+  "modulo": "M2",
+  "tipo": "apoyo",
+  "estado": "no_interpretable",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "potassium: resultado no válido según el laboratorio",
+  "guias": [
+   "Endocrine Society 2025, hiperaldosteronismo primario"
+  ]
+ },
+ "COND-M2-NE-A02": {
+  "ficha": "COND-M2-NE-A02",
+  "nombre": "Confirmación de TFG con cistatina C",
+  "modulo": "M2",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "KDIGO 2024"
+  ]
+ },
+ "COND-M2-NE-A03": {
+  "ficha": "COND-M2-NE-A03",
+  "nombre": "Bicarbonato bajo",
+  "modulo": "M2",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "KDIGO 2024"
+  ]
+ },
+ "COND-M2-TI-001": {
+  "ficha": "COND-M2-TI-001",
+  "nombre": "Hipotiroidismo subclínico",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "alta",
+  "escalamiento": 1,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [
+   "tsh_sobre_consenso",
+   "t4l_normal"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "Si busca embarazo, comentarlo pronto con el médico.",
+  "guias": [
+   "Consenso colombiano de hipotiroidismo 2023",
+   "AACE/ATA (anti-TPO y TSH >= 10 como criterios de tratamiento)"
+  ]
+ },
+ "COND-M2-TI-002": {
+  "ficha": "COND-M2-TI-002",
+  "nombre": "Hipotiroidismo primario",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Consenso colombiano de hipotiroidismo 2023"
+  ]
+ },
+ "COND-M2-TI-003": {
+  "ficha": "COND-M2-TI-003",
+  "nombre": "Sospecha de hipotiroidismo central",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Consenso colombiano de hipotiroidismo 2023"
+  ]
+ },
+ "COND-M2-TI-004": {
+  "ficha": "COND-M2-TI-004",
+  "nombre": "Hipertiroidismo subclínico",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ATA 2016"
+  ]
+ },
+ "COND-M2-TI-005": {
+  "ficha": "COND-M2-TI-005",
+  "nombre": "Hipertiroidismo manifiesto o T3-toxicosis",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ATA 2016"
+  ]
+ },
+ "COND-M2-TI-006": {
+  "ficha": "COND-M2-TI-006",
+  "nombre": "Disfunción tiroidea en el embarazo",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Consenso colombiano de hipotiroidismo 2023"
+  ]
+ },
+ "COND-M2-TI-007": {
+  "ficha": "COND-M2-TI-007",
+  "nombre": "Hiperparatiroidismo primario",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "calcio corregido 8.96",
+  "guias": [
+   "Quinto Taller Internacional de hiperparatiroidismo primario 2022"
+  ]
+ },
+ "COND-M2-TI-008": {
+  "ficha": "COND-M2-TI-008",
+  "nombre": "Hiperaldosteronismo primario (tamizaje en hipertensos)",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "sin presión ≥ 130/80 ni hipertensión conocida: no se piden aldosterona y renina",
+  "guias": [
+   "Endocrine Society 2025, hiperaldosteronismo primario",
+   "GPC Colombia HTA 2025"
+  ]
+ },
+ "COND-M2-TI-A01": {
+  "ficha": "COND-M2-TI-A01",
+  "nombre": "Autoinmunidad tiroidea",
+  "modulo": "M2",
+  "tipo": "apoyo",
+  "estado": "apoyo",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "causa autoinmune probable",
+  "guias": [
+   "Consenso colombiano de hipotiroidismo 2023",
+   "AACE/ATA"
+  ],
+  "modifica": [
+   "COND-M2-TI-001"
+  ]
+ }
+}

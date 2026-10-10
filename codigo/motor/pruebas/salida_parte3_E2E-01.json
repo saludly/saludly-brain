@@ -1,0 +1,769 @@
+{
+ "COND-M3-HE-001": {
+  "ficha": "COND-M3-HE-001",
+  "nombre": "Anemia ajustada por altitud y tabaquismo",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS 2024, cortes de hemoglobina para definir anemia"
+  ],
+  "hemoglobina_ajustada": 14.4
+ },
+ "COND-M3-HE-002": {
+  "ficha": "COND-M3-HE-002",
+  "nombre": "Anemia por déficit de hierro",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS 2020, ferritina",
+   "OMS 2024, cortes de hemoglobina"
+  ]
+ },
+ "COND-M3-HE-003": {
+  "ficha": "COND-M3-HE-003",
+  "nombre": "Déficit de hierro sin anemia",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS 2020, ferritina"
+  ]
+ },
+ "COND-M3-HE-004": {
+  "ficha": "COND-M3-HE-004",
+  "nombre": "Anemia por déficit de B12 o folato",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "NICE NG239 2024",
+   "OMS, folato"
+  ]
+ },
+ "COND-M3-HE-005": {
+  "ficha": "COND-M3-HE-005",
+  "nombre": "Plaquetas bajas",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Consenso internacional de PTI 2019"
+  ]
+ },
+ "COND-M3-HE-006": {
+  "ficha": "COND-M3-HE-006",
+  "nombre": "Posible sobrecarga de hierro",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "vigilar",
+  "coincidencia": "baja",
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "ferritina alta con saturación normal; ligada a enzimas hepáticas altas",
+  "guias": [
+   "EASL 2022, hemocromatosis",
+   "OMS 2020, ferritina"
+  ]
+ },
+ "COND-M3-HE-A01": {
+  "ficha": "COND-M3-HE-A01",
+  "nombre": "Anemia con perfil inflamatorio",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS 2020, ferritina"
+  ]
+ },
+ "COND-M3-HE-A02": {
+  "ficha": "COND-M3-HE-A02",
+  "nombre": "Leucocitos, neutrófilos o linfocitos fuera de rango",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Intervalo del laboratorio"
+  ]
+ },
+ "COND-M3-HE-A03": {
+  "ficha": "COND-M3-HE-A03",
+  "nombre": "Eosinofilia",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Intervalo del laboratorio"
+  ]
+ },
+ "COND-M3-NU-001": {
+  "ficha": "COND-M3-NU-001",
+  "nombre": "Déficit de vitamina B12",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "NICE NG239 2024"
+  ]
+ },
+ "COND-M3-NU-002": {
+  "ficha": "COND-M3-NU-002",
+  "nombre": "Déficit de folato",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS, folato"
+  ]
+ },
+ "COND-M3-NU-A01": {
+  "ficha": "COND-M3-NU-A01",
+  "nombre": "Homocisteína alta",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "NICE NG239 2024"
+  ]
+ },
+ "COND-M3-NU-A02": {
+  "ficha": "COND-M3-NU-A02",
+  "nombre": "PTH alta con calcio normal",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "PTH no medida (refleja solo con calcio corregido alto)",
+  "guias": [
+   "Quinto Taller Internacional de hiperparatiroidismo primario 2022"
+  ]
+ },
+ "COND-M3-NU-A03": {
+  "ficha": "COND-M3-NU-A03",
+  "nombre": "Vitamina D baja",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "activa",
+  "coincidencia": null,
+  "escalamiento": 0,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [
+   "vitd_baja"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "recomendación alimentaria y de sol, sin dosis",
+  "guias": [
+   "Endocrine Society 2024"
+  ]
+ },
+ "COND-M3-NU-A04": {
+  "ficha": "COND-M3-NU-A04",
+  "nombre": "Vitaminas informativas",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Regla de vitaminas (documento 07)",
+   "FDA, interferencia de biotina en inmunoensayos",
+   "ficha vitamin_b1 (Wernicke)"
+  ],
+  "detalle": {
+   "vitamin_b1": "en_rango",
+   "vitamin_b6": "en_rango",
+   "vitamin_a": "en_rango",
+   "vitamin_e": "en_rango",
+   "vitamin_k1": "en_rango",
+   "vitamin_c": "en_rango",
+   "biotin": "solo valor",
+   "niacin": "solo valor",
+   "omega3_index": "solo valor",
+   "omega6_omega3_ratio": "solo valor",
+   "coq10": "solo valor"
+  }
+ },
+ "COND-M4-GA-001": {
+  "ficha": "COND-M4-GA-001",
+  "nombre": "Riesgo de fibrosis por hígado graso metabólico (FIB-4)",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "FIB-4 0.89",
+  "guias": [
+   "EASL-EASD-EASO 2024, hígado graso metabólico"
+  ],
+  "fib4": 0.89
+ },
+ "COND-M4-GA-002": {
+  "ficha": "COND-M4-GA-002",
+  "nombre": "Alteración hepatocelular",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "moderada",
+  "escalamiento": 1,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [
+   "alt_alta"
+  ],
+  "datos_faltantes": [
+   "segunda medición"
+  ],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACG 2017, evaluación de pruebas hepáticas alteradas"
+  ],
+  "dispara": [
+   "iga",
+   "anti_ttg_iga"
+  ]
+ },
+ "COND-M4-GA-003": {
+  "ficha": "COND-M4-GA-003",
+  "nombre": "Alteración colestásica",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACG 2017"
+  ]
+ },
+ "COND-M4-GA-004": {
+  "ficha": "COND-M4-GA-004",
+  "nombre": "Sangre oculta en heces positiva",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Res. 3280 de 2018",
+   "USPSTF 2021"
+  ]
+ },
+ "COND-M4-GA-005": {
+  "ficha": "COND-M4-GA-005",
+  "nombre": "Infección por H. pylori",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "alta",
+  "escalamiento": 2,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [
+   "antigeno_positivo"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "incluir la limitación del antígeno fecal frente a la prueba de aliento",
+  "guias": [
+   "Asociación Colombiana de Gastroenterología 2025, H. pylori"
+  ]
+ },
+ "COND-M4-GA-006": {
+  "ficha": "COND-M4-GA-006",
+  "nombre": "Enfermedad celíaca (prueba dirigida)",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "pendiente_refleja",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "el laboratorio debe correr IgA total y anti-tTG IgA (COND-M4-GA-002)",
+  "guias": [
+   "ACG 2023, enfermedad celíaca"
+  ]
+ },
+ "COND-M4-GA-A01": {
+  "ficha": "COND-M4-GA-A01",
+  "nombre": "Bilirrubina indirecta elevada aislada",
+  "modulo": "M4",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACG 2017"
+  ]
+ },
+ "COND-M4-GA-A02": {
+  "ficha": "COND-M4-GA-A02",
+  "nombre": "Alteración hepática con consumo de alcohol",
+  "modulo": "M4",
+  "tipo": "apoyo",
+  "estado": "incompleta",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [
+   "consumo de alcohol"
+  ],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACG 2017"
+  ]
+ },
+ "COND-M4-IN-001": {
+  "ficha": "COND-M4-IN-001",
+  "nombre": "Hepatitis C",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Minsalud, tamización de hepatitis C",
+   "USPSTF 2020"
+  ]
+ },
+ "COND-M4-IN-002": {
+  "ficha": "COND-M4-IN-002",
+  "nombre": "Hepatitis B y estado frente a la vacuna",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "alta",
+  "escalamiento": 1,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [
+   "sin_anticuerpos_protectores"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "recomendar vacuna",
+  "guias": [
+   "CDC 2023, interpretación serológica de hepatitis B",
+   "Res. 1314 de 2020"
+  ],
+  "estado_hb": "susceptible"
+ },
+ "COND-M4-IN-003": {
+  "ficha": "COND-M4-IN-003",
+  "nombre": "Enfermedad de Chagas crónica",
+  "modulo": "M4",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Minsalud, algoritmo de Chagas (pieza para gestantes)"
+  ]
+ },
+ "COND-M4-IN-A01": {
+  "ficha": "COND-M4-IN-A01",
+  "nombre": "Infección urinaria con síntomas",
+  "modulo": "M4",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "IDSA 2019, bacteriuria asintomática"
+  ]
+ },
+ "COND-M4-IN-A02": {
+  "ficha": "COND-M4-IN-A02",
+  "nombre": "Parasitosis intestinal",
+  "modulo": "M4",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Pendiente de fuente colombiana"
+  ]
+ },
+ "COND-M5-MU-001": {
+  "ficha": "COND-M5-MU-001",
+  "nombre": "Andrógenos altos (posible SOP)",
+  "modulo": "M5",
+  "tipo": "incluida",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Guía internacional de SOP 2023"
+  ]
+ },
+ "COND-M5-MU-002": {
+  "ficha": "COND-M5-MU-002",
+  "nombre": "FSH alta en menores de 40 años",
+  "modulo": "M5",
+  "tipo": "incluida",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "NICE NG23, menopausia"
+  ]
+ },
+ "COND-M5-MU-003": {
+  "ficha": "COND-M5-MU-003",
+  "nombre": "Prolactina alta",
+  "modulo": "M5",
+  "tipo": "incluida",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Endocrine Society 2011",
+   "Febrasgo y SBEM 2024"
+  ]
+ },
+ "COND-M5-MU-A01": {
+  "ficha": "COND-M5-MU-A01",
+  "nombre": "Anemia en el embarazo",
+  "modulo": "M5",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS 2024, cortes de hemoglobina"
+  ]
+ },
+ "COND-M5-UR-001": {
+  "ficha": "COND-M5-UR-001",
+  "nombre": "PSA elevado",
+  "modulo": "M5",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Res. 3280 de 2018",
+   "AUA/SUO 2026, detección temprana de cáncer de próstata"
+  ]
+ },
+ "COND-M5-UR-002": {
+  "ficha": "COND-M5-UR-002",
+  "nombre": "Testosterona baja",
+  "modulo": "M5",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Endocrine Society 2018, hipogonadismo masculino"
+  ]
+ },
+ "COND-M5-UR-A01": {
+  "ficha": "COND-M5-UR-A01",
+  "nombre": "Testosterona libre calculada",
+  "modulo": "M5",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "no indicada: testosterona total 412 ng/dL fuera de 200 a 400, SHBG en rango e IMC sin dato",
+  "guias": [
+   "Endocrine Society 2018"
+  ]
+ },
+ "COND-M5-UR-A02": {
+  "ficha": "COND-M5-UR-A02",
+  "nombre": "Relación PSA libre / total",
+  "modulo": "M5",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "PSA libre no medido (solo se mide con PSA total entre 4 y 10)",
+  "guias": [
+   "Pendiente de fuente"
+  ]
+ },
+ "COND-M6-RE-001": {
+  "ficha": "COND-M6-RE-001",
+  "nombre": "Ácido úrico alto sin síntomas",
+  "modulo": "M6",
+  "tipo": "incluida",
+  "estado": "activa",
+  "coincidencia": "alta",
+  "escalamiento": 1,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [
+   "urico_alto"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACR 2020, gota"
+  ]
+ },
+ "COND-M6-RE-A01": {
+  "ficha": "COND-M6-RE-A01",
+  "nombre": "ANA positivo",
+  "modulo": "M6",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Satoh 2012 (prevalencia en población general)",
+   "Criterios EULAR/ACR 2019 para lupus"
+  ]
+ },
+ "COND-M6-RE-A02": {
+  "ficha": "COND-M6-RE-A02",
+  "nombre": "VSG alta",
+  "modulo": "M6",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "ACR/EULAR 2010 (como reactante de fase aguda solo con sinovitis clínica)"
+  ]
+ },
+ "COND-M6-MI-001": {
+  "ficha": "COND-M6-MI-001",
+  "nombre": "Riesgo de desnutrición",
+  "modulo": "M6",
+  "tipo": "incluida",
+  "estado": "incompleta",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "riesgo_potencial",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [
+   "peso_kg",
+   "talla_m",
+   "pérdida de peso"
+  ],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "GLIM 2019"
+  ]
+ },
+ "COND-M6-MI-A01": {
+  "ficha": "COND-M6-MI-A01",
+  "nombre": "Lectura por edad del panel",
+  "modulo": "M6",
+  "tipo": "apoyo",
+  "estado": "apoyo",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Reglas de los Lotes 1 a 6",
+   "OMS 2024, cortes de hemoglobina"
+  ],
+  "recordatorios": []
+ },
+ "COND-M6-MI-A02": {
+  "ficha": "COND-M6-MI-A02",
+  "nombre": "Edad biológica (PhenoAge)",
+  "modulo": "M6",
+  "tipo": "apoyo",
+  "estado": "activa",
+  "coincidencia": null,
+  "escalamiento": 0,
+  "nivel_lenguaje": null,
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Levine et al. 2018, Aging 10(4):573-591"
+  ],
+  "phenoage": 44.3,
+  "diferencia": -1.7
+ }
+}

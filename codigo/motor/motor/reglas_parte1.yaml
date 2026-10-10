@@ -1,0 +1,42 @@
+# Saludly Brain · Motor de análisis · Parte 1 (cálculos y clasificación)
+# Reglas como datos: si una cambia, cambia aquí y se vuelven a correr las pruebas.
+# Cada regla cita la ficha del Knowledge Base de donde sale.
+
+limitrofe:
+  # Dentro del intervalo del laboratorio pero fuera de un umbral clínico definido en una ficha
+  alt:
+    fuente: COND-M4-GA-002
+    hombre: {sobre: 33}
+    mujer: {sobre: 25}
+  tsh:
+    fuente: COND-M2-TI-001
+    nota: "zona entre el límite del laboratorio y el corte del consenso colombiano se clasifica como alto por el laboratorio; aquí solo se marca la zona de vigilancia dentro del intervalo"
+  ferritin:
+    fuente: COND-M3-HE-003
+    zona: {desde: 15, hasta: 29.99}
+
+critico_por_guia:
+  # Umbrales de urgencia escritos en una guía o ficha (documento 04: Saludly no inventa umbrales de urgencia)
+  glucose: {menor_que: 54, fuente: "COND-M1-EM-005 (ADA, hipoglucemia nivel 2)", requiere: "muestra confiable"}
+  hs_troponin: {mayor_que_limite_superior: true, fuente: "SEG-001"}
+
+no_interpretable_por_contexto:
+  ayuno_minimo_8h: [glucose, triglycerides, insulin, homa_ir, ldl_c, remnant_cholesterol, vitamin_k1, phenoage]
+  cortisol_fuera_de_6_a_10: [cortisol]
+  biotina: [tsh, free_t4, free_t3, anti_tpo, anti_tg, vitamin_b12, folate, igf1]
+  hormonas_de_fase: [fsh, lh, estradiol, progesterone]   # sin fecha de última menstruación, con anticonceptivo hormonal, embarazo o menopausia
+  embarazo: [fsh, lh, estradiol, progesterone, prolactin, testosterone_total, shbg, alp, phenoage]
+  vitamina_c_sin_transporte_validado: [vitamin_c]
+  menstruacion: [urinalysis]   # solo el campo de sangre y los hematíes del sedimento
+
+altitud:
+  # OMS 2024: ajuste de hemoglobina por altitud de residencia (g/dL a restar)
+  fuente: "OMS 2024, cortes de hemoglobina"
+  ciudades_metros: {Bogotá: 2640, Medellín: 1495, Cali: 1000, Barranquilla: 18, Cartagena: 2, Bucaramanga: 959, Pereira: 1411, Manizales: 2160, Tunja: 2820, Pasto: 2527, Popayán: 1760}
+  tabla:
+    - {desde: 2500, hasta: 2999, restar: 1.8}
+  por_verificar: "Solo la franja de 2.500 a 2.999 m está escrita (Lote 3). Las demás franjas deben copiarse de la tabla OMS 2024 antes de atender pacientes fuera de esa altitud."
+
+tabaquismo:
+  fuente: "OMS 2024"
+  por_verificar: "Los valores del ajuste por tabaquismo no están escritos; mientras tanto no se ajusta y se marca la duda."
