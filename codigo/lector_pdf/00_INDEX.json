@@ -339,11 +339,85 @@
     "COND-M5-MU-003",
     "COND-M2-TI-001"
    ]
+  },
+  "REL-028": {
+   "nombre": "SOP con perfil metabólico",
+   "tipo": "patron",
+   "biomarcadores": [
+    "testosterone_total",
+    "shbg",
+    "homa_ir",
+    "tyg_index",
+    "glucose",
+    "hba1c",
+    "triglycerides",
+    "hdl_c"
+   ],
+   "implementada_por": [
+    "COND-M5-MU-001",
+    "COND-M1-EM-001",
+    "COND-M1-EM-003",
+    "COND-M1-CA-001",
+    "COND-M1-CA-003",
+    "COND-M1-EM-A02",
+    "COND-M1-EM-A04"
+   ]
+  },
+  "REL-029": {
+   "nombre": "Glóbulos rojos altos con testosterona alta",
+   "tipo": "patron",
+   "biomarcadores": [
+    "hemoglobin",
+    "hematocrit",
+    "testosterone_total"
+   ],
+   "implementada_por": [
+    "COND-M3-HE-007"
+   ]
+  },
+  "REL-030": {
+   "nombre": "Inflamación por glóbulos blancos y PCR",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "nlr",
+    "neutrophils_abs",
+    "lymphocytes_abs",
+    "hs_crp"
+   ],
+   "implementada_por": []
+  },
+  "REL-031": {
+   "nombre": "Señal autoinmune por factor reumatoide",
+   "tipo": "vigilar",
+   "biomarcadores": [
+    "rheumatoid_factor",
+    "anti_ccp",
+    "ana_hep2",
+    "esr",
+    "hs_crp"
+   ],
+   "implementada_por": []
   }
  },
  "version": "1",
- "generado": "2026-10-06",
+ "generado": "2026-10-10",
  "biomarcadores": {
+  "abo_rh": {
+   "nombre": "Grupo sanguíneo ABO y factor Rh",
+   "unidad": "grupo (A, B, AB, O) y Rh (positivo o negativo)",
+   "panel": "estándar",
+   "nivel": "dato (sin condición)",
+   "sinonimos": [
+    "Grupo sanguíneo",
+    "Hemoclasificación",
+    "Grupo sanguíneo y Rh",
+    "Hemoclasificación ABO y Rh",
+    "Grupo ABO",
+    "Factor Rh",
+    "ABO/Rh"
+   ],
+   "reglas": []
+  },
   "acth": {
    "nombre": "ACTH",
    "unidad": "pg/mL",
@@ -357,7 +431,8 @@
     "Adrenocorticotropic Hormone"
    ],
    "reglas": [
-    "SEG-002"
+    "SEG-002",
+    "COND-M2-TI-009"
    ]
   },
   "ag_ratio": {
@@ -374,7 +449,8 @@
     "Albumin/Globulin Ratio"
    ],
    "reglas": [
-    "SEG-009"
+    "SEG-009",
+    "COND-M6-MI-002"
    ]
   },
   "albumin": {
@@ -391,7 +467,8 @@
    "reglas": [
     "COND-M2-TI-007",
     "COND-M5-UR-A01",
-    "COND-M6-MI-A02"
+    "COND-M6-MI-A02",
+    "COND-M6-MI-002"
    ]
   },
   "aldosterone": {
@@ -461,7 +538,25 @@
     "FAN"
    ],
    "reglas": [
-    "COND-M6-RE-A01"
+    "COND-M6-RE-A01",
+    "REL-031"
+   ]
+  },
+  "anti_ccp": {
+   "nombre": "Anticuerpos contra péptido citrulinado cíclico",
+   "unidad": "U/mL",
+   "panel": "refleja",
+   "nivel": "refleja (opcional)",
+   "sinonimos": [
+    "Anti-CCP",
+    "Anticuerpos anti péptido citrulinado",
+    "Péptido citrulinado",
+    "Anticitrulina",
+    "ACPA",
+    "Anti-cyclic citrullinated peptide"
+   ],
+   "reglas": [
+    "REL-031"
    ]
   },
   "anti_hbc": {
@@ -697,7 +792,7 @@
   "biotin": {
    "nombre": "Biotina (vitamina B7)",
    "unidad": "ng/L",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Biotina",
@@ -751,7 +846,8 @@
     "C-Peptide"
    ],
    "reglas": [
-    "SEG-010"
+    "SEG-010",
+    "COND-M1-EM-A03"
    ]
   },
   "calcium": {
@@ -768,7 +864,8 @@
    ],
    "reglas": [
     "COND-M2-TI-007",
-    "COND-M3-NU-A02"
+    "COND-M3-NU-A02",
+    "COND-M6-MI-002"
    ]
   },
   "chagas_elisa_recombinante": {
@@ -842,7 +939,7 @@
   "coq10": {
    "nombre": "Coenzima Q10",
    "unidad": "µg/mL",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Coenzima Q10",
@@ -866,7 +963,8 @@
     "CORT"
    ],
    "reglas": [
-    "SEG-002"
+    "SEG-002",
+    "COND-M2-TI-009"
    ]
   },
   "creatinine": {
@@ -969,7 +1067,8 @@
     "Red Blood Cell Count"
    ],
    "reglas": [
-    "SEG-012"
+    "SEG-012",
+    "COND-M3-HE-A04"
    ]
   },
   "esr": {
@@ -986,7 +1085,8 @@
     "Erythrocyte Sedimentation Rate (ESR)"
    ],
    "reglas": [
-    "COND-M6-RE-A02"
+    "COND-M6-RE-A02",
+    "REL-031"
    ]
   },
   "estradiol": {
@@ -1000,7 +1100,8 @@
     "Estradiol (E2)"
    ],
    "reglas": [
-    "SEG-011"
+    "SEG-011",
+    "COND-M5-MU-004"
    ]
   },
   "ferritin": {
@@ -1017,7 +1118,9 @@
     "COND-M3-HE-002",
     "COND-M3-HE-003",
     "COND-M3-HE-006",
-    "COND-M3-HE-A01"
+    "COND-M3-HE-A01",
+    "COND-M3-HE-A04",
+    "COND-M3-HE-008"
    ]
   },
   "fibrinogen": {
@@ -1138,7 +1241,8 @@
     "Follicle-Stimulating Hormone"
    ],
    "reglas": [
-    "COND-M5-MU-002"
+    "COND-M5-MU-002",
+    "COND-M5-MU-004"
    ]
   },
   "ggt": {
@@ -1157,7 +1261,8 @@
    ],
    "reglas": [
     "COND-M4-GA-003",
-    "COND-M4-GA-A02"
+    "COND-M4-GA-A02",
+    "COND-M3-HE-009"
    ]
   },
   "globulin": {
@@ -1171,7 +1276,8 @@
     "Globulins"
    ],
    "reglas": [
-    "SEG-009"
+    "SEG-009",
+    "COND-M6-MI-002"
    ]
   },
   "glucose": {
@@ -1193,6 +1299,37 @@
     "COND-M1-EM-003",
     "COND-M1-EM-005",
     "COND-M6-MI-A02"
+   ]
+  },
+  "haptoglobin": {
+   "nombre": "Haptoglobina",
+   "unidad": "mg/dL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Haptoglobina",
+    "Hp",
+    "Haptoglobin"
+   ],
+   "reglas": [
+    "REL-009"
+   ]
+  },
+  "hb_electrophoresis": {
+   "nombre": "Electroforesis de hemoglobina",
+   "unidad": "% por fracción (HbA, HbA2, HbF y variantes)",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Electroforesis de hemoglobina",
+    "Electroforesis alcalina de hemoglobina",
+    "Hemoglobina A2",
+    "HbA2",
+    "Fraccionamiento de hemoglobinas",
+    "Hb electrophoresis"
+   ],
+   "reglas": [
+    "COND-M3-HE-A04"
    ]
   },
   "hba1c": {
@@ -1274,7 +1411,9 @@
     "Hematocrit"
    ],
    "reglas": [
-    "SEG-012"
+    "SEG-012",
+    "COND-M3-HE-007",
+    "REL-029"
    ]
   },
   "hemoglobin": {
@@ -1291,7 +1430,10 @@
     "COND-M3-HE-001",
     "COND-M3-HE-002",
     "COND-M3-HE-004",
-    "COND-M5-MU-A01"
+    "COND-M5-MU-A01",
+    "COND-M3-HE-007",
+    "COND-M3-HE-010",
+    "REL-029"
    ]
   },
   "homa_ir": {
@@ -1306,7 +1448,8 @@
     "HOMA-IR (Homeostasis Model Assessment of Insulin Resistance)"
    ],
    "reglas": [
-    "COND-M1-EM-A02"
+    "COND-M1-EM-A02",
+    "REL-028"
    ]
   },
   "homocysteine": {
@@ -1359,7 +1502,9 @@
     "COND-M3-HE-A01",
     "COND-M6-MI-001",
     "COND-M6-MI-A02",
-    "COND-M6-RE-A02"
+    "COND-M6-RE-A02",
+    "REL-030",
+    "REL-031"
    ]
   },
   "hs_troponin": {
@@ -1379,6 +1524,23 @@
    ],
    "reglas": [
     "SEG-001"
+   ]
+  },
+  "hydroxyprogesterone_17": {
+   "nombre": "17-hidroxiprogesterona",
+   "unidad": "ng/mL",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "17-hidroxiprogesterona",
+    "17-OH progesterona",
+    "17 OH progesterona",
+    "Hidroxiprogesterona 17 alfa",
+    "17-OHP",
+    "17-hydroxyprogesterone"
+   ],
+   "reglas": [
+    "REL-028"
    ]
   },
   "iga": {
@@ -1424,7 +1586,8 @@
     "Immunoglobulin G"
    ],
    "reglas": [
-    "SEG-009"
+    "SEG-009",
+    "COND-M6-MI-002"
    ]
   },
   "igm": {
@@ -1439,7 +1602,8 @@
     "Immunoglobulin M"
    ],
    "reglas": [
-    "SEG-009"
+    "SEG-009",
+    "COND-M6-MI-002"
    ]
   },
   "inr": {
@@ -1553,7 +1717,8 @@
     "Absolute Lymphocyte Count"
    ],
    "reglas": [
-    "COND-M3-HE-A02"
+    "COND-M3-HE-A02",
+    "REL-030"
    ]
   },
   "lymphocytes_pct": {
@@ -1650,7 +1815,24 @@
    "reglas": [
     "COND-M3-HE-002",
     "COND-M3-HE-004",
-    "COND-M6-MI-A02"
+    "COND-M6-MI-A02",
+    "COND-M3-HE-A04",
+    "COND-M3-HE-009"
+   ]
+  },
+  "mentzer_index": {
+   "nombre": "Índice de Mentzer",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango (apoyo de condiciones)",
+   "sinonimos": [
+    "Índice de Mentzer",
+    "Mentzer",
+    "VCM/eritrocitos",
+    "Mentzer index"
+   ],
+   "reglas": [
+    "COND-M3-HE-A04"
    ]
   },
   "methylmalonic_acid": {
@@ -1715,7 +1897,9 @@
     "Absolute Neutrophil Count"
    ],
    "reglas": [
-    "COND-M3-HE-A02"
+    "COND-M3-HE-A02",
+    "COND-M3-HE-010",
+    "REL-030"
    ]
   },
   "neutrophils_pct": {
@@ -1738,7 +1922,7 @@
   "niacin": {
    "nombre": "Niacina (vitamina B3)",
    "unidad": "µg/mL",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Niacina",
@@ -1749,6 +1933,21 @@
    ],
    "reglas": [
     "COND-M3-NU-A04"
+   ]
+  },
+  "nlr": {
+   "nombre": "Relación neutrófilos/linfocitos",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor (vigilar)",
+   "sinonimos": [
+    "Relación neutrófilos/linfocitos",
+    "NLR",
+    "Índice neutrófilo-linfocito",
+    "Neutrophil-lymphocyte ratio"
+   ],
+   "reglas": [
+    "REL-030"
    ]
   },
   "non_hdl_c": {
@@ -1805,7 +2004,7 @@
   "omega3_index": {
    "nombre": "Índice omega-3",
    "unidad": "%",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Índice omega-3",
@@ -1820,7 +2019,7 @@
   "omega6_omega3_ratio": {
    "nombre": "Relación omega-6/omega-3",
    "unidad": "sin unidad",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Relación omega 6/omega 3",
@@ -1890,7 +2089,9 @@
    ],
    "reglas": [
     "COND-M3-HE-005",
-    "SEG-006"
+    "SEG-006",
+    "COND-M3-HE-008",
+    "COND-M3-HE-010"
    ]
   },
   "potassium": {
@@ -2086,6 +2287,24 @@
     "COND-M4-GA-A01"
    ]
   },
+  "rheumatoid_factor": {
+   "nombre": "Factor reumatoide",
+   "unidad": "UI/mL",
+   "panel": "estándar",
+   "nivel": "solo valor y rango (vigilar)",
+   "sinonimos": [
+    "Factor reumatoide",
+    "FR",
+    "RF",
+    "Factor reumatoideo",
+    "Factor reumatoideo cuantitativo",
+    "Látex FR",
+    "Rheumatoid factor"
+   ],
+   "reglas": [
+    "REL-031"
+   ]
+  },
   "serum_iron": {
    "nombre": "Hierro sérico",
    "unidad": "µg/dL",
@@ -2102,6 +2321,22 @@
     "COND-M3-HE-006"
    ]
   },
+  "serum_protein_electrophoresis": {
+   "nombre": "Electroforesis de proteínas en suero",
+   "unidad": "g/dL por fracción y presencia o no de banda monoclonal",
+   "panel": "refleja",
+   "nivel": "refleja",
+   "sinonimos": [
+    "Electroforesis de proteínas",
+    "Electroforesis de proteínas en suero",
+    "Proteinograma",
+    "Proteinograma electroforético",
+    "SPEP"
+   ],
+   "reglas": [
+    "COND-M6-MI-002"
+   ]
+  },
   "shbg": {
    "nombre": "SHBG",
    "unidad": "nmol/L",
@@ -2116,7 +2351,8 @@
    "reglas": [
     "COND-M5-MU-001",
     "COND-M5-UR-002",
-    "COND-M5-UR-A01"
+    "COND-M5-UR-A01",
+    "REL-028"
    ]
   },
   "sodium": {
@@ -2199,7 +2435,24 @@
    ],
    "reglas": [
     "COND-M5-MU-001",
-    "COND-M5-UR-002"
+    "COND-M5-UR-002",
+    "REL-028",
+    "REL-029"
+   ]
+  },
+  "tg_hdl_ratio": {
+   "nombre": "Relación triglicéridos/HDL",
+   "unidad": "sin unidad (con valores en mg/dL)",
+   "panel": "calculado",
+   "nivel": "solo valor y rango (apoyo de condiciones)",
+   "sinonimos": [
+    "Relación TG/HDL",
+    "TG/HDL",
+    "Triglicéridos/HDL",
+    "Triglyceride/HDL ratio"
+   ],
+   "reglas": [
+    "COND-M1-EM-A04"
    ]
   },
   "tibc": {
@@ -2245,7 +2498,8 @@
    ],
    "reglas": [
     "COND-M2-NE-005",
-    "SEG-009"
+    "SEG-009",
+    "COND-M6-MI-002"
    ]
   },
   "transferrin": {
@@ -2319,6 +2573,21 @@
     "COND-M2-TI-006"
    ]
   },
+  "tyg_index": {
+   "nombre": "Índice triglicéridos-glucosa (TyG)",
+   "unidad": "sin unidad",
+   "panel": "calculado",
+   "nivel": "solo valor y rango (apoyo de condiciones)",
+   "sinonimos": [
+    "Índice TyG",
+    "TyG",
+    "Índice triglicéridos-glucosa",
+    "Triglyceride-glucose index"
+   ],
+   "reglas": [
+    "COND-M1-EM-A04"
+   ]
+  },
   "uacr": {
    "nombre": "UACR",
    "unidad": "mg/g",
@@ -2378,7 +2647,7 @@
   "vitamin_a": {
    "nombre": "Vitamina A (retinol sérico)",
    "unidad": "µg/dL",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Vitamina A",
@@ -2393,7 +2662,7 @@
   "vitamin_b1": {
    "nombre": "Vitamina B1 (Tiamina)",
    "unidad": "nmol/L",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Vitamina B1",
@@ -2426,7 +2695,7 @@
   "vitamin_b6": {
    "nombre": "Vitamina B6 (PLP)",
    "unidad": "µg/L",
-   "panel": "estándar",
+   "panel": "opcional",
    "nivel": "vitamina",
    "sinonimos": [
     "Vitamina B6",
@@ -2444,7 +2713,7 @@
   "vitamin_c": {
    "nombre": "Vitamina C (ácido ascórbico)",
    "unidad": "mg/dL",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Vitamina C",
@@ -2479,7 +2748,7 @@
   "vitamin_e": {
    "nombre": "Vitamina E (alfa-tocoferol)",
    "unidad": "mg/L",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Vitamina E",
@@ -2494,7 +2763,7 @@
   "vitamin_k1": {
    "nombre": "Vitamina K1 (filoquinona)",
    "unidad": "ng/mL",
-   "panel": "estándar",
+   "panel": "fuera del panel base",
    "nivel": "vitamina",
    "sinonimos": [
     "Vitamina K1",
@@ -2740,6 +3009,32 @@
     "insulin"
    ]
   },
+  "COND-M1-EM-A03": {
+   "id": "COND-M1-EM-A03",
+   "nombre": "Diabetes con posible falta de insulina",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "apoyo",
+   "det": "D2",
+   "esc": "modifica",
+   "usa": [
+    "c_peptide",
+    "hba1c"
+   ]
+  },
+  "COND-M1-EM-A04": {
+   "id": "COND-M1-EM-A04",
+   "nombre": "Resistencia a la insulina por TyG y TG/HDL",
+   "modulo": "M1",
+   "esp": "endocrinologia_metabolica",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "tg_hdl_ratio",
+    "tyg_index"
+   ]
+  },
   "COND-M2-NE-001": {
    "id": "COND-M2-NE-001",
    "nombre": "Enfermedad renal crónica (sospecha y estadio)",
@@ -2957,6 +3252,20 @@
     "renin"
    ]
   },
+  "COND-M2-TI-009": {
+   "id": "COND-M2-TI-009",
+   "nombre": "Cortisol de la mañana bajo (posible insuficiencia suprarrenal)",
+   "modulo": "M2",
+   "esp": "tiroides_paratiroides_suprarrenal",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": [
+    "acth",
+    "cortisol",
+    "sodium"
+   ]
+  },
   "COND-M2-TI-A01": {
    "id": "COND-M2-TI-A01",
    "nombre": "Autoinmunidad tiroidea",
@@ -3049,6 +3358,60 @@
     "transferrin_saturation"
    ]
   },
+  "COND-M3-HE-007": {
+   "id": "COND-M3-HE-007",
+   "nombre": "Glóbulos rojos altos (eritrocitosis) ajustados por altitud",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "hematocrit",
+    "hemoglobin"
+   ]
+  },
+  "COND-M3-HE-008": {
+   "id": "COND-M3-HE-008",
+   "nombre": "Plaquetas altas (trombocitosis)",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1, 2, 3",
+   "usa": [
+    "ferritin",
+    "platelets"
+   ]
+  },
+  "COND-M3-HE-009": {
+   "id": "COND-M3-HE-009",
+   "nombre": "Glóbulos rojos grandes sin anemia (macrocitosis)",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "1",
+   "usa": [
+    "ggt",
+    "hemoglobin",
+    "mcv"
+   ]
+  },
+  "COND-M3-HE-010": {
+   "id": "COND-M3-HE-010",
+   "nombre": "Dos o más líneas de la sangre bajas",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "incluida",
+   "det": "D1",
+   "esc": "2, 3",
+   "usa": [
+    "hemoglobin",
+    "neutrophils_abs",
+    "platelets"
+   ]
+  },
   "COND-M3-HE-A01": {
    "id": "COND-M3-HE-A01",
    "nombre": "Anemia con perfil inflamatorio",
@@ -3088,6 +3451,21 @@
    "usa": [
     "eosinophils_pct",
     "wbc"
+   ]
+  },
+  "COND-M3-HE-A04": {
+   "id": "COND-M3-HE-A04",
+   "nombre": "Rasgo talasémico probable",
+   "modulo": "M3",
+   "esp": "hematologia",
+   "tipo": "apoyo",
+   "det": "D1",
+   "esc": "modifica",
+   "usa": [
+    "ferritin",
+    "hb_electrophoresis",
+    "mcv",
+    "mentzer_index"
    ]
   },
   "COND-M3-NU-001": {
@@ -3367,6 +3745,19 @@
     "prolactin"
    ]
   },
+  "COND-M5-MU-004": {
+   "id": "COND-M5-MU-004",
+   "nombre": "Transición a la menopausia",
+   "modulo": "M5",
+   "esp": "salud_de_la_mujer",
+   "tipo": "apoyo",
+   "det": "D2",
+   "esc": "modifica",
+   "usa": [
+    "estradiol",
+    "fsh"
+   ]
+  },
   "COND-M5-MU-A01": {
    "id": "COND-M5-MU-A01",
    "nombre": "Anemia en el embarazo",
@@ -3431,6 +3822,20 @@
    "esc": "1, 2",
    "usa": [
     "hs_crp"
+   ]
+  },
+  "COND-M6-MI-002": {
+   "id": "COND-M6-MI-002",
+   "nombre": "Posible proteína anormal en la sangre (gammapatía)",
+   "modulo": "M6",
+   "esp": "medicina_interna_y_envejecimiento",
+   "tipo": "incluida",
+   "det": "D2",
+   "esc": "2",
+   "usa": [
+    "calcium",
+    "globulin",
+    "serum_protein_electrophoresis"
    ]
   },
   "COND-M6-MI-A01": {

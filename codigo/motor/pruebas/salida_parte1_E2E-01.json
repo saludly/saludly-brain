@@ -3309,6 +3309,44 @@
    "calculado": false,
    "motivo": "PSA libre no medido (solo se mide con PSA total entre 4 y 10)"
   },
+  "tyg_index": {
+   "id": "tyg_index",
+   "calculado": true,
+   "valor": 9.5,
+   "unidad": null,
+   "formula": "ln(triglicéridos × glucosa / 2), en mg/dL",
+   "entradas": {
+    "triglycerides": 238.0,
+    "glucose": 112.0
+   }
+  },
+  "tg_hdl_ratio": {
+   "id": "tg_hdl_ratio",
+   "calculado": true,
+   "valor": 6.61,
+   "unidad": null,
+   "formula": "triglicéridos / HDL, en mg/dL",
+   "entradas": {
+    "triglycerides": 238.0,
+    "hdl_c": 36.0
+   }
+  },
+  "mentzer_index": {
+   "id": "mentzer_index",
+   "calculado": false,
+   "motivo": "solo se calcula con VCM menor de 80 fL"
+  },
+  "nlr": {
+   "id": "nlr",
+   "calculado": true,
+   "valor": 1.88,
+   "unidad": null,
+   "formula": "neutrófilos absolutos / linfocitos absolutos",
+   "entradas": {
+    "neutrophils_abs": 4.54,
+    "lymphocytes_abs": 2.42
+   }
+  },
   "hemoglobina_ajustada": {
    "id": "hemoglobina_ajustada",
    "calculado": true,

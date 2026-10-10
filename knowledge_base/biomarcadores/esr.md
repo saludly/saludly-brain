@@ -21,6 +21,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - COND-M6-RE-A02
+- REL-031
 combine_with:
 - hs_crp
 - fibrinogen

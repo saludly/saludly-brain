@@ -18,7 +18,7 @@ tipo_resultado: numérico
 unidad_canonica: µg/L
 specimen: Suero
 nivel_catalogo: vitamina
-panel: estándar
+panel: "opcional"
 sexo: ambos
 alimenta:
 - COND-M3-NU-A04
@@ -39,6 +39,8 @@ notas_decision:
 ---
 
 # Vitamina B6 (Piridoxal-5-Fosfato, PLP)
+
+> **Decisión del 10 de octubre de 2026.** Pasa a prueba opcional el 10 de octubre de 2026 (aprobación de Carlos): no tiene guía de tamizaje en personas sanas. No está en el panel base ni en la solicitud al laboratorio; se ofrecería como complemento pagado (aplazado).
 
 ## Notas de decisión de Saludly (6 de octubre de 2026)
 

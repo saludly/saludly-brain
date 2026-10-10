@@ -23,6 +23,7 @@ sexo: ambos
 alimenta:
 - COND-M4-GA-003
 - COND-M4-GA-A02
+- COND-M3-HE-009
 combine_with:
 - alt
 - ast

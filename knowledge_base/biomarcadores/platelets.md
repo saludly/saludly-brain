@@ -20,6 +20,8 @@ sexo: ambos
 alimenta:
 - COND-M3-HE-005
 - SEG-006
+- COND-M3-HE-008
+- COND-M3-HE-010
 combine_with:
 - mpv
 - wbc

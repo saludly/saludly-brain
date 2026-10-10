@@ -1,0 +1,77 @@
+# Textos de "Lo que está bien" por grupo de biomarcadores (Fase 5). estado_revision: pendiente
+
+- id: hemograma
+  nombre: "Hemograma"
+  biomarcadores: [hemoglobin, hematocrit, erythrocytes, mcv, mch, mchc, rdw, wbc, neutrophils_pct, neutrophils_abs, lymphocytes_pct, lymphocytes_abs, monocytes_pct, eosinophils_pct, basophils_pct, platelets, mpv, nrbc, reticulocytes_pct, reticulocytes_abs]
+  texto_bien: "Tus glóbulos rojos, blancos y plaquetas están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: glucosa_metabolismo
+  nombre: "Azúcar y metabolismo"
+  biomarcadores: [glucose, hba1c, insulin, homa_ir, c_peptide, fructosamine, tyg_index]
+  texto_bien: "Tu azúcar en la sangre y la forma en que tu cuerpo la maneja están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: lipidos
+  nombre: "Colesterol y grasas"
+  biomarcadores: [total_cholesterol, ldl_c, hdl_c, triglycerides, non_hdl_c, apob, apoa1, apob_apoa1_ratio, lpa, remnant_cholesterol, tc_hdl_ratio, tg_hdl_ratio]
+  texto_bien: "Tu colesterol y tus triglicéridos están dentro de los rangos recomendados. Mantenerlos así ayuda a cuidar tus arterias con los años."
+  estado_revision: pendiente
+- id: higado
+  nombre: "Hígado"
+  biomarcadores: [alt, ast, ggt, alp, bilirubin_total, bilirubin_direct, albumin]
+  texto_bien: "Tus enzimas del hígado y tu bilirrubina están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: rinon
+  nombre: "Riñones"
+  biomarcadores: [creatinine, egfr, bun, bun_creatinine_ratio, cystatin_c, uacr, uric_acid, urinalysis]
+  texto_bien: "Tus riñones están filtrando dentro de lo esperado para tu edad y en tu orina no apareció nada fuera de lo esperado."
+  estado_revision: pendiente
+- id: electrolitos
+  nombre: "Sales y minerales de la sangre"
+  biomarcadores: [sodium, potassium, chloride, bicarbonate, calcium, magnesium, phosphorus, osmolality]
+  texto_bien: "Tus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: tiroides
+  nombre: "Tiroides"
+  biomarcadores: [tsh, free_t4, free_t3, anti_tpo, anti_tg]
+  texto_bien: "Las hormonas de tu tiroides están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: hierro
+  nombre: "Hierro"
+  biomarcadores: [ferritin, serum_iron, transferrin, transferrin_saturation, tibc]
+  texto_bien: "Tus reservas de hierro y el hierro que circula en tu sangre están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: vitaminas_minerales
+  nombre: "Vitaminas y minerales"
+  biomarcadores: [vitamin_d, vitamin_b12, folate, vitamin_a, vitamin_b1, vitamin_b6, vitamin_c, vitamin_e, vitamin_k1, niacin, zinc, coq10, omega3_index, omega6_omega3_ratio, homocysteine, methylmalonic_acid]
+  texto_bien: "Las vitaminas y minerales que se midieron están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: inflamacion
+  nombre: "Inflamación"
+  biomarcadores: [hs_crp, esr, nlr]
+  texto_bien: "Tus marcadores de inflamación están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: hormonas
+  nombre: "Hormonas"
+  biomarcadores: [testosterone_total, testosterone_free, shbg, estradiol, fsh, lh, progesterone, prolactin, dhea_s, cortisol, acth, igf1, hydroxyprogesterone_17, aldosterone, renin]
+  texto_bien: "Las hormonas que se midieron están dentro de los rangos de referencia para tu edad y tu sexo."
+  estado_revision: pendiente
+- id: corazon
+  nombre: "Corazón y músculos"
+  biomarcadores: [hs_troponin, nt_probnp, ck_cpk, ldh]
+  texto_bien: "Los marcadores de esfuerzo del corazón y de los músculos que se midieron están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: proteinas
+  nombre: "Proteínas de la sangre"
+  biomarcadores: [total_protein, globulin, ag_ratio, igg, iga, igm, serum_protein_electrophoresis]
+  texto_bien: "Tus proteínas de la sangre y tus anticuerpos generales están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: coagulacion
+  nombre: "Coagulación"
+  biomarcadores: [pt, inr, fibrinogen]
+  texto_bien: "Tus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
+  estado_revision: pendiente
+- id: serologias
+  nombre: "Pruebas de infecciones y anticuerpos"
+  biomarcadores: [hbsag, anti_hbc, anti_hcv, hcv_rna, chagas_elisa_total, chagas_elisa_recombinante, ana_hep2, anti_ccp, rheumatoid_factor, anti_ttg_iga, hpylori_stool_ag]
+  texto_bien: "En las pruebas de infecciones y de anticuerpos que se hicieron no se encontraron anticuerpos ni marcadores reactivos. Si tienes síntomas o una exposición reciente, coméntalo con tu médico."
+  estado_revision: pendiente

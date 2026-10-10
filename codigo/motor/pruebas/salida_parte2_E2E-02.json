@@ -609,5 +609,59 @@
   "modifica": [
    "COND-M2-TI-001"
   ]
+ },
+ "COND-M1-EM-A03": {
+  "ficha": "COND-M1-EM-A03",
+  "nombre": "Diabetes con posible falta de insulina",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "sin diabetes en rango ni conocida",
+  "guias": [
+   "ADA, Standards of Care 2025, clasificación de la diabetes"
+  ]
+ },
+ "COND-M1-EM-A04": {
+  "ficha": "COND-M1-EM-A04",
+  "nombre": "Resistencia a la insulina por TyG y TG/HDL",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Simental-Mendía 2008; Guerrero-Romero 2010 (TyG)",
+   "McLaughlin 2003 (TG/HDL)"
+  ],
+  "tyg_index": 8.35,
+  "tg_hdl_ratio": 1.69
+ },
+ "COND-M2-TI-009": {
+  "ficha": "COND-M2-TI-009",
+  "nombre": "Cortisol de la mañana bajo (posible insuficiencia suprarrenal)",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Endocrine Society 2016, insuficiencia suprarrenal primaria"
+  ]
  }
 }

@@ -11,7 +11,7 @@ tipo_resultado: "numérico"
 unidad_canonica: "%"
 specimen: "Sangre total (membranas de glóbulos rojos)"
 nivel_catalogo: "vitamina"
-panel: "estándar, todas las personas"
+panel: "fuera del panel base"
 alimenta: ["COND-M3-NU-A04"]
 tier: 3
 status: "BORRADOR"
@@ -23,6 +23,8 @@ fuentes_estado: "por verificar"
 ---
 
 # SLD-BIO-118 · Índice omega-3
+
+> **Decisión del 10 de octubre de 2026.** Retirada del panel base el 10 de octubre de 2026 (aprobación de Carlos): es una prueba especializada que no ofrecen los laboratorios clínicos comunes o que exige transporte especial, y ni Function Health ni Superpower la incluyen en su panel base. La ficha se conserva: si el resultado llega, se interpreta igual.
 
 ## A. Identificación
 Porcentaje de EPA y DHA sobre el total de ácidos grasos de las membranas de los glóbulos rojos, por cromatografía de gases.

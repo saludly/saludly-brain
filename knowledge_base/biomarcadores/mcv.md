@@ -23,6 +23,8 @@ alimenta:
 - COND-M3-HE-002
 - COND-M3-HE-004
 - COND-M6-MI-A02
+- COND-M3-HE-A04
+- COND-M3-HE-009
 combine_with:
 - hemoglobin
 - hematocrit

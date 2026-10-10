@@ -1,0 +1,13 @@
+id: COND-M2-NE-004
+tipo: condicion
+titulo_paciente: "Potasio por encima del rango"
+que_es: "El potasio es un mineral que ayuda a que los músculos y los nervios funcionen bien; los riñones regulan su nivel."
+por_que_te_aparece:
+  - "Tu potasio salió en {potassium}, por encima del rango del laboratorio."
+riesgo_claro: "Si se confirmara alto y se mantuviera así, podría alterar el ritmo del corazón y la fuerza de los músculos; por eso no se ignora y se repite pronto."
+ejemplo_simple: "Es como pesar fruta golpeada: si la muestra se maltrata al tomarla, el número sale más alto de lo real."
+incertidumbre: "Muchas veces sale alto por cómo se tomó o se procesó la muestra, así que lo vamos a repetir. No cambies tus medicamentos por tu cuenta; eso lo decide tu médico."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["KDIGO 2024"]
+estado_revision: pendiente

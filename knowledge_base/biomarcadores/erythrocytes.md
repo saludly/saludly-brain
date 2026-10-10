@@ -21,6 +21,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - SEG-012
+- COND-M3-HE-A04
 combine_with:
 - hemoglobin
 - hematocrit

@@ -220,12 +220,42 @@ def imc(R, ctx):
     return _ok("imc", round(p / t ** 2, 1), "peso / talla²", {"peso_kg": p, "talla_m": t}, unidad="kg/m²")
 
 
+# Índices aprobados el 10 de octubre de 2026 (fichas SLD-BIO-141 a 144); sus cortes viven en las fichas de condición
+def tyg(R, ctx):
+    f = _faltan(R, ["triglycerides", "glucose"])
+    if f: return _no("tyg_index", f"faltan: {', '.join(f)}")
+    if (ctx.get("ayuno_horas") or 0) < 8: return _no("tyg_index", "ayuno menor de 8 horas")
+    tg, g = _v(R, "triglycerides"), _v(R, "glucose")
+    return _ok("tyg_index", round(math.log(tg * g / 2), 2), "ln(triglicéridos × glucosa / 2), en mg/dL", {"triglycerides": tg, "glucose": g})
+
+def tg_hdl(R, ctx):
+    f = _faltan(R, ["triglycerides", "hdl_c"])
+    if f: return _no("tg_hdl_ratio", f"faltan: {', '.join(f)}")
+    if (ctx.get("ayuno_horas") or 0) < 8: return _no("tg_hdl_ratio", "ayuno menor de 8 horas")
+    tg, h = _v(R, "triglycerides"), _v(R, "hdl_c")
+    return _ok("tg_hdl_ratio", round(tg / h, 2), "triglicéridos / HDL, en mg/dL", {"triglycerides": tg, "hdl_c": h})
+
+def mentzer(R, ctx):
+    f = _faltan(R, ["mcv", "erythrocytes"])
+    if f: return _no("mentzer_index", f"faltan: {', '.join(f)}")
+    v, e = _v(R, "mcv"), _v(R, "erythrocytes")
+    if v >= 80: return _no("mentzer_index", "solo se calcula con VCM menor de 80 fL")
+    return _ok("mentzer_index", round(v / e, 1), "VCM / eritrocitos (Mentzer 1973)", {"mcv": v, "erythrocytes": e})
+
+def nlr(R, ctx):
+    f = _faltan(R, ["neutrophils_abs", "lymphocytes_abs"])
+    if f: return _no("nlr", f"faltan: {', '.join(f)}")
+    n, l = _v(R, "neutrophils_abs"), _v(R, "lymphocytes_abs")
+    if l <= 0: return _no("nlr", "linfocitos en cero")
+    return _ok("nlr", round(n / l, 2), "neutrófilos absolutos / linfocitos absolutos", {"neutrophils_abs": n, "lymphocytes_abs": l})
+
+
 def calcular_todo(R, ctx, reglas):
     out = {}
     c = imc(R, ctx); out[c["id"]] = c
     if c["calculado"]: ctx = dict(ctx, imc=c["valor"])
     for fn in [homa_ir, non_hdl, remanente, ct_hdl, saturacion, tfg, testo_libre, fai, globulinas, ag, bun_cr, apob_apoa1,
-               calcio_corregido, osmolalidad, sodio_corregido, eos_abs, fib4, psa_porcentaje]:
+               calcio_corregido, osmolalidad, sodio_corregido, eos_abs, fib4, psa_porcentaje, tyg, tg_hdl, mentzer, nlr]:
         c = fn(R, ctx); out[c["id"]] = c
     c = hb_ajustada(R, ctx, reglas); out[c["id"]] = c
     c = phenoage(R, ctx); out[c["id"]] = c

@@ -1,0 +1,94 @@
+# Recomendaciones de vitaminas y suplementos · lote A
+# Numeración 100 a 199. Regla de vitaminas (documento 07.3): alimentos primero; suplementos solo como tema para
+# hablar con el médico, sin dosis ni marcas. Pendiente de revisión de Carlos.
+
+- id: REC-VIT-101
+  tipo: vitaminas_suplementos
+  titulo: "Cuéntale a tu médico si usas biotina"
+  texto_base: "Si usas suplementos para el pelo, la piel o las uñas, o multivitamínicos, revisa si tienen biotina y coméntalo con tu médico antes de repetir los exámenes de tiroides."
+  meta_concreta: "Revisa hoy las etiquetas de tus suplementos y anota si alguno dice biotina."
+  por_que: "La biotina puede alterar el resultado de los exámenes de tiroides y hacerlos parecer distintos de lo que son."
+  se_activa_con: ["COND-M2-TI-001", "COND-M2-TI-002", "COND-M2-TI-003", "COND-M2-TI-004", "COND-M2-TI-005", "REL-017", "biotin:alto"]
+  prioriza_objetivos: ["condicion_existente", "energia_sueno", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Revisa hoy las etiquetas de tus suplementos para pelo, piel o uñas. Si alguno dice biotina, coméntalo con tu médico antes de repetir tus exámenes."
+  fuentes: ["FDA Safety Communication: Biotin interference with laboratory tests 2019", "ATA Guidelines for the Treatment of Hypothyroidism 2014"]
+
+- id: REC-VIT-102
+  tipo: vitaminas_suplementos
+  titulo: "Sin suplementos de potasio por tu cuenta"
+  texto_base: "No uses suplementos de potasio, sales minerales ni productos naturales con potasio sin indicación médica, hasta repetir el examen."
+  meta_concreta: "Revisa hoy tus suplementos y separa los que digan potasio para mostrárselos a tu médico."
+  por_que: "Sumar potasio cuando ya está alto puede afectar el ritmo del corazón."
+  se_activa_con: ["COND-M2-NE-004", "potassium:alto"]
+  prioriza_objetivos: ["condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si usas suplementos o sales minerales, revisa si tienen potasio y muéstraselos a tu médico antes de seguir usándolos."
+  fuentes: ["KDIGO Controversies Conference on Potassium 2020"]
+
+- id: REC-VIT-103
+  tipo: vitaminas_suplementos
+  titulo: "Calcio y vitamina D solo con indicación"
+  texto_base: "Mientras se aclara el resultado, no uses suplementos de calcio ni de vitamina D sin indicación de tu médico, y cuéntale si ya los usabas."
+  meta_concreta: "Anota hoy qué suplementos usas para llevarlos a tu cita."
+  por_que: "Estos suplementos pueden subir el calcio de la sangre y confundir el resultado."
+  se_activa_con: ["COND-M2-TI-007", "calcium:alto"]
+  prioriza_objetivos: ["condicion_existente", "envejecer_saludable"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Antes de tu cita, anota los suplementos que usas, en especial si tienen calcio o vitamina D, y llévale la lista a tu médico."
+  fuentes: ["Fifth International Workshop on Primary Hyperparathyroidism 2022"]
+
+- id: REC-VIT-104
+  tipo: vitaminas_suplementos
+  titulo: "Sin yodo ni algas extra"
+  texto_base: "No uses suplementos de yodo, algas ni productos para la tiroides sin indicación de tu médico. La sal yodada de la cocina es suficiente."
+  meta_concreta: "Revisa hoy si algún suplemento o té que usas tiene yodo o algas y coméntalo en tu cita."
+  por_que: "El exceso de yodo puede desajustar la tiroides en cualquier dirección."
+  se_activa_con: ["COND-M2-TI-001", "COND-M2-TI-002", "COND-M2-TI-004", "COND-M2-TI-005", "REL-017"]
+  prioriza_objetivos: ["condicion_existente", "energia_sueno", "bajar_peso"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si usas productos naturales para la tiroides o con algas, coméntalo con tu médico antes de seguir usándolos."
+  fuentes: ["ATA Guidelines for the Treatment of Hypothyroidism 2014", "ATA Statement on the Potential Risks of Excess Iodine Ingestion 2013"]
+
+- id: REC-VIT-105
+  tipo: vitaminas_suplementos
+  titulo: "Proteína en polvo y creatina, mejor consultar"
+  texto_base: "Si quieres usar proteína en polvo o creatina, habla primero con tu médico. Mientras se revisan tus riñones, la comida es la mejor fuente."
+  meta_concreta: "Lleva a tu cita los suplementos deportivos que usas o quieres usar."
+  por_que: "La creatina y el exceso de proteína pueden cambiar los exámenes del riñón y su cuidado."
+  se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "REL-010"]
+  prioriza_objetivos: ["masa_muscular", "atletico", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: true
+  whatsapp: "Si usas o quieres usar proteína en polvo o creatina, coméntalo primero con tu médico."
+  fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD"]
+
+- id: REC-VIT-106
+  tipo: vitaminas_suplementos
+  titulo: "Cuidado con los productos para la testosterona"
+  texto_base: "No uses productos que prometen subir la testosterona o la masa muscular sin hablar antes con tu médico. Algunos tienen hormonas no declaradas."
+  meta_concreta: "Si usas alguno, llévalo a tu próxima cita."
+  por_que: "Estos productos pueden alterar tus hormonas y tus exámenes sin control médico."
+  se_activa_con: ["COND-M5-UR-002", "REL-024"]
+  prioriza_objetivos: ["masa_muscular", "atletico", "energia_sueno"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si usas productos para subir la testosterona o el músculo, muéstraselos a tu médico antes de seguir."
+  fuentes: ["Endocrine Society, Testosterone Therapy in Men with Hypogonadism 2018", "INVIMA, alertas sanitarias sobre suplementos dietarios"]
+
+- id: REC-VIT-107
+  tipo: vitaminas_suplementos
+  titulo: "Si quieres suplementar, habla con tu médico"
+  texto_base: "Primero busca el calcio y la vitamina D en los alimentos. Si quieres suplementar, habla con tu médico para saber si lo necesitas."
+  meta_concreta: "Lleva la pregunta a tu próxima cita."
+  por_que: "Tu médico decide si te conviene un suplemento según tus exámenes y tus huesos."
+  se_activa_con: ["COND-M5-MU-004"]
+  prioriza_objetivos: ["envejecer_saludable", "prevenir"]
+  contraindicada_si: ["COND-M2-TI-007", "calcium:alto"]
+  requiere_consulta_previa: false
+  whatsapp: "¿Te preguntas si necesitas calcio o vitamina D? Anota la pregunta para tu próxima cita médica."
+  fuentes: ["The Menopause Society (NAMS), Management of osteoporosis in postmenopausal women 2021"]

@@ -1,0 +1,15 @@
+id: SEG-009
+tipo: seguridad
+titulo_paciente: "Proteínas de la sangre fuera del rango"
+que_es: "Las proteínas de la sangre incluyen la albúmina, que transporta sustancias, y las globulinas, entre ellas los anticuerpos de las defensas."
+por_que_te_aparece:
+  - "Tus proteínas totales salieron en {total_protein}."
+  - "Tus globulinas salieron en {globulin} y la relación entre albúmina y globulinas en {ag_ratio}."
+  - "Tus inmunoglobulinas, que son anticuerpos, salieron así: IgG {igg} e IgM {igm}."
+riesgo_claro: "Si la proporción se mantiene alterada, conviene buscar la causa, porque puede relacionarse con una inflamación, el hígado o las defensas."
+ejemplo_simple: "Es como una receta en la que cambian las proporciones de los ingredientes: hay que revisar cuál se pasó o cuál faltó."
+incertidumbre: "La deshidratación, una infección reciente o el hígado pueden cambiarlas; puede tener varias causas y tu médico decide si hace falta otro examen."
+cuando_consultar: "Coméntalo con tu médico."
+aviso_whatsapp: null
+fuentes: ["Fichas total_protein, globulin, ag_ratio, igg e igm del Knowledge Base"]
+estado_revision: pendiente

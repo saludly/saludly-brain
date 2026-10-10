@@ -16,7 +16,7 @@ tipo_resultado: numérico
 unidad_canonica: nmol/L
 specimen: Suero
 nivel_catalogo: vitamina
-panel: estándar
+panel: "fuera del panel base"
 sexo: ambos
 alimenta:
 - COND-M3-NU-A04
@@ -33,6 +33,8 @@ notas_decision:
 ---
 
 # Vitamina B1 (Tiamina)
+
+> **Decisión del 10 de octubre de 2026.** Retirada del panel base el 10 de octubre de 2026 (aprobación de Carlos): es una prueba especializada que no ofrecen los laboratorios clínicos comunes o que exige transporte especial, y ni Function Health ni Superpower la incluyen en su panel base. La ficha se conserva: si el resultado llega, se interpreta igual.
 
 ## Notas de decisión de Saludly (6 de octubre de 2026)
 

@@ -29,6 +29,23 @@ no_interpretable_por_contexto:
   vitamina_c_sin_transporte_validado: [vitamin_c]
   menstruacion: [urinalysis]   # solo el campo de sangre y los hematíes del sedimento
 
+panel:
+  # Decisión de Carlos (10 de octubre de 2026): el MVP usa solo pruebas de sangre; orina y heces quedan en pausa.
+  # El contexto de la visita puede pedir panel: "completo" para evaluarlas (así corren las pruebas de las partes 1 a 4).
+  modo_por_defecto: solo_sangre
+  solo_sangre:
+    biomarcadores_pausados: [urinalysis, uacr, fit_stool, hpylori_stool_ag, stool_exam]
+    condiciones_pausadas: [COND-M2-NE-002, COND-M2-NE-006, COND-M4-GA-004, COND-M4-GA-005, COND-M4-IN-A01, COND-M4-IN-A02]
+    relaciones_pausadas: [REL-010]
+    seguridad_pausada: [SEG-013]
+    # Se siguen evaluando, pero les falta la parte de orina o heces
+    parciales:
+      COND-M2-NE-001: "solo con la TFG; sin estadio de albuminuria (orina en pausa)"
+      COND-M2-NE-003: "solo con la TFG; sin albuminuria (orina en pausa)"
+      COND-M2-NE-A02: "sin albuminuria para descartar daño renal (orina en pausa)"
+      COND-M3-HE-002: "sin sangre oculta en heces para buscar la causa (heces en pausa)"
+      COND-M3-HE-A03: "sin coprológico para cruzar con parásitos (heces en pausa)"
+
 altitud:
   # OMS 2024: ajuste de hemoglobina por altitud de residencia (g/dL a restar)
   fuente: "OMS 2024, cortes de hemoglobina"

@@ -1,0 +1,17 @@
+id: SEG-012
+tipo: seguridad
+titulo_paciente: "Un valor del hemograma fuera del rango"
+que_es: "El hemograma cuenta y mide las células de la sangre: glóbulos rojos, glóbulos blancos y plaquetas."
+por_que_te_aparece:
+  - "Tus monocitos, un tipo de glóbulo blanco, salieron en {monocytes_pct}."
+  - "Tus basófilos, otro tipo de glóbulo blanco, salieron en {basophils_pct}."
+  - "Tu hematocrito, la proporción de la sangre que ocupan los glóbulos rojos, salió en {hematocrit}, y tus glóbulos rojos en {erythrocytes}."
+  - "Tu HCM y tu CHCM, que miden la hemoglobina dentro de cada glóbulo rojo, salieron en {mch} y {mchc}."
+  - "Tu VPM, el tamaño promedio de tus plaquetas, salió en {mpv}."
+riesgo_claro: "Un valor aislado fuera de rango muchas veces no tiene importancia, pero si se mantiene o se suma a otros cambios, conviene buscar la causa."
+ejemplo_simple: "Es como un dato raro en una encuesta: puede ser casualidad, por eso se mira de nuevo antes de sacar conclusiones."
+incertidumbre: "Una gripa reciente, la deshidratación o la altura de Bogotá pueden mover estos valores; tu médico decide si hay que repetir el hemograma."
+cuando_consultar: null
+aviso_whatsapp: "Hay un valor de tu hemograma en tu informe de Saludly para comentar con tu médico."
+fuentes: ["Fichas del hemograma en el Knowledge Base"]
+estado_revision: pendiente

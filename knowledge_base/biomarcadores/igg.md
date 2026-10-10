@@ -19,6 +19,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - SEG-009
+- COND-M6-MI-002
 combine_with:
 - iga
 - igm

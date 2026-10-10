@@ -1,0 +1,14 @@
+id: COND-M3-HE-008
+tipo: condicion
+titulo_paciente: "Plaquetas por encima del rango"
+que_es: "Las plaquetas son las células que ayudan a que la sangre coagule y a cerrar las heridas."
+por_que_te_aparece:
+  - "Tus plaquetas salieron en {platelets}, por encima del rango esperado."
+  - "Revisamos también tu ferritina, que es la reserva de hierro, porque la falta de hierro puede subir las plaquetas: salió en {ferritin}."
+riesgo_claro: "Si siguen altas sin que se conozca la causa, con el tiempo pueden favorecer problemas de coagulación; por eso vale la pena aclararlo."
+ejemplo_simple: "Es como cuando una empresa pone más personal de turno porque pasó algo: casi siempre responde a una situación pasajera."
+incertidumbre: "Casi siempre es una reacción a algo pasajero, como falta de hierro o una inflamación. Conviene repetir el examen en unas semanas y revisarlo con tu médico."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["BSH, investigación de la trombocitosis", "OMS, criterios de trombocitemia esencial"]
+estado_revision: pendiente

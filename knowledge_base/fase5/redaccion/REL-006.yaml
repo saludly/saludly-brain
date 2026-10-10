@@ -1,0 +1,15 @@
+id: REL-006
+tipo: patron
+titulo_paciente: "Tu hígado y tu metabolismo cuentan la misma historia"
+que_es: "Las enzimas del hígado, como la ALT y la GGT, suben cuando sus células trabajan de más, por ejemplo cuando se acumula grasa en él."
+por_que_te_aparece:
+  - "Tu ALT, una enzima del hígado, salió en {alt}."
+  - "Tu GGT, otra enzima del hígado, salió en {ggt}."
+  - "Tus triglicéridos, un tipo de grasa en la sangre, salieron en {triglycerides}."
+riesgo_claro: "Si se mantiene por años, la grasa y la inflamación en el hígado pueden ir dejando cicatrices que afectan su funcionamiento."
+ejemplo_simple: "Es como una bodega a la que llega más mercancía de la que puede despachar: se va llenando y el trabajo se vuelve pesado."
+incertidumbre: "El alcohol o el ejercicio intenso de los días previos y algunos medicamentos también suben estas enzimas; hace falta ver si se mantienen en los próximos meses."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ACG 2017", "EASL-EASD-EASO 2024"]
+estado_revision: pendiente

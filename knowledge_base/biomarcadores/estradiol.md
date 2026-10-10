@@ -18,6 +18,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - SEG-011
+- COND-M5-MU-004
 combine_with:
 - fsh
 - lh

@@ -1,0 +1,14 @@
+id: COND-M1-EM-001
+tipo: condicion
+titulo_paciente: "Glucosa en zona de alerta"
+que_es: "La glucosa es el azúcar que circula en tu sangre y le da energía al cuerpo."
+por_que_te_aparece:
+  - "Tu glucosa en ayunas salió en {glucose}; la zona de alerta va de 100 a 125 mg/dL."
+  - "Tu hemoglobina glicada, que muestra el promedio de azúcar de los últimos 3 meses, salió en {hba1c}; la zona de alerta va de 5,7 a 6,4 %."
+riesgo_claro: "Si se mantiene así durante años, aumenta la probabilidad de llegar a diabetes, que con el tiempo afecta el corazón, los riñones y la vista."
+ejemplo_simple: "Es como una alarma de humo que suena antes del incendio: avisa a tiempo para actuar."
+incertidumbre: "Un solo examen no basta para confirmarlo; el ayuno corto, algunos medicamentos o la anemia lo alteran. Tu médico puede pedir repetirlo."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ADA Standards of Care 2026, sección 2", "GPC Colombia DM2 2016"]
+estado_revision: pendiente

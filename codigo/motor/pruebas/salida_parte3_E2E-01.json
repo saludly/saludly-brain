@@ -765,5 +765,131 @@
   ],
   "phenoage": 44.3,
   "diferencia": -1.7
+ },
+ "COND-M3-HE-007": {
+  "ficha": "COND-M3-HE-007",
+  "nombre": "Glóbulos rojos altos (eritrocitosis) ajustados por altitud",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "OMS 2024, cortes de hemoglobina y ajuste por altitud",
+   "BSH 2019, investigación de la eritrocitosis",
+   "OMS 2016, criterios de policitemia vera"
+  ],
+  "hemoglobina_ajustada": 14.4
+ },
+ "COND-M3-HE-008": {
+  "ficha": "COND-M3-HE-008",
+  "nombre": "Plaquetas altas (trombocitosis)",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "BSH, investigación de la trombocitosis",
+   "OMS, criterios de trombocitemia esencial"
+  ]
+ },
+ "COND-M3-HE-A04": {
+  "ficha": "COND-M3-HE-A04",
+  "nombre": "Rasgo talasémico probable",
+  "modulo": "M3",
+  "tipo": "apoyo",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "BSH, tamizaje de hemoglobinopatías",
+   "Mentzer 1973"
+  ]
+ },
+ "COND-M3-HE-009": {
+  "ficha": "COND-M3-HE-009",
+  "nombre": "Glóbulos rojos grandes sin anemia (macrocitosis)",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "BSH, evaluación de la macrocitosis"
+  ]
+ },
+ "COND-M3-HE-010": {
+  "ficha": "COND-M3-HE-010",
+  "nombre": "Dos o más líneas de la sangre bajas",
+  "modulo": "M3",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Criterio hematológico general de bicitopenia y pancitopenia"
+  ]
+ },
+ "COND-M6-MI-002": {
+  "ficha": "COND-M6-MI-002",
+  "nombre": "Posible proteína anormal en la sangre (gammapatía)",
+  "modulo": "M6",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "IMWG (International Myeloma Working Group)",
+   "NCCN, gammapatías monoclonales"
+  ]
+ },
+ "COND-M5-MU-004": {
+  "ficha": "COND-M5-MU-004",
+  "nombre": "Transición a la menopausia",
+  "modulo": "M5",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "resultado_observado",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "STRAW+10 (2012), etapas del envejecimiento reproductivo",
+   "NICE NG23, menopausia"
+  ]
  }
 }

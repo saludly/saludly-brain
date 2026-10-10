@@ -18,6 +18,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - SEG-010
+- COND-M1-EM-A03
 combine_with:
 - glucose
 - insulin

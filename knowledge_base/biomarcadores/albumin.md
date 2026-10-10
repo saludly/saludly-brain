@@ -21,6 +21,7 @@ alimenta:
 - COND-M2-TI-007
 - COND-M5-UR-A01
 - COND-M6-MI-A02
+- COND-M6-MI-002
 combine_with:
 - globulin
 - ag_ratio

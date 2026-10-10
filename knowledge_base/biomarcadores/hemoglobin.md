@@ -21,6 +21,9 @@ alimenta:
 - COND-M3-HE-002
 - COND-M3-HE-004
 - COND-M5-MU-A01
+- COND-M3-HE-007
+- COND-M3-HE-010
+- REL-029
 combine_with:
 - hematocrit
 - mcv

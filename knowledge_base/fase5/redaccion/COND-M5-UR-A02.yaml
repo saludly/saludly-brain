@@ -1,0 +1,14 @@
+id: COND-M5-UR-A02
+tipo: condicion
+titulo_paciente: "Proporción de PSA libre"
+que_es: "El PSA circula en la sangre de dos formas, libre y unido a proteínas; la proporción entre ambas ayuda al médico a interpretar un PSA alto."
+por_que_te_aparece:
+  - "Tu PSA libre salió en {psa_free}, frente a un PSA total de {psa_total}."
+  - "Esto equivale a una proporción de PSA libre de {psa_libre_porcentaje}."
+riesgo_claro: "Por sí sola no indica ninguna enfermedad; sirve para decidir con tu médico qué tan pronto conviene evaluar el PSA alto."
+ejemplo_simple: "Es como mirar en una fila no solo cuántas personas hay, sino cuántas van solas y cuántas acompañadas: el detalle ayuda a entender mejor."
+incertidumbre: "Los cortes para interpretar esta proporción todavía están en revisión; tu médico la usa como un dato más, junto con tu edad y tu examen."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Pendiente de fuente"]
+estado_revision: pendiente

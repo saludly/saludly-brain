@@ -1,0 +1,15 @@
+id: COND-M3-HE-001
+tipo: condicion
+titulo_paciente: "Hemoglobina baja para la altura de Bogotá"
+que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno a todo tu cuerpo."
+por_que_te_aparece:
+  - "Tu hemoglobina salió en {hemoglobin}."
+  - "En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso la ajustamos por la altura y quedó en {hemoglobina_ajustada}, por debajo del valor recomendado."
+  - "Ese valor ajustado está en el rango que las guías llaman anemia, que tiene varias causas posibles."
+riesgo_claro: "Si no se busca la causa, el cuerpo recibe menos oxígeno: puede aparecer cansancio, mareo o falta de aire, y lo que la produce puede seguir avanzando."
+ejemplo_simple: "Es como un camión de reparto con menos cajas: llega a todas partes, pero entrega menos oxígeno del que el cuerpo necesita."
+incertidumbre: "Un solo examen no basta para saber la causa. Abajo te contamos qué muestran tus otros resultados, y tu médico confirma de dónde viene."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["OMS 2024, cortes de hemoglobina para definir anemia"]
+estado_revision: pendiente

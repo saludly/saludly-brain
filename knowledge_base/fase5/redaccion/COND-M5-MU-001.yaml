@@ -1,0 +1,15 @@
+id: COND-M5-MU-001
+tipo: condicion
+titulo_paciente: "Hormonas masculinas (andrógenos) por encima del rango"
+que_es: "Los andrógenos, como la testosterona, son hormonas que las mujeres también producen, en menor cantidad que los hombres."
+por_que_te_aparece:
+  - "Tu testosterona total salió en {testosterone_total}, por encima del rango para mujeres."
+  - "Tu índice de andrógenos libres, que estima la parte de la testosterona que está activa, salió en {indice_androgenos_libres}."
+  - "Tu SHBG, la proteína que transporta estas hormonas en la sangre, salió en {shbg}."
+riesgo_claro: "Si se mantienen altos, los andrógenos pueden relacionarse con ciclos irregulares, acné, más vello y dificultad para manejar el azúcar."
+ejemplo_simple: "Es como subirle el volumen a una emisora: la música es la misma, pero se nota más de lo habitual."
+incertidumbre: "Un valor alto puede tener varias explicaciones y por sí solo no confirma nada; tu médico lo interpreta junto con tus ciclos y síntomas."
+cuando_consultar: "Coméntalo con tu médico o con ginecología, sobre todo si tus ciclos menstruales son irregulares."
+aviso_whatsapp: "Hay un resultado hormonal en tu informe de Saludly para revisar. Ábrelo cuando puedas."
+fuentes: ["Guía internacional de SOP 2023"]
+estado_revision: pendiente

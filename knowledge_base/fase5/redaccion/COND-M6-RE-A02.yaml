@@ -1,0 +1,14 @@
+id: COND-M6-RE-A02
+tipo: condicion
+titulo_paciente: "Velocidad de sedimentación por encima del rango"
+que_es: "La velocidad de sedimentación (VSG) mide qué tan rápido se asientan los glóbulos rojos en un tubo; es una señal general de inflamación."
+por_que_te_aparece:
+  - "Tu VSG salió en {esr}, por encima del rango de referencia."
+  - "Tu proteína C reactiva, otra señal de inflamación que se lee junto con la VSG, salió en {hs_crp}."
+riesgo_claro: "Una inflamación que se mantiene por meses desgasta el cuerpo; por eso, si sigue alta, conviene buscar la causa con tu médico."
+ejemplo_simple: "Es como ver humo: indica que algo se está calentando, pero no dice dónde ni qué tan grande es."
+incertidumbre: "Sube por muchas causas, incluso pasajeras, como una gripa reciente, la anemia, el embarazo o la edad; conviene repetirla."
+cuando_consultar: null
+aviso_whatsapp: "Hay un resultado en tu informe de Saludly que conviene repetir. Ábrelo cuando puedas."
+fuentes: ["ACR/EULAR 2010 (como reactante de fase aguda solo con sinovitis clínica)"]
+estado_revision: pendiente

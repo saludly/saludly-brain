@@ -1,0 +1,13 @@
+id: SEG-003
+tipo: seguridad
+titulo_paciente: "IGF-1 fuera del rango para tu edad"
+que_es: "La IGF-1 es una hormona que refleja la acción de la hormona de crecimiento; en los adultos ayuda a mantener músculos y huesos."
+por_que_te_aparece:
+  - "Tu IGF-1 salió en {igf1}, fuera del rango para tu edad."
+riesgo_claro: "Un valor fuera de rango que se mantiene puede afectar con los años el músculo, los huesos o el metabolismo; por eso lo revisa tu médico."
+ejemplo_simple: "Es como el informe de un mensajero: no muestra a la hormona de crecimiento directamente, pero cuenta qué tanto está trabajando."
+incertidumbre: "Cambia mucho con la edad, la alimentación y algunos suplementos como la biotina; tu médico decide si hay que repetirla."
+cuando_consultar: null
+aviso_whatsapp: "Hay un resultado hormonal en tu informe de Saludly para revisar. Ábrelo cuando puedas."
+fuentes: ["Ficha igf1 del Knowledge Base"]
+estado_revision: pendiente

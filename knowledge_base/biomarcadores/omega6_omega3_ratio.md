@@ -11,7 +11,7 @@ tipo_resultado: "numérico"
 unidad_canonica: "sin unidad"
 specimen: "Sangre total"
 nivel_catalogo: "vitamina"
-panel: "estándar, todas las personas"
+panel: "fuera del panel base"
 alimenta: ["COND-M3-NU-A04"]
 tier: 3
 status: "BORRADOR"
@@ -23,6 +23,8 @@ fuentes_estado: "por verificar"
 ---
 
 # SLD-BIO-119 · Relación omega-6/omega-3
+
+> **Decisión del 10 de octubre de 2026.** Retirada del panel base el 10 de octubre de 2026 (aprobación de Carlos): es una prueba especializada que no ofrecen los laboratorios clínicos comunes o que exige transporte especial, y ni Function Health ni Superpower la incluyen en su panel base. La ficha se conserva: si el resultado llega, se interpreta igual.
 
 ## A. Identificación
 Cociente entre ácidos grasos omega-6 y omega-3 en sangre, por cromatografía de gases.

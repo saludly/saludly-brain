@@ -20,6 +20,8 @@ sexo: ambos
 alimenta:
 - COND-M5-MU-001
 - COND-M5-UR-002
+- REL-028
+- REL-029
 combine_with:
 - testosterone_free
 - shbg

@@ -1,0 +1,1188 @@
+# Cenas de Saludly · 50 recetas (RCT-CEN-001 a RCT-CEN-050)
+# Formato: knowledge_base/fase5/ESQUEMAS.md, sección 3. Los nutrientes los calcula el código con alimentos.yaml.
+# Alimentos: solo los de recetas/ALIMENTOS_IDS.md (cereales, tubérculos y leguminosas cocidos; carnes y pescados crudos).
+# Porción de cena para adulto: unas 350 a 600 kcal. Recetas propias de Saludly, pendientes de revisión de Carlos.
+
+- id: RCT-CEN-001
+  nombre: "Crema de ahuyama con pollo desmechado"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: ahuyama, gramos: 500, medida: "2 tazas en cubos"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: caldo_casero_sin_sal, gramos: 400, medida: "1 taza y media"}
+    - {alimento: pechuga_pollo_cruda, gramos: 220, medida: "1 pechuga pequeña"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: pan_integral, gramos: 80, medida: "2 tajadas gruesas"}
+    - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
+  pasos:
+    - "Cocina la pechuga en el caldo durante 15 minutos y desméchala."
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega la ahuyama y el caldo, y cocina hasta que ablande."
+    - "Licúa, sazona con la sal y sirve con el pollo encima y el pan tostado."
+  etiquetas: [colombiana, sin_lactosa, economica]
+  consejo: "Cena dos a tres horas antes de acostarte para dormir más liviano."
+
+- id: RCT-CEN-002
+  nombre: "Crema de espinaca con huevo y tostadas integrales"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: espinaca, gramos: 250, medida: "1 atado"}
+    - {alimento: papa_cocida, gramos: 200, medida: "2 papas medianas"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "2 tallos"}
+    - {alimento: leche_descremada, gramos: 250, medida: "1 taza"}
+    - {alimento: agua, gramos: 200, medida: "casi 1 taza"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla larga en el aceite."
+    - "Agrega la papa, el agua y la espinaca, y cocina 5 minutos."
+    - "Licúa con la leche, calienta otra vez y sazona."
+    - "Cocina los huevos en agua 8 minutos y sírvelos partidos sobre la crema, con el pan tostado."
+  etiquetas: [vegetariano, colombiana, economica]
+  consejo: "La espinaca aporta hierro; un poco de limón en la crema ayuda a aprovecharlo."
+
+- id: RCT-CEN-003
+  nombre: "Crema de brócoli con queso campesino"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: brocoli, gramos: 350, medida: "1 cabeza mediana"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: cebolla_cabezona, gramos: 50, medida: "media cebolla pequeña"}
+    - {alimento: ajo, gramos: 5, medida: "1 diente grande"}
+    - {alimento: agua, gramos: 400, medida: "1 taza y media"}
+    - {alimento: leche_semidescremada, gramos: 200, medida: "casi 1 taza"}
+    - {alimento: queso_campesino, gramos: 100, medida: "2 tajadas gruesas"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+  pasos:
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega el brócoli, la papa y el agua, y cocina 8 minutos."
+    - "Licúa con la leche y calienta sin dejar hervir."
+    - "Sirve con el queso en cubos y el pan tostado."
+  etiquetas: [vegetariano, colombiana]
+  consejo: "No le agregues sal: el queso campesino ya aporta la suficiente."
+
+- id: RCT-CEN-004
+  nombre: "Omelette de champiñones y espinaca con arepa"
+  tiempo_comida: cena
+  porciones: 1
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: clara_huevo, gramos: 33, medida: "1 clara"}
+    - {alimento: champinones, gramos: 80, medida: "1 taza en láminas"}
+    - {alimento: espinaca, gramos: 40, medida: "1 puñado"}
+    - {alimento: tomate, gramos: 60, medida: "medio tomate"}
+    - {alimento: arepa_maiz_blanca, gramos: 80, medida: "1 arepa mediana"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Saltea los champiñones en el aceite hasta que suelten el agua."
+    - "Agrega la espinaca y deja que se marchite."
+    - "Bate los huevos y la clara con la sal y viértelos en la sartén."
+    - "Dobla el omelette cuando cuaje y sírvelo con la arepa asada y el tomate en rodajas."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, rapida, colombiana]
+  consejo: "Una cena con proteína y verdura te ayuda a no buscar dulces en la noche."
+
+- id: RCT-CEN-005
+  nombre: "Omelette de claras con pimentón y queso, con pan integral"
+  tiempo_comida: cena
+  porciones: 1
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: clara_huevo, gramos: 130, medida: "4 claras"}
+    - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
+    - {alimento: pimenton, gramos: 60, medida: "medio pimentón"}
+    - {alimento: cebolla_larga, gramos: 20, medida: "1 tallo"}
+    - {alimento: queso_mozzarella, gramos: 30, medida: "1 tajada"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: aguacate, gramos: 50, medida: "un cuarto de aguacate"}
+    - {alimento: aceite_canola, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Saltea el pimentón y la cebolla en el aceite por 3 minutos."
+    - "Bate las claras con el huevo y viértelas sobre las verduras."
+    - "Pon el queso encima, tapa y deja cuajar a fuego bajo."
+    - "Sirve con el pan tostado y el aguacate."
+  etiquetas: [vegetariano, rapida]
+  consejo: "Las claras dan proteína con muy poca grasa; combínalas con un huevo entero para más sabor."
+
+- id: RCT-CEN-006
+  nombre: "Arepa rellena de pollo desmechado y aguacate"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: arepa_maiz_blanca, gramos: 180, medida: "2 arepas medianas"}
+    - {alimento: pechuga_pollo_cruda, gramos: 200, medida: "1 pechuga pequeña"}
+    - {alimento: aguacate, gramos: 80, medida: "medio aguacate pequeño"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "un cuarto de cebolla"}
+    - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: limon, gramos: 15, medida: "medio limón"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Cocina la pechuga en agua con cebolla y desméchala."
+    - "Mezcla el pollo con el aguacate en cubos, el tomate, el cilantro y el limón."
+    - "Asa las arepas, ábrelas por un lado y rellénalas."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten]
+  consejo: "El aguacate reemplaza la mayonesa y aporta grasa buena para el corazón."
+
+- id: RCT-CEN-007
+  nombre: "Arepa con queso campesino, tomate y ensalada de pepino"
+  tiempo_comida: cena
+  porciones: 1
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: arepa_maiz_blanca, gramos: 100, medida: "1 arepa grande"}
+    - {alimento: queso_campesino, gramos: 60, medida: "1 tajada gruesa"}
+    - {alimento: tomate, gramos: 80, medida: "medio tomate grande"}
+    - {alimento: pepino, gramos: 100, medida: "medio pepino"}
+    - {alimento: lechuga, gramos: 40, medida: "3 hojas"}
+    - {alimento: limon, gramos: 10, medida: "un chorrito"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+  pasos:
+    - "Asa la arepa hasta que dore por ambos lados."
+    - "Ábrela y rellénala con el queso y el tomate en rodajas."
+    - "Sirve con lechuga y pepino aliñados con limón y aceite."
+  etiquetas: [vegetariano, sin_gluten, colombiana, rapida, economica]
+  consejo: "Una cena rápida no tiene que ser de paquete: con tres ingredientes sale en diez minutos."
+
+- id: RCT-CEN-008
+  nombre: "Arepa amarilla con fríjol negro y aguacate"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: arepa_maiz_amarilla, gramos: 180, medida: "2 arepas medianas"}
+    - {alimento: frijol_negro_cocido, gramos: 240, medida: "1 taza y media"}
+    - {alimento: aguacate, gramos: 80, medida: "medio aguacate pequeño"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_larga, gramos: 20, medida: "1 tallo"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta el fríjol con la cebolla, el comino y un poco de agua, y aplástalo con un tenedor."
+    - "Asa las arepas y ábrelas."
+    - "Rellena con el fríjol, el tomate picado, el aguacate y el cilantro."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, colombiana, economica, rapida]
+  consejo: "El fríjol con el maíz de la arepa forma una proteína más completa, ideal si no comes carne."
+
+- id: RCT-CEN-009
+  nombre: "Ensalada completa de atún, garbanzo y verduras"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: atun_lata_agua, gramos: 160, medida: "1 lata escurrida"}
+    - {alimento: garbanzo_cocido, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: lechuga, gramos: 120, medida: "2 tazas"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: pepino, gramos: 120, medida: "medio pepino"}
+    - {alimento: cebolla_cabezona, gramos: 30, medida: "unas rodajas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+  pasos:
+    - "Escurre bien el atún y el garbanzo."
+    - "Pica la lechuga, el tomate, el pepino y la cebolla."
+    - "Mezcla todo y aliña con el aceite y el limón."
+  etiquetas: [sin_lactosa, sin_gluten, rapida, economica]
+  consejo: "El atún en lata ya trae sal; no le agregues más."
+
+- id: RCT-CEN-010
+  nombre: "Ensalada de pollo a la plancha con quinua y aguacate"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 240, medida: "1 pechuga mediana"}
+    - {alimento: quinua_cocida, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: zanahoria, gramos: 60, medida: "media zanahoria rallada"}
+    - {alimento: aguacate, gramos: 70, medida: "un tercio de aguacate"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+    - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
+  pasos:
+    - "Sazona el pollo con sal y pimienta, y ásalo a la plancha 5 minutos por lado."
+    - "Córtalo en tiras."
+    - "Mezcla la lechuga, el tomate, la zanahoria y la quinua."
+    - "Pon el pollo y el aguacate encima y aliña con limón y aceite."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "Cocina la quinua para varios días y guárdala en la nevera: así la cena sale en minutos."
+
+- id: RCT-CEN-011
+  nombre: "Tilapia a la plancha con verduras salteadas y papa criolla"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: tilapia_cruda, gramos: 280, medida: "2 filetes"}
+    - {alimento: papa_criolla_cocida, gramos: 320, medida: "14 papitas"}
+    - {alimento: calabacin, gramos: 150, medida: "1 calabacín pequeño"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: habichuela, gramos: 100, medida: "1 taza"}
+    - {alimento: ajo, gramos: 5, medida: "1 diente grande"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
+  pasos:
+    - "Marina la tilapia con limón, ajo y la mitad de la sal por 10 minutos."
+    - "Saltea las verduras en tiras con la mitad del aceite."
+    - "Asa la tilapia en la plancha con el resto del aceite, 3 minutos por lado."
+    - "Sirve con las papas criollas cocidas."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten]
+  consejo: "El pescado blanco es liviano y se digiere fácil, buena opción para la noche."
+
+- id: RCT-CEN-012
+  nombre: "Trucha al horno con ajo y limón, arroz integral y ensalada"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: trucha_cruda, gramos: 280, medida: "2 filetes"}
+    - {alimento: arroz_integral_cocido, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: limon, gramos: 30, medida: "1 limón grande"}
+    - {alimento: perejil, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: lechuga, gramos: 80, medida: "1 taza y media"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Calienta el horno a 200 grados."
+    - "Pon la trucha en un refractario con ajo, perejil, limón y la sal."
+    - "Hornea de 12 a 15 minutos, hasta que la carne se separe fácil."
+    - "Sirve con el arroz integral y la ensalada aliñada con el aceite."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten]
+  consejo: "La trucha es un pescado de agua dulce de Colombia y aporta grasas buenas para el corazón."
+
+- id: RCT-CEN-013
+  nombre: "Salmón a la plancha con brócoli y batata"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: media
+  ingredientes:
+    - {alimento: salmon_crudo, gramos: 220, medida: "2 porciones pequeñas"}
+    - {alimento: batata_cocida, gramos: 240, medida: "1 batata mediana"}
+    - {alimento: brocoli, gramos: 200, medida: "2 tazas de ramitos"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Cocina el brócoli al vapor por 5 minutos."
+    - "Sazona el salmón con sal, pimienta y ajo."
+    - "Ásalo en una sartén caliente sin aceite, empezando por la piel, 4 minutos por lado."
+    - "Sirve con la batata en rodajas y el brócoli con limón."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "El salmón ya trae su propia grasa: no necesitas aceite para asarlo."
+
+- id: RCT-CEN-014
+  nombre: "Merluza en salsa de tomate con arroz integral"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: merluza_cruda, gramos: 300, medida: "2 filetes"}
+    - {alimento: salsa_tomate_natural, gramos: 200, medida: "casi 1 taza"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: pimenton, gramos: 60, medida: "medio pimentón"}
+    - {alimento: ajo, gramos: 5, medida: "1 diente grande"}
+    - {alimento: arroz_integral_cocido, gramos: 300, medida: "casi 2 tazas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla, el pimentón y el ajo en el aceite."
+    - "Agrega la salsa de tomate y el orégano, y cocina 5 minutos."
+    - "Pon los filetes en la salsa, sazona, tapa y cocina 8 minutos."
+    - "Sirve con el arroz integral."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "Las hierbas como el orégano dan sabor y ayudan a usar menos sal."
+
+- id: RCT-CEN-015
+  nombre: "Pollo al horno con zanahoria, calabacín y papa"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 45
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 260, medida: "1 pechuga mediana"}
+    - {alimento: papa_cocida, gramos: 300, medida: "3 papas medianas"}
+    - {alimento: zanahoria, gramos: 120, medida: "1 zanahoria grande"}
+    - {alimento: calabacin, gramos: 150, medida: "1 calabacín pequeño"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
+  pasos:
+    - "Calienta el horno a 200 grados."
+    - "Corta el pollo y las verduras en trozos parecidos."
+    - "Mezcla todo con el aceite, el ajo, el orégano y la sal en una bandeja."
+    - "Hornea 30 minutos, moviendo a la mitad del tiempo."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten]
+  consejo: "Hornea una bandeja grande y guarda una porción para el almuerzo del día siguiente."
+
+- id: RCT-CEN-016
+  nombre: "Tortillas de maíz con pollo, repollo morado y aguacate"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: tortilla_maiz, gramos: 120, medida: "4 tortillas"}
+    - {alimento: pechuga_pollo_cruda, gramos: 200, medida: "1 pechuga pequeña"}
+    - {alimento: repollo_morado, gramos: 100, medida: "1 taza en tiras"}
+    - {alimento: aguacate, gramos: 70, medida: "un tercio de aguacate"}
+    - {alimento: tomate, gramos: 80, medida: "medio tomate grande"}
+    - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Corta el pollo en tiras y sazónalo con comino y sal."
+    - "Saltéalo en el aceite hasta que dore."
+    - "Calienta las tortillas en una sartén seca."
+    - "Rellénalas con el pollo, el repollo, el tomate, el aguacate, el cilantro y limón."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "El repollo morado le da color y fibra; mientras más colores en el plato, mejor."
+
+- id: RCT-CEN-017
+  nombre: "Tortillas de maíz con fríjol negro, pico de gallo y queso"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: tortilla_maiz, gramos: 120, medida: "4 tortillas"}
+    - {alimento: frijol_negro_cocido, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: queso_campesino, gramos: 60, medida: "1 tajada gruesa"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "un cuarto de cebolla"}
+    - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: lechuga, gramos: 60, medida: "1 taza"}
+    - {alimento: limon, gramos: 15, medida: "medio limón"}
+  pasos:
+    - "Pica el tomate, la cebolla y el cilantro, y mézclalos con el limón."
+    - "Calienta el fríjol y aplástalo un poco."
+    - "Calienta las tortillas y úntalas con el fríjol."
+    - "Agrega la lechuga, el pico de gallo y el queso desmenuzado."
+  etiquetas: [vegetariano, sin_gluten, rapida, economica]
+  consejo: "Sin sal añadida: el queso y el limón dan todo el sabor que necesita."
+
+- id: RCT-CEN-018
+  nombre: "Wraps de lechuga con carne molida y verduras"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: carne_molida_magra_cruda, gramos: 240, medida: "media libra"}
+    - {alimento: lechuga, gramos: 120, medida: "8 hojas grandes"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña rallada"}
+    - {alimento: pimenton, gramos: 60, medida: "medio pimentón"}
+    - {alimento: cebolla_larga, gramos: 30, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: arroz_integral_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
+  pasos:
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega la carne y cocina hasta que pierda el color rosado."
+    - "Suma el pimentón, la zanahoria y la salsa de soya, y cocina 3 minutos."
+    - "Sirve la mezcla con el arroz dentro de las hojas de lechuga."
+  etiquetas: [sin_lactosa, rapida]
+  consejo: "La salsa de soya ya es salada; con ella no hace falta agregar sal."
+
+- id: RCT-CEN-019
+  nombre: "Sopa de lentejas con verduras"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 300, medida: "casi 2 tazas"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: apio, gramos: 40, medida: "1 rama"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_cabezona, gramos: 50, medida: "media cebolla pequeña"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: agua, gramos: 500, medida: "2 tazas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla, el ajo y el tomate en el aceite."
+    - "Agrega la zanahoria, el apio, la papa en cubos y el agua."
+    - "Cocina 10 minutos y suma las lentejas y el comino."
+    - "Deja hervir 5 minutos más y sazona."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, colombiana, economica]
+  consejo: "Las lentejas dan proteína y fibra a bajo costo; acompáñalas con una fruta cítrica para el hierro."
+
+- id: RCT-CEN-020
+  nombre: "Sopa de garbanzo con espinaca"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 260, medida: "1 taza y media"}
+    - {alimento: espinaca, gramos: 150, medida: "medio atado"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: agua, gramos: 500, medida: "2 tazas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla, el ajo y el tomate en el aceite."
+    - "Agrega la zanahoria, el garbanzo, el comino y el agua, y cocina 10 minutos."
+    - "Suma la espinaca al final y deja 2 minutos."
+    - "Sazona y sirve caliente."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, economica]
+  consejo: "Una sopa con leguminosa en la noche llena sin dejarte pesado."
+
+- id: RCT-CEN-021
+  nombre: "Sopa de arveja seca con zanahoria y cilantro"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: arveja_seca_cocida, gramos: 340, medida: "2 tazas"}
+    - {alimento: zanahoria, gramos: 100, medida: "1 zanahoria"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: cilantro, gramos: 8, medida: "2 cucharadas picadas"}
+    - {alimento: agua, gramos: 500, medida: "2 tazas"}
+    - {alimento: aceite_canola, gramos: 8, medida: "2 cucharaditas rasas"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla larga y el ajo en el aceite."
+    - "Agrega la zanahoria y la papa en cubos con el agua."
+    - "Cocina 10 minutos, suma la arveja y licúa la mitad para espesar."
+    - "Sazona y termina con el cilantro."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, colombiana, economica]
+  consejo: "Licuar parte de la sopa la hace cremosa sin necesidad de crema de leche."
+
+- id: RCT-CEN-022
+  nombre: "Bowl de quinua con tofu y verduras salteadas"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: media
+  ingredientes:
+    - {alimento: tofu, gramos: 250, medida: "1 bloque pequeño"}
+    - {alimento: quinua_cocida, gramos: 240, medida: "1 taza y media"}
+    - {alimento: brocoli, gramos: 150, medida: "1 taza y media de ramitos"}
+    - {alimento: pimenton, gramos: 80, medida: "medio pimentón grande"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: ajonjoli, gramos: 6, medida: "2 cucharaditas"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: limon, gramos: 15, medida: "medio limón"}
+  pasos:
+    - "Corta el tofu en cubos y dóralo en la mitad del aceite."
+    - "Saltea el ajo y las verduras en el resto del aceite por 4 minutos."
+    - "Sirve la quinua en el fondo del plato con las verduras y el tofu encima."
+    - "Termina con limón y ajonjolí."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten]
+  consejo: "Sin sal añadida: el limón y el ajonjolí tostado dan sabor de sobra."
+
+- id: RCT-CEN-023
+  nombre: "Bowl de quinua con camarones y mango"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 20
+  dificultad: media
+  ingredientes:
+    - {alimento: camaron_crudo, gramos: 240, medida: "unos 20 camarones"}
+    - {alimento: quinua_cocida, gramos: 300, medida: "casi 2 tazas"}
+    - {alimento: mango, gramos: 120, medida: "medio mango"}
+    - {alimento: pepino, gramos: 100, medida: "medio pepino"}
+    - {alimento: cebolla_cabezona, gramos: 30, medida: "unas rodajas"}
+    - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: limon, gramos: 30, medida: "1 limón grande"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Saltea los camarones con el ajo y la mitad del aceite, 2 minutos por lado."
+    - "Pica el mango, el pepino, la cebolla y el cilantro."
+    - "Arma el bowl con la quinua, la ensalada y los camarones."
+    - "Aliña con el limón, el resto del aceite y la sal."
+  etiquetas: [sin_lactosa, sin_gluten, rapida]
+  consejo: "Los camarones se cocinan en minutos; si los pasas de tiempo se ponen duros."
+
+- id: RCT-CEN-024
+  nombre: "Bowl de arroz integral con lenteja, aguacate y ensalada"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: arroz_integral_cocido, gramos: 260, medida: "1 taza y media"}
+    - {alimento: lenteja_cocida, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: aguacate, gramos: 80, medida: "medio aguacate pequeño"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: repollo, gramos: 100, medida: "1 taza en tiras"}
+    - {alimento: zanahoria, gramos: 60, medida: "media zanahoria rallada"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta la lenteja con el comino y la sal."
+    - "Mezcla el repollo, la zanahoria y el tomate con el limón."
+    - "Sirve el arroz, la lenteja, la ensalada y el aguacate en un mismo plato hondo."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, economica, rapida]
+  consejo: "El arroz con lenteja juntos dan una proteína completa sin necesidad de carne."
+
+- id: RCT-CEN-025
+  nombre: "Sopa de pollo con verduras y mazorca"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 40
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 220, medida: "1 pechuga pequeña"}
+    - {alimento: mazorca_tierna, gramos: 150, medida: "1 mazorca en rodajas"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: habichuela, gramos: 80, medida: "1 taza pequeña"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: cilantro, gramos: 8, medida: "2 cucharadas picadas"}
+    - {alimento: agua, gramos: 800, medida: "3 tazas y media"}
+    - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
+  pasos:
+    - "Hierve el pollo en el agua con la cebolla y el ajo por 15 minutos."
+    - "Agrega la mazorca, la zanahoria y la habichuela, y cocina 10 minutos."
+    - "Suma la papa en cubos, sazona y deja 5 minutos más."
+    - "Sirve con el pollo desmechado y el cilantro."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten, economica]
+  consejo: "Una sopa caliente en las noches frías de Bogotá ayuda a relajarte antes de dormir."
+
+- id: RCT-CEN-026
+  nombre: "Pechuga de pavo a la plancha con puré de ahuyama"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pavo_cruda, gramos: 300, medida: "2 filetes"}
+    - {alimento: ahuyama, gramos: 400, medida: "1 taza y media en cubos"}
+    - {alimento: papa_cocida, gramos: 200, medida: "2 papas medianas"}
+    - {alimento: leche_descremada, gramos: 60, medida: "un cuarto de taza"}
+    - {alimento: espinaca, gramos: 80, medida: "2 puñados"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: canela, gramos: 0.5, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Cocina la ahuyama y la papa en agua hasta que ablanden."
+    - "Hazlas puré con la leche y la canela."
+    - "Sazona el pavo con ajo y sal, y ásalo con el aceite 4 minutos por lado."
+    - "Sirve con el puré y la espinaca salteada un minuto."
+  etiquetas: [sin_gluten]
+  consejo: "Una pizca de canela realza el dulce natural de la ahuyama sin agregar azúcar."
+
+- id: RCT-CEN-027
+  nombre: "Lomo de cerdo a la plancha con piña y ensalada"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: lomo_cerdo_crudo, gramos: 240, medida: "2 filetes delgados"}
+    - {alimento: pina, gramos: 150, medida: "2 rodajas"}
+    - {alimento: papa_cocida, gramos: 200, medida: "2 papas medianas"}
+    - {alimento: lechuga, gramos: 80, medida: "1 taza y media"}
+    - {alimento: repollo_morado, gramos: 80, medida: "1 taza en tiras"}
+    - {alimento: zanahoria, gramos: 60, medida: "media zanahoria rallada"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 8, medida: "2 cucharaditas rasas"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+    - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
+  pasos:
+    - "Sazona el lomo con sal y pimienta."
+    - "Ásalo a la plancha con la mitad del aceite, 4 minutos por lado."
+    - "Asa la piña en la misma plancha hasta que dore."
+    - "Sirve con la papa y la ensalada aliñada con limón y el resto del aceite."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "Retira la grasa visible del cerdo antes de cocinarlo para bajar la grasa saturada."
+
+- id: RCT-CEN-028
+  nombre: "Carne de res salteada con habichuela y arroz integral"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: media
+  ingredientes:
+    - {alimento: carne_res_magra_cruda, gramos: 240, medida: "media libra en tiras"}
+    - {alimento: habichuela, gramos: 150, medida: "1 taza y media"}
+    - {alimento: pimenton, gramos: 80, medida: "medio pimentón grande"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: arroz_integral_cocido, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+  pasos:
+    - "Saltea la carne en la mitad del aceite a fuego alto por 3 minutos y retírala."
+    - "En el resto del aceite saltea la cebolla, el ajo, el pimentón y la habichuela."
+    - "Devuelve la carne, agrega la salsa de soya y mezcla 1 minuto."
+    - "Sirve con el arroz integral."
+  etiquetas: [sin_lactosa]
+  consejo: "Cortar la carne en tiras delgadas hace que se cocine rápido y quede tierna."
+
+- id: RCT-CEN-029
+  nombre: "Hamburguesas de lenteja con ensalada"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 35
+  dificultad: media
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 360, medida: "2 tazas y cuarto"}
+    - {alimento: avena_hojuelas, gramos: 40, medida: "media taza"}
+    - {alimento: zanahoria, gramos: 60, medida: "media zanahoria rallada"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "un cuarto de cebolla"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: lechuga, gramos: 80, medida: "1 taza y media"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: pepino, gramos: 80, medida: "medio pepino pequeño"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Aplasta las lentejas y mézclalas con la avena, la zanahoria, la cebolla, el ajo, el comino y la sal."
+    - "Forma 4 hamburguesas y déjalas reposar 10 minutos."
+    - "Dóralas en el aceite 4 minutos por lado a fuego medio."
+    - "Sirve con la ensalada de lechuga, tomate y pepino."
+  etiquetas: [vegano, vegetariano, sin_lactosa, economica]
+  consejo: "Haz el doble y congela las hamburguesas crudas para otra noche."
+
+- id: RCT-CEN-030
+  nombre: "Tortilla de papa y cebolla con ensalada"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: media
+  ingredientes:
+    - {alimento: huevo_entero, gramos: 200, medida: "4 huevos"}
+    - {alimento: papa_cocida, gramos: 320, medida: "3 papas medianas"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "media cebolla grande"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: lechuga, gramos: 80, medida: "1 taza y media"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Corta la papa cocida en rodajas finas y sofríe la cebolla en el aceite."
+    - "Bate los huevos con la sal y mézclalos con la papa y la cebolla."
+    - "Cocina a fuego bajo, tapado, por 8 minutos."
+    - "Dale vuelta con ayuda de un plato, cocina 3 minutos más y sirve con la ensalada."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, economica]
+  consejo: "Usar papa ya cocida evita freírla y reduce mucho el aceite."
+
+- id: RCT-CEN-031
+  nombre: "Berenjena rellena de carne molida y tomate"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 45
+  dificultad: media
+  ingredientes:
+    - {alimento: berenjena, gramos: 400, medida: "2 berenjenas medianas"}
+    - {alimento: carne_molida_magra_cruda, gramos: 200, medida: "casi media libra"}
+    - {alimento: salsa_tomate_natural, gramos: 120, medida: "media taza"}
+    - {alimento: cebolla_cabezona, gramos: 50, medida: "media cebolla pequeña"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: queso_mozzarella, gramos: 40, medida: "2 cucharadas rallado"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: aceite_oliva, gramos: 8, medida: "2 cucharaditas rasas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Parte las berenjenas a lo largo, saca la pulpa con una cuchara y pícala."
+    - "Sofríe la cebolla, el ajo, la carne y la pulpa en el aceite."
+    - "Agrega la salsa de tomate, el orégano y la sal, y rellena las berenjenas."
+    - "Cubre con el queso y hornea 25 minutos a 190 grados; sirve con el pan."
+  etiquetas: []
+  consejo: "La berenjena da volumen y fibra con muy pocas calorías."
+
+- id: RCT-CEN-032
+  nombre: "Calabacín relleno de quinua y queso"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 40
+  dificultad: media
+  ingredientes:
+    - {alimento: calabacin, gramos: 400, medida: "2 calabacines medianos"}
+    - {alimento: quinua_cocida, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: champinones, gramos: 80, medida: "1 taza"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "un cuarto de cebolla"}
+    - {alimento: queso_campesino, gramos: 80, medida: "1 tajada grande"}
+    - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
+    - {alimento: aceite_oliva, gramos: 8, medida: "2 cucharaditas rasas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Parte los calabacines a lo largo y vacíalos con una cuchara."
+    - "Sofríe la cebolla, los champiñones, el tomate y la pulpa picada en el aceite."
+    - "Mezcla con la quinua, el huevo batido, el orégano y la mitad del queso."
+    - "Rellena, pon el resto del queso encima y hornea 20 minutos a 190 grados."
+  etiquetas: [vegetariano, sin_gluten]
+  consejo: "No necesita sal: el queso campesino aporta la suficiente."
+
+- id: RCT-CEN-033
+  nombre: "Crema de coliflor con pollo a la plancha"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: coliflor, gramos: 400, medida: "media coliflor"}
+    - {alimento: cebolla_cabezona, gramos: 50, medida: "media cebolla pequeña"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: caldo_casero_sin_sal, gramos: 400, medida: "1 taza y media"}
+    - {alimento: pechuga_pollo_cruda, gramos: 220, medida: "1 pechuga pequeña"}
+    - {alimento: papa_cocida, gramos: 250, medida: "2 papas grandes"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla y el ajo en la mitad del aceite."
+    - "Agrega la coliflor, la papa y el caldo, y cocina 10 minutos."
+    - "Licúa hasta que quede suave."
+    - "Asa el pollo con sal, pimienta y el resto del aceite, y sírvelo en tiras sobre la crema."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "La papa le da cremosidad a la crema sin necesidad de crema de leche."
+
+- id: RCT-CEN-034
+  nombre: "Crema de champiñones sin lácteos con tostadas"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: champinones, gramos: 350, medida: "3 tazas en láminas"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: papa_cocida, gramos: 200, medida: "2 papas medianas"}
+    - {alimento: bebida_almendra_sin_azucar, gramos: 300, medida: "1 taza y cuarto"}
+    - {alimento: agua, gramos: 200, medida: "casi 1 taza"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Saltea los champiñones, la cebolla y el ajo en el aceite hasta que doren."
+    - "Agrega la papa y el agua, y cocina 5 minutos."
+    - "Licúa con la bebida de almendra y sazona."
+    - "Sirve con huevo duro picado y el pan tostado."
+  etiquetas: [vegetariano, sin_lactosa]
+  consejo: "La bebida de almendra sin azúcar reemplaza la leche si la lactosa te cae mal."
+
+- id: RCT-CEN-035
+  nombre: "Pimentones rellenos de arroz integral y fríjol"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 40
+  dificultad: media
+  ingredientes:
+    - {alimento: pimenton, gramos: 360, medida: "2 pimentones grandes"}
+    - {alimento: arroz_integral_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: frijol_rojo_cocido, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_larga, gramos: 30, medida: "2 tallos"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: queso_mozzarella, gramos: 40, medida: "2 cucharadas rallado"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Corta la tapa de los pimentones y quítales las semillas."
+    - "Sofríe la cebolla y el tomate en el aceite, y mezcla con el arroz, el fríjol, el comino y la sal."
+    - "Rellena los pimentones y cubre con el queso."
+    - "Hornea 25 minutos a 190 grados."
+  etiquetas: [vegetariano, sin_gluten, colombiana]
+  consejo: "El pimentón aporta vitamina C, que ayuda a aprovechar el hierro del fríjol."
+
+- id: RCT-CEN-036
+  nombre: "Ensalada tibia de lenteja con huevo"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 340, medida: "2 tazas"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "un cuarto de cebolla"}
+    - {alimento: rugula, gramos: 50, medida: "2 puñados"}
+    - {alimento: pimenton, gramos: 60, medida: "medio pimentón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: vinagre, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: mostaza, gramos: 5, medida: "1 cucharadita"}
+  pasos:
+    - "Cocina los huevos 8 minutos y pártelos en cuartos."
+    - "Calienta la lenteja un par de minutos."
+    - "Mezcla el aceite, el vinagre y la mostaza para el aliño."
+    - "Combina la lenteja con las verduras, el aliño y los huevos encima."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, rapida, economica]
+  consejo: "Sin sal añadida: la mostaza y el vinagre ya le dan un sabor intenso."
+
+- id: RCT-CEN-037
+  nombre: "Sardinas en tomate con arepa y ensalada de repollo"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: sardinas_lata_tomate, gramos: 200, medida: "1 lata grande"}
+    - {alimento: arepa_maiz_blanca, gramos: 160, medida: "2 arepas medianas"}
+    - {alimento: repollo, gramos: 150, medida: "1 taza y media en tiras"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña rallada"}
+    - {alimento: cebolla_cabezona, gramos: 30, medida: "unas rodajas"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
+  pasos:
+    - "Calienta las sardinas con su salsa en una olla pequeña."
+    - "Mezcla el repollo, la zanahoria, la cebolla y el cilantro con el limón."
+    - "Asa las arepas y sirve todo junto."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten, rapida, economica]
+  consejo: "Las sardinas en lata son económicas y aportan grasas buenas y calcio de sus espinas blandas."
+
+- id: RCT-CEN-038
+  nombre: "Huevos pericos con papa criolla y aguacate"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: huevo_entero, gramos: 200, medida: "4 huevos"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "2 tallos"}
+    - {alimento: papa_criolla_cocida, gramos: 300, medida: "12 papitas"}
+    - {alimento: aguacate, gramos: 70, medida: "un tercio de aguacate"}
+    - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe el tomate y la cebolla larga picados en el aceite por 3 minutos."
+    - "Agrega los huevos batidos con la sal y revuelve a fuego bajo."
+    - "Sirve con las papas criollas cocidas y el aguacate en tajadas."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, colombiana, rapida, economica]
+  consejo: "Cocina los huevos a fuego bajo: quedan más suaves y no necesitan más aceite."
+
+- id: RCT-CEN-039
+  nombre: "Ensalada tibia de atún, papa y habichuela"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: atun_lata_agua, gramos: 160, medida: "1 lata escurrida"}
+    - {alimento: papa_cocida, gramos: 350, medida: "3 papas grandes"}
+    - {alimento: habichuela, gramos: 150, medida: "1 taza y media"}
+    - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_cabezona, gramos: 30, medida: "unas rodajas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: perejil, gramos: 5, medida: "1 cucharada picada"}
+  pasos:
+    - "Cocina la habichuela y el huevo en agua por 8 minutos."
+    - "Corta la papa, el tomate y el huevo en trozos."
+    - "Mezcla todo con el atún escurrido, la cebolla y el perejil."
+    - "Aliña con el aceite y el limón."
+  etiquetas: [sin_lactosa, sin_gluten, economica]
+  consejo: "Escoge atún en agua en vez de aceite: tiene menos grasa y el mismo sabor."
+
+- id: RCT-CEN-040
+  nombre: "Tofu salteado con verduras y arroz integral"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 20
+  dificultad: media
+  ingredientes:
+    - {alimento: tofu, gramos: 250, medida: "1 bloque pequeño"}
+    - {alimento: arroz_integral_cocido, gramos: 220, medida: "1 taza y media"}
+    - {alimento: repollo, gramos: 120, medida: "1 taza y cuarto en tiras"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: pimenton, gramos: 60, medida: "medio pimentón"}
+    - {alimento: cebolla_larga, gramos: 30, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+  pasos:
+    - "Seca el tofu con un paño, córtalo en cubos y dóralo en la mitad del aceite."
+    - "Saltea el ajo y las verduras en el resto del aceite a fuego alto."
+    - "Agrega el tofu y la salsa de soya, y mezcla 1 minuto."
+    - "Sirve sobre el arroz integral."
+  etiquetas: [vegano, vegetariano, sin_lactosa]
+  consejo: "Secar bien el tofu antes de dorarlo hace que quede crocante con poco aceite."
+
+- id: RCT-CEN-041
+  nombre: "Sopa de verduras con quinua y huevo"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: quinua_cocida, gramos: 280, medida: "1 taza y tres cuartos"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: calabacin, gramos: 120, medida: "1 calabacín pequeño"}
+    - {alimento: guatila, gramos: 120, medida: "media guatila"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: cilantro, gramos: 8, medida: "2 cucharadas picadas"}
+    - {alimento: agua, gramos: 700, medida: "3 tazas"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla y el ajo en el aceite, agrega el agua y las verduras en cubos."
+    - "Cocina 12 minutos y suma la quinua."
+    - "Rompe los huevos directo en la sopa y déjalos cuajar 4 minutos sin revolver."
+    - "Sazona y termina con el cilantro."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, colombiana, economica]
+  consejo: "Si te despiertas con hambre en la noche, una cena con proteína como esta ayuda."
+
+- id: RCT-CEN-042
+  nombre: "Ensalada de garbanzo, pepino y tomate con yogur griego"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 260, medida: "1 taza y media"}
+    - {alimento: pepino, gramos: 150, medida: "1 pepino pequeño"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 30, medida: "unas rodajas"}
+    - {alimento: yogur_griego_natural, gramos: 150, medida: "media taza grande"}
+    - {alimento: perejil, gramos: 8, medida: "2 cucharadas picadas"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: ajo, gramos: 3, medida: "medio diente"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Mezcla el yogur con el ajo rallado, el limón y la sal."
+    - "Pica el pepino, el tomate, la cebolla y el perejil."
+    - "Combina las verduras con el garbanzo y el aceite."
+    - "Sirve con la salsa de yogur por encima."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "El yogur griego natural da cremosidad y proteína, sin el azúcar de las salsas compradas."
+
+- id: RCT-CEN-043
+  nombre: "Pasta integral con camarones y calabacín"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 20
+  dificultad: media
+  ingredientes:
+    - {alimento: pasta_integral_cocida, gramos: 240, medida: "1 taza y media"}
+    - {alimento: camaron_crudo, gramos: 200, medida: "unos 16 camarones"}
+    - {alimento: calabacin, gramos: 200, medida: "1 calabacín mediano"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: perejil, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: limon, gramos: 15, medida: "medio limón"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Saltea el ajo en el aceite sin dejar que se queme."
+    - "Agrega el calabacín en tiras y el tomate picado, y cocina 3 minutos."
+    - "Suma los camarones y cocínalos 3 minutos."
+    - "Mezcla con la pasta, la sal, el limón y el perejil."
+  etiquetas: [sin_lactosa, rapida]
+  consejo: "Más verdura y menos pasta en el plato: así la cena llena y queda liviana."
+
+- id: RCT-CEN-044
+  nombre: "Pollo en salsa de champiñones con puré de papa"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 35
+  dificultad: media
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 240, medida: "1 pechuga mediana"}
+    - {alimento: champinones, gramos: 200, medida: "2 tazas en láminas"}
+    - {alimento: cebolla_cabezona, gramos: 50, medida: "media cebolla pequeña"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: bebida_almendra_sin_azucar, gramos: 150, medida: "media taza grande"}
+    - {alimento: papa_cocida, gramos: 250, medida: "2 papas grandes"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: brocoli, gramos: 120, medida: "1 taza de ramitos"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+    - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
+  pasos:
+    - "Dora el pollo en tiras con la mitad del aceite y retíralo."
+    - "Saltea la cebolla, el ajo y los champiñones en el resto del aceite."
+    - "Agrega 100 gramos de la bebida de almendra, devuelve el pollo y cocina 5 minutos."
+    - "Haz puré la papa con el resto de la bebida y sirve con el brócoli al vapor."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "Una salsa con champiñones y bebida vegetal sustituye la crema de leche con mucha menos grasa saturada."
+
+- id: RCT-CEN-045
+  nombre: "Hígado de res encebollado con arroz y ensalada"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: higado_res_crudo, gramos: 220, medida: "2 filetes"}
+    - {alimento: cebolla_cabezona, gramos: 120, medida: "1 cebolla mediana"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
+    - {alimento: arroz_blanco_cocido, gramos: 200, medida: "1 taza y cuarto"}
+    - {alimento: lechuga, gramos: 80, medida: "1 taza y media"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla en aros y el tomate en el aceite hasta que estén blandos."
+    - "Agrega el hígado en tiras con la sal y cocina 3 minutos por lado."
+    - "Sirve con el arroz y la lechuga con limón."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten, economica, rapida]
+  consejo: "El hígado es de las fuentes más ricas en hierro; no lo cocines de más para que no quede duro."
+
+- id: RCT-CEN-046
+  nombre: "Muslos de pollo al horno con batata y brócoli"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 45
+  dificultad: facil
+  ingredientes:
+    - {alimento: muslo_pollo_sin_piel_crudo, gramos: 300, medida: "2 muslos grandes sin piel"}
+    - {alimento: batata_cocida, gramos: 320, medida: "1 batata grande"}
+    - {alimento: brocoli, gramos: 200, medida: "2 tazas de ramitos"}
+    - {alimento: ajo, gramos: 6, medida: "2 dientes"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 8, medida: "2 cucharaditas rasas"}
+    - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta el horno a 200 grados."
+    - "Marina el pollo con ajo, limón, orégano y pimienta."
+    - "Hornéalo 25 minutos, agrega la batata y el brócoli con el aceite, y hornea 10 minutos más."
+  etiquetas: [sin_lactosa, sin_gluten]
+  consejo: "Sin sal añadida: el ajo, el limón y el orégano dan todo el sabor."
+
+- id: RCT-CEN-047
+  nombre: "Crema de zanahoria y lenteja con tostadas"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 220, medida: "1 taza y media"}
+    - {alimento: zanahoria, gramos: 250, medida: "2 zanahorias grandes"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "media cebolla"}
+    - {alimento: ajo, gramos: 4, medida: "1 diente"}
+    - {alimento: agua, gramos: 500, medida: "2 tazas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: semillas_girasol, gramos: 15, medida: "1 cucharada"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega la zanahoria en rodajas y el agua, y cocina 12 minutos."
+    - "Suma la lenteja y el comino, y licúa hasta que quede suave."
+    - "Sirve con semillas de girasol encima y el pan tostado."
+  etiquetas: [vegano, vegetariano, sin_lactosa, economica]
+  consejo: "Las semillas encima dan textura crocante y grasas buenas."
+
+- id: RCT-CEN-048
+  nombre: "Tortillas de maíz con huevo, espinaca y tomate"
+  tiempo_comida: cena
+  porciones: 1
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: tortilla_maiz, gramos: 60, medida: "2 tortillas"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: espinaca, gramos: 50, medida: "1 puñado grande"}
+    - {alimento: tomate, gramos: 80, medida: "medio tomate grande"}
+    - {alimento: aguacate, gramos: 40, medida: "2 tajadas"}
+    - {alimento: aceite_canola, gramos: 3, medida: "media cucharadita"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Saltea la espinaca en el aceite hasta que se marchite."
+    - "Agrega los huevos batidos con la sal y revuelve."
+    - "Calienta las tortillas y rellénalas con el huevo, el tomate y el aguacate."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, rapida, economica]
+  consejo: "Para las noches con poco tiempo: diez minutos y una cena completa."
+
+- id: RCT-CEN-049
+  nombre: "Trucha en papillote con verduras y papa criolla"
+  tiempo_comida: cena
+  porciones: 2
+  tiempo_min: 35
+  dificultad: media
+  ingredientes:
+    - {alimento: trucha_cruda, gramos: 280, medida: "2 filetes"}
+    - {alimento: papa_criolla_cocida, gramos: 300, medida: "12 papitas"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria pequeña"}
+    - {alimento: calabacin, gramos: 120, medida: "1 calabacín pequeño"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "un cuarto de cebolla"}
+    - {alimento: tomate, gramos: 80, medida: "medio tomate grande"}
+    - {alimento: limon, gramos: 20, medida: "1 limón"}
+    - {alimento: perejil, gramos: 5, medida: "1 cucharada picada"}
+    - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
+  pasos:
+    - "Calienta el horno a 200 grados."
+    - "Pon cada filete sobre papel aluminio con las verduras en tiras, el limón, el perejil y la sal."
+    - "Cierra bien los paquetes y hornea 18 minutos."
+    - "Sirve con las papas criollas cocidas."
+  etiquetas: [colombiana, sin_lactosa, sin_gluten]
+  consejo: "Cocinar en papillote conserva el jugo del pescado sin agregar aceite."
+
+- id: RCT-CEN-050
+  nombre: "Ensalada de rúgula, pera y nueces con queso cottage"
+  tiempo_comida: cena
+  porciones: 1
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: rugula, gramos: 60, medida: "2 puñados"}
+    - {alimento: lechuga, gramos: 40, medida: "3 hojas"}
+    - {alimento: pera, gramos: 120, medida: "1 pera"}
+    - {alimento: nueces, gramos: 15, medida: "5 mitades"}
+    - {alimento: queso_cottage, gramos: 150, medida: "media taza grande"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: vinagre, gramos: 5, medida: "1 cucharadita"}
+  pasos:
+    - "Lava y seca la rúgula y la lechuga."
+    - "Corta la pera en láminas finas."
+    - "Arma el plato con las hojas, la pera, las nueces y el queso cottage."
+    - "Aliña con el aceite y el vinagre, y acompaña con el pan tostado."
+  etiquetas: [vegetariano, rapida]
+  consejo: "Las nueces aportan grasas buenas; un puñado pequeño es suficiente."

@@ -19,6 +19,7 @@ panel: estándar
 sexo: mujeres
 alimenta:
 - COND-M5-MU-002
+- COND-M5-MU-004
 combine_with:
 - lh
 - estradiol

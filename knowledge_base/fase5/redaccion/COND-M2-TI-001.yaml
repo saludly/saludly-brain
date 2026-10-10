@@ -1,0 +1,14 @@
+id: COND-M2-TI-001
+tipo: condicion
+titulo_paciente: "TSH un poco alta con hormona tiroidea normal"
+que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar; la tiroides es una glándula del cuello que regula el gasto de energía."
+por_que_te_aparece:
+  - "Tu TSH salió en {tsh}; la referencia es hasta 5,0 entre los 18 y los 60 años, y hasta 6,0 después de los 60."
+  - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}, dentro del rango del laboratorio."
+riesgo_claro: "Si la TSH sigue subiendo con los años, la tiroides podría quedarse corta y causar cansancio, frío, aumento de peso o colesterol alto."
+ejemplo_simple: "Es como un jefe que tiene que insistir más para que el empleado haga el mismo trabajo."
+incertidumbre: "Es un hallazgo frecuente y a veces se normaliza solo; una enfermedad reciente o algunos medicamentos lo alteran. Hay que repetirlo en unos meses, y tu médico lo interpreta."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Consenso colombiano de hipotiroidismo 2023", "AACE/ATA (anti-TPO y TSH >= 10 como criterios de tratamiento)"]
+estado_revision: pendiente

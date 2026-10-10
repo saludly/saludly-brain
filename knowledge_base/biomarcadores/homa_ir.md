@@ -19,6 +19,7 @@ panel: calculado
 sexo: ambos
 alimenta:
 - COND-M1-EM-A02
+- REL-028
 combine_with:
 - glucose
 - insulin

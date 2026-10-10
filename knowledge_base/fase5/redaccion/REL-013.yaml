@@ -1,0 +1,15 @@
+id: REL-013
+tipo: patron
+titulo_paciente: "Tus resultados de hierro cuentan la misma historia"
+que_es: "El hierro sirve para fabricar la hemoglobina de los glóbulos rojos; cuando falta, las reservas bajan y los glóbulos rojos salen más pequeños y desiguales."
+por_que_te_aparece:
+  - "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en {ferritin}."
+  - "Tu saturación de transferrina, que muestra cuánto hierro está circulando, salió en {transferrin_saturation}."
+  - "Tu VCM, el tamaño de tus glóbulos rojos, salió en {mcv} y tu RDW, que mide qué tan distintos son entre sí, en {rdw}."
+riesgo_claro: "Si la falta de hierro sigue, puede aparecer anemia, con cansancio, menos concentración y menos rendimiento físico."
+ejemplo_simple: "Es como una despensa que se va vaciando: primero se acaban las reservas y después empieza a faltar para cocinar."
+incertidumbre: "Una inflamación o un suplemento reciente pueden cambiar estos valores; tu médico busca la causa y decide si hace falta algo más que la alimentación."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["OMS 2020"]
+estado_revision: pendiente

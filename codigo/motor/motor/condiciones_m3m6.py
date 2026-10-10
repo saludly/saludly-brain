@@ -543,6 +543,118 @@ def mi_a02(d):
 
 
 # =============================================================== orquestación
+# =============================================================== Aprobadas el 10 de octubre de 2026
+# Umbrales en propuesta: cada ficha los marca "por verificar" hasta leer la fuente completa.
+def he007(d):
+    f = "COND-M3-HE-007"
+    if d.c("embarazo"): return H(f, "no_aplica", nota="embarazo")
+    if (d.c("edad") or 0) < 15: return H(f, "no_aplica", nota="menor de 15 años")
+    if not d.interpretable("hemoglobin"): return ni(f, d, "hemoglobin")
+    hb = d.calc("hemoglobina_ajustada")
+    if hb is None: return H(f, "incompleta", faltan=["ciudad de residencia"])
+    corte, muy = (16.5, 18.5) if d.hombre else (16.0, 16.5)
+    if hb <= corte: return H(f, "no_activa", extra=dict(hemoglobina_ajustada=hb))
+    hct, hct_corte = d.v("hematocrit"), (49 if d.hombre else 48)
+    hct_alto = hct is not None and hct > hct_corte
+    conf = (["tabaquismo"] if d.c("tabaquismo") else []) + (["testosterona alta"] if d.clase("testosterone_total") == "alto" else []) \
+        + [m for m in ("testosterona", "eritropoyetina", "furosemida", "hidroclorotiazida") if m in d.meds() or m in " ".join(d.c("suplementos", [])).lower()]
+    esc = 3 if d.clase("hemoglobin") == "critico" else 2 if hb > muy else 1
+    coin = "alta" if (hct_alto and not conf and d.c("tabaquismo") is not None) else "moderada"
+    return H(f, "activa", coin, esc, ["hb_alta"] + (["hct_alto"] if hct_alto else []), [] if d.c("tabaquismo") is not None else ["tabaquismo"],
+             confusores=conf, extra=dict(hemoglobina_ajustada=hb, corte=corte))
+
+def he008(d):
+    f = "COND-M3-HE-008"
+    p = d.v("platelets")
+    if p is None: return H(f, "incompleta", faltan=["platelets"])
+    if p <= 450: return H(f, "no_activa")
+    if d.clase("platelets") == "critico": return H(f, "activa", "alta", 3, ["bandera_critica"])
+    fe = d.v("ferritin")
+    reactiva = [k for k, ok in (("ferritina baja", fe is not None and fe < ferritina_corte(d)), ("hs-CRP > 5", (d.v("hs_crp") or 0) > 5),
+                                ("infección reciente", bool(d.c("infeccion_reciente"))), ("esplenectomía", bool(d.c("esplenectomia")))) if ok]
+    return H(f, "activa", "moderada" if reactiva else "alta", 2 if p > 1000 else 1, ["plaquetas_extremas" if p > 1000 else "plaquetas_altas"],
+             confusores=reactiva, nota="probablemente reactiva" if reactiva else None)
+
+def he_a04(d):
+    f = "COND-M3-HE-A04"
+    v, fe, mz = d.v("mcv"), d.v("ferritin"), d.calc("mentzer_index")
+    if v is None or v >= 80: return H(f, "no_activa")
+    if fe is None: return H(f, "incompleta", faltan=["ferritin"])
+    if fe < 30: return H(f, "no_activa", nota="hay déficit de hierro: se evalúa primero")
+    if mz is None or mz >= 13: return H(f, "no_activa", extra=dict(mentzer_index=mz))
+    r = d.r("hb_electrophoresis")
+    if not r: return H(f, "pendiente_refleja", nota=f"índice de Mentzer {mz}: el laboratorio debe correr la electroforesis de hemoglobina",
+                       extra=dict(mentzer_index=mz, quita_recomendacion_hierro=True))
+    t = _txt(d, "hb_electrophoresis")
+    a2 = r.get("valor") if isinstance(r.get("valor"), (int, float)) else None
+    compatible = (a2 is not None and a2 >= 3.5) or "talasemi" in t
+    nota = "electroforesis compatible con rasgo talasémico" if compatible else "electroforesis normal: no descarta rasgo alfa (lo decide el médico)"
+    return H(f, "apoyo", "alta" if compatible else "baja", None, ["microcitosis", "hierro_normal", "mentzer_bajo"] + (["electroforesis"] if compatible else []),
+             nota=nota, extra=dict(mentzer_index=mz, quita_recomendacion_hierro=True))
+
+MACRO_MEDS = ("metformina", "metotrexato", "hidroxiurea", "zidovudina", "valproico", "fenitoina", "carbamazepina", "azatioprina")
+def he009(d, ya):
+    f = "COND-M3-HE-009"
+    v = d.v("mcv")
+    if v is None: return H(f, "incompleta", faltan=["mcv"])
+    if v <= 100: return H(f, "no_activa")
+    if ya["COND-M3-HE-001"]["estado"] == "activa": return H(f, "no_aplica", nota="hay anemia: manda COND-M3-HE-004")
+    fol = d.v("folate")
+    expl = [k for k, ok in (("alcohol", d.clase("ggt") == "alto" or bool(d.c("alcohol_consumo"))), ("B12 o folato bajos", bool(b12_baja(d)) or (fol is not None and fol < 4)),
+                            ("tiroides", d.clase("tsh") == "alto"), ("hígado", d.clase("alt") == "alto" or d.clase("ast") == "alto"),
+                            ("reticulocitos altos", d.clase("reticulocytes_pct") == "alto")) if ok] + _meds(d, *MACRO_MEDS)
+    return H(f, "activa", "alta" if expl else "moderada", 1, ["macrocitosis", "sin_anemia"], extra=dict(explicaciones=expl))
+
+def he010(d, ya):
+    f = "COND-M3-HE-010"
+    anemia = ya["COND-M3-HE-001"]["estado"] == "activa"
+    n, p = d.v("neutrophils_abs"), d.v("platelets")
+    lineas = [k for k, ok in (("anemia", anemia), ("neutrofilos_bajos", n is not None and n < 1.5), ("plaquetas_bajas", p is not None and p < 150)) if ok]
+    if len(lineas) < 2: return H(f, "no_activa", cumplidos=lineas)
+    severa = ya["COND-M3-HE-001"].get("severidad") == "severa" or (n is not None and n < 0.5) or (p is not None and p < 50)
+    deficit = [x for x in ("COND-M3-HE-004", "COND-M3-NU-001", "COND-M3-NU-002") if ya.get(x, {}).get("estado") == "activa"]
+    conf = (["déficit de B12 o folato"] if deficit else []) + (["infección reciente"] if d.c("infeccion_reciente") else []) + (["alcohol"] if d.c("alcohol_consumo") else [])
+    return H(f, "activa", "moderada" if deficit else "alta", 3 if (len(lineas) == 3 or severa) else 2, lineas, confusores=conf,
+             nota="definición de 'severa' por verificar con el médico")
+
+def mi002(d, ya):
+    f = "COND-M6-MI-002"
+    glob, ag = d.calc("globulin"), d.calc("ag_ratio")
+    if glob is None and ag is None and d.v("igg") is None: return H(f, "incompleta", faltan=["total_protein", "albumin"])
+    muy = lambda b: d.v(b) is not None and d.hi(b) and d.v(b) > 2 * d.hi(b)
+    prot = [k for k, ok in (("globulinas_altas", glob is not None and glob > 3.5), ("ag_baja", ag is not None and ag < 1.0), ("igg_muy_alta", muy("igg")), ("igm_muy_alta", muy("igm"))) if ok]
+    if not prot: return H(f, "no_activa")
+    cc, cahi, e = d.calc("calcio_corregido"), d.hi("calcium"), d.calc("egfr")
+    extra_s = [k for k, ok in (("anemia", ya.get("COND-M3-HE-001", {}).get("estado") == "activa"), ("calcio_alto", cc is not None and cahi is not None and cc > cahi),
+                               ("tfg_baja", e is not None and e < 60)) if ok]
+    poli = [k for k, ok in (("hepatitis activa", ya.get("COND-M4-IN-001", {}).get("estado") == "activa" or ya.get("COND-M4-IN-002", {}).get("estado_hb") == "infeccion_activa"),
+                            ("ANA positivo", ya.get("COND-M6-RE-A01", {}).get("estado") == "activa"), ("hs-CRP > 10", (d.v("hs_crp") or 0) > 10)) if ok]
+    t = _txt(d, "serum_protein_electrophoresis")
+    if t:
+        if "monoclonal" in t and not any(x in t for x in ("ausencia", "no se observa", "sin banda", "negativ")):
+            return H(f, "activa", "alta", 2, prot + ["banda_monoclonal"] + extra_s, confusores=poli, extra=dict(canal="revisión médica"))
+        return H(f, "no_activa", cumplidos=prot, nota="electroforesis sin banda monoclonal (policlonal o normal)")
+    if not extra_s:
+        return H(f, "pendiente_refleja", cumplidos=prot, confusores=poli, nota="el laboratorio debe correr la electroforesis de proteínas")
+    return H(f, "activa", "baja" if poli else "moderada", 2, prot + extra_s, confusores=poli, nota="falta la electroforesis de proteínas (refleja)")
+
+def mu004(d):
+    f = "COND-M5-MU-004"
+    if d.c("sexo") != "mujer": return H(f, "no_aplica")
+    if (d.c("edad") or 0) < 45: return H(f, "no_aplica", nota="menor de 45 años (FSH alta antes de 40: MU-002)")
+    if d.c("embarazo") or d.c("anticonceptivo_hormonal") or d.c("terapia_hormonal"): return H(f, "no_aplica", nota="embarazo, anticonceptivo o terapia hormonal")
+    # En esta etapa los ciclos son irregulares: se usa el valor de FSH aunque falte la fecha de última menstruación
+    r = d.r("fsh")
+    fsh = r.get("valor") if r and r.get("estado") == "medido" and isinstance(r.get("valor"), (int, float)) else None
+    if fsh is None: return H(f, "incompleta", faltan=["fsh"])
+    if fsh < 25: return H(f, "no_activa")
+    re_ = d.r("estradiol")
+    e2 = re_.get("valor") if re_ and re_.get("estado") in ("medido", "menor_que_limite") and isinstance(re_.get("valor"), (int, float)) else None
+    e2_bajo = e2 is not None and e2 < 30
+    return H(f, "apoyo", "alta" if (e2_bajo or d.c("menopausia")) else "moderada", None, ["edad_45", "fsh_alta"] + (["estradiol_bajo"] if e2_bajo else []),
+             nota="corte de FSH 25 UI/L por verificar (STRAW+10)", extra=dict(informativa_para_paciente=True))
+
+
 def evaluar_m3m6(p1, ctx, previos=None):
     ctx = dict(ctx, _observaciones=p1.get("observaciones", []))
     d = Datos(p1, ctx)
@@ -556,6 +668,13 @@ def evaluar_m3m6(p1, ctx, previos=None):
     put(in001(d)); put(in002(d)); put(in003(d)); put(in_a01(d)); put(in_a02(d))
     put(mu001(d)); put(mu002(d)); put(mu003(d)); put(mu_a01(d, ya)); put(ur001(d)); put(ur002(d)); put(ur_a01(d)); put(ur_a02(d))
     put(re001(d)); put(re_a01(d)); put(re_a02(d)); put(mi001(d)); put(mi_a01(d)); put(mi_a02(d))
+    put(he007(d)); put(he008(d)); put(he_a04(d)); put(he009(d, ya)); put(he010(d, ya)); put(mi002(d, ya)); put(mu004(d))
+    # MU-001: la 17-hidroxiprogesterona (refleja) descarta la hiperplasia suprarrenal no clásica
+    m1 = ya["COND-M5-MU-001"]
+    if m1["estado"] == "activa":
+        oh = d.v("hydroxyprogesterone_17")
+        if oh is None: m1["pendiente_refleja"] = ["hydroxyprogesterone_17"]
+        elif oh > 2: m1.update(coincidencia="baja", nota=(m1.get("nota") or "") + "; 17-OHP alta: descartar hiperplasia suprarrenal no clásica")
     # HE-A01 sube el escalamiento de la anemia a 2 y quita recomendaciones de hierro
     if ya["COND-M3-HE-A01"]["estado"] == "apoyo" and ya["COND-M3-HE-001"]["estado"] == "activa":
         ya["COND-M3-HE-001"]["escalamiento"] = max(2, ya["COND-M3-HE-001"]["escalamiento"] or 0)

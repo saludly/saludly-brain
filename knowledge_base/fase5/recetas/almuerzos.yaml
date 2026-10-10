@@ -1,0 +1,1535 @@
+# Almuerzos de Saludly (Fase 5). Recetas propias, caseras y colombianas.
+# Formato en knowledge_base/fase5/ESQUEMAS.md (sección 3). Los gramos son del total de la receta
+# y del estado del alimento indicado en su id (cereales, tubérculos y leguminosas cocidos; carnes y pescados crudos).
+# Los nutrientes y las etiquetas nutricionales los calcula el código con recetas/alimentos.yaml.
+# estado_revision: pendiente (la aprueba Carlos)
+
+- id: RCT-ALM-001
+  nombre: "Ajiaco liviano de pollo"
+  tiempo_comida: almuerzo
+  porciones: 4
+  tiempo_min: 60
+  dificultad: media
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 500, medida: "2 pechugas medianas"}
+    - {alimento: papa_criolla_cocida, gramos: 400, medida: "16 papas criollas"}
+    - {alimento: papa_cocida, gramos: 400, medida: "4 papas pastusas medianas"}
+    - {alimento: mazorca_tierna, gramos: 300, medida: "2 mazorcas en trozos"}
+    - {alimento: cebolla_larga, gramos: 60, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: cilantro, gramos: 15, medida: "1 manojo pequeño"}
+    - {alimento: caldo_casero_sin_sal, gramos: 1500, medida: "6 tazas"}
+    - {alimento: aguacate, gramos: 200, medida: "1 aguacate mediano"}
+    - {alimento: arroz_blanco_cocido, gramos: 240, medida: "1 1/2 tazas"}
+    - {alimento: sal, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Cocina la pechuga en el caldo con la cebolla larga y el ajo durante 25 minutos."
+    - "Saca el pollo, desméchalo y reserva."
+    - "Agrega las papas en trozos y la mazorca, y cocina hasta que la papa criolla se deshaga y espese."
+    - "Devuelve el pollo, ajusta con la sal y termina con cilantro picado."
+    - "Sirve con aguacate y una porción pequeña de arroz."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Cambia la crema de leche por aguacate: das la misma suavidad con grasa saludable."
+
+- id: RCT-ALM-002
+  nombre: "Sancocho de pollo sin piel"
+  tiempo_comida: almuerzo
+  porciones: 4
+  tiempo_min: 70
+  dificultad: media
+  ingredientes:
+    - {alimento: muslo_pollo_sin_piel_crudo, gramos: 500, medida: "4 muslos sin piel"}
+    - {alimento: yuca_cocida, gramos: 300, medida: "2 trozos medianos"}
+    - {alimento: platano_verde, gramos: 200, medida: "1 plátano verde"}
+    - {alimento: papa_cocida, gramos: 300, medida: "3 papas medianas"}
+    - {alimento: mazorca_tierna, gramos: 200, medida: "1 mazorca en ruedas"}
+    - {alimento: cebolla_larga, gramos: 60, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: cilantro, gramos: 15, medida: "1 manojo pequeño"}
+    - {alimento: caldo_casero_sin_sal, gramos: 1500, medida: "6 tazas"}
+    - {alimento: aguacate, gramos: 200, medida: "1 aguacate mediano"}
+    - {alimento: comino, gramos: 2, medida: "1 pizca"}
+    - {alimento: sal, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Retira la piel y la grasa visible del pollo."
+    - "Cocina el pollo en el caldo con cebolla larga, ajo y comino por 20 minutos."
+    - "Agrega el plátano y la mazorca, y a los 15 minutos la yuca y la papa."
+    - "Cocina hasta que todo esté blando, ajusta la sal y añade cilantro."
+    - "Sirve con aguacate en tajadas."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Si quieres arroz, sirve poco: el sancocho ya trae suficientes tubérculos."
+
+- id: RCT-ALM-003
+  nombre: "Sudado de pollo con papa y arroz integral"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 40
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: papa_cocida, gramos: 200, medida: "2 papas medianas"}
+    - {alimento: arroz_integral_cocido, gramos: 250, medida: "1 1/4 tazas"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Sofríe la cebolla, el ajo y el tomate picados en el aceite."
+    - "Agrega el pollo en presas, la zanahoria, el comino y medio vaso de agua."
+    - "Tapa y cocina a fuego bajo 20 minutos."
+    - "Añade la papa en trozos los últimos 10 minutos y ajusta la sal."
+    - "Sirve con el arroz integral."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, economica]
+  consejo: "El sudado se cocina en su propio jugo: no necesitas más aceite ni cubitos de caldo."
+
+- id: RCT-ALM-004
+  nombre: "Fríjoles rojos con carne molida, arroz y aguacate"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: frijol_rojo_cocido, gramos: 300, medida: "2 tazas"}
+    - {alimento: carne_molida_magra_cruda, gramos: 150, medida: "1/3 de libra"}
+    - {alimento: arroz_blanco_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: zanahoria, gramos: 60, medida: "1/2 zanahoria rallada"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Haz un hogao con tomate y cebolla larga en el aceite."
+    - "Dora la carne molida en el hogao hasta que cambie de color."
+    - "Agrega los fríjoles con un poco de su caldo y la zanahoria rallada."
+    - "Cocina 10 minutos, ajusta la sal y sirve con arroz y aguacate."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Cambia el chicharrón por carne molida magra: conservas el sabor con mucha menos grasa saturada."
+
+- id: RCT-ALM-005
+  nombre: "Lentejas guisadas con arroz integral y ensalada de tomate"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 410, medida: "2 tazas"}
+    - {alimento: arroz_integral_cocido, gramos: 200, medida: "1 1/4 tazas"}
+    - {alimento: papa_cocida, gramos: 100, medida: "1 papa"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: zanahoria, gramos: 60, medida: "1/2 zanahoria"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Sofríe la mitad de la cebolla y un tomate con comino."
+    - "Agrega las lentejas, la papa en cubos y la zanahoria con un poco de agua."
+    - "Cocina 15 minutos hasta que espese y ajusta la sal."
+    - "Pica el resto del tomate y la cebolla con cilantro, limón y aceite de oliva."
+    - "Sirve las lentejas con el arroz y la ensalada."
+  etiquetas: [colombiana, vegano, vegetariano, sin_gluten, sin_lactosa, economica]
+  consejo: "El limón de la ensalada ayuda a absorber el hierro de las lentejas."
+
+- id: RCT-ALM-006
+  nombre: "Arroz con pollo y verduras"
+  tiempo_comida: almuerzo
+  porciones: 4
+  tiempo_min: 45
+  dificultad: media
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 500, medida: "2 pechugas"}
+    - {alimento: arroz_blanco_cocido, gramos: 690, medida: "4 1/4 tazas"}
+    - {alimento: arveja_verde, gramos: 150, medida: "1 taza"}
+    - {alimento: zanahoria, gramos: 150, medida: "1 zanahoria grande"}
+    - {alimento: habichuela, gramos: 150, medida: "1 taza picada"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: cebolla_cabezona, gramos: 100, medida: "1/2 cebolla grande"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: aceite_canola, gramos: 30, medida: "2 cucharadas"}
+    - {alimento: caldo_casero_sin_sal, gramos: 250, medida: "1 taza"}
+    - {alimento: lechuga, gramos: 150, medida: "1/2 lechuga"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: sal, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Cocina la pechuga en el caldo, desméchala y guarda el caldo."
+    - "Sofríe cebolla, ajo y pimentón en el aceite."
+    - "Agrega las verduras picadas y cocínalas 5 minutos con un poco del caldo."
+    - "Incorpora el arroz y el pollo, mezcla bien y ajusta la sal."
+    - "Sirve con ensalada de lechuga y tomate con limón."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Pon más verdura que arroz en la olla: el plato rinde más y llena más."
+
+- id: RCT-ALM-007
+  nombre: "Tilapia al horno con limón, yuca y ensalada"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: tilapia_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: yuca_cocida, gramos: 390, medida: "3 trozos medianos"}
+    - {alimento: limon, gramos: 60, medida: "2 limones"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: perejil, gramos: 10, medida: "1 puñado"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta el horno a 200 grados."
+    - "Unta los filetes con ajo, perejil, pimienta, jugo de limón y la mitad del aceite."
+    - "Hornéalos 15 minutos en una bandeja."
+    - "Sirve con la yuca cocida y una ensalada de lechuga, pepino y tomate con el resto del aceite y limón."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, rapida]
+  consejo: "Sin sal añadida: el limón y el ajo le dan todo el sabor al pescado."
+
+- id: RCT-ALM-008
+  nombre: "Trucha en papillote con papa criolla y brócoli"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: media
+  ingredientes:
+    - {alimento: trucha_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: papa_criolla_cocida, gramos: 380, medida: "15 papas criollas"}
+    - {alimento: brocoli, gramos: 200, medida: "2 tazas"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla en plumas"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Pon cada filete sobre papel aluminio con cebolla, pimentón, orégano y limón."
+    - "Rocía un poco de aceite, cierra bien el paquete y hornea 18 minutos a 200 grados."
+    - "Cocina el brócoli al vapor por 5 minutos."
+    - "Sirve la trucha con las papas criollas y el brócoli, y ajusta la sal."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "La trucha es una fuente de omega 3 que se consigue fresca en Bogotá."
+
+- id: RCT-ALM-009
+  nombre: "Merluza en salsa de tomate con arroz y habichuelas"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: merluza_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: salsa_tomate_natural, gramos: 150, medida: "2/3 de taza"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: arroz_blanco_cocido, gramos: 380, medida: "2 1/2 tazas"}
+    - {alimento: habichuela, gramos: 200, medida: "2 tazas"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: perejil, gramos: 10, medida: "1 puñado"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Sofríe la cebolla y el ajo en el aceite y agrega la salsa de tomate."
+    - "Pon los filetes en la salsa, tapa y cocina 10 minutos a fuego bajo."
+    - "Cocina las habichuelas al vapor hasta que estén tiernas pero verdes."
+    - "Ajusta la sal, espolvorea perejil y sirve con el arroz."
+  etiquetas: [sin_gluten, sin_lactosa, rapida]
+  consejo: "La merluza es un pescado blanco con muy poca grasa, ideal si cuidas tu colesterol."
+
+- id: RCT-ALM-010
+  nombre: "Bistec de res a la criolla con papa y ensalada"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: carne_res_magra_cruda, gramos: 300, medida: "2 bistecs delgados"}
+    - {alimento: papa_cocida, gramos: 510, medida: "3 1/2 papas medianas"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 120, medida: "1 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Adoba los bistecs con ajo y comino."
+    - "Ásalos en una sartén caliente con la mitad del aceite, 3 minutos por lado."
+    - "En la misma sartén cocina la cebolla en aros y el tomate hasta que suelten jugo."
+    - "Pon la salsa sobre la carne, ajusta la sal y sirve con papa y ensalada con limón."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Elige cortes magros como bola o centro de pierna y retira la grasa visible."
+
+- id: RCT-ALM-011
+  nombre: "Lomo de cerdo a la plancha con puré de ahuyama"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: lomo_cerdo_crudo, gramos: 300, medida: "2 medallones"}
+    - {alimento: ahuyama, gramos: 300, medida: "2 tazas en cubos"}
+    - {alimento: papa_cocida, gramos: 340, medida: "2 1/2 papas medianas"}
+    - {alimento: espinaca, gramos: 80, medida: "2 tazas"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: canela, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Cocina la ahuyama y tritúrala con la papa, una pizca de canela y pimienta."
+    - "Adoba el lomo con ajo, limón y pimienta."
+    - "Ásalo en una plancha con unas gotas de aceite hasta que no quede rosado por dentro."
+    - "Sirve con el puré y una ensalada de espinaca, tomate y aguacate con el resto del aceite."
+  etiquetas: [sin_gluten, sin_lactosa]
+  consejo: "Sin sal añadida: la ahuyama es dulce de forma natural y el limón realza la carne."
+
+- id: RCT-ALM-012
+  nombre: "Bowl de quinua, garbanzo y verduras asadas"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: quinua_cocida, gramos: 300, medida: "2 tazas"}
+    - {alimento: garbanzo_cocido, gramos: 200, medida: "1 1/4 tazas"}
+    - {alimento: calabacin, gramos: 150, medida: "1 calabacín"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: espinaca, gramos: 60, medida: "2 tazas"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Corta el calabacín, el pimentón y la cebolla en trozos y ásalos en sartén con la mitad del aceite."
+    - "Dora los garbanzos con comino unos minutos."
+    - "Arma el bowl con quinua, espinaca, verduras, garbanzos y aguacate."
+    - "Aliña con limón, el resto del aceite y la sal."
+  etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  consejo: "Quinua y garbanzo juntos te dan una proteína vegetal muy completa."
+
+- id: RCT-ALM-013
+  nombre: "Ensalada completa de pollo, mazorca y aguacate"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: mazorca_tierna, gramos: 200, medida: "1 taza de granos"}
+    - {alimento: lechuga, gramos: 150, medida: "3 tazas"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria rallada"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Asa la pechuga con orégano y córtala en tiras."
+    - "Mezcla lechuga, tomate, zanahoria, mazorca y papa en cubos."
+    - "Agrega el pollo y el aguacate."
+    - "Aliña con limón, aceite de oliva y una pizca de sal."
+  etiquetas: [sin_gluten, sin_lactosa, rapida]
+  consejo: "Una ensalada es almuerzo completo cuando lleva proteína, un carbohidrato y grasa buena."
+
+- id: RCT-ALM-014
+  nombre: "Pasta integral con pollo y brócoli"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: pasta_integral_cocida, gramos: 300, medida: "2 tazas"}
+    - {alimento: pechuga_pollo_cruda, gramos: 250, medida: "1 pechuga"}
+    - {alimento: brocoli, gramos: 200, medida: "2 tazas"}
+    - {alimento: champinones, gramos: 100, medida: "1 taza"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: queso_mozzarella, gramos: 30, medida: "2 cucharadas rallado"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Corta el pollo en cubos y dóralo en el aceite con el ajo."
+    - "Agrega los champiñones y el brócoli en ramitos con un chorrito de agua."
+    - "Tapa 4 minutos para que el brócoli quede tierno."
+    - "Mezcla con la pasta, ajusta sal y pimienta, y termina con un poco de queso."
+  etiquetas: [rapida]
+  consejo: "La pasta integral tiene más fibra y sube la glucosa más despacio que la blanca."
+
+- id: RCT-ALM-015
+  nombre: "Pasta integral boloñesa con carne magra"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: pasta_integral_cocida, gramos: 300, medida: "2 tazas"}
+    - {alimento: carne_molida_magra_cruda, gramos: 220, medida: "1/2 libra"}
+    - {alimento: salsa_tomate_natural, gramos: 200, medida: "1 taza"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria rallada"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: champinones, gramos: 100, medida: "1 taza picada"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: rugula, gramos: 40, medida: "1 taza"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Sofríe cebolla, ajo, zanahoria y champiñones picados en el aceite."
+    - "Agrega la carne y cocínala hasta que se dore."
+    - "Incorpora la salsa de tomate y el orégano, y cocina 10 minutos a fuego bajo."
+    - "Ajusta la sal y sirve sobre la pasta con rúgula fresca."
+  etiquetas: [sin_lactosa]
+  consejo: "Esconder zanahoria y champiñón en la salsa suma verdura sin que se note."
+
+- id: RCT-ALM-016
+  nombre: "Tofu salteado con verduras y arroz integral"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: tofu, gramos: 300, medida: "1 bloque"}
+    - {alimento: arroz_integral_cocido, gramos: 250, medida: "1 1/2 tazas"}
+    - {alimento: brocoli, gramos: 150, medida: "1 1/2 tazas"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria en tiras"}
+    - {alimento: repollo, gramos: 100, medida: "1 taza en tiras"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 15, medida: "1 cucharada"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: ajonjoli, gramos: 10, medida: "1 cucharada"}
+  pasos:
+    - "Seca el tofu con un paño y córtalo en cubos."
+    - "Dóralo en la mitad del aceite hasta que esté firme y resérvalo."
+    - "Saltea el ajo y las verduras en el resto del aceite a fuego alto por 4 minutos."
+    - "Devuelve el tofu, agrega la salsa de soya y el ajonjolí, y sirve con el arroz."
+  etiquetas: [vegano, vegetariano, sin_lactosa, rapida]
+  consejo: "No le pongas sal: la salsa de soya ya aporta todo el sodio que el plato necesita."
+
+- id: RCT-ALM-017
+  nombre: "Hígado encebollado con papa y ensalada de tomate y naranja"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: higado_res_crudo, gramos: 250, medida: "2 filetes"}
+    - {alimento: cebolla_cabezona, gramos: 150, medida: "1 cebolla grande"}
+    - {alimento: papa_cocida, gramos: 460, medida: "3 papas medianas"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: naranja, gramos: 150, medida: "1 naranja en gajos"}
+    - {alimento: lechuga, gramos: 80, medida: "2 tazas"}
+    - {alimento: aceite_canola, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Corta el hígado en tiras y retira las membranas."
+    - "Dora la cebolla en plumas con el ajo en el aceite hasta que esté blanda."
+    - "Agrega el hígado y cocínalo 4 minutos sin dejar que se endurezca."
+    - "Ajusta la sal y sirve con papa y una ensalada de lechuga, tomate y naranja."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, economica, rapida]
+  consejo: "La naranja de la ensalada aporta vitamina C, que ayuda a aprovechar el hierro del hígado."
+
+- id: RCT-ALM-018
+  nombre: "Lentejas con espinaca, huevo y limón"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 440, medida: "2 1/4 tazas"}
+    - {alimento: espinaca, gramos: 120, medida: "4 tazas"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: arroz_blanco_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Sofríe cebolla, ajo y tomate con comino en el aceite."
+    - "Agrega las lentejas con un poco de agua y cocina 10 minutos."
+    - "Incorpora la espinaca picada hasta que se ablande."
+    - "Cocina los huevos duros, pártelos y sírvelos sobre las lentejas con el arroz."
+    - "Exprime limón encima al momento de comer."
+  etiquetas: [vegetariano, sin_gluten, sin_lactosa, economica]
+  consejo: "Sin sal añadida: el comino y el limón bastan, y el limón ayuda a absorber el hierro."
+
+- id: RCT-ALM-019
+  nombre: "Fríjol negro con arroz, pico de gallo y aguacate"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: frijol_negro_cocido, gramos: 430, medida: "2 1/2 tazas"}
+    - {alimento: arroz_integral_cocido, gramos: 200, medida: "1 1/4 tazas"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aguacate, gramos: 120, medida: "1/2 aguacate grande"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Calienta los fríjoles con ajo y comino y aplasta algunos para espesar."
+    - "Pica tomate, cebolla y cilantro, y mézclalos con limón para el pico de gallo."
+    - "Sirve el arroz con los fríjoles, el pico de gallo y el aguacate."
+    - "Ajusta la sal al final."
+  etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa, economica, rapida]
+  consejo: "Fríjol y arroz juntos forman una proteína vegetal completa y económica."
+
+- id: RCT-ALM-020
+  nombre: "Garbanzos guisados con ahuyama y espinaca"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 340, medida: "2 tazas"}
+    - {alimento: ahuyama, gramos: 250, medida: "2 tazas en cubos"}
+    - {alimento: espinaca, gramos: 100, medida: "3 tazas"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: arroz_integral_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Sofríe cebolla, ajo y tomate con comino y pimienta."
+    - "Agrega la ahuyama en cubos y medio vaso de agua, y cocina 12 minutos."
+    - "Incorpora los garbanzos y la espinaca, y cocina 5 minutos más."
+    - "Ajusta la sal y sirve con el arroz integral."
+  etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa, economica]
+  consejo: "La ahuyama le da cremosidad al guiso sin necesidad de crema ni queso."
+
+- id: RCT-ALM-021
+  nombre: "Sopa de arveja seca con verduras y huevo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: arveja_seca_cocida, gramos: 300, medida: "2 tazas"}
+    - {alimento: papa_cocida, gramos: 340, medida: "2 1/2 papas medianas"}
+    - {alimento: zanahoria, gramos: 100, medida: "1 zanahoria"}
+    - {alimento: apio, gramos: 50, medida: "1 rama"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: agua, gramos: 600, medida: "2 1/2 tazas"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: aguacate, gramos: 140, medida: "2/3 de aguacate"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Cocina en el agua la cebolla larga, el apio y la zanahoria picados por 10 minutos."
+    - "Agrega la arveja y la papa en cubos y cocina 10 minutos más."
+    - "Licúa la mitad de la sopa para espesarla y devuélvela a la olla."
+    - "Rompe los huevos dentro de la sopa caliente y deja que cuajen 3 minutos."
+    - "Ajusta la sal, termina con cilantro y sirve con aguacate."
+  etiquetas: [colombiana, vegetariano, sin_gluten, sin_lactosa, economica]
+  consejo: "Licuar parte de la sopa la hace cremosa sin crema de leche."
+
+- id: RCT-ALM-022
+  nombre: "Salmón al horno con batata y brócoli"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: salmon_crudo, gramos: 260, medida: "2 porciones"}
+    - {alimento: batata_cocida, gramos: 490, medida: "2 1/2 tazas"}
+    - {alimento: brocoli, gramos: 200, medida: "2 tazas"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: perejil, gramos: 10, medida: "1 puñado"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta el horno a 200 grados."
+    - "Pon el salmón y la batata en rodajas en una bandeja con ajo, perejil y pimienta."
+    - "Hornea 15 minutos y agrega el brócoli los últimos 6 minutos."
+    - "Sirve con limón exprimido por encima."
+  etiquetas: [sin_gluten, sin_lactosa]
+  consejo: "Sin sal añadida: el salmón tiene grasa buena y sabor propio, solo necesita limón."
+
+- id: RCT-ALM-023
+  nombre: "Ensalada de atún, papa, habichuela y huevo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: atun_lata_agua, gramos: 160, medida: "1 lata grande escurrida"}
+    - {alimento: papa_cocida, gramos: 510, medida: "3 1/2 papas medianas"}
+    - {alimento: habichuela, gramos: 150, medida: "1 1/2 tazas"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "1/4 de cebolla"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: vinagre, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: mostaza, gramos: 5, medida: "1 cucharadita"}
+  pasos:
+    - "Cocina las habichuelas 5 minutos y los huevos 10 minutos."
+    - "Corta la papa, el tomate y los huevos en trozos."
+    - "Mezcla todo con la lechuga, la cebolla en plumas y el atún escurrido."
+    - "Aliña con aceite, vinagre y mostaza."
+  etiquetas: [sin_gluten, sin_lactosa, rapida, economica]
+  consejo: "No le pongas sal: el atún de lata y la mostaza ya traen sodio."
+
+- id: RCT-ALM-024
+  nombre: "Camarones salteados con arroz integral y verduras"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: media
+  ingredientes:
+    - {alimento: camaron_crudo, gramos: 300, medida: "2 tazas pelados"}
+    - {alimento: arroz_integral_cocido, gramos: 330, medida: "1 3/4 tazas"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: calabacin, gramos: 150, medida: "1 calabacín"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+  pasos:
+    - "Saltea el ajo y la cebolla larga en el aceite."
+    - "Agrega el pimentón y el calabacín en cubos y cocina 3 minutos."
+    - "Incorpora los camarones y cocínalos solo hasta que se pongan rosados."
+    - "Termina con limón y cilantro, y sirve con el arroz y el aguacate."
+  etiquetas: [sin_gluten, sin_lactosa, rapida]
+  consejo: "Sin sal añadida: el camarón ya trae sodio propio y el limón completa el sabor."
+
+- id: RCT-ALM-025
+  nombre: "Pavo a la plancha con arracacha y ensalada de repollo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pavo_cruda, gramos: 300, medida: "2 filetes"}
+    - {alimento: arracacha_cocida, gramos: 480, medida: "3 3/4 tazas en trozos"}
+    - {alimento: repollo, gramos: 150, medida: "2 tazas en tiras finas"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria rallada"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Adoba el pavo con ajo, orégano y limón."
+    - "Ásalo en la plancha con unas gotas de aceite, 5 minutos por lado."
+    - "Mezcla el repollo y la zanahoria con limón y el resto del aceite."
+    - "Ajusta la sal y sirve con la arracacha cocida."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "La arracacha es un tubérculo de la sabana: cambia la papa por ella para variar."
+
+- id: RCT-ALM-026
+  nombre: "Pollo a la naranja con arroz integral y habichuelas"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: media
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: naranja, gramos: 250, medida: "2 naranjas en jugo"}
+    - {alimento: arroz_integral_cocido, gramos: 310, medida: "1 1/2 tazas"}
+    - {alimento: habichuela, gramos: 200, medida: "2 tazas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
+  pasos:
+    - "Dora el pollo en cubos con el aceite, la cebolla y el ajo."
+    - "Agrega el jugo de naranja y la salsa de soya."
+    - "Cocina a fuego bajo hasta que la salsa reduzca y brille, sin añadir azúcar."
+    - "Sirve con el arroz integral y las habichuelas al vapor."
+  etiquetas: [sin_lactosa]
+  consejo: "El jugo de naranja reducido endulza la salsa sin azúcar añadida."
+
+- id: RCT-ALM-027
+  nombre: "Carne desmechada sudada con arepa y ensalada"
+  tiempo_comida: almuerzo
+  porciones: 4
+  tiempo_min: 70
+  dificultad: media
+  ingredientes:
+    - {alimento: carne_res_magra_cruda, gramos: 500, medida: "1 libra de falda magra"}
+    - {alimento: tomate, gramos: 300, medida: "3 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 150, medida: "1 cebolla"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: arepa_maiz_blanca, gramos: 450, medida: "5 arepas medianas"}
+    - {alimento: lechuga, gramos: 150, medida: "3 tazas"}
+    - {alimento: pepino, gramos: 150, medida: "1 pepino"}
+    - {alimento: aguacate, gramos: 200, medida: "1 aguacate"}
+    - {alimento: aceite_canola, gramos: 25, medida: "5 cucharaditas"}
+    - {alimento: comino, gramos: 2, medida: "1 pizca"}
+    - {alimento: sal, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Cocina la carne en agua con cebolla larga y ajo durante 50 minutos o hasta que se desmeche fácil."
+    - "Desmecha la carne con dos tenedores."
+    - "Sofríe tomate, cebolla y pimentón con comino, y agrega la carne con un poco del caldo."
+    - "Cocina 10 minutos, ajusta la sal y sirve con arepa asada, ensalada y aguacate."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Asa la arepa en la plancha sin mantequilla: queda crocante igual."
+
+- id: RCT-ALM-028
+  nombre: "Sopa de cebada con pollo y verduras"
+  tiempo_comida: almuerzo
+  porciones: 4
+  tiempo_min: 50
+  dificultad: facil
+  ingredientes:
+    - {alimento: cebada_perlada_cocida, gramos: 490, medida: "3 tazas"}
+    - {alimento: pechuga_pollo_cruda, gramos: 450, medida: "2 pechugas pequeñas"}
+    - {alimento: papa_cocida, gramos: 300, medida: "3 papas medianas"}
+    - {alimento: zanahoria, gramos: 150, medida: "1 zanahoria grande"}
+    - {alimento: arveja_verde, gramos: 120, medida: "3/4 de taza"}
+    - {alimento: repollo, gramos: 150, medida: "2 tazas picado"}
+    - {alimento: cebolla_larga, gramos: 60, medida: "2 tallos"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: cilantro, gramos: 15, medida: "1 manojo pequeño"}
+    - {alimento: caldo_casero_sin_sal, gramos: 1500, medida: "6 tazas"}
+    - {alimento: aguacate, gramos: 200, medida: "1 aguacate"}
+    - {alimento: sal, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Cocina el pollo en el caldo con cebolla larga y ajo por 20 minutos, y desméchalo."
+    - "Agrega zanahoria, arveja, papa y repollo picados, y cocina 15 minutos."
+    - "Incorpora la cebada cocida y el pollo, y deja hervir 5 minutos."
+    - "Ajusta la sal, termina con cilantro y sirve con aguacate."
+  etiquetas: [colombiana, sin_lactosa, economica]
+  consejo: "La cebada aporta fibra que da saciedad por varias horas."
+
+- id: RCT-ALM-029
+  nombre: "Caldo de pollo con verduras y arroz"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 40
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: arroz_blanco_cocido, gramos: 200, medida: "1 1/4 tazas"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: zanahoria, gramos: 100, medida: "1 zanahoria"}
+    - {alimento: guatila, gramos: 150, medida: "1 guatila pequeña"}
+    - {alimento: apio, gramos: 50, medida: "1 rama"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: caldo_casero_sin_sal, gramos: 750, medida: "3 tazas"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+  pasos:
+    - "Cocina el pollo en el caldo con cebolla larga y apio por 20 minutos."
+    - "Agrega guatila, zanahoria y papa en cubos y cocina 12 minutos."
+    - "Desmecha el pollo y devuélvelo a la olla."
+    - "Sirve con cilantro, unas gotas de limón, el arroz y el aguacate."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, economica]
+  consejo: "Sin sal añadida: el apio, el cilantro y el limón dan un caldo con mucho sabor."
+
+- id: RCT-ALM-030
+  nombre: "Bowl de arroz, carne molida, fríjol y pico de gallo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: arroz_integral_cocido, gramos: 250, medida: "1 1/4 tazas"}
+    - {alimento: carne_molida_magra_cruda, gramos: 200, medida: "1/2 libra escasa"}
+    - {alimento: frijol_negro_cocido, gramos: 150, medida: "1 taza"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: lechuga, gramos: 80, medida: "2 tazas"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Dora la carne molida con la mitad de la cebolla y el comino, sin aceite."
+    - "Calienta los fríjoles aparte."
+    - "Prepara un pico de gallo con tomate, el resto de la cebolla, cilantro y limón."
+    - "Arma el bowl con arroz, lechuga, carne, fríjol, pico de gallo y aguacate, y ajusta la sal."
+  etiquetas: [sin_gluten, sin_lactosa, rapida]
+  consejo: "La carne molida magra suelta su propia grasa: no necesitas aceite para dorarla."
+
+- id: RCT-ALM-031
+  nombre: "Tacos de pollo en tortilla de maíz con repollo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 280, medida: "1 pechuga"}
+    - {alimento: tortilla_maiz, gramos: 180, medida: "6 tortillas pequeñas"}
+    - {alimento: repollo_morado, gramos: 120, medida: "1 1/2 tazas en tiras"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: yogur_griego_natural, gramos: 60, medida: "4 cucharadas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Corta el pollo en tiras y ásalo con pimentón, cebolla y comino."
+    - "Calienta las tortillas en una sartén seca."
+    - "Rellénalas con el pollo, repollo morado, tomate y aguacate."
+    - "Termina con yogur griego, limón y la sal."
+  etiquetas: [sin_gluten, rapida]
+  consejo: "El yogur griego reemplaza la crema agria con más proteína y menos grasa."
+
+- id: RCT-ALM-032
+  nombre: "Tortilla de espinaca y champiñones con papa y ensalada"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: huevo_entero, gramos: 200, medida: "4 huevos"}
+    - {alimento: clara_huevo, gramos: 66, medida: "2 claras"}
+    - {alimento: espinaca, gramos: 100, medida: "3 tazas"}
+    - {alimento: champinones, gramos: 120, medida: "1 taza"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: papa_cocida, gramos: 500, medida: "3 1/2 papas medianas"}
+    - {alimento: queso_campesino, gramos: 40, medida: "1 tajada"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Saltea la cebolla, los champiñones y la espinaca en el aceite."
+    - "Bate los huevos y las claras, viértelos encima y agrega el queso desmenuzado."
+    - "Tapa y cocina a fuego bajo hasta que cuaje."
+    - "Sirve con la papa cocida y el tomate en rodajas."
+  etiquetas: [vegetariano, sin_gluten, rapida, economica]
+  consejo: "Mezclar huevos enteros con claras sube la proteína y baja la grasa."
+
+- id: RCT-ALM-033
+  nombre: "Hamburguesa de lenteja en pan integral"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: media
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 300, medida: "2 tazas escurridas"}
+    - {alimento: avena_hojuelas, gramos: 40, medida: "4 cucharadas"}
+    - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
+    - {alimento: zanahoria, gramos: 60, medida: "1/2 zanahoria rallada"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: pan_integral, gramos: 120, medida: "2 panes de hamburguesa integrales"}
+    - {alimento: lechuga, gramos: 60, medida: "4 hojas"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate"}
+    - {alimento: aguacate, gramos: 80, medida: "1/3 de aguacate"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Aplasta las lentejas y mézclalas con avena, huevo, zanahoria, cebolla, ajo y comino."
+    - "Forma dos hamburguesas gruesas y déjalas reposar 10 minutos."
+    - "Dóralas en una sartén con el aceite, 5 minutos por lado."
+    - "Sirve en el pan con lechuga, tomate y aguacate."
+  etiquetas: [vegetariano, sin_lactosa, economica]
+  consejo: "Sin sal añadida: el pan ya trae sodio, así que el comino y el ajo bastan."
+
+- id: RCT-ALM-034
+  nombre: "Albóndigas de res en salsa de tomate con pasta integral"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 40
+  dificultad: media
+  ingredientes:
+    - {alimento: carne_molida_magra_cruda, gramos: 250, medida: "1/2 libra"}
+    - {alimento: clara_huevo, gramos: 33, medida: "1 clara"}
+    - {alimento: avena_hojuelas, gramos: 20, medida: "2 cucharadas"}
+    - {alimento: salsa_tomate_natural, gramos: 200, medida: "1 taza"}
+    - {alimento: pasta_integral_cocida, gramos: 280, medida: "2 tazas escasas"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: perejil, gramos: 10, medida: "1 puñado"}
+    - {alimento: espinaca, gramos: 80, medida: "2 tazas"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Mezcla la carne con la clara, la avena, la mitad del ajo y perejil picado."
+    - "Forma albóndigas pequeñas y dóralas en el aceite."
+    - "Agrega la cebolla, el resto del ajo y la salsa de tomate, tapa y cocina 15 minutos."
+    - "Añade la espinaca al final, ajusta la sal y sirve sobre la pasta."
+  etiquetas: [sin_lactosa]
+  consejo: "La avena en las albóndigas reemplaza el pan rallado y suma fibra."
+
+- id: RCT-ALM-035
+  nombre: "Tilapia sudada con yuca y arroz"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: tilapia_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 100, medida: "1/2 cebolla grande"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: yuca_cocida, gramos: 270, medida: "2 trozos medianos"}
+    - {alimento: arroz_blanco_cocido, gramos: 120, medida: "3/4 de taza"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Sofríe tomate, cebolla, pimentón y ajo en el aceite hasta formar una salsa."
+    - "Pon los filetes encima con un chorrito de agua y limón."
+    - "Tapa y cocina 10 minutos a fuego bajo sin voltearlos."
+    - "Ajusta la sal, añade cilantro y sirve con yuca y arroz."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, economica]
+  consejo: "Sudar el pescado en lugar de freírlo evita la grasa extra del aceite caliente."
+
+- id: RCT-ALM-036
+  nombre: "Trucha a la plancha con ensalada tibia de quinua"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: trucha_cruda, gramos: 320, medida: "2 filetes"}
+    - {alimento: quinua_cocida, gramos: 300, medida: "2 tazas"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: perejil, gramos: 15, medida: "1 manojo pequeño"}
+    - {alimento: limon, gramos: 60, medida: "2 limones"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Pica pepino, tomate, pimentón y perejil, y mézclalos con la quinua tibia."
+    - "Aliña con limón y la mitad del aceite."
+    - "Asa la trucha con pimienta en la plancha con el resto del aceite, 3 minutos por lado."
+    - "Sirve la trucha sobre la ensalada con más limón."
+  etiquetas: [sin_gluten, sin_lactosa, rapida]
+  consejo: "Sin sal añadida: el perejil y el limón le dan frescura a todo el plato."
+
+- id: RCT-ALM-037
+  nombre: "Merluza apanada al horno con puré de papa"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: media
+  ingredientes:
+    - {alimento: merluza_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: avena_hojuelas, gramos: 40, medida: "4 cucharadas"}
+    - {alimento: clara_huevo, gramos: 33, medida: "1 clara"}
+    - {alimento: papa_cocida, gramos: 490, medida: "3 1/2 papas medianas"}
+    - {alimento: leche_descremada, gramos: 80, medida: "1/3 de taza"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Pasa los filetes por la clara batida y luego por la avena con orégano."
+    - "Hornéalos 15 minutos a 200 grados sobre una bandeja con unas gotas de aceite."
+    - "Tritura la papa con la leche caliente y ajusta la sal."
+    - "Sirve con ensalada de lechuga y tomate con limón y el resto del aceite."
+  etiquetas: []
+  consejo: "El apanado al horno queda crocante sin la grasa de la fritura."
+
+- id: RCT-ALM-038
+  nombre: "Pollo al horno con hierbas, papa criolla y ensalada"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 45
+  dificultad: facil
+  ingredientes:
+    - {alimento: muslo_pollo_sin_piel_crudo, gramos: 320, medida: "3 muslos sin piel"}
+    - {alimento: papa_criolla_cocida, gramos: 510, medida: "20 papas criollas"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: perejil, gramos: 10, medida: "1 puñado"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: repollo_morado, gramos: 80, medida: "1 taza en tiras"}
+    - {alimento: zanahoria, gramos: 60, medida: "1/2 zanahoria rallada"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Adoba el pollo con ajo, orégano, perejil, pimienta, limón y aceite."
+    - "Ponlo en una bandeja con las papas criollas."
+    - "Hornea 30 minutos a 200 grados, volteando a la mitad."
+    - "Sirve con ensalada de lechuga, repollo morado y zanahoria."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Sin sal añadida: un buen adobo de hierbas y limón la reemplaza muy bien."
+
+- id: RCT-ALM-039
+  nombre: "Lomo de cerdo con piña asada, arroz y brócoli"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: lomo_cerdo_crudo, gramos: 300, medida: "2 medallones"}
+    - {alimento: pina, gramos: 150, medida: "2 rodajas"}
+    - {alimento: arroz_integral_cocido, gramos: 370, medida: "2 tazas"}
+    - {alimento: brocoli, gramos: 200, medida: "2 tazas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Adoba el lomo con ajo, pimienta y la sal."
+    - "Ásalo en la plancha con el aceite hasta que esté bien cocido por dentro."
+    - "En la misma plancha dora las rodajas de piña 2 minutos por lado."
+    - "Sirve con el arroz integral y el brócoli al vapor."
+  etiquetas: [sin_gluten, sin_lactosa]
+  consejo: "El lomo es el corte más magro del cerdo; evita la costilla y la tocineta."
+
+- id: RCT-ALM-040
+  nombre: "Ensalada tibia de lentejas con queso campesino"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 350, medida: "2 tazas escurridas"}
+    - {alimento: queso_campesino, gramos: 100, medida: "2 tajadas"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "1/4 de cebolla"}
+    - {alimento: rugula, gramos: 50, medida: "1 taza"}
+    - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta las lentejas unos minutos."
+    - "Pica tomate, pepino, pimentón y cebolla en cubos pequeños."
+    - "Mezcla todo con la rúgula y el queso en cubos."
+    - "Aliña con limón, aceite y orégano, y acompaña con el pan tostado."
+  etiquetas: [vegetariano, rapida, economica]
+  consejo: "Sin sal añadida: el queso campesino ya aporta la sal que el plato necesita."
+
+- id: RCT-ALM-041
+  nombre: "Sardinas en salsa de tomate con arroz y ensalada"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: sardinas_lata_tomate, gramos: 240, medida: "2 latas pequeñas"}
+    - {alimento: arroz_blanco_cocido, gramos: 330, medida: "2 tazas"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: lechuga, gramos: 100, medida: "2 tazas"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aguacate, gramos: 80, medida: "1/3 de aguacate"}
+  pasos:
+    - "Calienta las sardinas con su salsa y la cebolla picada por 5 minutos."
+    - "Prepara una ensalada de lechuga, tomate y pepino con limón."
+    - "Sirve las sardinas con el arroz, la ensalada y el aguacate."
+  etiquetas: [sin_gluten, sin_lactosa, rapida, economica]
+  consejo: "Sin sal añadida: la sardina de lata ya trae sodio, y además aporta omega 3 y calcio."
+
+- id: RCT-ALM-042
+  nombre: "Arroz atollado liviano de pollo y cerdo"
+  tiempo_comida: almuerzo
+  porciones: 4
+  tiempo_min: 50
+  dificultad: media
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: lomo_cerdo_crudo, gramos: 200, medida: "1/2 libra escasa"}
+    - {alimento: arroz_blanco_cocido, gramos: 480, medida: "3 tazas"}
+    - {alimento: papa_cocida, gramos: 200, medida: "2 papas medianas"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_larga, gramos: 60, medida: "2 tallos"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: arveja_verde, gramos: 120, medida: "3/4 de taza"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: caldo_casero_sin_sal, gramos: 500, medida: "2 tazas"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 2, medida: "1 pizca"}
+    - {alimento: aguacate, gramos: 200, medida: "1 aguacate"}
+    - {alimento: sal, gramos: 4, medida: "1 cucharadita rasa"}
+  pasos:
+    - "Dora el pollo y el cerdo en cubos con el aceite."
+    - "Agrega tomate, cebolla larga, pimentón, ajo y comino, y sofríe 5 minutos."
+    - "Incorpora el caldo, la arveja y la papa en cubos, y cocina 15 minutos."
+    - "Añade el arroz y cocina hasta que quede húmedo y cremoso."
+    - "Ajusta la sal y sirve con aguacate."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "Esta versión cambia el chorizo y la costilla por cortes magros, con el mismo sabor vallecaucano."
+
+- id: RCT-ALM-043
+  nombre: "Crema de ahuyama con pollo desmechado y arepa"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: ahuyama, gramos: 400, medida: "3 tazas en cubos"}
+    - {alimento: pechuga_pollo_cruda, gramos: 280, medida: "1 pechuga"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: caldo_casero_sin_sal, gramos: 500, medida: "2 tazas"}
+    - {alimento: arepa_maiz_amarilla, gramos: 200, medida: "2 1/2 arepas medianas"}
+    - {alimento: semillas_girasol, gramos: 15, medida: "1 cucharada"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Cocina el pollo en el caldo por 20 minutos y desméchalo."
+    - "En ese caldo cocina la ahuyama, la cebolla y el ajo hasta que estén blandos."
+    - "Licúa todo con el aceite hasta que quede una crema suave y ajusta sal y pimienta."
+    - "Sirve la crema con el pollo encima, semillas de girasol y la arepa asada."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "La ahuyama licuada da una crema espesa sin harina ni crema de leche."
+
+- id: RCT-ALM-044
+  nombre: "Bowl de tofu, edamame y quinua"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: tofu, gramos: 200, medida: "2/3 de bloque"}
+    - {alimento: edamame, gramos: 150, medida: "1 taza sin vaina"}
+    - {alimento: quinua_cocida, gramos: 250, medida: "1 2/3 tazas"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria rallada"}
+    - {alimento: repollo_morado, gramos: 100, medida: "1 taza en tiras"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: aguacate, gramos: 80, medida: "1/3 de aguacate"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: ajonjoli, gramos: 10, medida: "1 cucharada"}
+  pasos:
+    - "Dora el tofu en cubos con el aceite hasta que esté crocante."
+    - "Cocina el edamame 3 minutos en agua hirviendo."
+    - "Arma el bowl con quinua, verduras crudas, edamame, tofu y aguacate."
+    - "Aliña con salsa de soya y limón, y termina con ajonjolí."
+  etiquetas: [vegano, vegetariano, sin_lactosa, rapida]
+  consejo: "Tofu y edamame son soya: juntos dan una proteína vegetal alta para quien no come carne."
+
+- id: RCT-ALM-045
+  nombre: "Pechuga rellena de espinaca y mozzarella con arroz integral"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 40
+  dificultad: media
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 320, medida: "2 filetes abiertos en mariposa"}
+    - {alimento: espinaca, gramos: 80, medida: "2 tazas"}
+    - {alimento: queso_mozzarella, gramos: 50, medida: "2 tajadas"}
+    - {alimento: champinones, gramos: 80, medida: "1 taza"}
+    - {alimento: arroz_integral_cocido, gramos: 280, medida: "1 1/2 tazas"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Saltea la espinaca y los champiñones con ajo y deja enfriar."
+    - "Rellena los filetes con las verduras y el queso, y ciérralos con palillos."
+    - "Dóralos en el aceite y termina en el horno 15 minutos a 190 grados."
+    - "Sirve con el arroz integral y tomate en rodajas con pimienta."
+  etiquetas: [sin_gluten]
+  consejo: "Un poco de queso dentro del pollo da sabor sin tener que salar más."
+
+- id: RCT-ALM-046
+  nombre: "Sudado de carne con papa y yuca"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 60
+  dificultad: media
+  ingredientes:
+    - {alimento: carne_res_magra_cruda, gramos: 300, medida: "2/3 de libra en cubos"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: yuca_cocida, gramos: 260, medida: "2 trozos medianos"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: lechuga, gramos: 80, medida: "2 tazas"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Dora la carne en cubos con el aceite."
+    - "Agrega tomate, cebolla, ajo y comino, y un vaso de agua."
+    - "Tapa y cocina a fuego bajo 35 minutos hasta que la carne ablande."
+    - "Agrega la zanahoria, la papa y la yuca, cocina 10 minutos más y ajusta la sal."
+    - "Sirve con ensalada de lechuga con limón."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa]
+  consejo: "La carne de res aporta hierro que el cuerpo absorbe con facilidad."
+
+- id: RCT-ALM-047
+  nombre: "Carne de res salteada con verduras y arroz"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: carne_res_magra_cruda, gramos: 280, medida: "2/3 de libra en tiras"}
+    - {alimento: arroz_blanco_cocido, gramos: 360, medida: "2 1/4 tazas"}
+    - {alimento: pimenton, gramos: 120, medida: "1 pimentón"}
+    - {alimento: brocoli, gramos: 150, medida: "1 1/2 tazas"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: champinones, gramos: 100, medida: "1 taza"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: salsa_soya_baja_sodio, gramos: 15, medida: "1 cucharada"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+  pasos:
+    - "Calienta bien una sartén grande con el aceite."
+    - "Saltea la carne en tiras 2 minutos y sácala."
+    - "Saltea el ajo, la cebolla, el pimentón, el brócoli y los champiñones 4 minutos."
+    - "Devuelve la carne, agrega la salsa de soya y sirve con el arroz."
+  etiquetas: [sin_lactosa, rapida]
+  consejo: "El pimentón tiene mucha vitamina C y ayuda a aprovechar el hierro de la carne."
+
+- id: RCT-ALM-048
+  nombre: "Ensalada de garbanzo y atún"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 300, medida: "1 3/4 tazas"}
+    - {alimento: atun_lata_agua, gramos: 160, medida: "1 lata grande escurrida"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: pepino, gramos: 100, medida: "1/2 pepino"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: cebolla_cabezona, gramos: 40, medida: "1/4 de cebolla"}
+    - {alimento: perejil, gramos: 10, medida: "1 puñado"}
+    - {alimento: lechuga, gramos: 80, medida: "2 tazas"}
+    - {alimento: aguacate, gramos: 80, medida: "1/3 de aguacate"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+  pasos:
+    - "Escurre y enjuaga los garbanzos."
+    - "Pica tomate, pepino, pimentón, cebolla y perejil."
+    - "Mezcla todo con el atún, la lechuga y el aguacate."
+    - "Aliña con limón y aceite de oliva."
+  etiquetas: [sin_gluten, sin_lactosa, rapida, economica]
+  consejo: "Enjuagar los garbanzos y el atún de lata les quita parte de la sal."
+
+- id: RCT-ALM-049
+  nombre: "Pasta integral con atún, tomate y espinaca"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: pasta_integral_cocida, gramos: 410, medida: "3 tazas"}
+    - {alimento: atun_lata_agua, gramos: 160, medida: "1 lata grande escurrida"}
+    - {alimento: tomate, gramos: 250, medida: "2 tomates grandes"}
+    - {alimento: espinaca, gramos: 100, medida: "3 tazas"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 10, medida: "2 dientes"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Sofríe el ajo y la cebolla en el aceite."
+    - "Agrega el tomate picado y el orégano, y cocina 8 minutos."
+    - "Incorpora el atún y la espinaca hasta que se ablande."
+    - "Mezcla con la pasta y termina con pimienta."
+  etiquetas: [sin_lactosa, rapida, economica]
+  consejo: "Sin sal añadida: el atún de lata ya trae sodio suficiente para el plato."
+
+- id: RCT-ALM-050
+  nombre: "Fríjol rojo con plátano maduro asado y huevo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: frijol_rojo_cocido, gramos: 300, medida: "2 tazas"}
+    - {alimento: platano_maduro, gramos: 200, medida: "1 plátano maduro"}
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: arroz_blanco_cocido, gramos: 120, medida: "3/4 de taza"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: aguacate, gramos: 80, medida: "1/3 de aguacate"}
+    - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Asa el plátano maduro con cáscara en el horno o en la sartén tapada por 25 minutos."
+    - "Calienta los fríjoles con un hogao de tomate y cebolla larga."
+    - "Prepara los huevos pochados o revueltos con unas gotas de aceite."
+    - "Sirve fríjoles, arroz, plátano, huevo y aguacate, y ajusta la sal."
+  etiquetas: [colombiana, vegetariano, sin_gluten, sin_lactosa, economica]
+  consejo: "El plátano asado conserva su sabor dulce sin el aceite de la tajada frita."
+
+- id: RCT-ALM-051
+  nombre: "Pollo en salsa de champiñones con puré de papa"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: champinones, gramos: 200, medida: "2 tazas tajados"}
+    - {alimento: leche_descremada, gramos: 200, medida: "3/4 de taza"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: papa_cocida, gramos: 460, medida: "3 papas medianas"}
+    - {alimento: habichuela, gramos: 150, medida: "1 1/2 tazas"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Dora el pollo en filetes con el aceite y sácalo."
+    - "En la misma sartén cocina cebolla, ajo y champiñones hasta que suelten su jugo."
+    - "Agrega la mitad de la leche, devuelve el pollo y cocina 8 minutos a fuego bajo."
+    - "Tritura la papa con el resto de la leche y ajusta sal y pimienta."
+    - "Sirve con las habichuelas al vapor."
+  etiquetas: [sin_gluten]
+  consejo: "La leche descremada reemplaza la crema de leche y deja la salsa suave con menos grasa."
+
+- id: RCT-ALM-052
+  nombre: "Lentejas con carne molida y zanahoria"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 360, medida: "1 3/4 tazas"}
+    - {alimento: carne_molida_magra_cruda, gramos: 150, medida: "1/3 de libra"}
+    - {alimento: zanahoria, gramos: 100, medida: "1 zanahoria"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: arroz_blanco_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: guayaba, gramos: 100, medida: "1 guayaba grande"}
+    - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Dora la carne con cebolla larga, tomate y comino en el aceite."
+    - "Agrega las lentejas y la zanahoria en cubos con un poco de agua."
+    - "Cocina 15 minutos, ajusta la sal y sirve con el arroz."
+    - "De postre come la guayaba."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, economica]
+  consejo: "Carne, lentejas y guayaba juntas suman hierro y la vitamina C que ayuda a absorberlo."
+
+- id: RCT-ALM-053
+  nombre: "Bowl vegetariano de fríjol negro y mazorca"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: frijol_negro_cocido, gramos: 250, medida: "1 1/2 tazas"}
+    - {alimento: mazorca_tierna, gramos: 150, medida: "1 taza de granos"}
+    - {alimento: arroz_integral_cocido, gramos: 200, medida: "1 1/4 tazas"}
+    - {alimento: repollo_morado, gramos: 100, medida: "1 taza en tiras"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: queso_campesino, gramos: 60, medida: "1 tajada gruesa"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Calienta los fríjoles con comino."
+    - "Dora los granos de mazorca en una sartén seca."
+    - "Arma el bowl con arroz, fríjol, mazorca, repollo, tomate y aguacate."
+    - "Termina con queso desmenuzado, cilantro y limón."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "Sin sal añadida: el queso y el limón bastan para darle sabor."
+
+- id: RCT-ALM-054
+  nombre: "Tilapia con salsa de maracuyá y puré de batata"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: media
+  ingredientes:
+    - {alimento: tilapia_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: maracuya, gramos: 100, medida: "2 maracuyás"}
+    - {alimento: batata_cocida, gramos: 510, medida: "2 1/2 tazas"}
+    - {alimento: espinaca, gramos: 60, medida: "2 tazas"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Cocina la pulpa de maracuyá con medio vaso de agua 5 minutos y cuélala."
+    - "Asa la tilapia con ajo y la mitad del aceite, 3 minutos por lado."
+    - "Tritura la batata cocida con una pizca de sal."
+    - "Sirve el pescado con la salsa, el puré y una ensalada de espinaca y tomate con el resto del aceite."
+  etiquetas: [sin_gluten, sin_lactosa]
+  consejo: "La salsa de maracuyá no necesita azúcar: su acidez combina muy bien con el pescado."
+
+- id: RCT-ALM-055
+  nombre: "Pavo con quinua y verduras asadas"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pavo_cruda, gramos: 300, medida: "2 filetes"}
+    - {alimento: quinua_cocida, gramos: 370, medida: "2 tazas"}
+    - {alimento: berenjena, gramos: 150, medida: "1/2 berenjena"}
+    - {alimento: calabacin, gramos: 150, medida: "1 calabacín"}
+    - {alimento: pimenton, gramos: 100, medida: "1 pimentón"}
+    - {alimento: cebolla_cabezona, gramos: 60, medida: "1/2 cebolla"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Corta las verduras en trozos, mézclalas con la mitad del aceite y orégano, y ásalas 20 minutos a 200 grados."
+    - "Adoba el pavo con ajo y ásalo en la plancha con el resto del aceite."
+    - "Ajusta la sal y sirve el pavo en tajadas sobre la quinua con las verduras."
+  etiquetas: [sin_gluten, sin_lactosa]
+  consejo: "La pechuga de pavo es de las carnes más magras que encuentras en el supermercado."
+
+- id: RCT-ALM-056
+  nombre: "Guiso de garbanzo con pollo y espinaca"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 250, medida: "1 1/2 tazas"}
+    - {alimento: pechuga_pollo_cruda, gramos: 220, medida: "1 pechuga pequeña"}
+    - {alimento: espinaca, gramos: 100, medida: "3 tazas"}
+    - {alimento: tomate, gramos: 200, medida: "2 tomates"}
+    - {alimento: cebolla_cabezona, gramos: 80, medida: "1/2 cebolla"}
+    - {alimento: pimenton, gramos: 80, medida: "1/2 pimentón"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: arroz_integral_cocido, gramos: 160, medida: "1 taza"}
+    - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Dora el pollo en cubos con el aceite."
+    - "Agrega cebolla, pimentón, ajo, tomate y comino, y cocina 5 minutos."
+    - "Incorpora los garbanzos con medio vaso de agua y cocina 10 minutos."
+    - "Añade la espinaca, ajusta la sal y sirve con el arroz integral."
+  etiquetas: [sin_gluten, sin_lactosa]
+  consejo: "Combinar pollo con garbanzo te da proteína y fibra en el mismo plato."
+
+- id: RCT-ALM-057
+  nombre: "Sopa de lentejas con plátano verde"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 35
+  dificultad: facil
+  ingredientes:
+    - {alimento: lenteja_cocida, gramos: 390, medida: "2 tazas"}
+    - {alimento: platano_verde, gramos: 150, medida: "1 plátano verde pequeño"}
+    - {alimento: papa_cocida, gramos: 150, medida: "1 papa grande"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria"}
+    - {alimento: tomate, gramos: 100, medida: "1 tomate"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: cilantro, gramos: 10, medida: "1 puñado"}
+    - {alimento: agua, gramos: 600, medida: "2 1/2 tazas"}
+    - {alimento: aguacate, gramos: 100, medida: "1/2 aguacate"}
+    - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Haz un hogao con tomate, cebolla larga, ajo y comino en el aceite."
+    - "Agrega el agua y el plátano verde partido con la mano, y cocina 15 minutos."
+    - "Incorpora las lentejas, la papa y la zanahoria en cubos, y cocina 10 minutos."
+    - "Ajusta la sal, termina con cilantro y sirve con aguacate."
+  etiquetas: [colombiana, vegano, vegetariano, sin_gluten, sin_lactosa, economica]
+  consejo: "Partir el plátano con la mano en lugar de cuchillo ayuda a espesar la sopa."
+
+- id: RCT-ALM-058
+  nombre: "Muslos de pollo guisados con guatila y arroz"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 40
+  dificultad: facil
+  ingredientes:
+    - {alimento: muslo_pollo_sin_piel_crudo, gramos: 320, medida: "3 muslos sin piel"}
+    - {alimento: guatila, gramos: 250, medida: "1 guatila mediana"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria"}
+    - {alimento: tomate, gramos: 150, medida: "1 tomate grande"}
+    - {alimento: cebolla_larga, gramos: 40, medida: "1 tallo"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: arroz_blanco_cocido, gramos: 340, medida: "2 tazas"}
+    - {alimento: aceite_canola, gramos: 15, medida: "1 cucharada"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Dora los muslos en el aceite por todos los lados."
+    - "Agrega tomate, cebolla larga, ajo y comino con un vaso de agua."
+    - "Tapa y cocina 20 minutos a fuego bajo."
+    - "Añade la guatila pelada en cubos y la zanahoria, cocina 10 minutos y ajusta la sal."
+    - "Sirve con el arroz."
+  etiquetas: [colombiana, sin_gluten, sin_lactosa, economica]
+  consejo: "La guatila es barata, rinde mucho y suma verdura al guiso sin casi calorías."
+
+- id: RCT-ALM-059
+  nombre: "Merluza con costra de ajonjolí, arroz integral y repollo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: media
+  ingredientes:
+    - {alimento: merluza_cruda, gramos: 350, medida: "2 filetes"}
+    - {alimento: ajonjoli, gramos: 20, medida: "2 cucharadas"}
+    - {alimento: arroz_integral_cocido, gramos: 340, medida: "1 3/4 tazas"}
+    - {alimento: repollo, gramos: 150, medida: "2 tazas en tiras"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria rallada"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: aceite_oliva, gramos: 20, medida: "4 cucharaditas"}
+    - {alimento: ajo, gramos: 6, medida: "1 diente"}
+    - {alimento: sal, gramos: 2, medida: "1/2 cucharadita rasa"}
+  pasos:
+    - "Unta los filetes con ajo y limón, y presiónalos sobre el ajonjolí."
+    - "Ásalos en la sartén con la mitad del aceite, 3 minutos por lado."
+    - "Mezcla el repollo y la zanahoria con limón, el resto del aceite y la sal."
+    - "Sirve el pescado con el arroz integral y la ensalada."
+  etiquetas: [sin_gluten, sin_lactosa, rapida]
+  consejo: "El ajonjolí da una costra crocante y aporta calcio sin necesidad de freír."
+
+- id: RCT-ALM-060
+  nombre: "Ensalada César liviana de pollo"
+  tiempo_comida: almuerzo
+  porciones: 2
+  tiempo_min: 25
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pollo_cruda, gramos: 300, medida: "1 pechuga grande"}
+    - {alimento: lechuga, gramos: 200, medida: "1 lechuga romana"}
+    - {alimento: pan_integral, gramos: 150, medida: "5 tajadas"}
+    - {alimento: yogur_griego_natural, gramos: 100, medida: "1/2 taza"}
+    - {alimento: queso_mozzarella, gramos: 30, medida: "2 cucharadas rallado"}
+    - {alimento: limon, gramos: 30, medida: "1 limón"}
+    - {alimento: mostaza, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: ajo, gramos: 3, medida: "1/2 diente"}
+    - {alimento: tomate, gramos: 120, medida: "1 tomate"}
+    - {alimento: aceite_oliva, gramos: 15, medida: "1 cucharada"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Asa la pechuga con pimienta y unas gotas de aceite, y córtala en tiras."
+    - "Tuesta el pan en cubos en el horno o en una sartén seca."
+    - "Mezcla el yogur con limón, mostaza, ajo rallado y el resto del aceite para la salsa."
+    - "Revuelve la lechuga con la salsa y sirve con el pollo, el tomate, los crutones y el queso."
+  etiquetas: [rapida]
+  consejo: "Sin sal añadida: la salsa de yogur reemplaza la mayonesa con más proteína y menos grasa."

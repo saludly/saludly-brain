@@ -1,5 +1,8 @@
 ## COND-M5-MU-001 · Andrógenos altos (posible SOP)
 
+> **Cambio del 10 de octubre de 2026 (aprobación de Carlos).** Cuando esta condición se activa, el laboratorio corre la 17-hidroxiprogesterona como refleja para descartar la hiperplasia suprarrenal no clásica (guía de SOP 2023). Si sale alta (más de 2 ng/mL, por verificar), la coincidencia baja y se anota en la vista médica. Además puede agruparse en el patrón REL-028 (SOP con perfil metabólico).
+
+
 **Qué detecta.** Testosterona total alta o índice de andrógenos libres alto en una mujer. El síndrome de ovario poliquístico exige además ciclos irregulares u ovarios poliquísticos y descartar otras causas, así que el agente solo señala el hallazgo y remite. Con anticonceptivo hormonal no se interpreta, porque suprime los andrógenos.
 
 ```yaml

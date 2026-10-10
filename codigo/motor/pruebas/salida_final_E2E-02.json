@@ -196,6 +196,7 @@
    "consumo de alcohol",
    "findrisc_puntaje",
    "peso_kg",
+   "pregunta de biotina sin responder (tiroides, B12 y folato sin ese control)",
    "presion_enfermera",
    "pérdida de peso",
    "tabaquismo",
@@ -237,6 +238,10 @@
   "eosinofilos_abs": 0.21,
   "fib4": null,
   "psa_libre_porcentaje": null,
+  "tyg_index": 8.35,
+  "tg_hdl_ratio": 1.69,
+  "mentzer_index": 18.2,
+  "nlr": 1.57,
   "hemoglobina_ajustada": 9.4,
   "phenoage": 34.1
  }

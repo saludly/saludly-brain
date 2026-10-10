@@ -1,0 +1,14 @@
+id: COND-M4-GA-A02
+tipo: condicion
+titulo_paciente: "Pruebas del hígado relacionadas con el consumo de alcohol"
+que_es: "La GGT y otras enzimas del hígado suelen subir cuando el hígado procesa alcohol con frecuencia."
+por_que_te_aparece:
+  - "Tu GGT salió en {ggt}, por encima del rango."
+  - "Tus otras enzimas del hígado salieron así: ALT en {alt} y AST en {ast}."
+riesgo_claro: "Si el consumo de alcohol continúa, el hígado puede irritarse cada vez más y con los años funcionar peor."
+ejemplo_simple: "Es como una máquina que trabaja horas extra todos los días: aguanta un tiempo, pero se desgasta más rápido."
+incertidumbre: "Estos cambios son compatibles con el consumo de alcohol que nos contaste, aunque hay otras causas posibles que tu médico revisa. Reducir el alcohol es lo que más le ayuda a tu hígado."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ACG 2017"]
+estado_revision: pendiente

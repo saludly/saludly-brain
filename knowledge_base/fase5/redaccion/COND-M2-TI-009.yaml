@@ -1,0 +1,14 @@
+id: COND-M2-TI-009
+tipo: condicion
+titulo_paciente: "Cortisol de la mañana bajo"
+que_es: "El cortisol es una hormona que ayuda al cuerpo a manejar el estrés, el azúcar y la presión; suele estar más alto en la mañana."
+por_que_te_aparece:
+  - "Tu cortisol de la mañana salió en {cortisol}, por debajo de 5 µg/dL."
+  - "Tu ACTH, la hormona que le ordena al cuerpo producir cortisol, salió en {acth}."
+riesgo_claro: "Si el cuerpo produce poco cortisol y no se revisa, puede causar cansancio, mareo o presión baja, y una enfermedad fuerte puede afectarte más de lo normal."
+ejemplo_simple: "Es como un extintor con poca carga: en un día normal no se nota, pero hace falta cuando hay un incendio."
+incertidumbre: "Puede deberse a medicamentos con corticoides, a la hora de la toma o a anticonceptivos. Hay que confirmarlo, y lo revisa un médico."
+cuando_consultar: "Conviene revisarlo con un médico en los próximos días. Si tienes vómito, mareo intenso o desmayo, consulta por urgencias."
+aviso_whatsapp: null
+fuentes: ["Endocrine Society 2016, insuficiencia suprarrenal primaria"]
+estado_revision: pendiente

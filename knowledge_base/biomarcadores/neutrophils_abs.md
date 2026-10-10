@@ -21,6 +21,8 @@ panel: estándar
 sexo: ambos
 alimenta:
 - COND-M3-HE-A02
+- COND-M3-HE-010
+- REL-030
 combine_with:
 - wbc
 - lymphocytes_abs

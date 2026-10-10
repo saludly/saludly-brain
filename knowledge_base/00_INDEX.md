@@ -8,14 +8,41 @@ Este índice une en un solo mapa los biomarcadores, las condiciones, las reglas 
 
 | Pieza | Cantidad | Carpeta |
 | --- | --- | --- |
-| Fichas de biomarcador | 133 | `biomarcadores/` |
-| Fichas de condición incluidas | 50 | `condiciones/M1` a `condiciones/M6` |
-| Fichas de condición de apoyo | 26 | `condiciones/M1` a `condiciones/M6` |
+| Fichas de biomarcador | 144 | `biomarcadores/` |
+| Fichas de condición incluidas | 56 | `condiciones/M1` a `condiciones/M6` |
+| Fichas de condición de apoyo | 30 | `condiciones/M1` a `condiciones/M6` |
 | Fichas de seguridad | 15 | `seguridad/` |
-| Relaciones entre módulos | 27 | `relaciones/` |
+| Relaciones entre módulos | 31 | `relaciones/` |
 | Reglas transversales | 6 | Ver sección "Reglas transversales" |
 
-Fichas por panel: 101 del panel estándar, 19 reflejas y 13 calculadas. Son más fichas que analitos porque algunos analitos tienen dos fichas (por ejemplo, linfocitos absolutos y porcentaje) y algunas fichas agrupan varios campos (uroanálisis, coprológico). El catálogo sigue siendo de 99 analitos medidos, 12 calculados y la edad biológica, más 18 pruebas reflejas.
+Fichas por panel (10 de octubre de 2026): 92 del panel estándar, 24 reflejas, 17 calculadas, 10 fuera del panel base y 1 opcional. El MVP usa solo sangre: las 5 fichas de orina y heces siguen en el panel estándar, pero el motor las pone en pausa. El índice JSON ya no se edita a mano: lo genera `codigo/herramientas/generar_indice.py`. Antes del 10 de octubre: Son más fichas que analitos porque algunos analitos tienen dos fichas (por ejemplo, linfocitos absolutos y porcentaje) y algunas fichas agrupan varios campos (uroanálisis, coprológico). El catálogo sigue siendo de 99 analitos medidos, 12 calculados y la edad biológica, más 18 pruebas reflejas.
+
+## Cambios del 10 de octubre de 2026 (aprobados por Carlos)
+
+Detalle y razones en `docs/02_plan_y_decisiones/Propuesta_ampliacion_condiciones_sangre.md`. Todos los umbrales nuevos están marcados "por verificar" en sus fichas.
+
+**Condiciones nuevas (10)**
+
+| ID | Condición | Tipo | Biomarcadores que usa |
+| --- | --- | --- | --- |
+| COND-M1-EM-A03 | Diabetes con posible falta de insulina | apoyo | c_peptide, hba1c |
+| COND-M1-EM-A04 | Resistencia a la insulina por TyG y TG/HDL | apoyo | tyg_index, tg_hdl_ratio |
+| COND-M2-TI-009 | Cortisol de la mañana bajo (posible insuficiencia suprarrenal) | incluida | cortisol, acth, sodium |
+| COND-M3-HE-007 | Glóbulos rojos altos (eritrocitosis) ajustados por altitud | incluida | hemoglobin, hematocrit |
+| COND-M3-HE-008 | Plaquetas altas (trombocitosis) | incluida | platelets, ferritin |
+| COND-M3-HE-009 | Glóbulos rojos grandes sin anemia (macrocitosis) | incluida | mcv, hemoglobin, ggt |
+| COND-M3-HE-010 | Dos o más líneas de la sangre bajas | incluida | hemoglobin, neutrophils_abs, platelets |
+| COND-M3-HE-A04 | Rasgo talasémico probable | apoyo | mcv, ferritin, mentzer_index, hb_electrophoresis |
+| COND-M5-MU-004 | Transición a la menopausia | apoyo (informativa para la paciente) | fsh, estradiol |
+| COND-M6-MI-002 | Posible proteína anormal en la sangre (gammapatía) | incluida | globulin, calcium, serum_protein_electrophoresis |
+
+**Relaciones nuevas (4):** REL-028 SOP con perfil metabólico (patrón) · REL-029 Glóbulos rojos altos con testosterona alta (patrón) · REL-030 Inflamación por glóbulos blancos y PCR (vigilar) · REL-031 Señal autoinmune por factor reumatoide (vigilar).
+
+**Biomarcadores nuevos (11):** factor reumatoide y grupo sanguíneo ABO/Rh (panel estándar); electroforesis de hemoglobina, electroforesis de proteínas, 17-hidroxiprogesterona, haptoglobina y anti-CCP opcional (reflejas); TyG, TG/HDL, índice de Mentzer y NLR (calculados).
+
+**Fuera del panel base (10):** vitaminas A, E, K1, C y B1, biotina, niacina, CoQ10, índice omega-3 y relación omega-6/omega-3. La vitamina B6 queda opcional. Las fichas se conservan.
+
+**Ajustes:** SEG-002 ya no repite el cortisol bajo cuando COND-M2-TI-009 está activa; SEG-009 no repite las proteínas alteradas cuando COND-M6-MI-002 está activa; REL-009 suma la haptoglobina; COND-M5-MU-001 pide la 17-OHP como refleja. La biotina se controla con la pregunta "¿tomas biotina?" (contexto `toma_biotina`).
 
 ## Cómo lo usa el motor
 

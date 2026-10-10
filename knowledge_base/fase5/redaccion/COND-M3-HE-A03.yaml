@@ -1,0 +1,14 @@
+id: COND-M3-HE-A03
+tipo: condicion
+titulo_paciente: "Eosinófilos por encima del rango"
+que_es: "Los eosinófilos son un tipo de glóbulo blanco que se activa con las alergias y con algunos parásitos."
+por_que_te_aparece:
+  - "Tus eosinófilos salieron en {eosinofilos_abs}, por encima del rango."
+  - "En porcentaje de tus glóbulos blancos, salieron en {eosinophils_pct}."
+riesgo_claro: "Si la causa no se identifica, puede seguir actuando en el cuerpo sin que lo notes; por eso vale la pena revisarla."
+ejemplo_simple: "Son como un grupo especial de bomberos: si hay muchos en la calle, es porque algo los llamó."
+incertidumbre: "Las causas más comunes son alergias, asma, algunos medicamentos o parásitos. Lo cruzamos con tu examen de heces, y tu médico confirma la causa."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Intervalo del laboratorio"]
+estado_revision: pendiente

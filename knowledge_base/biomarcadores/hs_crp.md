@@ -28,6 +28,8 @@ alimenta:
 - COND-M6-MI-001
 - COND-M6-MI-A02
 - COND-M6-RE-A02
+- REL-030
+- REL-031
 combine_with:
 - ldl_c
 - hdl_c

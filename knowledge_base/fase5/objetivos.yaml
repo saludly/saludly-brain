@@ -1,0 +1,42 @@
+# Los 10 objetivos del plan (documento 07, sección 07.4). El paciente elige 3 en la PWA.
+# El objetivo nunca cambia hallazgos, umbrales ni escalamientos: solo ordena "Qué puedes hacer" y el tono.
+- id: salud_general
+  nombre: "Mejorar mi salud en general"
+  destaca: []
+  enfoque: "Equilibrio entre alimentación, actividad, sueño y hábitos"
+- id: prevenir
+  nombre: "Prevenir enfermedades"
+  destaca: [ldl_c, apob, lpa, glucose, hba1c, egfr, alt, ggt]
+  enfoque: "Hábitos que bajan el riesgo y controles a tiempo"
+- id: condicion_existente
+  nombre: "Cuidar una condición que ya tengo"
+  destaca: []
+  enfoque: "Seguimiento con tu médico tratante; nunca reemplaza tu tratamiento"
+- id: bajar_peso
+  nombre: "Bajar de peso"
+  destaca: [glucose, hba1c, insulin, homa_ir, tyg_index, triglycerides, hdl_c, tsh, alt, ggt]
+  enfoque: "Alimentación, actividad diaria y sueño"
+- id: masa_muscular
+  nombre: "Aumentar mi masa muscular"
+  destaca: [total_protein, albumin, testosterone_total, shbg, ck_cpk, vitamin_d, creatinine, cystatin_c]
+  enfoque: "Proteína en la dieta, entrenamiento de fuerza y recuperación"
+- id: rendimiento
+  nombre: "Mejorar mi rendimiento o entrenamiento"
+  destaca: [hemoglobin, ferritin, serum_iron, vitamin_b12, folate, magnesium, ck_cpk]
+  enfoque: "Recuperación, alimentación alrededor del entrenamiento e hidratación"
+- id: maraton
+  nombre: "Correr una maratón o carrera larga"
+  destaca: [hemoglobin, ferritin, serum_iron, sodium, vitamin_b12, magnesium]
+  enfoque: "Hidratación y sales, hierro en la dieta, progresión de carga"
+- id: atletico
+  nombre: "Ser más atlético"
+  destaca: [total_protein, testosterone_total, ck_cpk, hemoglobin, ferritin, vitamin_d]
+  enfoque: "Fuerza, resistencia y descanso"
+- id: energia_sueno
+  nombre: "Tener más energía y dormir mejor"
+  destaca: [hemoglobin, ferritin, tsh, vitamin_b12, folate, glucose, vitamin_d, cortisol]
+  enfoque: "Sueño, horarios de comida y actividad"
+- id: envejecer_saludable
+  nombre: "Envejecer de forma saludable"
+  destaca: [phenoage, ldl_c, apob, egfr, vitamin_b12, albumin, vitamin_d]
+  enfoque: "Fuerza, alimentación y controles preventivos"

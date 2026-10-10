@@ -1,0 +1,431 @@
+nota: Generado por codigo/herramientas/generar_frases_prohibidas.py. Los patrones se evalúan sobre texto en minúsculas y sin tildes.
+patrones:
+- id: diagnostico_tienes
+  patron: \b(tienes|padeces|sufres de|eres|estas enfermo|estas enferma)\s+(un[ao]?\s+)?(diabet|hipertens|anemi|hipotiroid|hipertiroid|cancer|leucemi|mieloma|lupus|artritis|cirrosis|hepatitis|chagas|insuficiencia|enfermedad|sindrome|talasemi|policitemi|trombocitemi|gammapati|sop\b|ovario
+    poliquistico|addison|hashimoto|graves|celiac|gota|higado graso|deficiencia|deficit)
+  motivo: diagnóstico afirmado
+- id: diagnostico_eres
+  patron: \beres (diabetic|hipertens|anemic|celiac)
+  motivo: etiqueta de enfermedad
+- id: dosis
+  patron: \b\d+([.,]\d+)?\s*(mg|mcg|µg|ug|ui|iu|tabletas?|capsulas?|gotas)\s+(de|al dia|diari)
+  motivo: dosis o prescripción
+- id: toma_suplemento
+  patron: \btoma\s+(un|una|el|la)?\s*(suplemento|capsula|tableta|pastilla)
+  motivo: prescripción de suplemento
+- id: porcentaje_riesgo
+  patron: \b(riesgo|probabilidad)\b[^.]{0,40}\b\d+\s*%
+  motivo: porcentaje de riesgo sin modelo validado
+- id: falsa_tranquilidad
+  patron: \b(estas sano|estas sana|no es nada|no tienes nada|todo esta perfecto)\b
+  motivo: falsa tranquilidad
+- id: alarmismo
+  patron: \b(es grave|es muy grave|peligro de muerte|vas a morir|urgente urgente)\b
+  motivo: alarmismo
+- id: cura
+  patron: \b(cura|curar|garantiza|garantizado|milagro)\b
+  motivo: promesa de cura
+- id: wearable_diagnostico
+  patron: \b(reloj|wearable|apple watch)\b[^.]{0,40}\b(detecto|diagnostico)\b
+  motivo: el wearable no diagnostica
+- id: suspender_medicamento
+  patron: \b(suspende|deja de tomar|deja tu)\s+(el|la|tu|los|las)?\s*(medicamento|tratamiento|pastilla)
+  motivo: cambiar un tratamiento
+generales:
+- tienes diabetes
+- tienes hígado graso
+- tienes hashimoto
+- tienes deficiencia de hierro
+- el reloj detectó una enfermedad
+- todo está normal, estás sano
+- es grave
+- no es nada
+- tu riesgo de infarto es del
+de_fichas:
+  COND-M1-CA-001:
+  - tienes dislipidemia
+  - tienes enfermedad cardiovascular
+  - debes tomar estatinas
+  - tu colesterol es peligroso
+  COND-M1-CA-002:
+  - tienes hipercolesterolemia familiar
+  - es genético
+  - vas a tener un infarto
+  COND-M1-CA-003:
+  - tienes pancreatitis
+  - tienes enfermedad cardiovascular
+  COND-M1-CA-004:
+  - vas a tener un infarto
+  - tienes enfermedad cardiovascular
+  - esto se cura con dieta
+  COND-M1-CA-005:
+  - vas a tener un infarto
+  - porcentaje de riesgo fuera de 40 a 69 años o sin datos completos
+  COND-M1-CA-006:
+  - eres hipertenso
+  - tienes hipertensión
+  - el reloj detectó hipertensión
+  COND-M1-CA-007:
+  - tienes insuficiencia cardíaca
+  - tu corazón está fallando
+  COND-M1-CA-A01:
+  - tu colesterol engaña
+  - tienes enfermedad cardiovascular
+  COND-M1-CA-A02:
+  - tienes inflamación
+  - tienes una infección
+  COND-M1-EM-001:
+  - tienes prediabetes
+  - eres prediabético
+  - vas a ser diabético
+  COND-M1-EM-002:
+  - tienes diabetes
+  - eres diabético
+  - necesitas insulina
+  - toma metformina
+  COND-M1-EM-003:
+  - tienes síndrome metabólico
+  - estás enfermo
+  COND-M1-EM-004:
+  - eres obeso
+  - estás gordo
+  - tienes que adelgazar
+  COND-M1-EM-005:
+  - tienes hipoglucemia
+  - tienes un tumor
+  - tienes diabetes
+  COND-M1-EM-A01:
+  - vas a tener diabetes
+  COND-M1-EM-A02:
+  - tienes resistencia a la insulina
+  - tu páncreas está fallando
+  COND-M1-EM-A03:
+  - tienes diabetes tipo 1
+  - necesitas insulina
+  COND-M1-EM-A04:
+  - tienes diabetes
+  - tienes resistencia a la insulina (dicho como diagnóstico)
+  COND-M2-NE-001:
+  - tienes enfermedad renal
+  - tus riñones están fallando
+  - vas a necesitar diálisis
+  COND-M2-NE-002:
+  - tienes daño renal
+  - tus riñones están fallando
+  COND-M2-NE-003:
+  - la diabetes te dañó los riñones
+  - tienes nefropatía diabética
+  COND-M2-NE-004:
+  - tienes hiperpotasemia
+  - suspende tu medicamento
+  - riesgo de arritmia (sin bandera crítica del laboratorio)
+  COND-M2-NE-005:
+  - tienes hiponatremia
+  - deja de tomar agua
+  COND-M2-NE-006:
+  - tienes cáncer
+  - tienes cálculos
+  - tienes una enfermedad renal
+  COND-M2-NE-A01:
+  - tienes hiperaldosteronismo
+  COND-M2-TI-001:
+  - tienes hipotiroidismo
+  - tienes Hashimoto
+  - necesitas levotiroxina
+  COND-M2-TI-002:
+  - tienes hipotiroidismo
+  - necesitas levotiroxina
+  - toma esta dosis
+  COND-M2-TI-003:
+  - tienes un tumor en la hipófisis
+  - tienes hipotiroidismo central
+  COND-M2-TI-004:
+  - tienes hipertiroidismo
+  - tienes Graves
+  - tienes bocio
+  COND-M2-TI-005:
+  - tienes hipertiroidismo
+  - tienes Graves
+  - tienes una tormenta tiroidea
+  COND-M2-TI-006:
+  - tu bebé está en riesgo
+  - tienes hipotiroidismo
+  COND-M2-TI-007:
+  - tienes un tumor en la paratiroides
+  - necesitas cirugía
+  COND-M2-TI-008:
+  - tienes hiperaldosteronismo
+  - tienes un tumor suprarrenal
+  - suspende tu medicamento
+  COND-M2-TI-009:
+  - tienes enfermedad de Addison
+  - tus glándulas no funcionan
+  COND-M2-TI-A01:
+  - tienes Hashimoto
+  - tienes una enfermedad autoinmune grave
+  COND-M3-HE-001:
+  - tienes leucemia
+  - tienes una enfermedad de la sangre
+  COND-M3-HE-002:
+  - tienes anemia ferropénica
+  - toma hierro
+  - toma sulfato ferroso
+  - es por la menstruación (sin evaluación médica)
+  COND-M3-HE-003:
+  - tienes deficiencia de hierro
+  - toma hierro
+  COND-M3-HE-004:
+  - tienes anemia perniciosa
+  - toma B12
+  - inyéctate B12
+  COND-M3-HE-005:
+  - tienes púrpura
+  - tienes leucemia
+  - tienes una enfermedad autoinmune
+  COND-M3-HE-006:
+  - tienes hemocromatosis
+  - tienes exceso de hierro
+  - dona sangre
+  COND-M3-HE-007:
+  - tienes policitemia
+  - tienes cáncer de la sangre
+  - tu sangre está espesa
+  COND-M3-HE-008:
+  - tienes trombocitemia
+  - tienes leucemia
+  - vas a hacer un trombo
+  COND-M3-HE-009:
+  - tienes alcoholismo
+  - tienes leucemia
+  - tienes mielodisplasia
+  COND-M3-HE-010:
+  - tienes leucemia
+  - tienes cáncer
+  - tu médula está fallando
+  COND-M3-HE-A01:
+  - tienes una enfermedad crónica
+  - tienes cáncer
+  COND-M3-HE-A02:
+  - tienes leucemia
+  - tienes las defensas bajas
+  - tienes una infección
+  COND-M3-HE-A03:
+  - tienes parásitos
+  - tienes una alergia
+  COND-M3-HE-A04:
+  - tienes talasemia
+  - tienes una enfermedad de la sangre
+  COND-M3-NU-001:
+  - tienes anemia perniciosa
+  - inyéctate B12
+  - toma 1.000 µg de B12
+  COND-M3-NU-002:
+  - toma ácido fólico
+  - tu bebé tendrá problemas
+  COND-M3-NU-A01:
+  - riesgo de infarto por homocisteína
+  COND-M3-NU-A02:
+  - tienes hiperparatiroidismo
+  COND-M3-NU-A03:
+  - tienes deficiencia de vitamina D
+  - toma 2.000 UI
+  - toma vitamina D3
+  COND-M3-NU-A04:
+  - tienes deficiencia de
+  - toma {dosis}
+  - compra este suplemento
+  COND-M4-GA-001:
+  - tienes hígado graso
+  - tienes cirrosis
+  - tienes fibrosis
+  COND-M4-GA-002:
+  - tienes hígado graso
+  - tienes hepatitis
+  - tu hígado está dañado
+  - haz un detox
+  COND-M4-GA-003:
+  - tienes cálculos en la vesícula
+  - tienes un tumor
+  - tienes cirrosis biliar
+  COND-M4-GA-004:
+  - tienes cáncer
+  - tienes un tumor
+  - tienes pólipos
+  - repite la prueba
+  COND-M4-GA-005:
+  - tienes úlcera
+  - tienes gastritis
+  - tienes cáncer de estómago
+  - toma antibióticos
+  COND-M4-GA-006:
+  - tienes celiaquía
+  - deja el gluten
+  COND-M4-GA-A01:
+  - tienes síndrome de Gilbert
+  - tienes ictericia
+  - tienes una enfermedad del hígado
+  COND-M4-GA-A02:
+  - eres alcohólico
+  - tienes cirrosis
+  - tienes hepatitis alcohólica
+  COND-M4-IN-001:
+  - tienes cirrosis
+  - es incurable
+  - contagias a tu familia
+  COND-M4-IN-002:
+  - tienes hepatitis crónica
+  - tienes cirrosis
+  - es incurable
+  COND-M4-IN-003:
+  - tienes daño en el corazón
+  - es mortal
+  - es incurable
+  COND-M4-IN-A01:
+  - tienes una infección
+  - toma antibiótico
+  COND-M4-IN-A02:
+  - toma antiparasitario
+  - desparasítate
+  COND-M5-MU-001:
+  - tienes ovario poliquístico
+  - tienes SOP
+  - tienes un tumor
+  - no vas a poder tener hijos
+  COND-M5-MU-002:
+  - estás entrando en la menopausia
+  - no vas a poder tener hijos
+  - tienes falla ovárica
+  COND-M5-MU-003:
+  - tienes un tumor en la hipófisis
+  - tienes prolactinoma
+  COND-M5-MU-004:
+  - estás en la menopausia (sin confirmación médica)
+  - ya no puedes quedar embarazada
+  COND-M5-MU-A01:
+  - tu bebé está en riesgo
+  - toma hierro
+  COND-M5-UR-001:
+  - tienes cáncer de próstata
+  - tienes un tumor
+  - necesitas biopsia
+  COND-M5-UR-002:
+  - tienes hipogonadismo
+  - tienes andropausia
+  - necesitas testosterona
+  - toma testosterona
+  COND-M6-MI-001:
+  - estás desnutrido
+  - estás muy flaco
+  - tienes desnutrición
+  COND-M6-MI-002:
+  - tienes mieloma
+  - tienes cáncer
+  - tienes un tumor
+  COND-M6-MI-A02:
+  - vas a vivir menos
+  - tu cuerpo tiene X años
+  - estás envejeciendo más rápido (sin una segunda medición)
+  COND-M6-RE-001:
+  - tienes gota
+  - tienes artritis
+  - toma alopurinol
+  COND-M6-RE-A01:
+  - tienes lupus
+  - tienes una enfermedad autoinmune
+  - tu sistema inmune te está atacando
+  COND-M6-RE-A02:
+  - tienes artritis
+  - tienes una enfermedad reumática
+  - tienes cáncer
+  SEG-000:
+  - esto indica que tienes
+  - es grave
+  - no es nada
+  SEG-001:
+  - tienes un infarto
+  - tuviste un infarto
+  - tu corazón está dañado
+  SEG-002:
+  - tienes Cushing
+  - tienes Addison
+  - tienes insuficiencia suprarrenal
+  - tu estrés está alto
+  SEG-003:
+  - tienes acromegalia
+  - tienes déficit de hormona de crecimiento
+  SEG-004:
+  - estás intoxicado
+  - tomaste alcohol
+  SEG-005:
+  - tienes leucemia
+  - tienes cáncer de la sangre
+  - tu médula está fallando
+  SEG-006:
+  - tienes hemofilia
+  - tienes cirrosis
+  - suspende tu anticoagulante
+  SEG-007:
+  - tienes rabdomiólisis
+  - tienes una enfermedad muscular
+  - deja las estatinas
+  SEG-008:
+  - tienes un desequilibrio grave
+  - toma magnesio
+  SEG-009:
+  - tienes mieloma
+  - tienes una gammapatía
+  - tienes las defensas bajas
+  SEG-010:
+  - tienes diabetes tipo 1
+  - tienes un insulinoma
+  - tienes insuficiencia cardíaca
+  SEG-011:
+  - tienes un tumor suprarrenal
+  - no estás ovulando
+  - tienes infertilidad
+  - tienes menopausia
+  SEG-012:
+  - tienes leucemia
+  - tienes una infección
+  SEG-013:
+  - tienes diabetes
+  - tienes una enfermedad del riñón
+  - tienes cáncer
+  SEG-014:
+  - tienes déficit de zinc
+  - toma zinc
+  - estás deshidratado
+  abo_rh:
+  - tu grupo sanguíneo indica riesgo de…
+  ana_hep2:
+  - tu sistema inmune te ataca
+  anti_ccp:
+  - tienes artritis reumatoide
+  anti_hbs:
+  - nunca te vacunaron
+  - no tienes defensas
+  haptoglobin:
+  - tienes anemia hemolítica autoinmune
+  hb_electrophoresis:
+  - tienes talasemia
+  hydroxyprogesterone_17:
+  - tienes hiperplasia suprarrenal
+  mentzer_index:
+  - tienes talasemia
+  nlr:
+  - tienes una inflamación grave
+  - tienes cáncer
+  phenoage:
+  - tu cuerpo tiene X años
+  rheumatoid_factor:
+  - tienes artritis reumatoide
+  - tienes una enfermedad autoinmune
+  serum_protein_electrophoresis:
+  - tienes mieloma
+  - tienes cáncer
+  stool_exam:
+  - desparasítate
+  tg_hdl_ratio:
+  - tienes diabetes
+  tyg_index:
+  - tienes diabetes

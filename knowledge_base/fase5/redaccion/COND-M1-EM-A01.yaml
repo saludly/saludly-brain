@@ -1,0 +1,14 @@
+id: COND-M1-EM-A01
+tipo: condicion
+titulo_paciente: "Riesgo alto de diabetes según tus hábitos y antecedentes"
+que_es: "El FINDRISC es un cuestionario que suma tu edad, peso, cintura, actividad, alimentación y antecedentes familiares para estimar el riesgo de diabetes."
+por_que_te_aparece:
+  - "Tu puntaje en el cuestionario FINDRISC fue de 12 o más, el nivel que la guía colombiana considera de riesgo alto."
+  - "Como referencia, tu glucosa en ayunas salió en {glucose}."
+riesgo_claro: "Si los hábitos no cambian, con los años aumenta la probabilidad de que el azúcar en la sangre suba hasta el rango de diabetes."
+ejemplo_simple: "Es como ver nubes oscuras antes de salir: todavía no llueve, pero es buen momento para llevar sombrilla."
+incertidumbre: "Es un cuestionario, no un examen de sangre, y no dice qué va a pasar. Tu médico decide cuándo repetir la glucosa."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["GPC Colombia DM2 2016"]
+estado_revision: pendiente

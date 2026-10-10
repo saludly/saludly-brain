@@ -11,7 +11,7 @@ tipo_resultado: "numérico"
 unidad_canonica: "mg/L"
 specimen: "Suero en ayunas protegido de la luz"
 nivel_catalogo: "vitamina"
-panel: "estándar, todas las personas"
+panel: "fuera del panel base"
 alimenta: ["COND-M3-NU-A04"]
 tier: 2
 status: "BORRADOR"
@@ -23,6 +23,8 @@ fuentes_estado: "por verificar"
 ---
 
 # SLD-BIO-113 · Vitamina E (alfa-tocoferol)
+
+> **Decisión del 10 de octubre de 2026.** Retirada del panel base el 10 de octubre de 2026 (aprobación de Carlos): es una prueba especializada que no ofrecen los laboratorios clínicos comunes o que exige transporte especial, y ni Function Health ni Superpower la incluyen en su panel base. La ficha se conserva: si el resultado llega, se interpreta igual.
 
 ## A. Identificación
 Alfa-tocoferol en suero por HPLC.

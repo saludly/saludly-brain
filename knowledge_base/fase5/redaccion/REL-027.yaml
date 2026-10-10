@@ -1,0 +1,15 @@
+id: REL-027
+tipo: patron
+titulo_paciente: "Tu prolactina alta puede tener una explicación"
+que_es: "La prolactina es la hormona de la producción de leche; sube cuando la tiroides trabaja lento y con algunos medicamentos."
+por_que_te_aparece:
+  - "Tu prolactina salió en {prolactin}, por encima del rango."
+  - "Tu TSH, la hormona que regula la tiroides, salió en {tsh}."
+  - "La prueba de macroprolactina salió en {macroprolactin}."
+riesgo_claro: "Si la prolactina sigue alta, puede alterar la menstruación, la fertilidad y el deseo sexual; cuando se atiende la causa, suele bajar."
+ejemplo_simple: "Es como un vecino que sube el volumen porque el de al lado lo subió: la prolactina responde a lo que pasa con la tiroides o con un medicamento."
+incertidumbre: "El estrés de la toma también la sube; hay que repetirla y revisar los medicamentos con tu médico, sin cambiarlos por tu cuenta."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Endocrine Society 2011"]
+estado_revision: pendiente

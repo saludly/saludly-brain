@@ -26,7 +26,7 @@ def correr(k, valores=None, ctx=None, campos=None):
         if isinstance(v, dict) and v.get("_nuevo"):
             l["resultados"].append(dict(biomarker_id=b, campo=None, nombre_original=b, valor=v["valor"], estado=v.get("estado", "medido"), operador="=",
                                         unidad=v.get("unidad"), intervalo_lab=v.get("intervalo"), metodo=v.get("metodo"), muestra="Suero", dudas=[]))
-    c = dict(e["contexto"], laboratorio=LAB); c.update(ctx or {})
+    c = dict(e["contexto"], laboratorio=LAB, panel="completo"); c.update(ctx or {})   # el producto completo; el MVP solo sangre se prueba en probar_mvp.py
     return motor.analizar(l, c)
 
 # 1) Casos de punta a punta
@@ -73,7 +73,7 @@ for nombre, base, vals, ctx, rid, est in RU:
 # 3) Seguridad unitaria: (nombre, base, valores, contexto, ficha, escalamiento esperado)
 SU = [
  ("SEG-001 troponina", H1, dict(hs_troponin={"valor": 31.0, "estado": "medido", "operador": "="}), {}, "SEG-001", 3),
- ("SEG-002 cortisol bajo", H1, dict(cortisol=4.1), {}, "SEG-002", 2),
+ ("SEG-002 cortisol bajo (lo lleva COND-M2-TI-009)", H1, dict(cortisol=4.1), {}, "SEG-002", 0),
  ("SEG-002 fuera de horario", H1, dict(cortisol=9.0), dict(hora_toma="11:20"), "SEG-002", 0),
  ("SEG-004 brecha", H1, dict(osmolality=312), {}, "SEG-004", 2),
  ("SEG-005 eritroblastos", H1, dict(nrbc=1.5), {}, "SEG-005", 2),
@@ -95,6 +95,10 @@ SU = [
 for nombre, base, vals, ctx, sid, esc in SU:
     o = correr(base, vals, ctx)["seguridad"][sid]
     chk(o["escalamiento"] == esc, f"[{nombre}] {sid}: esperado {esc}, obtenido {o['escalamiento']} ({o['detalle']})")
+# Desde el 10 de octubre de 2026 el cortisol de la mañana bajo es una condición: el escalamiento no se pierde, pasa a COND-M2-TI-009
+o = correr(H1, dict(cortisol=4.1))
+chk(o["condiciones"]["COND-M2-TI-009"]["estado"] == "activa" and o["condiciones"]["COND-M2-TI-009"]["escalamiento"] == 2
+    and any(g["id"] == "COND-M2-TI-009" for g in o["hallazgos_informe"]), "cortisol bajo: debía salir como COND-M2-TI-009 con escalamiento 2 en el informe")
 # 4) Salida final con urgencia
 o = correr(H1, dict(hs_troponin={"valor": 31.0, "estado": "medido", "operador": "="}))
 chk(o["escalamiento_maximo"] == 3 and o["hallazgos_informe"][0]["id"] == "SEG-001" and o["canal"].startswith("llamada"), f"urgencia: {o['escalamiento_maximo']} {o['canal']} {o['hallazgos_informe'][0]['id']}")

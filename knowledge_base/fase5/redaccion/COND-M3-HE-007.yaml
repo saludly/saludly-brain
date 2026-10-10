@@ -1,0 +1,15 @@
+id: COND-M3-HE-007
+tipo: condicion
+titulo_paciente: "Hemoglobina más alta de lo esperado para la altura de Bogotá"
+que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno; en Bogotá es normal que sea algo más alta por la altura."
+por_que_te_aparece:
+  - "Tu hemoglobina salió en {hemoglobin}."
+  - "Como en Bogotá hay menos oxígeno, la ajustamos por la altura y quedó en {hemoglobina_ajustada}, aun así por encima de lo esperado."
+  - "Tu hematocrito, que es la parte de la sangre ocupada por glóbulos rojos, salió en {hematocrit}."
+riesgo_claro: "Si se mantiene alta mucho tiempo sin revisarse, la sangre circula con más dificultad y aumenta la probabilidad de problemas en la circulación."
+ejemplo_simple: "Es como una vía con demasiados carros: todos avanzan, pero el tráfico se vuelve más lento."
+incertidumbre: "Lo más común es que se deba al cigarrillo, a hormonas o a poca hidratación. Un solo examen no basta: conviene repetirlo y que tu médico lo revise."
+cuando_consultar: "Si tienes dolor de cabeza frecuente, mareo o enrojecimiento de la cara, consulta antes."
+aviso_whatsapp: null
+fuentes: ["OMS 2024, cortes de hemoglobina y ajuste por altitud", "BSH 2019, investigación de la eritrocitosis", "OMS 2016, criterios de policitemia vera"]
+estado_revision: pendiente

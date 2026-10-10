@@ -1,0 +1,15 @@
+id: REL-001
+tipo: patron
+titulo_paciente: "Tu azúcar y tus grasas se mueven juntos"
+que_es: "Cuando al cuerpo le cuesta más manejar el azúcar, varios resultados cambian a la vez: la glucosa, la insulina, los triglicéridos y el colesterol bueno."
+por_que_te_aparece:
+  - "Tu glucosa en ayunas salió en {glucose} y tu hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, en {hba1c}."
+  - "Tus triglicéridos, un tipo de grasa en la sangre, salieron en {triglycerides} y tu colesterol HDL, el colesterol bueno, en {hdl_c}."
+  - "Tu índice HOMA-IR, que estima cuánto le cuesta a la insulina hacer su trabajo, salió en {homa_ir}."
+riesgo_claro: "Si este patrón se mantiene durante años, aumenta la probabilidad de llegar a diabetes y de que se dañen los vasos sanguíneos del corazón."
+ejemplo_simple: "Es como una cocina donde la nevera ya no cierra bien: no falla una sola cosa, todo el sistema trabaja de más."
+incertidumbre: "Este patrón no es un diagnóstico; un ayuno incompleto o algunos medicamentos pueden mover estos valores, y tu médico decide si hay que repetirlos."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ADA Standards of Care 2026", "IDF/AHA/NHLBI 2009"]
+estado_revision: pendiente

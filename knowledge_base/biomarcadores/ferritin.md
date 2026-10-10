@@ -21,6 +21,8 @@ alimenta:
 - COND-M3-HE-003
 - COND-M3-HE-006
 - COND-M3-HE-A01
+- COND-M3-HE-A04
+- COND-M3-HE-008
 combine_with:
 - serum_iron
 - transferrin

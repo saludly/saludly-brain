@@ -26,6 +26,11 @@ Son los 10 documentos que definen Saludly Brain de principio a fin, en versión 
 | Archivo | Para qué sirve |
 |---|---|
 | `Saludly_Plan_de_implementacion.md` (y `.docx`) | El plan maestro: las decisiones tomadas, las 10 fases (de la 0 a la 9), riesgos y pendientes. Usa las imágenes `arquitectura.png` y `ruta.png` |
+| `Costos_biomarcadores_ECOFAM_2025.md` | Estimación referencial (no oficial) del costo de los 133 biomarcadores originales con las tarifas de ECOFAM 2025; incluye una nota con los cambios del 10 de octubre |
+| `Solicitud_pruebas_laboratorio.pdf` | Lista de pruebas para presentar al laboratorio y pedir cotización: 66 pruebas de sangre del panel estándar y 23 reflejas, sin precios (orina y heces en pausa en el MVP; sin las vitaminas retiradas). Se genera con `codigo/herramientas/generar_solicitud_laboratorio.py` |
+| `Integracion_dashboard.md` | Cómo se conecta el informe con el borrador del dashboard (repositorio saludly-dashboard) y qué partes del borrador chocan con las reglas de Saludly |
+| `Fase5_decisiones_para_revisar.md` | Decisiones clínicas tomadas al escribir los textos para el paciente, las recomendaciones y las recetas (10 de octubre de 2026), para que Carlos las apruebe |
+| `Propuesta_ampliacion_condiciones_sangre.md` | Propuesta **aprobada** y construida (10 de octubre de 2026): comparación con Function Health y Superpower, 12 condiciones nuevas solo con sangre, pruebas baratas nuevas y qué vitaminas quitar |
 | `Consolidado.md` | Resumen de los Lotes 1 a 6: las 12 especialidades, las condiciones, el panel estándar y las reflejas. Es anterior al catálogo ampliado de 112 valores |
 
 ### `03_investigacion_clinica/` · Investigación clínica

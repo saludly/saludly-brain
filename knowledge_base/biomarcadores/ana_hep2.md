@@ -12,7 +12,7 @@ unidad_canonica: "título (1:x) y patrón (AC-xx)"
 specimen: "Suero"
 nivel_catalogo: "con patrón"
 panel: "estándar, todas las personas"
-alimenta: ["COND-M6-RE-A01"]
+alimenta: ["COND-M6-RE-A01", "REL-031"]
 tier: 2
 status: "BORRADOR"
 schema_version: "2.1"

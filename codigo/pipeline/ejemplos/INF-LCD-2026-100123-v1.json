@@ -1,0 +1,4270 @@
+{
+ "informe_id": "INF-LCD-2026-100123-v1",
+ "paciente_ref": "P-51260FC6",
+ "orden": "LCD-2026-100123",
+ "fecha_toma": "2026-10-01",
+ "generado": "2026-10-10T17:06:39",
+ "estado": "en_revision",
+ "panel": "solo_sangre",
+ "escalamiento_maximo": 1,
+ "canal": "revisión médica (piloto)",
+ "objetivos": [
+  {
+   "id": "bajar_peso",
+   "nombre": "Bajar de peso"
+  },
+  {
+   "id": "energia_sueno",
+   "nombre": "Tener más energía y dormir mejor"
+  },
+  {
+   "id": "prevenir",
+   "nombre": "Prevenir enfermedades"
+  }
+ ],
+ "perfil": {
+  "edad": 46,
+  "sexo": "hombre",
+  "ciudad": "Bogotá",
+  "toma_biotina": false,
+  "nivel_actividad": "ligero",
+  "medidas_enfermera": {
+   "presion_sistolica": 128,
+   "presion_diastolica": 82,
+   "cintura_cm": 98,
+   "peso_kg": 86,
+   "talla_m": 1.74
+  }
+ },
+ "wearable": {
+  "activo": false
+ },
+ "paciente": {
+  "resumen": "Revisamos tus resultados y encontramos 8 puntos que vale la pena atender; el más importante es: tu azúcar y tus grasas se mueven juntos. Nada requiere urgencia; son cosas para cuidar y comentar en tu próximo control. También hay buenas noticias: 9 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en tus metas: bajar de peso, tener más energía y dormir mejor, prevenir enfermedades.",
+  "lo_que_esta_bien": [
+   {
+    "grupo": "hemograma",
+    "nombre": "Hemograma",
+    "texto": "Tus glóbulos rojos, blancos y plaquetas están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "electrolitos",
+    "nombre": "Sales y minerales de la sangre",
+    "texto": "Tus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "tiroides",
+    "nombre": "Tiroides",
+    "texto": "Las hormonas de tu tiroides están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "hierro",
+    "nombre": "Hierro",
+    "texto": "Tus reservas de hierro y el hierro que circula en tu sangre están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "hormonas",
+    "nombre": "Hormonas",
+    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para tu edad y tu sexo."
+   },
+   {
+    "grupo": "corazon",
+    "nombre": "Corazón y músculos",
+    "texto": "Los marcadores de esfuerzo del corazón y de los músculos que se midieron están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "proteinas",
+    "nombre": "Proteínas de la sangre",
+    "texto": "Tus proteínas de la sangre y tus anticuerpos generales están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "coagulacion",
+    "nombre": "Coagulación",
+    "texto": "Tus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
+   },
+   {
+    "grupo": "serologias",
+    "nombre": "Pruebas de infecciones y anticuerpos",
+    "texto": "En las pruebas de infecciones y de anticuerpos que se hicieron no se encontraron anticuerpos ni marcadores reactivos. Si tienes síntomas o una exposición reciente, coméntalo con tu médico."
+   }
+  ],
+  "lo_que_merece_atencion": [
+   {
+    "hallazgo_id": "H-260FC6-01",
+    "referencia": "REL-001",
+    "tipo": "patron",
+    "titulo": "Tu azúcar y tus grasas se mueven juntos",
+    "escalamiento": 1,
+    "nivel_lenguaje": null,
+    "coincidencia": "alta",
+    "que_es": "Cuando al cuerpo le cuesta más manejar el azúcar, varios resultados cambian a la vez: la glucosa, la insulina, los triglicéridos y el colesterol bueno.",
+    "por_que": [
+     "Tu glucosa en ayunas salió en 112 mg/dL y tu hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, en 6 %.",
+     "Tus triglicéridos, un tipo de grasa en la sangre, salieron en 238 mg/dL y tu colesterol HDL, el colesterol bueno, en 36 mg/dL.",
+     "Tu índice HOMA-IR, que estima cuánto le cuesta a la insulina hacer su trabajo, salió en 5,48.",
+     "Cumples al menos 3 de los 5 componentes: cintura, triglicéridos, colesterol HDL, presión y glucosa."
+    ],
+    "ejemplo": "Es como una cocina donde la nevera ya no cierra bien: no falla una sola cosa, todo el sistema trabaja de más.",
+    "agrupa": [
+     {
+      "referencia": "COND-M1-EM-001",
+      "titulo": "Glucosa en zona de alerta"
+     },
+     {
+      "referencia": "COND-M1-EM-003",
+      "titulo": "Varios componentes del síndrome metabólico"
+     },
+     {
+      "referencia": "COND-M1-CA-003",
+      "titulo": "Triglicéridos por encima del rango deseable"
+     }
+    ]
+   },
+   {
+    "hallazgo_id": "H-260FC6-02",
+    "referencia": "COND-M1-CA-001",
+    "tipo": "condicion",
+    "titulo": "Colesterol LDL por encima del valor de tamizaje",
+    "escalamiento": 1,
+    "nivel_lenguaje": "Riesgo potencial",
+    "coincidencia": "alta",
+    "que_es": "El colesterol LDL es la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias.",
+    "por_que": [
+     "Tu colesterol LDL salió en 142 mg/dL; el valor que usamos para tamizaje es 130 mg/dL.",
+     "Tu colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en 192 mg/dL; el valor de tamizaje es 160 mg/dL."
+    ],
+    "ejemplo": "Es como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
+    "agrupa": []
+   },
+   {
+    "hallazgo_id": "H-260FC6-03",
+    "referencia": "COND-M1-EM-004",
+    "tipo": "condicion",
+    "titulo": "Índice de masa corporal por encima del rango saludable",
+    "escalamiento": 1,
+    "nivel_lenguaje": "Resultado observado",
+    "coincidencia": "alta",
+    "que_es": "El índice de masa corporal (IMC) relaciona tu peso con tu estatura para estimar si hay exceso de grasa en el cuerpo.",
+    "por_que": [
+     "Con el peso y la talla que midió la enfermera, tu IMC salió en 28,4; la OMS usa 25 para sobrepeso y 30 para obesidad.",
+     "Tu cintura midió 98 cm; mide si la grasa se acumula en el abdomen (para población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
+    ],
+    "ejemplo": "Es como cargar una maleta extra todo el día: al principio no se nota, pero con el tiempo cansa la espalda y las rodillas.",
+    "agrupa": []
+   },
+   {
+    "hallazgo_id": "H-260FC6-04",
+    "referencia": "COND-M4-IN-002",
+    "tipo": "condicion",
+    "titulo": "Te falta protección contra la hepatitis B",
+    "escalamiento": 1,
+    "nivel_lenguaje": "Requiere evaluación médica",
+    "coincidencia": "alta",
+    "que_es": "La hepatitis B es un virus que afecta el hígado; estas pruebas muestran si hay infección, si la hubo en el pasado o si cuentas con defensas, por ejemplo por la vacuna.",
+    "por_que": [
+     "No se encontró el virus ni señales de contacto con él, pero tus defensas (anti-HBs) salieron en 4,2 mUI/mL, por debajo del nivel que protege (10 mUI/mL)."
+    ],
+    "ejemplo": "Es como una casa con la puerta sin candado: no ha entrado nadie, pero conviene ponérselo.",
+    "agrupa": []
+   },
+   {
+    "hallazgo_id": "H-260FC6-05",
+    "referencia": "COND-M6-RE-001",
+    "tipo": "condicion",
+    "titulo": "Ácido úrico por encima del rango",
+    "escalamiento": 1,
+    "nivel_lenguaje": "Resultado observado",
+    "coincidencia": "alta",
+    "que_es": "El ácido úrico es un desecho que se forma al procesar algunos alimentos y que los riñones eliminan por la orina.",
+    "por_que": [
+     "Tu ácido úrico salió en 7,6 mg/dL, por encima del rango de referencia."
+    ],
+    "ejemplo": "Es como el azúcar en una limonada demasiado dulce: cuando hay mucho, deja de disolverse y se asienta en el fondo.",
+    "agrupa": []
+   },
+   {
+    "hallazgo_id": "H-260FC6-06",
+    "referencia": "COND-M1-CA-006",
+    "tipo": "condicion",
+    "titulo": "Presión arterial por encima de 130/80",
+    "escalamiento": 1,
+    "nivel_lenguaje": "Patrón compatible",
+    "coincidencia": "moderada",
+    "que_es": "La presión arterial es la fuerza con la que la sangre empuja las paredes de las arterias.",
+    "por_que": [
+     "En la visita, la enfermera midió tu presión en 128/82 mmHg; desde 130/80 mmHg las guías piden confirmarla con mediciones en casa."
+    ],
+    "ejemplo": "Es como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta.",
+    "agrupa": []
+   },
+   {
+    "hallazgo_id": "H-260FC6-07",
+    "referencia": "COND-M4-GA-002",
+    "tipo": "condicion",
+    "titulo": "Enzima del hígado (ALT) por encima de lo esperado",
+    "escalamiento": 1,
+    "nivel_lenguaje": "Patrón compatible",
+    "coincidencia": "moderada",
+    "que_es": "La ALT es una enzima que vive dentro de las células del hígado; cuando esas células se irritan, sale a la sangre.",
+    "por_que": [
+     "Tu ALT salió en 58 U/L, por encima del valor esperado."
+    ],
+    "ejemplo": "Es como el polvo que suelta una pared cuando la golpean: avisa que algo la molesta, pero no dice qué tan grande es el golpe.",
+    "agrupa": []
+   },
+   {
+    "hallazgo_id": "H-260FC6-08",
+    "referencia": "COND-M3-NU-A03",
+    "tipo": "condicion",
+    "titulo": "Vitamina D fuera del rango",
+    "escalamiento": 0,
+    "nivel_lenguaje": null,
+    "coincidencia": null,
+    "que_es": "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos; el cuerpo la fabrica con el sol.",
+    "por_que": [
+     "Tu vitamina D salió en 21,4 ng/mL, fuera del rango del laboratorio."
+    ],
+    "ejemplo": "Es como el cemento de una pared: los ladrillos están, pero sin suficiente cemento la pared queda menos firme.",
+    "agrupa": []
+   }
+  ],
+  "que_podria_significar": [
+   {
+    "hallazgo_id": "H-260FC6-01",
+    "texto": "Si este patrón se mantiene durante años, aumenta la probabilidad de llegar a diabetes y de que se dañen los vasos sanguíneos del corazón.",
+    "incertidumbre": "Este patrón no es un diagnóstico; un ayuno incompleto o algunos medicamentos pueden mover estos valores, y tu médico decide si hay que repetirlos."
+   },
+   {
+    "hallazgo_id": "H-260FC6-02",
+    "texto": "Si se mantiene alto durante años, las arterias se van estrechando y aumenta la probabilidad de problemas del corazón y del cerebro.",
+    "incertidumbre": "Un solo perfil de lípidos no basta, y el ayuno corto lo altera. Lo que significa para ti depende de tu riesgo cardiovascular global, que revisa tu médico."
+   },
+   {
+    "hallazgo_id": "H-260FC6-03",
+    "texto": "Con los años, el exceso de grasa, sobre todo en el abdomen, aumenta la probabilidad de diabetes, presión alta, problemas del corazón y dolor de articulaciones.",
+    "incertidumbre": "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y tu médico ayudan a interpretarlo."
+   },
+   {
+    "hallazgo_id": "H-260FC6-04",
+    "texto": "Sin defensas suficientes, el virus se puede adquirir por sangre o por relaciones sexuales; la vacuna lo previene y es segura.",
+    "incertidumbre": "Si ya te vacunaste hace años, puede que tus defensas hayan bajado; tu médico decide si basta con un refuerzo o con el esquema completo."
+   },
+   {
+    "hallazgo_id": "H-260FC6-05",
+    "texto": "Si se mantiene alto por años, puede formar cristales en las articulaciones o en los riñones, y suele ir de la mano con el exceso de peso, el azúcar y la presión.",
+    "incertidumbre": "Lo suben de forma pasajera la deshidratación, el ayuno largo, el ejercicio intenso o algunos medicamentos; sin síntomas no necesita medicamentos."
+   },
+   {
+    "hallazgo_id": "H-260FC6-06",
+    "texto": "Si la presión se mantiene alta por años, va desgastando el corazón, los riñones, el cerebro y los ojos, casi siempre sin dar síntomas.",
+    "incertidumbre": "Una sola visita no confirma hipertensión; los nervios, el café o el esfuerzo la suben. Conviene medirla en casa varios días con un tensiómetro validado y revisarlo con tu médico."
+   },
+   {
+    "hallazgo_id": "H-260FC6-07",
+    "texto": "Si la causa no se atiende, la irritación del hígado puede mantenerse durante años y afectar cómo funciona.",
+    "incertidumbre": "Hay varias causas posibles, la mayoría relacionadas con hábitos: ejercicio intenso, alcohol, alimentación, medicamentos o productos herbales. Un solo examen no basta: conviene repetirla y revisarla con tu médico."
+   },
+   {
+    "hallazgo_id": "H-260FC6-08",
+    "texto": "Si se mantiene baja durante años, los huesos pueden debilitarse; si está alta por suplementos, se puede acumular en el cuerpo.",
+    "incertidumbre": "Un solo valor no basta y cambia con el sol y la época. Si está baja, puedes mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente; si quieres suplementarla o ya tomas suplementos, coméntalo con tu médico."
+   }
+  ],
+  "que_puedes_hacer": [
+   {
+    "recomendacion_id": "REC-ACT-102",
+    "tipo": "actividad",
+    "titulo": "Muévete 150 minutos a la semana",
+    "texto": "Suma al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
+    "meta": "30 minutos de caminata rápida, 5 días esta semana.",
+    "por_que": "La actividad aeróbica regular mejora el colesterol, la presión, el azúcar y el peso al mismo tiempo.",
+    "hallazgos": [
+     "COND-M1-CA-001",
+     "COND-M1-CA-003",
+     "COND-M1-CA-006",
+     "COND-M1-EM-003",
+     "COND-M1-EM-004",
+     "REL-001",
+     "REL-003"
+    ],
+    "objetivos": [
+     "prevenir",
+     "bajar_peso"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-HAB-102",
+    "tipo": "habitos",
+    "titulo": "Menos alcohol",
+    "texto": "Reduce el alcohol: mientras menos, mejor. Ten días de la semana sin nada de alcohol y, cuando tomes, alterna cada trago con un vaso de agua.",
+    "meta": "Esta semana, al menos 5 días sin alcohol.",
+    "por_que": "El alcohol sube los triglicéridos y la presión, aporta calorías vacías y afecta el sueño.",
+    "hallazgos": [
+     "COND-M1-CA-003",
+     "COND-M1-CA-006",
+     "COND-M1-EM-003",
+     "COND-M1-EM-004",
+     "REL-001"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir",
+     "energia_sueno"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-SUE-101",
+    "tipo": "sueno",
+    "titulo": "Horario fijo para dormir",
+    "texto": "Acuéstate y levántate a la misma hora todos los días, también el fin de semana, buscando dormir entre 7 y 9 horas.",
+    "meta": "Esta semana, misma hora de levantarte los 7 días, con máximo una hora de diferencia.",
+    "por_que": "Dormir poco o a deshoras altera el manejo del azúcar, el apetito, la presión y las hormonas.",
+    "hallazgos": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-EM-004",
+     "COND-M1-CA-006",
+     "REL-001"
+    ],
+    "objetivos": [
+     "energia_sueno",
+     "bajar_peso"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ALI-101",
+    "tipo": "alimentacion",
+    "titulo": "Cambia las bebidas azucaradas por agua",
+    "texto": "Reemplaza gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar.",
+    "meta": "Esta semana, cero bebidas azucaradas en el almuerzo y la comida.",
+    "por_que": "Las bebidas azucaradas suben la glucosa y los triglicéridos rápido y no quitan el hambre.",
+    "hallazgos": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-EM-A04",
+     "COND-M1-CA-003",
+     "REL-001"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ALI-102",
+    "tipo": "alimentacion",
+    "titulo": "Llena medio plato con verduras",
+    "texto": "En el almuerzo y la comida, sirve primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa.",
+    "meta": "Medio plato de verduras en el almuerzo, 5 días esta semana.",
+    "por_que": "La fibra de las verduras hace que el azúcar de la comida entre más despacio a la sangre y da saciedad.",
+    "hallazgos": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-EM-004",
+     "COND-M1-CA-001",
+     "REL-001"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ALI-105",
+    "tipo": "alimentacion",
+    "titulo": "Menos harinas refinadas y azúcar",
+    "texto": "Reduce pan blanco, galletas, ponqués, postres y paquetes. Prefiere arepa, papa, plátano o arroz en porciones pequeñas, y pan integral.",
+    "meta": "Esta semana, cambia el postre diario por una fruta entera al menos 5 días.",
+    "por_que": "El azúcar y las harinas refinadas suben rápido la glucosa y el cuerpo convierte el exceso en triglicéridos.",
+    "hallazgos": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-EM-A04",
+     "COND-M1-CA-003",
+     "REL-001"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir",
+     "energia_sueno"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-HAB-201",
+    "tipo": "habitos",
+    "titulo": "Reduce el alcohol",
+    "texto": "Toma menos alcohol y deja varios días de la semana sin nada. Lo ideal para tu hígado y tu sangre es no tomar; si tomas, que sea poco y nunca hasta emborracharte.",
+    "meta": "Durante las próximas 4 semanas, al menos 5 días sin alcohol cada semana y ninguna ocasión con más de 2 tragos.",
+    "por_que": "El alcohol inflama el hígado, cambia el tamaño de los glóbulos rojos y gasta vitaminas como el folato.",
+    "hallazgos": [
+     "COND-M4-GA-002",
+     "REL-006",
+     "COND-M3-HE-006",
+     "COND-M6-RE-001",
+     "COND-M4-IN-002"
+    ],
+    "objetivos": [
+     "prevenir",
+     "bajar_peso",
+     "energia_sueno"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-TER-101",
+    "tipo": "terapias",
+    "titulo": "Una cita con nutricionista",
+    "texto": "Si quieres, pide una cita con un nutricionista para armar un plan de alimentación a tu medida, con tus gustos, horarios y presupuesto.",
+    "meta": "Averigua esta semana cómo pedir cita con nutrición en tu EPS o prepagada.",
+    "por_que": "Un plan personalizado es más fácil de mantener que una dieta genérica.",
+    "hallazgos": [
+     "COND-M1-EM-003",
+     "COND-M1-EM-004",
+     "COND-M1-CA-003",
+     "REL-001"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ACT-101",
+    "tipo": "actividad",
+    "titulo": "Camina después de comer",
+    "texto": "Sal a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto.",
+    "meta": "Caminar 15 minutos después del almuerzo, 5 días esta semana.",
+    "por_que": "Los músculos en movimiento usan el azúcar de la comida y ayudan a que la glucosa suba menos.",
+    "hallazgos": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-EM-A04",
+     "REL-001"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ACT-105",
+    "tipo": "actividad",
+    "titulo": "Interrumpe el tiempo sentado",
+    "texto": "Si pasas mucho tiempo sentado, levántate cada 30 a 60 minutos y camina o estírate 2 o 3 minutos. Usa una alarma en el celular para acordarte.",
+    "meta": "Una pausa activa cada hora durante la jornada, 5 días esta semana.",
+    "por_que": "Estar sentado muchas horas seguidas empeora el manejo del azúcar aunque hagas ejercicio otros días.",
+    "hallazgos": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-004",
+     "COND-M1-EM-A04"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "energia_sueno"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ACT-201",
+    "tipo": "actividad",
+    "titulo": "150 minutos de actividad moderada a la semana",
+    "texto": "Camina rápido, monta bicicleta, nada o baila al menos 150 minutos a la semana, repartidos en varios días. A ritmo moderado puedes hablar pero no cantar.",
+    "meta": "Esta semana, 5 caminatas rápidas de 30 minutos.",
+    "por_que": "La actividad regular ayuda a bajar la grasa del hígado y mejora cómo el cuerpo usa el azúcar, incluso sin bajar mucho de peso.",
+    "hallazgos": [
+     "COND-M4-GA-002",
+     "REL-006",
+     "COND-M6-RE-001",
+     "COND-M6-MI-A02"
+    ],
+    "objetivos": [
+     "bajar_peso",
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-SUE-106",
+    "tipo": "sueno",
+    "titulo": "Cuéntale a tu médico si roncas",
+    "texto": "Si roncas fuerte, alguien nota que dejas de respirar al dormir o te levantas cansado aunque duermas suficiente, coméntalo en tu consulta.",
+    "meta": "Pregúntale a quien duerme cerca si roncas fuerte y anota la respuesta para tu próxima consulta.",
+    "por_que": "Las pausas al respirar durante el sueño se relacionan con presión alta, más peso y peor manejo del azúcar, y se pueden evaluar.",
+    "hallazgos": [
+     "COND-M1-EM-004",
+     "COND-M1-CA-006",
+     "COND-M1-EM-003",
+     "REL-001"
+    ],
+    "objetivos": [
+     "energia_sueno",
+     "bajar_peso",
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-CTL-215",
+    "tipo": "controles",
+    "titulo": "Pregunta por la vacuna de la hepatitis B",
+    "texto": "Tus defensas contra la hepatitis B no alcanzan el nivel de protección. Pregunta a tu médico o en tu EPS por la vacuna, que es segura y eficaz.",
+    "meta": "Este mes, pregunta en tu EPS o a tu médico por el esquema de vacunación y pide la primera dosis de la vacuna.",
+    "por_que": "La vacuna es la mejor forma de prevenir esta infección del hígado.",
+    "hallazgos": [
+     "COND-M4-IN-002#susceptible"
+    ],
+    "objetivos": [
+     "prevenir"
+    ],
+    "requiere_consulta_previa": false
+   },
+   {
+    "recomendacion_id": "REC-ALI-205",
+    "tipo": "alimentacion",
+    "titulo": "Alimentos que aportan vitamina D",
+    "texto": "Incluye pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
+    "meta": "Esta semana, pescado graso al menos 2 veces y huevo entero en 3 desayunos.",
+    "por_que": "Pocos alimentos tienen vitamina D; los pescados grasos y el huevo están entre los mejores para sumar un poco.",
+    "hallazgos": [
+     "COND-M3-NU-A03"
+    ],
+    "objetivos": [
+     "energia_sueno"
+    ],
+    "requiere_consulta_previa": false
+   }
+  ],
+  "cuando_consultar": [
+   {
+    "escalamiento": 1,
+    "texto": "Coméntalo con tu médico en tu próximo control, en los próximos 3 meses.",
+    "hallazgos": [
+     {
+      "hallazgo_id": "H-260FC6-01",
+      "titulo": "Tu azúcar y tus grasas se mueven juntos",
+      "detalle": null
+     },
+     {
+      "hallazgo_id": "H-260FC6-02",
+      "titulo": "Colesterol LDL por encima del valor de tamizaje",
+      "detalle": null
+     },
+     {
+      "hallazgo_id": "H-260FC6-03",
+      "titulo": "Índice de masa corporal por encima del rango saludable",
+      "detalle": null
+     },
+     {
+      "hallazgo_id": "H-260FC6-04",
+      "titulo": "Te falta protección contra la hepatitis B",
+      "detalle": "Pregunta en tu EPS o a tu médico por la vacuna de la hepatitis B en los próximos meses."
+     },
+     {
+      "hallazgo_id": "H-260FC6-05",
+      "titulo": "Ácido úrico por encima del rango",
+      "detalle": "Coméntalo con tu médico en tu próximo control; consulta antes si una articulación se te hincha y duele de repente."
+     },
+     {
+      "hallazgo_id": "H-260FC6-06",
+      "titulo": "Presión arterial por encima de 130/80",
+      "detalle": null
+     },
+     {
+      "hallazgo_id": "H-260FC6-07",
+      "titulo": "Enzima del hígado (ALT) por encima de lo esperado",
+      "detalle": null
+     }
+    ]
+   }
+  ],
+  "informativos": []
+ },
+ "resultados": [
+  {
+   "biomarker_id": "hemoglobin",
+   "nombre": "Hemoglobina",
+   "valor": 16.2,
+   "valor_original": "16,2",
+   "unidad": "g/dL",
+   "intervalo": "13,5 – 17,5",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "hematocrit",
+   "nombre": "Hematocrito",
+   "valor": 48.1,
+   "valor_original": "48,1",
+   "unidad": "%",
+   "intervalo": "41,0 – 53,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "erythrocytes",
+   "nombre": "Eritrocitos",
+   "valor": 5.35,
+   "valor_original": "5,35",
+   "unidad": "x10⁶/µL",
+   "intervalo": "4,50 – 5,90",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "mcv",
+   "nombre": "VCM (Volumen Corpuscular Medio)",
+   "valor": 89.9,
+   "valor_original": "89,9",
+   "unidad": "fL",
+   "intervalo": "80,0 – 100,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "mch",
+   "nombre": "Hemoglobina corpuscular media",
+   "valor": 30.3,
+   "valor_original": "30,3",
+   "unidad": "pg",
+   "intervalo": "27,0 – 33,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "mchc",
+   "nombre": "CHCM",
+   "valor": 33.7,
+   "valor_original": "33,7",
+   "unidad": "g/dL",
+   "intervalo": "32,0 – 36,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "rdw",
+   "nombre": "RDW",
+   "valor": 13.1,
+   "valor_original": "13,1",
+   "unidad": "%",
+   "intervalo": "11,5 – 14,5",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "wbc",
+   "nombre": "Leucocitos (conteo total)",
+   "valor": 7.8,
+   "valor_original": "7,80",
+   "unidad": "x10³/µL",
+   "intervalo": "4,50 – 11,00",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "neutrophils_pct",
+   "nombre": "Neutrófilos (porcentaje)",
+   "valor": 58.2,
+   "valor_original": "58,2",
+   "unidad": "%",
+   "intervalo": "40,0 – 70,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "neutrophils_abs",
+   "nombre": "Neutrófilos Absolutos",
+   "valor": 4.54,
+   "valor_original": "4,54",
+   "unidad": "x10³/µL",
+   "intervalo": "1,80 – 7,70",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "lymphocytes_pct",
+   "nombre": "Linfocitos %",
+   "valor": 31.0,
+   "valor_original": "31,0",
+   "unidad": "%",
+   "intervalo": "20,0 – 45,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "lymphocytes_abs",
+   "nombre": "Linfocitos Absolutos",
+   "valor": 2.42,
+   "valor_original": "2,42",
+   "unidad": "x10³/µL",
+   "intervalo": "1,00 – 4,80",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "monocytes_pct",
+   "nombre": "Monocitos %",
+   "valor": 7.1,
+   "valor_original": "7,1",
+   "unidad": "%",
+   "intervalo": "2,0 – 10,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "eosinophils_pct",
+   "nombre": "Eosinófilos %",
+   "valor": 3.2,
+   "valor_original": "3,2",
+   "unidad": "%",
+   "intervalo": "0,0 – 6,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "basophils_pct",
+   "nombre": "Basófilos %",
+   "valor": 0.5,
+   "valor_original": "0,5",
+   "unidad": "%",
+   "intervalo": "0,0 – 2,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "platelets",
+   "nombre": "Plaquetas",
+   "valor": 265.0,
+   "valor_original": "265",
+   "unidad": "x10³/µL",
+   "intervalo": "150 – 450",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "mpv",
+   "nombre": "VPM",
+   "valor": 9.8,
+   "valor_original": "9,8",
+   "unidad": "fL",
+   "intervalo": "7,5 – 11,5",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "nrbc",
+   "nombre": "NRBC (Eritroblastos circulantes)",
+   "valor": 0.0,
+   "valor_original": "0,0",
+   "unidad": "/100 leucocitos",
+   "intervalo": "0,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "HEMATOLOGÍA · HEMOGRAMA IV",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "pt",
+   "nombre": "Tiempo de Protrombina",
+   "valor": 12.1,
+   "valor_original": "12,1",
+   "unidad": "s",
+   "intervalo": "10,5 – 13,5",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "COAGULACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "inr",
+   "nombre": "INR",
+   "valor": 1.02,
+   "valor_original": "1,02",
+   "unidad": null,
+   "intervalo": "0,85 – 1,15",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "COAGULACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "fibrinogen",
+   "nombre": "Fibrinógeno",
+   "valor": 360.0,
+   "valor_original": "360",
+   "unidad": "mg/dL",
+   "intervalo": "200 – 400",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "COAGULACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "glucose",
+   "nombre": "Glucosa en ayunas",
+   "valor": 112.0,
+   "valor_original": "112",
+   "unidad": "mg/dL",
+   "intervalo": "70 – 99",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "hba1c",
+   "nombre": "Hemoglobina A1c (HbA1c)",
+   "valor": 6.0,
+   "valor_original": "6,0",
+   "unidad": "%",
+   "intervalo": "4,0 – 5,6",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "insulin",
+   "nombre": "Insulina",
+   "valor": 19.8,
+   "valor_original": "19,8",
+   "unidad": "µUI/mL",
+   "intervalo": "2,6 – 24,9",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "c_peptide",
+   "nombre": "Péptido C",
+   "valor": 3.4,
+   "valor_original": "3,4",
+   "unidad": "ng/mL",
+   "intervalo": "1,1 – 4,4",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "fructosamine",
+   "nombre": "Fructosamina",
+   "valor": 268.0,
+   "valor_original": "268",
+   "unidad": "µmol/L",
+   "intervalo": "205 – 285",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "uric_acid",
+   "nombre": "Ácido úrico",
+   "valor": 7.6,
+   "valor_original": "7,6",
+   "unidad": "mg/dL",
+   "intervalo": "3,4 – 7,0",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "total_cholesterol",
+   "nombre": "Colesterol total",
+   "valor": 228.0,
+   "valor_original": "228",
+   "unidad": "mg/dL",
+   "intervalo": "< 200",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "triglycerides",
+   "nombre": "Triglicéridos",
+   "valor": 238.0,
+   "valor_original": "238",
+   "unidad": "mg/dL",
+   "intervalo": "< 150",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "hdl_c",
+   "nombre": "Colesterol HDL (HDL-C)",
+   "valor": 36.0,
+   "valor_original": "36",
+   "unidad": "mg/dL",
+   "intervalo": "> 40",
+   "clase": "bajo",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ldl_c",
+   "nombre": "Colesterol LDL (LDL-C)",
+   "valor": 142.0,
+   "valor_original": "142",
+   "unidad": "mg/dL",
+   "intervalo": "< 130",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "apob",
+   "nombre": "Apolipoproteína B",
+   "valor": 118.0,
+   "valor_original": "118",
+   "unidad": "mg/dL",
+   "intervalo": "60 – 117",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "apoa1",
+   "nombre": "Apolipoproteína A1",
+   "valor": 112.0,
+   "valor_original": "112",
+   "unidad": "mg/dL",
+   "intervalo": "104 – 202",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "lpa",
+   "nombre": "Lipoproteína(a)",
+   "valor": 18.0,
+   "valor_original": "18",
+   "unidad": "mg/dL",
+   "intervalo": "< 30",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "PERFIL LIPÍDICO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "sodium",
+   "nombre": "Sodio",
+   "valor": 140.0,
+   "valor_original": "140",
+   "unidad": "mmol/L",
+   "intervalo": "136 – 145",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "potassium",
+   "nombre": "Potasio",
+   "valor": 4.3,
+   "valor_original": "4,3",
+   "unidad": "mmol/L",
+   "intervalo": "3,5 – 5,1",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "chloride",
+   "nombre": "Cloro",
+   "valor": 103.0,
+   "valor_original": "103",
+   "unidad": "mmol/L",
+   "intervalo": "98 – 107",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "bicarbonate",
+   "nombre": "Bicarbonato / CO2",
+   "valor": 25.0,
+   "valor_original": "25",
+   "unidad": "mmol/L",
+   "intervalo": "22 – 29",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "calcium",
+   "nombre": "Calcio Sérico",
+   "valor": 9.5,
+   "valor_original": "9,5",
+   "unidad": "mg/dL",
+   "intervalo": "8,6 – 10,2",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "phosphorus",
+   "nombre": "Fósforo",
+   "valor": 3.2,
+   "valor_original": "3,2",
+   "unidad": "mg/dL",
+   "intervalo": "2,5 – 4,5",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "magnesium",
+   "nombre": "Magnesio Sérico",
+   "valor": 2.0,
+   "valor_original": "2,0",
+   "unidad": "mg/dL",
+   "intervalo": "1,7 – 2,4",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "zinc",
+   "nombre": "Zinc Sérico",
+   "valor": 82.0,
+   "valor_original": "82",
+   "unidad": "µg/dL",
+   "intervalo": "60 – 120",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "osmolality",
+   "nombre": "Osmolalidad Sérica",
+   "valor": 292.0,
+   "valor_original": "292",
+   "unidad": "mOsm/kg",
+   "intervalo": "275 – 295",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "ELECTROLITOS Y MINERALES",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "alt",
+   "nombre": "ALT (Alanina Aminotransferasa)",
+   "valor": 58.0,
+   "valor_original": "58",
+   "unidad": "U/L",
+   "intervalo": "10 – 50",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ast",
+   "nombre": "AST (Aspartato Aminotransferasa)",
+   "valor": 39.0,
+   "valor_original": "39",
+   "unidad": "U/L",
+   "intervalo": "10 – 40",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ggt",
+   "nombre": "Gamma-Glutamil Transferasa",
+   "valor": 72.0,
+   "valor_original": "72",
+   "unidad": "U/L",
+   "intervalo": "10 – 71",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "alp",
+   "nombre": "Fosfatasa Alcalina",
+   "valor": 88.0,
+   "valor_original": "88",
+   "unidad": "U/L",
+   "intervalo": "40 – 129",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "bilirubin_total",
+   "nombre": "Bilirrubina Total",
+   "valor": 0.8,
+   "valor_original": "0,80",
+   "unidad": "mg/dL",
+   "intervalo": "0,30 – 1,20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "bilirubin_direct",
+   "nombre": "Bilirrubina Directa",
+   "valor": 0.2,
+   "valor_original": "0,20",
+   "unidad": "mg/dL",
+   "intervalo": "0,00 – 0,30",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "total_protein",
+   "nombre": "Proteínas totales",
+   "valor": 7.3,
+   "valor_original": "7,3",
+   "unidad": "g/dL",
+   "intervalo": "6,4 – 8,3",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "albumin",
+   "nombre": "Albúmina",
+   "valor": 4.6,
+   "valor_original": "4,6",
+   "unidad": "g/dL",
+   "intervalo": "3,5 – 5,2",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "globulin",
+   "nombre": "Globulinas",
+   "valor": 2.7,
+   "valor_original": "2,7",
+   "unidad": "g/dL",
+   "intervalo": "2,0 – 3,5",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ag_ratio",
+   "nombre": "Relación Albúmina/Globulina",
+   "valor": 1.7,
+   "valor_original": "1,70",
+   "unidad": null,
+   "intervalo": "1,10 – 2,50",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ldh",
+   "nombre": "Lactato Deshidrogenasa",
+   "valor": 190.0,
+   "valor_original": "190",
+   "unidad": "U/L",
+   "intervalo": "135 – 225",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ck_cpk",
+   "nombre": "Creatina Quinasa",
+   "valor": 165.0,
+   "valor_original": "165",
+   "unidad": "U/L",
+   "intervalo": "39 – 308",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "creatinine",
+   "nombre": "Creatinina Sérica",
+   "valor": 0.98,
+   "valor_original": "0,98",
+   "unidad": "mg/dL",
+   "intervalo": "0,70 – 1,20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN RENAL",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "egfr",
+   "nombre": "eGFR",
+   "valor": 96.0,
+   "valor_original": "96",
+   "unidad": "mL/min/1,73 m²",
+   "intervalo": "> 60",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN RENAL",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "bun",
+   "nombre": "BUN / Urea",
+   "valor": 15.0,
+   "valor_original": "15",
+   "unidad": "mg/dL",
+   "intervalo": "6 – 20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN RENAL",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "bun_creatinine_ratio",
+   "nombre": "Relación BUN/Creatinina",
+   "valor": 15.3,
+   "valor_original": "15,3",
+   "unidad": null,
+   "intervalo": "10 – 20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "FUNCIÓN RENAL",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "tsh",
+   "nombre": "TSH (Hormona Estimulante de Tiroides)",
+   "valor": 2.1,
+   "valor_original": "2,10",
+   "unidad": "µUI/mL",
+   "intervalo": "0,27 – 4,20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "testosterone_total",
+   "nombre": "Testosterona Total",
+   "valor": 412.0,
+   "valor_original": "412",
+   "unidad": "ng/dL",
+   "intervalo": "264 – 916",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "shbg",
+   "nombre": "SHBG",
+   "valor": 28.0,
+   "valor_original": "28",
+   "unidad": "nmol/L",
+   "intervalo": "16,5 – 55,9",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "estradiol",
+   "nombre": "Estradiol",
+   "valor": 28.0,
+   "valor_original": "28",
+   "unidad": "pg/mL",
+   "intervalo": "11 – 44",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "lh",
+   "nombre": "LH",
+   "valor": 4.2,
+   "valor_original": "4,2",
+   "unidad": "mUI/mL",
+   "intervalo": "1,7 – 8,6",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "dhea_s",
+   "nombre": "DHEA-S",
+   "valor": 210.0,
+   "valor_original": "210",
+   "unidad": "µg/dL",
+   "intervalo": "89 – 427",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "cortisol",
+   "nombre": "Cortisol",
+   "valor": 14.2,
+   "valor_original": "14,2",
+   "unidad": "µg/dL",
+   "intervalo": "6,2 – 19,4 (mañana)",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "acth",
+   "nombre": "ACTH",
+   "valor": 24.0,
+   "valor_original": "24",
+   "unidad": "pg/mL",
+   "intervalo": "7,2 – 63,3 (mañana)",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "igf1",
+   "nombre": "IGF-1",
+   "valor": 168.0,
+   "valor_original": "168",
+   "unidad": "ng/mL",
+   "intervalo": "83 – 233 (45 – 49 años)",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "psa_total",
+   "nombre": "Antígeno prostático específico total",
+   "valor": 1.1,
+   "valor_original": "1,10",
+   "unidad": "ng/mL",
+   "intervalo": "< 4,00",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "hs_crp",
+   "nombre": "Proteína C Reactiva ultrasensible (hs-CRP)",
+   "valor": 3.4,
+   "valor_original": "3,4",
+   "unidad": "mg/L",
+   "intervalo": "< 3,0",
+   "clase": "alto",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "esr",
+   "nombre": "VSG",
+   "valor": 12.0,
+   "valor_original": "12",
+   "unidad": "mm/h",
+   "intervalo": "0 – 15",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "homocysteine",
+   "nombre": "Homocisteína",
+   "valor": 11.8,
+   "valor_original": "11,8",
+   "unidad": "µmol/L",
+   "intervalo": "5,0 – 15,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "hs_troponin",
+   "nombre": "Troponina cardíaca de alta sensibilidad",
+   "valor": 3.0,
+   "valor_original": "< 3",
+   "unidad": "ng/L",
+   "intervalo": "< 14 (percentil 99)",
+   "clase": "en_rango",
+   "estado": "menor_que_limite",
+   "motivo": null,
+   "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ana_hep2",
+   "nombre": "Anticuerpos antinucleares por inmunofluorescencia indirecta en células HEp-2",
+   "valor": "negativo",
+   "valor_original": "Negativo (< 1:80)",
+   "unidad": null,
+   "intervalo": "Negativo",
+   "clase": "en_rango",
+   "estado": "cualitativo",
+   "motivo": null,
+   "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "igg",
+   "nombre": "Inmunoglobulina G",
+   "valor": 1120.0,
+   "valor_original": "1120",
+   "unidad": "mg/dL",
+   "intervalo": "700 – 1600",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "INMUNOLOGÍA",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "igm",
+   "nombre": "Inmunoglobulina M",
+   "valor": 95.0,
+   "valor_original": "95",
+   "unidad": "mg/dL",
+   "intervalo": "40 – 230",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "INMUNOLOGÍA",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "ferritin",
+   "nombre": "Ferritina",
+   "valor": 310.0,
+   "valor_original": "310",
+   "unidad": "ng/mL",
+   "intervalo": "30 – 400",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "METABOLISMO DEL HIERRO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "serum_iron",
+   "nombre": "Hierro sérico",
+   "valor": 118.0,
+   "valor_original": "118",
+   "unidad": "µg/dL",
+   "intervalo": "65 – 175",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "METABOLISMO DEL HIERRO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "tibc",
+   "nombre": "Capacidad total de fijación de hierro",
+   "valor": 320.0,
+   "valor_original": "320",
+   "unidad": "µg/dL",
+   "intervalo": "250 – 450",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "METABOLISMO DEL HIERRO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "transferrin",
+   "nombre": "Transferrina",
+   "valor": 256.0,
+   "valor_original": "256",
+   "unidad": "mg/dL",
+   "intervalo": "200 – 360",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "METABOLISMO DEL HIERRO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "transferrin_saturation",
+   "nombre": "Saturación de transferrina",
+   "valor": 37.0,
+   "valor_original": "37",
+   "unidad": "%",
+   "intervalo": "20 – 50",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "METABOLISMO DEL HIERRO",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_b12",
+   "nombre": "Vitamina B12",
+   "valor": 410.0,
+   "valor_original": "410",
+   "unidad": "pg/mL",
+   "intervalo": "197 – 771",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "folate",
+   "nombre": "Folato Sérico",
+   "valor": 9.8,
+   "valor_original": "9,8",
+   "unidad": "ng/mL",
+   "intervalo": "> 3,9",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_d",
+   "nombre": "25-Hidroxivitamina D",
+   "valor": 21.4,
+   "valor_original": "21,4",
+   "unidad": "ng/mL",
+   "intervalo": "30 – 100",
+   "clase": "bajo",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_b6",
+   "nombre": "Vitamina B6 (PLP)",
+   "valor": 8.1,
+   "valor_original": "8,1",
+   "unidad": "µg/L",
+   "intervalo": "5,0 – 50,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_b1",
+   "nombre": "Vitamina B1 (Tiamina)",
+   "valor": 98.0,
+   "valor_original": "98",
+   "unidad": "nmol/L",
+   "intervalo": "70 – 180",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_a",
+   "nombre": "Vitamina A (retinol sérico)",
+   "valor": 58.0,
+   "valor_original": "58",
+   "unidad": "µg/dL",
+   "intervalo": "30 – 80",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_e",
+   "nombre": "Vitamina E (alfa-tocoferol)",
+   "valor": 12.4,
+   "valor_original": "12,4",
+   "unidad": "mg/L",
+   "intervalo": "5,5 – 17,0",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_k1",
+   "nombre": "Vitamina K1 (filoquinona)",
+   "valor": 0.62,
+   "valor_original": "0,62",
+   "unidad": "ng/mL",
+   "intervalo": "0,10 – 2,20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "vitamin_c",
+   "nombre": "Vitamina C (ácido ascórbico)",
+   "valor": 0.9,
+   "valor_original": "0,9",
+   "unidad": "mg/dL",
+   "intervalo": "0,4 – 2,0",
+   "clase": "no_interpretable",
+   "estado": "medido",
+   "motivo": "el laboratorio no ha validado el transporte congelado de la vitamina C",
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "biotin",
+   "nombre": "Biotina (vitamina B7)",
+   "valor": 410.0,
+   "valor_original": "410",
+   "unidad": "ng/L",
+   "intervalo": "No establecido",
+   "clase": null,
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "niacin",
+   "nombre": "Niacina (vitamina B3)",
+   "valor": 5.1,
+   "valor_original": "5,1",
+   "unidad": "µg/mL",
+   "intervalo": "No establecido",
+   "clase": null,
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "omega3_index",
+   "nombre": "Índice omega-3",
+   "valor": 4.1,
+   "valor_original": "4,1",
+   "unidad": "%",
+   "intervalo": "No establecido",
+   "clase": null,
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "omega6_omega3_ratio",
+   "nombre": "Relación omega-6/omega-3",
+   "valor": 11.2,
+   "valor_original": "11,2",
+   "unidad": null,
+   "intervalo": "No establecido",
+   "clase": null,
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "coq10",
+   "nombre": "Coenzima Q10",
+   "valor": 0.82,
+   "valor_original": "0,82",
+   "unidad": "µg/mL",
+   "intervalo": "No establecido",
+   "clase": null,
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "VITAMINAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "anti_hcv",
+   "nombre": "Anticuerpos contra el virus de la hepatitis C",
+   "valor": "no reactivo",
+   "valor_original": "No reactivo (0,08)",
+   "unidad": "índice",
+   "intervalo": "< 1,00",
+   "clase": "en_rango",
+   "estado": "cualitativo",
+   "motivo": null,
+   "seccion": "SEROLOGÍA E INFECCIOSAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "hbsag",
+   "nombre": "Antígeno de superficie del virus de la hepatitis B",
+   "valor": "no reactivo",
+   "valor_original": "No reactivo (0,32)",
+   "unidad": "índice",
+   "intervalo": "< 1,00",
+   "clase": "en_rango",
+   "estado": "cualitativo",
+   "motivo": null,
+   "seccion": "SEROLOGÍA E INFECCIOSAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "anti_hbs",
+   "nombre": "Anticuerpos contra el antígeno de superficie de hepatitis B",
+   "valor": 4.2,
+   "valor_original": "4,2",
+   "unidad": "mUI/mL",
+   "intervalo": "≥ 10 (inmunidad)",
+   "clase": "bajo",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "SEROLOGÍA E INFECCIOSAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "anti_hbc",
+   "nombre": "Anticuerpos totales contra el antígeno core de hepatitis B",
+   "valor": "no reactivo",
+   "valor_original": "No reactivo (0,11)",
+   "unidad": "índice",
+   "intervalo": "< 1,00",
+   "clase": "en_rango",
+   "estado": "cualitativo",
+   "motivo": null,
+   "seccion": "SEROLOGÍA E INFECCIOSAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "chagas_elisa_total",
+   "nombre": "Anticuerpos IgG contra Trypanosoma cruzi (ELISA de antígenos totales)",
+   "valor": "no reactivo",
+   "valor_original": "No reactivo (0,21)",
+   "unidad": "índice",
+   "intervalo": "< 0,90",
+   "clase": "en_rango",
+   "estado": "cualitativo",
+   "motivo": null,
+   "seccion": "SEROLOGÍA E INFECCIOSAS",
+   "refleja": false
+  }
+ ],
+ "edad_biologica": {
+  "phenoage": 44.3,
+  "diferencia": -1.7,
+  "nota": null
+ },
+ "recordatorios": [],
+ "nutricion": {
+  "meta_diaria": {
+   "personalizada": true,
+   "kcal": 2013,
+   "proteina_g": 103,
+   "grasa_g": 63,
+   "grasa_saturada_g_max": 22,
+   "carbohidratos_g": 259,
+   "fibra_g_min": 30,
+   "sodio_mg_max": 2000,
+   "azucar_anadida_g_max": 50,
+   "formula": "Mifflin-St Jeor × actividad, ajustado por objetivo; proteína en g/kg según objetivo",
+   "notas": [
+    "Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso.",
+    "Con un déficit moderado para bajar de peso sin pasar hambre."
+   ]
+  },
+  "restricciones": {
+   "exigir": [
+    "baja_en_grasa_saturada",
+    "baja_en_sodio",
+    "sin_azucar_anadida"
+   ],
+   "excluir": [
+    "alta_en_purinas"
+   ],
+   "preferir": [
+    "alta_en_fibra"
+   ],
+   "motivos": [
+    "glucosa: sin azúcar añadida y con fibra",
+    "presión o riñón: bajas en sodio",
+    "lípidos o hígado: poca grasa saturada y más fibra",
+    "ácido úrico alto: sin vísceras ni sardinas"
+   ]
+  },
+  "recetas_aptas": 117,
+  "recetas_total": 190,
+  "plan": [
+   {
+    "dia": 1,
+    "receta_id": "RCT-ALM-016",
+    "nombre": "Tofu salteado con verduras y arroz integral",
+    "tiempo_comida": "almuerzo",
+    "porciones": 2,
+    "tiempo_min": 25,
+    "nutrientes_porcion": {
+     "kcal": 540.8,
+     "proteina_g": 34.8,
+     "grasa_g": 24.9,
+     "grasa_saturada_g": 3.3,
+     "carbohidratos_g": 53.5,
+     "fibra_g": 11.5,
+     "azucares_g": 8.2,
+     "sodio_mg": 360.3,
+     "potasio_mg": 1080.3,
+     "hierro_mg": 6.7,
+     "calcio_mg": 1156.6
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "alta_en_proteina",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "fuente_de_hierro",
+     "rapida",
+     "sin_azucar_anadida",
+     "sin_lactosa",
+     "vegano",
+     "vegetariano"
+    ]
+   },
+   {
+    "dia": 2,
+    "receta_id": "RCT-DES-031",
+    "nombre": "Calentado vegano de fríjol con maduro",
+    "tiempo_comida": "desayuno",
+    "porciones": 1,
+    "tiempo_min": 15,
+    "nutrientes_porcion": {
+     "kcal": 469.1,
+     "proteina_g": 16.6,
+     "grasa_g": 6.8,
+     "grasa_saturada_g": 0.8,
+     "carbohidratos_g": 87.1,
+     "fibra_g": 13.5,
+     "azucares_g": 14.6,
+     "sodio_mg": 421.5,
+     "potasio_mg": 1274.8,
+     "hierro_mg": 4.4,
+     "calcio_mg": 76.5
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "colombiana",
+     "economica",
+     "fuente_de_hierro",
+     "sin_azucar_anadida",
+     "sin_gluten",
+     "sin_lactosa",
+     "vegano",
+     "vegetariano"
+    ]
+   },
+   {
+    "dia": 3,
+    "receta_id": "RCT-CEN-011",
+    "nombre": "Tilapia a la plancha con verduras salteadas y papa criolla",
+    "tiempo_comida": "cena",
+    "porciones": 2,
+    "tiempo_min": 25,
+    "nutrientes_porcion": {
+     "kcal": 337.1,
+     "proteina_g": 32.8,
+     "grasa_g": 8.0,
+     "grasa_saturada_g": 1.7,
+     "carbohidratos_g": 35.9,
+     "fibra_g": 8.4,
+     "azucares_g": 7.1,
+     "sodio_mg": 500.9,
+     "potasio_mg": 1647.2,
+     "hierro_mg": 2.6,
+     "calcio_mg": 71.5
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "alta_en_proteina",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "colombiana",
+     "sin_azucar_anadida",
+     "sin_gluten",
+     "sin_lactosa"
+    ]
+   },
+   {
+    "dia": 4,
+    "receta_id": "RCT-ALM-003",
+    "nombre": "Sudado de pollo con papa y arroz integral",
+    "tiempo_comida": "almuerzo",
+    "porciones": 2,
+    "tiempo_min": 40,
+    "nutrientes_porcion": {
+     "kcal": 543.8,
+     "proteina_g": 41.0,
+     "grasa_g": 13.2,
+     "grasa_saturada_g": 1.8,
+     "carbohidratos_g": 64.8,
+     "fibra_g": 6.9,
+     "azucares_g": 7.5,
+     "sodio_mg": 499.6,
+     "potasio_mg": 1432.0,
+     "hierro_mg": 2.4,
+     "calcio_mg": 59.0
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "alta_en_proteina",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "colombiana",
+     "economica",
+     "sin_azucar_anadida",
+     "sin_gluten",
+     "sin_lactosa"
+    ]
+   },
+   {
+    "dia": 5,
+    "receta_id": "RCT-MER-015",
+    "nombre": "Salpicón casero sin azúcar",
+    "tiempo_comida": "merienda",
+    "porciones": 1,
+    "tiempo_min": 10,
+    "nutrientes_porcion": {
+     "kcal": 214.2,
+     "proteina_g": 3.2,
+     "grasa_g": 0.8,
+     "grasa_saturada_g": 0.2,
+     "carbohidratos_g": 54.5,
+     "fibra_g": 7.3,
+     "azucares_g": 38.9,
+     "sodio_mg": 8.8,
+     "potasio_mg": 776.8,
+     "hierro_mg": 0.9,
+     "calcio_mg": 84.4
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "colombiana",
+     "economica",
+     "sin_azucar_anadida",
+     "sin_gluten",
+     "sin_lactosa",
+     "vegano",
+     "vegetariano"
+    ]
+   },
+   {
+    "dia": 6,
+    "receta_id": "RCT-CEN-010",
+    "nombre": "Ensalada de pollo a la plancha con quinua y aguacate",
+    "tiempo_comida": "cena",
+    "porciones": 2,
+    "tiempo_min": 25,
+    "nutrientes_porcion": {
+     "kcal": 374.4,
+     "proteina_g": 33.6,
+     "grasa_g": 13.0,
+     "grasa_saturada_g": 2.0,
+     "carbohidratos_g": 31.6,
+     "fibra_g": 7.6,
+     "azucares_g": 4.5,
+     "sodio_mg": 391.6,
+     "potasio_mg": 1071.3,
+     "hierro_mg": 2.9,
+     "calcio_mg": 64.0
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "alta_en_proteina",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "fuente_de_hierro",
+     "sin_azucar_anadida",
+     "sin_gluten",
+     "sin_lactosa"
+    ]
+   },
+   {
+    "dia": 7,
+    "receta_id": "RCT-DES-043",
+    "nombre": "Batata asada con huevo, aguacate y kiwi",
+    "tiempo_comida": "desayuno",
+    "porciones": 1,
+    "tiempo_min": 15,
+    "nutrientes_porcion": {
+     "kcal": 384.5,
+     "proteina_g": 16.7,
+     "grasa_g": 16.2,
+     "grasa_saturada_g": 4.1,
+     "carbohidratos_g": 46.0,
+     "fibra_g": 9.7,
+     "azucares_g": 18.2,
+     "sodio_mg": 188.5,
+     "potasio_mg": 1002.3,
+     "hierro_mg": 3.5,
+     "calcio_mg": 139.7
+    },
+    "etiquetas": [
+     "alta_en_fibra",
+     "alta_en_potasio",
+     "baja_en_grasa_saturada",
+     "baja_en_sodio",
+     "fuente_de_hierro",
+     "sin_azucar_anadida",
+     "sin_gluten",
+     "sin_lactosa",
+     "vegetariano"
+    ]
+   }
+  ]
+ },
+ "whatsapp": {
+  "resultado_listo": "Hola 👋 Tus resultados de Saludly ya están listos en tu panel. Ábrelo cuando puedas: ahí te explicamos todo con calma.",
+  "recordatorio_consulta": null,
+  "recomendaciones_semanales": [
+   {
+    "semana": 1,
+    "recomendacion_id": "REC-ACT-102",
+    "texto": "Esta semana la meta son 30 minutos de caminata rápida 5 días. Puedes partirlos en dos caminatas de 15."
+   },
+   {
+    "semana": 2,
+    "recomendacion_id": "REC-HAB-102",
+    "texto": "Reto de la semana: 5 días sin alcohol. Si sales, alterna cada trago con un vaso de agua."
+   },
+   {
+    "semana": 3,
+    "recomendacion_id": "REC-SUE-101",
+    "texto": "Elige hoy tu hora fija para levantarte y respétala toda la semana, también el sábado y el domingo. Tu cuerpo se organiza mejor."
+   },
+   {
+    "semana": 4,
+    "recomendacion_id": "REC-ALI-101",
+    "texto": "Hoy cambia la gaseosa o el jugo de caja del almuerzo por agua o limonada sin azúcar. Es un cambio pequeño que ayuda mucho."
+   },
+   {
+    "semana": 5,
+    "recomendacion_id": "REC-ALI-102",
+    "texto": "Reto de hoy: que la mitad de tu plato del almuerzo sea verdura o ensalada. Empieza a comer por ahí."
+   },
+   {
+    "semana": 6,
+    "recomendacion_id": "REC-ALI-105",
+    "texto": "Hoy cambia el postre o el ponqué de la tarde por una fruta entera. Tu cuerpo maneja mejor el azúcar así."
+   },
+   {
+    "semana": 7,
+    "recomendacion_id": "REC-HAB-201",
+    "texto": "Este fin de semana, prueba un plan sin trago: agua con gas y limón, o una aromática. Tu cuerpo lo agradece."
+   },
+   {
+    "semana": 8,
+    "recomendacion_id": "REC-TER-101",
+    "texto": "¿Te gustaría un plan de alimentación hecho a tu medida? Averigua esta semana cómo pedir cita con nutrición en tu EPS."
+   }
+  ],
+  "recetas_diarias": [
+   {
+    "dia": 1,
+    "receta_id": "RCT-ALM-016",
+    "texto": "🍽️ *Receta del día: Tofu salteado con verduras y arroz integral*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 541 kcal · proteína 35 g · carbohidratos 54 g · grasa 25 g · fibra 12 g · sodio 360 mg\nCubre cerca del 34 % de tu proteína del día.\n\n*Ingredientes*\n• 1 bloque de tofu firme\n• 1 1/2 tazas de arroz integral cocido\n• 1 1/2 tazas de brócoli\n• 1 pimentón (pimentón rojo)\n• 1 zanahoria en tiras\n• 1 taza en tiras de repollo blanco\n• 1 diente de ajo\n• 1 cucharada de salsa de soya baja en sodio\n• 1 cucharada de aceite de canola\n• 1 cucharada de ajonjolí\n\n*Preparación*\n1. Seca el tofu con un paño y córtalo en cubos.\n2. Dóralo en la mitad del aceite hasta que esté firme y resérvalo.\n3. Saltea el ajo y las verduras en el resto del aceite a fuego alto por 4 minutos.\n4. Devuelve el tofu, agrega la salsa de soya y el ajonjolí, y sirve con el arroz.\n\n💡 No le pongas sal: la salsa de soya ya aporta todo el sodio que el plato necesita."
+   },
+   {
+    "dia": 2,
+    "receta_id": "RCT-DES-031",
+    "texto": "🍽️ *Receta del día: Calentado vegano de fríjol con maduro*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 469 kcal · proteína 17 g · carbohidratos 87 g · grasa 7 g · fibra 14 g · sodio 422 mg\nCubre cerca del 16 % de tu proteína del día.\n\n*Ingredientes*\n• 3/4 de taza de fríjol rojo cocido\n• 1/2 taza de arroz integral cocido\n• 1/4 de plátano (plátano maduro)\n• 2 cucharadas picada de cebolla cabezona\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• una pizca de sal\n\n*Preparación*\n1. Asa el maduro en tajadas en un sartén con unas gotas de aceite.\n2. En el resto del aceite sofríe la cebolla y el tomate.\n3. Agrega el fríjol y el arroz, calienta bien y sirve con el maduro.\n\n💡 Fríjol más arroz forman una proteína completa, aun sin carne ni huevo."
+   },
+   {
+    "dia": 3,
+    "receta_id": "RCT-CEN-011",
+    "texto": "🍽️ *Receta del día: Tilapia a la plancha con verduras salteadas y papa criolla*\nCena · 25 min · 2 porciones\n\n*Por porción:* 337 kcal · proteína 33 g · carbohidratos 36 g · grasa 8 g · fibra 8 g · sodio 501 mg\nCubre cerca del 32 % de tu proteína del día.\n\n*Ingredientes*\n• 2 filetes de tilapia (cruda)\n• 14 papitas de papa criolla cocida\n• 1 calabacín pequeño\n• 1 zanahoria pequeña\n• 1 taza de habichuela\n• 1 diente grande de ajo\n• 1 limón\n• 2 cucharaditas de aceite de oliva\n• una pizca de sal\n\n*Preparación*\n1. Marina la tilapia con limón, ajo y la mitad de la sal por 10 minutos.\n2. Saltea las verduras en tiras con la mitad del aceite.\n3. Asa la tilapia en la plancha con el resto del aceite, 3 minutos por lado.\n4. Sirve con las papas criollas cocidas.\n\n💡 El pescado blanco es liviano y se digiere fácil, buena opción para la noche."
+   },
+   {
+    "dia": 4,
+    "receta_id": "RCT-ALM-003",
+    "texto": "🍽️ *Receta del día: Sudado de pollo con papa y arroz integral*\nAlmuerzo · 40 min · 2 porciones\n\n*Por porción:* 544 kcal · proteína 41 g · carbohidratos 65 g · grasa 13 g · fibra 7 g · sodio 500 mg\nCubre cerca del 40 % de tu proteína del día.\n\n*Ingredientes*\n• 1 pechuga grande (pechuga de pollo sin piel (cruda))\n• 2 papas medianas (papa cocida)\n• 1 1/4 tazas de arroz integral cocido\n• 2 tomates (tomate chonto)\n• 1/2 cebolla (cebolla cabezona)\n• 1 diente de ajo\n• 1 zanahoria\n• 1 cucharada de aceite de canola\n• 1 pizca de comino\n• una pizca de sal\n\n*Preparación*\n1. Sofríe la cebolla, el ajo y el tomate picados en el aceite.\n2. Agrega el pollo en presas, la zanahoria, el comino y medio vaso de agua.\n3. Tapa y cocina a fuego bajo 20 minutos.\n4. Añade la papa en trozos los últimos 10 minutos y ajusta la sal.\n5. Sirve con el arroz integral.\n\n💡 El sudado se cocina en su propio jugo: no necesitas más aceite ni cubitos de caldo."
+   },
+   {
+    "dia": 5,
+    "receta_id": "RCT-MER-015",
+    "texto": "🍽️ *Receta del día: Salpicón casero sin azúcar*\nMerienda · 10 min · 1 porciones\n\n*Por porción:* 214 kcal · proteína 3 g · carbohidratos 54 g · grasa 1 g · fibra 7 g · sodio 9 mg\nCubre cerca del 3 % de tu proteína del día.\n\n*Ingredientes*\n• 1 tajada pequeña de patilla\n• 1/2 tajada de papaya\n• 1/2 banano\n• 1 tajada delgada de piña\n• el jugo de 1 naranja\n\n*Preparación*\n1. Pica todas las frutas en cubos pequeños.\n2. Báñalas con el jugo de naranja recién exprimido y sirve frío.\n\n💡 El jugo de naranja reemplaza la gaseosa del salpicón tradicional sin azúcar añadida."
+   },
+   {
+    "dia": 6,
+    "receta_id": "RCT-CEN-010",
+    "texto": "🍽️ *Receta del día: Ensalada de pollo a la plancha con quinua y aguacate*\nCena · 25 min · 2 porciones\n\n*Por porción:* 374 kcal · proteína 34 g · carbohidratos 32 g · grasa 13 g · fibra 8 g · sodio 392 mg\nCubre cerca del 33 % de tu proteína del día.\n\n*Ingredientes*\n• 1 pechuga mediana (pechuga de pollo sin piel (cruda))\n• 1 taza y cuarto de quinua cocida\n• 2 tazas de lechuga\n• 1 tomate (tomate chonto)\n• media zanahoria rallada\n• un tercio de aguacate\n• 1 limón\n• 1 cucharadita de aceite de oliva\n• al gusto de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Sazona el pollo con sal y pimienta, y ásalo a la plancha 5 minutos por lado.\n2. Córtalo en tiras.\n3. Mezcla la lechuga, el tomate, la zanahoria y la quinua.\n4. Pon el pollo y el aguacate encima y aliña con limón y aceite.\n\n💡 Cocina la quinua para varios días y guárdala en la nevera: así la cena sale en minutos."
+   },
+   {
+    "dia": 7,
+    "receta_id": "RCT-DES-043",
+    "texto": "🍽️ *Receta del día: Batata asada con huevo, aguacate y kiwi*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 384 kcal · proteína 17 g · carbohidratos 46 g · grasa 16 g · fibra 10 g · sodio 188 mg\nCubre cerca del 16 % de tu proteína del día.\n\n*Ingredientes*\n• 1 batata pequeña (batata cocida)\n• 2 huevos (huevo entero)\n• 2 tajadas de aguacate\n• 1 pizca de pimienta negra\n• 1 kiwi\n\n*Preparación*\n1. Corta la batata cocida en rodajas y dórala en un sartén sin aceite.\n2. Cocina los huevos a tu gusto.\n3. Sirve con el aguacate, la pimienta y el kiwi en rodajas.\n\n💡 La batata aporta energía de forma más pareja que el pan blanco."
+   }
+  ]
+ },
+ "medico": {
+  "hallazgos": [
+   {
+    "tipo": "patron",
+    "id": "REL-001",
+    "nombre": "Patrón cardiometabólico",
+    "escalamiento": 1,
+    "coincidencia": "alta",
+    "miembros": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-CA-003"
+    ],
+    "relacionado_con": [],
+    "frase_permitida": "Varios de tus resultados (glucosa, triglicéridos, colesterol HDL e insulina) apuntan en la misma dirección: el cuerpo está teniendo más trabajo para manejar el azúcar. Por eso los explicamos juntos.",
+    "fuerza": "guía (ADA, declaración armonizada de síndrome metabólico)",
+    "hallazgo_id": "H-260FC6-01",
+    "texto_paciente": "Tu azúcar y tus grasas se mueven juntos"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M1-CA-001",
+    "nombre": "Dislipidemia aterogénica",
+    "escalamiento": 1,
+    "coincidencia": "alta",
+    "nivel_lenguaje": "riesgo_potencial",
+    "nota": null,
+    "fuerza": "guia",
+    "patrones": [
+     {
+      "id": "REL-003",
+      "nombre": "Patrón aterogénico",
+      "relacionado_con": []
+     }
+    ],
+    "hallazgo_id": "H-260FC6-02",
+    "texto_paciente": "Colesterol LDL por encima del valor de tamizaje"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M1-EM-004",
+    "nombre": "Obesidad y sobrepeso",
+    "escalamiento": 1,
+    "coincidencia": "alta",
+    "nivel_lenguaje": "resultado_observado",
+    "nota": null,
+    "fuerza": "guia",
+    "patrones": [],
+    "hallazgo_id": "H-260FC6-03",
+    "texto_paciente": "Índice de masa corporal por encima del rango saludable"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M4-IN-002",
+    "nombre": "Hepatitis B y estado frente a la vacuna",
+    "escalamiento": 1,
+    "coincidencia": "alta",
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "nota": "recomendar vacuna",
+    "fuerza": "guia",
+    "patrones": [],
+    "hallazgo_id": "H-260FC6-04",
+    "texto_paciente": "Resultado de tus pruebas de hepatitis B"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M6-RE-001",
+    "nombre": "Ácido úrico alto sin síntomas",
+    "escalamiento": 1,
+    "coincidencia": "alta",
+    "nivel_lenguaje": "resultado_observado",
+    "nota": null,
+    "fuerza": "guia",
+    "patrones": [],
+    "hallazgo_id": "H-260FC6-05",
+    "texto_paciente": "Ácido úrico por encima del rango"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M1-CA-006",
+    "nombre": "Hipertensión arterial o presión elevada (sospecha)",
+    "escalamiento": 1,
+    "coincidencia": "moderada",
+    "nivel_lenguaje": "patron_compatible",
+    "nota": null,
+    "fuerza": "guia",
+    "patrones": [],
+    "hallazgo_id": "H-260FC6-06",
+    "texto_paciente": "Presión arterial por encima de 130/80"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M4-GA-002",
+    "nombre": "Alteración hepatocelular",
+    "escalamiento": 1,
+    "coincidencia": "moderada",
+    "nivel_lenguaje": "patron_compatible",
+    "nota": null,
+    "fuerza": "guia",
+    "patrones": [
+     {
+      "id": "REL-006",
+      "nombre": "Patrón hepático metabólico",
+      "relacionado_con": [
+       "COND-M1-EM-001",
+       "COND-M1-CA-003"
+      ]
+     }
+    ],
+    "hallazgo_id": "H-260FC6-07",
+    "texto_paciente": "Enzima del hígado (ALT) por encima de lo esperado"
+   },
+   {
+    "tipo": "condicion",
+    "id": "COND-M3-NU-A03",
+    "nombre": "Vitamina D baja",
+    "escalamiento": 0,
+    "coincidencia": null,
+    "nivel_lenguaje": null,
+    "nota": "recomendación alimentaria y de sol, sin dosis",
+    "fuerza": "guia",
+    "patrones": [],
+    "hallazgo_id": "H-260FC6-08",
+    "texto_paciente": "Vitamina D fuera del rango"
+   }
+  ],
+  "condiciones": {
+   "COND-M1-CA-001": {
+    "ficha": "COND-M1-CA-001",
+    "nombre": "Dislipidemia aterogénica",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "alta",
+    "escalamiento": 1,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [
+     "ldl_alto",
+     "no_hdl_alto",
+     "hdl_bajo",
+     "tg_alto"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "GPC Colombia dislipidemias 2014",
+     "ACC/AHA 2026, manejo de dislipidemia"
+    ]
+   },
+   "COND-M1-CA-002": {
+    "ficha": "COND-M1-CA-002",
+    "nombre": "Hipercolesterolemia severa o sospecha de hipercolesterolemia familiar",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "GPC Colombia dislipidemias 2014"
+    ]
+   },
+   "COND-M1-CA-003": {
+    "ficha": "COND-M1-CA-003",
+    "nombre": "Hipertrigliceridemia",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "moderada",
+    "escalamiento": 1,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [
+     "tg_alto"
+    ],
+    "datos_faltantes": [
+     "alcohol_48h"
+    ],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACC/AHA 2026, manejo de dislipidemia"
+    ]
+   },
+   "COND-M1-CA-004": {
+    "ficha": "COND-M1-CA-004",
+    "nombre": "Lipoproteína(a) elevada",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ESC/EAS 2025, actualización de dislipidemias",
+     "ACC/AHA 2026"
+    ]
+   },
+   "COND-M1-CA-005": {
+    "ficha": "COND-M1-CA-005",
+    "nombre": "Riesgo cardiovascular global elevado",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "riesgo 2.2 %: categorías por edad de la ESC 2021, provisionales hasta confirmar las de la GPC HTA 2025",
+    "guias": [
+     "GPC Colombia HTA 2025 (Minsalud e IETS)",
+     "SCORE2 working group, Eur Heart J 2021",
+     "PURE-Colombia, Eur J Prev Cardiol 2025"
+    ],
+    "riesgo_10_anos_pct": 2.2,
+    "categoria": "bajo_moderado",
+    "riesgo_sin_recalibrar_pct": 3.7,
+    "calculadora": "SCORE2 región de riesgo alto × factor PURE-Colombia (0,61 hombres; 0,75 mujeres)",
+    "modificadores_a_revisar": [
+     "COND-M1-CA-004 Lp(a)",
+     "COND-M1-CA-A01 ApoB",
+     "COND-M1-CA-A02 hs-CRP"
+    ]
+   },
+   "COND-M1-CA-006": {
+    "ficha": "COND-M1-CA-006",
+    "nombre": "Hipertensión arterial o presión elevada (sospecha)",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "moderada",
+    "escalamiento": 1,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [
+     "pa_elevada"
+    ],
+    "datos_faltantes": [
+     "automonitoreo de 7 días"
+    ],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "GPC Colombia HTA 2025 (Minsalud e IETS)",
+     "AHA/ACC 2025, presión arterial alta"
+    ],
+    "dispara": [
+     "aldosterone",
+     "renin"
+    ]
+   },
+   "COND-M1-CA-007": {
+    "ficha": "COND-M1-CA-007",
+    "nombre": "Riesgo de insuficiencia cardíaca en personas con diabetes",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "sin diabetes: el NT-proBNP no se mide",
+    "guias": [
+     "ADA Standards of Care (vía Diabetes Care 2025)"
+    ]
+   },
+   "COND-M1-CA-A01": {
+    "ficha": "COND-M1-CA-A01",
+    "nombre": "Discordancia ApoB / LDL",
+    "modulo": "M1",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACC/AHA 2026",
+     "NLA 2024 (consenso de expertos)"
+    ]
+   },
+   "COND-M1-CA-A02": {
+    "ficha": "COND-M1-CA-A02",
+    "nombre": "Inflamación de bajo grado",
+    "modulo": "M1",
+    "tipo": "apoyo",
+    "estado": "apoyo",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "a confirmar con una segunda medición",
+    "guias": [
+     "ESC/EAS 2025 (modificador de riesgo)"
+    ],
+    "modifica": [
+     "COND-M1-CA-005"
+    ]
+   },
+   "COND-M1-EM-002": {
+    "ficha": "COND-M1-EM-002",
+    "nombre": "Diabetes tipo 2 en rango diagnóstico",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ADA Standards of Care 2026, sección 2",
+     "GPC Colombia DM2 2016"
+    ]
+   },
+   "COND-M1-EM-001": {
+    "ficha": "COND-M1-EM-001",
+    "nombre": "Prediabetes",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "alta",
+    "escalamiento": 1,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [
+     "glucosa",
+     "hba1c"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ADA Standards of Care 2026, sección 2",
+     "GPC Colombia DM2 2016"
+    ]
+   },
+   "COND-M1-EM-003": {
+    "ficha": "COND-M1-EM-003",
+    "nombre": "Síndrome metabólico",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "alta",
+    "escalamiento": 1,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [
+     "cintura",
+     "trigliceridos",
+     "hdl",
+     "glucosa"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Declaración armonizada IDF/AHA/NHLBI 2009"
+    ],
+    "componentes": "4 de 5"
+   },
+   "COND-M1-EM-004": {
+    "ficha": "COND-M1-EM-004",
+    "nombre": "Obesidad y sobrepeso",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "alta",
+    "escalamiento": 1,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [
+     "sobrepeso",
+     "adiposidad_central"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS, obesidad y sobrepeso"
+    ],
+    "categoria": "sobrepeso",
+    "imc": 28.4
+   },
+   "COND-M1-EM-005": {
+    "ficha": "COND-M1-EM-005",
+    "nombre": "Glucosa baja en ayunas",
+    "modulo": "M1",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Clasificación ADA de hipoglucemia (Standards 2024, tabla 6.4)"
+    ]
+   },
+   "COND-M1-EM-A01": {
+    "ficha": "COND-M1-EM-A01",
+    "nombre": "Riesgo alto de diabetes por FINDRISC",
+    "modulo": "M1",
+    "tipo": "apoyo",
+    "estado": "incompleta",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "findrisc_puntaje"
+    ],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "GPC Colombia DM2 2016"
+    ]
+   },
+   "COND-M1-EM-A02": {
+    "ficha": "COND-M1-EM-A02",
+    "nombre": "Resistencia a la insulina por HOMA-IR",
+    "modulo": "M1",
+    "tipo": "apoyo",
+    "estado": "apoyo",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "HOMA-IR 5.48: refuerza COND-M1-EM-001, COND-M1-EM-003",
+    "guias": [
+     "Sin guía con umbral; ficha homa_ir del Knowledge Base"
+    ],
+    "modifica": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003"
+    ]
+   },
+   "COND-M2-NE-001": {
+    "ficha": "COND-M2-NE-001",
+    "nombre": "Enfermedad renal crónica (sospecha y estadio)",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "KDIGO 2024",
+     "GPC Colombia HTA 2025"
+    ],
+    "estadio": "G1"
+   },
+   "COND-M2-NE-002": {
+    "ficha": "COND-M2-NE-002",
+    "nombre": "Albuminuria con TFG normal",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "pausada_mvp",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "uacr"
+    ],
+    "confusores_aplicados": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "guias": [
+     "KDIGO 2024"
+    ]
+   },
+   "COND-M2-NE-003": {
+    "ficha": "COND-M2-NE-003",
+    "nombre": "Daño renal asociado a diabetes o hipertensión",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "GPC Colombia DM2 2016",
+     "GPC Colombia HTA 2025",
+     "KDIGO 2024"
+    ]
+   },
+   "COND-M2-NE-004": {
+    "ficha": "COND-M2-NE-004",
+    "nombre": "Potasio alto",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "KDIGO 2024"
+    ]
+   },
+   "COND-M2-NE-005": {
+    "ficha": "COND-M2-NE-005",
+    "nombre": "Sodio bajo",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Guía europea de hiponatremia 2014"
+    ]
+   },
+   "COND-M2-NE-006": {
+    "ficha": "COND-M2-NE-006",
+    "nombre": "Hematuria microscópica",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "pausada_mvp",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "sedimento urinario"
+    ],
+    "confusores_aplicados": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "guias": [
+     "AUA/SUFU 2020, enmendada 2025",
+     "KDIGO 2024"
+    ]
+   },
+   "COND-M2-NE-A01": {
+    "ficha": "COND-M2-NE-A01",
+    "nombre": "Potasio bajo",
+    "modulo": "M2",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Endocrine Society 2025, hiperaldosteronismo primario"
+    ]
+   },
+   "COND-M2-NE-A02": {
+    "ficha": "COND-M2-NE-A02",
+    "nombre": "Confirmación de TFG con cistatina C",
+    "modulo": "M2",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "KDIGO 2024"
+    ]
+   },
+   "COND-M2-NE-A03": {
+    "ficha": "COND-M2-NE-A03",
+    "nombre": "Bicarbonato bajo",
+    "modulo": "M2",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "KDIGO 2024"
+    ]
+   },
+   "COND-M2-TI-001": {
+    "ficha": "COND-M2-TI-001",
+    "nombre": "Hipotiroidismo subclínico",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Consenso colombiano de hipotiroidismo 2023",
+     "AACE/ATA (anti-TPO y TSH >= 10 como criterios de tratamiento)"
+    ]
+   },
+   "COND-M2-TI-002": {
+    "ficha": "COND-M2-TI-002",
+    "nombre": "Hipotiroidismo primario",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Consenso colombiano de hipotiroidismo 2023"
+    ]
+   },
+   "COND-M2-TI-003": {
+    "ficha": "COND-M2-TI-003",
+    "nombre": "Sospecha de hipotiroidismo central",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Consenso colombiano de hipotiroidismo 2023"
+    ]
+   },
+   "COND-M2-TI-004": {
+    "ficha": "COND-M2-TI-004",
+    "nombre": "Hipertiroidismo subclínico",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ATA 2016"
+    ]
+   },
+   "COND-M2-TI-005": {
+    "ficha": "COND-M2-TI-005",
+    "nombre": "Hipertiroidismo manifiesto o T3-toxicosis",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ATA 2016"
+    ]
+   },
+   "COND-M2-TI-006": {
+    "ficha": "COND-M2-TI-006",
+    "nombre": "Disfunción tiroidea en el embarazo",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Consenso colombiano de hipotiroidismo 2023"
+    ]
+   },
+   "COND-M2-TI-007": {
+    "ficha": "COND-M2-TI-007",
+    "nombre": "Hiperparatiroidismo primario",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "calcio corregido 9.02",
+    "guias": [
+     "Quinto Taller Internacional de hiperparatiroidismo primario 2022"
+    ]
+   },
+   "COND-M2-TI-008": {
+    "ficha": "COND-M2-TI-008",
+    "nombre": "Hiperaldosteronismo primario (tamizaje en hipertensos)",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "pendiente_refleja",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "el laboratorio debe correr aldosterona y renina",
+    "guias": [
+     "Endocrine Society 2025, hiperaldosteronismo primario",
+     "GPC Colombia HTA 2025"
+    ]
+   },
+   "COND-M2-TI-A01": {
+    "ficha": "COND-M2-TI-A01",
+    "nombre": "Autoinmunidad tiroidea",
+    "modulo": "M2",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "anticuerpos no medidos",
+    "guias": [
+     "Consenso colombiano de hipotiroidismo 2023",
+     "AACE/ATA"
+    ]
+   },
+   "COND-M1-EM-A03": {
+    "ficha": "COND-M1-EM-A03",
+    "nombre": "Diabetes con posible falta de insulina",
+    "modulo": "M1",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "sin diabetes en rango ni conocida",
+    "guias": [
+     "ADA, Standards of Care 2025, clasificación de la diabetes"
+    ]
+   },
+   "COND-M1-EM-A04": {
+    "ficha": "COND-M1-EM-A04",
+    "nombre": "Resistencia a la insulina por TyG y TG/HDL",
+    "modulo": "M1",
+    "tipo": "apoyo",
+    "estado": "apoyo",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [
+     "tyg_alto",
+     "tg_hdl_alta"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "TyG 9.5, TG/HDL 6.61; cortes provisionales 8.8 y 3.0",
+    "guias": [
+     "Simental-Mendía 2008; Guerrero-Romero 2010 (TyG)",
+     "McLaughlin 2003 (TG/HDL)"
+    ],
+    "modifica": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003"
+    ],
+    "tyg_index": 9.5,
+    "tg_hdl_ratio": 6.61
+   },
+   "COND-M2-TI-009": {
+    "ficha": "COND-M2-TI-009",
+    "nombre": "Cortisol de la mañana bajo (posible insuficiencia suprarrenal)",
+    "modulo": "M2",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Endocrine Society 2016, insuficiencia suprarrenal primaria"
+    ]
+   },
+   "COND-M3-HE-001": {
+    "ficha": "COND-M3-HE-001",
+    "nombre": "Anemia ajustada por altitud y tabaquismo",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS 2024, cortes de hemoglobina para definir anemia"
+    ],
+    "hemoglobina_ajustada": 14.4
+   },
+   "COND-M3-HE-002": {
+    "ficha": "COND-M3-HE-002",
+    "nombre": "Anemia por déficit de hierro",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS 2020, ferritina",
+     "OMS 2024, cortes de hemoglobina"
+    ]
+   },
+   "COND-M3-HE-003": {
+    "ficha": "COND-M3-HE-003",
+    "nombre": "Déficit de hierro sin anemia",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS 2020, ferritina"
+    ]
+   },
+   "COND-M3-HE-004": {
+    "ficha": "COND-M3-HE-004",
+    "nombre": "Anemia por déficit de B12 o folato",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "NICE NG239 2024",
+     "OMS, folato"
+    ]
+   },
+   "COND-M3-HE-005": {
+    "ficha": "COND-M3-HE-005",
+    "nombre": "Plaquetas bajas",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Consenso internacional de PTI 2019"
+    ]
+   },
+   "COND-M3-HE-006": {
+    "ficha": "COND-M3-HE-006",
+    "nombre": "Posible sobrecarga de hierro",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "vigilar",
+    "coincidencia": "baja",
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "ferritina alta con saturación normal; ligada a enzimas hepáticas altas",
+    "guias": [
+     "EASL 2022, hemocromatosis",
+     "OMS 2020, ferritina"
+    ]
+   },
+   "COND-M3-HE-A01": {
+    "ficha": "COND-M3-HE-A01",
+    "nombre": "Anemia con perfil inflamatorio",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS 2020, ferritina"
+    ]
+   },
+   "COND-M3-HE-A02": {
+    "ficha": "COND-M3-HE-A02",
+    "nombre": "Leucocitos, neutrófilos o linfocitos fuera de rango",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Intervalo del laboratorio"
+    ]
+   },
+   "COND-M3-HE-A03": {
+    "ficha": "COND-M3-HE-A03",
+    "nombre": "Eosinofilia",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Intervalo del laboratorio"
+    ]
+   },
+   "COND-M3-NU-001": {
+    "ficha": "COND-M3-NU-001",
+    "nombre": "Déficit de vitamina B12",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "NICE NG239 2024"
+    ]
+   },
+   "COND-M3-NU-002": {
+    "ficha": "COND-M3-NU-002",
+    "nombre": "Déficit de folato",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS, folato"
+    ]
+   },
+   "COND-M3-NU-A01": {
+    "ficha": "COND-M3-NU-A01",
+    "nombre": "Homocisteína alta",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "NICE NG239 2024"
+    ]
+   },
+   "COND-M3-NU-A02": {
+    "ficha": "COND-M3-NU-A02",
+    "nombre": "PTH alta con calcio normal",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "PTH no medida (refleja solo con calcio corregido alto)",
+    "guias": [
+     "Quinto Taller Internacional de hiperparatiroidismo primario 2022"
+    ]
+   },
+   "COND-M3-NU-A03": {
+    "ficha": "COND-M3-NU-A03",
+    "nombre": "Vitamina D baja",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "activa",
+    "coincidencia": null,
+    "escalamiento": 0,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [
+     "vitd_baja"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "recomendación alimentaria y de sol, sin dosis",
+    "guias": [
+     "Endocrine Society 2024"
+    ]
+   },
+   "COND-M3-NU-A04": {
+    "ficha": "COND-M3-NU-A04",
+    "nombre": "Vitaminas informativas",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Regla de vitaminas (documento 07)",
+     "FDA, interferencia de biotina en inmunoensayos",
+     "ficha vitamin_b1 (Wernicke)"
+    ],
+    "detalle": {
+     "vitamin_b1": "en_rango",
+     "vitamin_b6": "en_rango",
+     "vitamin_a": "en_rango",
+     "vitamin_e": "en_rango",
+     "vitamin_k1": "en_rango",
+     "vitamin_c": "no_interpretable",
+     "biotin": "solo valor",
+     "niacin": "solo valor",
+     "omega3_index": "solo valor",
+     "omega6_omega3_ratio": "solo valor",
+     "coq10": "solo valor"
+    }
+   },
+   "COND-M4-GA-001": {
+    "ficha": "COND-M4-GA-001",
+    "nombre": "Riesgo de fibrosis por hígado graso metabólico (FIB-4)",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "FIB-4 0.89",
+    "guias": [
+     "EASL-EASD-EASO 2024, hígado graso metabólico"
+    ],
+    "fib4": 0.89
+   },
+   "COND-M4-GA-002": {
+    "ficha": "COND-M4-GA-002",
+    "nombre": "Alteración hepatocelular",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "moderada",
+    "escalamiento": 1,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [
+     "alt_alta"
+    ],
+    "datos_faltantes": [
+     "segunda medición"
+    ],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACG 2017, evaluación de pruebas hepáticas alteradas"
+    ],
+    "dispara": [
+     "iga",
+     "anti_ttg_iga"
+    ]
+   },
+   "COND-M4-GA-003": {
+    "ficha": "COND-M4-GA-003",
+    "nombre": "Alteración colestásica",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACG 2017"
+    ]
+   },
+   "COND-M4-GA-004": {
+    "ficha": "COND-M4-GA-004",
+    "nombre": "Sangre oculta en heces positiva",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "pausada_mvp",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "fit_stool"
+    ],
+    "confusores_aplicados": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "guias": [
+     "Res. 3280 de 2018",
+     "USPSTF 2021"
+    ]
+   },
+   "COND-M4-GA-005": {
+    "ficha": "COND-M4-GA-005",
+    "nombre": "Infección por H. pylori",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "pausada_mvp",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "hpylori_stool_ag"
+    ],
+    "confusores_aplicados": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "guias": [
+     "Asociación Colombiana de Gastroenterología 2025, H. pylori"
+    ]
+   },
+   "COND-M4-GA-006": {
+    "ficha": "COND-M4-GA-006",
+    "nombre": "Enfermedad celíaca (prueba dirigida)",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "pendiente_refleja",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "el laboratorio debe correr IgA total y anti-tTG IgA (COND-M4-GA-002)",
+    "guias": [
+     "ACG 2023, enfermedad celíaca"
+    ]
+   },
+   "COND-M4-GA-A01": {
+    "ficha": "COND-M4-GA-A01",
+    "nombre": "Bilirrubina indirecta elevada aislada",
+    "modulo": "M4",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACG 2017"
+    ]
+   },
+   "COND-M4-GA-A02": {
+    "ficha": "COND-M4-GA-A02",
+    "nombre": "Alteración hepática con consumo de alcohol",
+    "modulo": "M4",
+    "tipo": "apoyo",
+    "estado": "incompleta",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "consumo de alcohol"
+    ],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACG 2017"
+    ]
+   },
+   "COND-M4-IN-001": {
+    "ficha": "COND-M4-IN-001",
+    "nombre": "Hepatitis C",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Minsalud, tamización de hepatitis C",
+     "USPSTF 2020"
+    ]
+   },
+   "COND-M4-IN-002": {
+    "ficha": "COND-M4-IN-002",
+    "nombre": "Hepatitis B y estado frente a la vacuna",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "alta",
+    "escalamiento": 1,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [
+     "sin_anticuerpos_protectores"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "recomendar vacuna",
+    "guias": [
+     "CDC 2023, interpretación serológica de hepatitis B",
+     "Res. 1314 de 2020"
+    ],
+    "estado_hb": "susceptible"
+   },
+   "COND-M4-IN-003": {
+    "ficha": "COND-M4-IN-003",
+    "nombre": "Enfermedad de Chagas crónica",
+    "modulo": "M4",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Minsalud, algoritmo de Chagas (pieza para gestantes)"
+    ]
+   },
+   "COND-M4-IN-A01": {
+    "ficha": "COND-M4-IN-A01",
+    "nombre": "Infección urinaria con síntomas",
+    "modulo": "M4",
+    "tipo": "apoyo",
+    "estado": "pausada_mvp",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "guias": [
+     "IDSA 2019, bacteriuria asintomática"
+    ]
+   },
+   "COND-M4-IN-A02": {
+    "ficha": "COND-M4-IN-A02",
+    "nombre": "Parasitosis intestinal",
+    "modulo": "M4",
+    "tipo": "apoyo",
+    "estado": "pausada_mvp",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [
+     "coprológico"
+    ],
+    "confusores_aplicados": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "guias": [
+     "Pendiente de fuente colombiana"
+    ]
+   },
+   "COND-M5-MU-001": {
+    "ficha": "COND-M5-MU-001",
+    "nombre": "Andrógenos altos (posible SOP)",
+    "modulo": "M5",
+    "tipo": "incluida",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Guía internacional de SOP 2023"
+    ]
+   },
+   "COND-M5-MU-002": {
+    "ficha": "COND-M5-MU-002",
+    "nombre": "FSH alta en menores de 40 años",
+    "modulo": "M5",
+    "tipo": "incluida",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "NICE NG23, menopausia"
+    ]
+   },
+   "COND-M5-MU-003": {
+    "ficha": "COND-M5-MU-003",
+    "nombre": "Prolactina alta",
+    "modulo": "M5",
+    "tipo": "incluida",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Endocrine Society 2011",
+     "Febrasgo y SBEM 2024"
+    ]
+   },
+   "COND-M5-MU-A01": {
+    "ficha": "COND-M5-MU-A01",
+    "nombre": "Anemia en el embarazo",
+    "modulo": "M5",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS 2024, cortes de hemoglobina"
+    ]
+   },
+   "COND-M5-UR-001": {
+    "ficha": "COND-M5-UR-001",
+    "nombre": "PSA elevado",
+    "modulo": "M5",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Res. 3280 de 2018",
+     "AUA/SUO 2026, detección temprana de cáncer de próstata"
+    ]
+   },
+   "COND-M5-UR-002": {
+    "ficha": "COND-M5-UR-002",
+    "nombre": "Testosterona baja",
+    "modulo": "M5",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Endocrine Society 2018, hipogonadismo masculino"
+    ]
+   },
+   "COND-M5-UR-A01": {
+    "ficha": "COND-M5-UR-A01",
+    "nombre": "Testosterona libre calculada",
+    "modulo": "M5",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "no indicada: testosterona total 412 ng/dL fuera de 200 a 400, SHBG en rango e IMC 28.4",
+    "guias": [
+     "Endocrine Society 2018"
+    ]
+   },
+   "COND-M5-UR-A02": {
+    "ficha": "COND-M5-UR-A02",
+    "nombre": "Relación PSA libre / total",
+    "modulo": "M5",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": "PSA libre no medido (solo se mide con PSA total entre 4 y 10)",
+    "guias": [
+     "Pendiente de fuente"
+    ]
+   },
+   "COND-M6-RE-001": {
+    "ficha": "COND-M6-RE-001",
+    "nombre": "Ácido úrico alto sin síntomas",
+    "modulo": "M6",
+    "tipo": "incluida",
+    "estado": "activa",
+    "coincidencia": "alta",
+    "escalamiento": 1,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [
+     "urico_alto"
+    ],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACR 2020, gota"
+    ]
+   },
+   "COND-M6-RE-A01": {
+    "ficha": "COND-M6-RE-A01",
+    "nombre": "ANA positivo",
+    "modulo": "M6",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Satoh 2012 (prevalencia en población general)",
+     "Criterios EULAR/ACR 2019 para lupus"
+    ]
+   },
+   "COND-M6-RE-A02": {
+    "ficha": "COND-M6-RE-A02",
+    "nombre": "VSG alta",
+    "modulo": "M6",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "ACR/EULAR 2010 (como reactante de fase aguda solo con sinovitis clínica)"
+    ]
+   },
+   "COND-M6-MI-001": {
+    "ficha": "COND-M6-MI-001",
+    "nombre": "Riesgo de desnutrición",
+    "modulo": "M6",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "riesgo_potencial",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "GLIM 2019"
+    ]
+   },
+   "COND-M6-MI-A01": {
+    "ficha": "COND-M6-MI-A01",
+    "nombre": "Lectura por edad del panel",
+    "modulo": "M6",
+    "tipo": "apoyo",
+    "estado": "apoyo",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Reglas de los Lotes 1 a 6",
+     "OMS 2024, cortes de hemoglobina"
+    ],
+    "recordatorios": []
+   },
+   "COND-M6-MI-A02": {
+    "ficha": "COND-M6-MI-A02",
+    "nombre": "Edad biológica (PhenoAge)",
+    "modulo": "M6",
+    "tipo": "apoyo",
+    "estado": "activa",
+    "coincidencia": null,
+    "escalamiento": 0,
+    "nivel_lenguaje": null,
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Levine et al. 2018, Aging 10(4):573-591"
+    ],
+    "phenoage": 44.3,
+    "diferencia": -1.7
+   },
+   "COND-M3-HE-007": {
+    "ficha": "COND-M3-HE-007",
+    "nombre": "Glóbulos rojos altos (eritrocitosis) ajustados por altitud",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "OMS 2024, cortes de hemoglobina y ajuste por altitud",
+     "BSH 2019, investigación de la eritrocitosis",
+     "OMS 2016, criterios de policitemia vera"
+    ],
+    "hemoglobina_ajustada": 14.4
+   },
+   "COND-M3-HE-008": {
+    "ficha": "COND-M3-HE-008",
+    "nombre": "Plaquetas altas (trombocitosis)",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "BSH, investigación de la trombocitosis",
+     "OMS, criterios de trombocitemia esencial"
+    ]
+   },
+   "COND-M3-HE-A04": {
+    "ficha": "COND-M3-HE-A04",
+    "nombre": "Rasgo talasémico probable",
+    "modulo": "M3",
+    "tipo": "apoyo",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "BSH, tamizaje de hemoglobinopatías",
+     "Mentzer 1973"
+    ]
+   },
+   "COND-M3-HE-009": {
+    "ficha": "COND-M3-HE-009",
+    "nombre": "Glóbulos rojos grandes sin anemia (macrocitosis)",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "patron_compatible",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "BSH, evaluación de la macrocitosis"
+    ]
+   },
+   "COND-M3-HE-010": {
+    "ficha": "COND-M3-HE-010",
+    "nombre": "Dos o más líneas de la sangre bajas",
+    "modulo": "M3",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "Criterio hematológico general de bicitopenia y pancitopenia"
+    ]
+   },
+   "COND-M6-MI-002": {
+    "ficha": "COND-M6-MI-002",
+    "nombre": "Posible proteína anormal en la sangre (gammapatía)",
+    "modulo": "M6",
+    "tipo": "incluida",
+    "estado": "no_activa",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "condicion_requiere_evaluacion",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "IMWG (International Myeloma Working Group)",
+     "NCCN, gammapatías monoclonales"
+    ]
+   },
+   "COND-M5-MU-004": {
+    "ficha": "COND-M5-MU-004",
+    "nombre": "Transición a la menopausia",
+    "modulo": "M5",
+    "tipo": "apoyo",
+    "estado": "no_aplica",
+    "coincidencia": null,
+    "escalamiento": null,
+    "nivel_lenguaje": "resultado_observado",
+    "criterios_cumplidos": [],
+    "datos_faltantes": [],
+    "confusores_aplicados": [],
+    "nota": null,
+    "guias": [
+     "STRAW+10 (2012), etapas del envejecimiento reproductivo",
+     "NICE NG23, menopausia"
+    ]
+   }
+  },
+  "relaciones": {
+   "REL-001": {
+    "relacion": "REL-001",
+    "nombre": "Patrón cardiometabólico",
+    "tipo": "patron",
+    "estado": "activa",
+    "miembros": [
+     "COND-M1-EM-001",
+     "COND-M1-EM-003",
+     "COND-M1-CA-003",
+     "COND-M1-EM-A02"
+    ],
+    "escalamiento": null,
+    "senales": [
+     "glucemico",
+     "insulina",
+     "trigliceridos",
+     "hdl_bajo"
+    ],
+    "nota": null,
+    "fuerza_evidencia": "guía (ADA, declaración armonizada de síndrome metabólico)",
+    "frase_permitida": "Varios de tus resultados (glucosa, triglicéridos, colesterol HDL e insulina) apuntan en la misma dirección: el cuerpo está teniendo más trabajo para manejar el azúcar. Por eso los explicamos juntos."
+   },
+   "REL-002": {
+    "relacion": "REL-002",
+    "nombre": "Patrón cardiometabólico con inflamación",
+    "tipo": "vigilar",
+    "estado": "vigilar",
+    "miembros": [],
+    "escalamiento": null,
+    "senales": [],
+    "nota": "hs-CRP 3.4",
+    "fuerza_evidencia": "asociación",
+    "frase_permitida": null
+   },
+   "REL-003": {
+    "relacion": "REL-003",
+    "nombre": "Patrón aterogénico",
+    "tipo": "patron",
+    "estado": "activa",
+    "miembros": [
+     "COND-M1-CA-001"
+    ],
+    "escalamiento": null,
+    "senales": [
+     "apob_alta",
+     "ldl_o_no_hdl_alto"
+    ],
+    "nota": null,
+    "fuerza_evidencia": "guía (ESC/EAS, ACC/AHA)",
+    "frase_permitida": "Tu colesterol LDL y la apolipoproteína B, que cuenta las partículas que llevan colesterol a las arterias, están altos a la vez. Juntos dan una señal más clara que cada uno por separado."
+   },
+   "REL-006": {
+    "relacion": "REL-006",
+    "nombre": "Patrón hepático metabólico",
+    "tipo": "patron",
+    "estado": "activa",
+    "miembros": [
+     "COND-M4-GA-002",
+     "COND-M1-EM-001",
+     "COND-M1-CA-003"
+    ],
+    "escalamiento": null,
+    "senales": [
+     "enzima_hepatica",
+     "senal_metabolica"
+    ],
+    "nota": "FIB-4 0.89",
+    "fuerza_evidencia": "guía (ACG, EASL-EASD-EASO)",
+    "frase_permitida": "Tu hígado muestra cambios en sus enzimas que suelen ir de la mano con el manejo del azúcar y las grasas en la sangre. Mejoran con los mismos hábitos."
+   },
+   "REL-010": {
+    "relacion": "REL-010",
+    "nombre": "Daño renal: albuminuria con TFG baja",
+    "tipo": "patron",
+    "estado": "pausada_mvp",
+    "miembros": [],
+    "escalamiento": null,
+    "senales": [],
+    "nota": "no se evalúa: panel solo_sangre",
+    "fuerza_evidencia": "guía (KDIGO 2024)",
+    "frase_permitida": null
+   },
+   "REL-021": {
+    "relacion": "REL-021",
+    "nombre": "Vitamina D baja con hs-CRP alta",
+    "tipo": "vigilar",
+    "estado": "vigilar",
+    "miembros": [],
+    "escalamiento": null,
+    "senales": [],
+    "nota": null,
+    "fuerza_evidencia": "asociación",
+    "frase_permitida": null
+   }
+  },
+  "seguridad": {
+   "SEG-013": {
+    "seguridad": "SEG-013",
+    "nombre": "Orina y heces sin condición",
+    "estado": "pausada_mvp",
+    "escalamiento": 0,
+    "detalle": [
+     "no se evalúa: panel solo_sangre"
+    ],
+    "revision_medica_obligatoria": false,
+    "canal": null
+   }
+  },
+  "vigilar": [
+   {
+    "id": "COND-M3-HE-006",
+    "nombre": "Posible sobrecarga de hierro",
+    "nota": "ferritina alta con saturación normal; ligada a enzimas hepáticas altas"
+   },
+   {
+    "id": "REL-002",
+    "nombre": "Patrón cardiometabólico con inflamación",
+    "nota": "hs-CRP 3.4"
+   },
+   {
+    "id": "REL-021",
+    "nombre": "Vitamina D baja con hs-CRP alta",
+    "nota": null
+   }
+  ],
+  "apoyos": [
+   {
+    "id": "COND-M1-CA-A02",
+    "nombre": "Inflamación de bajo grado",
+    "nota": "a confirmar con una segunda medición"
+   },
+   {
+    "id": "COND-M1-EM-A02",
+    "nombre": "Resistencia a la insulina por HOMA-IR",
+    "nota": "HOMA-IR 5.48: refuerza COND-M1-EM-001, COND-M1-EM-003"
+   },
+   {
+    "id": "COND-M1-EM-A04",
+    "nombre": "Resistencia a la insulina por TyG y TG/HDL",
+    "nota": "TyG 9.5, TG/HDL 6.61; cortes provisionales 8.8 y 3.0"
+   },
+   {
+    "id": "COND-M6-MI-A01",
+    "nombre": "Lectura por edad del panel",
+    "nota": null
+   }
+  ],
+  "reflejas_pendientes": [
+   {
+    "id": "COND-M2-TI-008",
+    "nota": "el laboratorio debe correr aldosterona y renina"
+   },
+   {
+    "id": "COND-M4-GA-006",
+    "nota": "el laboratorio debe correr IgA total y anti-tTG IgA (COND-M4-GA-002)"
+   }
+  ],
+  "incompletas": [
+   {
+    "id": "COND-M1-EM-A01",
+    "faltan": [
+     "findrisc_puntaje"
+    ]
+   },
+   {
+    "id": "COND-M4-GA-A02",
+    "faltan": [
+     "consumo de alcohol"
+    ]
+   }
+  ],
+  "pausadas_mvp": [
+   "COND-M2-NE-002",
+   "COND-M2-NE-006",
+   "COND-M4-GA-004",
+   "COND-M4-GA-005",
+   "COND-M4-IN-A01",
+   "COND-M4-IN-A02",
+   "REL-010",
+   "SEG-013"
+  ],
+  "evaluadas_parcialmente": [
+   {
+    "id": "COND-M2-NE-001",
+    "nota": "solo con la TFG; sin estadio de albuminuria (orina en pausa)"
+   },
+   {
+    "id": "COND-M2-NE-003",
+    "nota": "solo con la TFG; sin albuminuria (orina en pausa)"
+   },
+   {
+    "id": "COND-M2-NE-A02",
+    "nota": "sin albuminuria para descartar daño renal (orina en pausa)"
+   },
+   {
+    "id": "COND-M3-HE-002",
+    "nota": "sin sangre oculta en heces para buscar la causa (heces en pausa)"
+   },
+   {
+    "id": "COND-M3-HE-A03",
+    "nota": "sin coprológico para cruzar con parásitos (heces en pausa)"
+   }
+  ],
+  "no_interpretables": [],
+  "datos_faltantes": [
+   "alcohol_48h",
+   "automonitoreo de 7 días",
+   "consumo de alcohol",
+   "findrisc_puntaje",
+   "segunda medición"
+  ],
+  "dudas_lectura": [
+   "Antígeno de Helicobacter pylori en heces: El laboratorio marcó este resultado con una observación (*).",
+   "Resultados no usados (panel solo_sangre): fit_stool, hpylori_stool_ag, stool_exam, uacr, urinalysis"
+  ],
+  "revision_medica_obligatoria": [
+   "acth",
+   "cortisol",
+   "hs_troponin",
+   "igf1",
+   "nrbc",
+   "osmolality"
+  ],
+  "que_conviene_confirmar": [
+   "Presión arterial por encima de 130/80: coincidencia moderada, confirmar con una segunda medición.",
+   "Enzima del hígado (ALT) por encima de lo esperado: coincidencia moderada, confirmar con una segunda medición."
+  ],
+  "preguntas_para_el_profesional": [],
+  "restricciones_nutricionales": {
+   "exigir": [
+    "baja_en_grasa_saturada",
+    "baja_en_sodio",
+    "sin_azucar_anadida"
+   ],
+   "excluir": [
+    "alta_en_purinas"
+   ],
+   "preferir": [
+    "alta_en_fibra"
+   ],
+   "motivos": [
+    "glucosa: sin azúcar añadida y con fibra",
+    "presión o riñón: bajas en sodio",
+    "lípidos o hígado: poca grasa saturada y más fibra",
+    "ácido úrico alto: sin vísceras ni sardinas"
+   ]
+  }
+ },
+ "control_salida": {
+  "ok": true,
+  "problemas": [],
+  "hallazgos_sin_texto": []
+ },
+ "trazabilidad": {
+  "sha256_pdf": "d46cbc4369882edd2ed2ba3668e48ce42295017624e960d07fca63246b9edcc0",
+  "version_kb": "1·2026-10-10",
+  "version_redaccion": "plantillas-v1",
+  "version_modelo": null,
+  "calculados": {
+   "imc": 28.4,
+   "homa_ir": 5.48,
+   "non_hdl_c": 192.0,
+   "remnant_cholesterol": 50.0,
+   "tc_hdl_ratio": 6.33,
+   "transferrin_saturation": 37.0,
+   "egfr": 96.0,
+   "testosterone_free": null,
+   "indice_androgenos_libres": null,
+   "globulin": 2.7,
+   "ag_ratio": 1.7,
+   "bun_creatinine_ratio": 15.3,
+   "apob_apoa1_ratio": 1.05,
+   "calcio_corregido": 9.02,
+   "brecha_osmolar": 0.4,
+   "sodio_corregido": null,
+   "eosinofilos_abs": 0.25,
+   "fib4": 0.89,
+   "psa_libre_porcentaje": null,
+   "tyg_index": 9.5,
+   "tg_hdl_ratio": 6.61,
+   "mentzer_index": null,
+   "nlr": 1.88,
+   "hemoglobina_ajustada": 14.4,
+   "phenoage": 44.3
+  }
+ }
+}

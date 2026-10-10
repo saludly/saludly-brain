@@ -1,0 +1,14 @@
+id: COND-M1-EM-A02
+tipo: condicion
+titulo_paciente: "Señal de que la insulina trabaja con más esfuerzo"
+que_es: "La insulina es la hormona que mete el azúcar de la sangre en las células; el HOMA-IR estima qué tan bien está funcionando."
+por_que_te_aparece:
+  - "Tu insulina en ayunas salió en {insulin}; el laboratorio indica su propio rango de referencia."
+  - "Tu HOMA-IR, que se calcula con tu glucosa y tu insulina, salió en {homa_ir}; usamos 2,5 como referencia provisional."
+riesgo_claro: "Si el cuerpo necesita cada vez más insulina durante años, aumenta la probabilidad de que la glucosa suba hasta el rango de diabetes."
+ejemplo_simple: "Es como una puerta que se traba: hay que empujar más fuerte para que entre lo mismo."
+incertidumbre: "No existe un corte único validado para el HOMA-IR, y el ayuno o el estrés lo cambian. Tu médico lo interpreta junto con tus otros resultados."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Sin guía con umbral; ficha homa_ir del Knowledge Base"]
+estado_revision: pendiente

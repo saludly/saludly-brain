@@ -1,0 +1,15 @@
+id: COND-M1-EM-003
+tipo: condicion
+titulo_paciente: "Varios componentes del síndrome metabólico"
+que_es: "El síndrome metabólico es un conjunto de cinco señales que, juntas, aumentan el riesgo de diabetes y de problemas del corazón."
+por_que_te_aparece:
+  - "Cumples al menos 3 de los 5 componentes: cintura, triglicéridos, colesterol HDL, presión y glucosa."
+  - "Tus triglicéridos salieron en {triglycerides}; este componente cuenta desde 150 mg/dL."
+  - "Tu glucosa en ayunas salió en {glucose}; este componente cuenta desde 100 mg/dL."
+riesgo_claro: "Si estas señales siguen juntas por años, aumenta la probabilidad de diabetes y de problemas del corazón y de las arterias."
+ejemplo_simple: "Es como varias goteras en el mismo techo: cada una es pequeña, pero juntas mojan más la casa."
+incertidumbre: "Es un patrón, no un diagnóstico; el ayuno incompleto o algunos medicamentos cambian los valores y tu médico lo confirma. La buena noticia: todos mejoran con los mismos hábitos."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Declaración armonizada IDF/AHA/NHLBI 2009"]
+estado_revision: pendiente

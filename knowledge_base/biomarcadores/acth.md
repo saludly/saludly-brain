@@ -20,6 +20,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - SEG-002
+- COND-M2-TI-009
 combine_with:
 - cortisol
 - dhea_s

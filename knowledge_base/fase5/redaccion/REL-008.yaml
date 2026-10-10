@@ -1,0 +1,15 @@
+id: REL-008
+tipo: patron
+titulo_paciente: "Enzimas que probablemente vienen del músculo"
+que_es: "La CK es una enzima de los músculos; cuando los músculos trabajan fuerte, sueltan a la sangre la CK y otras enzimas, como la AST y la LDH."
+por_que_te_aparece:
+  - "Tu CK, una enzima de los músculos, salió en {ck_cpk}."
+  - "Tu AST, una enzima que está en el hígado y en los músculos, salió en {ast}."
+  - "Tu LDH, una enzima presente en muchos tejidos, salió en {ldh}."
+riesgo_claro: "Lo más común es que se deba a ejercicio reciente; si se repite sin ejercicio o hay dolor muscular, conviene revisarlo con tu médico."
+ejemplo_simple: "Es como el aserrín después de cortar madera: indica que hubo trabajo, no que algo esté roto."
+incertidumbre: "El ejercicio intenso de los dos días anteriores y algunos medicamentos para el colesterol lo explican con frecuencia; conviene repetir el examen sin entrenar fuerte antes."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Fichas ck_cpk, ast y ldh"]
+estado_revision: pendiente

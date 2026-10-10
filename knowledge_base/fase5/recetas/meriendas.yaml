@@ -1,0 +1,591 @@
+# Meriendas y refrigerios de Saludly · Fase 5
+# Recetas propias de Saludly. Los nutrientes los calcula el código con recetas/alimentos.yaml.
+# Gramos según el estado del identificador: cereales, tubérculos y leguminosas cocidos; carnes y pescados crudos.
+
+- id: RCT-MER-001
+  nombre: "Yogur natural con fresas y chía"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 3
+  dificultad: facil
+  ingredientes:
+    - {alimento: yogur_natural_sin_azucar, gramos: 150, medida: "3/4 de taza"}
+    - {alimento: fresa, gramos: 100, medida: "6 fresas"}
+    - {alimento: semillas_chia, gramos: 8, medida: "2 cucharaditas"}
+  pasos:
+    - "Pica las fresas."
+    - "Mézclalas con el yogur y la chía."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "Si te gusta más dulce, aplasta un par de fresas dentro del yogur en vez de usar azúcar."
+
+- id: RCT-MER-002
+  nombre: "Manzana con mantequilla de maní"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 3
+  dificultad: facil
+  ingredientes:
+    - {alimento: manzana, gramos: 150, medida: "1 manzana"}
+    - {alimento: mantequilla_mani_natural, gramos: 15, medida: "1 cucharada"}
+  pasos:
+    - "Corta la manzana en tajadas."
+    - "Úntalas o mójalas en la mantequilla de maní."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "Comer la manzana con cáscara aporta más fibra."
+
+- id: RCT-MER-003
+  nombre: "Arepita con queso campesino"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: arepa_maiz_blanca, gramos: 50, medida: "1 arepa pequeña"}
+    - {alimento: queso_campesino, gramos: 30, medida: "1 tajada delgada"}
+    - {alimento: tomate, gramos: 30, medida: "2 rodajas"}
+  pasos:
+    - "Asa la arepa en un sartén sin aceite."
+    - "Ábrela y rellénala con el queso y el tomate."
+  etiquetas: [colombiana, vegetariano, sin_gluten, rapida, economica]
+  consejo: "Una arepa pequeña con queso quita el hambre de la tarde sin pesar."
+
+- id: RCT-MER-004
+  nombre: "Mango con limón y maní"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: mango, gramos: 200, medida: "1 mango pequeño"}
+    - {alimento: limon, gramos: 10, medida: "1/2 limón"}
+    - {alimento: mani_sin_sal, gramos: 15, medida: "1 cucharada"}
+  pasos:
+    - "Pela y corta el mango en tiras."
+    - "Exprime el limón encima y acompaña con el maní."
+  etiquetas: [colombiana, vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "El limón resalta el sabor del mango, así que no hace falta sal."
+
+- id: RCT-MER-005
+  nombre: "Huevos duros con mandarina"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 12
+  dificultad: facil
+  ingredientes:
+    - {alimento: huevo_entero, gramos: 100, medida: "2 huevos"}
+    - {alimento: mandarina, gramos: 120, medida: "1 mandarina grande"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Cocina los huevos diez minutos en agua hirviendo y pásalos a agua fría."
+    - "Pélalos, ponles pimienta y acompaña con la mandarina."
+  etiquetas: [vegetariano, sin_lactosa, sin_gluten, economica]
+  consejo: "Deja huevos duros listos en la nevera para tener una merienda con proteína a la mano."
+
+- id: RCT-MER-006
+  nombre: "Hummus casero con palitos de zanahoria y pepino"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 80, medida: "1/3 de taza"}
+    - {alimento: ajo, gramos: 2, medida: "1/2 diente"}
+    - {alimento: limon, gramos: 10, medida: "1/2 limón"}
+    - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: ajonjoli, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: zanahoria, gramos: 80, medida: "1 zanahoria"}
+    - {alimento: pepino, gramos: 80, medida: "1/2 pepino"}
+  pasos:
+    - "Licúa el garbanzo con el ajo, el limón, el aceite, el ajonjolí y un chorrito de agua."
+    - "Corta la zanahoria y el pepino en palitos."
+    - "Moja los palitos en el hummus."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, economica]
+  consejo: "Prepara el doble de hummus: dura tres días en la nevera bien tapado."
+
+- id: RCT-MER-007
+  nombre: "Kumis con uchuvas y almendras"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 3
+  dificultad: facil
+  ingredientes:
+    - {alimento: kumis_sin_azucar, gramos: 200, medida: "1 vaso"}
+    - {alimento: uchuva, gramos: 60, medida: "10 uchuvas"}
+    - {alimento: almendras, gramos: 8, medida: "6 almendras"}
+  pasos:
+    - "Sirve el kumis frío."
+    - "Acompaña con las uchuvas y las almendras."
+  etiquetas: [colombiana, vegetariano, sin_gluten, rapida]
+  consejo: "Las uchuvas aportan dulzor natural y vitamina C."
+
+- id: RCT-MER-008
+  nombre: "Galletas integrales con queso cottage y tomate"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: galleta_integral_sin_azucar, gramos: 30, medida: "4 galletas"}
+    - {alimento: queso_cottage, gramos: 80, medida: "1/3 de taza"}
+    - {alimento: tomate, gramos: 40, medida: "1/2 tomate pequeño"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Pica el tomate en cubos pequeños y mézclalo con el queso y el orégano."
+    - "Sirve encima de las galletas."
+  etiquetas: [vegetariano, rapida]
+  consejo: "El queso cottage tiene mucha proteína y poca grasa."
+
+- id: RCT-MER-009
+  nombre: "Batido de papaya y avena"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: papaya, gramos: 200, medida: "1 tajada grande"}
+    - {alimento: leche_descremada, gramos: 200, medida: "1 vaso"}
+    - {alimento: avena_hojuelas, gramos: 20, medida: "2 cucharadas"}
+  pasos:
+    - "Pica la papaya y licúala con la leche y la avena."
+    - "Sirve de inmediato, sin colar."
+  etiquetas: [vegetariano, rapida, economica]
+  consejo: "Sin colar conservas toda la fibra de la fruta y de la avena."
+
+- id: RCT-MER-010
+  nombre: "Maní, almendras y uvas"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 2
+  dificultad: facil
+  ingredientes:
+    - {alimento: mani_sin_sal, gramos: 15, medida: "1 cucharada"}
+    - {alimento: almendras, gramos: 10, medida: "8 almendras"}
+    - {alimento: uvas, gramos: 100, medida: "1 racimo pequeño"}
+  pasos:
+    - "Lava las uvas."
+    - "Sírvelas con el maní y las almendras en un recipiente pequeño."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "Sirve la porción en un recipiente en vez de comer del paquete para no pasarte."
+
+- id: RCT-MER-011
+  nombre: "Guayaba con queso campesino"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 3
+  dificultad: facil
+  ingredientes:
+    - {alimento: guayaba, gramos: 150, medida: "2 guayabas"}
+    - {alimento: queso_campesino, gramos: 30, medida: "1 tajada delgada"}
+  pasos:
+    - "Lava y parte las guayabas en tajadas."
+    - "Acompáñalas con el queso."
+  etiquetas: [colombiana, vegetariano, sin_gluten, rapida, economica]
+  consejo: "Es la versión fresca del bocadillo con queso, con toda la vitamina C y sin azúcar."
+
+- id: RCT-MER-012
+  nombre: "Tostada integral con aguacate y semillas"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: pan_integral, gramos: 30, medida: "1 tajada"}
+    - {alimento: aguacate, gramos: 50, medida: "1/4 de aguacate"}
+    - {alimento: limon, gramos: 5, medida: "unas gotas"}
+    - {alimento: semillas_girasol, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Tuesta el pan."
+    - "Aplasta el aguacate con el limón y la pimienta, úntalo y espolvorea las semillas."
+  etiquetas: [vegano, vegetariano, sin_lactosa, rapida]
+  consejo: "La pimienta y el limón reemplazan bien la sal en el aguacate."
+
+- id: RCT-MER-013
+  nombre: "Edamame con limón"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 8
+  dificultad: facil
+  ingredientes:
+    - {alimento: edamame, gramos: 140, medida: "1 taza"}
+    - {alimento: limon, gramos: 10, medida: "1/2 limón"}
+    - {alimento: sal, gramos: 0.5, medida: "1 pizca pequeña"}
+  pasos:
+    - "Cocina el edamame cinco minutos en agua hirviendo y escúrrelo."
+    - "Exprime el limón encima con una pizca de sal."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "Es una merienda vegetal con proteína; se consigue congelado en los supermercados."
+
+- id: RCT-MER-014
+  nombre: "Yogur griego con mango"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 3
+  dificultad: facil
+  ingredientes:
+    - {alimento: yogur_griego_natural, gramos: 150, medida: "2/3 de taza"}
+    - {alimento: mango, gramos: 100, medida: "1/2 mango"}
+    - {alimento: canela, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Pica el mango en cubos."
+    - "Sírvelo sobre el yogur con la canela."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "El yogur griego tiene casi el doble de proteína que el yogur normal."
+
+- id: RCT-MER-015
+  nombre: "Salpicón casero sin azúcar"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: sandia, gramos: 100, medida: "1 tajada pequeña"}
+    - {alimento: papaya, gramos: 80, medida: "1/2 tajada"}
+    - {alimento: banano, gramos: 60, medida: "1/2 banano"}
+    - {alimento: pina, gramos: 80, medida: "1 tajada delgada"}
+    - {alimento: naranja, gramos: 120, medida: "el jugo de 1 naranja"}
+  pasos:
+    - "Pica todas las frutas en cubos pequeños."
+    - "Báñalas con el jugo de naranja recién exprimido y sirve frío."
+  etiquetas: [colombiana, vegano, vegetariano, sin_lactosa, sin_gluten, economica]
+  consejo: "El jugo de naranja reemplaza la gaseosa del salpicón tradicional sin azúcar añadida."
+
+- id: RCT-MER-016
+  nombre: "Ensalada de atún sobre galletas integrales"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: atun_lata_agua, gramos: 60, medida: "1/2 lata escurrida"}
+    - {alimento: galleta_integral_sin_azucar, gramos: 25, medida: "3 galletas"}
+    - {alimento: cebolla_cabezona, gramos: 10, medida: "1 cucharada picada"}
+    - {alimento: tomate, gramos: 30, medida: "2 rodajas picadas"}
+    - {alimento: limon, gramos: 5, medida: "unas gotas"}
+  pasos:
+    - "Mezcla el atún con la cebolla, el tomate y el limón."
+    - "Sirve encima de las galletas."
+  etiquetas: [sin_lactosa, rapida]
+  consejo: "Lleva el atún mezclado en un frasco y arma las galletas al momento para que no se ablanden."
+
+- id: RCT-MER-017
+  nombre: "Cuajada con melao de panela"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 10
+  dificultad: facil
+  ingredientes:
+    - {alimento: cuajada, gramos: 100, medida: "1 tajada gruesa"}
+    - {alimento: panela, gramos: 10, medida: "1 trocito"}
+    - {alimento: agua, gramos: 20, medida: "2 cucharadas"}
+    - {alimento: canela, gramos: 1, medida: "1 astilla"}
+    - {alimento: galleta_integral_sin_azucar, gramos: 15, medida: "2 galletas"}
+  pasos:
+    - "Derrite la panela en el agua con la canela a fuego bajo hasta que espese un poco."
+    - "Vierte el melao sobre la cuajada y acompaña con las galletas."
+  etiquetas: [colombiana, vegetariano, economica]
+  consejo: "Es un antojo tradicional: si cuidas la glucosa, guárdalo para una ocasión especial."
+
+- id: RCT-MER-018
+  nombre: "Pera con nueces"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 2
+  dificultad: facil
+  ingredientes:
+    - {alimento: pera, gramos: 150, medida: "1 pera"}
+    - {alimento: nueces, gramos: 15, medida: "4 mitades"}
+  pasos:
+    - "Lava la pera y córtala en tajadas."
+    - "Acompaña con las nueces."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "Las nueces aportan grasas buenas para el corazón."
+
+- id: RCT-MER-019
+  nombre: "Batido de banano y cacao con bebida de soya"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 3
+  dificultad: facil
+  ingredientes:
+    - {alimento: bebida_soya_sin_azucar, gramos: 250, medida: "1 taza"}
+    - {alimento: banano, gramos: 80, medida: "1 banano pequeño"}
+    - {alimento: cacao_polvo_sin_azucar, gramos: 6, medida: "2 cucharaditas"}
+    - {alimento: canela, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Licúa todo con un poco de hielo."
+    - "Sirve frío."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "Un banano bien maduro endulza el batido y evita el azúcar."
+
+- id: RCT-MER-020
+  nombre: "Garbanzos crocantes con comino"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 30
+  dificultad: facil
+  ingredientes:
+    - {alimento: garbanzo_cocido, gramos: 100, medida: "1/2 taza"}
+    - {alimento: aceite_oliva, gramos: 3, medida: "1/2 cucharadita"}
+    - {alimento: comino, gramos: 1, medida: "1 pizca"}
+    - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Seca muy bien los garbanzos con un paño."
+    - "Mézclalos con el aceite, el comino y el orégano."
+    - "Hornéalos o pásalos por freidora de aire hasta que estén crocantes."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, economica]
+  consejo: "Reemplazan bien a los paquetes de papas y no traen sal añadida."
+
+- id: RCT-MER-021
+  nombre: "Rollitos de pavo y queso con manzana"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: pechuga_pavo_cruda, gramos: 60, medida: "1 filete delgado"}
+    - {alimento: queso_mozzarella, gramos: 20, medida: "1 tajada"}
+    - {alimento: lechuga, gramos: 20, medida: "2 hojas"}
+    - {alimento: mostaza, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: manzana, gramos: 100, medida: "1/2 manzana grande"}
+  pasos:
+    - "Asa el filete de pavo a la plancha y córtalo en tiras."
+    - "Envuelve el pavo y el queso en las hojas de lechuga con un poco de mostaza."
+    - "Acompaña con la manzana."
+  etiquetas: [sin_gluten]
+  consejo: "Prefiere pavo fresco a la plancha en lugar de jamón: tiene mucho menos sodio."
+
+- id: RCT-MER-022
+  nombre: "Granadilla con almendras"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 2
+  dificultad: facil
+  ingredientes:
+    - {alimento: granadilla, gramos: 150, medida: "2 granadillas"}
+    - {alimento: almendras, gramos: 15, medida: "12 almendras"}
+  pasos:
+    - "Abre las granadillas y cómelas con cuchara."
+    - "Acompaña con las almendras."
+  etiquetas: [colombiana, vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "La granadilla es suave con el estómago y fácil de llevar a cualquier parte."
+
+- id: RCT-MER-023
+  nombre: "Pudín de chía con mora"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: semillas_chia, gramos: 15, medida: "1 cucharada colmada"}
+    - {alimento: leche_descremada, gramos: 200, medida: "1 vaso"}
+    - {alimento: mora, gramos: 80, medida: "1/2 taza"}
+    - {alimento: canela, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Mezcla la chía con la leche y la canela y deja reposar en la nevera al menos dos horas."
+    - "Sirve con las moras encima."
+  etiquetas: [vegetariano, sin_gluten]
+  consejo: "La chía y la mora juntan fibra soluble y antioxidantes en una sola merienda."
+
+- id: RCT-MER-024
+  nombre: "Tortilla de maíz con fríjol y queso"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 8
+  dificultad: facil
+  ingredientes:
+    - {alimento: tortilla_maiz, gramos: 30, medida: "1 tortilla"}
+    - {alimento: frijol_negro_cocido, gramos: 60, medida: "1/4 de taza"}
+    - {alimento: queso_campesino, gramos: 20, medida: "1 tajada pequeña"}
+    - {alimento: tomate, gramos: 30, medida: "2 rodajas picadas"}
+  pasos:
+    - "Calienta la tortilla en un sartén sin aceite."
+    - "Unta el fríjol aplastado, agrega el queso y el tomate, y dobla por la mitad."
+    - "Deja un minuto más hasta que el queso se ablande."
+  etiquetas: [vegetariano, sin_gluten, rapida, economica]
+  consejo: "Es una merienda con fibra y proteína que aguanta bien hasta la comida."
+
+- id: RCT-MER-025
+  nombre: "Yuca cocida con queso campesino"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: yuca_cocida, gramos: 100, medida: "1 trozo mediano"}
+    - {alimento: queso_campesino, gramos: 25, medida: "1 tajada delgada"}
+  pasos:
+    - "Calienta la yuca cocida en un sartén sin aceite hasta que dore un poco."
+    - "Sírvela con el queso encima."
+  etiquetas: [colombiana, vegetariano, sin_gluten, economica]
+  consejo: "Cocina la yuca de una vez para varios días y guárdala en la nevera."
+
+- id: RCT-MER-026
+  nombre: "Papas criollas al vapor con cottage y cebolla larga"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 20
+  dificultad: facil
+  ingredientes:
+    - {alimento: papa_criolla_cocida, gramos: 120, medida: "5 papas criollas"}
+    - {alimento: queso_cottage, gramos: 60, medida: "1/4 de taza"}
+    - {alimento: cebolla_larga, gramos: 10, medida: "1/2 tallo"}
+    - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
+  pasos:
+    - "Cocina las papas criollas al vapor hasta que estén blandas."
+    - "Mezcla el queso cottage con la cebolla larga picada y la pimienta."
+    - "Sirve las papas abiertas con la mezcla encima."
+  etiquetas: [colombiana, vegetariano, sin_gluten]
+  consejo: "La papa criolla al vapor tiene muy poca grasa y mucho sabor."
+
+- id: RCT-MER-027
+  nombre: "Yogur con tomate de árbol y feijoa"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: yogur_natural_sin_azucar, gramos: 150, medida: "3/4 de taza"}
+    - {alimento: tomate_de_arbol, gramos: 60, medida: "1 tomate de árbol"}
+    - {alimento: feijoa, gramos: 60, medida: "2 feijoas"}
+    - {alimento: granola_sin_azucar, gramos: 15, medida: "1 cucharada colmada"}
+  pasos:
+    - "Saca la pulpa del tomate de árbol y de las feijoas con una cuchara."
+    - "Mézclala con el yogur y pon la granola encima."
+  etiquetas: [colombiana, vegetariano, rapida]
+  consejo: "Frutas de aquí como la feijoa y el tomate de árbol tienen mucha vitamina C."
+
+- id: RCT-MER-028
+  nombre: "Tostada con huevo revuelto y espinaca"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 8
+  dificultad: facil
+  ingredientes:
+    - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
+    - {alimento: espinaca, gramos: 30, medida: "1 puñado"}
+    - {alimento: pan_integral, gramos: 30, medida: "1 tajada"}
+    - {alimento: aceite_oliva, gramos: 3, medida: "1/2 cucharadita"}
+  pasos:
+    - "Marchita la espinaca en el aceite."
+    - "Agrega el huevo batido y revuelve hasta que cuaje."
+    - "Sírvelo sobre el pan tostado."
+  etiquetas: [vegetariano, sin_lactosa, rapida]
+  consejo: "Una merienda con huevo te ayuda a llegar a la cena sin ansiedad por dulce."
+
+- id: RCT-MER-029
+  nombre: "Avena caliente en leche con canela"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 8
+  dificultad: facil
+  ingredientes:
+    - {alimento: leche_semidescremada, gramos: 250, medida: "1 pocillo grande"}
+    - {alimento: avena_hojuelas, gramos: 20, medida: "2 cucharadas"}
+    - {alimento: canela, gramos: 2, medida: "1 astilla"}
+  pasos:
+    - "Calienta la leche con la canela y la avena."
+    - "Revuelve cinco minutos a fuego bajo hasta que espese."
+  etiquetas: [colombiana, vegetariano, economica]
+  consejo: "Es una bebida tibia ideal para las tardes frías de Bogotá, sin azúcar."
+
+- id: RCT-MER-030
+  nombre: "Queso cottage con fresa y banano"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: queso_cottage, gramos: 100, medida: "1/2 taza"}
+    - {alimento: fresa, gramos: 80, medida: "5 fresas"}
+    - {alimento: banano, gramos: 80, medida: "1 banano pequeño"}
+  pasos:
+    - "Pica las frutas."
+    - "Sírvelas sobre el queso cottage."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "Buena merienda después de hacer ejercicio por su proteína."
+
+- id: RCT-MER-031
+  nombre: "Jugo verde de pepino, piña y espinaca"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: pepino, gramos: 80, medida: "1/2 pepino"}
+    - {alimento: pina, gramos: 120, medida: "1 tajada"}
+    - {alimento: espinaca, gramos: 30, medida: "1 puñado"}
+    - {alimento: limon, gramos: 10, medida: "1/2 limón"}
+    - {alimento: agua, gramos: 150, medida: "2/3 de vaso"}
+    - {alimento: linaza_molida, gramos: 8, medida: "2 cucharaditas"}
+    - {alimento: almendras, gramos: 10, medida: "8 almendras"}
+  pasos:
+    - "Licúa el pepino, la piña, la espinaca, el limón, el agua y la linaza."
+    - "Tómalo sin colar y acompaña con las almendras."
+  etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
+  consejo: "Sin colar, el jugo conserva la fibra y llena más."
+
+- id: RCT-MER-032
+  nombre: "Mazorca cocida con mantequilla y limón"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: mazorca_tierna, gramos: 150, medida: "1 mazorca"}
+    - {alimento: mantequilla, gramos: 5, medida: "1 cucharadita"}
+    - {alimento: limon, gramos: 5, medida: "unas gotas"}
+  pasos:
+    - "Cocina la mazorca en agua sin sal hasta que los granos estén blandos."
+    - "Úntale la mantequilla y unas gotas de limón."
+  etiquetas: [colombiana, vegetariano, sin_gluten, economica]
+  consejo: "El limón da sabor sin sal; no le falta nada."
+
+- id: RCT-MER-033
+  nombre: "Melón con queso cottage y semillas de girasol"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 5
+  dificultad: facil
+  ingredientes:
+    - {alimento: melon, gramos: 200, medida: "1 tajada grande"}
+    - {alimento: queso_cottage, gramos: 80, medida: "1/3 de taza"}
+    - {alimento: semillas_girasol, gramos: 10, medida: "1 cucharada"}
+  pasos:
+    - "Corta el melón en cubos."
+    - "Sírvelo con el queso cottage y las semillas encima."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "El melón tiene mucha agua y te ayuda a hidratarte."
+
+- id: RCT-MER-034
+  nombre: "Chocolate amargo con mandarina"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 2
+  dificultad: facil
+  ingredientes:
+    - {alimento: chocolate_amargo_70, gramos: 20, medida: "2 cuadritos"}
+    - {alimento: mandarina, gramos: 150, medida: "2 mandarinas pequeñas"}
+  pasos:
+    - "Pela las mandarinas."
+    - "Cómelas con el chocolate, despacio y saboreando."
+  etiquetas: [vegetariano, sin_gluten, rapida]
+  consejo: "Un chocolate de al menos 70 % de cacao calma el antojo de dulce con menos azúcar."
+
+- id: RCT-MER-035
+  nombre: "Mini sándwich de pollo y aguacate"
+  tiempo_comida: merienda
+  porciones: 1
+  tiempo_min: 15
+  dificultad: facil
+  ingredientes:
+    - {alimento: pan_integral, gramos: 30, medida: "1 tajada"}
+    - {alimento: pechuga_pollo_cruda, gramos: 50, medida: "1 trozo pequeño"}
+    - {alimento: aguacate, gramos: 20, medida: "1 tajada"}
+    - {alimento: lechuga, gramos: 15, medida: "1 hoja"}
+    - {alimento: tomate, gramos: 30, medida: "2 rodajas"}
+  pasos:
+    - "Cocina la pechuga en agua o a la plancha y desmenúzala."
+    - "Corta el pan por la mitad y arma el sándwich con el pollo, el aguacate, la lechuga y el tomate."
+  etiquetas: [sin_lactosa]
+  consejo: "Aprovecha el pollo que sobró del almuerzo para tenerlo listo en cinco minutos."

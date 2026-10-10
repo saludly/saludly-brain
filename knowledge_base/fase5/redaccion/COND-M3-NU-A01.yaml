@@ -1,0 +1,13 @@
+id: COND-M3-NU-A01
+tipo: condicion
+titulo_paciente: "Homocisteína por encima del rango"
+que_es: "La homocisteína es una sustancia de la sangre que sube cuando faltan vitaminas como la B12, el folato o la B6."
+por_que_te_aparece:
+  - "Tu homocisteína salió en {homocysteine}, por encima del rango del laboratorio."
+riesgo_claro: "Por sí sola no explica un problema, pero si la causa es falta de vitaminas y no se corrige, con el tiempo puede afectar la sangre y los nervios."
+ejemplo_simple: "Es como la basura que se acumula cuando no pasa el camión: avisa que algún paso del proceso no está funcionando."
+incertidumbre: "Un solo examen no basta: la homocisteína también cambia con el riñón, la tiroides, los suplementos recientes y el manejo de la muestra. Tu médico la interpreta junto con tus vitaminas."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["NICE NG239 2024"]
+estado_revision: pendiente

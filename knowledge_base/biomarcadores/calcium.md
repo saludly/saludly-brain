@@ -21,6 +21,7 @@ sexo: ambos
 alimenta:
 - COND-M2-TI-007
 - COND-M3-NU-A02
+- COND-M6-MI-002
 combine_with:
 - albumin
 - phosphorus

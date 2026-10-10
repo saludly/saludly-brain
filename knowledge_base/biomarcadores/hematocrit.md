@@ -20,6 +20,8 @@ panel: estándar
 sexo: ambos
 alimenta:
 - SEG-012
+- COND-M3-HE-007
+- REL-029
 combine_with:
 - hemoglobin
 - mcv

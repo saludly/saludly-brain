@@ -1,0 +1,380 @@
+# Recomendaciones de controles y consultas · M3, M4, M6, patrones y reglas de seguridad.
+# Serologías (hepatitis B y C, Chagas): solo controles, y el WhatsApp va sin datos clínicos.
+# Numeración 200 a 299.
+
+- id: REC-CTL-201
+  tipo: controles
+  titulo: "Consulta médica para buscar la causa"
+  texto_base: "Agenda una consulta médica en las próximas semanas. Tu médico buscará por qué tu sangre tiene menos glóbulos rojos o hierro y decidirá el tratamiento."
+  meta_concreta: "Pide la cita en los próximos 7 días y asiste antes de 4 semanas, con este informe."
+  por_que: "Lo importante no es solo reponer lo que falta, sino encontrar por qué falta."
+  se_activa_con: ["COND-M3-HE-001", "COND-M3-HE-002", "COND-M3-HE-004", "REL-009", "REL-014"]
+  prioriza_objetivos: ["condicion_existente", "energia_sueno", "maraton", "rendimiento"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
+  fuentes: ["OMS 2024, cortes de hemoglobina para definir anemia", "BSG 2021, guía de anemia por déficit de hierro en adultos", "NICE NG239 2024, déficit de vitamina B12"]
+
+- id: REC-CTL-202
+  tipo: controles
+  titulo: "Cuéntale este resultado a tu médico"
+  texto_base: "Lleva este informe a tu próximo control médico. Si eres hombre o ya no tienes menstruación, pide la cita pronto para buscar la causa de las reservas bajas de hierro."
+  meta_concreta: "Pide la cita este mes; si eres hombre o ya no menstrúas, en las próximas 2 semanas."
+  por_que: "Las reservas de hierro bajan antes que la hemoglobina; detectarlo a tiempo permite corregirlo antes de que aparezca anemia."
+  se_activa_con: ["COND-M3-HE-003", "REL-013"]
+  prioriza_objetivos: ["energia_sueno", "maraton", "rendimiento", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "¿Ya agendaste tu control médico? Lleva tu informe de Saludly para que tu médico lo revise contigo."
+  fuentes: ["OMS 2020, uso de la ferritina para evaluar el estado del hierro", "BSG 2021, guía de anemia por déficit de hierro en adultos"]
+
+- id: REC-CTL-203
+  tipo: controles
+  titulo: "Consulta médica en los próximos días"
+  texto_base: "Pide una consulta médica en los próximos días para revisar tu hemograma completo; tu médico puede pedir repetirlo con un frotis de sangre."
+  meta_concreta: "Pide la cita hoy o mañana y asiste en menos de una semana."
+  por_que: "Cuando varias líneas de la sangre salen bajas a la vez, conviene que un médico lo revise pronto."
+  se_activa_con: ["COND-M3-HE-010"]
+  prioriza_objetivos: ["condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos pedir tu cita médica esta semana. Si necesitas ayuda para agendarla, respóndenos aquí."
+  fuentes: ["Criterio hematológico general de bicitopenia y pancitopenia"]
+
+- id: REC-CTL-204
+  tipo: controles
+  titulo: "Repite el hemograma en unas semanas"
+  texto_base: "Pide a tu médico repetir el hemograma en 4 a 6 semanas. Si en estos días tuviste gripa u otra infección, cuéntaselo."
+  meta_concreta: "Agenda el nuevo hemograma para dentro de 4 a 6 semanas."
+  por_que: "Una infección reciente, el ejercicio o el hierro bajo pueden mover estos valores por un tiempo; repetirlo muestra si el cambio se mantiene."
+  se_activa_con: ["COND-M3-HE-005", "COND-M3-HE-007", "COND-M3-HE-008", "COND-M3-HE-009", "COND-M3-HE-A02", "COND-M3-HE-A03"]
+  prioriza_objetivos: ["salud_general", "prevenir", "condicion_existente"]
+  contraindicada_si: ["COND-M3-HE-010"]
+  requiere_consulta_previa: false
+  whatsapp: "Recordatorio: en unas semanas toca tu control de sangre. Te escribiremos para ayudarte a agendarlo."
+  fuentes: ["BSH 2019, investigación y manejo de la eritrocitosis", "BSH, investigación de la trombocitosis", "Consenso internacional de PTI 2019", "BSH, evaluación de la macrocitosis"]
+
+- id: REC-CTL-205
+  tipo: controles
+  titulo: "Consulta si tienes dolor de cabeza, mareo o enrojecimiento"
+  texto_base: "Si tienes dolor de cabeza frecuente, mareo, visión borrosa, picazón después de bañarte o la cara muy roja, consulta a tu médico sin esperar al control."
+  meta_concreta: "Durante el próximo mes, anota si aparece alguno de estos síntomas y, si aparece, pide cita esa misma semana."
+  por_que: "Estos síntomas pueden indicar que la sangre está más espesa de lo conveniente y el médico debe revisarlo antes."
+  se_activa_con: ["COND-M3-HE-007"]
+  prioriza_objetivos: ["condicion_existente", "salud_general", "rendimiento"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si en estos días tienes dolor de cabeza frecuente o mareo, escríbenos o consulta a tu médico sin esperar."
+  fuentes: ["BSH 2019, investigación y manejo de la eritrocitosis"]
+
+- id: REC-CTL-206
+  tipo: controles
+  titulo: "Revisa la testosterona con el médico que te la formula"
+  texto_base: "Si usas testosterona u otro producto hormonal, revisa este resultado con el médico que te lo formula. No cambies ni dejes el tratamiento por tu cuenta."
+  meta_concreta: "Pide cita con tu médico tratante en el próximo mes y lleva este informe."
+  por_que: "La testosterona estimula la producción de glóbulos rojos; el médico decide si hay que ajustar algo."
+  se_activa_con: ["REL-029"]
+  prioriza_objetivos: ["masa_muscular", "atletico", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos llevar tu informe de Saludly a tu próxima cita con el médico que te hace seguimiento."
+  fuentes: ["Endocrine Society 2018, terapia con testosterona", "BSH 2019, investigación y manejo de la eritrocitosis"]
+
+- id: REC-CTL-207
+  tipo: controles
+  titulo: "Consulta médica para revisar tus reservas de hierro"
+  texto_base: "Agenda una consulta médica en las próximas semanas. Tu médico puede pedir repetir el hierro en ayunas y otros exámenes para confirmar el resultado."
+  meta_concreta: "Pide la cita este mes y lleva la lista de vitaminas o suplementos que usas."
+  por_que: "La ferritina alta puede deberse a varias causas, como inflamación, alcohol o hígado; hay que confirmarla antes de sacar conclusiones."
+  se_activa_con: ["COND-M3-HE-006"]
+  prioriza_objetivos: ["condicion_existente", "prevenir", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "¿Ya pediste tu cita médica? Lleva tu informe y la lista de vitaminas que usas."
+  fuentes: ["EASL 2022, guía de hemocromatosis", "OMS 2020, uso de la ferritina para evaluar el estado del hierro"]
+
+- id: REC-CTL-208
+  tipo: controles
+  titulo: "Cuéntaselo a tu médico antes de un embarazo"
+  texto_base: "Guarda este resultado y cuéntaselo a tu médico antes de planear un embarazo; también conviene que tu pareja se haga un hemograma."
+  meta_concreta: "Guarda este informe en tu historia médica y, si planeas un embarazo, llévalo a la consulta preconcepcional."
+  por_que: "Es un rasgo que se hereda; conocerlo ayuda a planear un embarazo y evita tratamientos con hierro que no se necesitan."
+  se_activa_con: ["COND-M3-HE-A04"]
+  prioriza_objetivos: ["prevenir", "condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Guarda tu informe de Saludly en un lugar seguro: es útil llevarlo a tus próximas citas médicas."
+  fuentes: ["BSH, tamizaje de hemoglobinopatías"]
+
+- id: REC-CTL-209
+  tipo: controles
+  titulo: "Repite las pruebas del hígado en unas semanas"
+  texto_base: "Pide a tu médico repetir las pruebas del hígado en unas semanas, sin alcohol ni ejercicio intenso en los días previos."
+  meta_concreta: "Agenda el control para dentro de 4 a 12 semanas y llega sin alcohol la semana anterior."
+  por_que: "Muchas veces estas enzimas suben por algo pasajero; repetirlas muestra si el cambio se mantiene."
+  se_activa_con: ["COND-M4-GA-002", "COND-M4-GA-003", "REL-006"]
+  prioriza_objetivos: ["prevenir", "bajar_peso", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Recordatorio: en unas semanas toca tu control. Te escribiremos para ayudarte a agendarlo."
+  fuentes: ["ACG 2017, evaluación de pruebas hepáticas alteradas"]
+
+- id: REC-CTL-210
+  tipo: controles
+  titulo: "Pregunta por una evaluación del hígado"
+  texto_base: "Lleva este resultado a tu médico y pregúntale si necesitas una evaluación de la rigidez del hígado, como una elastografía, que es un examen sin agujas."
+  meta_concreta: "Pide cita este mes y pregunta específicamente por la elastografía hepática."
+  por_que: "El índice que combina tu edad, tus enzimas y tus plaquetas sugiere revisar el hígado con un examen más preciso."
+  se_activa_con: ["COND-M4-GA-001"]
+  prioriza_objetivos: ["prevenir", "bajar_peso", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos pedir tu cita médica de este mes y llevar tu informe de Saludly."
+  fuentes: ["EASL-EASD-EASO 2024, guía de práctica clínica del hígado graso metabólico (MASLD)", "AASLD 2023, guía de práctica de hígado graso"]
+
+- id: REC-CTL-211
+  tipo: controles
+  titulo: "Consulta médica para la colonoscopia"
+  texto_base: "Pide una consulta médica en las próximas semanas para que te ordenen una colonoscopia. Cuéntale a tu médico si tienes hemorroides o estabas con la menstruación."
+  meta_concreta: "Pide la cita en los próximos 7 días con este informe."
+  por_que: "La sangre que no se ve en las heces puede venir de varias causas, y la colonoscopia es el examen que permite ver de dónde viene."
+  se_activa_con: ["COND-M4-GA-004"]
+  prioriza_objetivos: ["prevenir", "condicion_existente", "envejecer_saludable"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
+  fuentes: ["USPSTF 2021, tamización de cáncer colorrectal", "Res. 3280 de 2018"]
+
+- id: REC-CTL-212
+  tipo: controles
+  titulo: "Consulta médica para decidir el tratamiento"
+  texto_base: "Agenda una consulta médica para que tu médico decida el tratamiento y cómo confirmar después que funcionó."
+  meta_concreta: "Pide la cita en las próximas 2 semanas."
+  por_que: "Este germen del estómago se trata con un esquema que debe indicar el médico y luego comprobar con otra prueba."
+  se_activa_con: ["COND-M4-GA-005"]
+  prioriza_objetivos: ["condicion_existente", "prevenir", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
+  fuentes: ["Asociación Colombiana de Gastroenterología 2025, guía de H. pylori"]
+
+- id: REC-CTL-213
+  tipo: controles
+  titulo: "Consulta médica antes de cambiar tu dieta"
+  texto_base: "Agenda una consulta médica para confirmar este resultado. Tu médico decidirá qué exámenes siguen y cuándo cambiar la alimentación."
+  meta_concreta: "Pide la cita en las próximas 2 semanas."
+  por_que: "Este resultado se confirma con otros exámenes que necesitan que sigas comiendo como siempre."
+  se_activa_con: ["COND-M4-GA-006"]
+  prioriza_objetivos: ["condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
+  fuentes: ["ACG 2023, guía de enfermedad celíaca"]
+
+- id: REC-CTL-214
+  tipo: controles
+  titulo: "Consulta con el médico para los siguientes pasos"
+  texto_base: "Asiste a la consulta con el médico, que te explicará este resultado, qué exámenes siguen y las opciones de tratamiento. Lleva la lista de tus medicamentos."
+  meta_concreta: "Asiste a la llamada o consulta médica que te ofrecemos en los próximos días."
+  por_que: "Este resultado necesita la explicación de un médico y, a veces, otros exámenes para confirmarlo."
+  se_activa_con: ["COND-M4-IN-001", "COND-M4-IN-003", "COND-M4-IN-002#infeccion_activa", "COND-M4-IN-002#anti_hbc_aislado", "COND-M4-IN-002#infeccion_pasada_resuelta"]
+  prioriza_objetivos: ["condicion_existente", "prevenir", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Hola, te recordamos tu cita de seguimiento con nuestro equipo médico. Si necesitas cambiar la hora, respóndenos aquí."
+  fuentes: ["Minsalud, tamización de hepatitis C", "USPSTF 2020, tamización de hepatitis C", "CDC 2023, interpretación serológica de hepatitis B"]
+
+- id: REC-CTL-215
+  tipo: controles
+  titulo: "Pregunta por la vacuna de la hepatitis B"
+  texto_base: "Tus defensas contra la hepatitis B no alcanzan el nivel de protección. Pregunta a tu médico o en tu EPS por la vacuna, que es segura y eficaz."
+  meta_concreta: "Este mes, pregunta en tu EPS o a tu médico por el esquema de vacunación y pide la primera dosis de la vacuna."
+  por_que: "La vacuna es la mejor forma de prevenir esta infección del hígado."
+  se_activa_con: ["COND-M4-IN-002#susceptible"]
+  prioriza_objetivos: ["prevenir", "salud_general", "envejecer_saludable"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "¿Ya revisaste tu carné de vacunas? Este mes es buen momento para ponerte al día. Pregunta en tu EPS o escríbenos."
+  fuentes: ["CDC ACIP 2022, vacunación universal de adultos contra hepatitis B", "CDC 2023, interpretación serológica de hepatitis B"]
+
+- id: REC-CTL-216
+  tipo: controles
+  titulo: "Consulta médica y evaluación del corazón"
+  texto_base: "Asiste a la consulta médica para confirmar el resultado. Tu médico decidirá si necesitas un electrocardiograma u otra evaluación del corazón y si hay tratamiento indicado."
+  meta_concreta: "Asiste a la consulta que te ofrecemos en las próximas semanas y lleva este informe."
+  por_que: "Este resultado se confirma con otra prueba y, si se confirma, se revisa el corazón de forma periódica."
+  se_activa_con: ["COND-M4-IN-003"]
+  prioriza_objetivos: ["condicion_existente", "prevenir", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Hola, te recordamos tu cita de seguimiento con nuestro equipo médico. Si necesitas cambiar la hora, respóndenos aquí."
+  fuentes: ["OPS 2018, guía para el diagnóstico y el tratamiento de la enfermedad de Chagas", "Minsalud, algoritmo de Chagas"]
+
+- id: REC-CTL-217
+  tipo: controles
+  titulo: "Consulta médica para revisar tus proteínas"
+  texto_base: "Agenda una consulta médica en las próximas semanas. Tu médico puede pedir una electroforesis de proteínas, un examen de sangre que separa las proteínas para verlas mejor."
+  meta_concreta: "Pide la cita en las próximas 2 semanas y asiste antes de 4 semanas."
+  por_que: "Este resultado tiene varias explicaciones posibles, muchas sin importancia, y un examen adicional permite aclararlo."
+  se_activa_con: ["COND-M6-MI-002"]
+  prioriza_objetivos: ["condicion_existente", "envejecer_saludable", "prevenir"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
+  fuentes: ["IMWG, criterios de gammapatías monoclonales", "NCCN, gammapatías monoclonales"]
+
+- id: REC-CTL-218
+  tipo: controles
+  titulo: "Repite la CK sin haber entrenado fuerte"
+  texto_base: "Pide a tu médico repetir la CK, la enzima de los músculos, después de dos días sin ejercicio intenso. Cuéntale si usas medicamentos para el colesterol."
+  meta_concreta: "Agenda el control en las próximas 2 a 4 semanas, con 48 horas de descanso de ejercicio intenso antes."
+  por_que: "La CK sube mucho con el ejercicio reciente; repetirla en reposo muestra si el valor se mantiene."
+  se_activa_con: ["SEG-007", "REL-008", "ck_cpk:alto"]
+  prioriza_objetivos: ["rendimiento", "atletico", "masa_muscular", "maraton"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Recordatorio: antes de tu próximo control de sangre, descansa dos días del entrenamiento fuerte."
+  fuentes: ["Fichas ck_cpk y ldh del Knowledge Base"]
+
+- id: REC-CTL-219
+  tipo: controles
+  titulo: "Orina oscura o dolor muscular fuerte: a urgencias"
+  texto_base: "Si notas la orina oscura, de color café oscuro, o un dolor o debilidad muscular fuerte, ve a urgencias ese mismo día."
+  meta_concreta: "Durante los próximos días, revisa el color de tu orina después de entrenar."
+  por_que: "Cuando el músculo se daña mucho, libera sustancias que pueden afectar los riñones, y eso se atiende rápido."
+  se_activa_con: ["SEG-007"]
+  prioriza_objetivos: ["rendimiento", "atletico", "maraton", "masa_muscular"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si después de entrenar notas la orina muy oscura o un dolor muscular fuera de lo normal, busca atención médica ese mismo día."
+  fuentes: ["Fichas ck_cpk y ldh del Knowledge Base", "SEG-007 del Knowledge Base"]
+
+- id: REC-CTL-220
+  tipo: controles
+  titulo: "Revisa tus medicamentos y el magnesio con tu médico"
+  texto_base: "Lleva este resultado a tu médico y cuéntale si usas diuréticos o medicamentos para la acidez. Él decidirá si repetir el magnesio junto con el potasio y el calcio."
+  meta_concreta: "Pide la cita en el próximo mes con la lista de tus medicamentos."
+  por_que: "Varios medicamentos de uso diario bajan el magnesio, y el magnesio se lee mejor junto con otros minerales."
+  se_activa_con: ["SEG-008", "magnesium:bajo", "magnesium:alto"]
+  prioriza_objetivos: ["rendimiento", "maraton", "condicion_existente", "energia_sueno"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Esta semana, haz la lista de los medicamentos que usas y llévala a tu próxima cita médica."
+  fuentes: ["Ficha magnesium del Knowledge Base", "NIH ODS, ficha de magnesio para profesionales"]
+
+- id: REC-CTL-221
+  tipo: controles
+  titulo: "Repite el BUN bien hidratado"
+  texto_base: "Si tu médico lo indica, repite el BUN y la creatinina después de unos días tomando agua de forma regular y sin exceso de proteína ni suplementos de proteína."
+  meta_concreta: "En tu próximo control, llega con 3 días de buena hidratación y sin batidos de proteína."
+  por_que: "El BUN, un desecho de las proteínas, sube con poca agua o mucha proteína aunque el riñón esté bien."
+  se_activa_con: ["SEG-014", "bun:alto", "bun_creatinine_ratio:alto"]
+  prioriza_objetivos: ["masa_muscular", "atletico", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Antes de tu próximo control de sangre, recuerda tomar agua de forma regular los días previos."
+  fuentes: ["Fichas bun y bun_creatinine_ratio del Knowledge Base", "KDIGO 2024, guía de enfermedad renal crónica"]
+
+- id: REC-CTL-222
+  tipo: controles
+  titulo: "Consulta médica si bajas de peso sin buscarlo"
+  texto_base: "Si estás bajando de peso sin proponértelo o comes menos por falta de apetito, agenda una consulta médica para buscar la causa."
+  meta_concreta: "Pésate una vez por semana durante un mes y pide cita si bajas sin buscarlo."
+  por_que: "La pérdida de peso no buscada tiene muchas causas y conviene que un médico la revise."
+  se_activa_con: ["COND-M6-MI-001"]
+  prioriza_objetivos: ["envejecer_saludable", "condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Esta semana, pésate un día fijo y anótalo. Si notas que bajas sin buscarlo, escríbenos o consulta a tu médico."
+  fuentes: ["GLIM 2019, criterios de desnutrición"]
+
+- id: REC-CTL-223
+  tipo: controles
+  titulo: "Revisa el ácido úrico en tu próximo control"
+  texto_base: "Lleva este resultado a tu próximo control y cuéntale a tu médico si usas diuréticos. Si tienes dolor e hinchazón en una articulación, consulta sin esperar."
+  meta_concreta: "Pide tu control médico en los próximos 3 meses con la lista de tus medicamentos."
+  por_que: "Algunos medicamentos suben el ácido úrico, y el médico decide si hace falta algo más que los cambios de hábitos."
+  se_activa_con: ["COND-M6-RE-001"]
+  prioriza_objetivos: ["prevenir", "condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si notas una articulación hinchada y dolorosa, por ejemplo en el dedo gordo del pie, consulta a tu médico pronto."
+  fuentes: ["ACR 2020, guía para el manejo de la gota"]
+
+- id: REC-CTL-224
+  tipo: controles
+  titulo: "Consulta si tienes síntomas en articulaciones, piel o boca"
+  texto_base: "Agenda una consulta médica si tienes dolor o hinchazón de articulaciones, manchas en la piel con el sol, llagas en la boca, fiebre sin causa o los dedos se ponen blancos con el frío."
+  meta_concreta: "Durante el próximo mes, anota si aparece alguno de estos síntomas y, si aparece, pide cita."
+  por_que: "Este resultado aparece también en personas sanas; lo que orienta al médico son los síntomas."
+  se_activa_con: ["COND-M6-RE-A01"]
+  prioriza_objetivos: ["condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si en estas semanas notas dolor o hinchazón en las articulaciones, escríbenos o consulta a tu médico."
+  fuentes: ["Satoh 2012, prevalencia de ANA en población general", "EULAR/ACR 2019, criterios de clasificación de lupus"]
+
+- id: REC-CTL-225
+  tipo: controles
+  titulo: "Consulta si sientes hormigueo o adormecimiento"
+  texto_base: "Si sientes hormigueo, adormecimiento en manos o pies, problemas de equilibrio o de memoria, consulta a tu médico pronto."
+  meta_concreta: "Si aparece alguno de estos síntomas, pide la cita esa misma semana."
+  por_que: "La vitamina B12 cuida los nervios, y si falta por mucho tiempo puede afectarlos."
+  se_activa_con: ["COND-M3-NU-001", "COND-M3-HE-004", "REL-015"]
+  prioriza_objetivos: ["envejecer_saludable", "energia_sueno", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si sientes hormigueo o adormecimiento en manos o pies, escríbenos o consulta a tu médico pronto."
+  fuentes: ["NICE NG239 2024, déficit de vitamina B12"]
+
+- id: REC-CTL-226
+  tipo: controles
+  titulo: "Revisa con tu médico la vitamina D y el calcio"
+  texto_base: "Lleva este resultado a tu médico. Él revisará juntos la vitamina D, el calcio y la hormona paratiroidea, y decidirá qué hacer."
+  meta_concreta: "Pide cita en los próximos 2 meses con este informe."
+  por_que: "Cuando falta vitamina D, una glándula del cuello trabaja de más para mantener el calcio, y eso lo debe revisar el médico."
+  se_activa_con: ["REL-020", "COND-M3-NU-A02", "REL-012"]
+  prioriza_objetivos: ["envejecer_saludable", "condicion_existente", "prevenir"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos pedir tu cita médica de control en los próximos meses y llevar tu informe de Saludly."
+  fuentes: ["Quinto Taller Internacional de hiperparatiroidismo primario 2022", "Endocrine Society 2024, vitamina D para la prevención de enfermedades", "KDIGO 2017, alteraciones minerales y óseas en enfermedad renal crónica"]
+
+- id: REC-CTL-227
+  tipo: controles
+  titulo: "Consulta médica para revisar el tratamiento"
+  texto_base: "Agenda una consulta médica para que tu médico revise tus síntomas y decida si necesitas tratamiento."
+  meta_concreta: "Pide la cita esta semana, sobre todo si tienes molestias al orinar, diarrea o dolor de barriga."
+  por_que: "Algunos de estos resultados se tratan y otros no; la decisión depende de los síntomas y la revisión médica."
+  se_activa_con: ["COND-M4-IN-A01", "COND-M4-IN-A02", "COND-M3-HE-A03"]
+  prioriza_objetivos: ["condicion_existente", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
+  fuentes: ["IDSA 2019, bacteriuria asintomática", "OMS 2023, geohelmintiasis: nota descriptiva"]
+
+- id: REC-CTL-228
+  tipo: controles
+  titulo: "Repite la VSG con tu médico"
+  texto_base: "Lleva este resultado a tu médico. Él decidirá si repetir la VSG en unas semanas, sobre todo si tuviste una infección reciente."
+  meta_concreta: "Pide tu control en los próximos 2 meses."
+  por_que: "La VSG sube con muchas situaciones comunes, como infecciones, anemia o la edad; repetirla aclara si el cambio se mantiene."
+  se_activa_con: ["COND-M6-RE-A02"]
+  prioriza_objetivos: ["salud_general", "condicion_existente"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Recordatorio: en las próximas semanas toca tu control médico. Te escribiremos para ayudarte a agendarlo."
+  fuentes: ["ACR/EULAR 2010, criterios de clasificación de artritis reumatoide"]
+
+- id: REC-CTL-229
+  tipo: controles
+  titulo: "Vuelve a medir tu edad biológica en un año"
+  texto_base: "Repite tus exámenes en un año para comparar tu edad biológica; una sola medición no basta para sacar conclusiones."
+  meta_concreta: "Agenda en tu calendario tu próximo chequeo para dentro de 12 meses."
+  por_que: "La edad biológica cambia con los hábitos; compararla en el tiempo muestra si tus cambios funcionan."
+  se_activa_con: ["COND-M6-MI-A02"]
+  prioriza_objetivos: ["envejecer_saludable", "prevenir", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Pon en tu calendario tu próximo chequeo de Saludly para dentro de un año. Así podrás ver cómo te fue con tus cambios."
+  fuentes: ["Levine et al. 2018, Aging 10(4):573-591"]

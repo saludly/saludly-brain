@@ -1,0 +1,14 @@
+id: COND-M2-NE-002
+tipo: condicion
+titulo_paciente: "Más albúmina de lo esperado en la orina"
+que_es: "La albúmina es una proteína de la sangre; cuando aparece en la orina puede ser una señal temprana de que los riñones necesitan cuidado."
+por_que_te_aparece:
+  - "Tu relación albúmina/creatinina en orina salió en {uacr}, en 30 mg/g o más."
+  - "Tu filtración renal estimada salió en {egfr}, en el rango normal de 60 o más."
+riesgo_claro: "Si se confirma y no se atiende, con los años puede indicar desgaste de los riñones y de los vasos sanguíneos."
+ejemplo_simple: "Es como un colador que empieza a dejar pasar granos que antes retenía: avisa temprano."
+incertidumbre: "Puede ser pasajero por ejercicio fuerte, fiebre, infección urinaria o menstruación. Hay que repetirlo en la primera orina de la mañana, y tu médico lo confirma."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["KDIGO 2024"]
+estado_revision: pendiente

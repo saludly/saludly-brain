@@ -1,0 +1,14 @@
+id: COND-M4-GA-002
+tipo: condicion
+titulo_paciente: "Enzima del hígado (ALT) por encima de lo esperado"
+que_es: "La ALT es una enzima que vive dentro de las células del hígado; cuando esas células se irritan, sale a la sangre."
+por_que_te_aparece:
+  - "Tu ALT salió en {alt}, por encima del valor esperado."
+  - "Tu AST, otra enzima que está en el hígado y en los músculos, salió en {ast}."
+riesgo_claro: "Si la causa no se atiende, la irritación del hígado puede mantenerse durante años y afectar cómo funciona."
+ejemplo_simple: "Es como el polvo que suelta una pared cuando la golpean: avisa que algo la molesta, pero no dice qué tan grande es el golpe."
+incertidumbre: "Hay varias causas posibles, la mayoría relacionadas con hábitos: ejercicio intenso, alcohol, alimentación, medicamentos o productos herbales. Un solo examen no basta: conviene repetirla y revisarla con tu médico."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ACG 2017, evaluación de pruebas hepáticas alteradas"]
+estado_revision: pendiente

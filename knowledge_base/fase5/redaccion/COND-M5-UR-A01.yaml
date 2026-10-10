@@ -1,0 +1,14 @@
+id: COND-M5-UR-A01
+tipo: condicion
+titulo_paciente: "Testosterona libre calculada"
+que_es: "La testosterona libre es la parte que no va pegada a proteínas y que sí actúa en el cuerpo; se calcula con tres de tus resultados."
+por_que_te_aparece:
+  - "Tu testosterona libre calculada salió en {testosterone_free}."
+  - "Se calculó con tu testosterona total ({testosterone_total}), tu SHBG ({shbg}) y tu albúmina ({albumin})."
+riesgo_claro: "Si se mantiene baja, puede relacionarse con cansancio, menos deseo sexual y pérdida de músculo, aunque la testosterona total se vea normal."
+ejemplo_simple: "Es como la plata de tu billetera frente a la que está en una cuenta bloqueada: para el día a día cuenta la que puedes usar."
+incertidumbre: "Es un cálculo, no una medición directa, y depende de la fórmula y del laboratorio; tu médico lo lee junto con la testosterona total."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Endocrine Society 2018"]
+estado_revision: pendiente

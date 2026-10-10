@@ -1,0 +1,13 @@
+id: COND-M3-NU-A03
+tipo: condicion
+titulo_paciente: "Vitamina D fuera del rango"
+que_es: "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos; el cuerpo la fabrica con el sol."
+por_que_te_aparece:
+  - "Tu vitamina D salió en {vitamin_d}, fuera del rango del laboratorio."
+riesgo_claro: "Si se mantiene baja durante años, los huesos pueden debilitarse; si está alta por suplementos, se puede acumular en el cuerpo."
+ejemplo_simple: "Es como el cemento de una pared: los ladrillos están, pero sin suficiente cemento la pared queda menos firme."
+incertidumbre: "Un solo valor no basta y cambia con el sol y la época. Si está baja, puedes mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente; si quieres suplementarla o ya tomas suplementos, coméntalo con tu médico."
+cuando_consultar: null
+aviso_whatsapp: "Ya están listos tus resultados en Saludly. Entra a tu informe para verlos y conocer qué puedes hacer."
+fuentes: ["Endocrine Society 2024"]
+estado_revision: pendiente

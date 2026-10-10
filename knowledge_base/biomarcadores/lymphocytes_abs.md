@@ -20,6 +20,7 @@ panel: estándar
 sexo: ambos
 alimenta:
 - COND-M3-HE-A02
+- REL-030
 combine_with:
 - wbc
 - neutrophils_abs

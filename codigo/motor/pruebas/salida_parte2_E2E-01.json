@@ -635,5 +635,66 @@
    "Consenso colombiano de hipotiroidismo 2023",
    "AACE/ATA"
   ]
+ },
+ "COND-M1-EM-A03": {
+  "ficha": "COND-M1-EM-A03",
+  "nombre": "Diabetes con posible falta de insulina",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "no_aplica",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "sin diabetes en rango ni conocida",
+  "guias": [
+   "ADA, Standards of Care 2025, clasificación de la diabetes"
+  ]
+ },
+ "COND-M1-EM-A04": {
+  "ficha": "COND-M1-EM-A04",
+  "nombre": "Resistencia a la insulina por TyG y TG/HDL",
+  "modulo": "M1",
+  "tipo": "apoyo",
+  "estado": "apoyo",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "patron_compatible",
+  "criterios_cumplidos": [
+   "tyg_alto",
+   "tg_hdl_alta"
+  ],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": "TyG 9.5, TG/HDL 6.61; cortes provisionales 8.8 y 3.0",
+  "guias": [
+   "Simental-Mendía 2008; Guerrero-Romero 2010 (TyG)",
+   "McLaughlin 2003 (TG/HDL)"
+  ],
+  "modifica": [
+   "COND-M1-EM-001",
+   "COND-M1-EM-003"
+  ],
+  "tyg_index": 9.5,
+  "tg_hdl_ratio": 6.61
+ },
+ "COND-M2-TI-009": {
+  "ficha": "COND-M2-TI-009",
+  "nombre": "Cortisol de la mañana bajo (posible insuficiencia suprarrenal)",
+  "modulo": "M2",
+  "tipo": "incluida",
+  "estado": "no_activa",
+  "coincidencia": null,
+  "escalamiento": null,
+  "nivel_lenguaje": "condicion_requiere_evaluacion",
+  "criterios_cumplidos": [],
+  "datos_faltantes": [],
+  "confusores_aplicados": [],
+  "nota": null,
+  "guias": [
+   "Endocrine Society 2016, insuficiencia suprarrenal primaria"
+  ]
  }
 }

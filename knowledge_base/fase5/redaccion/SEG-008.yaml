@@ -1,0 +1,15 @@
+id: SEG-008
+tipo: seguridad
+titulo_paciente: "Un mineral de la sangre fuera del rango"
+que_es: "El magnesio, el cloro y el fósforo son minerales que ayudan a los músculos, los nervios, los huesos y el equilibrio de líquidos."
+por_que_te_aparece:
+  - "Tu magnesio salió en {magnesium}."
+  - "Tu cloro salió en {chloride}."
+  - "Tu fósforo salió en {phosphorus}."
+riesgo_claro: "Si un mineral se mantiene fuera de rango, puede dar calambres, cansancio o alterar el ritmo de los músculos y del corazón."
+ejemplo_simple: "Es como la sal en una sopa: con muy poca o con demasiada, el resultado cambia."
+incertidumbre: "La demora en procesar la muestra, algunos diuréticos o medicamentos para el estómago pueden cambiarlos; tu médico los lee junto con el resto del panel."
+cuando_consultar: null
+aviso_whatsapp: "Hay un resultado de minerales en tu informe de Saludly para comentar con tu médico."
+fuentes: ["Fichas magnesium, chloride y phosphorus del Knowledge Base"]
+estado_revision: pendiente

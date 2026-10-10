@@ -2,6 +2,8 @@
 
 **Qué detecta.** Potasio por encima del intervalo del laboratorio. Desde 5,5 mmol/L KDIGO plantea acciones. En toma domiciliaria el riesgo de falso alto es grande (hemólisis, puño apretado, demora en separar el plasma), así que nunca se escala con un valor aislado: se repite primero, salvo bandera crítica del laboratorio.
 
+> **Decisión de Carlos (10 de octubre de 2026).** El texto para el paciente puede nombrar el corazón ("podría alterar el ritmo del corazón"). Sigue prohibido hablar de "riesgo de arritmia" como conclusión sin bandera crítica del laboratorio.
+
 ```yaml
 id: COND-M2-NE-004
 nombre: Potasio alto

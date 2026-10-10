@@ -1,0 +1,14 @@
+id: COND-M1-CA-007
+tipo: condicion
+titulo_paciente: "Señal para revisar la función del corazón"
+que_es: "El NT-proBNP es una sustancia que el corazón libera cuando trabaja con más esfuerzo de lo normal."
+por_que_te_aparece:
+  - "Tu NT-proBNP salió en {nt_probnp}, en 125 pg/mL o más."
+  - "Este examen se revisa cuando la glucosa está en rango de diabetes o hay diabetes conocida, porque en ese caso merece más atención."
+riesgo_claro: "Si el corazón está trabajando con esfuerzo y no se revisa, con los años puede perder fuerza para bombear la sangre."
+ejemplo_simple: "Es como el testigo del tablero del carro: se enciende para que alguien revise el motor, pero no dice qué pieza falla."
+incertidumbre: "No es un diagnóstico. La edad, los riñones y algunos problemas del ritmo también lo suben. El médico decide si hace falta un ecocardiograma, que es una ecografía del corazón."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ADA Standards of Care (vía Diabetes Care 2025)"]
+estado_revision: pendiente

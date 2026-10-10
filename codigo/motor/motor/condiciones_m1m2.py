@@ -532,6 +532,47 @@ def ti_a01(d, ya):
 
 
 # =============================================================== orquestación
+# =============================================================== Aprobadas el 10 de octubre de 2026
+PEPTIDO_C_BAJO = 0.6   # ng/mL, por verificar (ADA 2025)
+TYG_CORTE, TG_HDL_CORTE = 8.8, 3.0   # provisionales, por verificar
+CORTICOIDES = ("prednisolona", "prednisona", "dexametasona", "betametasona", "hidrocortisona", "metilprednisolona", "deflazacort",
+               "budesonida", "fluticasona", "beclometasona", "mometasona", "clobetasol", "triamcinolona")
+
+def em_a03(d, ya):
+    f = "COND-M1-EM-A03"
+    diab = ya.get("COND-M1-EM-002", {}).get("estado") in ("activa", "control") or d.c("diabetes_conocida")
+    if not diab: return H(f, "no_aplica", nota="sin diabetes en rango ni conocida")
+    cp = d.v("c_peptide")
+    if cp is None: return H(f, "incompleta", faltan=["c_peptide"])
+    if cp >= PEPTIDO_C_BAJO: return H(f, "no_activa")
+    conf = ["glucosa muy alta (puede bajar el péptido C de forma pasajera)"] if (d.v("glucose") or 0) >= 250 else []
+    return H(f, "apoyo", cumplidos=["diabetes", "peptido_c_bajo"], confusores=conf,
+             nota=f"péptido C {cp:g} ng/mL: posible falta de insulina (tipo 1 o LADA); corte {PEPTIDO_C_BAJO} por verificar",
+             extra=dict(modifica=["COND-M1-EM-002"]))
+
+def em_a04(d, ya):
+    f = "COND-M1-EM-A04"
+    if ya.get("COND-M1-EM-002", {}).get("estado") in ("activa", "control") or d.c("diabetes_conocida"):
+        return H(f, "no_aplica", nota="en diabetes no aporta")
+    t, r = d.calc("tyg_index"), d.calc("tg_hdl_ratio")
+    if t is None and r is None: return H(f, "incompleta", faltan=["tyg_index", "tg_hdl_ratio"])
+    cum = [k for k, ok in (("tyg_alto", t is not None and t > TYG_CORTE), ("tg_hdl_alta", r is not None and r > TG_HDL_CORTE)) if ok]
+    if not cum: return H(f, "no_activa", extra=dict(tyg_index=t, tg_hdl_ratio=r))
+    return H(f, "apoyo", cumplidos=cum, nota=f"TyG {t}, TG/HDL {r}; cortes provisionales {TYG_CORTE} y {TG_HDL_CORTE}",
+             extra=dict(modifica=["COND-M1-EM-001", "COND-M1-EM-003"], tyg_index=t, tg_hdl_ratio=r))
+
+def ti009(d):
+    f = "COND-M2-TI-009"
+    if not d.r("cortisol"): return H(f, "incompleta", faltan=["cortisol"])
+    if not d.interpretable("cortisol"): return ni(f, d, "cortisol")
+    cort = [m for m in CORTICOIDES if m in d.meds()]
+    if cort: return H(f, "no_interpretable", nota=f"corticoide declarado ({', '.join(cort)}): suprime el cortisol")
+    v = d.v("cortisol")
+    if v is None or v >= 5: return H(f, "no_activa")
+    refuerzo = [k for k, ok in (("acth_alta", d.clase("acth") == "alto"), ("sodio_bajo", d.clase("sodium") == "bajo"), ("potasio_alto", d.clase("potassium") == "alto")) if ok]
+    return H(f, "activa", "alta" if refuerzo else "moderada", 2, ["cortisol_bajo"] + refuerzo, nota="corte de 5 µg/dL por verificar (Endocrine Society 2016)")
+
+
 def evaluar_m1m2(p1, ctx):
     d = Datos(p1, ctx)
     comb = egfr_cr_cys(d)
@@ -549,6 +590,7 @@ def evaluar_m1m2(p1, ctx):
     put(ne_a03(d, ya))
     for fn in (ti001, ti002, ti003, ti004, ti005, ti006, ti007): put(fn(d))
     put(ti008(d, ya)); put(ti_a01(d, ya))
+    put(em_a03(d, ya)); put(em_a04(d, ya)); put(ti009(d))
     # exclusiones entre condiciones
     if ya["COND-M1-CA-002"]["estado"] == "activa" and ya["COND-M1-CA-001"]["estado"] == "activa":
         ya["COND-M1-CA-001"].update(estado="no_activa", nota="excluida: manda CA-002")

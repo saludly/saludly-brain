@@ -1,0 +1,15 @@
+id: SEG-010
+tipo: seguridad
+titulo_paciente: "Un resultado del metabolismo para revisar"
+que_es: "El péptido C muestra cuánta insulina produce tu cuerpo, la fructosamina el promedio de azúcar de las últimas semanas y el NT-proBNP el esfuerzo del corazón."
+por_que_te_aparece:
+  - "Tu péptido C salió en {c_peptide}."
+  - "Tu fructosamina salió en {fructosamine}."
+  - "Tu NT-proBNP salió en {nt_probnp}."
+riesgo_claro: "Si alguno se mantiene fuera de rango, puede relacionarse con el manejo del azúcar o con el trabajo del corazón; por eso lo revisa tu médico."
+ejemplo_simple: "Es como una luz del tablero que se enciende: no dice qué falla, pero indica que vale la pena revisar."
+incertidumbre: "Por sí solos no confirman nada; la albúmina baja, la vitamina C o el riñón pueden alterarlos, y tu médico los lee con tus otros resultados."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Fichas c_peptide, fructosamine y nt_probnp del Knowledge Base", "ESC HFA 2023 (umbrales por edad)"]
+estado_revision: pendiente

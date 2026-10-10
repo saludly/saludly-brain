@@ -164,13 +164,43 @@ def documentos():
     return out
 
 
+# =============================================================== Fase 5: textos para el paciente y recomendaciones
+def fase5():
+    """Redacción por hallazgo (tipo redaccion_paciente) y catálogo de recomendaciones (tipo recomendacion).
+    Las recetas no entran: son datos para el plan diario, no texto para responder preguntas."""
+    out, F5 = [], os.path.join(KB, "fase5")
+    for ruta in sorted(glob.glob(os.path.join(F5, "redaccion", "*.yaml"))):
+        y = yaml.safe_load(open(ruta, encoding="utf-8"))
+        if os.path.basename(ruta) == "modulos.yaml":
+            txt = "Textos de 'lo que está bien' por grupo de resultados:\n\n" + "\n".join(f"- {g['nombre']}: {g['texto_bien']}" for g in y)
+            out.append(fragmento("RED-MODULOS", "redaccion_paciente", 0, "Lo que está bien · textos por grupo", txt, ruta, dict(grupos=[g["id"] for g in y])))
+            continue
+        partes = [f"Texto para el paciente de {y['id']}: {y['titulo_paciente']}", f"Qué es: {y['que_es']}",
+                  "Por qué le aparece: " + " ".join(y.get("por_que_te_aparece") or []), f"Riesgo: {y['riesgo_claro']}",
+                  f"Ejemplo: {y['ejemplo_simple']}", f"Incertidumbre: {y['incertidumbre']}"]
+        if y.get("cuando_consultar"): partes.append(f"Cuándo consultar: {y['cuando_consultar']}")
+        for est, v in (y.get("variantes") or {}).items():
+            partes.append(f"Si el estado es {est}: {v.get('titulo_paciente', '')}. {v.get('riesgo_claro', '')}")
+        out.append(fragmento(f"RED-{y['id']}", "redaccion_paciente", 0, f"Texto para el paciente · {y['id']} · {y['titulo_paciente']}", "\n\n".join(partes), ruta,
+                             dict(hallazgo=y["id"], tipo_hallazgo=y.get("tipo"), estado_revision=y.get("estado_revision"))))
+    for ruta in sorted(glob.glob(os.path.join(F5, "recomendaciones", "*.yaml"))):
+        for r in yaml.safe_load(open(ruta, encoding="utf-8")) or []:
+            txt = (f"Recomendación {r['id']} ({r['tipo']}): {r['titulo']}\n\n{r['texto_base']}\n\nMeta: {r.get('meta_concreta') or '—'}\nPor qué: {r.get('por_que')}\n"
+                   f"Se activa con: {', '.join(r.get('se_activa_con') or [])}\nContraindicada si: {', '.join(r.get('contraindicada_si') or []) or 'ninguna'}\n"
+                   f"Fuentes: {', '.join(r.get('fuentes') or [])}")
+            out.append(fragmento(r["id"], "recomendacion", 0, f"{r['id']} · {r['titulo']}", txt, ruta,
+                                 dict(tipo_recomendacion=r["tipo"], se_activa_con=r.get("se_activa_con"), prioriza_objetivos=r.get("prioriza_objetivos"),
+                                      contraindicada_si=r.get("contraindicada_si"), requiere_consulta_previa=r.get("requiere_consulta_previa"))))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--salida", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "salida", "fragmentos.jsonl"))
     a = ap.parse_args()
     v = version_kb()
     todos = biomarcadores() + fichas_con_yaml("condiciones", "condicion") + fichas_con_yaml("relaciones", "relacion") \
-        + fichas_con_yaml("seguridad", "seguridad") + documentos()
+        + fichas_con_yaml("seguridad", "seguridad") + documentos() + fase5()
     ids = [f["id"] for f in todos]
     assert len(ids) == len(set(ids)), "identificadores de fragmento repetidos"
     os.makedirs(os.path.dirname(a.salida), exist_ok=True)

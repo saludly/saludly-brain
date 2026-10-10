@@ -1,0 +1,15 @@
+id: SEG-006
+tipo: seguridad
+titulo_paciente: "Una prueba de coagulación alterada"
+que_es: "Las pruebas de coagulación miden cuánto tarda la sangre en formar un coágulo, el tapón que detiene un sangrado."
+por_que_te_aparece:
+  - "Tu INR, que compara tu tiempo de coagulación con el esperado, salió en {inr}."
+  - "Tu tiempo de protrombina salió en {pt}."
+  - "Tu fibrinógeno, una proteína necesaria para formar el coágulo, salió en {fibrinogen}."
+riesgo_claro: "Si la sangre tarda más de lo normal en coagular, pueden aparecer sangrados o moretones con más facilidad."
+ejemplo_simple: "Es como el pegante para tapar una fuga: si tarda en secar, la fuga dura más."
+incertidumbre: "Un tubo mal llenado o una muestra procesada tarde pueden alterar el resultado; algunos medicamentos también lo cambian."
+cuando_consultar: "Conviene una consulta médica en las próximas semanas. Si tienes sangrados que no paran o moretones grandes sin golpes, consulta antes."
+aviso_whatsapp: null
+fuentes: ["Fichas pt, inr y fibrinogen del Knowledge Base"]
+estado_revision: pendiente

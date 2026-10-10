@@ -1,0 +1,14 @@
+id: COND-M1-CA-A01
+tipo: condicion
+titulo_paciente: "Partículas de colesterol más altas de lo que muestra el LDL"
+que_es: "La ApoB cuenta cuántas partículas de colesterol que pueden tapar las arterias circulan en tu sangre; a veces muestra más que el LDL."
+por_que_te_aparece:
+  - "Tu ApoB salió en {apob}, en 130 mg/dL o más."
+  - "Tu colesterol LDL salió en {ldl_c}, por debajo de 130 mg/dL."
+riesgo_claro: "Si hay muchas partículas aunque el LDL se vea bien, el riesgo para las arterias puede ser mayor del que parece con los años."
+ejemplo_simple: "Es como contar carros en vez de pasajeros: el trancón depende de cuántos carros hay, no solo de cuánta gente llevan."
+incertidumbre: "Las guías no fijan un corte único para esta diferencia. Tu médico lo interpreta junto con tus triglicéridos, tu glucosa y tu riesgo global."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ACC/AHA 2026", "NLA 2024 (consenso de expertos)"]
+estado_revision: pendiente

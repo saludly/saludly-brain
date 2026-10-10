@@ -1,0 +1,13 @@
+id: SEG-001
+tipo: seguridad
+titulo_paciente: "Un resultado del corazón que requiere revisión hoy"
+que_es: "La troponina es una proteína del músculo del corazón; normalmente casi no aparece en la sangre."
+por_que_te_aparece:
+  - "Tu troponina de alta sensibilidad salió en {hs_troponin}, por encima del valor de referencia."
+riesgo_claro: "Cuando la troponina sube, el músculo del corazón puede estar bajo esfuerzo o lesión; por eso se revisa el mismo día."
+ejemplo_simple: "Es como una alarma de humo que suena: primero se revisa de inmediato y después se busca la causa."
+incertidumbre: "También puede subir por ejercicio extremo reciente, una infección o el riñón; solo un médico puede interpretarlo."
+cuando_consultar: "Nuestro equipo te va a llamar hoy. Si tienes dolor o presión en el pecho, falta de aire o sudor frío, ve a urgencias ahora."
+aviso_whatsapp: null
+fuentes: ["Ficha hs_troponin del Knowledge Base (Cuarta definición universal de infarto)"]
+estado_revision: pendiente

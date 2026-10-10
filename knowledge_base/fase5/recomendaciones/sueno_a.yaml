@@ -1,0 +1,106 @@
+# Recomendaciones de sueño · lote A (M1, M2, M5, sus patrones, generales y por objetivo)
+# Numeración 100 a 199. Pendiente de revisión de Carlos.
+
+- id: REC-SUE-101
+  tipo: sueno
+  titulo: "Horario fijo para dormir"
+  texto_base: "Acuéstate y levántate a la misma hora todos los días, también el fin de semana, buscando dormir entre 7 y 9 horas."
+  meta_concreta: "Esta semana, misma hora de levantarte los 7 días, con máximo una hora de diferencia."
+  por_que: "Dormir poco o a deshoras altera el manejo del azúcar, el apetito, la presión y las hormonas."
+  se_activa_con: ["general", "COND-M1-EM-001", "COND-M1-EM-003", "COND-M1-EM-004", "COND-M1-CA-006", "COND-M5-UR-002", "REL-001", "REL-024"]
+  prioriza_objetivos: ["energia_sueno", "bajar_peso", "salud_general", "masa_muscular"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Elige hoy tu hora fija para levantarte y respétala toda la semana, también el sábado y el domingo. Tu cuerpo se organiza mejor."
+  fuentes: ["AASM y SRS, Recommended Amount of Sleep for a Healthy Adult 2015", "AHA Life's Essential 8, 2022"]
+
+- id: REC-SUE-102
+  tipo: sueno
+  titulo: "Una rutina para desconectarte"
+  texto_base: "Apaga el celular, el computador y la televisión 30 a 60 minutos antes de dormir y usa ese tiempo para algo tranquilo: leer, una ducha tibia o estiramientos suaves."
+  meta_concreta: "Pantallas apagadas 30 minutos antes de dormir, 5 noches esta semana."
+  por_que: "La luz y los estímulos de las pantallas retrasan el sueño y lo hacen más liviano."
+  se_activa_con: ["general", "objetivo:energia_sueno"]
+  prioriza_objetivos: ["energia_sueno", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Esta noche deja el celular cargando fuera del cuarto 30 minutos antes de dormir. Lee algo o estírate un rato."
+  fuentes: ["AASM, Healthy Sleep Habits", "AHA Life's Essential 8, 2022"]
+
+- id: REC-SUE-103
+  tipo: sueno
+  titulo: "Café solo en la mañana"
+  texto_base: "Toma tu café, té negro o bebidas con cafeína solo en la mañana y evítalos después del mediodía."
+  meta_concreta: "Esta semana, último tinto antes de las 12 del día."
+  por_que: "La cafeína dura varias horas en el cuerpo y puede quitarte sueño aunque no lo notes."
+  se_activa_con: ["objetivo:energia_sueno", "COND-M2-TI-004"]
+  prioriza_objetivos: ["energia_sueno", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Reto de la semana: el último tinto del día antes de las 12. Vas a notar la diferencia en tu sueño."
+  fuentes: ["AASM, Healthy Sleep Habits", "Drake et al., J Clin Sleep Med 2013 (cafeína y sueño)"]
+
+- id: REC-SUE-104
+  tipo: sueno
+  titulo: "Un cuarto oscuro, fresco y silencioso"
+  texto_base: "Prepara tu cuarto para dormir: oscuro, fresco y sin ruido. Usa cortinas gruesas o antifaz y deja la televisión fuera del cuarto si puedes."
+  meta_concreta: "Esta semana, duerme sin televisión encendida y con la luz totalmente apagada, 5 noches."
+  por_que: "La oscuridad le avisa al cuerpo que es hora de dormir y ayuda a que el sueño sea más profundo."
+  se_activa_con: ["objetivo:energia_sueno"]
+  prioriza_objetivos: ["energia_sueno", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Esta noche apaga la televisión y todas las luces del cuarto antes de dormir. La oscuridad ayuda a descansar mejor."
+  fuentes: ["AASM, Healthy Sleep Habits"]
+
+- id: REC-SUE-105
+  tipo: sueno
+  titulo: "Duerme para recuperarte"
+  texto_base: "Si entrenas, prioriza dormir 7 a 9 horas, sobre todo después de los días más exigentes. El sueño es parte de tu plan de entrenamiento."
+  meta_concreta: "Esta semana, 7 horas o más de sueño las noches después de entrenar."
+  por_que: "Durante el sueño el cuerpo repara el músculo y recupera energía; dormir poco baja el rendimiento."
+  se_activa_con: ["objetivo:masa_muscular", "objetivo:atletico", "objetivo:rendimiento", "objetivo:maraton"]
+  prioriza_objetivos: ["masa_muscular", "atletico", "rendimiento", "maraton"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Esta noche, después de entrenar, acuéstate a tiempo para dormir 7 horas o más. Ahí es cuando tus músculos se recuperan."
+  fuentes: ["AASM y SRS, Recommended Amount of Sleep for a Healthy Adult 2015", "IOC Consensus Statement on Sleep and Athletes 2021"]
+
+- id: REC-SUE-106
+  tipo: sueno
+  titulo: "Cuéntale a tu médico si roncas"
+  texto_base: "Si roncas fuerte, alguien nota que dejas de respirar al dormir o te levantas cansado aunque duermas suficiente, coméntalo en tu consulta."
+  meta_concreta: "Pregúntale a quien duerme cerca si roncas fuerte y anota la respuesta para tu próxima consulta."
+  por_que: "Las pausas al respirar durante el sueño se relacionan con presión alta, más peso y peor manejo del azúcar, y se pueden evaluar."
+  se_activa_con: ["COND-M1-EM-004", "COND-M1-CA-006", "COND-M1-EM-003", "COND-M5-UR-002", "REL-001", "REL-024"]
+  prioriza_objetivos: ["energia_sueno", "bajar_peso", "prevenir"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Pregunta en casa si roncas fuerte o haces pausas al respirar cuando duermes. Si es así, coméntalo en tu próxima cita médica."
+  fuentes: ["GPC Colombia HTA 2025 (Minsalud e IETS)", "AASM Clinical Practice Guideline for Diagnostic Testing for Adult OSA 2017"]
+
+- id: REC-SUE-107
+  tipo: sueno
+  titulo: "Siestas cortas"
+  texto_base: "Si haces siesta, que sea corta, de 20 minutos o menos, y antes de las 3 de la tarde."
+  meta_concreta: "Esta semana, siestas de máximo 20 minutos con alarma."
+  por_que: "Una siesta corta da energía; una larga o tarde quita sueño en la noche."
+  se_activa_con: ["objetivo:energia_sueno"]
+  prioriza_objetivos: ["energia_sueno"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Si hoy haces siesta, pon alarma de 20 minutos y que sea antes de las 3 de la tarde. Así no te quita el sueño de la noche."
+  fuentes: ["AASM, Healthy Sleep Habits"]
+
+- id: REC-SUE-108
+  tipo: sueno
+  titulo: "Luz natural en la mañana"
+  texto_base: "Recibe luz natural apenas te levantes: abre las cortinas, desayuna cerca de una ventana o sal unos minutos al aire libre."
+  meta_concreta: "Diez minutos de luz natural antes de las 9 de la mañana, 5 días esta semana."
+  por_que: "La luz de la mañana pone en hora el reloj del cuerpo, da energía de día y facilita el sueño de noche."
+  se_activa_con: ["objetivo:energia_sueno", "general"]
+  prioriza_objetivos: ["energia_sueno", "salud_general"]
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "Mañana, apenas te levantes, abre las cortinas o sal 10 minutos al aire libre. La luz de la mañana te despierta de verdad."
+  fuentes: ["AASM, Healthy Sleep Habits", "Blume et al., Somnologie 2019 (luz y ritmo circadiano)"]

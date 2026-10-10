@@ -1,0 +1,14 @@
+id: COND-M4-IN-A02
+tipo: condicion
+titulo_paciente: "Parásito en la muestra de heces"
+que_es: "El examen de heces busca parásitos, organismos pequeños que pueden vivir en el intestino; algunos causan molestias y otros no."
+por_que_te_aparece:
+  - "En tu muestra de heces se encontró un parásito que suele requerir tratamiento."
+  - "Tus eosinófilos, un tipo de glóbulo blanco que se activa con algunos parásitos, salieron en {eosinofilos_abs}."
+riesgo_claro: "Si no se trata, puede causar dolor de estómago, diarrea o mala absorción de nutrientes, y pasar a otras personas de la casa."
+ejemplo_simple: "Es como un huésped que llegó sin invitación: hay que identificarlo bien para saber cómo pedirle que se vaya."
+incertidumbre: "Un solo examen no siempre identifica bien el parásito, y algunos no necesitan tratamiento. Consulta con tu médico, que confirma el resultado y decide si hay que tratarlo; no te automediques."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["Pendiente de fuente colombiana"]
+estado_revision: pendiente

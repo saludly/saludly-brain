@@ -20,6 +20,7 @@ sexo: ambos
 alimenta:
 - COND-M2-NE-005
 - SEG-009
+- COND-M6-MI-002
 combine_with:
 - albumin
 - globulin

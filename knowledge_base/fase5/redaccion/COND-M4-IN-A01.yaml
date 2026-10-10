@@ -1,0 +1,14 @@
+id: COND-M4-IN-A01
+tipo: condicion
+titulo_paciente: "Orina y síntomas que sugieren una posible infección urinaria"
+que_es: "El parcial de orina busca señales como nitritos y glóbulos blancos, que aparecen cuando hay bacterias en las vías urinarias."
+por_que_te_aparece:
+  - "Tu parcial de orina mostró señales de una posible infección, como nitritos, esterasa o glóbulos blancos."
+  - "Además, en la visita nos contaste síntomas como ardor al orinar, urgencia o fiebre."
+riesgo_claro: "Si una infección urinaria no se atiende, puede subir hacia los riñones y causar fiebre y dolor de espalda."
+ejemplo_simple: "Es como ver humo y sentir olor a quemado al mismo tiempo: cada señal sola puede confundir, pero juntas hacen pensar en fuego."
+incertidumbre: "El examen de orina y los síntomas lo sugieren, pero no lo confirman. Un urocultivo, que identifica la bacteria, lo confirma; consulta con tu médico y no te automediques con antibióticos."
+cuando_consultar: "Consulta en los próximos días. Si tienes fiebre alta, escalofríos o dolor en la espalda, consulta el mismo día."
+aviso_whatsapp: null
+fuentes: ["IDSA 2019, bacteriuria asintomática"]
+estado_revision: pendiente

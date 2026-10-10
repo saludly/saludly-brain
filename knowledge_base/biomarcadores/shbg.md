@@ -21,6 +21,7 @@ alimenta:
 - COND-M5-MU-001
 - COND-M5-UR-002
 - COND-M5-UR-A01
+- REL-028
 combine_with:
 - testosterone_total
 - testosterone_free

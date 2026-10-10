@@ -1,0 +1,14 @@
+id: COND-M3-HE-006
+tipo: condicion
+titulo_paciente: "Hierro y reservas de hierro más altos de lo esperado"
+que_es: "La ferritina es la reserva de hierro de tu cuerpo, y la saturación de transferrina muestra cuánto hierro circula en la sangre."
+por_que_te_aparece:
+  - "Tu ferritina, la reserva de hierro, salió en {ferritin}, por encima de lo esperado."
+  - "Tu saturación de transferrina salió en {transferrin_saturation}, también por encima de lo esperado."
+riesgo_claro: "Si el hierro se acumula durante años sin control, puede ir afectando órganos como el hígado, el corazón o el páncreas."
+ejemplo_simple: "Es como una bodega que recibe más mercancía de la que despacha: al principio no se nota, pero con los años se llena."
+incertidumbre: "Este patrón es compatible con varias causas, como inflamación, alcohol, el hígado o suplementos. Un solo examen no basta: tu médico lo revisa, puede repetirlo en ayunas y pedir una prueba genética."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["EASL 2022, hemocromatosis", "OMS 2020, ferritina"]
+estado_revision: pendiente

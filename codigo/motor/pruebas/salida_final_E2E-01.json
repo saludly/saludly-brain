@@ -143,6 +143,11 @@
     "nota": "HOMA-IR 5.48: refuerza COND-M1-EM-001, COND-M1-EM-003"
    },
    {
+    "id": "COND-M1-EM-A04",
+    "nombre": "Resistencia a la insulina por TyG y TG/HDL",
+    "nota": "TyG 9.5, TG/HDL 6.61; cortes provisionales 8.8 y 3.0"
+   },
+   {
     "id": "COND-M6-MI-A01",
     "nombre": "Lectura por edad del panel",
     "nota": null
@@ -213,6 +218,7 @@
    "consumo de alcohol",
    "findrisc_puntaje",
    "peso_kg",
+   "pregunta de biotina sin responder (tiroides, B12 y folato sin ese control)",
    "presion",
    "presion_enfermera",
    "presion_sistolica",
@@ -252,6 +258,10 @@
   "eosinofilos_abs": 0.25,
   "fib4": 0.89,
   "psa_libre_porcentaje": null,
+  "tyg_index": 9.5,
+  "tg_hdl_ratio": 6.61,
+  "mentzer_index": null,
+  "nlr": 1.88,
   "hemoglobina_ajustada": 14.4,
   "phenoage": 44.3
  }

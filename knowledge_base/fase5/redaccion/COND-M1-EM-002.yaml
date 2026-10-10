@@ -1,0 +1,14 @@
+id: COND-M1-EM-002
+tipo: condicion
+titulo_paciente: "Glucosa en el rango que las guías usan para diabetes"
+que_es: "La glucosa es el azúcar de la sangre; la hemoglobina glicada (HbA1c) muestra su promedio de los últimos 3 meses."
+por_que_te_aparece:
+  - "Tu glucosa en ayunas salió en {glucose}; las guías usan 126 mg/dL o más para diagnosticar diabetes."
+  - "Tu hemoglobina glicada salió en {hba1c}; las guías usan 6,5 % o más."
+riesgo_claro: "Si el azúcar se mantiene alto por años sin manejo, puede dañar los vasos sanguíneos del corazón, los riñones, los ojos y los nervios de los pies."
+ejemplo_simple: "Es como agua con mucha azúcar en una tubería: con el tiempo se vuelve pegajosa y desgasta todo por dentro."
+incertidumbre: "Si solo uno de los dos exámenes salió en ese rango, hay que repetirlo. Solo tu médico confirma el diagnóstico y define el tipo y el manejo."
+cuando_consultar: null
+aviso_whatsapp: null
+fuentes: ["ADA Standards of Care 2026, sección 2", "GPC Colombia DM2 2016"]
+estado_revision: pendiente

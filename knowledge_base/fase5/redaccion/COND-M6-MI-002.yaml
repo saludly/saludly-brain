@@ -1,0 +1,15 @@
+id: COND-M6-MI-002
+tipo: condicion
+titulo_paciente: "Un patrón de proteínas de la sangre para estudiar"
+que_es: "En la sangre hay varias proteínas: unas transportan sustancias y otras, llamadas globulinas, incluyen los anticuerpos de las defensas."
+por_que_te_aparece:
+  - "Tus globulinas, el grupo de proteínas al que pertenecen los anticuerpos, salieron en {globulin}."
+  - "La relación entre tu albúmina y tus globulinas salió en {ag_ratio}; lo esperado es que sea mayor de 1."
+  - "La electroforesis de proteínas, un examen que separa las proteínas por tipo, reportó: {serum_protein_electrophoresis}."
+riesgo_claro: "Casi siempre tiene una explicación benigna, pero algunas de estas alteraciones necesitan seguimiento para detectar a tiempo cambios en la sangre, los huesos o los riñones."
+ejemplo_simple: "Es como ver en la calle muchos más carros de una sola marca de lo normal: no es un problema por sí mismo, pero vale la pena averiguar por qué."
+incertidumbre: "Una infección reciente, una inflamación o la deshidratación también cambian estas proteínas; hace falta un examen adicional y una revisión médica para saberlo."
+cuando_consultar: "Pide una consulta médica en las próximas semanas; tu médico decidirá si hace falta la electroforesis de proteínas."
+aviso_whatsapp: null
+fuentes: ["IMWG (International Myeloma Working Group)", "NCCN, gammapatías monoclonales"]
+estado_revision: pendiente

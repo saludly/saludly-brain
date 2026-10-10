@@ -1,0 +1,15 @@
+id: COND-M5-UR-002
+tipo: condicion
+titulo_paciente: "Testosterona baja en esta toma"
+que_es: "La testosterona es la principal hormona masculina; ayuda a mantener la energía, el músculo, los huesos y el deseo sexual."
+por_que_te_aparece:
+  - "Tu testosterona total salió en {testosterone_total}, por debajo del rango esperado."
+  - "Tu testosterona libre, la parte que está activa en el cuerpo, se calculó en {testosterone_free}."
+  - "Tu SHBG, la proteína que transporta la testosterona en la sangre, salió en {shbg}."
+riesgo_claro: "Si se mantiene baja, con el tiempo puede relacionarse con cansancio, menos deseo sexual, pérdida de músculo y huesos más débiles."
+ejemplo_simple: "Es como pesarte un solo día después de una mala noche: el número puede engañar, por eso se mide otra vez en la mañana."
+incertidumbre: "La testosterona varía mucho de un día a otro y baja con el mal sueño, el peso o una enfermedad reciente; hay que repetirla en la mañana y en ayunas."
+cuando_consultar: "Coméntalo con tu médico, sobre todo si tienes cansancio, menos deseo sexual o pérdida de masa muscular."
+aviso_whatsapp: "Hay un resultado hormonal en tu informe de Saludly que conviene repetir en la mañana. Ábrelo cuando puedas."
+fuentes: ["Endocrine Society 2018, hipogonadismo masculino"]
+estado_revision: pendiente

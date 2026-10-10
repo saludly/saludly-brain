@@ -1,0 +1,14 @@
+id: COND-M5-MU-A01
+tipo: condicion
+titulo_paciente: "Hemoglobina baja para el embarazo"
+que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno a todo tu cuerpo y también a tu bebé."
+por_que_te_aparece:
+  - "Tu hemoglobina salió en {hemoglobin}; ajustada por la altura de Bogotá queda en {hemoglobina_ajustada}, por debajo de lo recomendado para el embarazo."
+  - "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en {ferritin}."
+riesgo_claro: "En el embarazo el cuerpo necesita más hierro; si la hemoglobina sigue baja, puede aparecer más cansancio y llegar menos oxígeno al bebé."
+ejemplo_simple: "Es como un camión de reparto con menos cupo justo en la temporada de más pedidos: conviene reforzarlo a tiempo."
+incertidumbre: "Tu control prenatal define la causa y el manejo; la alimentación ayuda, pero cualquier suplemento lo indica ese equipo."
+cuando_consultar: "Coméntalo pronto en tu control prenatal, en los próximos días."
+aviso_whatsapp: null
+fuentes: ["OMS 2024, cortes de hemoglobina"]
+estado_revision: pendiente

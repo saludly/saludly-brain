@@ -66,8 +66,9 @@ def evaluar_relaciones(d, h):
     anemia = h.get("COND-M3-HE-001", {}).get("estado") == "activa"
     retic = _alto(d, "reticulocytes_pct") or _alto(d, "reticulocytes_abs")
     bi = _alto(d, "bilirubin_total") and not _alto(d, "bilirubin_direct")
-    put(R("REL-009", "activa", ["COND-M3-HE-001"], 2, senales=["anemia", "reticulocitos_altos"] + (["bilirrubina_indirecta"] if bi else []) + (["ldh"] if _alto(d, "ldh") else []))
-        if (anemia and retic and (bi or _alto(d, "ldh"))) else R("REL-009", "no_activa"))
+    hapto = _bajo(d, "haptoglobin")   # refleja agregada el 10 de octubre de 2026
+    put(R("REL-009", "activa", ["COND-M3-HE-001"], 2, senales=["anemia", "reticulocitos_altos"] + (["bilirrubina_indirecta"] if bi else []) + (["ldh"] if _alto(d, "ldh") else []) + (["haptoglobina_baja"] if hapto else []))
+        if (anemia and retic and (bi or _alto(d, "ldh") or hapto)) else R("REL-009", "no_activa"))
     u, e = d.v("uacr"), d.calc("egfr")
     put(R("REL-010", "activa", _act(h, "COND-M2-NE-001", "COND-M2-NE-003"), senales=["albuminuria", "tfg_baja"]) if (u is not None and u >= 30 and e is not None and e < 60) else R("REL-010", "no_activa"))
     comb = d.C.get("egfr_creatinina_cistatina")
@@ -113,6 +114,22 @@ def evaluar_relaciones(d, h):
     else: put(R("REL-026", "vigilar") if (w.get("fc_reposo_alta") or w.get("sueno_alterado") or w.get("actividad_baja")) else R("REL-026", "no_activa"))
     mu3 = h.get("COND-M5-MU-003", {})
     put(R("REL-027", "activa", ["COND-M5-MU-003", "COND-M2-TI-001"]) if (mu3.get("estado") in ("activa", "vigilar") and mu3.get("escalamiento") != 0 and (_alto(d, "tsh") or mu3.get("confusores_aplicados"))) else R("REL-027", "no_activa"))
+    # ---- relaciones aprobadas el 10 de octubre de 2026
+    andro = h.get("COND-M5-MU-001", {}).get("estado") in ("activa", "vigilar")
+    s28 = [k for k, ok in (("homa_ir", (d.calc("homa_ir") or 0) > 2.5), ("tyg", (d.calc("tyg_index") or 0) > 8.8),
+                           ("prediabetes", h.get("COND-M1-EM-001", {}).get("estado") == "activa"), ("sindrome_metabolico", h.get("COND-M1-EM-003", {}).get("estado") == "activa"),
+                           ("dislipidemia", any(h.get(x, {}).get("estado") == "activa" for x in ("COND-M1-CA-001", "COND-M1-CA-003")))) if ok]
+    put(R("REL-028", "activa", _act(h, "COND-M5-MU-001", "COND-M1-EM-001", "COND-M1-EM-003", "COND-M1-CA-001", "COND-M1-CA-003", "COND-M1-EM-A02", "COND-M1-EM-A04"),
+          senales=["androgenos_altos"] + s28) if (andro and s28) else R("REL-028", "no_activa"))
+    testo_ext = any(m in d.meds() or m in " ".join(d.c("suplementos", [])).lower() for m in ("testosterona", "anabolico", "anabólico", "oxandrolona", "nandrolona"))
+    put(R("REL-029", "activa", ["COND-M3-HE-007"], senales=["eritrocitosis", "testosterona_alta" if _alto(d, "testosterone_total") else "testosterona_declarada"])
+        if (h.get("COND-M3-HE-007", {}).get("estado") == "activa" and (_alto(d, "testosterone_total") or testo_ext)) else R("REL-029", "no_activa"))
+    n_l = d.calc("nlr")
+    put(R("REL-030", "vigilar", nota=f"NLR {n_l}, hs-CRP {crp}") if (n_l is not None and n_l > 3 and crp > 2 and not d.c("infeccion_reciente")) else R("REL-030", "no_activa"))
+    if _alto(d, "rheumatoid_factor"):
+        s31 = [k for k, ok in (("anti_ccp", _alto(d, "anti_ccp")), ("ana", h.get("COND-M6-RE-A01", {}).get("estado") == "activa"), ("vsg", _alto(d, "esr")), ("hs_crp_>5", crp > 5)) if ok]
+        put(R("REL-031", "vigilar", senales=["factor_reumatoide"] + s31, nota="sugerir consulta solo si hay síntomas articulares" if s31 else None))
+    else: put(R("REL-031", "no_activa"))
     return out
 
 
@@ -129,7 +146,10 @@ def evaluar_seguridad(d, h):
     put(S("SEG-001", 3 if c == "critico" else 0, ["troponina sobre el percentil 99: llamada el mismo día"] if c == "critico" else [], True, "llamada" if c == "critico" else None))
     # SEG-002 cortisol y ACTH
     det, esc = [], 0
-    if d.clase("cortisol") == "bajo": det.append("cortisol bajo en la mañana"); esc = 2
+    if d.clase("cortisol") == "bajo":
+        # desde el 10 de octubre de 2026 el cortisol de la mañana bajo es la condición COND-M2-TI-009
+        if h.get("COND-M2-TI-009", {}).get("estado") == "activa": det.append("cortisol bajo: ver COND-M2-TI-009")
+        else: det.append("cortisol bajo en la mañana"); esc = 2
     elif d.clase("cortisol") == "alto": det.append("cortisol alto"); esc = max(esc, 1)
     elif d.clase("cortisol") == "critico": det.append("cortisol con bandera crítica"); esc = 3
     if d.clase("acth") in ("alto", "bajo"): det.append("ACTH fuera de rango (interpretación solo para el médico)"); esc = max(esc, 1)
@@ -173,10 +193,13 @@ def evaluar_seguridad(d, h):
     # SEG-009 proteínas
     det, esc = [], 0
     ag = d.calc("ag_ratio")
-    if ag is not None and ag < 1.0: esc = 1; det.append(f"relación A/G {ag}: considerar electroforesis")
+    # desde el 10 de octubre de 2026 la A/G baja y las IgG o IgM muy altas alimentan COND-M6-MI-002 (gammapatía)
+    gamma = h.get("COND-M6-MI-002", {}).get("estado") == "activa"   # si está pendiente de la electroforesis, esta regla sigue avisando
+    if gamma: det.append("proteínas alteradas: ver COND-M6-MI-002")
+    if ag is not None and ag < 1.0 and not gamma: esc = 1; det.append(f"relación A/G {ag}: considerar electroforesis")
     for b in ("igg", "igm"):
         v, hi = d.v(b), d.hi(b)
-        if v is not None and hi and v > 2 * hi: esc = 2; det.append(f"{b} muy alta")
+        if v is not None and hi and v > 2 * hi and not gamma: esc = 2; det.append(f"{b} muy alta")
     if _bajo(d, "igg") and d.c("infecciones_repetidas"): esc = 2; det.append("IgG baja con infecciones repetidas")
     put(S("SEG-009", esc, det))
     # SEG-010 metabolismo
@@ -286,7 +309,10 @@ def ensamblar(cond, rels, segs, p1, ctx):
     canal = "llamada del equipo médico antes de publicar" if llamadas else ("revisión médica antes de publicar" if esc_max >= 2 else "revisión médica (piloto)")
     rec = cond.get("COND-M6-MI-A01", {}).get("recordatorios", [])
     pa = cond.get("COND-M6-MI-A02", {})
+    # apoyos que también se le cuentan al paciente como dato informativo (por ejemplo, transición a la menopausia)
+    informativos = [dict(id=k, nombre=v["nombre"], coincidencia=v.get("coincidencia"), nivel_lenguaje=v.get("nivel_lenguaje"))
+                    for k, v in cond.items() if v["estado"] == "apoyo" and v.get("informativa_para_paciente")]
     return dict(orden=p1.get("orden"), estado="analisis_completo", escalamiento_maximo=esc_max, canal=canal, llamadas=sorted(set(llamadas)),
-                hallazgos_informe=grupos, vista_medica=vista, recordatorios=rec,
+                hallazgos_informe=grupos, informativos_paciente=informativos, vista_medica=vista, recordatorios=rec,
                 edad_biologica=dict(phenoage=pa.get("phenoage"), diferencia=pa.get("diferencia"), nota=pa.get("nota")) if pa.get("estado") == "activa" else None,
                 calculados={k: (v["valor"] if v.get("calculado") else None) for k, v in p1["calculados"].items()})

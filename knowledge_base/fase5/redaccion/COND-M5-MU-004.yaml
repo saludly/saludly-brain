@@ -1,0 +1,14 @@
+id: COND-M5-MU-004
+tipo: informativa
+titulo_paciente: "Tus hormonas muestran la transición a la menopausia"
+que_es: "La transición a la menopausia es una etapa natural de la vida en la que los ovarios bajan su actividad poco a poco; no es una enfermedad."
+por_que_te_aparece:
+  - "Tu FSH, la hormona que estimula los ovarios, salió en {fsh}, un valor que suele verse en esta etapa."
+  - "Tu estradiol, la principal hormona de los ovarios, salió en {estradiol}."
+riesgo_claro: "Con menos estrógeno, los huesos pierden firmeza más rápido y el corazón pierde parte de su protección; por eso es un buen momento para cuidarlos."
+ejemplo_simple: "Es como un cambio de estación: el cuerpo se ajusta a un clima nuevo y vale la pena prepararse para disfrutarlo bien."
+incertidumbre: "La FSH varía de un mes a otro y no dice por sí sola en qué momento de la transición estás; tu médico lo valora con tus ciclos y cómo te sientes."
+cuando_consultar: "Habla con tu médico sobre cómo te sientes (calores, sueño, ánimo) y sobre cómo cuidar tus huesos y tu corazón en esta etapa."
+aviso_whatsapp: "Tu informe de Saludly trae información y consejos para esta etapa de tu vida. Ábrelo cuando puedas."
+fuentes: ["STRAW+10 (2012), etapas del envejecimiento reproductivo", "NICE NG23, menopausia"]
+estado_revision: pendiente
