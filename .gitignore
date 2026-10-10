@@ -19,3 +19,6 @@ datos_reales/
 Thumbs.db
 desktop.ini
 ~$*
+
+# Salidas regenerables del RAG
+codigo/rag/salida/

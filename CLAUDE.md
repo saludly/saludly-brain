@@ -16,7 +16,7 @@ Saludly Brain es un agente de IA médico preventivo de Saludly (Bogotá, Colombi
 3. **Nada es un diagnóstico.** Hay cuatro niveles de lenguaje: resultado observado, patrón compatible, riesgo potencial y condición que requiere evaluación médica. Las frases prohibidas están en el documento 05 y en el documento de relaciones.
 4. **Las decisiones clínicas son del médico revisor.** No cambies umbrales, coincidencias ni escalamientos por tu cuenta. Si una prueba contradice una ficha, avisa a Carlos y no "arregles" la ficha. Los supuestos provisionales se marcan como tales.
 5. **Datos de pacientes:** solo datos sintéticos. Hacia un LLM externo, seudonimizar: edad, sexo, valores y contexto; nunca nombre ni documento.
-6. **No toques `_archivo/`.** Es histórico.
+6. **No toques `_archivo/`.** Es histórico (el 9 de octubre de 2026 ya no estaba dentro de esta carpeta).
 
 ## Estructura
 
@@ -73,14 +73,20 @@ cd codigo/lector_pdf && python pruebas/probar.py        # la prueba del PDF mezc
 
 ## Deuda técnica conocida
 
-- **Copias de la Knowledge Base.** `codigo/motor/motor/kb/`, `codigo/motor/pruebas/00_INDEX.json` y `pruebas/E2E-*.json` son copias de `knowledge_base/`. Hoy están sincronizadas. Si cambias una, sincroniza la otra; conviene que el motor lea directo de `knowledge_base/`.
+- **Copias de la Knowledge Base.** `codigo/motor/motor/kb/`, `codigo/motor/pruebas/00_INDEX.json`, `codigo/motor/pruebas/E2E-*.json` y `codigo/lector_pdf/pruebas/E2E-*.json` son copias de `knowledge_base/`. Hoy están sincronizadas. Si cambias una, sincroniza la otra; conviene que el motor lea directo de `knowledge_base/`.
 - **El lector está duplicado** en `codigo/motor/motor/lector.py` y `codigo/lector_pdf/lector.py`, que hoy son idénticos.
 - **Rutas fijas.** `pdf_ejemplo/generar_pdf_ejemplo.py` escribe en `/home/claude/saludly/`; hay que cambiarlo antes de usarlo.
-- **Sin control de versiones.** El proyecto todavía no usa git.
+- **Git.** El repositorio usa git desde el 9 de octubre de 2026 (rama `main`, sin remoto). `.gitattributes` normaliza los saltos de línea, así que las salidas de las pruebas solo aparecen como cambiadas si cambia su contenido.
 - **El lector está hecho para el PDF de ejemplo.** Cuando llegue el formato real del laboratorio, hay que ajustar sus constantes de formato y repetir las pruebas.
 
 ## Estado y siguientes pasos
 
-Las Fases 0, 1, 3 y 4 están hechas en versión 1. La siguiente es la **Fase 2**: OpenClaw en un VPS de Hostinger con DeepSeek (`deepseek-v4-pro`; `deepseek-chat` y `deepseek-reasoner` se retiraron el 24 de julio de 2026) y embeddings locales. Después vienen la Fase 5 (redacción del informe con control de salida), la Fase 6 (dashboard, formulario de la enfermera y app iOS mínima) y la Fase 7 (WhatsApp Business Platform).
+Las Fases 0, 1, 3 y 4 están hechas en versión 1. La siguiente es la **Fase 2**: OpenClaw en un VPS de **DonWeb** (ya no Hostinger) con DeepSeek (`deepseek-v4-pro`; `deepseek-chat` y `deepseek-reasoner` se retiraron el 24 de julio de 2026), la Knowledge Base vectorizada en **Supabase** y las skills del agente para este proyecto. El plan y el documento 10 todavía dicen Hostinger. Después vienen la Fase 5 (redacción del informe con control de salida), la Fase 6 (dashboard, formulario de la enfermera y app iOS mínima) y la Fase 7 (WhatsApp Business Platform).
 
-Pendientes externos: la firma del médico, el PDF real del laboratorio, el formulario de la visita de la enfermera y la consulta legal sobre el INVIMA. El detalle está en `docs/02_plan_y_decisiones/Saludly_Plan_de_implementacion.md`.
+Decisiones del 9 de octubre de 2026:
+
+- Las pruebas son solo con pacientes de **Bogotá**; otras altitudes quedan en espera.
+- La **firma del médico** se hace al terminar el proyecto; mientras se construye no es un bloqueo.
+- La Fase 5 (catálogo de recomendaciones, frases prohibidas centralizadas y control de salida) se construye después, junto con Carlos.
+
+Pendientes externos: el PDF real del laboratorio, el formulario de la visita de la enfermera y la consulta legal sobre el INVIMA. El detalle está en `docs/02_plan_y_decisiones/Saludly_Plan_de_implementacion.md`.
