@@ -2,6 +2,8 @@
 
 En esta carpeta va todo lo que explica el producto: **qué** hace, **por qué** y **con qué evidencia clínica**. Nada de aquí lo lee el código. Lo que el motor usa está en [`../knowledge_base/`](../knowledge_base/00_INDEX.md).
 
+**Informe de estado para compartir:** [`Informe_estado_proyecto_para_Claude.md`](Informe_estado_proyecto_para_Claude.md). Es una foto del proyecto al 11 de octubre de 2026, con las decisiones, lo construido, lo pendiente, las memorias de trabajo y las skills usadas.
+
 ## Qué hay en cada carpeta
 
 ### `01_serie_saludly_brain/` · Definición del producto
