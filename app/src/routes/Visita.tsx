@@ -6,6 +6,7 @@ import { siguientePaso, supabase, useSesion } from "@/lib/sesion";
 /**
  * "Mi enfermera está aquí": la enfermera llena solo lo técnico en el celular del paciente.
  * Las preguntas ya las respondió el paciente en el cuestionario. Los rangos son de digitación, no clínicos.
+ * Peso y estatura ya están en el cuestionario (decisión de Carlos, 22 oct 2026): aquí solo se piden si el paciente los dejó en blanco.
  */
 const numero = (v: string, dec = false) => (dec ? v.replace(",", ".").replace(/[^\d.]/g, "") : v.replace(/\D/g, "")).slice(0, 6);
 
@@ -39,9 +40,12 @@ export function Visita() {
   }, [s, navigate]);
 
   const enRango = (v: string, a: number, b: number) => v !== "" && Number(v) >= a && Number(v) <= b;
+  const pidePeso = !s.cuestionario?.peso_kg;
+  const pideTalla = !s.cuestionario?.talla_m;
   const valido =
     enRango(sist, 60, 260) && enRango(diast, 30, 160) && Number(sist) > Number(diast) && enRango(cintura, 40, 200) &&
-    (cadera === "" || enRango(cadera, 40, 220)) && enRango(peso, 25, 300) && enRango(talla, 100, 230) && enfermera.trim().length >= 3;
+    (cadera === "" || enRango(cadera, 40, 220)) && (!pidePeso || enRango(peso, 25, 300)) && (!pideTalla || enRango(talla, 100, 230)) &&
+    enfermera.trim().length >= 3;
 
   const guardar = async () => {
     setError(null);
@@ -52,8 +56,8 @@ export function Visita() {
       presion_diastolica: Number(diast),
       cintura_cm: Number(cintura),
       cadera_cm: cadera ? Number(cadera) : null,
-      peso_kg: Number(peso),
-      talla_m: Number(talla) / 100,
+      peso_kg: pidePeso ? Number(peso) : null,
+      talla_m: pideTalla ? Number(talla) / 100 : null,
       enfermera: enfermera.trim(),
       tomada: new Date().toISOString(),
     });
@@ -68,7 +72,7 @@ export function Visita() {
 
   return (
     <Pantalla etiqueta="Visita" boton="Guardar medidas" puedeSeguir={valido} ocupado={ocupado} onSeguir={guardar} onAtras={() => void navigate({ to: "/listo" })} error={error}>
-      <Titulo texto="Esta parte la llena la enfermera. Tú ya respondiste tus preguntas.">Mi enfermera está aquí.</Titulo>
+      <Titulo texto="La enfermera te dicta las medidas y tú las escribes, o ella las escribe en tu celular. Tus preguntas ya las respondiste.">Mi enfermera está aquí.</Titulo>
       <div className="mt-8 space-y-6">
         <div>
           <span className="text-[11px] uppercase tracking-[0.16em] text-ink-faint">Presión arterial (mmHg)</span>
@@ -86,12 +90,16 @@ export function Visita() {
           <Campo etiqueta="Cadera (cm)" ayuda="Opcional.">
             <input inputMode="decimal" value={cadera} onChange={(e) => setCadera(numero(e.target.value, true))} className={claseEntrada} placeholder="98" />
           </Campo>
-          <Campo etiqueta="Peso (kg)">
-            <input inputMode="decimal" value={peso} onChange={(e) => setPeso(numero(e.target.value, true))} className={claseEntrada} placeholder="70" />
-          </Campo>
-          <Campo etiqueta="Estatura (cm)">
-            <input inputMode="numeric" value={talla} onChange={(e) => setTalla(numero(e.target.value))} className={claseEntrada} placeholder="165" />
-          </Campo>
+          {pidePeso && (
+            <Campo etiqueta="Peso (kg)" ayuda="No lo diste en el cuestionario.">
+              <input inputMode="decimal" value={peso} onChange={(e) => setPeso(numero(e.target.value, true))} className={claseEntrada} placeholder="70" />
+            </Campo>
+          )}
+          {pideTalla && (
+            <Campo etiqueta="Estatura (cm)" ayuda="No la diste en el cuestionario.">
+              <input inputMode="numeric" value={talla} onChange={(e) => setTalla(numero(e.target.value))} className={claseEntrada} placeholder="165" />
+            </Campo>
+          )}
         </div>
         <Campo etiqueta="Nombre de la enfermera">
           <input value={enfermera} onChange={(e) => setEnfermera(e.target.value)} className={claseEntrada} />
