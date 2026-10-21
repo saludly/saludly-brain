@@ -1,12 +1,27 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { Link, Outlet, RouterProvider, createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
+import { Link, Outlet, RouterProvider, createRootRoute, createRoute, createRouter, useNavigate } from "@tanstack/react-router";
 import "./styles.css";
 import { BarraDemo, NavFlotante } from "@/components/Comunes";
 import { InformeProvider } from "@/lib/contexto";
 import { Bienvenida } from "@/routes/Bienvenida";
 import { Panel } from "@/routes/Panel";
 import { Plan } from "@/routes/Plan";
+import { Entrar } from "@/routes/Entrar";
+import { Registro } from "@/routes/Registro";
+import { Cuestionario } from "@/routes/Cuestionario";
+import { Listo } from "@/routes/Listo";
+import { SesionProvider, siguientePaso, useSesion } from "@/lib/sesion";
+
+/** Entrada de la PWA: lleva al paciente al paso que le falta. */
+function Inicio() {
+  const s = useSesion();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!s.cargando) void navigate({ to: siguientePaso(s), replace: true });
+  }, [s, navigate]);
+  return <div className="min-h-screen bg-background" />;
+}
 
 function NoEncontrada() {
   return (
@@ -34,7 +49,12 @@ const raiz = createRootRoute({
 });
 
 const rutas = [
-  createRoute({ getParentRoute: () => raiz, path: "/", component: Bienvenida }),
+  createRoute({ getParentRoute: () => raiz, path: "/", component: Inicio }),
+  createRoute({ getParentRoute: () => raiz, path: "/entrar", component: Entrar }),
+  createRoute({ getParentRoute: () => raiz, path: "/registro", component: Registro }),
+  createRoute({ getParentRoute: () => raiz, path: "/cuestionario", component: Cuestionario }),
+  createRoute({ getParentRoute: () => raiz, path: "/listo", component: Listo }),
+  createRoute({ getParentRoute: () => raiz, path: "/recorrido", component: Bienvenida }),
   createRoute({ getParentRoute: () => raiz, path: "/panel", component: Panel }),
   createRoute({ getParentRoute: () => raiz, path: "/plan", component: Plan }),
 ];
@@ -49,8 +69,15 @@ declare module "@tanstack/react-router" {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <InformeProvider>
-      <RouterProvider router={router} />
-    </InformeProvider>
+    <SesionProvider>
+      <InformeProvider>
+        <RouterProvider router={router} />
+      </InformeProvider>
+    </SesionProvider>
   </StrictMode>,
 );
+
+// PWA: solo en producción, para que el desarrollo no quede con archivos guardados.
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => void navigator.serviceWorker.register("/sw.js"));
+}

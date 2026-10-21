@@ -1,0 +1,258 @@
+{
+ "objetivos": [
+  {
+   "id": "salud_general",
+   "nombre": "Mejorar mi salud en general",
+   "enfoque": "Equilibrio entre alimentación, actividad, sueño y hábitos"
+  },
+  {
+   "id": "prevenir",
+   "nombre": "Prevenir enfermedades",
+   "enfoque": "Hábitos que bajan el riesgo y controles a tiempo"
+  },
+  {
+   "id": "condicion_existente",
+   "nombre": "Cuidar una condición que ya tengo",
+   "enfoque": "Seguimiento con su médico tratante; nunca reemplaza su tratamiento"
+  },
+  {
+   "id": "bajar_peso",
+   "nombre": "Bajar de peso",
+   "enfoque": "Alimentación, actividad diaria y sueño"
+  },
+  {
+   "id": "masa_muscular",
+   "nombre": "Aumentar mi masa muscular",
+   "enfoque": "Proteína en la dieta, entrenamiento de fuerza y recuperación"
+  },
+  {
+   "id": "rendimiento",
+   "nombre": "Mejorar mi rendimiento o entrenamiento",
+   "enfoque": "Recuperación, alimentación alrededor del entrenamiento e hidratación"
+  },
+  {
+   "id": "maraton",
+   "nombre": "Correr una maratón o carrera larga",
+   "enfoque": "Hidratación y sales, hierro en la dieta, progresión de carga"
+  },
+  {
+   "id": "atletico",
+   "nombre": "Ser más atlético",
+   "enfoque": "Fuerza, resistencia y descanso"
+  },
+  {
+   "id": "energia_sueno",
+   "nombre": "Tener más energía y dormir mejor",
+   "enfoque": "Sueño, horarios de comida y actividad"
+  },
+  {
+   "id": "envejecer_saludable",
+   "nombre": "Envejecer de forma saludable",
+   "enfoque": "Fuerza, alimentación y controles preventivos"
+  }
+ ],
+ "alergias": {
+  "texto": "¿Tiene alguna alergia o intolerancia a alimentos?",
+  "multiple": true,
+  "opciones": [
+   {
+    "id": "mani",
+    "texto": "Maní"
+   },
+   {
+    "id": "frutos_secos",
+    "texto": "Frutos secos (almendras, nueces, marañones…)"
+   },
+   {
+    "id": "mariscos",
+    "texto": "Mariscos (camarón, langostino…)"
+   },
+   {
+    "id": "pescado",
+    "texto": "Pescado"
+   },
+   {
+    "id": "huevo",
+    "texto": "Huevo"
+   },
+   {
+    "id": "leche",
+    "texto": "Alergia a la leche"
+   },
+   {
+    "id": "lactosa",
+    "texto": "Intolerancia a la lactosa"
+   },
+   {
+    "id": "gluten",
+    "texto": "Gluten o enfermedad celíaca"
+   },
+   {
+    "id": "soya",
+    "texto": "Soya"
+   },
+   {
+    "id": "ajonjoli",
+    "texto": "Ajonjolí"
+   }
+  ],
+  "otra": "Otra (escríbala)"
+ },
+ "dieta": {
+  "texto": "¿Qué tipo de alimentación lleva?",
+  "opciones": [
+   {
+    "id": "normal",
+    "texto": "Como de todo"
+   },
+   {
+    "id": "vegetariana",
+    "texto": "Vegetariana (sin carne ni pescado; sí huevo y lácteos)"
+   },
+   {
+    "id": "vegana",
+    "texto": "Vegana (nada de origen animal)"
+   }
+  ]
+ },
+ "medicamentos": {
+  "texto": "¿Toma alguno de estos medicamentos?",
+  "multiple": true,
+  "opciones": [
+   {
+    "id": "warfarina",
+    "texto": "Warfarina (anticoagulante)"
+   },
+   {
+    "id": "anticoagulante_directo",
+    "texto": "Otro anticoagulante: rivaroxabán, apixabán, dabigatrán o edoxabán"
+   },
+   {
+    "id": "diuretico",
+    "texto": "Diurético: hidroclorotiazida, furosemida, espironolactona, clortalidona o indapamida"
+   },
+   {
+    "id": "insulina",
+    "texto": "Insulina"
+   },
+   {
+    "id": "sulfonilurea",
+    "texto": "Glibenclamida, glimepirida o gliclazida"
+   },
+   {
+    "id": "otro_antidiabetico",
+    "texto": "Otro medicamento para el azúcar (metformina, sitagliptina, empagliflozina…)"
+   }
+  ]
+ },
+ "actividad": {
+  "texto": "¿Cuánto se mueve en una semana normal?",
+  "opciones": [
+   {
+    "id": "sedentario",
+    "texto": "Casi no me muevo"
+   },
+   {
+    "id": "ligero",
+    "texto": "Camino o hago algo de ejercicio 1 o 2 veces por semana"
+   },
+   {
+    "id": "moderado",
+    "texto": "Hago ejercicio 3 o 4 veces por semana"
+   },
+   {
+    "id": "alto",
+    "texto": "Entreno 5 veces o más por semana"
+   }
+  ]
+ },
+ "biotina": {
+  "texto": "¿Toma biotina o algún suplemento para el pelo, la piel o las uñas?",
+  "ayuda": "La biotina puede cambiar algunos resultados del laboratorio, como los de tiroides."
+ },
+ "fuma": {
+  "texto": "¿Fuma o vapea?",
+  "opciones": [
+   {
+    "id": "nunca",
+    "texto": "Nunca he fumado"
+   },
+   {
+    "id": "antes",
+    "texto": "Fumaba, pero lo dejé"
+   },
+   {
+    "id": "si",
+    "texto": "Sí, fumo o vapeo"
+   }
+  ]
+ },
+ "alcohol": {
+  "texto": "¿Con qué frecuencia toma bebidas con alcohol?",
+  "opciones": [
+   {
+    "id": "no",
+    "texto": "No tomo"
+   },
+   {
+    "id": "ocasional",
+    "texto": "De vez en cuando, menos de una vez por semana"
+   },
+   {
+    "id": "semanal",
+    "texto": "Una o varias veces por semana"
+   },
+   {
+    "id": "diario",
+    "texto": "Casi todos los días"
+   }
+  ]
+ },
+ "antecedentes": {
+  "texto": "¿Alguno de sus padres o hermanos ha tenido…?",
+  "multiple": true,
+  "opciones": [
+   {
+    "id": "diabetes",
+    "texto": "Diabetes"
+   },
+   {
+    "id": "corazon_temprano",
+    "texto": "Infarto o enfermedad del corazón antes de los 60 años"
+   },
+   {
+    "id": "hipertension",
+    "texto": "Presión alta"
+   },
+   {
+    "id": "colesterol_alto",
+    "texto": "Colesterol muy alto"
+   },
+   {
+    "id": "cancer_colon",
+    "texto": "Cáncer de colon"
+   }
+  ]
+ },
+ "embarazo": {
+  "texto": "¿Está embarazada?",
+  "solo_sexo": "mujer",
+  "opciones": [
+   {
+    "id": "no",
+    "texto": "No"
+   },
+   {
+    "id": "si",
+    "texto": "Sí"
+   },
+   {
+    "id": "no_se",
+    "texto": "No estoy segura"
+   }
+  ]
+ },
+ "ayuno": {
+  "aviso": "La visita es en ayunas: no coma nada desde 10 horas antes. Puede tomar agua."
+ }
+}

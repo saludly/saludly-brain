@@ -55,7 +55,9 @@ codigo/
   rag/                   fragmentar, vectorizar (Ollama bge-m3), probar_busqueda y subir a Supabase
   whatsapp/enviar.py     envío por la API oficial de WhatsApp (lee WHATSAPP_TOKEN y WHATSAPP_PHONE_NUMBER_ID del .env; pasa por el control de salida)
 app/                     Fase 6: app del paciente (Vite + React + TanStack Router + Tailwind), traída del dashboard de Lovable con la misma experiencia.
-                         Pantallas: / (recorrido), /panel, /plan. Hoy lee los informes de codigo/pipeline/ejemplos (demo con selector de caso).
+                         Flujo del paciente: / → /entrar (Supabase Auth: Google o correo) → /registro (datos + autorización AUT-2026-10-v1) → /cuestionario (6 pasos) → /listo.
+                         Informe: /recorrido, /panel, /plan, hoy con los informes de codigo/pipeline/ejemplos (demo con selector de caso). PWA: manifest, íconos y sw.js (solo en producción).
+                         Tablas pacientes, autorizaciones y cuestionarios con RLS (supabase/migrations/20261021000000_pacientes_pwa.sql). Opciones del cuestionario: `python codigo/herramientas/exportar_app.py` (objetivos, filtros y cuestionario.yaml → app/src/lib/contenido.json).
                          `npm --prefix app run dev` (puerto 5173) · `npm --prefix app run build`
 pdf_ejemplo/             4 PDF sintéticos (LCD-2026-100123 hombre, 100124 mujer, 100125 hombre con valor crítico y 100126 mujer con hallazgos digestivos) y generar_pdf_ejemplo.py [1 2 3 4]
 _archivo/                zips originales, versiones viejas, duplicados

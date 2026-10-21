@@ -16,6 +16,9 @@ export function Marca({ derecha }: { derecha?: string }) {
   );
 }
 
+/** Rutas que muestran un informe. Por ahora usan los informes de ejemplo. */
+export const RUTAS_INFORME = ["/recorrido", "/panel", "/plan"];
+
 const ITEMS: { label: string; to: "/panel" | "/plan"; hash?: string }[] = [
   { label: "INICIO", to: "/panel" },
   { label: "MI PLAN", to: "/plan" },
@@ -24,7 +27,7 @@ const ITEMS: { label: string; to: "/panel" | "/plan"; hash?: string }[] = [
 
 export function NavFlotante() {
   const { pathname, hash } = useRouterState({ select: (s) => s.location });
-  if (pathname === "/") return null; // el recorrido de bienvenida no muestra el menú
+  if (!RUTAS_INFORME.includes(pathname) || pathname === "/recorrido") return null; // el recorrido y el registro no muestran el menú
   const activo = ITEMS.findIndex((i) => (i.hash ? pathname === "/panel" && hash === i.hash : i.to === pathname && !hash));
   return (
     <div className="pointer-events-none sticky top-3 z-40 flex justify-center px-3 sm:top-4 sm:px-4">
@@ -49,6 +52,8 @@ export function NavFlotante() {
 /** Barra para cambiar de caso de ejemplo. Desaparece cuando el informe venga de la cuenta del paciente. */
 export function BarraDemo() {
   const { caso, cambiarCaso } = useInforme();
+  const { pathname } = useRouterState({ select: (s) => s.location });
+  if (!RUTAS_INFORME.includes(pathname)) return null;
   return (
     <div className="border-b border-rule bg-surface px-4 py-2">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 text-[11px] text-ink-muted">
