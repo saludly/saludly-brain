@@ -1,6 +1,7 @@
 # Tabla de alimentos de Saludly · valores por 100 g de porción comestible
 # Estado: cereales, tubérculos y leguminosas cocidos sin sal; carnes y pescados crudos; enlatados escurridos.
 # Fuentes: USDA FoodData Central (SR Legacy, dominio público) y Tabla de Composición de Alimentos Colombianos (ICBF).
+# alergenos (20 oct 2026): mani, frutos_secos, mariscos, pescado, huevo, leche, soya, ajonjoli, gluten y lactosa; los usa filtros.yaml.
 # Los marcados "aproximado, por verificar" deben contrastarse con la tabla antes de producción.
 
 - id: arroz_blanco_cocido
@@ -9,6 +10,7 @@
   por_100g: {kcal: 130, proteina_g: 2.69, grasa_g: 0.28, grasa_saturada_g: 0.08, carbohidratos_g: 28.2, fibra_g: 0.4, azucares_g: 0.05, sodio_mg: 1, potasio_mg: 35, hierro_mg: 1.2, calcio_mg: 10}
   medida_casera: {nombre: "taza", gramos: 160}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168878 (NDB 20045), verificado en línea"
 
 - id: arroz_integral_cocido
@@ -17,6 +19,7 @@
   por_100g: {kcal: 123, proteina_g: 2.74, grasa_g: 0.97, grasa_saturada_g: 0.26, carbohidratos_g: 25.6, fibra_g: 1.6, azucares_g: 0.24, sodio_mg: 4, potasio_mg: 86, hierro_mg: 0.56, calcio_mg: 3}
   medida_casera: {nombre: "taza", gramos: 195}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169704 (NDB 20037), verificado en línea"
 
 - id: avena_hojuelas
@@ -25,6 +28,7 @@
   por_100g: {kcal: 379, proteina_g: 13.2, grasa_g: 6.52, grasa_saturada_g: 1.11, carbohidratos_g: 67.7, fibra_g: 10.1, azucares_g: 0.99, sodio_mg: 6, potasio_mg: 362, hierro_mg: 4.25, calcio_mg: 52}
   medida_casera: {nombre: "cucharada colmada", gramos: 10}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC SR Legacy 173904 (NDB 8120), verificado en línea"
 
 - id: pan_integral
@@ -33,6 +37,7 @@
   por_100g: {kcal: 252, proteina_g: 12.4, grasa_g: 3.5, grasa_saturada_g: 0.72, carbohidratos_g: 42.7, fibra_g: 6, azucares_g: 4.34, sodio_mg: 455, potasio_mg: 254, hierro_mg: 2.47, calcio_mg: 161}
   medida_casera: {nombre: "tajada", gramos: 30}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC SR Legacy 172688 (NDB 18075), verificado en línea"
 
 - id: pan_blanco
@@ -41,6 +46,7 @@
   por_100g: {kcal: 266, proteina_g: 8.85, grasa_g: 3.33, grasa_saturada_g: 0.7, carbohidratos_g: 49.4, fibra_g: 2.7, azucares_g: 5.67, sodio_mg: 490, potasio_mg: 126, hierro_mg: 3.61, calcio_mg: 144}
   medida_casera: {nombre: "tajada", gramos: 25}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC SR Legacy 174924 (NDB 18069), verificado en línea"
 
 - id: arepa_maiz_blanca
@@ -49,6 +55,7 @@
   por_100g: {kcal: 156, proteina_g: 3.4, grasa_g: 0.5, grasa_saturada_g: 0.2, carbohidratos_g: 34.5, fibra_g: 2.5, azucares_g: 0.5, sodio_mg: 121, potasio_mg: 33, hierro_mg: 0.5, calcio_mg: 19}
   medida_casera: {nombre: "arepa mediana", gramos: 80}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 6 (arepa de maíz blanco, sin sal); grasa saturada, fibra y azúcares aproximados"
 
 - id: arepa_maiz_amarilla
@@ -57,6 +64,7 @@
   por_100g: {kcal: 170, proteina_g: 4.3, grasa_g: 0.5, grasa_saturada_g: 0.2, carbohidratos_g: 37, fibra_g: 2.8, azucares_g: 0.6, sodio_mg: 5, potasio_mg: 85, hierro_mg: 1, calcio_mg: 4}
   medida_casera: {nombre: "arepa mediana", gramos: 80}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 3 (arepa de maíz amarillo, asada); grasa saturada, fibra, azúcares, sodio y potasio aproximados"
 
 - id: harina_maiz_precocida
@@ -65,6 +73,7 @@
   por_100g: {kcal: 370, proteina_g: 7.11, grasa_g: 1.75, grasa_saturada_g: 0.22, carbohidratos_g: 79.45, fibra_g: 3.9, azucares_g: 1.61, sodio_mg: 7, potasio_mg: 142, hierro_mg: 4.36, calcio_mg: 3}
   medida_casera: {nombre: "taza", gramos: 120}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC 168922 (SR Legacy, harina de maíz blanco desgerminada enriquecida, como equivalente; la TCAC no trae harina precocida)"
 
 - id: pasta_cocida
@@ -73,6 +82,7 @@
   por_100g: {kcal: 158, proteina_g: 5.8, grasa_g: 0.93, grasa_saturada_g: 0.18, carbohidratos_g: 30.9, fibra_g: 1.8, azucares_g: 0.56, sodio_mg: 1, potasio_mg: 44, hierro_mg: 1.28, calcio_mg: 7}
   medida_casera: {nombre: "taza", gramos: 140}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC SR Legacy 169737 (NDB 20121), verificado en línea"
 
 - id: pasta_integral_cocida
@@ -81,6 +91,7 @@
   por_100g: {kcal: 149, proteina_g: 5.99, grasa_g: 1.71, grasa_saturada_g: 0.24, carbohidratos_g: 30.1, fibra_g: 3.9, azucares_g: 0.75, sodio_mg: 4, potasio_mg: 96, hierro_mg: 1.72, calcio_mg: 13}
   medida_casera: {nombre: "taza", gramos: 140}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC SR Legacy 168910 (NDB 20125), verificado en línea"
 
 - id: quinua_cocida
@@ -89,6 +100,7 @@
   por_100g: {kcal: 120, proteina_g: 4.4, grasa_g: 1.92, grasa_saturada_g: 0.23, carbohidratos_g: 21.3, fibra_g: 2.8, azucares_g: 0.87, sodio_mg: 7, potasio_mg: 172, hierro_mg: 1.49, calcio_mg: 17}
   medida_casera: {nombre: "taza", gramos: 185}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168917 (NDB 20137), verificado en línea"
 
 - id: mazorca_tierna
@@ -97,6 +109,7 @@
   por_100g: {kcal: 86, proteina_g: 3.27, grasa_g: 1.35, grasa_saturada_g: 0.33, carbohidratos_g: 18.7, fibra_g: 2, azucares_g: 6.26, sodio_mg: 15, potasio_mg: 270, hierro_mg: 0.52, calcio_mg: 2}
   medida_casera: {nombre: "mazorca mediana desgranada", gramos: 100}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169998 (NDB 11167), verificado en línea"
 
 - id: tortilla_maiz
@@ -105,6 +118,7 @@
   por_100g: {kcal: 218, proteina_g: 5.7, grasa_g: 2.85, grasa_saturada_g: 0.45, carbohidratos_g: 44.6, fibra_g: 6.3, azucares_g: 0.88, sodio_mg: 45, potasio_mg: 186, hierro_mg: 1.23, calcio_mg: 81}
   medida_casera: {nombre: "tortilla", gramos: 30}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 175036 (NDB 18363), verificado en línea"
 
 - id: cebada_perlada_cocida
@@ -113,6 +127,7 @@
   por_100g: {kcal: 123, proteina_g: 2.26, grasa_g: 0.44, grasa_saturada_g: 0.09, carbohidratos_g: 28.2, fibra_g: 3.8, azucares_g: 0.28, sodio_mg: 3, potasio_mg: 93, hierro_mg: 1.33, calcio_mg: 11}
   medida_casera: {nombre: "taza", gramos: 157}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC SR Legacy 170285 (NDB 20006), verificado en línea"
 
 - id: granola_sin_azucar
@@ -121,6 +136,7 @@
   por_100g: {kcal: 448, proteina_g: 12, grasa_g: 20, grasa_saturada_g: 3, carbohidratos_g: 55, fibra_g: 9, azucares_g: 4, sodio_mg: 20, potasio_mg: 450, hierro_mg: 3.5, calcio_mg: 60}
   medida_casera: {nombre: "1/2 taza", gramos: 50}
   etiquetas: [vegetariano, sin_lactosa]
+  alergenos: [frutos_secos, gluten]
   fuente: "USDA FDC (aproximado, por verificar)"
 
 - id: galleta_integral_sin_azucar
@@ -129,6 +145,7 @@
   por_100g: {kcal: 427, proteina_g: 10.58, grasa_g: 14.13, grasa_saturada_g: 2.06, carbohidratos_g: 69.55, fibra_g: 10.3, azucares_g: 1.19, sodio_mg: 800, potasio_mg: 345, hierro_mg: 3.34, calcio_mg: 36}
   medida_casera: {nombre: "paquete de 3 galletas", gramos: 27}
   etiquetas: [vegetariano, sin_lactosa]
+  alergenos: [gluten]
   fuente: "USDA FDC 172749 (SR Legacy, crackers whole-wheat)"
 
 - id: papa_cocida
@@ -137,6 +154,7 @@
   por_100g: {kcal: 87, proteina_g: 1.87, grasa_g: 0.1, grasa_saturada_g: 0.03, carbohidratos_g: 20.1, fibra_g: 1.8, azucares_g: 0.91, sodio_mg: 4, potasio_mg: 379, hierro_mg: 0.31, calcio_mg: 5}
   medida_casera: {nombre: "papa mediana", gramos: 150}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170438 (NDB 11365), verificado en línea"
 
 - id: papa_criolla_cocida
@@ -145,6 +163,7 @@
   por_100g: {kcal: 67, proteina_g: 1.4, grasa_g: 0.1, grasa_saturada_g: 0.03, carbohidratos_g: 15.3, fibra_g: 3, azucares_g: 0.9, sodio_mg: 2, potasio_mg: 482, hierro_mg: 0.5, calcio_mg: 4}
   medida_casera: {nombre: "5 papas criollas", gramos: 125}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 193 (papa criolla con cáscara, cocida); grasa saturada y azúcares aproximados"
 
 - id: yuca_cocida
@@ -153,6 +172,7 @@
   por_100g: {kcal: 140, proteina_g: 0.7, grasa_g: 0.2, grasa_saturada_g: 0.06, carbohidratos_g: 33.9, fibra_g: 2.7, azucares_g: 1.3, sodio_mg: 10, potasio_mg: 289, hierro_mg: 0.5, calcio_mg: 16}
   medida_casera: {nombre: "trozo mediano", gramos: 120}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 247 (yuca cocida); grasa saturada y azúcares aproximados; sodio aproximado (la TCAC trae 144 mg, que no corresponde a cocción sin sal)"
 
 - id: platano_maduro
@@ -161,6 +181,7 @@
   por_100g: {kcal: 151, proteina_g: 1.1, grasa_g: 0.2, grasa_saturada_g: 0.14, carbohidratos_g: 36.3, fibra_g: 2.3, azucares_g: 15, sodio_mg: 33, potasio_mg: 593, hierro_mg: 0.6, calcio_mg: 16}
   medida_casera: {nombre: "1/2 plátano mediano", gramos: 90}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 225 (plátano hartón maduro, crudo); grasa saturada, fibra, azúcares y hierro aproximados"
 
 - id: platano_verde
@@ -169,6 +190,7 @@
   por_100g: {kcal: 158, proteina_g: 1.2, grasa_g: 0.2, grasa_saturada_g: 0.08, carbohidratos_g: 37.8, fibra_g: 2.3, azucares_g: 1, sodio_mg: 26, potasio_mg: 627, hierro_mg: 0.5, calcio_mg: 8}
   medida_casera: {nombre: "1/2 plátano mediano", gramos: 90}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 228 (plátano hartón verde, crudo); grasa saturada, fibra y azúcares aproximados"
 
 - id: arracacha_cocida
@@ -177,6 +199,7 @@
   por_100g: {kcal: 100, proteina_g: 0.9, grasa_g: 0.2, grasa_saturada_g: 0.05, carbohidratos_g: 24, fibra_g: 1.8, azucares_g: 2, sodio_mg: 10, potasio_mg: 380, hierro_mg: 0.9, calcio_mg: 30}
   medida_casera: {nombre: "taza en trozos", gramos: 130}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF (aproximado, por verificar)"
 
 - id: batata_cocida
@@ -185,6 +208,7 @@
   por_100g: {kcal: 76, proteina_g: 1.37, grasa_g: 0.14, grasa_saturada_g: 0.03, carbohidratos_g: 17.7, fibra_g: 2.5, azucares_g: 5.74, sodio_mg: 27, potasio_mg: 230, hierro_mg: 0.72, calcio_mg: 27}
   medida_casera: {nombre: "taza", gramos: 200}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168484 (NDB 11510), verificado en línea"
 
 - id: name_cocido
@@ -193,6 +217,7 @@
   por_100g: {kcal: 116, proteina_g: 1.49, grasa_g: 0.14, grasa_saturada_g: 0.03, carbohidratos_g: 27.5, fibra_g: 3.9, azucares_g: 0.49, sodio_mg: 8, potasio_mg: 670, hierro_mg: 0.52, calcio_mg: 14}
   medida_casera: {nombre: "taza", gramos: 136}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170072 (NDB 11602), verificado en línea"
 
 - id: frijol_rojo_cocido
@@ -201,6 +226,7 @@
   por_100g: {kcal: 127, proteina_g: 8.67, grasa_g: 0.5, grasa_saturada_g: 0.07, carbohidratos_g: 22.8, fibra_g: 6.4, azucares_g: 0.32, sodio_mg: 1, potasio_mg: 405, hierro_mg: 2.22, calcio_mg: 35}
   medida_casera: {nombre: "taza", gramos: 177}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173740 (NDB 16028), verificado en línea"
 
 - id: frijol_negro_cocido
@@ -209,6 +235,7 @@
   por_100g: {kcal: 132, proteina_g: 8.86, grasa_g: 0.54, grasa_saturada_g: 0.14, carbohidratos_g: 23.7, fibra_g: 8.7, azucares_g: 0.32, sodio_mg: 1, potasio_mg: 355, hierro_mg: 2.1, calcio_mg: 27}
   medida_casera: {nombre: "taza", gramos: 172}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173735 (NDB 16015), verificado en línea"
 
 - id: lenteja_cocida
@@ -217,6 +244,7 @@
   por_100g: {kcal: 116, proteina_g: 9.02, grasa_g: 0.38, grasa_saturada_g: 0.05, carbohidratos_g: 20.1, fibra_g: 7.9, azucares_g: 1.8, sodio_mg: 2, potasio_mg: 369, hierro_mg: 3.33, calcio_mg: 19}
   medida_casera: {nombre: "taza", gramos: 198}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 172421 (NDB 16070), verificado en línea"
 
 - id: garbanzo_cocido
@@ -225,6 +253,7 @@
   por_100g: {kcal: 164, proteina_g: 8.86, grasa_g: 2.59, grasa_saturada_g: 0.27, carbohidratos_g: 27.4, fibra_g: 7.6, azucares_g: 4.8, sodio_mg: 7, potasio_mg: 291, hierro_mg: 2.89, calcio_mg: 49}
   medida_casera: {nombre: "taza", gramos: 164}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173757 (NDB 16057), verificado en línea"
 
 - id: arveja_seca_cocida
@@ -233,6 +262,7 @@
   por_100g: {kcal: 118, proteina_g: 8.34, grasa_g: 0.39, grasa_saturada_g: 0.05, carbohidratos_g: 21.1, fibra_g: 8.3, azucares_g: 2.9, sodio_mg: 2, potasio_mg: 362, hierro_mg: 1.29, calcio_mg: 14}
   medida_casera: {nombre: "taza", gramos: 196}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 172429 (NDB 16086), verificado en línea"
 
 - id: arveja_verde
@@ -241,6 +271,7 @@
   por_100g: {kcal: 81, proteina_g: 5.42, grasa_g: 0.4, grasa_saturada_g: 0.07, carbohidratos_g: 14.4, fibra_g: 5.7, azucares_g: 5.67, sodio_mg: 5, potasio_mg: 244, hierro_mg: 1.47, calcio_mg: 25}
   medida_casera: {nombre: "taza", gramos: 145}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170419 (NDB 11304), verificado en línea"
 
 - id: tofu
@@ -249,6 +280,7 @@
   por_100g: {kcal: 144, proteina_g: 17.3, grasa_g: 8.72, grasa_saturada_g: 1.26, carbohidratos_g: 2.78, fibra_g: 2.3, azucares_g: 0.6, sodio_mg: 14, potasio_mg: 237, hierro_mg: 2.66, calcio_mg: 683}
   medida_casera: {nombre: "porción", gramos: 100}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [soya]
   fuente: "USDA FDC SR Legacy 172475 (NDB 16426), verificado en línea; azucares_g aproximado"
 
 - id: edamame
@@ -257,6 +289,7 @@
   por_100g: {kcal: 121, proteina_g: 11.9, grasa_g: 5.2, grasa_saturada_g: 0.62, carbohidratos_g: 8.91, fibra_g: 5.2, azucares_g: 2.18, sodio_mg: 6, potasio_mg: 436, hierro_mg: 2.27, calcio_mg: 63}
   medida_casera: {nombre: "taza", gramos: 155}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [soya]
   fuente: "USDA FDC SR Legacy 168411 (NDB 11212), verificado en línea"
 
 - id: tomate
@@ -265,6 +298,7 @@
   por_100g: {kcal: 18, proteina_g: 0.88, grasa_g: 0.2, grasa_saturada_g: 0.03, carbohidratos_g: 3.89, fibra_g: 1.2, azucares_g: 2.63, sodio_mg: 5, potasio_mg: 237, hierro_mg: 0.27, calcio_mg: 10}
   medida_casera: {nombre: "tomate mediano", gramos: 120}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170457 (NDB 11529), verificado en línea"
 
 - id: cebolla_cabezona
@@ -273,6 +307,7 @@
   por_100g: {kcal: 40, proteina_g: 1.1, grasa_g: 0.1, grasa_saturada_g: 0.04, carbohidratos_g: 9.34, fibra_g: 1.7, azucares_g: 4.24, sodio_mg: 4, potasio_mg: 146, hierro_mg: 0.21, calcio_mg: 23}
   medida_casera: {nombre: "cebolla mediana", gramos: 110}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170000 (NDB 11282), verificado en línea"
 
 - id: cebolla_larga
@@ -281,6 +316,7 @@
   por_100g: {kcal: 32, proteina_g: 1.83, grasa_g: 0.19, grasa_saturada_g: 0.03, carbohidratos_g: 7.34, fibra_g: 2.6, azucares_g: 2.33, sodio_mg: 16, potasio_mg: 276, hierro_mg: 1.48, calcio_mg: 72}
   medida_casera: {nombre: "tallo", gramos: 15}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170005 (NDB 11291), verificado en línea"
 
 - id: ajo
@@ -289,6 +325,7 @@
   por_100g: {kcal: 149, proteina_g: 6.36, grasa_g: 0.5, grasa_saturada_g: 0.09, carbohidratos_g: 33.1, fibra_g: 2.1, azucares_g: 1, sodio_mg: 17, potasio_mg: 401, hierro_mg: 1.7, calcio_mg: 181}
   medida_casera: {nombre: "diente", gramos: 3}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169230 (NDB 11215), verificado en línea"
 
 - id: zanahoria
@@ -297,6 +334,7 @@
   por_100g: {kcal: 41, proteina_g: 0.93, grasa_g: 0.24, grasa_saturada_g: 0.03, carbohidratos_g: 9.58, fibra_g: 2.8, azucares_g: 4.74, sodio_mg: 69, potasio_mg: 320, hierro_mg: 0.3, calcio_mg: 33}
   medida_casera: {nombre: "zanahoria mediana", gramos: 60}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170393 (NDB 11124), verificado en línea"
 
 - id: ahuyama
@@ -305,6 +343,7 @@
   por_100g: {kcal: 26, proteina_g: 1, grasa_g: 0.1, grasa_saturada_g: 0.05, carbohidratos_g: 6.5, fibra_g: 0.5, azucares_g: 2.76, sodio_mg: 1, potasio_mg: 340, hierro_mg: 0.8, calcio_mg: 21}
   medida_casera: {nombre: "taza en cubos", gramos: 116}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168448 (NDB 11422), verificado en línea"
 
 - id: brocoli
@@ -313,6 +352,7 @@
   por_100g: {kcal: 34, proteina_g: 2.82, grasa_g: 0.37, grasa_saturada_g: 0.11, carbohidratos_g: 6.64, fibra_g: 2.6, azucares_g: 1.7, sodio_mg: 33, potasio_mg: 316, hierro_mg: 0.73, calcio_mg: 47}
   medida_casera: {nombre: "taza", gramos: 90}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170379 (NDB 11090), verificado en línea"
 
 - id: coliflor
@@ -321,6 +361,7 @@
   por_100g: {kcal: 25, proteina_g: 1.92, grasa_g: 0.28, grasa_saturada_g: 0.13, carbohidratos_g: 4.97, fibra_g: 2, azucares_g: 1.91, sodio_mg: 30, potasio_mg: 299, hierro_mg: 0.42, calcio_mg: 22}
   medida_casera: {nombre: "taza", gramos: 100}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169986 (NDB 11135), verificado en línea"
 
 - id: espinaca
@@ -329,6 +370,7 @@
   por_100g: {kcal: 23, proteina_g: 2.86, grasa_g: 0.39, grasa_saturada_g: 0.06, carbohidratos_g: 3.63, fibra_g: 2.2, azucares_g: 0.42, sodio_mg: 79, potasio_mg: 558, hierro_mg: 2.71, calcio_mg: 99}
   medida_casera: {nombre: "taza cruda", gramos: 30}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168462 (NDB 11457), verificado en línea; kcal recalculada con factores de Atwater generales 4-4-9 (USDA publica 23)"
 
 - id: acelga
@@ -337,6 +379,7 @@
   por_100g: {kcal: 19, proteina_g: 1.8, grasa_g: 0.2, grasa_saturada_g: 0.03, carbohidratos_g: 3.74, fibra_g: 1.6, azucares_g: 1.1, sodio_mg: 213, potasio_mg: 379, hierro_mg: 1.8, calcio_mg: 51}
   medida_casera: {nombre: "taza cruda", gramos: 36}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169991 (NDB 11147), verificado en línea"
 
 - id: lechuga
@@ -345,6 +388,7 @@
   por_100g: {kcal: 15, proteina_g: 1.36, grasa_g: 0.15, grasa_saturada_g: 0.02, carbohidratos_g: 2.87, fibra_g: 1.3, azucares_g: 0.78, sodio_mg: 28, potasio_mg: 194, hierro_mg: 0.86, calcio_mg: 36}
   medida_casera: {nombre: "taza picada", gramos: 36}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169249 (NDB 11253), verificado en línea"
 
 - id: repollo
@@ -353,6 +397,7 @@
   por_100g: {kcal: 25, proteina_g: 1.28, grasa_g: 0.1, grasa_saturada_g: 0.03, carbohidratos_g: 5.8, fibra_g: 2.5, azucares_g: 3.2, sodio_mg: 18, potasio_mg: 170, hierro_mg: 0.47, calcio_mg: 40}
   medida_casera: {nombre: "taza picado", gramos: 89}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169975 (NDB 11109), verificado en línea"
 
 - id: repollo_morado
@@ -361,6 +406,7 @@
   por_100g: {kcal: 31, proteina_g: 1.43, grasa_g: 0.16, grasa_saturada_g: 0.02, carbohidratos_g: 7.37, fibra_g: 2.1, azucares_g: 3.83, sodio_mg: 27, potasio_mg: 243, hierro_mg: 0.8, calcio_mg: 45}
   medida_casera: {nombre: "taza picado", gramos: 89}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169977 (NDB 11112), verificado en línea"
 
 - id: pepino
@@ -369,6 +415,7 @@
   por_100g: {kcal: 15, proteina_g: 0.65, grasa_g: 0.11, grasa_saturada_g: 0.04, carbohidratos_g: 3.63, fibra_g: 0.5, azucares_g: 1.67, sodio_mg: 2, potasio_mg: 147, hierro_mg: 0.28, calcio_mg: 16}
   medida_casera: {nombre: "taza en rodajas", gramos: 104}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168409 (NDB 11205), verificado en línea"
 
 - id: pimenton
@@ -377,6 +424,7 @@
   por_100g: {kcal: 26, proteina_g: 0.99, grasa_g: 0.3, grasa_saturada_g: 0.06, carbohidratos_g: 6.03, fibra_g: 2.1, azucares_g: 4.2, sodio_mg: 4, potasio_mg: 211, hierro_mg: 0.43, calcio_mg: 7}
   medida_casera: {nombre: "pimentón mediano", gramos: 120}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170108 (NDB 11821), verificado en línea"
 
 - id: habichuela
@@ -385,6 +433,7 @@
   por_100g: {kcal: 31, proteina_g: 1.83, grasa_g: 0.22, grasa_saturada_g: 0.05, carbohidratos_g: 6.97, fibra_g: 2.7, azucares_g: 3.26, sodio_mg: 6, potasio_mg: 211, hierro_mg: 1.03, calcio_mg: 37}
   medida_casera: {nombre: "taza", gramos: 100}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169961 (NDB 11052), verificado en línea"
 
 - id: champinones
@@ -393,6 +442,7 @@
   por_100g: {kcal: 22, proteina_g: 3.09, grasa_g: 0.34, grasa_saturada_g: 0.05, carbohidratos_g: 3.26, fibra_g: 1, azucares_g: 1.98, sodio_mg: 5, potasio_mg: 318, hierro_mg: 0.5, calcio_mg: 3}
   medida_casera: {nombre: "taza tajados", gramos: 70}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169251 (NDB 11260), verificado en línea; kcal recalculada con factores de Atwater generales 4-4-9 (USDA publica 22)"
 
 - id: calabacin
@@ -401,6 +451,7 @@
   por_100g: {kcal: 17, proteina_g: 1.21, grasa_g: 0.32, grasa_saturada_g: 0.08, carbohidratos_g: 3.11, fibra_g: 1, azucares_g: 2.5, sodio_mg: 8, potasio_mg: 261, hierro_mg: 0.37, calcio_mg: 16}
   medida_casera: {nombre: "calabacín mediano", gramos: 200}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169291 (NDB 11477), verificado en línea"
 
 - id: berenjena
@@ -409,6 +460,7 @@
   por_100g: {kcal: 25, proteina_g: 0.98, grasa_g: 0.18, grasa_saturada_g: 0.03, carbohidratos_g: 5.88, fibra_g: 3, azucares_g: 3.53, sodio_mg: 2, potasio_mg: 229, hierro_mg: 0.23, calcio_mg: 9}
   medida_casera: {nombre: "taza en cubos", gramos: 82}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169228 (NDB 11209), verificado en línea"
 
 - id: remolacha
@@ -417,6 +469,7 @@
   por_100g: {kcal: 43, proteina_g: 1.61, grasa_g: 0.17, grasa_saturada_g: 0.03, carbohidratos_g: 9.56, fibra_g: 2.8, azucares_g: 6.76, sodio_mg: 78, potasio_mg: 325, hierro_mg: 0.8, calcio_mg: 16}
   medida_casera: {nombre: "remolacha mediana", gramos: 80}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169145 (NDB 11080), verificado en línea"
 
 - id: apio
@@ -425,6 +478,7 @@
   por_100g: {kcal: 14, proteina_g: 0.69, grasa_g: 0.17, grasa_saturada_g: 0.04, carbohidratos_g: 2.97, fibra_g: 1.6, azucares_g: 1.34, sodio_mg: 80, potasio_mg: 260, hierro_mg: 0.2, calcio_mg: 40}
   medida_casera: {nombre: "tallo", gramos: 40}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169988 (NDB 11143), verificado en línea"
 
 - id: cilantro
@@ -433,6 +487,7 @@
   por_100g: {kcal: 23, proteina_g: 2.13, grasa_g: 0.52, grasa_saturada_g: 0.01, carbohidratos_g: 3.67, fibra_g: 2.8, azucares_g: 0.87, sodio_mg: 46, potasio_mg: 521, hierro_mg: 1.77, calcio_mg: 67}
   medida_casera: {nombre: "cucharada picado", gramos: 4}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169997 (NDB 11165), verificado en línea"
 
 - id: perejil
@@ -441,6 +496,7 @@
   por_100g: {kcal: 36, proteina_g: 2.97, grasa_g: 0.79, grasa_saturada_g: 0.13, carbohidratos_g: 6.33, fibra_g: 3.3, azucares_g: 0.85, sodio_mg: 56, potasio_mg: 554, hierro_mg: 6.2, calcio_mg: 138}
   medida_casera: {nombre: "cucharada picado", gramos: 4}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170416 (NDB 11297), verificado en línea"
 
 - id: rugula
@@ -449,6 +505,7 @@
   por_100g: {kcal: 25, proteina_g: 2.58, grasa_g: 0.66, grasa_saturada_g: 0.09, carbohidratos_g: 3.65, fibra_g: 1.6, azucares_g: 2.05, sodio_mg: 27, potasio_mg: 369, hierro_mg: 1.46, calcio_mg: 160}
   medida_casera: {nombre: "taza", gramos: 20}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169387 (NDB 11959), verificado en línea"
 
 - id: guatila
@@ -457,6 +514,7 @@
   por_100g: {kcal: 43, proteina_g: 1.4, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 9.4, fibra_g: 1.7, azucares_g: 1.66, sodio_mg: 2, potasio_mg: 125, hierro_mg: 0.9, calcio_mg: 15}
   medida_casera: {nombre: "1/2 guatila mediana", gramos: 100}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 172 (guatila sin cáscara, cruda); fibra, azúcares, sodio y potasio aproximados"
 
 - id: banano
@@ -465,6 +523,7 @@
   por_100g: {kcal: 89, proteina_g: 1.09, grasa_g: 0.33, grasa_saturada_g: 0.11, carbohidratos_g: 22.8, fibra_g: 2.6, azucares_g: 12.2, sodio_mg: 1, potasio_mg: 358, hierro_mg: 0.26, calcio_mg: 5}
   medida_casera: {nombre: "banano mediano", gramos: 120}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173944 (NDB 9040), verificado en línea"
 
 - id: manzana
@@ -473,6 +532,7 @@
   por_100g: {kcal: 52, proteina_g: 0.26, grasa_g: 0.17, grasa_saturada_g: 0.03, carbohidratos_g: 13.8, fibra_g: 2.4, azucares_g: 10.4, sodio_mg: 1, potasio_mg: 107, hierro_mg: 0.12, calcio_mg: 6}
   medida_casera: {nombre: "manzana mediana", gramos: 180}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171688 (NDB 9003), verificado en línea"
 
 - id: pera
@@ -481,6 +541,7 @@
   por_100g: {kcal: 57, proteina_g: 0.36, grasa_g: 0.14, grasa_saturada_g: 0.02, carbohidratos_g: 15.2, fibra_g: 3.1, azucares_g: 9.75, sodio_mg: 1, potasio_mg: 116, hierro_mg: 0.18, calcio_mg: 9}
   medida_casera: {nombre: "pera mediana", gramos: 180}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169118 (NDB 9252), verificado en línea"
 
 - id: naranja
@@ -489,6 +550,7 @@
   por_100g: {kcal: 47, proteina_g: 0.94, grasa_g: 0.12, grasa_saturada_g: 0.01, carbohidratos_g: 11.8, fibra_g: 2.4, azucares_g: 9.35, sodio_mg: 0, potasio_mg: 181, hierro_mg: 0.1, calcio_mg: 40}
   medida_casera: {nombre: "naranja mediana", gramos: 130}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169097 (NDB 9200), verificado en línea"
 
 - id: mandarina
@@ -497,6 +559,7 @@
   por_100g: {kcal: 53, proteina_g: 0.81, grasa_g: 0.31, grasa_saturada_g: 0.04, carbohidratos_g: 13.3, fibra_g: 1.8, azucares_g: 10.6, sodio_mg: 2, potasio_mg: 166, hierro_mg: 0.15, calcio_mg: 37}
   medida_casera: {nombre: "mandarina mediana", gramos: 90}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169105 (NDB 9218), verificado en línea"
 
 - id: mango
@@ -505,6 +568,7 @@
   por_100g: {kcal: 60, proteina_g: 0.82, grasa_g: 0.38, grasa_saturada_g: 0.09, carbohidratos_g: 15, fibra_g: 1.6, azucares_g: 13.7, sodio_mg: 1, potasio_mg: 168, hierro_mg: 0.16, calcio_mg: 11}
   medida_casera: {nombre: "taza en cubos", gramos: 165}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169910 (NDB 9176), verificado en línea"
 
 - id: papaya
@@ -513,6 +577,7 @@
   por_100g: {kcal: 43, proteina_g: 0.47, grasa_g: 0.26, grasa_saturada_g: 0.08, carbohidratos_g: 10.8, fibra_g: 1.7, azucares_g: 7.82, sodio_mg: 8, potasio_mg: 182, hierro_mg: 0.25, calcio_mg: 20}
   medida_casera: {nombre: "taza en cubos", gramos: 145}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169926 (NDB 9226), verificado en línea"
 
 - id: pina
@@ -521,6 +586,7 @@
   por_100g: {kcal: 50, proteina_g: 0.54, grasa_g: 0.12, grasa_saturada_g: 0.01, carbohidratos_g: 13.1, fibra_g: 1.4, azucares_g: 9.85, sodio_mg: 1, potasio_mg: 109, hierro_mg: 0.29, calcio_mg: 13}
   medida_casera: {nombre: "taza en cubos", gramos: 165}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169124 (NDB 9266), verificado en línea"
 
 - id: fresa
@@ -529,6 +595,7 @@
   por_100g: {kcal: 32, proteina_g: 0.67, grasa_g: 0.3, grasa_saturada_g: 0.01, carbohidratos_g: 7.68, fibra_g: 2, azucares_g: 4.89, sodio_mg: 1, potasio_mg: 153, hierro_mg: 0.41, calcio_mg: 16}
   medida_casera: {nombre: "taza", gramos: 150}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 167762 (NDB 9316), verificado en línea"
 
 - id: mora
@@ -537,6 +604,7 @@
   por_100g: {kcal: 43, proteina_g: 1.39, grasa_g: 0.49, grasa_saturada_g: 0.01, carbohidratos_g: 9.61, fibra_g: 5.3, azucares_g: 4.88, sodio_mg: 1, potasio_mg: 162, hierro_mg: 0.62, calcio_mg: 29}
   medida_casera: {nombre: "taza", gramos: 145}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173946 (NDB 9042), verificado en línea"
 
 - id: guayaba
@@ -545,6 +613,7 @@
   por_100g: {kcal: 68, proteina_g: 2.55, grasa_g: 0.95, grasa_saturada_g: 0.27, carbohidratos_g: 14.3, fibra_g: 5.4, azucares_g: 8.92, sodio_mg: 2, potasio_mg: 417, hierro_mg: 0.26, calcio_mg: 18}
   medida_casera: {nombre: "guayaba mediana", gramos: 80}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173044 (NDB 9139), verificado en línea"
 
 - id: maracuya
@@ -553,6 +622,7 @@
   por_100g: {kcal: 97, proteina_g: 2.2, grasa_g: 0.7, grasa_saturada_g: 0.06, carbohidratos_g: 23.4, fibra_g: 10.4, azucares_g: 11.2, sodio_mg: 28, potasio_mg: 348, hierro_mg: 1.6, calcio_mg: 12}
   medida_casera: {nombre: "maracuyá mediano", gramos: 30}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169108 (NDB 9231), verificado en línea"
 
 - id: lulo
@@ -561,6 +631,7 @@
   por_100g: {kcal: 37, proteina_g: 0.9, grasa_g: 0.1, grasa_saturada_g: 0.02, carbohidratos_g: 8.2, fibra_g: 1.1, azucares_g: 4, sodio_mg: 1, potasio_mg: 248, hierro_mg: 0.6, calcio_mg: 10}
   medida_casera: {nombre: "lulo mediano", gramos: 60}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 321 (lulo maduro, pulpa); grasa saturada, fibra y azúcares aproximados"
 
 - id: uchuva
@@ -569,6 +640,7 @@
   por_100g: {kcal: 54, proteina_g: 1.5, grasa_g: 0.5, grasa_saturada_g: 0.1, carbohidratos_g: 11, fibra_g: 4, azucares_g: 6, sodio_mg: 0, potasio_mg: 134, hierro_mg: 1, calcio_mg: 7}
   medida_casera: {nombre: "taza", gramos: 140}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 361 (uchuva madura); grasa saturada, fibra, azúcares y hierro aproximados"
 
 - id: granadilla
@@ -577,6 +649,7 @@
   por_100g: {kcal: 66, proteina_g: 2.1, grasa_g: 1.6, grasa_saturada_g: 0.05, carbohidratos_g: 10.7, fibra_g: 5.9, azucares_g: 11, sodio_mg: 20, potasio_mg: 480, hierro_mg: 0.9, calcio_mg: 12}
   medida_casera: {nombre: "granadilla mediana", gramos: 50}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 305 (granadilla madura, pulpa); grasa saturada y azúcares aproximados"
 
 - id: sandia
@@ -585,6 +658,7 @@
   por_100g: {kcal: 30, proteina_g: 0.61, grasa_g: 0.15, grasa_saturada_g: 0.02, carbohidratos_g: 7.55, fibra_g: 0.4, azucares_g: 6.2, sodio_mg: 1, potasio_mg: 112, hierro_mg: 0.24, calcio_mg: 7}
   medida_casera: {nombre: "taza en cubos", gramos: 150}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 167765 (NDB 9326), verificado en línea"
 
 - id: melon
@@ -593,6 +667,7 @@
   por_100g: {kcal: 34, proteina_g: 0.84, grasa_g: 0.19, grasa_saturada_g: 0.05, carbohidratos_g: 8.16, fibra_g: 0.9, azucares_g: 7.86, sodio_mg: 16, potasio_mg: 267, hierro_mg: 0.21, calcio_mg: 9}
   medida_casera: {nombre: "taza en cubos", gramos: 160}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169092 (NDB 9181), verificado en línea"
 
 - id: kiwi
@@ -601,6 +676,7 @@
   por_100g: {kcal: 61, proteina_g: 1.14, grasa_g: 0.52, grasa_saturada_g: 0.03, carbohidratos_g: 14.7, fibra_g: 3, azucares_g: 8.99, sodio_mg: 3, potasio_mg: 312, hierro_mg: 0.31, calcio_mg: 34}
   medida_casera: {nombre: "kiwi mediano", gramos: 75}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168153 (NDB 9148), verificado en línea"
 
 - id: limon
@@ -609,6 +685,7 @@
   por_100g: {kcal: 29, proteina_g: 1.1, grasa_g: 0.3, grasa_saturada_g: 0.04, carbohidratos_g: 9.32, fibra_g: 2.8, azucares_g: 2.5, sodio_mg: 2, potasio_mg: 138, hierro_mg: 0.6, calcio_mg: 26}
   medida_casera: {nombre: "limón mediano (jugo y pulpa)", gramos: 50}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 167746 (NDB 9150), verificado en línea; kcal recalculada con factores de Atwater generales 4-4-9 (USDA publica 29)"
 
 - id: aguacate
@@ -617,6 +694,7 @@
   por_100g: {kcal: 160, proteina_g: 2, grasa_g: 14.7, grasa_saturada_g: 2.13, carbohidratos_g: 8.53, fibra_g: 6.7, azucares_g: 0.66, sodio_mg: 7, potasio_mg: 485, hierro_mg: 0.55, calcio_mg: 12}
   medida_casera: {nombre: "1/4 de aguacate mediano", gramos: 50}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171705 (NDB 9037), verificado en línea"
 
 - id: arandanos
@@ -625,6 +703,7 @@
   por_100g: {kcal: 57, proteina_g: 0.74, grasa_g: 0.33, grasa_saturada_g: 0.03, carbohidratos_g: 14.5, fibra_g: 2.4, azucares_g: 9.96, sodio_mg: 1, potasio_mg: 77, hierro_mg: 0.28, calcio_mg: 6}
   medida_casera: {nombre: "taza", gramos: 148}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171711 (NDB 9050), verificado en línea"
 
 - id: tomate_de_arbol
@@ -633,6 +712,7 @@
   por_100g: {kcal: 42, proteina_g: 2, grasa_g: 0.2, grasa_saturada_g: 0.04, carbohidratos_g: 7.8, fibra_g: 3.3, azucares_g: 4.5, sodio_mg: 6, potasio_mg: 280, hierro_mg: 0.9, calcio_mg: 12}
   medida_casera: {nombre: "tomate de árbol mediano", gramos: 80}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 358 (tomate de árbol rojo maduro, pulpa; minerales de la primera de dos filas, n=4); grasa saturada, fibra y azúcares aproximados; potasio del segundo análisis de la TCAC (280 mg), el primero (94 mg) no es verosímil"
 
 - id: feijoa
@@ -641,6 +721,7 @@
   por_100g: {kcal: 61, proteina_g: 0.71, grasa_g: 0.42, grasa_saturada_g: 0.1, carbohidratos_g: 15.21, fibra_g: 6.4, azucares_g: 8.2, sodio_mg: 3, potasio_mg: 172, hierro_mg: 0.14, calcio_mg: 17}
   medida_casera: {nombre: "feijoa mediana", gramos: 50}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC 168176 (SR Legacy NDB 09334, feijoa cruda); la TCAC (código 301, fruto entero) no trae fibra, azúcares, sodio ni potasio"
 
 - id: uvas
@@ -649,6 +730,7 @@
   por_100g: {kcal: 69, proteina_g: 0.72, grasa_g: 0.16, grasa_saturada_g: 0.05, carbohidratos_g: 18.1, fibra_g: 0.9, azucares_g: 15.5, sodio_mg: 2, potasio_mg: 191, hierro_mg: 0.36, calcio_mg: 10}
   medida_casera: {nombre: "taza", gramos: 150}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 174683 (NDB 9132), verificado en línea"
 
 - id: durazno
@@ -657,6 +739,7 @@
   por_100g: {kcal: 39, proteina_g: 0.91, grasa_g: 0.25, grasa_saturada_g: 0.02, carbohidratos_g: 9.54, fibra_g: 1.5, azucares_g: 8.39, sodio_mg: 0, potasio_mg: 190, hierro_mg: 0.25, calcio_mg: 6}
   medida_casera: {nombre: "durazno mediano", gramos: 150}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169928 (NDB 9236), verificado en línea"
 
 - id: leche_descremada
@@ -665,6 +748,7 @@
   por_100g: {kcal: 34, proteina_g: 3.37, grasa_g: 0.08, grasa_saturada_g: 0.06, carbohidratos_g: 4.96, fibra_g: 0, azucares_g: 5.09, sodio_mg: 42, potasio_mg: 156, hierro_mg: 0.03, calcio_mg: 122}
   medida_casera: {nombre: "vaso", gramos: 240}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 171269 (NDB 1085), verificado en línea"
 
 - id: leche_semidescremada
@@ -673,6 +757,7 @@
   por_100g: {kcal: 50, proteina_g: 3.3, grasa_g: 1.98, grasa_saturada_g: 1.26, carbohidratos_g: 4.8, fibra_g: 0, azucares_g: 5.06, sodio_mg: 47, potasio_mg: 140, hierro_mg: 0.02, calcio_mg: 120}
   medida_casera: {nombre: "vaso", gramos: 240}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 171267 (NDB 1079), verificado en línea"
 
 - id: leche_entera
@@ -681,6 +766,7 @@
   por_100g: {kcal: 61, proteina_g: 3.15, grasa_g: 3.25, grasa_saturada_g: 1.86, carbohidratos_g: 4.8, fibra_g: 0, azucares_g: 5.05, sodio_mg: 43, potasio_mg: 132, hierro_mg: 0.03, calcio_mg: 113}
   medida_casera: {nombre: "vaso", gramos: 240}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 171265 (NDB 1077), verificado en línea"
 
 - id: yogur_natural_sin_azucar
@@ -689,6 +775,7 @@
   por_100g: {kcal: 61, proteina_g: 3.47, grasa_g: 3.25, grasa_saturada_g: 2.1, carbohidratos_g: 4.66, fibra_g: 0, azucares_g: 4.66, sodio_mg: 46, potasio_mg: 155, hierro_mg: 0.05, calcio_mg: 121}
   medida_casera: {nombre: "vaso", gramos: 200}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 171284 (NDB 1116), verificado en línea"
 
 - id: yogur_griego_natural
@@ -697,6 +784,7 @@
   por_100g: {kcal: 59, proteina_g: 10.2, grasa_g: 0.39, grasa_saturada_g: 0.12, carbohidratos_g: 3.6, fibra_g: 0, azucares_g: 3.24, sodio_mg: 36, potasio_mg: 141, hierro_mg: 0.07, calcio_mg: 110}
   medida_casera: {nombre: "taza", gramos: 170}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 170894 (NDB 1256), verificado en línea"
 
 - id: kumis_sin_azucar
@@ -705,6 +793,7 @@
   por_100g: {kcal: 61, proteina_g: 3.47, grasa_g: 3.25, grasa_saturada_g: 2.1, carbohidratos_g: 4.66, fibra_g: 0, azucares_g: 4.66, sodio_mg: 46, potasio_mg: 155, hierro_mg: 0.05, calcio_mg: 121}
   medida_casera: {nombre: "vaso", gramos: 200}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC 171284 (SR Legacy, yogur natural de leche entera, como equivalente; la TCAC solo trae kumis con dulce)"
 
 - id: queso_campesino
@@ -713,6 +802,7 @@
   por_100g: {kcal: 264, proteina_g: 18.8, grasa_g: 20.3, grasa_saturada_g: 12.5, carbohidratos_g: 1.6, fibra_g: 0, azucares_g: 1.6, sodio_mg: 477, potasio_mg: 98, hierro_mg: 0.4, calcio_mg: 586}
   medida_casera: {nombre: "tajada", gramos: 30}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "ICBF TCAC 2015, código 637 (queso campesino); grasa saturada aproximada; azúcares igualados a los carbohidratos (lactosa)"
 
 - id: queso_mozzarella
@@ -721,6 +811,7 @@
   por_100g: {kcal: 299, proteina_g: 22.2, grasa_g: 22.1, grasa_saturada_g: 13.9, carbohidratos_g: 2.4, fibra_g: 0, azucares_g: 0, sodio_mg: 486, potasio_mg: 76, hierro_mg: 0.44, calcio_mg: 505}
   medida_casera: {nombre: "tajada", gramos: 25}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 170845 (NDB 1026), verificado en línea"
 
 - id: cuajada
@@ -729,6 +820,7 @@
   por_100g: {kcal: 228, proteina_g: 15.2, grasa_g: 17.2, grasa_saturada_g: 7, carbohidratos_g: 3, fibra_g: 0, azucares_g: 3, sodio_mg: 60, potasio_mg: 100, hierro_mg: 1.5, calcio_mg: 490}
   medida_casera: {nombre: "tajada", gramos: 50}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "ICBF TCAC 2015, código 621 (cuajada); grasa saturada, azúcares, sodio y potasio aproximados"
 
 - id: queso_cottage
@@ -737,6 +829,7 @@
   por_100g: {kcal: 72, proteina_g: 12.4, grasa_g: 1.02, grasa_saturada_g: 0.65, carbohidratos_g: 2.72, fibra_g: 0, azucares_g: 2.72, sodio_mg: 406, potasio_mg: 86, hierro_mg: 0.14, calcio_mg: 61}
   medida_casera: {nombre: "1/2 taza", gramos: 113}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 173417 (NDB 1016), verificado en línea"
 
 - id: bebida_almendra_sin_azucar
@@ -745,6 +838,7 @@
   por_100g: {kcal: 15, proteina_g: 0.4, grasa_g: 0.96, grasa_saturada_g: 0.08, carbohidratos_g: 1.31, fibra_g: 0.2, azucares_g: 0.81, sodio_mg: 72, potasio_mg: 67, hierro_mg: 0.28, calcio_mg: 184}
   medida_casera: {nombre: "vaso", gramos: 240}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [frutos_secos]
   fuente: "USDA FDC SR Legacy 174832 (NDB 14091), verificado en línea"
 
 - id: bebida_soya_sin_azucar
@@ -753,6 +847,7 @@
   por_100g: {kcal: 33, proteina_g: 2.86, grasa_g: 1.61, grasa_saturada_g: 0.21, carbohidratos_g: 1.74, fibra_g: 0.5, azucares_g: 0.41, sodio_mg: 37, potasio_mg: 120, hierro_mg: 0.46, calcio_mg: 124}
   medida_casera: {nombre: "vaso", gramos: 240}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [soya]
   fuente: "USDA FDC SR Legacy 175215 (NDB 16222), verificado en línea"
 
 - id: huevo_entero
@@ -761,6 +856,7 @@
   por_100g: {kcal: 143, proteina_g: 12.6, grasa_g: 9.51, grasa_saturada_g: 3.13, carbohidratos_g: 0.72, fibra_g: 0, azucares_g: 0.37, sodio_mg: 142, potasio_mg: 138, hierro_mg: 1.75, calcio_mg: 56}
   medida_casera: {nombre: "huevo", gramos: 50}
   etiquetas: [vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [huevo]
   fuente: "USDA FDC SR Legacy 171287 (NDB 1123), verificado en línea"
 
 - id: clara_huevo
@@ -769,6 +865,7 @@
   por_100g: {kcal: 52, proteina_g: 10.9, grasa_g: 0.17, grasa_saturada_g: 0, carbohidratos_g: 0.73, fibra_g: 0, azucares_g: 0.71, sodio_mg: 166, potasio_mg: 163, hierro_mg: 0.08, calcio_mg: 7}
   medida_casera: {nombre: "clara", gramos: 33}
   etiquetas: [vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [huevo]
   fuente: "USDA FDC SR Legacy 172183 (NDB 1124), verificado en línea"
 
 - id: pechuga_pollo_cruda
@@ -777,6 +874,7 @@
   por_100g: {kcal: 120, proteina_g: 22.5, grasa_g: 2.62, grasa_saturada_g: 0.56, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 45, potasio_mg: 334, hierro_mg: 0.37, calcio_mg: 5}
   medida_casera: {nombre: "filete", gramos: 150}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171077 (NDB 5062), verificado en línea"
 
 - id: muslo_pollo_sin_piel_crudo
@@ -785,6 +883,7 @@
   por_100g: {kcal: 121, proteina_g: 19.66, grasa_g: 4.12, grasa_saturada_g: 1.1, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 95, potasio_mg: 242, hierro_mg: 0.81, calcio_mg: 7}
   medida_casera: {nombre: "muslo deshuesado", gramos: 100}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC 173627 (SR Legacy NDB 05096, muslo de pollo solo carne, crudo); la TCAC código 524 (200 kcal, 10,8 g de grasa) no parece crudo y no se usó"
 
 - id: carne_res_magra_cruda
@@ -793,6 +892,7 @@
   por_100g: {kcal: 121, proteina_g: 23.37, grasa_g: 3.04, grasa_saturada_g: 1.09, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 53, potasio_mg: 319, hierro_mg: 1.45, calcio_mg: 13}
   medida_casera: {nombre: "porción", gramos: 120}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC 171762 (SR Legacy NDB 23363, bola de res solo magro, cruda); la TCAC código 542 trae 20 g de grasa, incompatible con carne magra, y no se usó"
 
 - id: carne_molida_magra_cruda
@@ -801,6 +901,7 @@
   por_100g: {kcal: 176, proteina_g: 20, grasa_g: 10, grasa_saturada_g: 3.93, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 66, potasio_mg: 321, hierro_mg: 2.24, calcio_mg: 12}
   medida_casera: {nombre: "porción", gramos: 120}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 174030 (NDB 23562), verificado en línea"
 
 - id: lomo_cerdo_crudo
@@ -809,6 +910,7 @@
   por_100g: {kcal: 109, proteina_g: 21, grasa_g: 2.17, grasa_saturada_g: 0.7, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 53, potasio_mg: 399, hierro_mg: 0.98, calcio_mg: 5}
   medida_casera: {nombre: "porción", gramos: 120}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 168249 (NDB 10060), verificado en línea"
 
 - id: higado_res_crudo
@@ -817,6 +919,7 @@
   por_100g: {kcal: 135, proteina_g: 20.4, grasa_g: 3.63, grasa_saturada_g: 1.23, carbohidratos_g: 3.89, fibra_g: 0, azucares_g: 0, sodio_mg: 69, potasio_mg: 313, hierro_mg: 4.9, calcio_mg: 5}
   medida_casera: {nombre: "porción", gramos: 100}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169451 (NDB 13325), verificado en línea"
 
 - id: pechuga_pavo_cruda
@@ -825,6 +928,7 @@
   por_100g: {kcal: 114, proteina_g: 23.7, grasa_g: 1.48, grasa_saturada_g: 0.29, carbohidratos_g: 0.14, fibra_g: 0, azucares_g: 0.05, sodio_mg: 113, potasio_mg: 242, hierro_mg: 0.73, calcio_mg: 11}
   medida_casera: {nombre: "porción", gramos: 120}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171098 (NDB 5219), verificado en línea"
 
 - id: tilapia_cruda
@@ -833,6 +937,7 @@
   por_100g: {kcal: 96, proteina_g: 20.1, grasa_g: 1.7, grasa_saturada_g: 0.58, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 52, potasio_mg: 302, hierro_mg: 0.56, calcio_mg: 10}
   medida_casera: {nombre: "filete", gramos: 150}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [pescado]
   fuente: "USDA FDC SR Legacy 175176 (NDB 15261), verificado en línea"
 
 - id: trucha_cruda
@@ -841,6 +946,7 @@
   por_100g: {kcal: 148, proteina_g: 20.8, grasa_g: 6.61, grasa_saturada_g: 1.15, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 52, potasio_mg: 361, hierro_mg: 1.5, calcio_mg: 43}
   medida_casera: {nombre: "filete", gramos: 150}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [pescado]
   fuente: "USDA FDC SR Legacy 175153 (NDB 15114), verificado en línea"
 
 - id: salmon_crudo
@@ -849,6 +955,7 @@
   por_100g: {kcal: 208, proteina_g: 20.4, grasa_g: 13.4, grasa_saturada_g: 3.05, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 59, potasio_mg: 363, hierro_mg: 0.34, calcio_mg: 9}
   medida_casera: {nombre: "filete", gramos: 150}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [pescado]
   fuente: "USDA FDC SR Legacy 175167 (NDB 15236), verificado en línea"
 
 - id: merluza_cruda
@@ -857,6 +964,7 @@
   por_100g: {kcal: 79, proteina_g: 16.2, grasa_g: 1.3, grasa_saturada_g: 0.13, carbohidratos_g: 0.5, fibra_g: 0, azucares_g: 0, sodio_mg: 75, potasio_mg: 413, hierro_mg: 0.38, calcio_mg: 16}
   medida_casera: {nombre: "filete", gramos: 150}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [pescado]
   fuente: "ICBF TCAC 2015, código 429 (merluza, filete crudo); grasa saturada, hierro y calcio aproximados; potasio aproximado (la TCAC trae 34 mg, inverosímil para pescado)"
 
 - id: camaron_crudo
@@ -865,6 +973,7 @@
   por_100g: {kcal: 85, proteina_g: 20.1, grasa_g: 0.51, grasa_saturada_g: 0.1, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 119, potasio_mg: 264, hierro_mg: 0.52, calcio_mg: 64}
   medida_casera: {nombre: "porción", gramos: 100}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [mariscos]
   fuente: "USDA FDC SR Legacy 175179 (NDB 15270), verificado en línea; fibra_g, azucares_g aproximado"
 
 - id: atun_lata_agua
@@ -873,6 +982,7 @@
   por_100g: {kcal: 116, proteina_g: 25.5, grasa_g: 0.82, grasa_saturada_g: 0.23, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 50, potasio_mg: 237, hierro_mg: 1.53, calcio_mg: 11}
   medida_casera: {nombre: "lata escurrida", gramos: 120}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [pescado]
   fuente: "USDA FDC SR Legacy 171986 (NDB 15184), verificado en línea"
 
 - id: sardinas_lata_tomate
@@ -881,6 +991,7 @@
   por_100g: {kcal: 185, proteina_g: 20.9, grasa_g: 10.4, grasa_saturada_g: 2.68, carbohidratos_g: 0.54, fibra_g: 0.1, azucares_g: 0.43, sodio_mg: 414, potasio_mg: 341, hierro_mg: 2.3, calcio_mg: 240}
   medida_casera: {nombre: "lata escurrida", gramos: 125}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: [pescado]
   fuente: "USDA FDC SR Legacy 175140 (NDB 15089), verificado en línea"
 
 - id: aceite_oliva
@@ -889,6 +1000,7 @@
   por_100g: {kcal: 884, proteina_g: 0, grasa_g: 100, grasa_saturada_g: 13.8, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 2, potasio_mg: 1, hierro_mg: 0.56, calcio_mg: 1}
   medida_casera: {nombre: "cucharada", gramos: 13.5}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171413 (NDB 4053), verificado en línea"
 
 - id: aceite_canola
@@ -897,6 +1009,7 @@
   por_100g: {kcal: 884, proteina_g: 0, grasa_g: 100, grasa_saturada_g: 7.36, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 0, potasio_mg: 0, hierro_mg: 0, calcio_mg: 0}
   medida_casera: {nombre: "cucharada", gramos: 14}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 172336 (NDB 4582), verificado en línea"
 
 - id: mantequilla
@@ -905,6 +1018,7 @@
   por_100g: {kcal: 717, proteina_g: 0.85, grasa_g: 81.1, grasa_saturada_g: 51.4, carbohidratos_g: 0.06, fibra_g: 0, azucares_g: 0.06, sodio_mg: 643, potasio_mg: 24, hierro_mg: 0.02, calcio_mg: 24}
   medida_casera: {nombre: "cucharadita", gramos: 5}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 173410 (NDB 1001), verificado en línea"
 
 - id: mani_sin_sal
@@ -913,6 +1027,7 @@
   por_100g: {kcal: 567, proteina_g: 25.8, grasa_g: 49.2, grasa_saturada_g: 6.28, carbohidratos_g: 16.1, fibra_g: 8.5, azucares_g: 4.72, sodio_mg: 18, potasio_mg: 705, hierro_mg: 4.58, calcio_mg: 92}
   medida_casera: {nombre: "puñado", gramos: 30}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [mani]
   fuente: "USDA FDC SR Legacy 172430 (NDB 16087), verificado en línea"
 
 - id: almendras
@@ -921,6 +1036,7 @@
   por_100g: {kcal: 579, proteina_g: 21.2, grasa_g: 49.9, grasa_saturada_g: 3.8, carbohidratos_g: 21.6, fibra_g: 12.5, azucares_g: 4.35, sodio_mg: 1, potasio_mg: 733, hierro_mg: 3.71, calcio_mg: 269}
   medida_casera: {nombre: "puñado", gramos: 28}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [frutos_secos]
   fuente: "USDA FDC SR Legacy 170567 (NDB 12061), verificado en línea"
 
 - id: nueces
@@ -929,6 +1045,7 @@
   por_100g: {kcal: 654, proteina_g: 15.2, grasa_g: 65.2, grasa_saturada_g: 6.13, carbohidratos_g: 13.7, fibra_g: 6.7, azucares_g: 2.61, sodio_mg: 2, potasio_mg: 441, hierro_mg: 2.91, calcio_mg: 98}
   medida_casera: {nombre: "puñado", gramos: 28}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [frutos_secos]
   fuente: "USDA FDC SR Legacy 170187 (NDB 12155), verificado en línea"
 
 - id: semillas_chia
@@ -937,6 +1054,7 @@
   por_100g: {kcal: 486, proteina_g: 16.5, grasa_g: 30.7, grasa_saturada_g: 3.33, carbohidratos_g: 42.1, fibra_g: 34.4, azucares_g: 0, sodio_mg: 16, potasio_mg: 407, hierro_mg: 7.72, calcio_mg: 631}
   medida_casera: {nombre: "cucharada", gramos: 12}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170554 (NDB 12006), verificado en línea; azucares_g aproximado"
 
 - id: linaza_molida
@@ -945,6 +1063,7 @@
   por_100g: {kcal: 534, proteina_g: 18.3, grasa_g: 42.2, grasa_saturada_g: 3.66, carbohidratos_g: 28.9, fibra_g: 27.3, azucares_g: 1.55, sodio_mg: 30, potasio_mg: 813, hierro_mg: 5.73, calcio_mg: 255}
   medida_casera: {nombre: "cucharada", gramos: 7}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169414 (NDB 12220), verificado en línea"
 
 - id: ajonjoli
@@ -953,6 +1072,7 @@
   por_100g: {kcal: 573, proteina_g: 17.7, grasa_g: 49.7, grasa_saturada_g: 6.96, carbohidratos_g: 23.4, fibra_g: 11.8, azucares_g: 0.3, sodio_mg: 11, potasio_mg: 468, hierro_mg: 14.6, calcio_mg: 975}
   medida_casera: {nombre: "cucharada", gramos: 9}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [ajonjoli]
   fuente: "USDA FDC SR Legacy 170150 (NDB 12023), verificado en línea"
 
 - id: semillas_girasol
@@ -961,6 +1081,7 @@
   por_100g: {kcal: 584, proteina_g: 20.8, grasa_g: 51.5, grasa_saturada_g: 4.46, carbohidratos_g: 20, fibra_g: 8.6, azucares_g: 2.62, sodio_mg: 9, potasio_mg: 645, hierro_mg: 5.25, calcio_mg: 78}
   medida_casera: {nombre: "cucharada", gramos: 9}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170562 (NDB 12036), verificado en línea"
 
 - id: mantequilla_mani_natural
@@ -969,6 +1090,7 @@
   por_100g: {kcal: 598, proteina_g: 22.2, grasa_g: 51.4, grasa_saturada_g: 10.3, carbohidratos_g: 22.3, fibra_g: 5, azucares_g: 10.5, sodio_mg: 17, potasio_mg: 558, hierro_mg: 1.74, calcio_mg: 49}
   medida_casera: {nombre: "cucharada", gramos: 16}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [mani]
   fuente: "USDA FDC SR Legacy 172470 (NDB 16398), verificado en línea"
 
 - id: azucar
@@ -977,6 +1099,7 @@
   por_100g: {kcal: 387, proteina_g: 0, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 100, fibra_g: 0, azucares_g: 99.8, sodio_mg: 1, potasio_mg: 2, hierro_mg: 0.05, calcio_mg: 1}
   medida_casera: {nombre: "cucharadita", gramos: 4}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169655 (NDB 19335), verificado en línea"
 
 - id: panela
@@ -985,6 +1108,7 @@
   por_100g: {kcal: 371, proteina_g: 0.6, grasa_g: 0.1, grasa_saturada_g: 0, carbohidratos_g: 91.9, fibra_g: 0, azucares_g: 85, sodio_mg: 30, potasio_mg: 823, hierro_mg: 4.9, calcio_mg: 191}
   medida_casera: {nombre: "cucharada rallada", gramos: 12}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "ICBF TCAC 2015, código 721 (panela); azúcares aproximados"
 
 - id: miel
@@ -993,6 +1117,7 @@
   por_100g: {kcal: 304, proteina_g: 0.3, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 82.4, fibra_g: 0.2, azucares_g: 82.1, sodio_mg: 4, potasio_mg: 52, hierro_mg: 0.42, calcio_mg: 6}
   medida_casera: {nombre: "cucharada", gramos: 21}
   etiquetas: [vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169640 (NDB 19296), verificado en línea"
 
 - id: sal
@@ -1001,6 +1126,7 @@
   por_100g: {kcal: 0, proteina_g: 0, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 38758, potasio_mg: 8, hierro_mg: 0.33, calcio_mg: 24}
   medida_casera: {nombre: "cucharadita", gramos: 6}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173468 (NDB 2047), verificado en línea"
 
 - id: cacao_polvo_sin_azucar
@@ -1009,6 +1135,7 @@
   por_100g: {kcal: 228, proteina_g: 19.6, grasa_g: 13.7, grasa_saturada_g: 8.07, carbohidratos_g: 57.9, fibra_g: 37, azucares_g: 1.75, sodio_mg: 21, potasio_mg: 1520, hierro_mg: 13.9, calcio_mg: 128}
   medida_casera: {nombre: "cucharada", gramos: 5}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 169593 (NDB 19165), verificado en línea"
 
 - id: chocolate_amargo_70
@@ -1017,6 +1144,7 @@
   por_100g: {kcal: 598, proteina_g: 7.79, grasa_g: 42.6, grasa_saturada_g: 24.5, carbohidratos_g: 45.9, fibra_g: 10.9, azucares_g: 24, sodio_mg: 20, potasio_mg: 715, hierro_mg: 11.9, calcio_mg: 73}
   medida_casera: {nombre: "onza", gramos: 28}
   etiquetas: [vegetariano, sin_gluten]
+  alergenos: [leche, lactosa]
   fuente: "USDA FDC SR Legacy 170273 (NDB 19904), verificado en línea"
 
 - id: cafe_preparado
@@ -1025,6 +1153,7 @@
   por_100g: {kcal: 1, proteina_g: 0.12, grasa_g: 0.02, grasa_saturada_g: 0, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 2, potasio_mg: 49, hierro_mg: 0.01, calcio_mg: 2}
   medida_casera: {nombre: "pocillo", gramos: 150}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171890 (NDB 14209), verificado en línea"
 
 - id: vinagre
@@ -1033,6 +1162,7 @@
   por_100g: {kcal: 21, proteina_g: 0, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 0.93, fibra_g: 0, azucares_g: 0.4, sodio_mg: 5, potasio_mg: 73, hierro_mg: 0.2, calcio_mg: 7}
   medida_casera: {nombre: "cucharada", gramos: 15}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 173469 (NDB 2048), verificado en línea"
 
 - id: mostaza
@@ -1041,6 +1171,7 @@
   por_100g: {kcal: 60, proteina_g: 3.74, grasa_g: 3.34, grasa_saturada_g: 0.21, carbohidratos_g: 5.83, fibra_g: 4, azucares_g: 0.92, sodio_mg: 1100, potasio_mg: 152, hierro_mg: 1.61, calcio_mg: 63}
   medida_casera: {nombre: "cucharadita", gramos: 5}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 172234 (NDB 2046), verificado en línea"
 
 - id: salsa_soya_baja_sodio
@@ -1049,6 +1180,7 @@
   por_100g: {kcal: 57, proteina_g: 9.05, grasa_g: 0.3, grasa_saturada_g: 0.04, carbohidratos_g: 5.59, fibra_g: 0.7, azucares_g: 0.5, sodio_mg: 3598, potasio_mg: 352, hierro_mg: 1.35, calcio_mg: 30}
   medida_casera: {nombre: "cucharada", gramos: 16}
   etiquetas: [vegano, vegetariano, sin_lactosa]
+  alergenos: [soya, gluten]
   fuente: "USDA FDC 172473 (SR Legacy NDB 16424, salsa de soya shoyu baja en sodio)"
 
 - id: comino
@@ -1057,6 +1189,7 @@
   por_100g: {kcal: 375, proteina_g: 17.8, grasa_g: 22.3, grasa_saturada_g: 1.54, carbohidratos_g: 44.2, fibra_g: 10.5, azucares_g: 2.25, sodio_mg: 168, potasio_mg: 1790, hierro_mg: 66.4, calcio_mg: 931}
   medida_casera: {nombre: "cucharadita", gramos: 2}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170923 (NDB 2014), verificado en línea"
 
 - id: oregano_seco
@@ -1065,6 +1198,7 @@
   por_100g: {kcal: 265, proteina_g: 9, grasa_g: 4.28, grasa_saturada_g: 1.55, carbohidratos_g: 68.9, fibra_g: 42.5, azucares_g: 4.09, sodio_mg: 25, potasio_mg: 1260, hierro_mg: 36.8, calcio_mg: 1600}
   medida_casera: {nombre: "cucharadita", gramos: 1}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171328 (NDB 2027), verificado en línea"
 
 - id: pimienta
@@ -1073,6 +1207,7 @@
   por_100g: {kcal: 251, proteina_g: 10.4, grasa_g: 3.26, grasa_saturada_g: 1.39, carbohidratos_g: 64, fibra_g: 25.3, azucares_g: 0.64, sodio_mg: 20, potasio_mg: 1330, hierro_mg: 9.71, calcio_mg: 443}
   medida_casera: {nombre: "pizca", gramos: 0.5}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170931 (NDB 2030), verificado en línea"
 
 - id: canela
@@ -1081,6 +1216,7 @@
   por_100g: {kcal: 247, proteina_g: 3.99, grasa_g: 1.24, grasa_saturada_g: 0.34, carbohidratos_g: 80.6, fibra_g: 53.1, azucares_g: 2.17, sodio_mg: 10, potasio_mg: 431, hierro_mg: 8.32, calcio_mg: 1000}
   medida_casera: {nombre: "cucharadita", gramos: 2.6}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 171320 (NDB 2010), verificado en línea"
 
 - id: agua
@@ -1089,6 +1225,7 @@
   por_100g: {kcal: 0, proteina_g: 0, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 0, fibra_g: 0, azucares_g: 0, sodio_mg: 0, potasio_mg: 0, hierro_mg: 0, calcio_mg: 0}
   medida_casera: {nombre: "vaso", gramos: 240}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "Sin aporte nutricional"
 
 - id: caldo_casero_sin_sal
@@ -1097,6 +1234,7 @@
   por_100g: {kcal: 36, proteina_g: 2.52, grasa_g: 1.2, grasa_saturada_g: 0.32, carbohidratos_g: 3.53, fibra_g: 0, azucares_g: 1.58, sodio_mg: 40, potasio_mg: 105, hierro_mg: 0.21, calcio_mg: 3}
   medida_casera: {nombre: "taza", gramos: 240}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC 172884 (SR Legacy NDB 06172, caldo de pollo casero); sodio aproximado (USDA trae 143 mg y no aclara si lleva sal)"
 
 - id: salsa_tomate_natural
@@ -1105,6 +1243,7 @@
   por_100g: {kcal: 24, proteina_g: 1.2, grasa_g: 0.3, grasa_saturada_g: 0.04, carbohidratos_g: 5.31, fibra_g: 1.5, azucares_g: 3.56, sodio_mg: 474, potasio_mg: 297, hierro_mg: 0.96, calcio_mg: 14}
   medida_casera: {nombre: "1/2 taza", gramos: 120}
   etiquetas: [vegano, vegetariano, sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC SR Legacy 170054 (NDB 11549), verificado en línea"
 
 - id: mayonesa_light
@@ -1113,6 +1252,7 @@
   por_100g: {kcal: 319, proteina_g: 3.8, grasa_g: 19.6, grasa_saturada_g: 3.3, carbohidratos_g: 32, fibra_g: 0, azucares_g: 3.6, sodio_mg: 827, potasio_mg: 10, hierro_mg: 0.2, calcio_mg: 8}
   medida_casera: {nombre: "cucharada", gramos: 15}
   etiquetas: [vegetariano, sin_gluten, sin_lactosa]
+  alergenos: [huevo]
   fuente: "ICBF TCAC 2015, código 755 (mayonesa baja en grasa); grasa saturada, fibra, azúcares, sodio, potasio, hierro y calcio aproximados"
 
 - id: gelatina_sin_azucar_polvo
@@ -1121,4 +1261,5 @@
   por_100g: {kcal: 198, proteina_g: 15.67, grasa_g: 0, grasa_saturada_g: 0, carbohidratos_g: 80.21, fibra_g: 0.1, azucares_g: 0, sodio_mg: 862, potasio_mg: 14, hierro_mg: 0.06, calcio_mg: 8}
   medida_casera: {nombre: "sobre", gramos: 10}
   etiquetas: [sin_gluten, sin_lactosa]
+  alergenos: []
   fuente: "USDA FDC 169597 (SR Legacy NDB 19175, gelatina en polvo baja en calorías con aspartame); la TCAC solo trae gelatina con azúcar"

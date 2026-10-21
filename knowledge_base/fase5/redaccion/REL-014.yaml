@@ -1,15 +1,15 @@
 id: REL-014
 tipo: patron
-titulo_paciente: "Anemia que se acompaña de inflamación"
+titulo_paciente: "Su hemoglobina baja se acompaña de inflamación"
 que_es: "Cuando hay una inflamación que dura, el cuerpo guarda el hierro y no lo deja usar para fabricar glóbulos rojos, aunque las reservas estén bien."
 por_que_te_aparece:
-  - "Tu hemoglobina salió en {hemoglobin}; ajustada por la altura de Bogotá queda en {hemoglobina_ajustada}, por debajo del rango."
-  - "Tu ferritina, la reserva de hierro, salió en {ferritin}, pero tu saturación de transferrina, el hierro que circula, salió baja: {transferrin_saturation}."
-  - "Tu proteína C reactiva, una señal de inflamación, salió en {hs_crp}."
-riesgo_claro: "Si no se encuentra la causa de la inflamación, la anemia puede seguir y dar cansancio; comer más hierro no la corrige."
+  - "Su hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo del rango."
+  - "Su ferritina, la reserva de hierro, salió en {ferritin}, pero su saturación de transferrina, el hierro que circula, salió baja: {transferrin_saturation}."
+  - "Su proteína C reactiva, una señal de inflamación, salió en {hs_crp}."
+riesgo_claro: "Si no se encuentra la causa de la inflamación, la hemoglobina puede seguir baja y dar cansancio. Comer más hierro no la corrige."
 ejemplo_simple: "Es como tener la despensa llena pero con candado: el hierro está, pero el cuerpo no lo puede sacar."
-incertidumbre: "Una infección reciente puede dar este mismo patrón por unas semanas; tu médico decide qué exámenes hacen falta para buscar la causa."
-cuando_consultar: "Pide una consulta médica en las próximas semanas para buscar la causa."
+incertidumbre: "Una infección reciente puede dar este mismo patrón por unas semanas. Su médico decide qué exámenes hacen falta para buscar la causa."
+cuando_consultar: "Pida una consulta médica en las próximas semanas para buscar la causa."
 aviso_whatsapp: null
 fuentes: ["OMS 2020"]
-estado_revision: pendiente
+estado_revision: aprobada

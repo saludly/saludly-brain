@@ -22,3 +22,10 @@ desktop.ini
 
 # Salidas regenerables del RAG
 codigo/rag/salida/
+
+# Videos generados con /brag (cuadros, audio y node_modules)
+brag-output*/
+
+# App web (Fase 6)
+app/node_modules/
+app/dist/

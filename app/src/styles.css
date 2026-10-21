@@ -1,0 +1,154 @@
+@import "tailwindcss" source(none);
+@source "./";
+@import "tw-animate-css";
+
+/*
+ * Sistema de diseño de Saludly (traído del dashboard de Lovable): blanco, mínimo y clínico.
+ * Colores de estado: azul Saludly (en rango), naranja claro (fuera de rango),
+ * naranja oscuro (atención pronta). Nunca "óptimo" ni "crítico" sin bandera del laboratorio.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-rule: var(--rule);
+  --color-surface: var(--surface);
+  --color-scrim: var(--scrim);
+
+  --color-optimal: var(--optimal);
+  --color-optimal-soft: var(--optimal-soft);
+  --color-attention: var(--attention);
+  --color-attention-soft: var(--attention-soft);
+  --color-critical: var(--critical);
+  --color-critical-soft: var(--critical-soft);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(1 0 0);
+  --surface: oklch(0.984 0.002 250);
+  --scrim: oklch(0.28 0.03 250 / 32%);
+  --foreground: oklch(0.24 0.02 255);
+  --ink: oklch(0.24 0.02 255);
+  --ink-muted: oklch(0.5 0.015 255);
+  --ink-faint: oklch(0.66 0.012 255);
+  --rule: oklch(0.24 0.02 255 / 9%);
+  --border: oklch(0.24 0.02 255 / 9%);
+  --input: oklch(0.24 0.02 255 / 12%);
+  --ring: oklch(0.58 0.19 253);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.58 0.19 253);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.005 250);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.97 0.005 250);
+  --muted-foreground: var(--ink-muted);
+  --accent: oklch(0.96 0.02 250);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.55 0.17 42);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Saludly status system */
+  --optimal: oklch(0.58 0.19 253);
+  --optimal-soft: oklch(0.58 0.19 253 / 10%);
+  --attention: oklch(0.76 0.13 66);
+  --attention-soft: oklch(0.76 0.13 66 / 14%);
+  --critical: oklch(0.58 0.17 44);
+  --critical-soft: oklch(0.58 0.17 44 / 12%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  .font-mono,
+  [class*="tabular"] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .rise {
+    animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: var(--rise-delay, 0s);
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.06);
+    }
+  }
+
+  .breathe {
+    animation: breathe 5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise,
+    .breathe {
+      animation: none;
+    }
+  }
+}

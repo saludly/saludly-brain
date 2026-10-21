@@ -6,6 +6,7 @@ Saludly Brain · Nutrición: nutrientes de cada receta, metas diarias orientativ
   ajustadas por el objetivo y limitadas por los hallazgos (por ejemplo, sin dieta alta en proteína con TFG baja).
 - Las restricciones salen de los hallazgos del motor: con glucosa alta, sin azúcar añadida; con presión o riñón,
   bajas en sodio; con potasio alto, sin recetas altas en potasio; etc.
+- Las alergias y el tipo de dieta del paciente excluyen recetas por sus ingredientes (knowledge_base/fase5/filtros.yaml).
 """
 import hashlib, re
 
@@ -40,11 +41,20 @@ def etiquetas(receta, n):
     return sorted(e)
 
 
+def alergenos_y_dietas(receta, alimentos):
+    """Alérgenos de la receta (unión de sus ingredientes) y dietas para las que sirve (todos los ingredientes aptos)."""
+    ings = [alimentos.get(i["alimento"]) or {} for i in receta["ingredientes"]]
+    ale = sorted({a for x in ings for a in x.get("alergenos") or []})
+    dietas = [d for d, et in (("vegetariana", "vegetariano"), ("vegana", "vegano")) if all(et in (x.get("etiquetas") or []) for x in ings)]
+    return ale, dietas
+
+
 def catalogo(recetas, alimentos):
     out = []
     for r in recetas:
         n = nutrientes(r, alimentos)
-        out.append(dict(r, nutrientes_porcion=n, etiquetas_calculadas=etiquetas(r, n)))
+        ale, dietas = alergenos_y_dietas(r, alimentos)
+        out.append(dict(r, nutrientes_porcion=n, etiquetas_calculadas=etiquetas(r, n), alergenos=ale, dietas=dietas))
     return out
 
 
@@ -68,14 +78,18 @@ def restricciones(motor_out, ctx):
         excluir.add("alta_en_purinas"); motivos.append("posible sobrecarga de hierro: sin hígado")
     if _act(c, "COND-M6-RE-001"):
         excluir.add("alta_en_purinas"); motivos.append("ácido úrico alto: sin vísceras ni sardinas")
-    return dict(exigir=sorted(exigir), excluir=sorted(excluir), preferir=sorted(preferir), motivos=motivos)
+    alergias = sorted(ctx.get("alergias") or [])
+    dieta = ctx.get("dieta") if ctx.get("dieta") in ("vegetariana", "vegana") else None
+    if alergias: motivos.append(f"alergias o intolerancias: sin recetas con {', '.join(alergias)}")
+    if dieta: motivos.append(f"dieta {dieta}: solo recetas aptas")
+    return dict(exigir=sorted(exigir), excluir=sorted(excluir), preferir=sorted(preferir), motivos=motivos, alergias=alergias, dieta=dieta)
 
 
 def metas(ctx, objetivos, motor_out):
     """Metas diarias orientativas. Sin peso o talla no se personaliza."""
     peso, talla, edad, sexo = ctx.get("peso_kg"), ctx.get("talla_m"), ctx.get("edad"), ctx.get("sexo")
     egfr = (motor_out.get("calculados") or {}).get("egfr")
-    notas = ["Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso."]
+    notas = ["Meta orientativa, no una prescripción: un nutricionista la ajusta a su caso."]
     if not (peso and talla and edad and sexo in ("hombre", "mujer")):
         return dict(personalizada=False, motivo="faltan peso y talla de la enfermera", notas=notas,
                     sodio_mg_max=2000, azucar_anadida_g_max=None, fibra_g_min=25 if sexo == "mujer" else 30)
@@ -86,13 +100,13 @@ def metas(ctx, objetivos, motor_out):
     if "bajar_peso" in objetivos and imc >= 20:
         kcal *= 0.85; kcal = max(kcal, 1500 if sexo == "hombre" else 1200); notas.append("Con un déficit moderado para bajar de peso sin pasar hambre.")
     elif any(o in objetivos for o in ("masa_muscular", "maraton", "rendimiento", "atletico")):
-        kcal *= 1.10; notas.append("Con un poco más de energía para tu entrenamiento.")
+        kcal *= 1.10; notas.append("Con un poco más de energía para su entrenamiento.")
     g_kg = 1.0
     if any(o in objetivos for o in ("masa_muscular", "atletico")): g_kg = 1.6
     elif any(o in objetivos for o in ("rendimiento", "maraton")): g_kg = 1.4
     elif "bajar_peso" in objetivos or "envejecer_saludable" in objetivos or edad >= 65: g_kg = 1.2
     if egfr is not None and egfr < 60:
-        g_kg = min(g_kg, 0.8); notas.append("Con la función de tu riñón, la proteína no se aumenta: consúltalo con un nutricionista.")
+        g_kg = min(g_kg, 0.8); notas.append("Con la función de su riñón, la proteína no se aumenta: consúltelo con un nutricionista.")
     prot = g_kg * peso
     grasa = kcal * 0.28 / 9
     carb = (kcal - prot * 4 - grasa * 9) / 4
@@ -103,7 +117,8 @@ def metas(ctx, objetivos, motor_out):
 
 def plan_recetas(cat, restr, objetivos, semilla, dias=7):
     """Una receta por día, alternando el momento del día, sin repetir y respetando las restricciones."""
-    aptas = [r for r in cat if all(e in r["etiquetas_calculadas"] for e in restr["exigir"]) and not any(e in r["etiquetas_calculadas"] for e in restr["excluir"])]
+    aptas = [r for r in cat if all(e in r["etiquetas_calculadas"] for e in restr["exigir"]) and not any(e in r["etiquetas_calculadas"] for e in restr["excluir"])
+             and not set(restr.get("alergias") or []) & set(r.get("alergenos") or []) and (not restr.get("dieta") or restr["dieta"] in (r.get("dietas") or []))]
     pref = set(restr["preferir"])
     if any(o in objetivos for o in ("masa_muscular", "atletico", "rendimiento", "maraton")) and "alta_en_proteina" not in restr["excluir"]: pref.add("alta_en_proteina")
     if "bajar_peso" in objetivos: pref.update({"alta_en_fibra", "sin_azucar_anadida"})
@@ -146,7 +161,7 @@ def mensaje_receta(r, alimentos_cat, meta):
     pasos = "\n".join(f"{k + 1}. {p}" for k, p in enumerate(r["pasos"]))
     aporte = ""
     if meta.get("personalizada") and meta.get("proteina_g"):
-        aporte = f"\nCubre cerca del {round(100 * n['proteina_g'] / meta['proteina_g'])} % de tu proteína del día."
+        aporte = f"\nCubre cerca del {round(100 * n['proteina_g'] / meta['proteina_g'])} % de su proteína del día."
     texto = (f"🍽️ *Receta del día: {r['nombre']}*\n{r['tiempo_comida'].capitalize()} · {r.get('tiempo_min') or '—'} min · {r['porciones']} porciones\n\n"
              f"*Por porción:* {_num(n['kcal'])} kcal · proteína {_num(n['proteina_g'])} g · carbohidratos {_num(n['carbohidratos_g'])} g · "
              f"grasa {_num(n['grasa_g'])} g · fibra {_num(n['fibra_g'])} g · sodio {_num(n['sodio_mg'])} mg{aporte}\n\n"

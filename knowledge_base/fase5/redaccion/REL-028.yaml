@@ -1,15 +1,15 @@
 id: REL-028
 tipo: patron
-titulo_paciente: "Tus hormonas y tu metabolismo se alimentan entre sí"
-que_es: "Cuando a la insulina le cuesta trabajar, el ovario produce más andrógenos (hormonas masculinas), y los andrógenos a su vez dificultan el manejo del azúcar."
+titulo_paciente: "Sus hormonas y su metabolismo se alimentan entre sí"
+que_es: "Cuando a la insulina le cuesta trabajar, el ovario produce más andrógenos (hormonas masculinas), y los andrógenos, a su vez, dificultan el manejo del azúcar."
 por_que_te_aparece:
-  - "Tu testosterona total salió en {testosterone_total}, por encima del rango para mujeres."
-  - "Tu índice HOMA-IR, que estima cuánto le cuesta a la insulina trabajar, salió en {homa_ir}."
-  - "Tus triglicéridos salieron en {triglycerides} y tu colesterol HDL, el colesterol bueno, en {hdl_c}."
+  - "Su testosterona total salió en {testosterone_total}, por encima del rango para mujeres."
+  - "Su índice HOMA-IR, que estima cuánto le cuesta a la insulina trabajar, salió en {homa_ir}."
+  - "Sus triglicéridos salieron en {triglycerides}, y su colesterol HDL, el colesterol bueno, en {hdl_c}."
 riesgo_claro: "Si este círculo se mantiene, con los años aumenta la probabilidad de diabetes y de problemas del corazón, además de ciclos irregulares."
-ejemplo_simple: "Es como las dos ruedas de una bicicleta unidas por la cadena: si mueves una, se mueve la otra, y mejorar una ayuda a la otra."
-incertidumbre: "Este patrón no es un diagnóstico; el anticonceptivo hormonal y otras causas hormonales cambian estos valores, y tu médico lo interpreta con tus ciclos."
-cuando_consultar: "Coméntalo con ginecología o endocrinología, sobre todo si tus ciclos son irregulares."
+ejemplo_simple: "Es como las dos ruedas de una bicicleta unidas por la cadena: si mueve una, se mueve la otra, y mejorar una ayuda a la otra."
+incertidumbre: "Este patrón no es un diagnóstico. El anticonceptivo hormonal y otras causas hormonales cambian estos valores, y su médico lo interpreta con sus ciclos."
+cuando_consultar: "Coménteselo a ginecología o a endocrinología, sobre todo si sus ciclos son irregulares."
 aviso_whatsapp: null
 fuentes: ["Guía internacional de SOP 2023 (evaluación metabólica de toda mujer con SOP)"]
-estado_revision: pendiente
+estado_revision: aprobada

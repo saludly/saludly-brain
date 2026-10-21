@@ -27,5 +27,19 @@ def cargar():
     for f in sorted(glob.glob(os.path.join(F5, "recetas", "*.yaml"))):
         if os.path.basename(f) != "alimentos.yaml": recetas += _y(f) or []
     objetivos = {o["id"]: o for o in _y(os.path.join(F5, "objetivos.yaml"))}
-    return dict(indice=idx, redaccion=red, modulos=modulos, recomendaciones=recs, alimentos=alimentos, recetas=recetas, objetivos=objetivos,
-                version_kb=f"{idx.get('version')}·{idx.get('generado')}")
+    fil_p = os.path.join(F5, "filtros.yaml")
+    filtros = _y(fil_p) if os.path.exists(fil_p) else {}
+    return dict(indice=idx, redaccion=red, modulos=modulos, recomendaciones=recs, alimentos=alimentos, recetas=recetas, objetivos=objetivos, filtros=filtros,
+                criterios=criterios_de_condiciones(), version_kb=f"{idx.get('version')}·{idx.get('generado')}")
+
+
+def criterios_de_condiciones():
+    """{condición: {id de criterio: biomarcador}} desde el bloque yaml de cada ficha de condición."""
+    out = {}
+    for f in glob.glob(os.path.join(KB, "condiciones", "*", "*.md")):
+        s = open(f, encoding="utf-8").read()
+        i = s.find("```yaml")
+        if i < 0: continue
+        y = yaml.safe_load(s[i + 7:s.find("```", i + 7)]) or {}
+        out[y.get("id")] = {c["id"]: c.get("biomarcador") for c in y.get("criterios") or [] if c.get("id") and c.get("biomarcador")}
+    return out

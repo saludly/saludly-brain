@@ -17,11 +17,11 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Sofríe la cebolla y el tomate picados en el aceite."
-    - "Agrega el fríjol y el arroz, y revuelve hasta que estén bien calientes."
-    - "Fríe o revuelve el huevo aparte y sírvelo encima."
+    - "Sofría la cebolla y el tomate picados en el aceite."
+    - "Agregue el fríjol y el arroz, y revuelva hasta que estén bien calientes."
+    - "Fría o revuelva el huevo aparte y sírvalo encima."
   etiquetas: [colombiana, vegetariano, sin_lactosa, sin_gluten, economica]
-  consejo: "Acompáñalo con media naranja para aprovechar mejor el hierro del fríjol."
+  consejo: "Acompáñelo con media naranja para aprovechar mejor el hierro del fríjol."
 
 - id: RCT-DES-002
   nombre: "Huevos pericos con arepa y naranja"
@@ -38,11 +38,11 @@
     - {alimento: naranja, gramos: 130, medida: "1 naranja"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Pica el tomate y la cebolla y sofríelos un minuto en el aceite."
-    - "Agrega los huevos batidos y revuelve a fuego bajo hasta que cuajen."
-    - "Asa la arepa y sirve con la naranja en gajos."
+    - "Pique el tomate y la cebolla y sofríalos un minuto en el aceite."
+    - "Agregue los huevos batidos y revuelva a fuego bajo hasta que cuajen."
+    - "Ase la arepa y sirva con la naranja en gajos."
   etiquetas: [colombiana, vegetariano, sin_lactosa, sin_gluten, economica, rapida]
-  consejo: "Cocina los huevos a fuego bajo para que queden jugosos sin necesidad de más aceite."
+  consejo: "Cocine los huevos a fuego bajo para que queden jugosos sin necesidad de más aceite."
 
 - id: RCT-DES-003
   nombre: "Changua bogotana con pan integral"
@@ -59,9 +59,9 @@
     - {alimento: pan_integral, gramos: 40, medida: "1 tajada grande"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Hierve la leche con el agua y la cebolla larga picada."
-    - "Baja el fuego y echa los huevos uno a uno sin revolver hasta que cuajen."
-    - "Sirve con cilantro picado y el pan en trozos."
+    - "Hierva la leche con el agua y la cebolla larga picada."
+    - "Baja el fuego y eche los huevos uno a uno sin revolver hasta que cuajen."
+    - "Sirva con cilantro picado y el pan en trozos."
   etiquetas: [colombiana, vegetariano, economica]
   consejo: "La cebolla y el cilantro dan sabor, así que basta con muy poca sal."
 
@@ -78,9 +78,9 @@
     - {alimento: canela, gramos: 2, medida: "1 astilla o 1 pizca"}
     - {alimento: semillas_chia, gramos: 10, medida: "1 cucharada"}
   pasos:
-    - "Cocina la avena en la leche con la canela, revolviendo, durante cinco minutos."
-    - "Aplasta la mitad del banano dentro de la avena para endulzarla."
-    - "Sirve con el resto del banano en rodajas y la chía encima."
+    - "Cocine la avena en la leche con la canela, revolviendo, durante cinco minutos."
+    - "Aplaste la mitad del banano dentro de la avena para endulzarla."
+    - "Sirva con el resto del banano en rodajas y la chía encima."
   etiquetas: [vegetariano, economica]
   consejo: "El banano maduro endulza solo, así no hace falta azúcar."
 
@@ -96,10 +96,10 @@
     - {alimento: aguacate, gramos: 50, medida: "1/4 de aguacate"}
     - {alimento: tomate, gramos: 50, medida: "1/2 tomate en rodajas"}
   pasos:
-    - "Asa la arepa en un sartén sin aceite hasta que dore."
-    - "Ábrela y rellénala con el queso, el aguacate y el tomate."
+    - "Ase la arepa en un sartén sin aceite hasta que dore."
+    - "Ábrala y rellénela con el queso, el aguacate y el tomate."
   etiquetas: [colombiana, vegetariano, sin_gluten, rapida]
-  consejo: "El aguacate aporta grasa buena y te deja satisfecho hasta el almuerzo."
+  consejo: "El aguacate aporta grasa buena y le deja satisfecho hasta el almuerzo."
 
 - id: RCT-DES-006
   nombre: "Omelette de espinaca y champiñones con papaya"
@@ -117,10 +117,10 @@
     - {alimento: papaya, gramos: 150, medida: "1 tajada"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Saltea los champiñones en tajadas y la espinaca en el aceite."
-    - "Bate los huevos con las claras y viértelos sobre las verduras."
-    - "Tapa y cocina a fuego bajo hasta que cuaje; dobla por la mitad."
-    - "Sirve con el pan tostado y la papaya."
+    - "Saltee los champiñones en tajadas y la espinaca en el aceite."
+    - "Bata los huevos con las claras y viértalos sobre las verduras."
+    - "Tape y cocine a fuego bajo hasta que cuaje; doble por la mitad."
+    - "Sirva con el pan tostado y la papaya."
   etiquetas: [vegetariano, sin_lactosa]
   consejo: "Sumar claras aumenta la proteína sin añadir mucha grasa."
 
@@ -136,10 +136,10 @@
     - {alimento: granola_sin_azucar, gramos: 40, medida: "4 cucharadas"}
     - {alimento: semillas_chia, gramos: 10, medida: "1 cucharada"}
   pasos:
-    - "Pon el yogur en un tazón."
-    - "Agrega las fresas en trozos, la granola y la chía."
+    - "Ponga el yogur en un tazón."
+    - "Agregue las fresas en trozos, la granola y la chía."
   etiquetas: [vegetariano, rapida]
-  consejo: "Revisa que la granola diga sin azúcar añadida en la etiqueta."
+  consejo: "Revise que la granola diga sin azúcar añadida en la etiqueta."
 
 - id: RCT-DES-008
   nombre: "Tostadas integrales con huevo y aguacate"
@@ -155,9 +155,9 @@
     - {alimento: limon, gramos: 5, medida: "unas gotas"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Tuesta el pan y cocina los huevos tibios o pochados."
-    - "Aplasta el aguacate con el limón y úntalo sobre el pan."
-    - "Pon encima el tomate y el huevo."
+    - "Tueste el pan y cocine los huevos tibios o pochados."
+    - "Aplaste el aguacate con el limón y úntelo sobre el pan."
+    - "Ponga encima el tomate y el huevo."
   etiquetas: [vegetariano, sin_lactosa, rapida]
   consejo: "El limón evita que el aguacate se ponga negro y le da sabor sin más sal."
 
@@ -177,9 +177,9 @@
     - {alimento: comino, gramos: 1, medida: "1 pizca"}
     - {alimento: naranja, gramos: 150, medida: "1 naranja grande"}
   pasos:
-    - "Sofríe la cebolla y el tomate con el comino."
-    - "Agrega la lenteja y calienta hasta que se seque un poco."
-    - "Sirve con el huevo, la arepa asada y la naranja."
+    - "Sofría la cebolla y el tomate con el comino."
+    - "Agregue la lenteja y caliente hasta que se seque un poco."
+    - "Sirva con el huevo, la arepa asada y la naranja."
   etiquetas: [colombiana, vegetariano, sin_lactosa, sin_gluten, economica]
   consejo: "La vitamina C de la naranja ayuda a absorber el hierro de la lenteja."
 
@@ -196,8 +196,8 @@
     - {alimento: mantequilla_mani_natural, gramos: 15, medida: "1 cucharada"}
     - {alimento: canela, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Pon todo en la licuadora."
-    - "Licúa hasta que quede cremoso y sirve de una vez."
+    - "Ponga todo en la licuadora."
+    - "Licúe hasta que quede cremoso y sirva de una vez."
   etiquetas: [vegetariano, rapida]
   consejo: "Ideal después de entrenar en la mañana: tiene proteína y energía."
 
@@ -216,12 +216,12 @@
     - {alimento: mandarina, gramos: 100, medida: "1 mandarina"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Dora la cebolla en el aceite y agrega las papas cocidas en rodajas."
-    - "Vierte los huevos batidos con el perejil y cocina tapado a fuego bajo."
-    - "Voltea con ayuda de un plato y cocina un minuto más."
-    - "Sirve con la mandarina."
+    - "Dore la cebolla en el aceite y agregue las papas cocidas en rodajas."
+    - "Vierta los huevos batidos con el perejil y cocine tapado a fuego bajo."
+    - "Voltee con ayuda de un plato y cocine un minuto más."
+    - "Sirva con la mandarina."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten]
-  consejo: "Puedes cocinar las papas criollas la noche anterior y ganar tiempo."
+  consejo: "Puede cocinar las papas criollas la noche anterior y ganar tiempo."
 
 - id: RCT-DES-012
   nombre: "Caldo de papa con huevo y cilantro"
@@ -238,9 +238,9 @@
     - {alimento: arepa_maiz_blanca, gramos: 60, medida: "1 arepa pequeña"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Calienta el caldo con la cebolla larga y la papa en cubos."
-    - "Cuando hierva, echa el huevo y deja que cuaje sin revolver."
-    - "Sirve con cilantro y la arepa asada."
+    - "Caliente el caldo con la cebolla larga y la papa en cubos."
+    - "Cuando hierva, eche el huevo y deje que cuaje sin revolver."
+    - "Sirva con cilantro y la arepa asada."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, economica]
   consejo: "Un caldo casero sin cubos de sabor tiene mucho menos sodio."
 
@@ -259,11 +259,11 @@
     - {alimento: guayaba, gramos: 100, medida: "1 guayaba grande"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Corta el hígado en tiras y dóralo rápido en el aceite caliente."
-    - "Agrega la cebolla en plumas y el tomate, y cocina tres minutos más."
-    - "Sirve con la arepa asada y la guayaba en trozos."
+    - "Corte el hígado en tiras y dórelo rápido en el aceite caliente."
+    - "Agregue la cebolla en plumas y el tomate, y cocine tres minutos más."
+    - "Sirva con la arepa asada y la guayaba en trozos."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, economica]
-  consejo: "No cocines de más el hígado: queda duro; la guayaba ayuda a aprovechar su hierro."
+  consejo: "No cocine de más el hígado: queda duro; la guayaba ayuda a aprovechar su hierro."
 
 - id: RCT-DES-014
   nombre: "Quinua con leche, manzana y nueces"
@@ -278,10 +278,10 @@
     - {alimento: canela, gramos: 2, medida: "1 pizca"}
     - {alimento: nueces, gramos: 15, medida: "4 mitades"}
   pasos:
-    - "Calienta la quinua cocida en la leche con la canela por cinco minutos."
-    - "Sirve con la manzana picada y las nueces troceadas."
+    - "Caliente la quinua cocida en la leche con la canela por cinco minutos."
+    - "Sirva con la manzana picada y las nueces troceadas."
   etiquetas: [vegetariano, sin_gluten]
-  consejo: "Deja quinua cocida en la nevera para tener este desayuno listo en minutos."
+  consejo: "Deje quinua cocida en la nevera para tener este desayuno listo en minutos."
 
 - id: RCT-DES-015
   nombre: "Pan integral con queso cottage, tomate y pera"
@@ -297,9 +297,9 @@
     - {alimento: almendras, gramos: 10, medida: "8 almendras"}
     - {alimento: pera, gramos: 150, medida: "1 pera"}
   pasos:
-    - "Tuesta el pan y úntale el queso cottage."
-    - "Pon encima el tomate en rodajas y el orégano."
-    - "Acompaña con la pera y las almendras."
+    - "Tueste el pan y úntele el queso cottage."
+    - "Ponga encima el tomate en rodajas y el orégano."
+    - "Acompañe con la pera y las almendras."
   etiquetas: [vegetariano, rapida]
   consejo: "El orégano y el tomate le dan sabor al queso sin agregar sal."
 
@@ -319,10 +319,10 @@
     - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
     - {alimento: limon, gramos: 10, medida: "1/2 limón"}
   pasos:
-    - "Sofríe el ajo, la cebolla y el tomate en el aceite."
-    - "Agrega los garbanzos y la espinaca y saltea hasta que la espinaca se marchite."
-    - "Haz un hueco, rompe el huevo ahí y tapa hasta que cuaje."
-    - "Exprime el limón por encima al servir."
+    - "Sofría el ajo, la cebolla y el tomate en el aceite."
+    - "Agregue los garbanzos y la espinaca y saltee hasta que la espinaca se marchite."
+    - "Haga un hueco, rompa el huevo ahí y tape hasta que cuaje."
+    - "Exprima el limón por encima al servir."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, economica]
   consejo: "El limón al final suma vitamina C y ayuda con el hierro de la espinaca y el garbanzo."
 
@@ -339,8 +339,8 @@
     - {alimento: avena_hojuelas, gramos: 30, medida: "3 cucharadas"}
     - {alimento: linaza_molida, gramos: 10, medida: "1 cucharada"}
   pasos:
-    - "Lava bien la espinaca."
-    - "Licúa todo con un poco de hielo hasta que quede suave."
+    - "Lave bien la espinaca."
+    - "Licúe todo con un poco de hielo hasta que quede suave."
   etiquetas: [vegetariano, rapida]
   consejo: "La piña tapa el sabor de la espinaca, así que es buena entrada a los batidos verdes."
 
@@ -359,11 +359,11 @@
     - {alimento: aguacate, gramos: 40, medida: "2 tajadas"}
     - {alimento: mandarina, gramos: 100, medida: "1 mandarina"}
   pasos:
-    - "Mezcla el atún escurrido con el tomate, la cebolla picada y el limón."
-    - "Tuesta el pan y pon encima el aguacate y la mezcla de atún."
-    - "Acompaña con la mandarina."
+    - "Mezcle el atún escurrido con el tomate, la cebolla picada y el limón."
+    - "Tueste el pan y ponga encima el aguacate y la mezcla de atún."
+    - "Acompañe con la mandarina."
   etiquetas: [sin_lactosa, rapida]
-  consejo: "Escoge atún en agua y escúrrelo bien para comer menos sodio."
+  consejo: "Escoja atún en agua y escúrralo bien para comer menos sodio."
 
 - id: RCT-DES-019
   nombre: "Arepa con fríjol negro, queso y pico de gallo"
@@ -380,9 +380,9 @@
     - {alimento: cilantro, gramos: 3, medida: "unas hojas"}
     - {alimento: limon, gramos: 5, medida: "unas gotas"}
   pasos:
-    - "Calienta el fríjol y aplástalo un poco con un tenedor."
-    - "Pica tomate, cebolla y cilantro y mézclalos con el limón."
-    - "Asa la arepa y sírvela con el fríjol, el queso desmenuzado y el pico de gallo."
+    - "Caliente el fríjol y aplástelo un poco con un tenedor."
+    - "Pique tomate, cebolla y cilantro y mézclelos con el limón."
+    - "Ase la arepa y sírvala con el fríjol, el queso desmenuzado y el pico de gallo."
   etiquetas: [colombiana, vegetariano, sin_gluten, economica]
   consejo: "El fríjol en el desayuno aporta fibra que ayuda a controlar el hambre en la mañana."
 
@@ -399,9 +399,9 @@
     - {alimento: semillas_chia, gramos: 12, medida: "1 cucharada colmada"}
     - {alimento: mango, gramos: 100, medida: "1/2 mango"}
   pasos:
-    - "La noche anterior, mezcla en un frasco la avena, el yogur, la leche y la chía."
-    - "Tapa y deja en la nevera toda la noche."
-    - "En la mañana agrega el mango picado y lleva el frasco contigo."
+    - "La noche anterior, mezcle en un frasco la avena, el yogur, la leche y la chía."
+    - "Tape y deje en la nevera toda la noche."
+    - "En la mañana agregue el mango picado y lleve el frasco con usted."
   etiquetas: [vegetariano, rapida]
   consejo: "La avena y la chía tienen fibra soluble, la que ayuda a manejar el colesterol."
 
@@ -419,11 +419,11 @@
     - {alimento: panela, gramos: 10, medida: "1 trocito"}
     - {alimento: canela, gramos: 1, medida: "1 astilla"}
   pasos:
-    - "Hierve los huevos tres o cuatro minutos para que queden tibios."
-    - "Calienta la leche con la canela, el cacao y la panela, batiendo con el molinillo."
-    - "Sirve con el pan."
+    - "Hierva los huevos tres o cuatro minutos para que queden tibios."
+    - "Caliente la leche con la canela, el cacao y la panela, batiendo con el molinillo."
+    - "Sirva con el pan."
   etiquetas: [colombiana, vegetariano, economica]
-  consejo: "Si cuidas la glucosa, prepara el chocolate sin la panela y deja que la canela dé el sabor."
+  consejo: "Si cuida la glucosa, prepare el chocolate sin la panela y deje que la canela dé el sabor."
 
 - id: RCT-DES-022
   nombre: "Arepa con pollo desmechado y aguacate"
@@ -440,11 +440,11 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Cocina la pechuga en agua, déjala enfriar y desmenúzala."
-    - "Sofríe la cebolla y el tomate, y agrega el pollo para que tome sabor."
-    - "Rellena la arepa asada con el pollo y el aguacate."
+    - "Cocine la pechuga en agua, déjela enfriar y desmenúcela."
+    - "Sofría la cebolla y el tomate, y agregue el pollo para que tome sabor."
+    - "Rellene la arepa asada con el pollo y el aguacate."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
-  consejo: "Cocina varias pechugas el domingo y tendrás proteína lista para varios días."
+  consejo: "Cocine varias pechugas el domingo y tendrá proteína lista para varios días."
 
 - id: RCT-DES-023
   nombre: "Tortilla de claras con champiñones y pimentón"
@@ -462,10 +462,10 @@
     - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
     - {alimento: fresa, gramos: 100, medida: "6 fresas"}
   pasos:
-    - "Saltea el pimentón, los champiñones y la espinaca en el aceite."
-    - "Bate las claras con el huevo y viértelas sobre las verduras."
-    - "Cocina tapado a fuego bajo hasta que cuaje."
-    - "Acompaña con el pan y las fresas."
+    - "Saltee el pimentón, los champiñones y la espinaca en el aceite."
+    - "Bata las claras con el huevo y viértalas sobre las verduras."
+    - "Cocine tapado a fuego bajo hasta que cuaje."
+    - "Acompañe con el pan y las fresas."
   etiquetas: [vegetariano, sin_lactosa]
   consejo: "Es un desayuno alto en proteína y bajo en grasa, bueno para cuidar la masa muscular."
 
@@ -483,9 +483,9 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Asa el plátano con cáscara en un sartén tapado o en el horno hasta que ablande."
-    - "Prepara un hogao con el tomate y la cebolla en el aceite."
-    - "Cocina los huevos y sírvelos con el plátano pelado y el hogao."
+    - "Ase el plátano con cáscara en un sartén tapado o en el horno hasta que ablande."
+    - "Prepare un hogao con el tomate y la cebolla en el aceite."
+    - "Cocine los huevos y sírvalos con el plátano pelado y el hogao."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, vegetariano, economica]
   consejo: "Asado en lugar de frito, el plátano conserva su sabor con mucha menos grasa."
 
@@ -500,9 +500,9 @@
     - {alimento: queso_campesino, gramos: 40, medida: "1 tajada"}
     - {alimento: huevo_entero, gramos: 50, medida: "1 huevo"}
   pasos:
-    - "Asa el plátano maduro con cáscara hasta que esté blando."
-    - "Ábrelo a lo largo y pon el queso adentro para que se derrita."
-    - "Acompaña con el huevo cocido o revuelto."
+    - "Ase el plátano maduro con cáscara hasta que esté blando."
+    - "Ábralo a lo largo y ponga el queso adentro para que se derrita."
+    - "Acompañe con el huevo cocido o revuelto."
   etiquetas: [colombiana, vegetariano, sin_gluten, economica]
   consejo: "El plátano maduro ya es dulce: no le hace falta bocadillo ni azúcar."
 
@@ -519,9 +519,9 @@
     - {alimento: queso_campesino, gramos: 30, medida: "1 tajada delgada"}
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
   pasos:
-    - "Cocina la mazorca desgranada en poca agua hasta que ablande y escúrrela."
-    - "Saltéala con la cebolla larga en el aceite."
-    - "Agrega los huevos batidos, revuelve y termina con el queso desmenuzado."
+    - "Cocine la mazorca desgranada en poca agua hasta que ablande y escúrrala."
+    - "Saltéela con la cebolla larga en el aceite."
+    - "Agregue los huevos batidos, revuelva y termine con el queso desmenuzado."
   etiquetas: [colombiana, vegetariano, sin_gluten]
   consejo: "El queso campesino ya trae sal, así que no hace falta agregar más."
 
@@ -538,8 +538,8 @@
     - {alimento: linaza_molida, gramos: 10, medida: "1 cucharada"}
     - {alimento: granola_sin_azucar, gramos: 20, medida: "2 cucharadas"}
   pasos:
-    - "Pica la papaya y el banano en cubos."
-    - "Sírvelos con el yogur, la linaza y la granola por encima."
+    - "Pique la papaya y el banano en cubos."
+    - "Sírvalos con el yogur, la linaza y la granola por encima."
   etiquetas: [vegetariano, rapida]
   consejo: "La papaya y la linaza ayudan a que el intestino funcione con regularidad."
 
@@ -559,9 +559,9 @@
     - {alimento: arepa_maiz_amarilla, gramos: 80, medida: "1 arepa"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Sofríe la cebolla, el tomate y el pimentón en el aceite."
-    - "Desmorona el tofu con las manos, agrégalo con el comino y revuelve cinco minutos."
-    - "Sirve con la arepa asada."
+    - "Sofría la cebolla, el tomate y el pimentón en el aceite."
+    - "Desmorone el tofu con las manos, agréguelo con el comino y revuelva cinco minutos."
+    - "Sirva con la arepa asada."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten]
   consejo: "Una pizca de cúrcuma o de comino le da al tofu el color y el sabor de un perico."
 
@@ -578,8 +578,8 @@
     - {alimento: avena_hojuelas, gramos: 30, medida: "3 cucharadas"}
     - {alimento: almendras, gramos: 10, medida: "8 almendras"}
   pasos:
-    - "Lava las fresas y quítales el tallo."
-    - "Licúa todo hasta que quede cremoso."
+    - "Lave las fresas y quíteles el tallo."
+    - "Licúe todo hasta que quede cremoso."
   etiquetas: [vegetariano, rapida]
   consejo: "Tiene tanta proteína como un plato de huevos y se toma en dos minutos."
 
@@ -598,9 +598,9 @@
     - {alimento: mostaza, gramos: 5, medida: "1 cucharadita"}
     - {alimento: naranja, gramos: 150, medida: "1 naranja"}
   pasos:
-    - "Asa el filete de pavo a la plancha hasta que esté bien cocido."
-    - "Arma el sándwich con la mostaza, el pavo, el queso, la lechuga y el tomate."
-    - "Acompaña con la naranja."
+    - "Ase el filete de pavo a la plancha hasta que esté bien cocido."
+    - "Arme el sándwich con la mostaza, el pavo, el queso, la lechuga y el tomate."
+    - "Acompañe con la naranja."
   etiquetas: []
   consejo: "Pavo fresco a la plancha tiene mucho menos sodio que el jamón o las carnes frías."
 
@@ -619,9 +619,9 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Asa el maduro en tajadas en un sartén con unas gotas de aceite."
-    - "En el resto del aceite sofríe la cebolla y el tomate."
-    - "Agrega el fríjol y el arroz, calienta bien y sirve con el maduro."
+    - "Ase el maduro en tajadas en un sartén con unas gotas de aceite."
+    - "En el resto del aceite sofría la cebolla y el tomate."
+    - "Agregue el fríjol y el arroz, caliente bien y sirva con el maduro."
   etiquetas: [colombiana, vegano, vegetariano, sin_lactosa, sin_gluten, economica]
   consejo: "Fríjol más arroz forman una proteína completa, aun sin carne ni huevo."
 
@@ -639,11 +639,11 @@
     - {alimento: tomate, gramos: 40, medida: "1/2 tomate"}
     - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Amasa la harina con el agua tibia y el orégano hasta que no se pegue."
-    - "Forma una arepa y ásala por ambos lados en un sartén caliente."
-    - "Sírvela con los huevos, el aguacate y el tomate."
+    - "Amase la harina con el agua tibia y el orégano hasta que no se pegue."
+    - "Forme una arepa y ásela por ambos lados en un sartén caliente."
+    - "Sírvala con los huevos, el aguacate y el tomate."
   etiquetas: [colombiana, vegetariano, sin_lactosa, sin_gluten, economica]
-  consejo: "Hacer la arepa en casa te deja controlar la sal; el orégano le da sabor."
+  consejo: "Hacer la arepa en casa le deja controlar la sal; el orégano le da sabor."
 
 - id: RCT-DES-033
   nombre: "Avena con manzana, canela y nueces sin lácteos"
@@ -658,9 +658,9 @@
     - {alimento: canela, gramos: 2, medida: "1 pizca"}
     - {alimento: nueces, gramos: 15, medida: "4 mitades"}
   pasos:
-    - "Cocina la avena con la bebida de almendra, la canela y la mitad de la manzana rallada."
-    - "Revuelve cinco minutos hasta que espese."
-    - "Sirve con el resto de la manzana en cubos y las nueces."
+    - "Cocine la avena con la bebida de almendra, la canela y la mitad de la manzana rallada."
+    - "Revuelva cinco minutos hasta que espese."
+    - "Sirva con el resto de la manzana en cubos y las nueces."
   etiquetas: [vegano, vegetariano, sin_lactosa, economica]
   consejo: "La manzana rallada dentro de la avena la endulza sin necesidad de azúcar."
 
@@ -678,11 +678,11 @@
     - {alimento: cilantro, gramos: 5, medida: "1 cucharada picado"}
     - {alimento: aguacate, gramos: 30, medida: "2 tajadas delgadas"}
   pasos:
-    - "Calienta las tortillas en un sartén sin aceite."
-    - "Unta cada una con fríjol aplastado y pon encima un huevo cocido a la plancha."
-    - "Baña con la salsa de tomate caliente y termina con cilantro y aguacate."
+    - "Caliente las tortillas en un sartén sin aceite."
+    - "Unte cada una con fríjol aplastado y ponga encima un huevo cocido a la plancha."
+    - "Bañe con la salsa de tomate caliente y termine con cilantro y aguacate."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten]
-  consejo: "Usa salsa de tomate hecha en casa: las de frasco suelen traer azúcar y mucha sal."
+  consejo: "Use salsa de tomate hecha en casa: las de frasco suelen traer azúcar y mucha sal."
 
 - id: RCT-DES-035
   nombre: "Pan integral con mantequilla de maní, banano y leche"
@@ -696,10 +696,10 @@
     - {alimento: banano, gramos: 100, medida: "1 banano"}
     - {alimento: leche_descremada, gramos: 200, medida: "1 vaso"}
   pasos:
-    - "Tuesta el pan y úntale la mantequilla de maní."
-    - "Pon encima el banano en rodajas y acompaña con la leche."
+    - "Tueste el pan y úntele la mantequilla de maní."
+    - "Ponga encima el banano en rodajas y acompañe con la leche."
   etiquetas: [vegetariano, rapida]
-  consejo: "Busca mantequilla de maní cuyo único ingrediente sea maní."
+  consejo: "Busque mantequilla de maní cuyo único ingrediente sea maní."
 
 - id: RCT-DES-036
   nombre: "Calentado de arroz con arveja, zanahoria y huevo"
@@ -716,9 +716,9 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Saltea la cebolla, la zanahoria rallada y la arveja en el aceite hasta que ablanden."
-    - "Agrega el arroz y revuelve hasta calentar."
-    - "Incorpora el huevo batido y revuelve hasta que se cocine."
+    - "Saltee la cebolla, la zanahoria rallada y la arveja en el aceite hasta que ablanden."
+    - "Agregue el arroz y revuelva hasta calentar."
+    - "Incorpore el huevo batido y revuelva hasta que se cocine."
   etiquetas: [colombiana, vegetariano, sin_lactosa, sin_gluten, economica]
   consejo: "Es una buena forma de aprovechar el arroz de ayer y sumar verduras al desayuno."
 
@@ -734,8 +734,8 @@
     - {alimento: granola_sin_azucar, gramos: 30, medida: "3 cucharadas"}
     - {alimento: almendras, gramos: 15, medida: "12 almendras"}
   pasos:
-    - "Lava las uchuvas y pártelas por la mitad."
-    - "Sirve el kumis con las uchuvas, la granola y las almendras."
+    - "Lave las uchuvas y pártalas por la mitad."
+    - "Sirva el kumis con las uchuvas, la granola y las almendras."
   etiquetas: [colombiana, vegetariano, rapida]
   consejo: "El kumis tiene bacterias buenas que ayudan a la digestión."
 
@@ -754,8 +754,8 @@
     - {alimento: queso_campesino, gramos: 30, medida: "1 tajada delgada"}
     - {alimento: granola_sin_azucar, gramos: 20, medida: "2 cucharadas"}
   pasos:
-    - "Pica todas las frutas en cubos."
-    - "Báñalas con el yogur y pon encima el queso rallado y la granola."
+    - "Pique todas las frutas en cubos."
+    - "Báñelas con el yogur y ponga encima el queso rallado y la granola."
   etiquetas: [colombiana, vegetariano]
   consejo: "Sin crema de leche ni salsas dulces, la ensalada de frutas es un desayuno completo."
 
@@ -773,9 +773,9 @@
     - {alimento: arepa_maiz_blanca, gramos: 60, medida: "1 arepa pequeña"}
     - {alimento: mandarina, gramos: 100, medida: "1 mandarina"}
   pasos:
-    - "Marchita la espinaca picada en el aceite."
-    - "Agrega los huevos batidos y el queso desmenuzado, y cocina tapado a fuego bajo."
-    - "Sirve con la arepa asada y la mandarina."
+    - "Marchite la espinaca picada en el aceite."
+    - "Agregue los huevos batidos y el queso desmenuzado, y cocine tapado a fuego bajo."
+    - "Sirva con la arepa asada y la mandarina."
   etiquetas: [colombiana, vegetariano, sin_gluten]
   consejo: "La mandarina después del plato ayuda a aprovechar el hierro de la espinaca."
 
@@ -792,9 +792,9 @@
     - {alimento: tomate, gramos: 40, medida: "1/2 tomate"}
     - {alimento: limon, gramos: 5, medida: "unas gotas"}
   pasos:
-    - "Calienta las sardinas con su salsa, la cebolla y el tomate picados."
-    - "Exprime el limón al final."
-    - "Sirve sobre la arepa asada."
+    - "Caliente las sardinas con su salsa, la cebolla y el tomate picados."
+    - "Exprima el limón al final."
+    - "Sirva sobre la arepa asada."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, economica, rapida]
   consejo: "Las sardinas se comen con espina, que es una buena fuente de calcio."
 
@@ -810,8 +810,8 @@
     - {alimento: avena_hojuelas, gramos: 30, medida: "3 cucharadas"}
     - {alimento: linaza_molida, gramos: 10, medida: "1 cucharada"}
   pasos:
-    - "Licúa las guayabas con un poco de la leche y cuélalas para quitar las semillas."
-    - "Vuelve a licuar con el resto de la leche, la avena y la linaza."
+    - "Licúe las guayabas con un poco de la leche y cuélelas para quitar las semillas."
+    - "Vuelva a licuar con el resto de la leche, la avena y la linaza."
   etiquetas: [colombiana, vegetariano, rapida, economica]
   consejo: "La guayaba es de las frutas con más vitamina C del mercado."
 
@@ -829,9 +829,9 @@
     - {alimento: arepa_maiz_blanca, gramos: 90, medida: "1 arepa grande"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Pica la habichuela y la zanahoria muy finas y saltéalas en el aceite."
-    - "Agrega los huevos batidos y revuelve hasta que cuajen."
-    - "Sirve con la arepa asada."
+    - "Pique la habichuela y la zanahoria muy finas y saltéelas en el aceite."
+    - "Agregue los huevos batidos y revuelva hasta que cuajen."
+    - "Sirva con la arepa asada."
   etiquetas: [colombiana, vegetariano, sin_lactosa, sin_gluten, economica]
   consejo: "Picar las verduras muy finas hace que se cocinen rápido y pasen desapercibidas."
 
@@ -848,9 +848,9 @@
     - {alimento: pimienta, gramos: 1, medida: "1 pizca"}
     - {alimento: kiwi, gramos: 100, medida: "1 kiwi"}
   pasos:
-    - "Corta la batata cocida en rodajas y dórala en un sartén sin aceite."
-    - "Cocina los huevos a tu gusto."
-    - "Sirve con el aguacate, la pimienta y el kiwi en rodajas."
+    - "Corte la batata cocida en rodajas y dórela en un sartén sin aceite."
+    - "Cocine los huevos a su gusto."
+    - "Sirva con el aguacate, la pimienta y el kiwi en rodajas."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten]
   consejo: "La batata aporta energía de forma más pareja que el pan blanco."
 
@@ -869,9 +869,9 @@
     - {alimento: comino, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Prepara el hogao con el tomate y la cebolla en el aceite."
-    - "Agrega la carne y el comino y cocina, desmenuzando, hasta que dore."
-    - "Sirve sobre la arepa asada."
+    - "Prepare el hogao con el tomate y la cebolla en el aceite."
+    - "Agregue la carne y el comino y cocine, desmenuzando, hasta que dore."
+    - "Sirva sobre la arepa asada."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
   consejo: "La carne de res aporta un hierro que el cuerpo absorbe con facilidad."
 
@@ -888,8 +888,8 @@
     - {alimento: banano, gramos: 100, medida: "1 banano"}
     - {alimento: mani_sin_sal, gramos: 15, medida: "1 cucharada"}
   pasos:
-    - "La noche anterior, mezcla la chía con la bebida de soya, el cacao y medio banano aplastado."
-    - "Deja en la nevera toda la noche para que espese."
-    - "En la mañana agrega el resto del banano en rodajas y el maní."
+    - "La noche anterior, mezcle la chía con la bebida de soya, el cacao y medio banano aplastado."
+    - "Deje en la nevera toda la noche para que espese."
+    - "En la mañana agregue el resto del banano en rodajas y el maní."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, rapida]
-  consejo: "Revuelve la chía a los diez minutos de mezclarla para que no se formen grumos."
+  consejo: "Revuelva la chía a los diez minutos de mezclarla para que no se formen grumos."

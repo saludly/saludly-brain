@@ -1,14 +1,14 @@
 id: COND-M2-TI-007
 tipo: condicion
-titulo_paciente: "Calcio alto sin que baje la hormona que lo regula"
+titulo_paciente: "Su calcio está alto sin que baje la hormona que lo regula"
 que_es: "La PTH es la hormona de las paratiroides, unas glándulas pequeñas del cuello, que regula el calcio de la sangre y los huesos."
 por_que_te_aparece:
-  - "Tu calcio, corregido según tu albúmina, salió en {calcio_corregido}, por encima del rango del laboratorio."
-  - "Tu PTH salió en {pth}; cuando el calcio sube, se esperaría que bajara."
+  - "Su calcio, corregido según su albúmina, salió en {calcio_corregido}, por encima del rango del laboratorio."
+  - "Su PTH salió en {pth}. Cuando el calcio sube, se esperaría que bajara."
 riesgo_claro: "Si el calcio se mantiene alto por años, puede debilitar los huesos y favorecer piedras en los riñones."
 ejemplo_simple: "Es como un termostato que sigue prendiendo la calefacción aunque la casa ya está caliente."
-incertidumbre: "Algunos diuréticos, el litio, los suplementos de calcio o vitamina D y la deshidratación lo alteran. Hay que repetirlo, y tu médico lo confirma."
+incertidumbre: "Algunos diuréticos, el litio, los suplementos de calcio o vitamina D y la deshidratación lo alteran. Hay que repetirlo, y su médico lo confirma."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Quinto Taller Internacional de hiperparatiroidismo primario 2022"]
-estado_revision: pendiente
+estado_revision: aprobada

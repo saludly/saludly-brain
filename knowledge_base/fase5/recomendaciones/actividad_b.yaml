@@ -1,93 +1,107 @@
 # Recomendaciones de actividad física · M3, M4, M6 y SEG-007. Con anemia, plaquetas bajas o dos líneas bajas,
 # el entrenamiento intenso espera a la consulta. Numeración 200 a 299.
+# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
 
 - id: REC-ACT-201
   tipo: actividad
   titulo: "150 minutos de actividad moderada a la semana"
-  texto_base: "Camina rápido, monta bicicleta, nada o baila al menos 150 minutos a la semana, repartidos en varios días. A ritmo moderado puedes hablar pero no cantar."
+  texto_base: "Camine rápido, monte bicicleta, nade o baile al menos 150 minutos a la semana, repartidos en varios días. A ritmo moderado puede hablar, pero no cantar."
   meta_concreta: "Esta semana, 5 caminatas rápidas de 30 minutos."
   por_que: "La actividad regular ayuda a bajar la grasa del hígado y mejora cómo el cuerpo usa el azúcar, incluso sin bajar mucho de peso."
   se_activa_con: ["COND-M4-GA-001", "COND-M4-GA-002", "REL-006", "COND-M6-RE-001", "COND-M6-MI-A02"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: ["COND-M3-HE-010"]
   requiere_consulta_previa: false
-  whatsapp: "Plan para hoy: una caminata rápida de 30 minutos. Puede ser a la hora del almuerzo o al llegar a casa."
+  whatsapp: "🚶 Plan para hoy: una caminata rápida de 30 minutos. Puede ser a la hora del almuerzo o al llegar a casa."
   fuentes: ["OMS 2020, directrices sobre actividad física y hábitos sedentarios", "EASL-EASD-EASO 2024, guía de práctica clínica del hígado graso metabólico (MASLD)"]
 
 - id: REC-ACT-202
   tipo: actividad
   titulo: "Ejercicios de fuerza dos veces por semana"
-  texto_base: "Haz ejercicios de fuerza dos días por semana: sentadillas, levantarte de la silla, flexiones contra la pared o bandas elásticas. Empieza suave y sube poco a poco."
+  texto_base: "Haga ejercicios de fuerza dos días por semana: sentadillas, levantarse de la silla, flexiones contra la pared o bandas elásticas. Empiece suave y suba poco a poco."
   meta_concreta: "Esta semana, 2 sesiones de 20 minutos de fuerza en días no seguidos."
   por_que: "El músculo es una reserva de salud: ayuda al hígado, al azúcar de la sangre y a envejecer con fuerza."
   se_activa_con: ["COND-M4-GA-001", "REL-006", "COND-M6-MI-001", "COND-M6-MI-A02"]
   prioriza_objetivos: ["masa_muscular", "envejecer_saludable", "atletico", "bajar_peso"]
   contraindicada_si: ["COND-M3-HE-010"]
   requiere_consulta_previa: false
-  whatsapp: "Hoy toca fuerza: 3 series de 10 sentadillas levantándote de una silla. Sencillo, en casa y sin equipos."
+  whatsapp: "💪 Hoy toca fuerza: 3 series de 10 sentadillas levantándose de una silla. Sencillo, en casa y sin equipos."
   fuentes: ["OMS 2020, directrices sobre actividad física y hábitos sedentarios", "GLIM 2019, criterios de desnutrición"]
 
 - id: REC-ACT-203
   tipo: actividad
   titulo: "Antes de entrenar fuerte, primero la consulta"
-  texto_base: "Antes de entrenamientos intensos, series largas o preparar una carrera, habla con tu médico. Mientras tanto, mantente activo con caminatas suaves y descansa si te sientes muy cansado o te falta el aire."
+  texto_base: "Antes de entrenamientos intensos, series largas o preparar una carrera, hable con su médico. Mientras tanto, manténgase activo con caminatas suaves y descanse si se siente muy cansado o le falta el aire."
   meta_concreta: "Hasta la consulta, solo caminatas suaves de 20 a 30 minutos y ninguna sesión intensa."
   por_que: "Con menos glóbulos rojos llega menos oxígeno a los músculos, y forzar el cuerpo puede causar mareo o mucha fatiga."
   se_activa_con: ["COND-M3-HE-001", "COND-M3-HE-002", "COND-M3-HE-004", "REL-009", "REL-014", "COND-M3-HE-010"]
   prioriza_objetivos: ["maraton", "rendimiento", "atletico", "masa_muscular"]
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "Esta semana, mejor caminatas suaves y descanso. Antes de volver a entrenar duro, conversa con tu médico."
+  whatsapp: "🩺 Esta semana, mejor caminatas suaves y descanso. Antes de volver a entrenar duro, converse con su médico."
   fuentes: ["OMS 2024, cortes de hemoglobina para definir anemia", "ACSM 2022, guía para pruebas de esfuerzo y prescripción del ejercicio"]
 
 - id: REC-ACT-204
   tipo: actividad
-  titulo: "Evita deportes de contacto mientras se aclara"
-  texto_base: "Hasta hablar con tu médico, evita deportes de contacto o con riesgo de golpes y caídas, como fútbol, artes marciales o ciclismo de montaña. Caminar, nadar o la bicicleta estática sí suelen ser opciones seguras."
-  meta_concreta: "Hasta la consulta, cambia el fútbol o el deporte de contacto por caminata o bicicleta estática."
+  titulo: "Evite deportes de contacto mientras se aclara"
+  texto_base: "Hasta hablar con su médico, evite deportes de contacto o con riesgo de golpes y caídas, como fútbol, artes marciales o ciclismo de montaña. Caminar, nadar o la bicicleta estática sí suelen ser opciones seguras."
+  meta_concreta: "Hasta la consulta, cambie el fútbol o el deporte de contacto por caminata o bicicleta estática."
   por_que: "Las plaquetas ayudan a cerrar las heridas; si están bajas, un golpe puede dejar morados o sangrados más fácil."
   se_activa_con: ["COND-M3-HE-005", "COND-M3-HE-010"]
   prioriza_objetivos: ["atletico", "rendimiento", "maraton", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "Por ahora, prefiere caminar, nadar o la bicicleta estática en vez de deportes de contacto, hasta hablar con tu médico."
+  whatsapp: "🏊 Por ahora, prefiera caminar, nadar o la bicicleta estática en vez de deportes de contacto, hasta hablar con su médico."
   fuentes: ["Consenso internacional de PTI 2019"]
 
 - id: REC-ACT-205
   tipo: actividad
   titulo: "Dos días sin entrenar fuerte antes de repetir el examen"
-  texto_base: "Cuando vayas a repetir tus exámenes, no hagas ejercicio intenso, pesas pesadas ni carreras largas en los dos días anteriores. Caminar suave sí está bien."
-  meta_concreta: "Marca en el calendario 48 horas de descanso de ejercicio intenso antes de tu próximo examen de sangre."
+  texto_base: "Cuando vaya a repetir sus exámenes, no haga ejercicio intenso, pesas pesadas ni carreras largas en los dos días anteriores. Caminar suave sí está bien."
+  meta_concreta: "Marque en el calendario 48 horas de descanso de ejercicio intenso antes de su próximo examen de sangre."
   por_que: "El ejercicio fuerte saca enzimas del músculo a la sangre y puede hacer que algunos resultados se vean altos sin que haya un problema."
   se_activa_con: ["SEG-007", "REL-008", "ck_cpk:alto", "COND-M4-GA-002"]
   prioriza_objetivos: ["rendimiento", "atletico", "masa_muscular", "maraton"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Si tienes examen de sangre pronto, dale a tu cuerpo dos días de descanso del entrenamiento fuerte antes de ir."
+  whatsapp: "🧪 Si tiene examen de sangre pronto, dele a su cuerpo dos días de descanso del entrenamiento fuerte antes de ir."
   fuentes: ["Fichas ck_cpk y ast del Knowledge Base", "ACG 2017, evaluación de pruebas hepáticas alteradas"]
 
 - id: REC-ACT-206
   tipo: actividad
-  titulo: "Sube la carga de entrenamiento poco a poco"
-  texto_base: "Aumenta el volumen o la intensidad de tu entrenamiento de forma gradual, con al menos un día de descanso o actividad suave entre sesiones duras."
-  meta_concreta: "Esta semana, no subas tu kilometraje ni tu carga más de un 10 % frente a la semana pasada y deja 2 días suaves."
+  titulo: "Suba la carga de entrenamiento poco a poco"
+  texto_base: "Aumente el volumen o la intensidad de su entrenamiento de forma gradual, con al menos un día de descanso o actividad suave entre sesiones duras."
+  meta_concreta: "Esta semana, no suba su kilometraje ni su carga más de un 10 % frente a la semana pasada y deje 2 días suaves."
   por_que: "Subir de golpe la carga lastima el músculo; el cuerpo se fortalece en el descanso entre sesiones."
   se_activa_con: ["SEG-007", "REL-008", "ck_cpk:alto"]
   prioriza_objetivos: ["maraton", "rendimiento", "atletico", "masa_muscular"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Esta semana, entrena con cabeza: una sesión dura, un día suave. El descanso también te hace más fuerte."
+  whatsapp: "🧠 Esta semana, entrene con cabeza: una sesión dura, un día suave. El descanso también lo hace más fuerte."
   fuentes: ["ACSM 2022, guía para pruebas de esfuerzo y prescripción del ejercicio"]
 
 - id: REC-ACT-207
   tipo: actividad
   titulo: "Menos tiempo sentado"
-  texto_base: "Si pasas muchas horas sentado, levántate cada hora a caminar unos minutos, sube escaleras o estírate."
-  meta_concreta: "Durante tu jornada de esta semana, ponte una alarma y levántate 3 minutos cada hora."
-  por_que: "Estar sentado muchas horas seguidas empeora el manejo del azúcar y la grasa, aunque hagas ejercicio después."
+  texto_base: "Si pasa muchas horas sentado, levántese cada hora a caminar unos minutos, suba escaleras o estírese."
+  meta_concreta: "Durante su jornada de esta semana, póngase una alarma y levántese 3 minutos cada hora."
+  por_que: "Estar sentado muchas horas seguidas empeora el manejo del azúcar y la grasa, aunque haga ejercicio después."
   se_activa_con: ["COND-M4-GA-001", "REL-006", "COND-M6-RE-001", "COND-M6-MI-A02"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "energia_sueno", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Pon hoy una alarma cada hora y levántate a caminar 3 minutos. Tu cuerpo lo nota más de lo que crees."
+  whatsapp: "⏰ Ponga hoy una alarma cada hora y levántese a caminar 3 minutos. Su cuerpo lo nota más de lo que cree."
   fuentes: ["OMS 2020, directrices sobre actividad física y hábitos sedentarios"]
+
+- id: REC-ACT-208
+  tipo: actividad
+  titulo: "Ejercicio seguro si su medicamento puede bajar el azúcar"
+  texto_base: "Si usa insulina, glibenclamida, glimepirida o gliclazida, hable con su médico antes de empezar una rutina nueva. Cuando haga ejercicio, lleve siempre algo dulce, como un jugo o unos dulces, y no entrene en ayunas."
+  meta_concreta: "Esta semana, pregúntele a su médico cómo ajustar su medicamento o su comida los días de ejercicio."
+  por_que: "Estos medicamentos, sumados al ejercicio, pueden bajar demasiado el azúcar en la sangre."
+  se_activa_con: ["medicamento:insulina", "medicamento:sulfonilurea"]
+  prioriza_objetivos: []
+  contraindicada_si: []
+  requiere_consulta_previa: true
+  whatsapp: "🍬 Si sale a caminar o a entrenar hoy, lleve algo dulce. Si siente temblor, sudor frío o mareo, pare y cómalo enseguida."
+  fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5 (actividad física e hipoglucemia)", "por verificar"]

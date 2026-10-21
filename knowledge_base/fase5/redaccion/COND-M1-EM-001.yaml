@@ -1,14 +1,14 @@
 id: COND-M1-EM-001
 tipo: condicion
-titulo_paciente: "Glucosa en zona de alerta"
-que_es: "La glucosa es el azúcar que circula en tu sangre y le da energía al cuerpo."
+titulo_paciente: "Su glucosa está en zona de alerta"
+que_es: "La glucosa es el azúcar que viaja por su sangre. Es la gasolina de su cuerpo: la necesita, pero en su justa medida."
 por_que_te_aparece:
-  - "Tu glucosa en ayunas salió en {glucose}; la zona de alerta va de 100 a 125 mg/dL."
-  - "Tu hemoglobina glicada, que muestra el promedio de azúcar de los últimos 3 meses, salió en {hba1c}; la zona de alerta va de 5,7 a 6,4 %."
-riesgo_claro: "Si se mantiene así durante años, aumenta la probabilidad de llegar a diabetes, que con el tiempo afecta el corazón, los riñones y la vista."
-ejemplo_simple: "Es como una alarma de humo que suena antes del incendio: avisa a tiempo para actuar."
-incertidumbre: "Un solo examen no basta para confirmarlo; el ayuno corto, algunos medicamentos o la anemia lo alteran. Tu médico puede pedir repetirlo."
+  - "Su glucosa en ayunas salió en {glucose}. Entre 100 y 125 mg/dL decimos que está en zona de alerta: no es diabetes, pero ya merece su atención."
+  - "Su hemoglobina glicada, que muestra el promedio de azúcar de los últimos 3 meses, salió en {hba1c}. La zona de alerta va de 5,7 a 6,4 %."
+riesgo_claro: "Si se queda así por años, sube la probabilidad de llegar a diabetes, que con el tiempo puede afectar su corazón, sus riñones y su vista. La buena noticia: en esta etapa, los cambios en su alimentación y su actividad pueden hacer una gran diferencia."
+ejemplo_simple: "Piénselo como la alarma de humo que suena antes del incendio: le avisa a tiempo para que actúe."
+incertidumbre: "Ojo: un solo examen no basta para confirmarlo. Un ayuno corto, algunos medicamentos o la anemia pueden alterar el resultado; su médico puede pedirle repetirlo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ADA Standards of Care 2026, sección 2", "GPC Colombia DM2 2016"]
-estado_revision: pendiente
+estado_revision: aprobada

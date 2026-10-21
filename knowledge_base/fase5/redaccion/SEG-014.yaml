@@ -1,15 +1,15 @@
 id: SEG-014
 tipo: seguridad
 titulo_paciente: "Un resultado de contexto fuera del rango"
-que_es: "Algunos exámenes, como la ApoA1, el colesterol remanente, la transferrina, el zinc o el BUN, ayudan a entender mejor tus otros resultados."
+que_es: "Algunos exámenes, como la ApoA1, el colesterol remanente, la transferrina, el zinc o el BUN, ayudan a entender mejor sus otros resultados."
 por_que_te_aparece:
-  - "Tu BUN, un desecho de las proteínas que elimina el riñón, salió en {bun}, y su relación con la creatinina en {bun_creatinine_ratio}."
-  - "Tu zinc salió en {zinc}."
-  - "Tu colesterol remanente, el que viaja en las partículas ricas en triglicéridos, salió en {remnant_cholesterol}."
-riesgo_claro: "Por sí solos no forman un hallazgo; su valor está en cómo complementan tus resultados del corazón, el hierro, la nutrición o el riñón."
+  - "Su BUN, un desecho de las proteínas que elimina el riñón, salió en {bun}, y su relación con la creatinina, en {bun_creatinine_ratio}."
+  - "Su zinc salió en {zinc}."
+  - "Su colesterol remanente, el que viaja en las partículas ricas en triglicéridos, salió en {remnant_cholesterol}."
+riesgo_claro: "Por sí solos no forman un hallazgo. Su valor está en cómo complementan sus resultados del corazón, el hierro, la nutrición o el riñón."
 ejemplo_simple: "Es como las notas al pie de un libro: no cuentan la historia principal, pero ayudan a entenderla."
-incertidumbre: "La hidratación, la cantidad de proteína en la dieta o el tipo de tubo de la muestra pueden cambiarlos; tu médico los lee en conjunto."
-cuando_consultar: "Coméntalo con tu médico en tu próximo control; mientras tanto, procura tomar suficiente agua."
-aviso_whatsapp: "Hay un resultado de contexto en tu informe de Saludly para comentar con tu médico."
+incertidumbre: "La hidratación, la cantidad de proteína en la dieta o el tipo de tubo de la muestra pueden cambiarlos. Su médico los lee en conjunto."
+cuando_consultar: "Coménteselo a su médico en su próximo control. Mientras tanto, procure tomar suficiente agua."
+aviso_whatsapp: "Hay un resultado de contexto en su informe de Saludly para comentar con su médico."
 fuentes: ["Fichas apoa1, apob_apoa1_ratio, transferrin, zinc, bun y bun_creatinine_ratio del Knowledge Base"]
-estado_revision: pendiente
+estado_revision: aprobada

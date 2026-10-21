@@ -57,10 +57,13 @@ def analizar(lectura, contexto):
     pausa = REGLAS["panel"].get(panel) if panel != "completo" else None
     if pausa:
         # Orina y heces en pausa: si llegan en el PDF no se usan (quedan anotadas como duda)
-        fuera = set(pausa["biomarcadores_pausados"])
-        quitados = sorted({r["biomarker_id"] for r in lectura.get("resultados", []) if r.get("biomarker_id") in fuera})
-        lectura = dict(lectura, resultados=[r for r in lectura.get("resultados", []) if r.get("biomarker_id") not in fuera],
-                       dudas=list(lectura.get("dudas", [])) + ([f"Resultados no usados (panel {panel}): {', '.join(quitados)}"] if quitados else []))
+        pausados, fuera_panel = set(pausa["biomarcadores_pausados"]), set(pausa.get("biomarcadores_fuera_del_panel", []))
+        ids = {r.get("biomarker_id") for r in lectura.get("resultados", [])}
+        quitados, sobrantes = sorted(ids & pausados), sorted(ids & fuera_panel)
+        dudas = list(lectura.get("dudas", []))
+        if quitados: dudas.append(f"Resultados no usados (panel {panel}): {', '.join(quitados)}")
+        if sobrantes: dudas.append(f"Resultados fuera del panel del MVP, no se interpretan: {', '.join(sobrantes)}")
+        lectura = dict(lectura, resultados=[r for r in lectura.get("resultados", []) if r.get("biomarker_id") not in pausados | fuera_panel], dudas=dudas)
     p1 = analizar_parte1(lectura, contexto)
     if p1.get("estado") != "parte1_completa":
         return p1

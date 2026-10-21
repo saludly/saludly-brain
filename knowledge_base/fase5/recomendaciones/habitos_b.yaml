@@ -1,79 +1,80 @@
 # Recomendaciones de hábitos · M3, M4 y M6. Numeración 200 a 299.
+# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
 
 - id: REC-HAB-201
   tipo: habitos
-  titulo: "Reduce el alcohol"
-  texto_base: "Toma menos alcohol y deja varios días de la semana sin nada. Lo ideal para tu hígado y tu sangre es no tomar; si tomas, que sea poco y nunca hasta emborracharte."
+  titulo: "Reduzca el alcohol"
+  texto_base: "Tome menos alcohol y deje varios días de la semana sin nada. Lo ideal para su hígado y su sangre es no tomar; si toma, que sea poco y nunca hasta emborracharse."
   meta_concreta: "Durante las próximas 4 semanas, al menos 5 días sin alcohol cada semana y ninguna ocasión con más de 2 tragos."
   por_que: "El alcohol inflama el hígado, cambia el tamaño de los glóbulos rojos y gasta vitaminas como el folato."
   se_activa_con: ["COND-M4-GA-001", "COND-M4-GA-002", "COND-M4-GA-A02", "REL-006", "COND-M3-HE-006", "COND-M3-HE-009", "COND-M3-HE-005", "COND-M3-NU-002", "COND-M6-RE-001", "COND-M4-IN-001", "COND-M4-IN-002"]
   prioriza_objetivos: ["prevenir", "bajar_peso", "envejecer_saludable", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Este fin de semana, prueba un plan sin trago: agua con gas y limón, o una aromática. Tu cuerpo lo agradece."
+  whatsapp: "🍋 Este fin de semana, pruebe un plan sin trago: agua con gas y limón, o una aromática. Su cuerpo se lo agradece."
   fuentes: ["EASL 2018, guía de enfermedad hepática relacionada con el alcohol", "OMS 2023, no hay un nivel seguro de consumo de alcohol", "ACR 2020, guía para el manejo de la gota"]
 
 - id: REC-HAB-202
   tipo: habitos
-  titulo: "Deja de fumar, con ayuda"
-  texto_base: "Si fumas o vapeas, ponte una fecha para dejarlo y pide apoyo a tu EPS o a tu médico. Con acompañamiento hay más probabilidad de lograrlo."
-  meta_concreta: "Esta semana, elige tu fecha para dejar de fumar en el próximo mes y pide una cita de apoyo para dejarlo."
+  titulo: "Deje de fumar, con ayuda"
+  texto_base: "Si fuma o vapea, póngase una fecha para dejarlo y pida apoyo a su EPS o a su médico. Con acompañamiento hay más probabilidad de lograrlo."
+  meta_concreta: "Esta semana, elija su fecha para dejar de fumar en el próximo mes y pida una cita de apoyo para dejarlo."
   por_que: "El humo del cigarrillo baja el oxígeno de la sangre y el cuerpo responde fabricando más glóbulos rojos."
   se_activa_con: ["COND-M3-HE-007", "COND-M3-HE-A02"]
   prioriza_objetivos: ["prevenir", "rendimiento", "envejecer_saludable", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Si fumas, hoy es buen día para escoger tu fecha para dejarlo. Escríbela y cuéntasela a alguien de confianza."
+  whatsapp: "🚭 Si fuma, hoy es buen día para escoger su fecha para dejarlo. Escríbala y cuéntesela a alguien de confianza."
   fuentes: ["OMS 2024, guía de tratamiento para dejar el tabaco en adultos", "BSH 2019, investigación y manejo de la eritrocitosis"]
 
 - id: REC-HAB-203
   tipo: habitos
-  titulo: "Sin antiinflamatorios ni aspirina por tu cuenta"
-  texto_base: "Mientras tu médico revisa tus plaquetas, no uses ibuprofeno, naproxeno, diclofenaco ni aspirina por tu cuenta. Si ya te los formularon, no los cambies sin hablar con tu médico."
-  meta_concreta: "Hasta la consulta, para el dolor o la fiebre pregunta primero a tu médico qué puedes usar."
+  titulo: "Sin antiinflamatorios ni aspirina por su cuenta"
+  texto_base: "Mientras su médico revisa sus plaquetas, no use ibuprofeno, naproxeno, diclofenaco ni aspirina por su cuenta. Si ya se los formularon, no los cambie sin hablar con su médico."
+  meta_concreta: "Hasta la consulta, para el dolor o la fiebre pregúntele primero a su médico qué puede usar."
   por_que: "Estos medicamentos hacen que las plaquetas trabajen peor y facilitan los sangrados."
   se_activa_con: ["COND-M3-HE-005", "COND-M3-HE-010"]
   prioriza_objetivos: ["condicion_existente", "salud_general", "atletico"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Antes de usar cualquier medicamento para el dolor esta semana, consúltalo con tu médico."
+  whatsapp: "💊 Antes de usar cualquier medicamento para el dolor esta semana, consúltelo con su médico."
   fuentes: ["Consenso internacional de PTI 2019"]
 
 - id: REC-HAB-204
   tipo: habitos
-  titulo: "Objetos de aseo personal, solo tuyos"
-  texto_base: "No compartas cuchillas de afeitar, cepillos de dientes, cortaúñas ni nada que pueda tener sangre. Usa preservativo con parejas nuevas."
-  meta_concreta: "Esta semana, revisa que en tu casa cada persona tenga su propio cepillo de dientes y su propia cuchilla."
+  titulo: "Objetos de aseo personal, solo suyos"
+  texto_base: "No comparta cuchillas de afeitar, cepillos de dientes, cortaúñas ni nada que pueda tener sangre. Use preservativo con parejas nuevas."
+  meta_concreta: "Esta semana, revise que en su casa cada persona tenga su propio cepillo de dientes y su propia cuchilla."
   por_que: "Algunas infecciones del hígado se transmiten por pequeñas cantidades de sangre en objetos de uso personal."
   se_activa_con: ["COND-M4-IN-001", "COND-M4-IN-002#infeccion_activa", "COND-M4-IN-002#anti_hbc_aislado"]
   prioriza_objetivos: ["prevenir", "salud_general", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Un recordatorio de higiene para toda la familia: cepillo de dientes, cuchilla y cortaúñas, cada uno el suyo."
+  whatsapp: "🪥 Un recordatorio de higiene para toda la familia: cepillo de dientes, cuchilla y cortaúñas, cada uno el suyo."
   fuentes: ["OMS 2024, informe mundial sobre hepatitis", "CDC 2023, hepatitis B y C: prevención de la transmisión"]
 
 - id: REC-HAB-205
   tipo: habitos
-  titulo: "Lávate las manos y cuida el agua y los alimentos"
-  texto_base: "Lávate las manos con agua y jabón antes de comer y después de ir al baño. Toma agua potable o hervida y lava bien frutas y verduras."
-  meta_concreta: "Esta semana, lávate las manos 20 segundos antes de cada comida y lava con agua potable toda la fruta y verdura."
+  titulo: "Lávese las manos y cuide el agua y los alimentos"
+  texto_base: "Lávese las manos con agua y jabón antes de comer y después de ir al baño. Tome agua potable o hervida y lave bien frutas y verduras."
+  meta_concreta: "Esta semana, lávese las manos 20 segundos antes de cada comida y lave con agua potable toda la fruta y verdura."
   por_que: "Varios gérmenes del estómago y del intestino se transmiten por manos, agua o alimentos contaminados."
   se_activa_con: ["COND-M4-IN-A02", "COND-M4-GA-005", "COND-M3-HE-A03"]
   prioriza_objetivos: ["prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Hábito de la semana: manos con agua y jabón antes de cada comida y fruta bien lavada. Sencillo y protector."
+  whatsapp: "🧼 Hábito de la semana: manos con agua y jabón antes de cada comida y fruta bien lavada. Sencillo y protector."
   fuentes: ["OMS, agua, saneamiento e higiene (WASH)", "OMS 2023, geohelmintiasis: nota descriptiva"]
 
 - id: REC-HAB-206
   tipo: habitos
-  titulo: "Sin antibióticos ni antiparasitarios por tu cuenta"
-  texto_base: "No uses antibióticos, antiparasitarios ni remedios para el estómago por tu cuenta. Tu médico decide si se necesita tratamiento y cuál."
-  meta_concreta: "Hasta la consulta, no compres ningún antibiótico ni antiparasitario sin fórmula médica."
+  titulo: "Sin antibióticos ni antiparasitarios por su cuenta"
+  texto_base: "No use antibióticos, antiparasitarios ni remedios para el estómago por su cuenta. Su médico decide si se necesita tratamiento y cuál."
+  meta_concreta: "Hasta la consulta, no compre ningún antibiótico ni antiparasitario sin fórmula médica."
   por_que: "Usarlos sin indicación puede no servir y hacer que los gérmenes se vuelvan resistentes."
   se_activa_con: ["COND-M4-GA-005", "COND-M4-IN-A01", "COND-M4-IN-A02"]
   prioriza_objetivos: ["condicion_existente", "salud_general", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda: los antibióticos y los antiparasitarios solo con fórmula médica. Si tienes dudas, escríbenos y te ayudamos a pedir la cita."
+  whatsapp: "💊 Recuerde: los antibióticos y los antiparasitarios, solo con fórmula médica. Si tiene dudas, escríbanos y le ayudamos a pedir la cita."
   fuentes: ["Asociación Colombiana de Gastroenterología 2025, guía de H. pylori", "OMS, resistencia a los antimicrobianos"]

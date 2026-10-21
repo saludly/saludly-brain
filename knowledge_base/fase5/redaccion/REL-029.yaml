@@ -1,15 +1,15 @@
 id: REL-029
 tipo: patron
-titulo_paciente: "Glóbulos rojos altos y testosterona"
-que_es: "La testosterona estimula a la médula ósea a fabricar glóbulos rojos; si se fabrican de más, la sangre se vuelve más concentrada."
+titulo_paciente: "Sus glóbulos rojos están altos, junto con la testosterona"
+que_es: "La testosterona estimula a la médula ósea a fabricar glóbulos rojos. Si se fabrican de más, la sangre se vuelve más concentrada."
 por_que_te_aparece:
-  - "Tu hematocrito, la proporción de la sangre que ocupan los glóbulos rojos, salió en {hematocrit}."
-  - "Tu hemoglobina salió en {hemoglobin}."
-  - "Tu testosterona total salió en {testosterone_total}."
-riesgo_claro: "Cuando hay demasiados glóbulos rojos, la sangre circula con más dificultad y es más fácil que se formen coágulos; por eso conviene revisarlo."
+  - "Su hematocrito, la proporción de la sangre que ocupan los glóbulos rojos, salió en {hematocrit}."
+  - "Su hemoglobina salió en {hemoglobin}."
+  - "Su testosterona total salió en {testosterone_total}."
+riesgo_claro: "Cuando hay demasiados glóbulos rojos, la sangre circula con más dificultad y es más fácil que se formen coágulos. Por eso conviene revisarlo."
 ejemplo_simple: "Es como una salsa con demasiada harina: se pone más densa y le cuesta fluir."
-incertidumbre: "Fumar y vivir en la altura de Bogotá también suben los glóbulos rojos; tu médico tiene todo en cuenta."
-cuando_consultar: "Revísalo con el médico que te formula la testosterona o con tu médico, sin cambiar el tratamiento por tu cuenta."
+incertidumbre: "Fumar y vivir en la altura de Bogotá también suben los glóbulos rojos. Su médico tiene todo en cuenta."
+cuando_consultar: "Revíselo con el médico que le formula la testosterona o con su médico, sin cambiar el tratamiento por su cuenta."
 aviso_whatsapp: null
 fuentes: ["Endocrine Society 2018, terapia con testosterona (hematocrito > 54 %)"]
-estado_revision: pendiente
+estado_revision: aprobada

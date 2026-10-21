@@ -1,14 +1,14 @@
 id: COND-M4-GA-006
 tipo: condicion
-titulo_paciente: "Prueba relacionada con la intolerancia al gluten positiva"
+titulo_paciente: "Su prueba relacionada con la intolerancia al gluten salió positiva"
 que_es: "La anti-transglutaminasa es un anticuerpo que el cuerpo puede producir cuando reacciona contra el gluten, una proteína del trigo, la cebada y el centeno."
 por_que_te_aparece:
-  - "Tu anti-transglutaminasa IgA salió en {anti_ttg_iga}, por encima del rango."
-  - "Tu IgA total, que sirve para saber si la prueba anterior es confiable, salió en {iga}."
+  - "Su anti-transglutaminasa IgA salió en {anti_ttg_iga}, por encima del rango."
+  - "Su IgA total, que sirve para saber si la prueba anterior es confiable, salió en {iga}."
 riesgo_claro: "Si la reacción al gluten se confirma y no se maneja, con el tiempo puede afectar la absorción de nutrientes como el hierro."
 ejemplo_simple: "Es como una alarma que se activa con un visitante específico: hay que confirmar si ese visitante es realmente el problema."
-incertidumbre: "Una prueba positiva no basta para confirmarlo; hacen falta otros estudios. Sigue comiendo como siempre, porque quitar el gluten antes de tiempo altera esos estudios, y pide una consulta médica."
+incertidumbre: "Una prueba positiva no basta para confirmarlo: hacen falta otros estudios. Siga comiendo como siempre, porque quitar el gluten antes de tiempo altera esos estudios, y pida una consulta médica."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ACG 2023, enfermedad celíaca"]
-estado_revision: pendiente
+estado_revision: aprobada

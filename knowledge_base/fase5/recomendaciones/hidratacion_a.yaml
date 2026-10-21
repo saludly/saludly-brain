@@ -2,94 +2,95 @@
 # Numeración 100 a 199. Pendiente de revisión de Carlos.
 # Regla: con hallazgo renal (NE-001, NE-003, REL-010), sodio bajo o riesgo cardíaco con diabetes (CA-007),
 # no se dice "toma más agua"; solo aparece REC-HID-102 ("sigue la indicación de tu médico").
+# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
 
 - id: REC-HID-101
   tipo: hidratacion
   titulo: "El agua como bebida principal"
-  texto_base: "Ten una botella de agua a la mano y toma agua a lo largo del día, sobre todo cuando tengas sed y en días de calor o de actividad."
-  meta_concreta: "Esta semana, lleva una botella de agua al trabajo o al estudio todos los días."
+  texto_base: "Tenga una botella de agua a la mano y tome agua a lo largo del día, sobre todo cuando tenga sed y en días de calor o de actividad."
+  meta_concreta: "Esta semana, lleve una botella de agua al trabajo o al estudio todos los días."
   por_que: "El agua hidrata sin calorías ni azúcar y ayuda a cambiar otras bebidas menos saludables."
   se_activa_con: ["general", "COND-M2-NE-006"]
   prioriza_objetivos: ["salud_general", "bajar_peso", "energia_sueno"]
-  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo"]
+  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "Mañana sal de casa con tu botella de agua y tenla a la mano todo el día. Es la mejor bebida para tu cuerpo."
+  whatsapp: "💧 Mañana salga de casa con su botella de agua y téngala a la mano todo el día. Es la mejor bebida para su cuerpo."
   fuentes: ["Guías alimentarias para la población colombiana, ICBF 2020", "EFSA, Dietary Reference Values for water 2010"]
 
 - id: REC-HID-102
   tipo: hidratacion
-  titulo: "Líquidos según la indicación de tu médico"
-  texto_base: "No cambies la cantidad de agua o líquidos que tomas por tu cuenta. Sigue la indicación de tu médico sobre cuánto tomar al día."
-  meta_concreta: "En tu próxima cita, pregunta cuánto líquido te conviene tomar al día y anótalo."
-  por_que: "Con este resultado, la cantidad de líquidos adecuada depende de cómo están funcionando tus riñones o tu corazón."
-  se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M1-CA-007", "REL-010"]
+  titulo: "Líquidos según la indicación de su médico"
+  texto_base: "No cambie la cantidad de agua o líquidos que toma por su cuenta. Siga la indicación de su médico sobre cuánto tomar al día."
+  meta_concreta: "En su próxima cita, pregunte cuánto líquido le conviene tomar al día y anótelo."
+  por_que: "Con este resultado, la cantidad de líquidos adecuada depende de cómo están funcionando sus riñones o su corazón."
+  se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M1-CA-007", "REL-010", "medicamento:diuretico"]
   prioriza_objetivos: ["condicion_existente", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "En tu próxima cita, pregúntale a tu médico cuánto líquido te conviene tomar al día y anótalo."
+  whatsapp: "💧 En su próxima cita, pregúntele a su médico cuánto líquido le conviene tomar al día y anótelo."
   fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD"]
 
 - id: REC-HID-103
   tipo: hidratacion
   titulo: "Sales en las carreras largas"
-  texto_base: "En entrenamientos o carreras de más de una hora, toma según la sed y usa bebidas con sales en vez de solo agua. No tomes agua de más por miedo a deshidratarte."
-  meta_concreta: "En tu próxima salida larga, lleva una bebida con sales y toma pequeños sorbos según la sed."
+  texto_base: "En entrenamientos o carreras de más de una hora, tome según la sed y use bebidas con sales en vez de solo agua. No tome agua de más por miedo a deshidratarse."
+  meta_concreta: "En su próxima salida larga, lleve una bebida con sales y tome pequeños sorbos según la sed."
   por_que: "Tomar demasiada agua sola durante esfuerzos largos puede bajar el sodio de la sangre."
   se_activa_con: ["objetivo:maraton"]
   prioriza_objetivos: ["maraton", "rendimiento"]
-  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo"]
+  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "Para tu próxima salida larga: lleva bebida con sales y toma según la sed, a sorbos. Ni de menos ni de más."
+  whatsapp: "🏃 Para su próxima salida larga: lleve bebida con sales y tome según la sed, a sorbos. Ni de menos ni de más."
   fuentes: ["ACSM Position Stand: Exercise and Fluid Replacement 2007", "Hew-Butler et al., Exercise-Associated Hyponatremia Consensus 2015"]
 
 - id: REC-HID-104
   tipo: hidratacion
-  titulo: "No tomes agua en exceso"
-  texto_base: "Mientras tu médico revisa el sodio, toma líquidos según la sed y evita tomar grandes cantidades de agua de una sola vez, sobre todo durante ejercicio largo."
-  meta_concreta: "Esta semana, toma líquidos según la sed y anota si haces ejercicio de más de una hora."
+  titulo: "No tome agua en exceso"
+  texto_base: "Mientras su médico revisa el sodio, tome líquidos según la sed y evite tomar grandes cantidades de agua de una sola vez, sobre todo durante ejercicio largo."
+  meta_concreta: "Esta semana, tome líquidos según la sed y anote si hace ejercicio de más de una hora."
   por_que: "Tomar mucha agua en poco tiempo puede diluir más el sodio de la sangre."
   se_activa_con: ["COND-M2-NE-005", "sodium:bajo"]
   prioriza_objetivos: ["maraton", "rendimiento", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Esta semana toma líquidos según la sed, sin forzarte a tomar de más. Cualquier duda, coméntala con tu médico."
+  whatsapp: "💧 Esta semana tome líquidos según la sed, sin forzarse a tomar de más. Cualquier duda, coméntela con su médico."
   fuentes: ["Guía europea de hiponatremia 2014 (Spasovski et al.)", "Hew-Butler et al., Exercise-Associated Hyponatremia Consensus 2015"]
 
 - id: REC-HID-105
   tipo: hidratacion
-  titulo: "Hidrátate en tus entrenamientos"
-  texto_base: "Toma agua antes de entrenar, sorbos durante la sesión y repón después. En Bogotá el aire es seco y se pierde agua al respirar aunque no sudes mucho."
-  meta_concreta: "Lleva tu botella a cada entrenamiento esta semana."
+  titulo: "Hidrátese en sus entrenamientos"
+  texto_base: "Tome agua antes de entrenar, sorbos durante la sesión y reponga después. En Bogotá el aire es seco y se pierde agua al respirar aunque no sude mucho."
+  meta_concreta: "Lleve su botella a cada entrenamiento esta semana."
   por_que: "Una buena hidratación mantiene el rendimiento y ayuda a la recuperación."
   se_activa_con: ["objetivo:rendimiento", "objetivo:atletico", "objetivo:masa_muscular"]
   prioriza_objetivos: ["rendimiento", "atletico", "masa_muscular"]
-  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo"]
+  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "No olvides tu botella de agua para el entrenamiento de hoy: un poco antes, sorbos durante y repón al terminar."
+  whatsapp: "💧 No olvide su botella de agua para el entrenamiento de hoy: un poco antes, sorbos durante y reponga al terminar."
   fuentes: ["ACSM Position Stand: Exercise and Fluid Replacement 2007", "ACSM, AND y DC: Nutrition and Athletic Performance 2016"]
 
 - id: REC-HID-106
   tipo: hidratacion
   titulo: "Buena hidratación mientras se aclara el calcio"
-  texto_base: "Mientras tu médico revisa el calcio, mantén una hidratación adecuada a lo largo del día con agua, sin bebidas azucaradas."
+  texto_base: "Mientras su médico revisa el calcio, mantenga una hidratación adecuada a lo largo del día con agua, sin bebidas azucaradas."
   meta_concreta: "Esta semana, agua como bebida principal en cada comida."
   por_que: "Estar bien hidratado ayuda a los riñones a manejar el calcio y evita que se concentre en la orina."
   se_activa_con: ["COND-M2-TI-007"]
   prioriza_objetivos: ["condicion_existente", "prevenir"]
-  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo"]
+  contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-005", "COND-M1-CA-007", "REL-010", "sodium:bajo", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "Esta semana acompaña cada comida con un vaso de agua. Es una ayuda sencilla mientras hablas con tu médico."
+  whatsapp: "💧 Esta semana acompañe cada comida con un vaso de agua. Es una ayuda sencilla mientras habla con su médico."
   fuentes: ["Fifth International Workshop on Primary Hyperparathyroidism 2022"]
 
 - id: REC-HID-107
   tipo: hidratacion
-  titulo: "Cambia las bebidas energizantes"
-  texto_base: "Cambia las bebidas energizantes y las gaseosas con cafeína por agua o aromáticas sin azúcar, sobre todo en la tarde."
+  titulo: "Cambie las bebidas energizantes"
+  texto_base: "Cambie las bebidas energizantes y las gaseosas con cafeína por agua o aromáticas sin azúcar, sobre todo en la tarde."
   meta_concreta: "Esta semana, cero bebidas energizantes."
   por_que: "Tienen cafeína y azúcar que suben el pulso y la presión y quitan el sueño."
   se_activa_con: ["objetivo:energia_sueno", "COND-M1-CA-006", "COND-M2-TI-004"]
   prioriza_objetivos: ["energia_sueno", "rendimiento", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Esta semana cambia la bebida energizante por agua fría o una aromática. La energía real viene de dormir bien."
+  whatsapp: "🍵 Esta semana cambie la bebida energizante por agua fría o una aromática. La energía real viene de dormir bien."
   fuentes: ["AASM, Healthy Sleep Habits", "EFSA, Scientific Opinion on the safety of caffeine 2015"]

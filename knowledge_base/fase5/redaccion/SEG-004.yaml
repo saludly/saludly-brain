@@ -1,14 +1,14 @@
 id: SEG-004
 tipo: seguridad
-titulo_paciente: "Concentración de la sangre para revisar"
+titulo_paciente: "La concentración de su sangre está para revisar"
 que_es: "La osmolalidad mide qué tan concentrada está la sangre, es decir, cuántas partículas como sal y azúcar hay disueltas en ella."
 por_que_te_aparece:
-  - "Tu osmolalidad salió en {osmolality}."
-  - "La diferencia entre la osmolalidad medida y la calculada con tu sodio, glucosa y BUN salió en {brecha_osmolar}, más alta de lo esperado."
-riesgo_claro: "Una diferencia alta puede indicar que en la sangre hay alguna sustancia que no suele estar; por eso la revisa un médico."
+  - "Su osmolalidad salió en {osmolality}."
+  - "La diferencia entre la osmolalidad medida y la calculada con su sodio, glucosa y BUN salió en {brecha_osmolar}, más alta de lo esperado."
+riesgo_claro: "Una diferencia alta puede indicar que en la sangre hay alguna sustancia que no suele estar. Por eso la revisa un médico."
 ejemplo_simple: "Es como una cuenta en la que el total no cuadra con la suma de los productos: hay que averiguar qué falta en la lista."
-incertidumbre: "Un error en la toma o en el procesamiento también puede dar esta diferencia; el médico lo confirma contigo."
-cuando_consultar: "Nuestro equipo te va a llamar para revisarlo."
+incertidumbre: "Un error en la toma o en el procesamiento también puede dar esta diferencia. El médico lo confirma con usted."
+cuando_consultar: "Nuestro equipo lo va a llamar para revisarlo."
 aviso_whatsapp: null
 fuentes: ["Ficha osmolality del Knowledge Base"]
-estado_revision: pendiente
+estado_revision: aprobada

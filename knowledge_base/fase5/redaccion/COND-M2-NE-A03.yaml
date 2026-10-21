@@ -1,14 +1,14 @@
 id: COND-M2-NE-A03
 tipo: condicion
-titulo_paciente: "Bicarbonato bajo en la sangre"
-que_es: "El bicarbonato es una sustancia que neutraliza los ácidos de la sangre; los riñones ayudan a mantenerlo en equilibrio."
+titulo_paciente: "Su bicarbonato en la sangre está bajo"
+que_es: "El bicarbonato es una sustancia que neutraliza los ácidos de la sangre. Los riñones ayudan a mantenerlo en equilibrio."
 por_que_te_aparece:
-  - "Tu bicarbonato salió en {bicarbonate}, por debajo de 22 mmol/L."
-  - "Tu filtración renal estimada salió en {egfr}."
+  - "Su bicarbonato salió en {bicarbonate}, por debajo de 22 mmol/L."
+  - "Su filtración renal estimada salió en {egfr}."
 riesgo_claro: "Si se mantiene bajo por mucho tiempo, puede afectar los huesos y los músculos y hacer que los riñones se desgasten más rápido."
 ejemplo_simple: "Es como una piscina a la que le falta el producto que equilibra el agua: poco a poco se vuelve más ácida."
-incertidumbre: "La demora en procesar la muestra o una diarrea reciente pueden bajarlo. Tu médico lo interpreta junto con el funcionamiento de tus riñones."
+incertidumbre: "La demora en procesar la muestra o una diarrea reciente pueden bajarlo. Su médico lo interpreta junto con el funcionamiento de sus riñones."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["KDIGO 2024"]
-estado_revision: pendiente
+estado_revision: aprobada

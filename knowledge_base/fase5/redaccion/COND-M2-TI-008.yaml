@@ -1,14 +1,14 @@
 id: COND-M2-TI-008
 tipo: condicion
-titulo_paciente: "Hormonas de la sal y la presión con un patrón para revisar"
+titulo_paciente: "Las hormonas de la sal y la presión muestran un patrón para revisar"
 que_es: "La aldosterona y la renina son hormonas que regulan la sal, el agua y la presión arterial."
 por_que_te_aparece:
-  - "Tu aldosterona salió en {aldosterone} y tu renina en {renin}."
+  - "Su aldosterona salió en {aldosterone} y su renina en {renin}."
   - "La relación entre las dos quedó por encima del valor que la guía usa para tamizaje en personas con presión alta."
-riesgo_claro: "Si el patrón se confirma y no se atiende, la presión puede ser más difícil de controlar y afectar el corazón y los riñones. Es una causa tratable de presión alta."
+riesgo_claro: "Si el patrón se confirma y no se atiende, la presión puede ser más difícil de controlar y afectar el corazón y los riñones. La buena noticia: es una causa tratable de presión alta."
 ejemplo_simple: "Es como una llave de agua que se queda abierta: el tanque se llena de más aunque nadie la esté usando."
-incertidumbre: "Muchos medicamentos para la presión alteran estas hormonas, así que el resultado necesita confirmarse. No cambies tus medicamentos por tu cuenta; tu médico decide."
+incertidumbre: "Muchos medicamentos para la presión alteran estas hormonas, así que el resultado necesita confirmarse. No cambie sus medicamentos por su cuenta: su médico decide."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Endocrine Society 2025, hiperaldosteronismo primario", "GPC Colombia HTA 2025"]
-estado_revision: pendiente
+estado_revision: aprobada

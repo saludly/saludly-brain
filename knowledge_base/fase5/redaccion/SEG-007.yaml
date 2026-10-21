@@ -1,14 +1,14 @@
 id: SEG-007
 tipo: seguridad
-titulo_paciente: "Enzima de los músculos (CK) alta"
-que_es: "La CK es una enzima que está dentro de los músculos; cuando los músculos trabajan fuerte o se lastiman, pasa a la sangre."
+titulo_paciente: "Su enzima de los músculos (CK) está alta"
+que_es: "La CK es una enzima que está dentro de los músculos. Cuando los músculos trabajan fuerte o se lastiman, pasa a la sangre."
 por_que_te_aparece:
-  - "Tu CK salió en {ck_cpk}, por encima del rango."
-  - "Tu LDH, una enzima presente en muchos tejidos, salió en {ldh}."
-riesgo_claro: "Lo más común es que sea por ejercicio; si está muy alta y hay orina oscura o dolor muscular fuerte, puede afectar los riñones y requiere atención rápida."
+  - "Su CK salió en {ck_cpk}, por encima del rango."
+  - "Su LDH, una enzima presente en muchos tejidos, salió en {ldh}."
+riesgo_claro: "Lo más común es que sea por ejercicio. Si está muy alta y hay orina oscura o dolor muscular fuerte, puede afectar los riñones y requiere atención rápida."
 ejemplo_simple: "Es como el polvo que queda en el piso después de una obra: indica que hubo trabajo fuerte."
-incertidumbre: "El ejercicio intenso de los días previos y algunos medicamentos la suben con frecuencia; conviene repetirla sin entrenar fuerte los dos días anteriores."
-cuando_consultar: "Si tienes la orina oscura o dolor muscular fuerte, ve a urgencias. Si no, coméntalo con tu médico en tu próximo control."
-aviso_whatsapp: "Hay un resultado en tu informe de Saludly que conviene repetir sin hacer ejercicio fuerte antes. Ábrelo cuando puedas."
+incertidumbre: "El ejercicio intenso de los días previos y algunos medicamentos la suben con frecuencia. Conviene repetirla sin entrenar fuerte los dos días anteriores."
+cuando_consultar: "Si tiene la orina oscura o dolor muscular fuerte, vaya a urgencias. Si no, coménteselo a su médico en su próximo control."
+aviso_whatsapp: "Hay un resultado en su informe de Saludly que conviene repetir sin hacer ejercicio fuerte antes. Ábralo cuando pueda."
 fuentes: ["Fichas ck_cpk y ldh del Knowledge Base"]
-estado_revision: pendiente
+estado_revision: aprobada

@@ -1,13 +1,13 @@
 id: SEG-005
 tipo: seguridad
-titulo_paciente: "Células en el hemograma que hay que confirmar"
+titulo_paciente: "Unas células en su hemograma que hay que confirmar"
 que_es: "Los eritroblastos son glóbulos rojos jóvenes que normalmente se quedan en la médula ósea, la fábrica de la sangre dentro de los huesos."
 por_que_te_aparece:
-  - "Tu hemograma reportó eritroblastos en {nrbc}, cuando normalmente no aparecen en la sangre."
-riesgo_claro: "Pueden aparecer cuando la médula está trabajando bajo mucho esfuerzo; por eso se confirma pronto con otra prueba."
+  - "Su hemograma reportó eritroblastos en {nrbc}, cuando normalmente no aparecen en la sangre."
+riesgo_claro: "Pueden aparecer cuando la médula está trabajando bajo mucho esfuerzo. Por eso se confirma pronto con otra prueba."
 ejemplo_simple: "Es como ver aprendices atendiendo solos la caja de un almacén: puede que el personal no alcance, y vale la pena preguntar por qué."
-incertidumbre: "A veces el contador automático se equivoca; un frotis de sangre, que es revisar la muestra al microscopio, lo confirma."
-cuando_consultar: "Nuestro médico te va a llamar para explicarte el siguiente paso."
+incertidumbre: "A veces el contador automático se equivoca. Un frotis de sangre, que es revisar la muestra al microscopio, lo confirma."
+cuando_consultar: "Nuestro médico lo va a llamar para explicarle el siguiente paso."
 aviso_whatsapp: null
 fuentes: ["Ficha nrbc del Knowledge Base"]
-estado_revision: pendiente
+estado_revision: aprobada

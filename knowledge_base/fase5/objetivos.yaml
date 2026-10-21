@@ -11,7 +11,7 @@
 - id: condicion_existente
   nombre: "Cuidar una condición que ya tengo"
   destaca: []
-  enfoque: "Seguimiento con tu médico tratante; nunca reemplaza tu tratamiento"
+  enfoque: "Seguimiento con su médico tratante; nunca reemplaza su tratamiento"
 - id: bajar_peso
   nombre: "Bajar de peso"
   destaca: [glucose, hba1c, insulin, homa_ir, tyg_index, triglycerides, hdl_c, tsh, alt, ggt]

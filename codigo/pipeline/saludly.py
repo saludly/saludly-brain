@@ -56,6 +56,13 @@ def generar(pdf, documento, orden, perfil, enfermera=None, dias=7, panel=None):
         return 3, dict(estado="datos_invalidos", motivo="toma_biotina debe ser true, false o null")
     if perfil.get("nivel_actividad") not in (None, "sedentario", "ligero", "moderado", "alto"):
         return 3, dict(estado="datos_invalidos", motivo="nivel_actividad debe ser sedentario, ligero, moderado o alto")
+    fil = C.get("filtros", {}).get("preguntas", {})
+    validos = {k: {o["id"] for o in (fil.get(k) or {}).get("opciones") or []} for k in ("alergias", "dieta", "medicamentos")}
+    for k in ("alergias", "medicamentos"):
+        malos = [x for x in perfil.get(k) or [] if x not in validos[k]]
+        if malos: return 3, dict(estado="datos_invalidos", motivo=f"{k} desconocidos: {malos}", validos=sorted(validos[k]))
+    if perfil.get("dieta") not in ({None} | validos["dieta"]):
+        return 3, dict(estado="datos_invalidos", motivo=f"dieta debe ser una de {sorted(validos['dieta'])}")
     lect = lector.leer(pdf, dict(documento=documento, orden=orden), C["indice"])
     if lect.get("estado") != "aceptado":
         return 2, dict(estado="pdf_rechazado", motivo=lect.get("motivo"), sha256=lect.get("sha256"))
@@ -66,6 +73,8 @@ def generar(pdf, documento, orden, perfil, enfermera=None, dias=7, panel=None):
     ctx.update(enf)
     ctx["toma_biotina"] = perfil.get("toma_biotina")
     if perfil.get("nivel_actividad"): ctx["nivel_actividad"] = perfil["nivel_actividad"]   # lo responde el paciente en la PWA
+    for k in ("alergias", "alergias_otras", "dieta", "medicamentos"):                     # también de la PWA (filtros.yaml)
+        if perfil.get(k): ctx[k] = perfil[k]
     ctx["objetivo"] = objetivos[0]
     if panel: ctx["panel"] = panel
     out = motor.analizar(lect, ctx)

@@ -35,6 +35,10 @@ panel:
   modo_por_defecto: solo_sangre
   solo_sangre:
     biomarcadores_pausados: [urinalysis, uacr, fit_stool, hpylori_stool_ag, stool_exam]
+    # Decisión de Carlos (10 de octubre de 2026): estas 10 salieron del panel base. Si el laboratorio las envía igual,
+    # el lector las lee, pero el motor no las interpreta ni las muestra al paciente (quedan anotadas para el médico).
+    # La interferencia por biotina se controla con la pregunta "¿tomas biotina?".
+    biomarcadores_fuera_del_panel: [vitamin_a, vitamin_e, vitamin_k1, vitamin_c, vitamin_b1, biotin, niacin, coq10, omega3_index, omega6_omega3_ratio]
     condiciones_pausadas: [COND-M2-NE-002, COND-M2-NE-006, COND-M4-GA-004, COND-M4-GA-005, COND-M4-IN-A01, COND-M4-IN-A02]
     relaciones_pausadas: [REL-010]
     seguridad_pausada: [SEG-013]

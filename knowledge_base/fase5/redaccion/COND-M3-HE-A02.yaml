@@ -1,15 +1,15 @@
 id: COND-M3-HE-A02
 tipo: condicion
-titulo_paciente: "Glóbulos blancos fuera del rango"
-que_es: "Los glóbulos blancos son las células de defensa del cuerpo; los neutrófilos y los linfocitos son dos de sus tipos principales."
+titulo_paciente: "Sus glóbulos blancos están fuera del rango"
+que_es: "Los glóbulos blancos son las células de defensa del cuerpo. Los neutrófilos y los linfocitos son dos de sus tipos principales."
 por_que_te_aparece:
-  - "Tus glóbulos blancos totales salieron en {wbc}."
-  - "Tus neutrófilos salieron en {neutrophils_abs}."
-  - "Tus linfocitos salieron en {lymphocytes_abs}."
-riesgo_claro: "Casi siempre es pasajero, pero si se mantiene fuera del rango y no se revisa, se podría pasar por alto una causa que sí conviene atender."
+  - "Sus glóbulos blancos totales salieron en {wbc}."
+  - "Sus neutrófilos salieron en {neutrophils_abs}."
+  - "Sus linfocitos salieron en {lymphocytes_abs}."
+riesgo_claro: "Casi siempre es pasajero. Pero si se mantiene fuera del rango y no se revisa, se podría pasar por alto una causa que sí conviene atender."
 ejemplo_simple: "Es como el número de vigilantes de un edificio: sube o baja según lo que haya pasado en los últimos días."
-incertidumbre: "Es frecuente después de una infección, con ejercicio intenso, con el cigarrillo o con algunos medicamentos. Un solo examen no basta: conviene repetirlo y revisarlo con tu médico."
+incertidumbre: "Es frecuente después de una infección, con ejercicio intenso, con el cigarrillo o con algunos medicamentos. Un solo examen no basta: conviene repetirlo y revisarlo con su médico."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Intervalo del laboratorio"]
-estado_revision: pendiente
+estado_revision: aprobada

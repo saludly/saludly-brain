@@ -1,15 +1,15 @@
 id: COND-M2-NE-001
 tipo: condicion
-titulo_paciente: "Filtración de los riñones por debajo de 60"
-que_es: "La filtración glomerular estimada (TFG) mide cuánta sangre limpian tus riñones cada minuto."
+titulo_paciente: "La filtración de sus riñones está por debajo de 60"
+que_es: "La filtración glomerular estimada (TFG) mide cuánta sangre limpian sus riñones cada minuto."
 por_que_te_aparece:
-  - "Tu filtración renal estimada salió en {egfr}, por debajo de 60 mL/min/1,73 m²."
-  - "Se calcula con tu creatinina, una sustancia de desecho de los músculos, que salió en {creatinine}."
-  - "Tu relación albúmina/creatinina en orina, que muestra si se escapa proteína por los riñones, salió en {uacr}."
-riesgo_claro: "Si los riñones filtran menos durante años y no se cuidan, pueden perder función poco a poco y afectar también el corazón."
-ejemplo_simple: "Es como el filtro de una piscina que limpia más despacio: el agua sigue limpia, pero hay que revisarlo a tiempo."
-incertidumbre: "Un solo resultado no confirma enfermedad renal crónica; la deshidratación, el ejercicio fuerte o la creatina lo alteran. Hay que repetirlo en 3 meses y tu médico lo confirma."
+  - "Su filtración renal estimada salió en {egfr}, por debajo de 60 mL/min/1,73 m²."
+  - "Se calcula con su creatinina, una sustancia de desecho de los músculos, que salió en {creatinine}."
+  - "Su relación albúmina/creatinina en orina, que muestra si se escapa proteína por los riñones, salió en {uacr}."
+riesgo_claro: "Si los riñones filtran menos durante años y no se cuidan, pueden perder función poco a poco y afectar también el corazón. Detectarlo a tiempo permite protegerlos."
+ejemplo_simple: "Piénselo como el filtro de una piscina que limpia más despacio: el agua sigue limpia, pero hay que revisarlo a tiempo."
+incertidumbre: "Ojo: un solo resultado no confirma enfermedad renal crónica. La deshidratación, el ejercicio fuerte o la creatina lo alteran. Hay que repetirlo en 3 meses, y su médico lo confirma."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["KDIGO 2024", "GPC Colombia HTA 2025"]
-estado_revision: pendiente
+estado_revision: aprobada

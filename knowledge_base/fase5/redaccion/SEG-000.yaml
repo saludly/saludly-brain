@@ -3,11 +3,11 @@ tipo: seguridad
 titulo_paciente: "Un valor crítico que requiere atención hoy"
 que_es: "El laboratorio marca como valor crítico un resultado que está muy lejos del rango y que conviene revisar con un médico el mismo día."
 por_que_te_aparece:
-  - "El laboratorio marcó uno de tus resultados como valor crítico."
-riesgo_claro: "Algunos valores muy alejados del rango pueden afectar el funcionamiento del cuerpo en poco tiempo; por eso se revisan rápido."
-ejemplo_simple: "Es como cuando el banco te llama por un movimiento raro en tu cuenta: quiere confirmarlo contigo de inmediato."
-incertidumbre: "A veces un valor crítico se debe a un problema de la muestra; el médico lo confirma contigo y decide si hay que tomarla de nuevo."
-cuando_consultar: "Nuestro equipo médico te va a llamar hoy. Si te sientes mal, con dolor en el pecho, falta de aire, confusión o desmayo, ve a urgencias."
+  - "El laboratorio marcó uno de sus resultados como valor crítico."
+riesgo_claro: "Algunos valores muy alejados del rango pueden afectar el funcionamiento del cuerpo en poco tiempo. Por eso se revisan rápido."
+ejemplo_simple: "Es como cuando el banco lo llama por un movimiento raro en su cuenta: quiere confirmarlo con usted de inmediato."
+incertidumbre: "A veces un valor crítico se debe a un problema de la muestra. El médico lo confirma con usted y decide si hay que tomarla de nuevo."
+cuando_consultar: "Nuestro equipo médico lo va a llamar hoy. Si se siente mal, con dolor en el pecho, falta de aire, confusión o desmayo, vaya a urgencias."
 aviso_whatsapp: null
 fuentes: ["Regla general SEG-000 del Knowledge Base"]
-estado_revision: pendiente
+estado_revision: aprobada

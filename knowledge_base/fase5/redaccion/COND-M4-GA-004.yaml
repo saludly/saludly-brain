@@ -1,13 +1,13 @@
 id: COND-M4-GA-004
 tipo: condicion
-titulo_paciente: "Sangre oculta en la muestra de heces"
+titulo_paciente: "Apareció sangre oculta en su muestra de heces"
 que_es: "La prueba de sangre oculta busca rastros de sangre en las heces que no se ven a simple vista."
 por_que_te_aparece:
-  - "Tu prueba de sangre oculta en heces salió positiva."
-riesgo_claro: "Si no se estudia, la causa del sangrado puede seguir avanzando sin que se note, y muchas de esas causas son más fáciles de manejar cuando se encuentran temprano."
-ejemplo_simple: "Es como encontrar una gota de agua en el piso: no sabes de dónde viene hasta que alguien sube a revisar el techo."
-incertidumbre: "Tiene varias causas posibles, y la manera de saber cuál es una colonoscopia, no repetir esta misma prueba. Tu médico la pide en una consulta en las próximas semanas."
+  - "Su prueba de sangre oculta en heces salió positiva."
+riesgo_claro: "Si no se estudia, la causa del sangrado puede seguir avanzando sin que se note. Muchas de esas causas son más fáciles de manejar cuando se encuentran temprano, y eso es justamente lo que estamos haciendo."
+ejemplo_simple: "Es como encontrar una gota de agua en el piso: usted no sabe de dónde viene hasta que alguien sube a revisar el techo."
+incertidumbre: "Tiene varias causas posibles, y la manera de saber cuál es una colonoscopia, no repetir esta misma prueba. Su médico la pide en una consulta en las próximas semanas."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Res. 3280 de 2018", "USPSTF 2021"]
-estado_revision: pendiente
+estado_revision: aprobada

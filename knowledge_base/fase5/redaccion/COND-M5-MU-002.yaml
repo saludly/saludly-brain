@@ -1,14 +1,14 @@
 id: COND-M5-MU-002
 tipo: condicion
-titulo_paciente: "FSH más alta de lo esperado para tu edad"
+titulo_paciente: "Su FSH está más alta de lo esperado para su edad"
 que_es: "La FSH es una hormona del cerebro que le da la señal a los ovarios para madurar un óvulo cada mes."
 por_que_te_aparece:
-  - "Tu FSH salió en {fsh}, por encima de lo esperado para una mujer menor de 40 años."
-  - "Tu estradiol, la principal hormona que producen los ovarios, salió en {estradiol}."
-riesgo_claro: "Si se confirma en otra toma, puede indicar que los ovarios están respondiendo menos de lo esperado, algo importante para tus planes de embarazo y para cuidar huesos y corazón."
+  - "Su FSH salió en {fsh}, por encima de lo esperado para una mujer menor de 40 años."
+  - "Su estradiol, la principal hormona que producen los ovarios, salió en {estradiol}."
+riesgo_claro: "Si se confirma en otra toma, puede indicar que los ovarios están respondiendo menos de lo esperado, algo importante para sus planes de embarazo y para cuidar sus huesos y su corazón."
 ejemplo_simple: "Es como un jefe que tiene que levantar la voz para que lo escuchen: la FSH sube cuando los ovarios responden menos."
-incertidumbre: "La FSH cambia mucho durante el ciclo; un solo valor no basta y hay que repetirla en 4 a 6 semanas."
-cuando_consultar: "Coméntalo con tu médico, sobre todo si tus ciclos han cambiado o estás pensando en un embarazo."
+incertidumbre: "La FSH cambia mucho durante el ciclo. Un solo valor no basta, y hay que repetirla en 4 a 6 semanas."
+cuando_consultar: "Coménteselo a su médico, sobre todo si sus ciclos han cambiado o está pensando en un embarazo."
 aviso_whatsapp: null
 fuentes: ["NICE NG23, menopausia"]
-estado_revision: pendiente
+estado_revision: aprobada

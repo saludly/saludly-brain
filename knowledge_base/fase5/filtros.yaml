@@ -1,0 +1,86 @@
+# Filtros por alergias, tipo de dieta y medicamentos (Fase 6, 20 de octubre de 2026)
+# El paciente responde estas preguntas en la PWA, antes de la visita. Las respuestas se vuelven referencias
+# ("alergia:<id>", "dieta:<id>", "medicamento:<id>") que usan las recomendaciones (contraindicada_si, se_activa_con)
+# y las recetas (se excluyen por ingredientes). Las lee codigo/informe/recomendar.py y nutricion.py.
+# Son decisiones clínicas: todas quedan "por_verificar" hasta que Carlos las apruebe.
+# estado_revision: aprobada (Carlos, 20 de octubre de 2026)
+
+preguntas:
+  alergias:
+    texto: "¿Tiene alguna alergia o intolerancia a alimentos?"
+    multiple: true
+    opciones:
+      - {id: mani, texto: "Maní"}
+      - {id: frutos_secos, texto: "Frutos secos (almendras, nueces, marañones…)"}
+      - {id: mariscos, texto: "Mariscos (camarón, langostino…)"}
+      - {id: pescado, texto: "Pescado"}
+      - {id: huevo, texto: "Huevo"}
+      - {id: leche, texto: "Alergia a la leche"}
+      - {id: lactosa, texto: "Intolerancia a la lactosa"}
+      - {id: gluten, texto: "Gluten o enfermedad celíaca"}
+      - {id: soya, texto: "Soya"}
+      - {id: ajonjoli, texto: "Ajonjolí"}
+    otra: "Otra (escríbala)"          # texto libre: no filtra solo; se avisa en la vista médica para revisar a mano
+  dieta:
+    texto: "¿Qué tipo de alimentación lleva?"
+    opciones:
+      - {id: normal, texto: "Como de todo"}
+      - {id: vegetariana, texto: "Vegetariana (sin carne ni pescado; sí huevo y lácteos)"}
+      - {id: vegana, texto: "Vegana (nada de origen animal)"}
+  medicamentos:
+    texto: "¿Toma alguno de estos medicamentos?"
+    multiple: true
+    opciones:
+      - {id: warfarina, texto: "Warfarina (anticoagulante)"}
+      - {id: anticoagulante_directo, texto: "Otro anticoagulante: rivaroxabán, apixabán, dabigatrán o edoxabán"}
+      - {id: diuretico, texto: "Diurético: hidroclorotiazida, furosemida, espironolactona, clortalidona o indapamida"}
+      - {id: insulina, texto: "Insulina"}
+      - {id: sulfonilurea, texto: "Glibenclamida, glimepirida o gliclazida"}
+      - {id: otro_antidiabetico, texto: "Otro medicamento para el azúcar (metformina, sitagliptina, empagliflozina…)"}
+
+# Recetas: se excluye toda receta con un ingrediente que tenga el alérgeno (campo alergenos de recetas/alimentos.yaml).
+# lactosa excluye ingredientes sin la etiqueta sin_lactosa; gluten, los que no tienen sin_gluten.
+# dieta vegetariana exige que todos los ingredientes tengan la etiqueta vegetariano; vegana, vegano.
+
+# Recomendaciones: las exclusiones por alergia y dieta están en el contraindicada_si de cada recomendación.
+# Criterio: se excluye la recomendación que sugiere comer el alimento; las que piden reducirlo se mantienen.
+# Si un hallazgo se queda sin recomendación por un filtro, la vista médica lo avisa.
+
+reglas:
+  - id: FIL-ALE-001
+    si: "alergia:*"
+    efecto: "Se excluyen las recetas con ese ingrediente y las recomendaciones que lo sugieren. El informe le dice al paciente que sus recetas ya no lo incluyen."
+    estado: aprobada
+  - id: FIL-ALE-002
+    si: "alergia:gluten"
+    efecto: "Se excluye REC-ALI-214 (no quitar el gluten antes de la consulta), porque quien ya sabe que es celíaco no debe volver a comerlo. El médico ve el aviso."
+    estado: aprobada
+  - id: FIL-DIE-001
+    si: "dieta:vegetariana | dieta:vegana"
+    efecto: "Recetas solo con ingredientes aptos. Se excluye el pescado como recomendación principal; en veganos, B12, calcio y desayuno con proteína tienen texto propio (por_dieta)."
+    estado: aprobada
+  - id: FIL-MED-001
+    si: "medicamento:warfarina"
+    efecto: "Se activa REC-ALI-216: verduras de hoja verde en cantidad constante, sin cambios bruscos (vitamina K)."
+    estado: aprobada
+  - id: FIL-MED-002
+    si: "medicamento:warfarina | medicamento:anticoagulante_directo"
+    efecto: "Se activa REC-VIT-212: ningún suplemento ni producto natural sin el médico (omega-3, vitamina E, ginkgo, cúrcuma o ajo en cápsulas aumentan el sangrado o alteran el efecto)."
+    estado: aprobada
+  - id: FIL-MED-003
+    si: "medicamento:diuretico"
+    efecto: "Se excluyen las recomendaciones que piden tomar más agua o bebidas con sales y se activa REC-HID-102 (líquidos según la indicación del médico)."
+    estado: aprobada
+  - id: FIL-MED-004
+    si: "medicamento:insulina | medicamento:sulfonilurea"
+    efecto: "Se activa REC-ACT-208 (ejercicio con medicamentos que pueden bajar el azúcar) y el ejercicio intenso (REC-ACT-106, 107, 108) pasa a requerir consulta previa."
+    estado: aprobada
+  - id: FIL-MED-005
+    si: "medicamento:otro_antidiabetico"
+    efecto: "No filtra recomendaciones; se muestra en la vista médica."
+    estado: aprobada
+
+consulta_previa_si:            # recomendación → referencias que la vuelven "consulte antes"
+  REC-ACT-106: ["medicamento:insulina", "medicamento:sulfonilurea"]
+  REC-ACT-107: ["medicamento:insulina", "medicamento:sulfonilurea"]
+  REC-ACT-108: ["medicamento:insulina", "medicamento:sulfonilurea"]

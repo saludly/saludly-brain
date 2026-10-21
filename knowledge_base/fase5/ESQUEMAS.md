@@ -5,7 +5,7 @@
 ## Reglas de lenguaje (valen para todo)
 
 1. **Nunca diagnosticar.** Prohibido "tienes…", "padeces…", "sufres de…", "eres diabético", "estás enfermo". En su lugar: "tu resultado está en el rango que las guías usan para…", "este patrón es compatible con…", "conviene confirmarlo con tu médico".
-2. **Idioma paciente.** Español de Colombia, de tú, frases cortas (máximo unas 25 palabras), sin jerga. Si un término importa, se explica en la misma frase ("la ferritina, que es la reserva de hierro de tu cuerpo").
+2. **Idioma paciente.** Español de Colombia, de usted (decidido el 20 de octubre de 2026), frases cortas (máximo unas 25 palabras), sin jerga. Si un término importa, se explica en la misma frase ("la ferritina, que es la reserva de hierro de tu cuerpo").
 3. **Riesgo claro, sin alarmismo y sin falsa tranquilidad.** Decir qué puede pasar si no se atiende, en general y sin porcentajes ("con los años puede dañar los vasos sanguíneos"). Nada de "es grave" ni "no es nada".
 4. **Un ejemplo simple y cotidiano**, una analogía que entienda cualquier persona ("es como una tubería que se va tapando con grasa").
 5. **Sin dosis, sin marcas, sin prescripciones.** Nada de "toma 2.000 UI", "mg", "tabletas". Los suplementos solo como opción general para hablar con el médico.
@@ -51,6 +51,8 @@ Una lista por tipo: `alimentacion`, `hidratacion`, `actividad`, `sueno`, `habito
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general"]
   contraindicada_si: []             # IDs o "biomarcador:clase" que la impiden
   requiere_consulta_previa: false   # true: el texto dice primero consultar (por ejemplo, ejercicio intenso con anemia)
+  por_sexo:                         # opcional: texto_base y meta_concreta propios para hombre o mujer
+    hombre: {texto_base: "…", meta_concreta: "…"}
   whatsapp: "💧 Hoy cambia la gaseosa del almuerzo por agua o limonada sin azúcar. Tu glucosa te lo agradece."
   fuentes: ["ADA Standards of Care 2025, sección 5"]
 ```

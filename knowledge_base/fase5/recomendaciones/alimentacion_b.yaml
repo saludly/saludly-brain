@@ -1,197 +1,216 @@
 # Recomendaciones de alimentación · M3 (sangre y nutrición), M4 (digestivo e infecciones), M6 (inmunidad y envejecimiento),
-# vitaminas y minerales. Numeración 200 a 299. Estado: pendiente de revisión de Carlos (hace de médico).
+# vitaminas y minerales. Numeración 200 a 299. Estado: aprobado por Carlos (hace de médico).
+# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
 
 - id: REC-ALI-201
   tipo: alimentacion
-  titulo: "Suma alimentos con hierro y acompáñalos con vitamina C"
-  texto_base: "Incluye en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñalos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro."
-  meta_concreta: "Esta semana, come leguminosas o carne magra con una fruta rica en vitamina C en al menos 5 almuerzos."
-  por_que: "El hierro de los alimentos repone poco a poco tus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor."
+  titulo: "Sume alimentos con hierro y acompáñelos con vitamina C"
+  texto_base: "Incluya en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñelos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro."
+  meta_concreta: "Esta semana, coma leguminosas o carne magra con una fruta rica en vitamina C en al menos 5 almuerzos."
+  por_que: "El hierro de los alimentos repone poco a poco sus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor."
   se_activa_con: ["COND-M3-HE-002", "COND-M3-HE-003", "REL-013", "ferritin:bajo"]
   prioriza_objetivos: ["maraton", "rendimiento", "energia_sueno", "atletico"]
   contraindicada_si: ["COND-M3-HE-006", "COND-M3-HE-A04", "REL-014", "ferritin:alto"]
   requiere_consulta_previa: false
-  whatsapp: "Hoy en el almuerzo pon lentejas o fríjoles y de postre una guayaba o una naranja. La fruta ayuda a que tu cuerpo aproveche mejor el hierro."
+  whatsapp: "🍊 Hoy en el almuerzo ponga lentejas o fríjoles y de postre una guayaba o una naranja. La fruta ayuda a que su cuerpo aproveche mejor el hierro."
   fuentes: ["OMS 2020, uso de la ferritina para evaluar el estado del hierro", "BSG 2021, guía de anemia por déficit de hierro en adultos", "ICBF 2020, Guías Alimentarias Basadas en Alimentos para la población colombiana"]
 
 - id: REC-ALI-202
   tipo: alimentacion
-  titulo: "Deja el tinto y el té para después de comer"
-  texto_base: "Toma el café, el tinto o el té por lo menos una hora antes o después de las comidas principales, no junto con ellas."
-  meta_concreta: "Durante 2 semanas, ningún café ni té junto con el almuerzo; si lo quieres, que sea una hora después."
+  titulo: "Deje el tinto y el té para después de comer"
+  texto_base: "Tome el café, el tinto o el té por lo menos una hora antes o después de las comidas principales, no junto con ellas."
+  meta_concreta: "Durante 2 semanas, ningún café ni té junto con el almuerzo; si lo quiere, que sea una hora después."
   por_que: "El café y el té tienen sustancias que frenan la absorción del hierro de la comida."
   se_activa_con: ["COND-M3-HE-002", "COND-M3-HE-003", "REL-013", "ferritin:bajo"]
   prioriza_objetivos: ["energia_sueno", "maraton", "rendimiento"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Un truco sencillo para esta semana: el tinto o el té, mejor una hora después del almuerzo y no con la comida. Así aprovechas más lo que comes."
+  whatsapp: "☕ Un truco sencillo para esta semana: el tinto o el té, mejor una hora después del almuerzo y no con la comida. Así aprovecha más lo que come."
   fuentes: ["BSG 2021, guía de anemia por déficit de hierro en adultos", "OMS 2020, uso de la ferritina para evaluar el estado del hierro"]
 
 - id: REC-ALI-203
   tipo: alimentacion
-  titulo: "Incluye alimentos con vitamina B12 todos los días"
-  texto_base: "Come a diario alguno de estos alimentos: huevo, leche, yogur, queso, pescado, pollo o carne. Si no comes productos animales, busca alimentos fortificados con B12 y coméntaselo a tu médico."
+  titulo: "Incluya alimentos con vitamina B12 todos los días"
+  texto_base: "Coma a diario alguno de estos alimentos: huevo, leche, yogur, queso, pescado, pollo o carne. Si no come productos animales, busque alimentos fortificados con B12 y coménteselo a su médico."
   meta_concreta: "Esta semana, al menos una porción de huevo, lácteo, pescado o carne cada día."
-  por_que: "La vitamina B12 viene casi solo de alimentos de origen animal y la necesitas para formar glóbulos rojos y cuidar los nervios."
+  por_que: "La vitamina B12 viene casi solo de alimentos de origen animal y usted la necesita para formar glóbulos rojos y cuidar los nervios."
   se_activa_con: ["COND-M3-NU-001", "COND-M3-HE-004", "REL-015", "vitamin_b12:bajo"]
   prioriza_objetivos: ["energia_sueno", "envejecer_saludable", "rendimiento"]
-  contraindicada_si: []
+  contraindicada_si: ["alergia:pescado", "alergia:huevo", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "Para hoy: un huevo en el desayuno o un yogur en la merienda. Son fuentes sencillas de vitamina B12."
+  por_dieta:
+    vegana:
+      texto_base: "La vitamina B12 casi solo viene de alimentos de origen animal. Como usted no los come, busque alimentos y bebidas fortificados con B12 y hable con su médico sobre la mejor forma de cubrirla."
+      meta_concreta: "Esta semana, revise las etiquetas y elija una bebida o un cereal fortificado con B12; anote la pregunta para su médico."
+      whatsapp: "💊 Al hacer mercado, busque en la etiqueta bebidas vegetales o cereales fortificados con vitamina B12. En una alimentación vegana es clave hablarlo con su médico."
+  whatsapp: "🥚 Para hoy: un huevo en el desayuno o un yogur en la merienda. Son fuentes sencillas de vitamina B12."
   fuentes: ["NICE NG239 2024, déficit de vitamina B12", "BSH 2014, diagnóstico y tratamiento de los trastornos de cobalamina y folato"]
 
 - id: REC-ALI-204
   tipo: alimentacion
   titulo: "Más hojas verdes, leguminosas y cítricos para el folato"
-  texto_base: "Incluye espinaca, acelga, brócoli, lentejas, fríjoles, garbanzos, aguacate y frutas cítricas. Cocina las verduras poco tiempo, al vapor o salteadas, para no perder el folato."
+  texto_base: "Incluya espinaca, acelga, brócoli, lentejas, fríjoles, garbanzos, aguacate y frutas cítricas. Cocine las verduras poco tiempo, al vapor o salteadas, para no perder el folato."
   meta_concreta: "Esta semana, una porción de verdura de hoja verde y una de leguminosas al menos 5 días."
   por_que: "El folato, una vitamina B, ayuda a formar glóbulos rojos sanos; abunda en las verduras verdes y las leguminosas."
   se_activa_con: ["COND-M3-NU-002", "COND-M3-HE-004", "REL-015", "folate:bajo"]
   prioriza_objetivos: ["energia_sueno", "salud_general", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Reto de hoy: agrega espinaca, acelga o brócoli a tu almuerzo y acompaña con lentejas o fríjoles. Las hojas verdes aportan folato."
+  whatsapp: "🥬 Reto de hoy: agregue espinaca, acelga o brócoli a su almuerzo y acompañe con lentejas o fríjoles. Las hojas verdes aportan folato."
   fuentes: ["OMS, folato en la nutrición humana", "ICBF 2020, Guías Alimentarias Basadas en Alimentos para la población colombiana"]
 
 - id: REC-ALI-205
   tipo: alimentacion
   titulo: "Alimentos que aportan vitamina D"
-  texto_base: "Incluye pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D."
+  texto_base: "Incluya pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D."
   meta_concreta: "Esta semana, pescado graso al menos 2 veces y huevo entero en 3 desayunos."
   por_que: "Pocos alimentos tienen vitamina D; los pescados grasos y el huevo están entre los mejores para sumar un poco."
   se_activa_con: ["vitamin_d:bajo", "COND-M3-NU-A03", "REL-020"]
   prioriza_objetivos: ["masa_muscular", "atletico", "envejecer_saludable", "energia_sueno"]
-  contraindicada_si: ["vitamin_d:alto"]
+  contraindicada_si: ["vitamin_d:alto", "alergia:pescado", "alergia:huevo", "dieta:vegetariana", "dieta:vegana"]
   requiere_consulta_previa: false
-  whatsapp: "Esta semana prueba sardinas o atún en una de tus comidas y un huevo en el desayuno. Son fuentes naturales de vitamina D."
+  whatsapp: "🐟 Esta semana pruebe sardinas o atún en una de sus comidas y un huevo en el desayuno. Son fuentes naturales de vitamina D."
   fuentes: ["Endocrine Society 2024, vitamina D para la prevención de enfermedades", "NIH ODS, ficha de vitamina D para profesionales"]
 
 - id: REC-ALI-206
   tipo: alimentacion
   titulo: "Alimentos ricos en magnesio"
-  texto_base: "Suma frutos secos, semillas de ahuyama o de girasol, leguminosas, avena, arroz integral, verduras de hoja verde, banano y cacao sin azúcar."
+  texto_base: "Sume frutos secos, semillas de ahuyama o de girasol, leguminosas, avena, arroz integral, verduras de hoja verde, banano y cacao sin azúcar."
   meta_concreta: "Esta semana, un puñado de frutos secos o semillas al día y leguminosas al menos 3 veces."
   por_que: "El magnesio participa en el trabajo de los músculos y los nervios; los alimentos integrales y las semillas lo aportan de forma segura."
   se_activa_con: ["magnesium:bajo", "SEG-008"]
   prioriza_objetivos: ["rendimiento", "maraton", "energia_sueno", "atletico"]
-  contraindicada_si: ["COND-M2-NE-004", "magnesium:alto"]
+  contraindicada_si: ["COND-M2-NE-004", "magnesium:alto", "alergia:mani", "alergia:frutos_secos"]
   requiere_consulta_previa: false
-  whatsapp: "Para la merienda de hoy: un puñado de maní, almendras o semillas de ahuyama. Son una buena fuente de magnesio."
+  whatsapp: "🥜 Para la merienda de hoy: un puñado de maní, almendras o semillas de ahuyama. Son una buena fuente de magnesio."
   fuentes: ["NIH ODS, ficha de magnesio para profesionales", "ICBF 2018, Tabla de Composición de Alimentos Colombianos"]
 
 - id: REC-ALI-207
   tipo: alimentacion
   titulo: "Alimentos con zinc"
-  texto_base: "Incluye carnes, pollo, pescado, mariscos, huevo, leguminosas, semillas de ahuyama y frutos secos. Remojar los fríjoles y las lentejas antes de cocinarlos ayuda a absorber mejor el zinc."
+  texto_base: "Incluya carnes, pollo, pescado, mariscos, huevo, leguminosas, semillas de ahuyama y frutos secos. Remojar los fríjoles y las lentejas antes de cocinarlos ayuda a absorber mejor el zinc."
   meta_concreta: "Esta semana, una fuente de zinc (carne, pollo, huevo o leguminosas remojadas) en el almuerzo todos los días."
   por_que: "El zinc ayuda a las defensas y a la cicatrización; se obtiene sobre todo de las proteínas de la dieta."
   se_activa_con: ["zinc:bajo", "SEG-014"]
   prioriza_objetivos: ["salud_general", "atletico", "envejecer_saludable"]
-  contraindicada_si: []
+  contraindicada_si: ["alergia:huevo"]
   requiere_consulta_previa: false
-  whatsapp: "Idea para hoy: deja los fríjoles en remojo desde la noche anterior. Además de cocinarse más rápido, tu cuerpo aprovecha mejor sus minerales."
+  whatsapp: "🫘 Idea para hoy: deje los fríjoles en remojo desde la noche anterior. Además de cocinarse más rápido, su cuerpo aprovecha mejor sus minerales."
   fuentes: ["NIH ODS, ficha de zinc para profesionales", "ICBF 2020, Guías Alimentarias Basadas en Alimentos para la población colombiana"]
 
 - id: REC-ALI-208
   tipo: alimentacion
   titulo: "Menos azúcar y ultraprocesados para cuidar el hígado"
-  texto_base: "Reduce gaseosas, jugos de caja, postres, paquetes y embutidos. Cámbialos por agua, fruta entera, frutos secos y comida hecha en casa."
+  texto_base: "Reduzca gaseosas, jugos de caja, postres, paquetes y embutidos. Cámbielos por agua, fruta entera, frutos secos y comida hecha en casa."
   meta_concreta: "Durante 4 semanas, cero gaseosas y jugos de caja, y máximo 2 paquetes o postres a la semana."
   por_que: "El exceso de azúcar, sobre todo en bebidas, se guarda como grasa en el hígado."
   se_activa_con: ["COND-M4-GA-001", "COND-M4-GA-002", "REL-006"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Hoy cambia la gaseosa o el jugo de caja por agua o fruta entera. Es un paso pequeño que tu hígado agradece."
+  whatsapp: "💧 Hoy cambie la gaseosa o el jugo de caja por agua o fruta entera. Es un paso pequeño que su hígado agradece."
   fuentes: ["EASL-EASD-EASO 2024, guía de práctica clínica del hígado graso metabólico (MASLD)", "AASLD 2023, guía de práctica de hígado graso"]
 
 - id: REC-ALI-209
   tipo: alimentacion
   titulo: "Un plato al estilo mediterráneo"
-  texto_base: "Arma tu plato con media porción de verduras, un cuarto de proteína (pescado, pollo, huevo o leguminosas) y un cuarto de cereal integral o tubérculo. Usa aceite de oliva o de canola en vez de manteca."
+  texto_base: "Arme su plato con media porción de verduras, un cuarto de proteína (pescado, pollo, huevo o leguminosas) y un cuarto de cereal integral o tubérculo. Use aceite de oliva o de canola en vez de manteca."
   meta_concreta: "Esta semana, almuerzo con medio plato de verduras al menos 5 días y pescado 2 veces."
   por_que: "Este tipo de alimentación ayuda a bajar la grasa del hígado, incluso antes de perder mucho peso."
   se_activa_con: ["COND-M4-GA-001", "COND-M4-GA-002", "REL-006"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "envejecer_saludable"]
-  contraindicada_si: []
+  contraindicada_si: ["alergia:pescado"]
   requiere_consulta_previa: false
-  whatsapp: "Para tu almuerzo de hoy: medio plato de verduras, un cuarto de proteína y un cuarto de arroz, papa o yuca. Fácil y equilibrado."
+  whatsapp: "🥗 Para su almuerzo de hoy: medio plato de verduras, un cuarto de proteína y un cuarto de arroz, papa o yuca. Fácil y equilibrado."
   fuentes: ["EASL-EASD-EASO 2024, guía de práctica clínica del hígado graso metabólico (MASLD)", "ICBF 2020, Guías Alimentarias Basadas en Alimentos para la población colombiana"]
 
 - id: REC-ALI-210
   tipo: alimentacion
-  titulo: "Modera vísceras, carnes rojas y mariscos"
-  texto_base: "Come vísceras (hígado, riñón, menudencias) muy de vez en cuando y prefiere porciones moderadas de carne roja y mariscos. Elige más seguido pollo, huevo, lácteos bajos en grasa y leguminosas."
+  titulo: "Modere vísceras, carnes rojas y mariscos"
+  texto_base: "Coma vísceras (hígado, riñón, menudencias) muy de vez en cuando y prefiera porciones moderadas de carne roja y mariscos. Elija más seguido pollo, huevo, lácteos bajos en grasa y leguminosas."
   meta_concreta: "Durante un mes, vísceras máximo una vez y carne roja máximo 3 veces por semana."
   por_que: "Las vísceras, la carne roja y los mariscos tienen purinas, que el cuerpo convierte en ácido úrico."
   se_activa_con: ["COND-M6-RE-001", "uric_acid:alto"]
   prioriza_objetivos: ["prevenir", "salud_general", "bajar_peso"]
-  contraindicada_si: ["COND-M6-MI-001"]
+  contraindicada_si: ["COND-M6-MI-001", "alergia:huevo"]
   requiere_consulta_previa: false
-  whatsapp: "Esta semana elige pollo, huevo o fríjoles en lugar de vísceras. Es un cambio sencillo que ayuda a tu cuerpo a mantenerse en equilibrio."
+  whatsapp: "🍗 Esta semana elija pollo, huevo o fríjoles en lugar de vísceras. Es un cambio sencillo que ayuda a su cuerpo a mantenerse en equilibrio."
   fuentes: ["ACR 2020, guía para el manejo de la gota"]
 
 - id: REC-ALI-211
   tipo: alimentacion
   titulo: "Menos bebidas azucaradas por el ácido úrico"
-  texto_base: "Cambia gaseosas, jugos de caja y bebidas endulzadas por agua o aromáticas sin azúcar. La fruta, mejor entera que en jugo."
+  texto_base: "Cambie gaseosas, jugos de caja y bebidas endulzadas por agua o aromáticas sin azúcar. La fruta, mejor entera que en jugo."
   meta_concreta: "Esta semana, ninguna bebida azucarada y máximo un vaso de jugo de fruta al día."
   por_que: "La fructosa de las bebidas azucaradas sube el ácido úrico."
   se_activa_con: ["COND-M6-RE-001", "uric_acid:alto"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Hoy cambia la gaseosa por agua o una aromática sin azúcar. Y si quieres fruta, mejor entera que en jugo."
+  whatsapp: "🍵 Hoy cambie la gaseosa por agua o una aromática sin azúcar. Y si quiere fruta, mejor entera que en jugo."
   fuentes: ["ACR 2020, guía para el manejo de la gota"]
 
 - id: REC-ALI-212
   tipo: alimentacion
   titulo: "Proteína en cada comida"
-  texto_base: "Incluye una fuente de proteína en desayuno, almuerzo y comida: huevo, leche, yogur, queso, pollo, pescado, carne o leguminosas. Si comes poco, haz comidas más pequeñas y frecuentes."
+  texto_base: "Incluya una fuente de proteína en desayuno, almuerzo y comida: huevo, leche, yogur, queso, pollo, pescado, carne o leguminosas. Si come poco, haga comidas más pequeñas y frecuentes."
   meta_concreta: "Esta semana, proteína en las 3 comidas principales y una merienda con lácteo o huevo todos los días."
   por_que: "La proteína mantiene los músculos y las defensas; repartirla en el día ayuda cuando el apetito es poco."
   se_activa_con: ["COND-M6-MI-001"]
   prioriza_objetivos: ["envejecer_saludable", "masa_muscular", "energia_sueno"]
-  contraindicada_si: ["COND-M2-NE-001"]
+  contraindicada_si: ["COND-M2-NE-001", "alergia:huevo", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "Para hoy: un huevo en el desayuno, pollo o fríjoles en el almuerzo y un yogur en la tarde. Comer proteína en cada comida te ayuda a mantener tu fuerza."
+  whatsapp: "🍳 Para hoy: un huevo en el desayuno, pollo o fríjoles en el almuerzo y un yogur en la tarde. Comer proteína en cada comida le ayuda a mantener su fuerza."
   fuentes: ["GLIM 2019, criterios de desnutrición", "ESPEN 2019, nutrición clínica e hidratación en geriatría"]
 
 - id: REC-ALI-213
   tipo: alimentacion
   titulo: "Meriendas que suman energía"
-  texto_base: "Agrega entre comidas meriendas nutritivas: aguacate, frutos secos, yogur, queso con fruta o arepa con huevo. Evita pasar muchas horas sin comer."
+  texto_base: "Agregue entre comidas meriendas nutritivas: aguacate, frutos secos, yogur, queso con fruta o arepa con huevo. Evite pasar muchas horas sin comer."
   meta_concreta: "Esta semana, 2 meriendas al día (media mañana y media tarde) al menos 5 días."
   por_que: "Cuando el cuerpo recibe menos energía de la que gasta, toma músculo para compensar."
   se_activa_con: ["COND-M6-MI-001"]
   prioriza_objetivos: ["envejecer_saludable", "masa_muscular", "salud_general"]
-  contraindicada_si: []
+  contraindicada_si: ["alergia:frutos_secos", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "Hoy no dejes pasar muchas horas sin comer: a media tarde un yogur con fruta o un puñado de frutos secos."
+  whatsapp: "🥑 Hoy no deje pasar muchas horas sin comer: a media tarde, un yogur con fruta o un puñado de frutos secos."
   fuentes: ["GLIM 2019, criterios de desnutrición", "ESPEN 2019, nutrición clínica e hidratación en geriatría"]
 
 - id: REC-ALI-214
   tipo: alimentacion
-  titulo: "Sigue comiendo como siempre hasta la consulta"
-  texto_base: "No quites el gluten (pan, pasta, galletas, avena común) antes de tu consulta. Si lo sacas antes, las pruebas que confirman el resultado pueden salir falsamente normales."
-  meta_concreta: "Mantén tu alimentación habitual, con pan o pasta varias veces a la semana, hasta que tu médico te indique otra cosa."
+  titulo: "Siga comiendo como siempre hasta la consulta"
+  texto_base: "No quite el gluten (pan, pasta, galletas, avena común) antes de su consulta. Si lo saca antes, las pruebas que confirman el resultado pueden salir falsamente normales."
+  meta_concreta: "Mantenga su alimentación habitual, con pan o pasta varias veces a la semana, hasta que su médico le indique otra cosa."
   por_que: "Las pruebas de confirmación solo funcionan si el cuerpo sigue en contacto con el gluten."
   se_activa_con: ["COND-M4-GA-006"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
-  contraindicada_si: []
+  contraindicada_si: ["alergia:gluten"]
   requiere_consulta_previa: false
-  whatsapp: "Un recordatorio: mientras llega tu consulta médica, sigue comiendo como siempre, sin cambiar tu dieta por tu cuenta."
+  whatsapp: "🍞 Un recordatorio: mientras llega su consulta médica, siga comiendo como siempre, sin cambiar su dieta por su cuenta."
   fuentes: ["ACG 2023, guía de enfermedad celíaca"]
 
 - id: REC-ALI-215
   tipo: alimentacion
   titulo: "Sin alimentos fortificados extra ni vísceras frecuentes"
-  texto_base: "Mientras tu médico revisa tus reservas de hierro, evita el hígado de res y otras vísceras frecuentes y no busques productos con hierro añadido."
-  meta_concreta: "Hasta la consulta, cero vísceras y revisa la etiqueta de cereales y bebidas para no elegir los que tienen hierro añadido."
+  texto_base: "Mientras su médico revisa sus reservas de hierro, evite el hígado de res y otras vísceras frecuentes y no busque productos con hierro añadido."
+  meta_concreta: "Hasta la consulta, cero vísceras, y revise la etiqueta de cereales y bebidas para no elegir los que tienen hierro añadido."
   por_que: "Si el cuerpo ya guarda mucho hierro, sumar más de la dieta no ayuda."
   se_activa_con: ["COND-M3-HE-006"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Al hacer mercado esta semana, revisa las etiquetas de cereales y bebidas y prefiere los que no tienen hierro añadido."
+  whatsapp: "🛒 Al hacer mercado esta semana, revise las etiquetas de cereales y bebidas y prefiera los que no tienen hierro añadido."
   fuentes: ["EASL 2022, guía de hemocromatosis"]
+
+- id: REC-ALI-216
+  tipo: alimentacion
+  titulo: "Verduras de hoja verde en cantidad constante"
+  texto_base: "Si toma warfarina, no deje de comer verduras de hoja verde como espinaca, acelga, brócoli o lechuga, pero tampoco cambie de golpe la cantidad. Su vitamina K cambia el efecto del medicamento; lo importante es que sea parecida cada semana."
+  meta_concreta: "Esta semana, coma verduras de hoja verde en porciones parecidas cada día y avísele a su médico si piensa cambiar su alimentación."
+  por_que: "La vitamina K de las verduras de hoja verde contrarresta la warfarina; los cambios bruscos pueden subir o bajar su efecto."
+  se_activa_con: ["medicamento:warfarina"]
+  prioriza_objetivos: []
+  contraindicada_si: []
+  requiere_consulta_previa: false
+  whatsapp: "🥬 Un recordatorio: con la warfarina, lo mejor es comer verduras de hoja verde en cantidades parecidas cada día, sin cambios bruscos."
+  fuentes: ["NIH Office of Dietary Supplements, Vitamin K: Fact Sheet for Health Professionals", "por verificar"]

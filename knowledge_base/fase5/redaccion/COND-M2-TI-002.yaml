@@ -1,14 +1,14 @@
 id: COND-M2-TI-002
 tipo: condicion
-titulo_paciente: "TSH alta con hormona tiroidea baja"
-que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar; la tiroides es una glándula del cuello que regula el gasto de energía."
+titulo_paciente: "Su TSH está alta y su hormona tiroidea, baja"
+que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar. La tiroides es una glándula del cuello que regula el gasto de energía."
 por_que_te_aparece:
-  - "Tu TSH salió en {tsh}, por encima del rango del laboratorio."
-  - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}, por debajo del rango."
-riesgo_claro: "Si la tiroides trabaja menos de lo necesario y no se atiende, con el tiempo puede causar cansancio, frío, aumento de peso y colesterol alto."
+  - "Su TSH salió en {tsh}, por encima del rango del laboratorio."
+  - "Su T4 libre, la hormona que produce la tiroides, salió en {free_t4}, por debajo del rango."
+riesgo_claro: "Si la tiroides trabaja menos de lo necesario y no se atiende, con el tiempo puede causar cansancio, frío, aumento de peso y colesterol alto. Con manejo médico, esto suele controlarse bien."
 ejemplo_simple: "Es como un termostato que pide más calefacción y una caldera que responde poco."
-incertidumbre: "Una enfermedad reciente o algunos medicamentos pueden alterar estos valores. Tu médico confirma el resultado y decide el manejo."
+incertidumbre: "Una enfermedad reciente o algunos medicamentos pueden alterar estos valores. Su médico confirma el resultado y decide el manejo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Consenso colombiano de hipotiroidismo 2023"]
-estado_revision: pendiente
+estado_revision: aprobada

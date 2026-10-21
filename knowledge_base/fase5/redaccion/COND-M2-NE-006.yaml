@@ -1,13 +1,13 @@
 id: COND-M2-NE-006
 tipo: condicion
-titulo_paciente: "Glóbulos rojos en la orina"
-que_es: "Los glóbulos rojos son células de la sangre; en la orina normalmente hay muy pocos, y estos solo se ven con microscopio."
+titulo_paciente: "Aparecieron glóbulos rojos en su orina"
+que_es: "Los glóbulos rojos son células de la sangre. En la orina normalmente hay muy pocos, y estos solo se ven con microscopio."
 por_que_te_aparece:
-  - "En tu examen de orina, el microscopio encontró más de 3 glóbulos rojos por campo, el límite que usan las guías."
-riesgo_claro: "La mayoría de las causas no son serias, pero si no se revisa, una causa que sí necesite atención podría pasar desapercibida por años."
+  - "En su examen de orina, el microscopio encontró más de 3 glóbulos rojos por campo, el límite que usan las guías."
+riesgo_claro: "La mayoría de las causas no son serias. Pero si no se revisa, una causa que sí necesite atención podría pasar desapercibida por años."
 ejemplo_simple: "Es como encontrar una gota de agua en el piso: puede ser de un vaso, de la lluvia o de un tubo, y vale la pena mirar de dónde viene."
-incertidumbre: "El ejercicio fuerte, una infección urinaria o la actividad sexual reciente pueden causarlo. Hay que repetir el examen, y tu médico decide si hace falta estudiar más."
+incertidumbre: "El ejercicio fuerte, una infección urinaria o la actividad sexual reciente pueden causarlo. Hay que repetir el examen, y su médico decide si hace falta estudiar más."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["AUA/SUFU 2020, enmendada 2025", "KDIGO 2024"]
-estado_revision: pendiente
+estado_revision: aprobada

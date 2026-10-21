@@ -3,12 +3,12 @@ tipo: seguridad
 titulo_paciente: "Un resultado de orina o de heces para revisar"
 que_es: "El parcial de orina y el examen de heces revisan si aparecen sustancias que normalmente no deberían estar, como proteína, azúcar o sangre."
 por_que_te_aparece:
-  - "Tu parcial de orina mostró: {urinalysis}."
-  - "Tu examen de heces mostró: {stool_exam}."
-riesgo_claro: "Según lo que aparezca, puede relacionarse con el riñón, el azúcar, el hígado o el intestino; por eso se lee junto con tus exámenes de sangre."
+  - "Su parcial de orina mostró: {urinalysis}."
+  - "Su examen de heces mostró: {stool_exam}."
+riesgo_claro: "Según lo que aparezca, puede relacionarse con el riñón, el azúcar, el hígado o el intestino. Por eso se lee junto con sus exámenes de sangre."
 ejemplo_simple: "Es como revisar el agua que sale de un filtro: lo que aparece en ella cuenta cómo está trabajando."
-incertidumbre: "El ayuno, el ejercicio, algunos medicamentos o la forma de recoger la muestra cambian estos resultados; tu médico decide si hay que repetirlos."
-cuando_consultar: "Coméntalo con tu médico; si ves sangre en las heces, pide una consulta médica pronto."
+incertidumbre: "El ayuno, el ejercicio, algunos medicamentos o la forma de recoger la muestra cambian estos resultados. Su médico decide si hay que repetirlos."
+cuando_consultar: "Coménteselo a su médico. Si ve sangre en las heces, pida una consulta médica pronto."
 aviso_whatsapp: null
 fuentes: ["Fichas del uroanálisis y del coprológico (por escribir en la Fase 1)"]
-estado_revision: pendiente
+estado_revision: aprobada

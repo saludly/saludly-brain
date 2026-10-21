@@ -1,14 +1,14 @@
 id: COND-M1-EM-A04
 tipo: condicion
-titulo_paciente: "Cálculos que sugieren que la insulina trabaja con más esfuerzo"
-que_es: "El índice TyG y la relación triglicéridos/HDL son cálculos con tus grasas y tu glucosa que estiman qué tan bien usa tu cuerpo la insulina."
+titulo_paciente: "Unos cálculos sugieren que su insulina trabaja con más esfuerzo"
+que_es: "El índice TyG y la relación triglicéridos/HDL son cálculos con sus grasas y su glucosa que estiman qué tan bien usa su cuerpo la insulina."
 por_que_te_aparece:
-  - "Tu índice TyG, calculado con tus triglicéridos y tu glucosa, salió en {tyg_index}; la referencia es 8,8."
-  - "Tu relación triglicéridos/HDL salió en {tg_hdl_ratio}; la referencia es 3,0."
+  - "Su índice TyG, calculado con sus triglicéridos y su glucosa, salió en {tyg_index}. La referencia es 8,8."
+  - "Su relación triglicéridos/HDL salió en {tg_hdl_ratio}. La referencia es 3,0."
 riesgo_claro: "Si esto se mantiene por años, aumenta la probabilidad de que la glucosa suba y de problemas del corazón."
 ejemplo_simple: "Es como un motor que gasta más gasolina de lo normal para recorrer la misma distancia."
-incertidumbre: "Son cálculos indirectos con cortes que todavía no están validados en Colombia. El ayuno corto o el alcohol reciente los cambian; tu médico los interpreta."
+incertidumbre: "Son cálculos indirectos, con cortes que todavía no están validados en Colombia. El ayuno corto o el alcohol reciente los cambian; su médico los interpreta."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Simental-Mendía 2008; Guerrero-Romero 2010 (TyG)", "McLaughlin 2003 (TG/HDL)"]
-estado_revision: pendiente
+estado_revision: aprobada

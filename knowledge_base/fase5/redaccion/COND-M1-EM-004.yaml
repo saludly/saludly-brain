@@ -1,14 +1,14 @@
 id: COND-M1-EM-004
 tipo: condicion
-titulo_paciente: "Índice de masa corporal por encima del rango saludable"
-que_es: "El índice de masa corporal (IMC) relaciona tu peso con tu estatura para estimar si hay exceso de grasa en el cuerpo."
+titulo_paciente: "Su índice de masa corporal está por encima del rango saludable"
+que_es: "El índice de masa corporal (IMC) relaciona su peso con su estatura para estimar si hay exceso de grasa en el cuerpo."
 por_que_te_aparece:
-  - "Con el peso y la talla que midió la enfermera, tu IMC salió en {imc}; la OMS usa 25 para sobrepeso y 30 para obesidad."
-  - "Tu cintura midió {cintura_cm}; mide si la grasa se acumula en el abdomen (para población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
-riesgo_claro: "Con los años, el exceso de grasa, sobre todo en el abdomen, aumenta la probabilidad de diabetes, presión alta, problemas del corazón y dolor de articulaciones."
+  - "Con el peso y la talla que midió la enfermera, su IMC salió en {imc}. La OMS usa 25 para sobrepeso y 30 para obesidad."
+  - "Su cintura midió {cintura_cm}. Esta medida muestra si la grasa se acumula en el abdomen (en población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
+riesgo_claro: "Con los años, el exceso de grasa, sobre todo en el abdomen, aumenta la probabilidad de diabetes, presión alta, problemas del corazón y dolor de articulaciones. La buena noticia: bajar aunque sea un poco de peso ya trae beneficios."
 ejemplo_simple: "Es como cargar una maleta extra todo el día: al principio no se nota, pero con el tiempo cansa la espalda y las rodillas."
-incertidumbre: "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y tu médico ayudan a interpretarlo."
+incertidumbre: "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y su médico ayudan a interpretarlo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["OMS, obesidad y sobrepeso"]
-estado_revision: pendiente
+estado_revision: aprobada

@@ -1,13 +1,13 @@
 id: COND-M3-NU-002
 tipo: condicion
-titulo_paciente: "Folato bajo"
+titulo_paciente: "Su folato está bajo"
 que_es: "El folato es una vitamina del grupo B que el cuerpo usa para fabricar glóbulos rojos y que es clave al inicio de un embarazo."
 por_que_te_aparece:
-  - "Tu folato salió en {folate}, por debajo de lo recomendado."
-riesgo_claro: "Si se mantiene bajo, con el tiempo puede aparecer anemia; en una mujer que queda embarazada, puede afectar el desarrollo temprano del bebé."
+  - "Su folato salió en {folate}, por debajo de lo recomendado."
+riesgo_claro: "Si se mantiene bajo, con el tiempo puede aparecer anemia. En una mujer que queda embarazada, puede afectar el desarrollo temprano del bebé."
 ejemplo_simple: "Es como la harina en una panadería: si falta, se hornea menos pan."
-incertidumbre: "Un solo examen no basta: la comida reciente, el alcohol y algunos medicamentos cambian el valor. Conviene mejorarlo con la alimentación y comentarlo con tu médico, sobre todo si buscas un embarazo."
+incertidumbre: "Un solo examen no basta: la comida reciente, el alcohol y algunos medicamentos cambian el valor. Conviene mejorarlo con la alimentación y comentarlo con su médico, sobre todo si busca un embarazo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["OMS, folato"]
-estado_revision: pendiente
+estado_revision: aprobada

@@ -1,14 +1,14 @@
 id: COND-M1-CA-001
 tipo: condicion
-titulo_paciente: "Colesterol LDL por encima del valor de tamizaje"
-que_es: "El colesterol LDL es la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias."
+titulo_paciente: "Su colesterol está por encima del valor de tamizaje"
+que_es: "El colesterol LDL y el no-HDL miden la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias."
 por_que_te_aparece:
-  - "Tu colesterol LDL salió en {ldl_c}; el valor que usamos para tamizaje es 130 mg/dL."
-  - "Tu colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en {non_hdl_c}; el valor de tamizaje es 160 mg/dL."
-riesgo_claro: "Si se mantiene alto durante años, las arterias se van estrechando y aumenta la probabilidad de problemas del corazón y del cerebro."
-ejemplo_simple: "Es como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco."
-incertidumbre: "Un solo perfil de lípidos no basta, y el ayuno corto lo altera. Lo que significa para ti depende de tu riesgo cardiovascular global, que revisa tu médico."
+  - "Su colesterol LDL salió en {ldl_c}. El valor que usamos para tamizaje es 130 mg/dL."
+  - "Su colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en {non_hdl_c}. El valor de tamizaje es 160 mg/dL."
+riesgo_claro: "Si se mantiene alto durante años, las arterias se van estrechando y aumenta la probabilidad de problemas del corazón y del cerebro. La buena noticia: la alimentación y el movimiento ayudan a bajarlo."
+ejemplo_simple: "Piénselo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco."
+incertidumbre: "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para usted depende de su riesgo cardiovascular global, que revisa su médico."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["GPC Colombia dislipidemias 2014", "ACC/AHA 2026, manejo de dislipidemia"]
-estado_revision: pendiente
+estado_revision: aprobada

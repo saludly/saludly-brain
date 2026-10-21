@@ -1,106 +1,107 @@
 # Recomendaciones de hábitos · lote A (M1, M2, M5, sus patrones, generales y por objetivo)
 # Numeración 100 a 199. Pendiente de revisión de Carlos.
+# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
 
 - id: REC-HAB-101
   tipo: habitos
-  titulo: "Pon fecha para dejar de fumar"
-  texto_base: "Si fumas o vapeas, elige una fecha en las próximas semanas para dejarlo y pide apoyo en tu EPS o con tu médico: con acompañamiento es más fácil lograrlo."
-  meta_concreta: "Esta semana, escoge tu fecha para dejar de fumar y cuéntasela a una persona cercana."
+  titulo: "Ponga fecha para dejar de fumar"
+  texto_base: "Si fuma o vapea, elija una fecha en las próximas semanas para dejarlo y pida apoyo en su EPS o con su médico: con acompañamiento es más fácil lograrlo."
+  meta_concreta: "Esta semana, escoja su fecha para dejar de fumar y cuéntesela a una persona cercana."
   por_que: "El cigarrillo daña las arterias, sube la presión y empeora el colesterol; dejarlo es de lo que más protege el corazón."
   se_activa_con: ["general", "COND-M1-CA-001", "COND-M1-CA-002", "COND-M1-CA-004", "COND-M1-CA-005", "COND-M1-CA-006", "COND-M1-EM-002", "COND-M2-NE-001", "COND-M2-NE-003", "REL-003", "REL-010", "COND-M2-NE-006"]
   prioriza_objetivos: ["prevenir", "salud_general", "envejecer_saludable", "rendimiento"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Si fumas, hoy es buen día para escoger la fecha en que lo vas a dejar. Cuéntaselo a alguien y pide apoyo en tu EPS."
+  whatsapp: "🚭 Si fuma, hoy es buen día para escoger la fecha en que lo va a dejar. Cuénteselo a alguien y pida apoyo en su EPS."
   fuentes: ["OMS, Informe sobre la epidemia mundial de tabaquismo 2023", "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease", "USPSTF, Tobacco Smoking Cessation in Adults 2021"]
 
 - id: REC-HAB-102
   tipo: habitos
   titulo: "Menos alcohol"
-  texto_base: "Reduce el alcohol: mientras menos, mejor. Ten días de la semana sin nada de alcohol y, cuando tomes, alterna cada trago con un vaso de agua."
+  texto_base: "Reduzca el alcohol: mientras menos, mejor. Tenga días de la semana sin nada de alcohol y, cuando tome, alterne cada trago con un vaso de agua."
   meta_concreta: "Esta semana, al menos 5 días sin alcohol."
   por_que: "El alcohol sube los triglicéridos y la presión, aporta calorías vacías y afecta el sueño."
   se_activa_con: ["general", "COND-M1-CA-003", "COND-M1-CA-006", "COND-M1-EM-003", "COND-M1-EM-004", "COND-M5-UR-002", "REL-001", "COND-M1-EM-005"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "energia_sueno", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Reto de la semana: 5 días sin alcohol. Si sales, alterna cada trago con un vaso de agua."
+  whatsapp: "🥤 Reto de la semana: 5 días sin alcohol. Si sale, alterne cada trago con un vaso de agua."
   fuentes: ["OMS, declaración sobre el consumo de alcohol 2023", "GPC Colombia HTA 2025 (Minsalud e IETS)"]
 
 - id: REC-HAB-103
   tipo: habitos
   titulo: "Cinco minutos para respirar"
-  texto_base: "Dedica 5 minutos al día a respirar despacio: inhala por la nariz contando hasta 4 y bota el aire contando hasta 6. Puedes hacerlo al despertar o antes de dormir."
+  texto_base: "Dedique 5 minutos al día a respirar despacio: inhale por la nariz contando hasta 4 y bote el aire contando hasta 6. Puede hacerlo al despertar o antes de dormir."
   meta_concreta: "Cinco minutos de respiración lenta al día, 5 días esta semana."
   por_que: "El estrés sostenido sube la presión, afecta el sueño y empuja a comer de más; respirar despacio ayuda a calmar el cuerpo."
   se_activa_con: ["general", "COND-M1-CA-006", "objetivo:energia_sueno"]
   prioriza_objetivos: ["energia_sueno", "salud_general", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Antes de dormir hoy: 5 minutos respirando despacio, inhala contando hasta 4 y bota el aire contando hasta 6."
+  whatsapp: "🌬️ Antes de dormir hoy: 5 minutos respirando despacio. Inhale contando hasta 4 y bote el aire contando hasta 6."
   fuentes: ["AHA Scientific Statement: Psychological Health, Well-Being, and the Mind-Heart-Body Connection 2021", "GPC Colombia HTA 2025 (Minsalud e IETS)"]
 
 - id: REC-HAB-104
   tipo: habitos
   titulo: "Cuidado con los antiinflamatorios"
-  texto_base: "Evita usar antiinflamatorios como ibuprofeno, naproxeno o diclofenaco por tu cuenta. Si tienes dolor, pregúntale a tu médico qué puedes usar."
-  meta_concreta: "Revisa hoy tu botiquín y separa los antiinflamatorios para preguntar por ellos en tu próxima cita."
+  texto_base: "Evite usar antiinflamatorios como ibuprofeno, naproxeno o diclofenaco por su cuenta. Si tiene dolor, pregúntele a su médico qué puede usar."
+  meta_concreta: "Revise hoy su botiquín y separe los antiinflamatorios para preguntar por ellos en su próxima cita."
   por_que: "Estos medicamentos pueden afectar los riñones y subir la presión, sobre todo si se usan seguido."
   se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "COND-M1-CA-006", "COND-M1-CA-007", "REL-010"]
   prioriza_objetivos: ["condicion_existente", "prevenir", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Revisa hoy tu botiquín: si tienes antiinflamatorios para el dolor, pregúntale a tu médico antes de volver a usarlos."
+  whatsapp: "💊 Revise hoy su botiquín: si tiene antiinflamatorios para el dolor, pregúntele a su médico antes de volver a usarlos."
   fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD", "GPC Colombia HTA 2025 (Minsalud e IETS)"]
 
 - id: REC-HAB-105
   tipo: habitos
-  titulo: "No cambies tus medicamentos por tu cuenta"
-  texto_base: "Sigue tomando tus medicamentos como te los formularon y no los cambies ni los dejes sin hablar antes con tu médico, aunque este resultado te preocupe."
-  meta_concreta: "Lleva a tu próxima cita la lista de los medicamentos que usas, con el nombre y la frecuencia."
-  por_que: "Algunos medicamentos cambian estos resultados, pero el ajuste lo debe hacer tu médico para que sea seguro."
+  titulo: "No cambie sus medicamentos por su cuenta"
+  texto_base: "Siga tomando sus medicamentos como se los formularon y no los cambie ni los deje sin hablar antes con su médico, aunque este resultado le preocupe."
+  meta_concreta: "Lleve a su próxima cita la lista de los medicamentos que usa, con el nombre y la frecuencia."
+  por_que: "Algunos medicamentos cambian estos resultados, pero el ajuste lo debe hacer su médico para que sea seguro."
   se_activa_con: ["COND-M2-TI-008", "COND-M2-NE-004", "COND-M2-NE-005", "COND-M5-MU-003", "REL-027", "objetivo:condicion_existente"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Sigue con tus medicamentos como te los formularon. Si tienes dudas, anótalas y llévalas a tu próxima cita."
+  whatsapp: "💊 Siga con sus medicamentos como se los formularon. Si tiene dudas, anótelas y llévelas a su próxima cita."
   fuentes: ["Endocrine Society, Management of Primary Aldosteronism 2016", "Guía europea de hiponatremia 2014 (Spasovski et al.)"]
 
 - id: REC-HAB-106
   tipo: habitos
-  titulo: "Lleva un registro de lo que comes"
-  texto_base: "Durante una semana anota todo lo que comes y bebes, con la hora. No es para juzgarte: es para descubrir tus patrones."
-  meta_concreta: "Registra lo que comes y bebes durante 5 días esta semana."
-  por_que: "Anotar lo que comes ayuda a notar picadas, bebidas y porciones que no se ven a simple vista."
+  titulo: "Lleve un registro de lo que come"
+  texto_base: "Durante una semana anote todo lo que come y bebe, con la hora. No es para juzgarse: es para descubrir sus patrones."
+  meta_concreta: "Registre lo que come y bebe durante 5 días esta semana."
+  por_que: "Anotar lo que come ayuda a notar picadas, bebidas y porciones que no se ven a simple vista."
   se_activa_con: ["objetivo:bajar_peso", "COND-M1-EM-004"]
   prioriza_objetivos: ["bajar_peso", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Desde hoy y por 5 días, anota en el celular todo lo que comes y bebes. Sin juzgarte: solo para conocer tus patrones."
+  whatsapp: "📝 Desde hoy y por 5 días, anote en el celular todo lo que come y bebe. Sin juzgarse: solo para conocer sus patrones."
   fuentes: ["2013 AHA/ACC/TOS Guideline for the Management of Overweight and Obesity in Adults"]
 
 - id: REC-HAB-107
   tipo: habitos
-  titulo: "Sigue tu tratamiento al pie de la letra"
-  texto_base: "Si ya tienes un tratamiento, tómalo como te lo indicaron y usa una alarma o un pastillero para no olvidar ninguna toma."
+  titulo: "Siga su tratamiento al pie de la letra"
+  texto_base: "Si ya tiene un tratamiento, tómelo como se lo indicaron y use una alarma o un pastillero para no olvidar ninguna toma."
   meta_concreta: "Esta semana, cero tomas olvidadas usando una alarma en el celular."
-  por_que: "Este informe complementa tu tratamiento, no lo reemplaza; cumplirlo es lo que más ayuda."
+  por_que: "Este informe complementa su tratamiento, no lo reemplaza; cumplirlo es lo que más ayuda."
   se_activa_con: ["objetivo:condicion_existente"]
   prioriza_objetivos: ["condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Pon hoy una alarma en el celular para la hora de tus medicamentos. Así no se te olvida ninguna toma."
+  whatsapp: "⏰ Ponga hoy una alarma en el celular para la hora de sus medicamentos. Así no se le olvida ninguna toma."
   fuentes: ["OMS, Adherence to Long-Term Therapies 2003"]
 
 - id: REC-HAB-108
   tipo: habitos
-  titulo: "Prepara tus comidas de la semana"
-  texto_base: "Dedica un rato del fin de semana a planear el menú y dejar listas verduras picadas, granos cocidos y proteínas para varios días."
-  meta_concreta: "Este fin de semana, planea 5 almuerzos y deja listos al menos dos ingredientes."
+  titulo: "Prepare sus comidas de la semana"
+  texto_base: "Dedique un rato del fin de semana a planear el menú y dejar listas verduras picadas, granos cocidos y proteínas para varios días."
+  meta_concreta: "Este fin de semana, planee 5 almuerzos y deje listos al menos dos ingredientes."
   por_que: "Tener comida lista evita improvisar con comida rápida cuando hay hambre o afán."
   se_activa_con: ["objetivo:bajar_peso", "objetivo:masa_muscular", "general"]
   prioriza_objetivos: ["bajar_peso", "masa_muscular", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Este fin de semana planea tus almuerzos y deja verduras picadas y fríjoles cocidos listos. Tu yo de la semana te lo agradece."
+  whatsapp: "🥗 Este fin de semana planee sus almuerzos y deje verduras picadas y fríjoles cocidos listos. Durante la semana lo va a agradecer."
   fuentes: ["Guías alimentarias para la población colombiana, ICBF 2020", "Ducrot et al., IJBNPA 2017 (planificación de comidas)"]

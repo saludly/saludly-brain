@@ -1,5 +1,7 @@
 # Fase 5: decisiones clínicas para que Carlos revise
 
+> **Aprobado por Carlos (médico revisor) el 11 de octubre de 2026:** todo el contenido de `knowledge_base/fase5` quedó con `estado_revision: aprobada`. Ese mismo día se corrigieron 5 errores de texto que encontró la prueba técnica (ver el final de este documento).
+
 **10 de octubre de 2026.** Al escribir los textos para el paciente, las recomendaciones y las recetas se tomaron estas decisiones, que no estaban escritas en las fichas. Todas quedaron marcadas `estado_revision: pendiente` y se pueden cambiar en `knowledge_base/fase5/` sin tocar código.
 
 ## Textos para el paciente (`knowledge_base/fase5/redaccion/`)
@@ -30,3 +32,13 @@
 18. **Metas diarias:** Mifflin-St Jeor × actividad (ligera por defecto), −15 % para bajar de peso, +10 % para objetivos deportivos; proteína de 1,0 g/kg (general), 1,2 (bajar de peso, envejecer, mayores de 65), 1,4 (rendimiento y maratón) o 1,6 (masa muscular y atlético), con tope de 0,8 g/kg si la TFG es menor de 60. Grasa al 28 %, grasa saturada por debajo del 10 %, sodio por debajo de 2.000 mg y azúcar añadido por debajo del 10 % de las calorías (OMS).
 19. **Restricciones por hallazgo:** glucosa alta → sin azúcar añadida; presión o riñón → bajas en sodio (≤ 600 mg por comida); potasio alto o TFG < 30 → sin recetas altas en potasio; lípidos o hígado → poca grasa saturada; hierro bajo → se prefieren fuentes de hierro; sobrecarga de hierro o ácido úrico alto → sin vísceras ni sardinas.
 20. ✅ **Nivel de actividad, decisión de Carlos (10 de octubre):** lo responde el **paciente en la PWA** (sedentario, ligero, moderado o alto) junto con sus objetivos y la biotina. Si no responde, se asume "ligero" y el informe lo dice.
+
+## Correcciones del 11 de octubre de 2026 (prueba técnica)
+
+21. **Riñones en "lo que está bien":** ya no habla de la orina, porque el MVP es solo sangre.
+22. **Hemoglobina:** al paciente se le muestra el valor exacto del PDF y se le explica que en Bogotá se compara con un límite más alto. El valor ajustado por altitud queda solo en la vista médica.
+23. **REC-CTL-202 (hierro bajo):** tiene texto propio para hombre y para mujer (campo nuevo `por_sexo`).
+24. **Valores calculados en rango** (por ejemplo, el colesterol no-HDL de 156 con corte de 160) ya no se listan como motivo de un hallazgo.
+25. **Vitaminas fuera del panel base:** si el laboratorio las envía, el motor no las interpreta ni se muestran al paciente; el médico las ve como "fuera del panel del MVP".
+26. **REC-CTL-104 (repetir exámenes del riñón):** ya no pide "repetir" un examen de orina que no se hizo; dice repetir la creatinina y preguntarle al médico por la proteína en la orina.
+27. **COND-M1-CA-001:** el título pasó a "Colesterol por encima del valor de tamizaje", porque la condición también se activa solo por el no-HDL (caso 3: LDL de 128 y no-HDL de 212).

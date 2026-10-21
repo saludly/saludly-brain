@@ -1,15 +1,15 @@
 id: COND-M3-NU-A02
 tipo: condicion
-titulo_paciente: "Hormona paratiroidea alta con calcio normal"
-que_es: "La hormona paratiroidea, o PTH, regula el calcio de tu cuerpo y sube cuando el cuerpo necesita conservarlo."
+titulo_paciente: "Su hormona paratiroidea está alta, con el calcio normal"
+que_es: "La hormona paratiroidea, o PTH, regula el calcio de su cuerpo y sube cuando el cuerpo necesita conservarlo."
 por_que_te_aparece:
-  - "Tu PTH salió en {pth}, por encima del rango del laboratorio."
-  - "Tu calcio, corregido por la albúmina, salió en {calcio_corregido}, dentro del rango."
-  - "Tu vitamina D, que ayuda a absorber el calcio, salió en {vitamin_d}."
+  - "Su PTH salió en {pth}, por encima del rango del laboratorio."
+  - "Su calcio, corregido por la albúmina, salió en {calcio_corregido}, dentro del rango."
+  - "Su vitamina D, que ayuda a absorber el calcio, salió en {vitamin_d}."
 riesgo_claro: "Si la causa no se atiende, con los años el cuerpo puede sacar calcio de los huesos y debilitarlos."
 ejemplo_simple: "Es como un termostato que trabaja de más para mantener la temperatura: la casa está bien, pero el aparato se esfuerza."
-incertidumbre: "Muchas veces se debe a vitamina D baja, al riñón o a algunos medicamentos. Un solo examen no basta: tu médico lo confirma y puede pedir repetirlo."
+incertidumbre: "Muchas veces se debe a vitamina D baja, al riñón o a algunos medicamentos. Un solo examen no basta: su médico lo confirma y puede pedir repetirlo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Quinto Taller Internacional de hiperparatiroidismo primario 2022"]
-estado_revision: pendiente
+estado_revision: aprobada

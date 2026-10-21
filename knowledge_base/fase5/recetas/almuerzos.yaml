@@ -2,7 +2,7 @@
 # Formato en knowledge_base/fase5/ESQUEMAS.md (sección 3). Los gramos son del total de la receta
 # y del estado del alimento indicado en su id (cereales, tubérculos y leguminosas cocidos; carnes y pescados crudos).
 # Los nutrientes y las etiquetas nutricionales los calcula el código con recetas/alimentos.yaml.
-# estado_revision: pendiente (la aprueba Carlos)
+# estado_revision: aprobada (la aprueba Carlos)
 
 - id: RCT-ALM-001
   nombre: "Ajiaco liviano de pollo"

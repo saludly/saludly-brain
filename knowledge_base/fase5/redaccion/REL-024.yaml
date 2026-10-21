@@ -1,15 +1,15 @@
 id: REL-024
 tipo: patron
-titulo_paciente: "Testosterona baja junto con sus hormonas reguladoras"
-que_es: "La testosterona la producen los testículos cuando el cerebro les envía una señal llamada LH; en la sangre viaja pegada a una proteína llamada SHBG."
+titulo_paciente: "Su testosterona está baja, junto con sus hormonas reguladoras"
+que_es: "La testosterona la producen los testículos cuando el cerebro les envía una señal llamada LH. En la sangre viaja pegada a una proteína llamada SHBG."
 por_que_te_aparece:
-  - "Tu testosterona total salió en {testosterone_total}, por debajo del rango."
-  - "Tu SHBG, la proteína que transporta la testosterona, salió en {shbg}."
-  - "Tu LH, la señal del cerebro a los testículos, salió en {lh}."
+  - "Su testosterona total salió en {testosterone_total}, por debajo del rango."
+  - "Su SHBG, la proteína que transporta la testosterona, salió en {shbg}."
+  - "Su LH, la señal del cerebro a los testículos, salió en {lh}."
 riesgo_claro: "Si la testosterona se mantiene baja, con el tiempo puede relacionarse con cansancio, menos deseo sexual, pérdida de músculo y huesos más débiles."
 ejemplo_simple: "Es como revisar si una casa está fría por el calentador o por el termostato: mirar las dos cosas ayuda a encontrar el origen."
-incertidumbre: "El sobrepeso, algunos medicamentos o una enfermedad reciente cambian estos valores; hay que repetir la testosterona en la mañana."
+incertidumbre: "El sobrepeso, algunos medicamentos o una enfermedad reciente cambian estos valores. Hay que repetir la testosterona en la mañana."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Endocrine Society 2018"]
-estado_revision: pendiente
+estado_revision: aprobada

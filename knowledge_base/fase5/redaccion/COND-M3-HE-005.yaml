@@ -1,13 +1,13 @@
 id: COND-M3-HE-005
 tipo: condicion
-titulo_paciente: "Plaquetas más bajas de lo esperado"
+titulo_paciente: "Sus plaquetas salieron más bajas de lo esperado"
 que_es: "Las plaquetas son las células que ayudan a que la sangre coagule y a cerrar las heridas."
 por_que_te_aparece:
-  - "Tus plaquetas salieron en {platelets}, por debajo del rango esperado."
-riesgo_claro: "Si siguen bajas y no se busca la causa, puedes sangrar con más facilidad, por ejemplo por las encías, o tener moretones sin golpes."
+  - "Sus plaquetas salieron en {platelets}, por debajo del rango esperado."
+riesgo_claro: "Si siguen bajas y no se busca la causa, usted podría sangrar con más facilidad, por ejemplo por las encías, o tener moretones sin golpes."
 ejemplo_simple: "Son como los parches de un equipo de mantenimiento: si hay pocos, las pequeñas grietas tardan más en taparse."
-incertidumbre: "Hay causas pasajeras, como una infección viral reciente, el alcohol o algunos medicamentos. Conviene repetir el examen y revisarlo con tu médico."
-cuando_consultar: "Si tienes sangrados o moretones sin golpes, consulta antes, sin esperar a repetir el examen."
+incertidumbre: "Hay causas pasajeras, como una infección viral reciente, el alcohol o algunos medicamentos. Conviene repetir el examen y revisarlo con su médico."
+cuando_consultar: "Si tiene sangrados o moretones sin golpes, consulte antes, sin esperar a repetir el examen."
 aviso_whatsapp: null
 fuentes: ["Consenso internacional de PTI 2019"]
-estado_revision: pendiente
+estado_revision: aprobada

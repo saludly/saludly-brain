@@ -1,14 +1,14 @@
 id: REL-011
 tipo: patron
-titulo_paciente: "Dos formas de medir tu riñón dan resultados distintos"
+titulo_paciente: "Dos formas de medir su riñón dan resultados distintos"
 que_es: "La filtración del riñón se puede estimar con la creatinina, que depende de la masa muscular, o con la cistatina C, que depende menos de ella."
 por_que_te_aparece:
-  - "Tu creatinina salió en {creatinine} y tu cistatina C en {cystatin_c}."
-  - "Con la creatinina, tu filtración se calculó en {egfr}; combinada con la cistatina C, en {egfr_creatinina_cistatina}."
-riesgo_claro: "Usar la medida que no corresponde puede hacer que el riñón parezca peor o mejor de lo que está; por eso tu médico elige la más confiable."
-ejemplo_simple: "Es como pesarte en dos básculas que dan números distintos: se usa la que está mejor calibrada para ti."
-incertidumbre: "La masa muscular, la dieta o los suplementos de creatina cambian la creatinina; tu médico decide cuál valor usar."
+  - "Su creatinina salió en {creatinine} y su cistatina C en {cystatin_c}."
+  - "Con la creatinina, su filtración se calculó en {egfr}; combinada con la cistatina C, en {egfr_creatinina_cistatina}."
+riesgo_claro: "Usar la medida que no corresponde puede hacer que el riñón parezca peor o mejor de lo que está. Por eso su médico elige la más confiable."
+ejemplo_simple: "Es como pesarse en dos básculas que dan números distintos: se usa la que está mejor calibrada para usted."
+incertidumbre: "La masa muscular, la dieta o los suplementos de creatina cambian la creatinina. Su médico decide cuál valor usar."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["KDIGO 2024"]
-estado_revision: pendiente
+estado_revision: aprobada

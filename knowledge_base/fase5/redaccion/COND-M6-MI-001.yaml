@@ -1,14 +1,14 @@
 id: COND-M6-MI-001
 tipo: condicion
-titulo_paciente: "Tu cuerpo podría no estar recibiendo suficiente energía"
+titulo_paciente: "Su cuerpo podría no estar recibiendo suficiente energía"
 que_es: "La nutrición es la energía y la proteína que el cuerpo recibe de la comida para mantener los músculos, las defensas y la fuerza."
 por_que_te_aparece:
-  - "Tu índice de masa corporal, que relaciona tu peso con tu estatura, salió en {imc}, más bajo de lo recomendado para tu edad."
-  - "Tu proteína C reactiva, una señal de inflamación en el cuerpo, salió en {hs_crp}."
-riesgo_claro: "Si el cuerpo recibe menos de lo que necesita por un tiempo, se pierden músculo y fuerza, bajan las defensas y cuesta más recuperarse de cualquier enfermedad."
+  - "Su índice de masa corporal, que relaciona su peso con su estatura, salió en {imc}, más bajo de lo recomendado para su edad."
+  - "Su proteína C reactiva, una señal de inflamación en el cuerpo, salió en {hs_crp}."
+riesgo_claro: "Si el cuerpo recibe menos de lo que necesita por un tiempo, se pierden músculo y fuerza, bajan las defensas y cuesta más recuperarse de cualquier enfermedad. La buena noticia: la alimentación puede corregirlo."
 ejemplo_simple: "Es como un carro que anda con el tanque en reserva: avanza, pero sin margen para una subida."
-incertidumbre: "Es una señal de riesgo, no un diagnóstico; el peso y algunos resultados pueden cambiar por motivos pasajeros."
-cuando_consultar: "Revísalo con tu médico o con un nutricionista; consulta antes si estás bajando de peso sin buscarlo."
-aviso_whatsapp: "Tu informe de Saludly trae una recomendación sobre tu alimentación. Ábrelo cuando puedas."
+incertidumbre: "Es una señal de riesgo, no un diagnóstico. El peso y algunos resultados pueden cambiar por motivos pasajeros."
+cuando_consultar: "Revíselo con su médico o con un nutricionista. Consulte antes si está bajando de peso sin buscarlo."
+aviso_whatsapp: "Su informe de Saludly trae una recomendación sobre su alimentación. Ábralo cuando pueda."
 fuentes: ["GLIM 2019"]
-estado_revision: pendiente
+estado_revision: aprobada

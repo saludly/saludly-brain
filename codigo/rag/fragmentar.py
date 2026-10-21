@@ -191,6 +191,15 @@ def fase5():
             out.append(fragmento(r["id"], "recomendacion", 0, f"{r['id']} · {r['titulo']}", txt, ruta,
                                  dict(tipo_recomendacion=r["tipo"], se_activa_con=r.get("se_activa_con"), prioriza_objetivos=r.get("prioriza_objetivos"),
                                       contraindicada_si=r.get("contraindicada_si"), requiere_consulta_previa=r.get("requiere_consulta_previa"))))
+    ruta = os.path.join(F5, "filtros.yaml")
+    if os.path.exists(ruta):
+        y = yaml.safe_load(open(ruta, encoding="utf-8"))
+        preg = "\n".join(f"- {p['texto']} Opciones: " + "; ".join(o["texto"] for o in p["opciones"]) for p in y["preguntas"].values())
+        reglas = "\n".join(f"- {r['id']} (si {r['si']}, {r['estado']}): {r['efecto']}" for r in y["reglas"])
+        txt = ("Alergias, tipo de dieta y medicamentos: el paciente responde estas preguntas en la PWA antes de la visita y filtran "
+               "recetas y recomendaciones.\n\nPreguntas:\n" + preg + "\n\nReglas:\n" + reglas)
+        out.append(fragmento("FIL-ALERGIAS-DIETA-MEDICAMENTOS", "filtro_paciente", 0, "Filtros por alergias, dieta y medicamentos", txt, ruta,
+                             dict(reglas=[r["id"] for r in y["reglas"]])))
     return out
 
 

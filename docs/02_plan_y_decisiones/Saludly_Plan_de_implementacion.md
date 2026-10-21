@@ -243,7 +243,7 @@ Las Fases 0, 1 y 2 arrancan juntas; la 3 necesita la Knowledge Base y el servido
 6. Enviar al laboratorio el protocolo de toma con los 25 analitos nuevos y el tubo de coagulación, y pedir cotización y el formato de su PDF.
 7. Crear el PDF de ejemplo de Saludly con el catálogo completo: nombres, unidades, rangos, metadatos (paciente, orden, fecha y hora de la toma, método, banderas) y valores sintéticos que cubran los casos de prueba. Se reemplaza cuando llegue el formato real.
 8. Definir el formulario de la visita de la enfermera: perfil, cuestionario (medicamentos, antecedentes, FINDRISC, alcohol, suplementos, síntomas y confusores como infección o ejercicio intenso reciente), objetivo de salud y consentimientos firmados.
-9. Wearables: decidido Apple Watch; la app iOS mínima entra en la Fase 6.
+9. Wearables: decidido Apple Watch; la app iOS mínima entra en la Fase 7.
 
 **Entregable:** catálogo aprobado, documentos 04, 05 y 07, protocolo validado por el laboratorio.
 
@@ -275,7 +275,7 @@ Las Fases 0, 1 y 2 arrancan juntas; la 3 necesita la Knowledge Base y el servido
 
 1. Cuando el equipo compre el plan, en la página de OpenClaw de Hostinger elegir OpenClaw en VPS y no la opción gestionada de 1 clic: da acceso al servidor y control sobre dónde quedan los datos. Una guía de terceros recomienda plan KVM 2 o superior (2 GB de RAM mínimo); si se usan embeddings locales, probablemente haga falta más, hay que medirlo.
 2. No hace falta comprar el crédito "Ready-to-Use AI": Saludly usará su propia llave de DeepSeek.
-3. Llenar los campos de configuración: guardar el gateway token en un gestor de contraseñas y dejar vacío el número de WhatsApp (ver Fase 7).
+3. Llenar los campos de configuración: guardar el gateway token en un gestor de contraseñas y dejar vacío el número de WhatsApp (ver Fase 8).
 4. Clic en Deploy y abrir el dashboard de OpenClaw desde hPanel con el botón Open. Logs, reinicios y actualizaciones se manejan en el Docker Manager.
 5. Asegurar el servidor antes de cargar datos: SSH solo por llave, firewall cerrado salvo lo necesario, Fail2Ban, el panel de OpenClaw sin exposición pública (por túnel SSH), lista de remitentes permitidos y la guía de Hostinger para asegurar OpenClaw. Ninguna skill de terceros sin revisarla.
 6. Copias de seguridad automáticas del VPS y de la configuración de OpenClaw.
@@ -353,7 +353,32 @@ Mi recomendación de diseño: los umbrales los evalúa código, no el LLM. El mo
 
 **Criterio de salida:** el médico aprueba los informes de todos los casos de prueba.
 
-### Fase 6 · Dashboard web y herramientas internas (documento 06)
+### Fase 6 · PWA y dashboard del paciente (agregada el 20 de octubre de 2026)
+
+**Objetivo:** que los 5 primeros pacientes (amigos que firman la autorización) compren en la web, creen su cuenta, carguen sus datos y vean su informe, sin pagar infraestructura.
+
+1. El dashboard se trae de Lovable a `saludly-brain` y conserva la misma experiencia de usuario. Se corrigen los choques de `Integracion_dashboard.md`, y la silueta del cuerpo sale del sexo del informe (ya no hay selector "hombre / mujer").
+2. **Pago primero** en la web, con la pasarela de **Bold** (contrato existente; Carlos confirma esta semana que siga activa). Un solo paquete anual; el precio se define con el laboratorio.
+3. **Cuenta** con Google o con el correo usado en el pago. Pide nombre, cédula, celular de WhatsApp, dirección, edad y sexo, y la autorización de datos (`docs/06_legal/Autorizacion_tratamiento_datos.md`), con la versión, la fecha y la hora.
+4. **PWA, en este orden:**
+   1. Los 3 objetivos.
+   2. Lo que el paciente sabe: peso, talla y nivel de actividad física.
+   3. El cuestionario, que el paciente responde antes de la visita: ayuno, medicamentos, biotina, tabaco, alcohol, antecedentes familiares y embarazo.
+   4. "Necesitamos hacer algunas preguntas y tomar más datos: agenda la visita de tu enfermera". Solo de lunes a viernes, desde 2 días después de la compra, entre las 7:00 y las 11:00 a. m., en ayunas. En el piloto, Carlos habilita los días en la vista administrativa: 1 cupo por día (configurable a 2).
+   5. El día de la cita: "Mi enfermera está aquí". La enfermera llena solo lo técnico (presión, cintura, cadera, peso y talla medidos) en el celular del paciente.
+   6. "Te avisaremos por WhatsApp cuando estén tus resultados".
+5. **El dashboard no se muestra** hasta que el laboratorio entregue el PDF, el motor lo interprete y Carlos revise el informe. Entonces se avisa por WhatsApp y se abre el dashboard con los resultados y las recomendaciones.
+6. Si la edad o el sexo de la cuenta no coinciden con el PDF, se usan los del PDF y se avisa en la vista del médico.
+7. **WhatsApp con aprobación:** el sistema prepara cada mensaje y Carlos lo aprueba en la vista administrativa antes de enviarlo (API oficial, app "Agente de prueba n8n" del portafolio saludly, que ya tiene el caso de uso de WhatsApp).
+8. **Textos más humanos:** Claude reescribe una vez el catálogo de plantillas de la Fase 5 en un lenguaje más cercano, sin datos de pacientes. Siguen pasando por el control de salida y la aprobación de Carlos.
+9. Vista del médico y vista administrativa: subir el PDF, asociarlo al paciente, ver el estado y revisar el informe.
+10. Infraestructura gratis: Vercel (Hobby) y Supabase Free. Los datos de los 5 pacientes van seudonimizados y separados de la Knowledge Base dentro del mismo proyecto. El PDF no se guarda.
+
+**Entregable:** PWA y dashboard publicados en `app.saludly.online` con los 5 primeros casos.
+
+**Criterio de salida:** los 5 pacientes compran, autorizan, cargan sus datos y ven su informe; Carlos revisa cada informe en la vista del médico.
+
+### Fase 7 · Dashboard completo y herramientas internas (documento 06)
 
 **Objetivo:** que el paciente solo tenga que abrir el dashboard para ver su informe, y que la enfermera, operaciones y el médico tengan sus propias herramientas.
 
@@ -371,7 +396,7 @@ Mi recomendación de diseño: los umbrales los evalúa código, no el LLM. El mo
 
 **Criterio de salida:** el médico recorre todos los casos de prueba en el dashboard y los aprueba.
 
-### Fase 7 · Recomendaciones por WhatsApp
+### Fase 8 · Recomendaciones por WhatsApp
 
 **Objetivo:** que el usuario reciba sus recomendaciones por WhatsApp dentro de las reglas de Meta y las clínicas.
 
@@ -385,7 +410,7 @@ Mi recomendación de diseño: los umbrales los evalúa código, no el LLM. El mo
 
 **Criterio de salida (segunda puerta, junto con protocolo y revisión legal):** plantillas aprobadas por Meta, opt-in registrado y aprobación del médico funcionando.
 
-### Fase 8 · Piloto controlado
+### Fase 9 · Piloto controlado
 
 **Objetivo:** probar el flujo completo con usuarios reales y medir si el agente coincide con el médico.
 
@@ -398,7 +423,7 @@ Mi recomendación de diseño: los umbrales los evalúa código, no el LLM. El mo
 
 **Criterio de salida:** concordancia aceptada por el médico y costo por usuario conocido.
 
-### Fase 9 · Escala y modelo con EPS (documentos 08 y 09)
+### Fase 10 · Escala y modelo con EPS (documentos 08 y 09)
 
 **Objetivo:** pasar del piloto a operación y llegar a las EPS con evidencia.
 
@@ -423,7 +448,7 @@ El riesgo más grande no es técnico: es mandar datos de salud a un LLM externo 
 | Relaciones entre biomarcadores con evidencia débil | Una asociación estadística presentada como patrón clínico genera alarma sin respaldo | Fuente verificada por relación; las de asociación solo como "vigilar" |
 | Recomendaciones de suplementos | Pueden leerse como prescripción | Generales, sin dosis, siempre remitiendo al médico (regla de vitaminas) |
 | Wearables mal interpretados | Los valores varían entre dispositivos | Solo contexto, nunca umbral; fuente visible |
-| WhatsApp por cuenta no oficial | El canal de OpenClaw vincula una cuenta normal por QR | WhatsApp Business Platform con número verificado (Fase 7) |
+| WhatsApp por cuenta no oficial | El canal de OpenClaw vincula una cuenta normal por QR | WhatsApp Business Platform con número verificado (Fase 8) |
 | OpenClaw está pensado como asistente personal | Su documentación lo presenta para desarrolladores y usuarios avanzados, no como sistema con muchos pacientes | Prueba de concepto al inicio de la Fase 4 |
 | Fuentes sin leer completas | 52 fuentes de los lotes solo están confirmadas por búsqueda | Leerlas en la Fase 0, empezando por el Lote 4 |
 | Muestras domiciliarias | Potasio falsamente alto sin centrifugar, vitamina C falsamente baja sin congelar, coagulación con tubo propio | Protocolo validado por el laboratorio antes del piloto |

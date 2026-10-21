@@ -1,15 +1,15 @@
 id: COND-M3-HE-A04
 tipo: condicion
-titulo_paciente: "Glóbulos rojos pequeños con hierro normal"
-que_es: "El volumen corpuscular medio mide el tamaño de tus glóbulos rojos; cuando son pequeños y el hierro está bien, suele deberse a un rasgo que se hereda de los padres."
+titulo_paciente: "Sus glóbulos rojos son pequeños, con el hierro normal"
+que_es: "El volumen corpuscular medio mide el tamaño de sus glóbulos rojos. Cuando son pequeños y el hierro está bien, suele deberse a un rasgo que se hereda de los padres."
 por_que_te_aparece:
-  - "Tu volumen corpuscular medio salió en {mcv}, más bajo de lo normal."
-  - "Tu ferritina, la reserva de hierro, salió en {ferritin}, sin señal de que falte hierro."
-  - "El índice de Mentzer, que compara el tamaño y el número de tus glóbulos rojos, salió en {mentzer_index}."
-riesgo_claro: "Este rasgo no suele dar síntomas, pero si no se conoce, puede confundirse con falta de hierro y llevar a tomar hierro sin necesitarlo. También importa saberlo antes de un embarazo."
+  - "Su volumen corpuscular medio salió en {mcv}, más bajo de lo normal."
+  - "Su ferritina, la reserva de hierro, salió en {ferritin}, sin señal de que falte hierro."
+  - "El índice de Mentzer, que compara el tamaño y el número de sus glóbulos rojos, salió en {mentzer_index}."
+riesgo_claro: "Este rasgo no suele dar síntomas. Pero si no se conoce, puede confundirse con falta de hierro y llevar a tomar hierro sin necesitarlo. También importa saberlo antes de un embarazo."
 ejemplo_simple: "Es como el color de los ojos: viene de familia y no significa que algo se haya dañado."
-incertidumbre: "Este patrón es compatible con un rasgo heredado, pero no lo confirma. Un examen adicional, la electroforesis de hemoglobina, lo aclara, y tu médico interpreta el resultado."
+incertidumbre: "Este patrón es compatible con un rasgo heredado, pero no lo confirma. Un examen adicional, la electroforesis de hemoglobina, lo aclara, y su médico interpreta el resultado."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["BSH, tamizaje de hemoglobinopatías", "Mentzer 1973"]
-estado_revision: pendiente
+estado_revision: aprobada

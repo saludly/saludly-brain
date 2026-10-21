@@ -21,6 +21,8 @@ CALC_EXTRA = {"homa_ir", "egfr", "hemoglobina_ajustada", "calcio_corregido", "ty
 MARCADORES = set(IDX["biomarcadores"]) | CALC_EXTRA
 IDS_HALLAZGO = set(IDX["condiciones"]) | set(IDX["relaciones"]) | set(IDX["seguridad"])
 OBJETIVOS = {o["id"] for o in yaml.safe_load(open(os.path.join(F5, "objetivos.yaml"), encoding="utf-8"))}
+FILTROS = yaml.safe_load(open(os.path.join(F5, "filtros.yaml"), encoding="utf-8"))
+OPC_FILTROS = {k: {o["id"] for o in v["opciones"]} for k, v in FILTROS["preguntas"].items()}
 TIPOS_REC = {"alimentacion", "hidratacion", "actividad", "sueno", "habitos", "actividades_saludables", "vitaminas_suplementos", "terapias", "controles"}
 ESTADOS_HB = {"infeccion_activa", "infeccion_pasada_resuelta", "anti_hbc_aislado", "inmune_por_vacuna", "susceptible"}
 CLASES = {"bajo", "alto", "limitrofe", "critico", "alterado", "en_rango"}
@@ -48,6 +50,8 @@ def control(ubic, texto):
 
 def ref_valida(x):
     if x == "general": return True
+    for pref, k in (("alergia:", "alergias"), ("dieta:", "dieta"), ("medicamento:", "medicamentos")):   # respuestas del perfil (filtros.yaml)
+        if x.startswith(pref): return x.split(":", 1)[1] in OPC_FILTROS[k]
     if x in IDS_HALLAZGO: return True
     if "#" in x: return x.split("#", 1)[0] in IDS_HALLAZGO and x.split("#", 1)[1] in ESTADOS_HB
     if x.startswith("objetivo:"): return x.split(":", 1)[1] in OBJETIVOS
@@ -101,6 +105,14 @@ for f in sorted(glob.glob(os.path.join(F5, "recomendaciones", "*.yaml"))):
         for o in r.get("prioriza_objetivos") or []:
             if o not in OBJETIVOS: err(f"{nombre}/{rid}: objetivo desconocido {o}")
         for c, t in textos_de(r, ["titulo", "texto_base", "meta_concreta", "por_que", "whatsapp"]): control(f"{nombre}/{rid}.{c}", t)
+        for sx, var in (r.get("por_sexo") or {}).items():           # variante por sexo: solo cambia texto_base y meta_concreta
+            if sx not in ("hombre", "mujer"): err(f"{nombre}/{rid}: por_sexo con sexo inválido {sx}")
+            if set(var) - {"texto_base", "meta_concreta"}: err(f"{nombre}/{rid}: por_sexo.{sx} solo admite texto_base y meta_concreta")
+            for c, t in textos_de(var, ["texto_base", "meta_concreta"]): control(f"{nombre}/{rid}.por_sexo.{sx}.{c}", t)
+        for dt, var in (r.get("por_dieta") or {}).items():          # variante por dieta: texto_base, meta_concreta y whatsapp
+            if dt not in ("vegetariana", "vegana"): err(f"{nombre}/{rid}: por_dieta con dieta inválida {dt}")
+            if set(var) - {"texto_base", "meta_concreta", "whatsapp"}: err(f"{nombre}/{rid}: por_dieta.{dt} solo admite texto_base, meta_concreta y whatsapp")
+            for c, t in textos_de(var, ["texto_base", "meta_concreta", "whatsapp"]): control(f"{nombre}/{rid}.por_dieta.{dt}.{c}", t)
         if len(r.get("whatsapp") or "") > 400: err(f"{nombre}/{rid}: mensaje de WhatsApp de más de 400 caracteres")
 
 # ---------------- alimentos y recetas
@@ -110,6 +122,9 @@ if os.path.exists(ruta_al):
     for a in yaml.safe_load(open(ruta_al, encoding="utf-8")) or []:
         if a.get("id") in alimentos: err(f"alimentos.yaml: id repetido {a.get('id')}")
         alimentos[a.get("id")] = a
+        for x in a.get("alergenos") or []:
+            if x not in OPC_FILTROS["alergias"]: err(f"alimentos.yaml/{a.get('id')}: alérgeno desconocido {x}")
+        if "alergenos" not in a: err(f"alimentos.yaml/{a.get('id')}: falta alergenos (puede ser [])")
         p = a.get("por_100g") or {}
         for k in ("kcal", "proteina_g", "grasa_g", "grasa_saturada_g", "carbohidratos_g", "fibra_g", "azucares_g", "sodio_mg", "potasio_mg", "hierro_mg", "calcio_mg"):
             if not isinstance(p.get(k), (int, float)): err(f"alimentos.yaml/{a.get('id')}: falta {k}")

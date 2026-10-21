@@ -1,15 +1,15 @@
 id: COND-M1-CA-005
 tipo: condicion
-titulo_paciente: "Riesgo cardiovascular estimado alto"
-que_es: "Es un cálculo que junta tu edad, sexo, presión, colesterol y cigarrillo para estimar tu riesgo del corazón en los próximos 10 años."
+titulo_paciente: "Su riesgo cardiovascular estimado es alto"
+que_es: "Es un cálculo que junta su edad, sexo, presión, colesterol y cigarrillo para estimar el riesgo de su corazón en los próximos 10 años."
 por_que_te_aparece:
-  - "El cálculo, ajustado a población colombiana, quedó en la categoría alta o muy alta para tu edad."
-  - "Para el cálculo usamos tu colesterol total, que salió en {total_cholesterol}, y tu colesterol HDL, el que ayuda a limpiar las arterias, que salió en {hdl_c}."
-  - "También cuentan la presión que te tomó la enfermera y si fumas."
-riesgo_claro: "Si los factores siguen igual, con los años aumenta la probabilidad de problemas en el corazón y en las arterias del cerebro."
-ejemplo_simple: "Es como el pronóstico del clima: no dice que va a llover seguro, pero indica cuándo conviene llevar sombrilla."
-incertidumbre: "Es una estimación de un modelo, no una predicción segura. Tu médico la interpreta con tu historia y define tus metas de colesterol y presión."
+  - "El cálculo, ajustado a la población colombiana, quedó en la categoría alta o muy alta para su edad."
+  - "Para el cálculo usamos su colesterol total, que salió en {total_cholesterol}, y su colesterol HDL, el que ayuda a limpiar las arterias, que salió en {hdl_c}."
+  - "También cuentan la presión que le tomó la enfermera y si usted fuma."
+riesgo_claro: "Si los factores siguen igual, con los años aumenta la probabilidad de problemas en el corazón y en las arterias del cerebro. La buena noticia: cada factor que mejore baja el riesgo."
+ejemplo_simple: "Piénselo como el pronóstico del clima: no dice que va a llover seguro, pero le indica cuándo conviene llevar sombrilla."
+incertidumbre: "Es una estimación de un modelo, no una predicción segura. Su médico la interpreta con su historia y define sus metas de colesterol y presión."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["GPC Colombia HTA 2025 (Minsalud e IETS)", "SCORE2 working group, Eur Heart J 2021", "PURE-Colombia, Eur J Prev Cardiol 2025"]
-estado_revision: pendiente
+estado_revision: aprobada

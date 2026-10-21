@@ -1,14 +1,14 @@
 id: COND-M6-MI-A02
 tipo: condicion
-titulo_paciente: "Tu edad biológica estimada"
-que_es: "La edad biológica es una estimación de cómo está funcionando tu cuerpo, calculada con un modelo científico a partir de 9 de tus resultados y tu edad."
+titulo_paciente: "Su edad biológica estimada"
+que_es: "La edad biológica es una estimación de cómo está funcionando su cuerpo, calculada con un modelo científico a partir de 9 de sus resultados y su edad."
 por_que_te_aparece:
-  - "Con tu albúmina, creatinina, glucosa, proteína C reactiva y hemograma, el modelo estima tu edad biológica en {phenoage}."
-  - "Algunos valores, como tu proteína C reactiva ({hs_crp}) o tu RDW ({rdw}), pueden mover la estimación por causas pasajeras."
-riesgo_claro: "Una edad biológica mayor que tu edad real es una invitación a cuidar el sueño, la actividad física y la alimentación; no predice lo que te va a pasar."
+  - "Con su albúmina, creatinina, glucosa, proteína C reactiva y hemograma, el modelo estima su edad biológica en {phenoage}."
+  - "Algunos valores, como su proteína C reactiva ({hs_crp}) o su RDW ({rdw}), pueden mover la estimación por causas pasajeras."
+riesgo_claro: "Una edad biológica mayor que su edad real es una invitación a cuidar el sueño, la actividad física y la alimentación. No predice lo que le va a pasar."
 ejemplo_simple: "Es como el kilometraje de un carro frente a su año de fabricación: dos carros del mismo año pueden estar más o menos gastados según cómo se usaron."
-incertidumbre: "Es una estimación de un modelo hecho en Estados Unidos, sin validación conocida en Colombia; sirve más para ver cómo cambia en el tiempo que como dato aislado."
+incertidumbre: "Es una estimación de un modelo hecho en Estados Unidos, sin validación conocida en Colombia. Sirve más para ver cómo cambia en el tiempo que como dato aislado."
 cuando_consultar: null
-aviso_whatsapp: "Ya está en tu informe de Saludly la estimación de tu edad biológica. Ábrelo cuando puedas."
+aviso_whatsapp: "Ya está en su informe de Saludly la estimación de su edad biológica. Ábralo cuando pueda."
 fuentes: ["Levine et al. 2018, Aging 10(4):573-591"]
-estado_revision: pendiente
+estado_revision: aprobada

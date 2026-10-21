@@ -1,354 +1,355 @@
 # Recomendaciones de controles · lote A (M1, M2, M5, sus patrones, generales y por objetivo)
 # Numeración 100 a 199. Pendiente de revisión de Carlos.
 # Los plazos de repetición vienen de las fichas (recomendaciones_sugeridas); el médico revisor los confirma.
+# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
 
 - id: REC-CTL-101
   tipo: controles
-  titulo: "Revisa tu glucosa con tu médico"
-  texto_base: "Lleva este resultado a tu médico para confirmarlo. Si te repiten el examen, ve con 8 horas o más de ayuno y cuenta si usas corticoides."
-  meta_concreta: "Pide tu cita en las próximas 4 semanas."
+  titulo: "Revise su glucosa con su médico"
+  texto_base: "Lleve este resultado a su médico para confirmarlo. Si le repiten el examen, vaya con 8 horas o más de ayuno y cuente si usa corticoides."
+  meta_concreta: "Pida su cita en las próximas 4 semanas."
   por_que: "Un solo examen no basta: confirmarlo permite actuar a tiempo y con el plan adecuado."
   se_activa_con: ["COND-M1-EM-001", "COND-M1-EM-003", "COND-M1-EM-A04"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda pedir tu cita para revisar tus resultados de glucosa. Si te repiten el examen, ve en ayunas."
+  whatsapp: "📅 Recuerde pedir su cita para revisar sus resultados de glucosa. Si le repiten el examen, vaya en ayunas."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 2", "GPC Colombia DM2 2016"]
 
 - id: REC-CTL-102
   tipo: controles
-  titulo: "Consulta pronto para confirmar y planear"
-  texto_base: "Pide una cita médica en las próximas semanas para confirmar este resultado y definir un plan contigo. Lleva este informe."
-  meta_concreta: "Pide la cita esta semana."
+  titulo: "Consulte pronto para confirmar y planear"
+  texto_base: "Pida una cita médica en las próximas semanas para confirmar este resultado y definir un plan con usted. Lleve este informe."
+  meta_concreta: "Pida la cita esta semana."
   por_que: "Este resultado necesita una evaluación médica para decidir los siguientes pasos."
   se_activa_con: ["COND-M1-EM-002", "COND-M1-EM-A03", "COND-M1-CA-007", "COND-M2-NE-003", "COND-M2-TI-002", "COND-M2-TI-005"]
   prioriza_objetivos: ["condicion_existente", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos pedir tu cita médica esta semana para revisar tus resultados. Lleva tu informe de Saludly."
+  whatsapp: "📅 Le recordamos pedir su cita médica esta semana para revisar sus resultados. Lleve su informe de Saludly."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 2", "KDIGO 2024 Clinical Practice Guideline for CKD", "ATA Guidelines for the Treatment of Hypothyroidism 2014"]
 
 - id: REC-CTL-103
   tipo: controles
-  titulo: "Toma tu presión en casa por 7 días"
-  texto_base: "Mide tu presión en casa durante 7 días, en la mañana y en la noche, sentado, tras 5 minutos de reposo, sin café ni cigarrillo 30 minutos antes. Anota los valores y llévalos a tu médico."
+  titulo: "Tómese la presión en casa por 7 días"
+  texto_base: "Mida su presión en casa durante 7 días, en la mañana y en la noche, sentado, tras 5 minutos de reposo, sin café ni cigarrillo 30 minutos antes. Anote los valores y llévelos a su médico."
   meta_concreta: "Siete días seguidos de medición, mañana y noche, anotados en una tabla."
   por_que: "Una sola toma puede salir alta por nervios o esfuerzo; varias tomas en casa dan una imagen más real."
   se_activa_con: ["COND-M1-CA-006", "COND-M1-CA-005", "COND-M2-TI-008", "COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "REL-010"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Esta semana mide tu presión en casa en la mañana y en la noche, sentado y en calma. Anótala para llevarla a tu médico."
+  whatsapp: "🩺 Esta semana mida su presión en casa en la mañana y en la noche, sentado y en calma. Anótela para llevarla a su médico."
   fuentes: ["GPC Colombia HTA 2025 (Minsalud e IETS)", "2017 ACC/AHA Guideline for High Blood Pressure in Adults"]
 
 - id: REC-CTL-104
   tipo: controles
-  titulo: "Repite los exámenes del riñón en 3 meses"
-  texto_base: "Repite la creatinina y la relación albúmina/creatinina en orina en unos 3 meses, con la primera orina de la mañana y sin ejercicio intenso las 48 horas antes."
-  meta_concreta: "Agenda hoy en tu calendario la fecha para repetir el examen en 3 meses."
+  titulo: "Repita los exámenes del riñón en 3 meses"
+  texto_base: "Repita la creatinina en unos 3 meses, sin ejercicio intenso las 48 horas antes, y pregúntele a su médico si también necesita el examen de proteína en la orina (relación albúmina/creatinina)."
+  meta_concreta: "Agende hoy en su calendario la fecha para repetir el examen en 3 meses."
   por_que: "Estos valores cambian de un día a otro; repetirlos confirma si el hallazgo se mantiene."
   se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "REL-010"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Pon hoy en tu calendario el recordatorio para repetir tu examen de orina y sangre en 3 meses."
+  whatsapp: "📅 Ponga hoy en su calendario el recordatorio para repetir sus exámenes del riñón en 3 meses."
   fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD"]
 
 - id: REC-CTL-105
   tipo: controles
-  titulo: "Repite el potasio pronto"
-  texto_base: "Repite el potasio en los próximos días, como indique tu médico. Ese día no aprietes el puño durante la toma y cuéntale al laboratorio qué medicamentos usas."
-  meta_concreta: "Repite el examen en los próximos 7 días."
+  titulo: "Repita el potasio pronto"
+  texto_base: "Repita el potasio en los próximos días, como indique su médico. Ese día no apriete el puño durante la toma y cuéntele al laboratorio qué medicamentos usa."
+  meta_concreta: "Repita el examen en los próximos 7 días."
   por_que: "El potasio puede salir alto por cómo se tomó o se procesó la muestra; repetirlo aclara si es real."
   se_activa_con: ["COND-M2-NE-004", "potassium:alto"]
   prioriza_objetivos: ["condicion_existente", "salud_general", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda repetir tu examen de sangre en los próximos días, como lo indique tu médico."
+  whatsapp: "🧪 Recuerde repetir su examen de sangre en los próximos días, como lo indique su médico."
   fuentes: ["KDIGO Controversies Conference on Potassium 2020"]
 
 - id: REC-CTL-106
   tipo: controles
-  titulo: "Repite el sodio y revisa medicamentos"
-  texto_base: "Repite el sodio como indique tu médico y lleva la lista de tus medicamentos, porque algunos para la presión o el ánimo lo pueden bajar."
-  meta_concreta: "Pide tu cita en las próximas 2 semanas con la lista de medicamentos."
-  por_que: "El sodio bajo puede deberse a medicamentos o a tomar mucha agua; tu médico lo aclara."
+  titulo: "Repita el sodio y revise sus medicamentos"
+  texto_base: "Repita el sodio como indique su médico y lleve la lista de sus medicamentos, porque algunos para la presión o el ánimo lo pueden bajar."
+  meta_concreta: "Pida su cita en las próximas 2 semanas con la lista de medicamentos."
+  por_que: "El sodio bajo puede deberse a medicamentos o a tomar mucha agua; su médico lo aclara."
   se_activa_con: ["COND-M2-NE-005", "sodium:bajo"]
   prioriza_objetivos: ["condicion_existente", "maraton", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda pedir tu cita para repetir tu examen de sangre. Lleva la lista de los medicamentos que usas."
+  whatsapp: "📋 Recuerde pedir su cita para repetir su examen de sangre. Lleve la lista de los medicamentos que usa."
   fuentes: ["Guía europea de hiponatremia 2014 (Spasovski et al.)"]
 
 - id: REC-CTL-107
   tipo: controles
-  titulo: "Repite el examen de orina"
-  texto_base: "Repite el uroanálisis con orina de la mañana, sin ejercicio intenso ni relaciones sexuales las 48 horas antes, y fuera de la menstruación."
-  meta_concreta: "Programa el examen para un día que cumpla esas condiciones en las próximas 4 semanas."
+  titulo: "Repita el examen de orina"
+  texto_base: "Repita el uroanálisis con orina de la mañana, sin ejercicio intenso ni relaciones sexuales las 48 horas antes, y fuera de la menstruación."
+  meta_concreta: "Programe el examen para un día que cumpla esas condiciones en las próximas 4 semanas."
   por_que: "El ejercicio, una infección o la menstruación pueden alterar el examen; repetirlo en buenas condiciones lo aclara."
   se_activa_con: ["COND-M2-NE-006", "COND-M2-NE-002"]
   prioriza_objetivos: ["prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda repetir tu examen de orina: con la primera orina de la mañana y sin ejercicio fuerte los 2 días antes."
+  whatsapp: "🧪 Recuerde repetir su examen de orina: con la primera orina de la mañana y sin ejercicio fuerte los 2 días antes."
   fuentes: ["AUA/SUFU Guideline on Microhematuria 2020", "KDIGO 2024 Clinical Practice Guideline for CKD"]
 
 - id: REC-CTL-108
   tipo: controles
-  titulo: "Repite los exámenes de tiroides"
-  texto_base: "Repite la TSH y la T4 libre en la mañana, como indique tu médico, y cuéntale si tuviste alguna enfermedad reciente o usas medicamentos o suplementos."
-  meta_concreta: "Pide tu cita en las próximas 4 semanas."
+  titulo: "Repita los exámenes de tiroides"
+  texto_base: "Repita la TSH y la T4 libre en la mañana, como indique su médico, y cuéntele si tuvo alguna enfermedad reciente o usa medicamentos o suplementos."
+  meta_concreta: "Pida su cita en las próximas 4 semanas."
   por_que: "Los resultados de tiroides cambian con enfermedades recientes y algunos medicamentos; repetirlos confirma el hallazgo."
   se_activa_con: ["COND-M2-TI-001", "COND-M2-TI-003", "COND-M2-TI-004", "REL-017"]
   prioriza_objetivos: ["energia_sueno", "condicion_existente", "bajar_peso"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos pedir tu cita para repetir tus exámenes de tiroides en la mañana."
+  whatsapp: "📅 Le recordamos pedir su cita para repetir sus exámenes de tiroides en la mañana."
   fuentes: ["ATA Guidelines for the Treatment of Hypothyroidism 2014", "ATA Guidelines for Hyperthyroidism 2016"]
 
 - id: REC-CTL-109
   tipo: controles
   titulo: "Cita con endocrinología"
-  texto_base: "Pide una cita con endocrinología para revisar estos resultados de tiroides y hormonas. Lleva este informe y tu lista de medicamentos."
-  meta_concreta: "Solicita la cita esta semana a través de tu EPS o prepagada."
+  texto_base: "Pida una cita con endocrinología para revisar estos resultados de tiroides y hormonas. Lleve este informe y su lista de medicamentos."
+  meta_concreta: "Solicite la cita esta semana a través de su EPS o prepagada."
   por_que: "Este patrón necesita la mirada de un especialista en hormonas para decidir qué estudiar."
   se_activa_con: ["COND-M2-TI-003", "COND-M2-TI-005"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos solicitar tu cita con endocrinología esta semana. Lleva tu informe de Saludly."
+  whatsapp: "📅 Le recordamos solicitar su cita con endocrinología esta semana. Lleve su informe de Saludly."
   fuentes: ["ATA Guidelines for the Treatment of Hypothyroidism 2014", "ATA Guidelines for Hyperthyroidism 2016"]
 
 - id: REC-CTL-110
   tipo: controles
-  titulo: "Repite el calcio y la PTH"
-  texto_base: "Repite el calcio y la hormona paratiroidea como indique tu médico. Cuéntale si usas suplementos de calcio o de vitamina D, o diuréticos."
-  meta_concreta: "Pide tu cita en las próximas 4 semanas."
+  titulo: "Repita el calcio y la PTH"
+  texto_base: "Repita el calcio y la hormona paratiroidea como indique su médico. Cuéntele si usa suplementos de calcio o de vitamina D, o diuréticos."
+  meta_concreta: "Pida su cita en las próximas 4 semanas."
   por_que: "Algunos suplementos y medicamentos suben el calcio; repetir el examen con esa información lo aclara."
   se_activa_con: ["COND-M2-TI-007", "calcium:alto"]
   prioriza_objetivos: ["condicion_existente", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda pedir tu cita para repetir tus exámenes de calcio. Lleva la lista de suplementos y medicamentos que usas."
+  whatsapp: "📋 Recuerde pedir su cita para repetir sus exámenes de calcio. Lleve la lista de suplementos y medicamentos que usa."
   fuentes: ["Fifth International Workshop on Primary Hyperparathyroidism 2022"]
 
 - id: REC-CTL-111
   tipo: controles
   titulo: "Consulta médica en los próximos días"
-  texto_base: "Pide una cita médica en los próximos días para revisar este resultado. Si tienes vómito, mareo intenso o desmayo, ve a urgencias de inmediato."
-  meta_concreta: "Pide la cita en los próximos 3 días."
+  texto_base: "Pida una cita médica en los próximos días para revisar este resultado. Si tiene vómito, mareo intenso o desmayo, vaya a urgencias de inmediato."
+  meta_concreta: "Pida la cita en los próximos 3 días."
   por_que: "Este resultado necesita confirmación pronto, y esos síntomas indican que hay que actuar sin esperar."
   se_activa_con: ["COND-M2-TI-009", "SEG-002"]
   prioriza_objetivos: ["condicion_existente", "salud_general", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos pedir tu cita médica en los próximos días. Si sientes vómito, mareo fuerte o desmayo, ve a urgencias."
+  whatsapp: "📅 Le recordamos pedir su cita médica en los próximos días. Si siente vómito, mareo fuerte o desmayo, vaya a urgencias."
   fuentes: ["Endocrine Society, Diagnosis and Treatment of Primary Adrenal Insufficiency 2016"]
 
 - id: REC-CTL-112
   tipo: controles
-  titulo: "Completa el estudio de la presión"
-  texto_base: "Pide una cita médica para completar el estudio de tu presión con estos resultados hormonales. Lleva la lista de tus medicamentos para la presión."
-  meta_concreta: "Pide la cita en las próximas 2 semanas."
-  por_que: "Algunos medicamentos cambian estas hormonas, y tu médico decide cómo interpretar el resultado."
+  titulo: "Complete el estudio de la presión"
+  texto_base: "Pida una cita médica para completar el estudio de su presión con estos resultados hormonales. Lleve la lista de sus medicamentos para la presión."
+  meta_concreta: "Pida la cita en las próximas 2 semanas."
+  por_que: "Algunos medicamentos cambian estas hormonas, y su médico decide cómo interpretar el resultado."
   se_activa_con: ["COND-M2-TI-008"]
   prioriza_objetivos: ["condicion_existente", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos pedir tu cita para revisar tus resultados junto con tus medicamentos de la presión."
+  whatsapp: "📅 Le recordamos pedir su cita para revisar sus resultados junto con sus medicamentos de la presión."
   fuentes: ["Endocrine Society, Management of Primary Aldosteronism 2016", "GPC Colombia HTA 2025 (Minsalud e IETS)"]
 
 - id: REC-CTL-113
   tipo: controles
-  titulo: "Que tu familia revise su colesterol"
-  texto_base: "Invita a tus padres, hermanos e hijos a hacerse un perfil de lípidos. Algunos resultados del colesterol se comparten en la familia."
-  meta_concreta: "Esta semana, cuéntale a tus familiares cercanos y sugiéreles el examen."
+  titulo: "Que su familia revise su colesterol"
+  texto_base: "Invite a sus padres, hermanos e hijos a hacerse un perfil de lípidos. Algunos resultados del colesterol se comparten en la familia."
+  meta_concreta: "Esta semana, cuénteles a sus familiares cercanos y sugiérales el examen."
   por_que: "Detectarlo a tiempo en la familia permite que cada persona se cuide desde antes."
   se_activa_con: ["COND-M1-CA-002", "COND-M1-CA-004"]
   prioriza_objetivos: ["prevenir", "salud_general", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Esta semana cuéntale a tus padres, hermanos o hijos que vale la pena revisar su colesterol con un examen de sangre."
+  whatsapp: "👨‍👩‍👧 Esta semana cuénteles a sus padres, hermanos o hijos que vale la pena revisar su colesterol con un examen de sangre."
   fuentes: ["2018 AHA/ACC Guideline on the Management of Blood Cholesterol", "EAS Consensus Statement on Lipoprotein(a) 2022"]
 
 - id: REC-CTL-114
   tipo: controles
-  titulo: "Define tus metas de colesterol"
-  texto_base: "Pide una consulta para que tu médico defina contigo cuál debe ser tu meta de colesterol según tu riesgo y si necesitas algo más que cambios de hábitos."
-  meta_concreta: "Pide la cita en el próximo mes."
-  por_que: "La meta de colesterol depende de tu riesgo completo; tu médico la ajusta a ti."
+  titulo: "Defina sus metas de colesterol"
+  texto_base: "Pida una consulta para que su médico defina con usted cuál debe ser su meta de colesterol según su riesgo y si necesita algo más que cambios de hábitos."
+  meta_concreta: "Pida la cita en el próximo mes."
+  por_que: "La meta de colesterol depende de su riesgo completo; su médico la ajusta a usted."
   se_activa_con: ["COND-M1-CA-001", "COND-M1-CA-002", "COND-M1-CA-004", "COND-M1-CA-005", "REL-003"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos pedir tu cita para definir con tu médico tu meta de colesterol."
+  whatsapp: "📅 Le recordamos pedir su cita para definir con su médico su meta de colesterol."
   fuentes: ["2018 AHA/ACC Guideline on the Management of Blood Cholesterol", "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease"]
 
 - id: REC-CTL-115
   tipo: controles
-  titulo: "Repite los triglicéridos en buenas condiciones"
-  texto_base: "Repite el perfil de lípidos con 8 a 12 horas de ayuno y sin alcohol las 48 horas antes."
-  meta_concreta: "Programa el examen en las próximas 6 semanas y marca los dos días previos sin alcohol."
+  titulo: "Repita los triglicéridos en buenas condiciones"
+  texto_base: "Repita el perfil de lípidos con 8 a 12 horas de ayuno y sin alcohol las 48 horas antes."
+  meta_concreta: "Programe el examen en las próximas 6 semanas y marque los dos días previos sin alcohol."
   por_que: "Los triglicéridos suben con la comida y el alcohol recientes; medirlos bien da un valor confiable."
   se_activa_con: ["COND-M1-CA-003"]
   prioriza_objetivos: ["prevenir", "bajar_peso", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Para tu próximo examen de lípidos: ve en ayunas y sin alcohol los 2 días antes. Así el resultado es más confiable."
+  whatsapp: "🧪 Para su próximo examen de lípidos: vaya en ayunas y sin alcohol los 2 días antes. Así el resultado es más confiable."
   fuentes: ["2018 AHA/ACC Guideline on the Management of Blood Cholesterol"]
 
 - id: REC-CTL-116
   tipo: controles
-  titulo: "Revisa la glucosa baja con tu médico"
-  texto_base: "Comenta este resultado con tu médico para repetirlo. Si sientes temblor, sudor frío, confusión o mareo, come algo con azúcar y busca atención."
-  meta_concreta: "Pide tu cita en las próximas 4 semanas."
+  titulo: "Revise la glucosa baja con su médico"
+  texto_base: "Comente este resultado con su médico para repetirlo. Si siente temblor, sudor frío, confusión o mareo, coma algo con azúcar y busque atención."
+  meta_concreta: "Pida su cita en las próximas 4 semanas."
   por_que: "La glucosa baja en un examen puede ser por la muestra o por el ayuno; repetirlo aclara."
   se_activa_con: ["COND-M1-EM-005"]
   prioriza_objetivos: ["energia_sueno", "condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda pedir tu cita para revisar tu glucosa. Si sientes temblor, sudor frío o mareo, come algo dulce y busca atención."
+  whatsapp: "📅 Recuerde pedir su cita para revisar su glucosa. Si siente temblor, sudor frío o mareo, coma algo dulce y busque atención."
   fuentes: ["Endocrine Society, Evaluation and Management of Adult Hypoglycemic Disorders 2009"]
 
 - id: REC-CTL-117
   tipo: controles
   titulo: "Cita con ginecología"
-  texto_base: "Pide una cita con ginecología o medicina general para revisar estos resultados hormonales junto con tu ciclo menstrual."
-  meta_concreta: "Anota las fechas de tus últimos 3 ciclos y pide la cita en el próximo mes."
-  por_que: "Estas hormonas se interpretan mejor con la historia de tu ciclo y un examen médico."
+  texto_base: "Pida una cita con ginecología o medicina general para revisar estos resultados hormonales junto con su ciclo menstrual."
+  meta_concreta: "Anote las fechas de sus últimos 3 ciclos y pida la cita en el próximo mes."
+  por_que: "Estas hormonas se interpretan mejor con la historia de su ciclo y un examen médico."
   se_activa_con: ["COND-M5-MU-001", "REL-028"]
   prioriza_objetivos: ["condicion_existente", "salud_general", "bajar_peso"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Anota las fechas de tus últimas menstruaciones y pide tu cita con ginecología. Esa información ayuda mucho en la consulta."
+  whatsapp: "🗓️ Anote las fechas de sus últimas menstruaciones y pida su cita con ginecología. Esa información ayuda mucho en la consulta."
   fuentes: ["International Evidence-based Guideline for the Assessment and Management of PCOS 2023"]
 
 - id: REC-CTL-118
   tipo: controles
-  titulo: "Repite la FSH y consulta"
-  texto_base: "Repite la FSH en 4 a 6 semanas, como indique tu médico, y pide una cita para revisarla junto con tu ciclo menstrual."
-  meta_concreta: "Marca en tu calendario la fecha para repetir el examen en 4 a 6 semanas."
+  titulo: "Repita la FSH y consulte"
+  texto_base: "Repita la FSH en 4 a 6 semanas, como indique su médico, y pida una cita para revisarla junto con su ciclo menstrual."
+  meta_concreta: "Marque en su calendario la fecha para repetir el examen en 4 a 6 semanas."
   por_que: "Esta hormona cambia según el día del ciclo; repetirla confirma si el hallazgo se mantiene."
   se_activa_con: ["COND-M5-MU-002"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Pon en tu calendario la fecha para repetir tu examen hormonal en 4 a 6 semanas y pide tu cita médica."
+  whatsapp: "📅 Ponga en su calendario la fecha para repetir su examen hormonal en 4 a 6 semanas y pida su cita médica."
   fuentes: ["ESHRE Guideline: Management of Premature Ovarian Insufficiency 2024"]
 
 - id: REC-CTL-119
   tipo: controles
-  titulo: "Repite la prolactina en reposo"
-  texto_base: "Repite la prolactina en la mañana, después de unos minutos de reposo y sin estrés ni ejercicio antes. Lleva la lista de tus medicamentos."
-  meta_concreta: "Pide tu cita en las próximas 4 semanas con la lista de medicamentos."
+  titulo: "Repita la prolactina en reposo"
+  texto_base: "Repita la prolactina en la mañana, después de unos minutos de reposo y sin estrés ni ejercicio antes. Lleve la lista de sus medicamentos."
+  meta_concreta: "Pida su cita en las próximas 4 semanas con la lista de medicamentos."
   por_que: "La prolactina sube con el estrés, el ejercicio y algunos medicamentos; medirla en reposo da un valor más confiable."
   se_activa_con: ["COND-M5-MU-003", "REL-027"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda repetir tu examen hormonal en la mañana y en calma. Lleva la lista de los medicamentos que usas."
+  whatsapp: "🧪 Recuerde repetir su examen hormonal en la mañana y en calma. Lleve la lista de los medicamentos que usa."
   fuentes: ["Endocrine Society, Diagnosis and Treatment of Hyperprolactinemia 2011"]
 
 - id: REC-CTL-120
   tipo: controles
-  titulo: "Prepárate bien para repetir el PSA"
-  texto_base: "Consulta con tu médico para revisar este resultado. Antes de repetir el PSA, evita la eyaculación y montar bicicleta las 48 horas previas."
-  meta_concreta: "Pide tu cita en las próximas 4 semanas."
+  titulo: "Prepárese bien para repetir el PSA"
+  texto_base: "Consulte con su médico para revisar este resultado. Antes de repetir el PSA, evite la eyaculación y montar bicicleta las 48 horas previas."
+  meta_concreta: "Pida su cita en las próximas 4 semanas."
   por_que: "El PSA puede subir por la bicicleta, la eyaculación o una inflamación; prepararse bien hace el resultado más confiable."
   se_activa_con: ["COND-M5-UR-001"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos pedir tu cita médica. Antes de repetir tu examen, evita montar bicicleta y la eyaculación los 2 días previos."
+  whatsapp: "📅 Le recordamos pedir su cita médica. Antes de repetir su examen, evite montar bicicleta y la eyaculación los 2 días previos."
   fuentes: ["AUA/SUO Guideline: Early Detection of Prostate Cancer 2023"]
 
 - id: REC-CTL-121
   tipo: controles
-  titulo: "Repite la testosterona en la mañana"
-  texto_base: "Repite la testosterona antes de las 10 de la mañana, en ayunas y después de una buena noche de sueño, y revisa el resultado con tu médico."
-  meta_concreta: "Pide tu cita y programa el examen en la mañana en las próximas 4 semanas."
+  titulo: "Repita la testosterona en la mañana"
+  texto_base: "Repita la testosterona antes de las 10 de la mañana, en ayunas y después de una buena noche de sueño, y revise el resultado con su médico."
+  meta_concreta: "Pida su cita y programe el examen en la mañana en las próximas 4 semanas."
   por_que: "La testosterona es más alta temprano y baja con el mal sueño o una enfermedad reciente; repetirla bien confirma el hallazgo."
   se_activa_con: ["COND-M5-UR-002", "REL-024"]
   prioriza_objetivos: ["masa_muscular", "energia_sueno", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Para repetir tu examen hormonal: ve antes de las 10 de la mañana, en ayunas y después de dormir bien."
+  whatsapp: "🌅 Para repetir su examen hormonal: vaya antes de las 10 de la mañana, en ayunas y después de dormir bien."
   fuentes: ["Endocrine Society, Testosterone Therapy in Men with Hypogonadism 2018"]
 
 - id: REC-CTL-122
   tipo: controles
-  titulo: "Controla presión y lípidos cada año"
-  texto_base: "En esta etapa conviene medir la presión y el perfil de lípidos al menos una vez al año, y hablar con tu médico sobre la salud de tus huesos."
-  meta_concreta: "Marca en tu calendario tu próximo control anual."
+  titulo: "Controle presión y lípidos cada año"
+  texto_base: "En esta etapa conviene medir la presión y el perfil de lípidos al menos una vez al año, y hablar con su médico sobre la salud de sus huesos."
+  meta_concreta: "Marque en su calendario su próximo control anual."
   por_que: "Con los cambios hormonales de esta etapa cambian el colesterol, la presión y los huesos."
   se_activa_con: ["COND-M5-MU-004"]
   prioriza_objetivos: ["envejecer_saludable", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Pon hoy en tu calendario la fecha de tu próximo control anual de presión y colesterol."
+  whatsapp: "📅 Ponga hoy en su calendario la fecha de su próximo control anual de presión y colesterol."
   fuentes: ["The 2022 Hormone Therapy Position Statement of The North American Menopause Society", "ACOG Clinical Practice Guideline: Management of Postmenopausal Osteoporosis 2022"]
 
 - id: REC-CTL-123
   tipo: controles
-  titulo: "Avisa en tu control prenatal"
-  texto_base: "Lleva este resultado de tiroides a tu próximo control prenatal para que tu médico lo revise pronto."
-  meta_concreta: "Comunícate con tu control prenatal esta semana."
-  por_que: "En el embarazo la tiroides cambia y su control es importante; tu equipo prenatal decide qué hacer."
+  titulo: "Avise en su control prenatal"
+  texto_base: "Lleve este resultado de tiroides a su próximo control prenatal para que su médico lo revise pronto."
+  meta_concreta: "Comuníquese con su control prenatal esta semana."
+  por_que: "En el embarazo la tiroides cambia y su control es importante; su equipo prenatal decide qué hacer."
   se_activa_con: ["COND-M2-TI-006"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Te recordamos comunicarte esta semana con tu control prenatal para revisar tus resultados."
+  whatsapp: "🤰 Le recordamos comunicarse esta semana con su control prenatal para revisar sus resultados."
   fuentes: ["ATA Guidelines for Thyroid Disease During Pregnancy and the Postpartum 2017"]
 
 - id: REC-CTL-124
   tipo: controles
-  titulo: "Lleva tu lista de medicamentos"
-  texto_base: "Haz una lista de todos los medicamentos, suplementos y productos naturales que usas, con su frecuencia, y llévala a tu próxima cita."
-  meta_concreta: "Haz la lista esta semana y guárdala en el celular."
-  por_que: "Varios medicamentos cambian estos resultados; con la lista tu médico los interpreta mejor."
+  titulo: "Lleve su lista de medicamentos"
+  texto_base: "Haga una lista de todos los medicamentos, suplementos y productos naturales que usa, con su frecuencia, y llévela a su próxima cita."
+  meta_concreta: "Haga la lista esta semana y guárdela en el celular."
+  por_que: "Varios medicamentos cambian estos resultados; con la lista, su médico los interpreta mejor."
   se_activa_con: ["COND-M2-NE-004", "COND-M2-NE-005", "COND-M2-TI-001", "COND-M2-TI-008", "COND-M5-MU-003", "COND-M5-UR-002", "REL-027", "COND-M2-TI-009", "COND-M5-UR-001", "COND-M2-TI-006"]
   prioriza_objetivos: ["condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Esta semana haz en el celular la lista de medicamentos y suplementos que usas. Te va a servir en tu próxima cita."
+  whatsapp: "📋 Esta semana haga en el celular la lista de medicamentos y suplementos que usa. Le va a servir en su próxima cita."
   fuentes: ["Endocrine Society, Diagnosis and Treatment of Hyperprolactinemia 2011", "Guía europea de hiponatremia 2014 (Spasovski et al.)"]
 
 - id: REC-CTL-125
   tipo: controles
-  titulo: "Mide tu cintura cada mes"
-  texto_base: "Mide tu cintura a la altura del ombligo, en la mañana y sin apretar el metro, una vez al mes, y anota el valor."
-  meta_concreta: "Mide tu cintura este fin de semana y pon un recordatorio mensual."
+  titulo: "Mida su cintura cada mes"
+  texto_base: "Mida su cintura a la altura del ombligo, en la mañana y sin apretar el metro, una vez al mes, y anote el valor."
+  meta_concreta: "Mida su cintura este fin de semana y ponga un recordatorio mensual."
   por_que: "La cintura muestra la grasa del abdomen, que es la que más se relaciona con el azúcar y el corazón."
   se_activa_con: ["COND-M1-EM-003", "COND-M1-EM-004", "objetivo:bajar_peso"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Este fin de semana mide tu cintura a la altura del ombligo y anótala. Repite cada mes para ver tu avance."
+  whatsapp: "📏 Este fin de semana mida su cintura a la altura del ombligo y anótela. Repita cada mes para ver su avance."
   fuentes: ["IDF Consensus Worldwide Definition of the Metabolic Syndrome 2006", "2013 AHA/ACC/TOS Guideline for the Management of Overweight and Obesity in Adults"]
 
 - id: REC-CTL-126
   tipo: controles
-  titulo: "Tus controles preventivos al día"
-  texto_base: "Mantén al día tus controles preventivos: presión arterial, peso, exámenes de sangre según tu edad y las tamizaciones que te indique tu médico."
-  meta_concreta: "Revisa esta semana cuándo fue tu último control y agenda el siguiente."
+  titulo: "Sus controles preventivos al día"
+  texto_base: "Mantenga al día sus controles preventivos: presión arterial, peso, exámenes de sangre según su edad y las tamizaciones que le indique su médico."
+  meta_concreta: "Revise esta semana cuándo fue su último control y agende el siguiente."
   por_que: "Muchas condiciones no dan síntomas al principio; los controles las detectan a tiempo."
   se_activa_con: ["objetivo:prevenir", "objetivo:envejecer_saludable"]
   prioriza_objetivos: ["prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "¿Cuándo fue tu último control médico preventivo? Revisa hoy la fecha y agenda el siguiente."
+  whatsapp: "🩺 ¿Cuándo fue su último control médico preventivo? Revise hoy la fecha y agende el siguiente."
   fuentes: ["Resolución 3280 de 2018, Minsalud Colombia (Ruta de promoción y mantenimiento de la salud)", "USPSTF Recommendations for Primary Care"]
 
 - id: REC-CTL-127
   tipo: controles
-  titulo: "Comparte este informe con tu médico tratante"
-  texto_base: "Lleva este informe a tu médico tratante en tu próximo control. Él conoce tu historia y puede integrar estos resultados a tu tratamiento."
-  meta_concreta: "Descarga el informe y llévalo a tu próxima cita."
-  por_que: "Este informe complementa tu seguimiento; las decisiones de tratamiento las toma tu médico."
+  titulo: "Comparta este informe con su médico tratante"
+  texto_base: "Lleve este informe a su médico tratante en su próximo control. Su médico conoce su historia y puede integrar estos resultados a su tratamiento."
+  meta_concreta: "Descargue el informe y llévelo a su próxima cita."
+  por_que: "Este informe complementa su seguimiento; las decisiones de tratamiento las toma su médico."
   se_activa_con: ["objetivo:condicion_existente"]
   prioriza_objetivos: ["condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "Recuerda llevar tu informe de Saludly a tu próxima cita con tu médico tratante."
+  whatsapp: "📄 Recuerde llevar su informe de Saludly a su próxima cita con su médico tratante."
   fuentes: ["Documento 07 Saludly Brain, sección 07.4"]

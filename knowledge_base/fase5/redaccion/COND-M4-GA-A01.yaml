@@ -1,14 +1,14 @@
 id: COND-M4-GA-A01
 tipo: condicion
-titulo_paciente: "Bilirrubina un poco alta con el resto del hígado normal"
-que_es: "La bilirrubina es un pigmento amarillo que se forma cuando el cuerpo recicla los glóbulos rojos viejos, y el hígado se encarga de eliminarla."
+titulo_paciente: "Su bilirrubina está un poco alta, con el resto del hígado normal"
+que_es: "La bilirrubina es un pigmento amarillo que se forma cuando el cuerpo recicla los glóbulos rojos viejos. El hígado se encarga de eliminarla."
 por_que_te_aparece:
-  - "Tu bilirrubina total salió en {bilirubin_total}, un poco por encima del rango."
-  - "Tu bilirrubina directa salió en {bilirubin_direct}, dentro del rango, igual que tus otras pruebas del hígado."
-riesgo_claro: "Es un patrón frecuente y casi siempre benigno; aun así, si aparece cansancio o color amarillo en la piel o los ojos, conviene revisarlo."
+  - "Su bilirrubina total salió en {bilirubin_total}, un poco por encima del rango."
+  - "Su bilirrubina directa salió en {bilirubin_direct}, dentro del rango, igual que sus otras pruebas del hígado."
+riesgo_claro: "Es un patrón frecuente y casi siempre benigno. Aun así, si nota cansancio o color amarillo en la piel o los ojos, conviene revisarlo."
 ejemplo_simple: "Es como un centro de reciclaje que va un poco lento en un día ocupado: el material se acumula un rato, pero el proceso funciona."
-incertidumbre: "Puede subir con el ayuno o por la forma en que se tomó la muestra. Un solo examen no basta: tu médico lo confirma y puede pedir repetirlo."
+incertidumbre: "Puede subir con el ayuno o por la forma en que se tomó la muestra. Un solo examen no basta: su médico lo confirma y puede pedir repetirlo."
 cuando_consultar: null
-aviso_whatsapp: "Ya están listos tus resultados en Saludly. Entra a tu informe para verlos y conocer qué puedes hacer."
+aviso_whatsapp: "Ya están listos sus resultados en Saludly. Entre a su informe para verlos y conocer qué puede hacer."
 fuentes: ["ACG 2017"]
-estado_revision: pendiente
+estado_revision: aprobada

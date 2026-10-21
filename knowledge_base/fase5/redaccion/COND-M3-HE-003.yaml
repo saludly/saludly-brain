@@ -1,14 +1,14 @@
 id: COND-M3-HE-003
 tipo: condicion
-titulo_paciente: "Reservas de hierro bajas, sin anemia"
-que_es: "La ferritina es la reserva de hierro de tu cuerpo; el hierro sirve para fabricar glóbulos rojos y para tener energía."
+titulo_paciente: "Sus reservas de hierro están bajas, sin anemia"
+que_es: "La ferritina es la reserva de hierro de su cuerpo. El hierro sirve para fabricar glóbulos rojos y para tener energía."
 por_que_te_aparece:
-  - "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en {ferritin}, más baja de lo recomendado."
-  - "Tu hemoglobina, ajustada por la altura de Bogotá, salió en {hemoglobina_ajustada}, todavía en el rango esperado."
-riesgo_claro: "Si las reservas siguen bajando, con el tiempo puede aparecer anemia, con más cansancio y menos rendimiento físico."
+  - "Su ferritina, que es la reserva de hierro de su cuerpo, salió en {ferritin}, más baja de lo recomendado."
+  - "Su hemoglobina salió en {hemoglobin}. Aun comparada con el límite que se usa para la altura de Bogotá, sigue en el rango esperado."
+riesgo_claro: "Si las reservas siguen bajando, con el tiempo puede aparecer anemia, con más cansancio y menos rendimiento físico. La buena noticia: lo detectamos antes de que eso pase."
 ejemplo_simple: "Es como la batería del celular en amarillo: todavía funciona, pero conviene cargarla antes de que se apague."
-incertidumbre: "Un solo examen no basta: la inflamación y los suplementos recientes cambian la ferritina. Es un buen momento para mejorar la alimentación y revisar con tu médico por qué pasa."
+incertidumbre: "Un solo examen no basta: la inflamación y los suplementos recientes cambian la ferritina. Es un buen momento para mejorar su alimentación y revisar con su médico por qué pasa."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["OMS 2020, ferritina"]
-estado_revision: pendiente
+estado_revision: aprobada

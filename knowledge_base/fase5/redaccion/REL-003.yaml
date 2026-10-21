@@ -1,15 +1,15 @@
 id: REL-003
 tipo: patron
-titulo_paciente: "Varias señales de colesterol apuntan en la misma dirección"
-que_es: "La apolipoproteína B (ApoB) cuenta las partículas que llevan colesterol hacia las arterias; el colesterol LDL mide cuánto colesterol llevan."
+titulo_paciente: "Varias señales de su colesterol apuntan en la misma dirección"
+que_es: "La apolipoproteína B (ApoB) cuenta las partículas que llevan colesterol hacia las arterias. El colesterol LDL mide cuánto colesterol llevan."
 por_que_te_aparece:
-  - "Tu colesterol LDL salió en {ldl_c} y tu colesterol no-HDL, que suma todo el colesterol que puede pegarse a las arterias, en {non_hdl_c}."
-  - "Tu ApoB salió en {apob}, también por encima de lo recomendado."
-  - "Tu lipoproteína(a), una partícula de colesterol que depende sobre todo de la herencia, salió en {lpa}."
+  - "Su colesterol LDL salió en {ldl_c}, y su colesterol no-HDL, que suma todo el colesterol que puede pegarse a las arterias, en {non_hdl_c}."
+  - "Su ApoB salió en {apob}, también por encima de lo recomendado."
+  - "Su lipoproteína(a), una partícula de colesterol que depende sobre todo de la herencia, salió en {lpa}."
 riesgo_claro: "Cuando hay muchas de estas partículas durante años, el colesterol se va pegando a las paredes de las arterias y las estrecha poco a poco."
 ejemplo_simple: "Es como una vía por la que pasan muchos camiones con carga: entre más camiones, más fácil que algo se quede pegado en las paredes."
-incertidumbre: "Juntos dan una señal más clara que cada uno por separado, pero tu médico define las metas según tu riesgo completo; una tiroides lenta también puede subirlos."
+incertidumbre: "Juntos dan una señal más clara que cada uno por separado, pero su médico define las metas según su riesgo completo. Una tiroides lenta también puede subirlos."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ESC/EAS 2025", "ACC/AHA 2026"]
-estado_revision: pendiente
+estado_revision: aprobada

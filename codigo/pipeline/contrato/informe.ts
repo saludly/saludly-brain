@@ -86,6 +86,7 @@ export interface Informe {
   wearable: { activo: boolean };
   paciente: {
     resumen: string;
+    nota_alimentacion: string | null;   // aviso de alergias o dieta (filtros.yaml)
     lo_que_esta_bien: { grupo: string; nombre: string | null; texto: string }[];
     lo_que_merece_atencion: Hallazgo[];
     que_podria_significar: { hallazgo_id: string; texto: string; incertidumbre: string }[];

@@ -1,15 +1,15 @@
 id: COND-M3-HE-010
 tipo: condicion
-titulo_paciente: "Dos tipos de células de la sangre más bajos de lo esperado"
+titulo_paciente: "Dos tipos de células de su sangre están más bajos de lo esperado"
 que_es: "La sangre tiene tres tipos de células: glóbulos rojos, que llevan oxígeno; glóbulos blancos, que defienden contra microbios; y plaquetas, que ayudan a coagular."
 por_que_te_aparece:
-  - "Tu hemoglobina, ajustada por la altura de Bogotá, salió en {hemoglobina_ajustada}."
-  - "Tus neutrófilos, un tipo de glóbulo blanco que defiende contra las infecciones, salieron en {neutrophils_abs}."
-  - "Tus plaquetas salieron en {platelets}."
+  - "Su hemoglobina salió en {hemoglobin}, por debajo del límite que se usa para la altura de Bogotá."
+  - "Sus neutrófilos, un tipo de glóbulo blanco que defiende contra las infecciones, salieron en {neutrophils_abs}."
+  - "Sus plaquetas salieron en {platelets}."
 riesgo_claro: "Si no se revisa pronto, puede haber más facilidad para infecciones, sangrados o cansancio, y la causa de fondo puede avanzar."
 ejemplo_simple: "Es como cuando en una casa fallan a la vez la luz y el agua: vale la pena que alguien revise si hay una causa común."
 incertidumbre: "Puede tener causas tratables, como falta de vitaminas, una infección viral reciente o medicamentos. Un solo examen no basta: un médico lo revisa en los próximos días y puede pedir repetirlo."
-cuando_consultar: "Pide una consulta médica en los próximos días. Si tienes fiebre, sangrados o moretones sin golpes, consulta antes."
+cuando_consultar: "Pida una consulta médica en los próximos días. Si tiene fiebre, sangrados o moretones sin golpes, consulte antes."
 aviso_whatsapp: null
 fuentes: ["Criterio hematológico general de bicitopenia y pancitopenia"]
-estado_revision: pendiente
+estado_revision: aprobada

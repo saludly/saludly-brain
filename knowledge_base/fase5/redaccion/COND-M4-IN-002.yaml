@@ -1,54 +1,53 @@
 id: COND-M4-IN-002
 tipo: condicion
-titulo_paciente: "Resultado de tus pruebas de hepatitis B"
-que_es: "La hepatitis B es un virus que afecta el hígado; estas pruebas muestran si hay infección, si la hubo en el pasado o si cuentas con defensas, por ejemplo por la vacuna."
+titulo_paciente: "El resultado de sus pruebas de hepatitis B"
+que_es: "La hepatitis B es un virus que afecta el hígado. Estas pruebas muestran si hay infección, si la hubo en el pasado o si usted cuenta con defensas, por ejemplo por la vacuna."
 por_que_te_aparece:
-  - "Revisamos tres pruebas de hepatitis B: una que busca el virus, otra que muestra si hubo contacto con él y otra que mide tus defensas."
-  - "Tus defensas contra la hepatitis B (anti-HBs) salieron en {anti_hbs}."
-riesgo_claro: "Si hay una infección y no se controla, con los años puede afectar el hígado; si no hay defensas suficientes, el virus se puede adquirir, y eso lo previene una vacuna."
+  - "Revisamos tres pruebas de hepatitis B: una que busca el virus, otra que muestra si hubo contacto con él y otra que mide sus defensas."
+  - "Sus defensas contra la hepatitis B (anti-HBs) salieron en {anti_hbs}."
+riesgo_claro: "Si hay una infección y no se controla, con los años puede afectar el hígado. Si no hay defensas suficientes, el virus se puede adquirir, y eso lo previene una vacuna."
 ejemplo_simple: "Es como revisar la puerta de la casa: muestra si alguien entró, si entró y ya se fue, o si conviene ponerle un mejor candado, que sería la vacuna."
-incertidumbre: "Estas pruebas se leen juntas y a veces hace falta una prueba adicional. Nuestro médico te explica qué significa tu combinación de resultados y los pasos a seguir."
-cuando_consultar: "Si alguna prueba muestra infección, nuestro médico te va a llamar para explicarte el resultado. Si solo te falta protección, pregúntanos cómo vacunarte."
-# Textos por estado (el motor da estado_hb). Cada variante reemplaza solo los campos que trae.
+incertidumbre: "Estas pruebas se leen juntas, y a veces hace falta una prueba adicional. Nuestro médico le explica qué significa su combinación de resultados y los pasos a seguir."
+cuando_consultar: "Si alguna prueba muestra infección, nuestro médico lo va a llamar para explicarle el resultado. Si solo le falta protección, pregúntenos cómo vacunarse."
 variantes:
   inmune_por_vacuna:
-    titulo_paciente: "Tienes defensas contra la hepatitis B por la vacuna"
+    titulo_paciente: Usted cuenta con defensas contra la hepatitis B por la vacuna
     por_que_te_aparece:
-      - "No se encontró el virus ni señales de contacto con él, y tus defensas (anti-HBs) salieron en {anti_hbs}, un nivel que protege."
-    riesgo_claro: "Con este nivel de defensas, tu cuerpo está protegido contra la hepatitis B; no necesitas hacer nada más por ahora."
-    ejemplo_simple: "Es como tener la puerta de la casa con un buen candado: el virus no tiene por dónde entrar."
-    incertidumbre: "Es un resultado tranquilizador. Si en el futuro trabajas en salud o vas a recibir un tratamiento que baje las defensas, tu médico puede volver a medirlas."
+    - No se encontró el virus ni señales de contacto con él, y sus defensas (anti-HBs) salieron en {anti_hbs}, un nivel que protege.
+    riesgo_claro: Con este nivel de defensas, su cuerpo está protegido contra la hepatitis B. No necesita hacer nada más por ahora.
+    ejemplo_simple: 'Es como tener la puerta de la casa con un buen candado: el virus no tiene por dónde entrar.'
+    incertidumbre: Es un resultado tranquilizador. Si en el futuro trabaja en salud o va a recibir un tratamiento que baje las defensas, su médico puede volver a medirlas.
     cuando_consultar: null
   susceptible:
-    titulo_paciente: "Te falta protección contra la hepatitis B"
+    titulo_paciente: Le falta protección contra la hepatitis B
     por_que_te_aparece:
-      - "No se encontró el virus ni señales de contacto con él, pero tus defensas (anti-HBs) salieron en {anti_hbs}, por debajo del nivel que protege (10 mUI/mL)."
-    riesgo_claro: "Sin defensas suficientes, el virus se puede adquirir por sangre o por relaciones sexuales; la vacuna lo previene y es segura."
-    ejemplo_simple: "Es como una casa con la puerta sin candado: no ha entrado nadie, pero conviene ponérselo."
-    incertidumbre: "Si ya te vacunaste hace años, puede que tus defensas hayan bajado; tu médico decide si basta con un refuerzo o con el esquema completo."
-    cuando_consultar: "Pregunta en tu EPS o a tu médico por la vacuna de la hepatitis B en los próximos meses."
+    - No se encontró el virus ni señales de contacto con él, pero sus defensas (anti-HBs) salieron en {anti_hbs}, por debajo del nivel que protege (10 mUI/mL).
+    riesgo_claro: Sin defensas suficientes, el virus se puede adquirir por sangre o por relaciones sexuales. La vacuna lo previene y es segura.
+    ejemplo_simple: 'Es como una casa con la puerta sin candado: no ha entrado nadie, pero conviene ponérselo.'
+    incertidumbre: Si ya se vacunó hace años, puede que sus defensas hayan bajado. Su médico decide si basta con un refuerzo o con el esquema completo.
+    cuando_consultar: Pregunte en su EPS o a su médico por la vacuna de la hepatitis B en los próximos meses.
   infeccion_pasada_resuelta:
-    titulo_paciente: "Tuviste contacto con la hepatitis B y tu cuerpo la superó"
+    titulo_paciente: Usted tuvo contacto con la hepatitis B y su cuerpo la superó
     por_que_te_aparece:
-      - "No se encontró el virus activo, pero sí señales de un contacto pasado, y tus defensas (anti-HBs) salieron en {anti_hbs}."
-    riesgo_claro: "Hoy no hay infección activa. Importa saberlo porque algunos tratamientos que bajan las defensas pueden despertar el virus."
-    ejemplo_simple: "Es como una visita que entró a la casa y ya se fue, pero dejó una huella en la puerta."
-    incertidumbre: "Cuéntale este resultado a cualquier médico que te vaya a formular quimioterapia, corticoides por largo tiempo u otros tratamientos que bajen las defensas."
-    cuando_consultar: "Coméntalo con tu médico en tu próximo control y antes de iniciar cualquier tratamiento que baje las defensas."
+    - No se encontró el virus activo, pero sí señales de un contacto pasado, y sus defensas (anti-HBs) salieron en {anti_hbs}.
+    riesgo_claro: Hoy no hay infección activa. Importa saberlo porque algunos tratamientos que bajan las defensas pueden despertar el virus.
+    ejemplo_simple: Es como una visita que entró a la casa y ya se fue, pero dejó una huella en la puerta.
+    incertidumbre: Cuéntele este resultado a cualquier médico que le vaya a formular quimioterapia, corticoides por largo tiempo u otros tratamientos que bajen las defensas.
+    cuando_consultar: Coménteselo a su médico en su próximo control y antes de iniciar cualquier tratamiento que baje las defensas.
   anti_hbc_aislado:
-    titulo_paciente: "Un resultado de hepatitis B que hay que aclarar"
+    titulo_paciente: Un resultado de hepatitis B que hay que aclarar
     por_que_te_aparece:
-      - "Salió positiva la prueba que muestra contacto con el virus, sin el virus activo y con defensas bajas: es una combinación que se aclara con otros exámenes."
-    riesgo_claro: "Puede tratarse de un contacto antiguo o de un resultado poco claro; hay que aclararlo para saber si el hígado necesita seguimiento."
-    ejemplo_simple: "Es como encontrar una huella en la puerta sin saber de quién es: hay que mirar con más cuidado."
-    incertidumbre: "Nuestro médico te va a llamar para explicarte el resultado y decidir qué exámenes siguen."
+    - 'Salió positiva la prueba que muestra contacto con el virus, sin el virus activo y con defensas bajas: es una combinación que se aclara con otros exámenes.'
+    riesgo_claro: Puede tratarse de un contacto antiguo o de un resultado poco claro. Hay que aclararlo para saber si el hígado necesita seguimiento.
+    ejemplo_simple: 'Es como encontrar una huella en la puerta sin saber de quién es: hay que mirar con más cuidado.'
+    incertidumbre: Nuestro médico lo va a llamar para explicarle el resultado y decidir qué exámenes siguen.
   infeccion_activa:
-    titulo_paciente: "Tu prueba de hepatitis B necesita una conversación con el médico"
+    titulo_paciente: Su prueba de hepatitis B necesita una conversación con el médico
     por_que_te_aparece:
-      - "La prueba que busca el virus de la hepatitis B salió reactiva."
-    riesgo_claro: "Sin seguimiento, con los años puede afectar el hígado; hoy existen tratamientos y controles muy efectivos."
-    ejemplo_simple: "Es como detectar una gotera a tiempo: con el arreglo adecuado se evita el daño en la casa."
-    incertidumbre: "Un solo resultado se confirma con otros exámenes. Nuestro médico te va a llamar para explicártelo con calma y orientarte."
+    - La prueba que busca el virus de la hepatitis B salió reactiva.
+    riesgo_claro: Sin seguimiento, con los años puede afectar el hígado. Hoy existen tratamientos y controles muy efectivos.
+    ejemplo_simple: 'Es como detectar una gotera a tiempo: con el arreglo adecuado se evita el daño en la casa.'
+    incertidumbre: Un solo resultado se confirma con otros exámenes. Nuestro médico lo va a llamar para explicárselo con calma y orientarlo.
 aviso_whatsapp: null
 fuentes: ["CDC 2023, interpretación serológica de hepatitis B", "CDC ACIP 2022, vacunación de adultos", "Res. 1314 de 2020"]
-estado_revision: pendiente
+estado_revision: aprobada

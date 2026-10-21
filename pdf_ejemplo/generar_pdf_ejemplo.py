@@ -7,8 +7,14 @@ from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-pdfmetrics.registerFont(TTFont('DV', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
-pdfmetrics.registerFont(TTFont('DVB', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
+import copy, os, sys
+
+# Fuente: DejaVu en Linux (así se hicieron los casos 1 y 2); en Windows, Segoe UI, que trae ⁶, ³, µ y ≥
+_FUENTES = [('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'),
+            ('C:/Windows/Fonts/segoeui.ttf', 'C:/Windows/Fonts/segoeuib.ttf')]
+_normal, _negrilla = next(f for f in _FUENTES if os.path.exists(f[0]))
+pdfmetrics.registerFont(TTFont('DV', _normal))
+pdfmetrics.registerFont(TTFont('DVB', _negrilla))
 
 AZUL = colors.HexColor('#1f4fa8'); GRIS = colors.HexColor('#5e5d59'); LINEA = colors.HexColor('#b8b7ae')
 FONDO = colors.HexColor('#eef2f9')
@@ -404,7 +410,100 @@ caso2 = dict(
          'Fecha de última menstruación informada: 23/09/2026 (día 9 del ciclo). Intervalos hormonales de fase folicular. Sin anticonceptivo hormonal.',
          'Documento generado por Saludly como ejemplo de formato. Laboratorio, paciente, documento y resultados son ficticios.'])
 
+# ---------------- Caso 3: hombre 58 años, valor crítico (escalamiento 3) ----------------
+# Panel del MVP (11 de octubre de 2026): solo sangre, sin orina ni heces y sin las 10 vitaminas que salieron del panel base;
+# trae factor reumatoide y grupo sanguíneo. La glucosa de 386 mg/dL llega con bandera crítica del laboratorio:
+# según COND-M1-EM-002 eso es escalamiento 3, y el informe queda retenido hasta la llamada del equipo médico.
+caso3 = copy.deepcopy(caso1)
+caso3.update(nombre='PACIENTE EJEMPLO TRES', doc='CC 0000000003', nac='22/05/1968', edad='58 años', orden='LCD-2026-100125',
+             ayuno='10 horas', toma='01/10/2026 07:40', recep='01/10/2026 10:55', valid='01/10/2026 11:20')
+_sec = {s[0]: s for s in caso3['secciones']}
+_sec['QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS'] = ('QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS', SUERO + ' / Plasma fluoruro', [
+    ('Glucosa en ayunas', '386', 'Crít.', 'mg/dL', '70 – 99', 'Hexoquinasa'),
+    ('Hemoglobina glicosilada (HbA1c)', '10,8', 'H', '%', '4,0 – 5,6', 'HPLC (certificado NGSP)'),
+    ('Insulina en ayunas', '14,2', '', 'µUI/mL', '2,6 – 24,9', QLA),
+    ('Péptido C', '2,1', '', 'ng/mL', '1,1 – 4,4', QLA),
+    ('Fructosamina', '412', 'H', 'µmol/L', '205 – 285', 'Colorimétrico'),
+    ('Ácido úrico', '6,4', '', 'mg/dL', '3,4 – 7,0', 'Uricasa')])
+_sec['PERFIL LIPÍDICO'] = ('PERFIL LIPÍDICO', SUERO, [
+    ('Colesterol total', '246', 'H', 'mg/dL', '< 200', ENZ),
+    ('Triglicéridos', '612', 'H', 'mg/dL', '< 150', ENZ),
+    ('Colesterol HDL', '34', 'L', 'mg/dL', '> 40', 'Enzimático directo'),
+    ('Colesterol LDL (medido)', '128', '', 'mg/dL', '< 130', 'Enzimático directo'),
+    ('Apolipoproteína B', '124', 'H', 'mg/dL', '60 – 117', ITB),
+    ('Apolipoproteína A1', '108', '', 'mg/dL', '104 – 202', ITB),
+    ('Lipoproteína (a)', '22', '', 'mg/dL', '< 30', ITB)])
+_sec['FUNCIÓN HEPÁTICA Y PROTEÍNAS'][2][0] = ('ALT (TGP)', '34', '', 'U/L', '10 – 50', 'IFCC sin P5P')
+_sec['FUNCIÓN HEPÁTICA Y PROTEÍNAS'][2][2] = ('Gamma glutamil transferasa (GGT)', '48', '', 'U/L', '10 – 71', 'IFCC')
+_sec['FUNCIÓN RENAL'] = ('FUNCIÓN RENAL', SUERO, [
+    ('Creatinina', '0,95', '', 'mg/dL', '0,70 – 1,20', 'Jaffé compensado (trazable IDMS)'),
+    ('TFG estimada (CKD-EPI 2021)', '93', '', 'mL/min/1,73 m²', '> 60', 'Calculado'),
+    ('Nitrógeno ureico (BUN)', '16', '', 'mg/dL', '6 – 20', 'Ureasa'),
+    ('Relación BUN/creatinina', '16,8', '', '', '10 – 20', 'Calculado')])
+_sec['MARCADORES CARDIOVASCULARES E INFLAMACIÓN'] = ('MARCADORES CARDIOVASCULARES E INFLAMACIÓN', SUERO, [
+    ('Proteína C reactiva ultrasensible', '2,1', '', 'mg/L', '< 3,0', ITB),
+    ('Velocidad de sedimentación globular', '14', '', 'mm/h', '0 – 20', 'Westergren'),
+    ('Homocisteína', '12,4', '', 'µmol/L', '5,0 – 15,0', 'Enzimático'),
+    ('Troponina I de alta sensibilidad', '< 3', '', 'ng/L', '< 14 (percentil 99)', QLA),
+    ('Anticuerpos antinucleares (ANA)', 'Negativo (< 1:80)', '', '', 'Negativo', 'IFI en células HEp-2'),
+    ('Factor reumatoide', '< 10', '', 'UI/mL', '< 14', ITB)])
+_sec['VITAMINAS'] = ('VITAMINAS', SUERO, [
+    ('Vitamina B12', '388', '', 'pg/mL', '197 – 771', QLA),
+    ('Ácido fólico', '8,6', '', 'ng/mL', '> 3,9', QLA),
+    ('25-hidroxivitamina D', '24,6', 'L', 'ng/mL', '30 – 100', QLA)])
+_sec['SEROLOGÍA E INFECCIOSAS'][2][2] = ('Anticuerpos contra antígeno de superficie (anti-HBs)', '58', '', 'mUI/mL', '≥ 10 (inmunidad)', QLA)
+_sec['TIROIDES Y HORMONAS'][2][8] = ('IGF-1', '142', '', 'ng/mL', '71 – 216 (55 – 59 años)', QLA)
+caso3['secciones'] = [_sec[s[0]] for s in caso1['secciones'] if s[0] not in ('UROANÁLISIS', 'COPROLÓGICO Y PRUEBAS EN HECES')] + [
+    ('INMUNOHEMATOLOGÍA', HEMA, [('Grupo sanguíneo y Rh', 'O positivo', '', '', '', 'Aglutinación en gel')])]
+caso3['obs'] = ['VALOR CRÍTICO: glucosa en ayunas de 386 mg/dL, confirmada por repetición. Se informó por teléfono al programa Saludly el 01/10/2026 a las 11:20.',
+                'Triglicéridos de 612 mg/dL: el colesterol LDL se informa por método directo.',
+                'Pruebas reflejas: ninguna activada en esta orden.',
+                'Documento generado por Saludly como ejemplo de formato. Laboratorio, paciente, documento y resultados son ficticios.']
+
+# ---------------- Caso 4: mujer 29 años, hallazgos digestivos (demo de gastroenterología) ----------------
+# Panel del MVP, solo sangre. Anti-transglutaminasa IgA positiva con IgA total normal (COND-M4-GA-006), déficit de hierro
+# con anemia, folato bajo, ALT y AST sobre el laboratorio (COND-M4-GA-002) y vitamina D baja. Tiroides, ANA y lípidos normales.
+caso4 = copy.deepcopy(caso2)
+caso4.update(nombre='PACIENTE EJEMPLO CUATRO', doc='CC 0000000004', nac='03/04/1997', edad='29 años', orden='LCD-2026-100126',
+             ayuno='12 horas', toma='01/10/2026 07:20', recep='01/10/2026 10:30', valid='02/10/2026 15:45')
+_s4 = {s[0]: s for s in caso4['secciones']}
+def _fila(sec, i, res, ind='', **kw):
+    f = list(_s4[sec][2][i]); f[1], f[2] = res, ind
+    if 'ref' in kw: f[4] = kw['ref']
+    _s4[sec][2][i] = tuple(f)
+for i, res, ind in ((0, '11,0', 'L'), (1, '34,1', 'L'), (2, '4,48', ''), (3, '76,1', 'L'), (4, '24,6', 'L'), (5, '32,3', ''), (6, '17,2', 'H'), (15, '412', '')):
+    _fila('HEMATOLOGÍA · HEMOGRAMA IV', i, res, ind)
+for i, res in ((0, '168'), (2, '56'), (3, '92'), (4, '74'), (6, '18')):
+    _fila('PERFIL LIPÍDICO', i, res)
+_fila('ELECTROLITOS Y MINERALES', 1, '4,1')
+for i, res, ind in ((0, '52', 'H'), (1, '41', 'H'), (6, '6,8', ''), (7, '3,9', ''), (8, '2,9', ''), (9, '1,34', '')):
+    _fila('FUNCIÓN HEPÁTICA Y PROTEÍNAS', i, res, ind)
+_fila('FUNCIÓN RENAL', 1, '116')                      # CKD-EPI 2021 con creatinina 0,72, mujer de 29 años
+_fila('TIROIDES Y HORMONAS', 0, '2,40')
+_ref = _s4['PRUEBAS REFLEJAS'][2]
+_s4['PRUEBAS REFLEJAS'] = ('PRUEBAS REFLEJAS', _s4['PRUEBAS REFLEJAS'][1], [_ref[3], _ref[4], _ref[5], _ref[6], _ref[7]])
+_fila('PRUEBAS REFLEJAS', 0, '1,0'); _fila('PRUEBAS REFLEJAS', 1, '45'); _fila('PRUEBAS REFLEJAS', 2, '205')
+_fila('PRUEBAS REFLEJAS', 3, '86', 'H'); _fila('PRUEBAS REFLEJAS', 4, '0,31')
+_fila('MARCADORES CARDIOVASCULARES E INFLAMACIÓN', 4, 'Negativo (< 1:80)')
+_s4['MARCADORES CARDIOVASCULARES E INFLAMACIÓN'][2].append(('Factor reumatoide', '< 10', '', 'UI/mL', '< 14', ITB))
+for i, res, ind in ((0, '6', 'L'), (1, '31', 'L'), (2, '448', ''), (3, '358', ''), (4, '6,9', 'L')):
+    _fila('METABOLISMO DEL HIERRO', i, res, ind)
+_vit = _s4['VITAMINAS'][2]
+_s4['VITAMINAS'] = ('VITAMINAS', SUERO, [_vit[0], _vit[1], _vit[2]])
+_fila('VITAMINAS', 0, '298'); _fila('VITAMINAS', 1, '2,8', 'L'); _fila('VITAMINAS', 2, '14,2', 'L')
+caso4['secciones'] = [_s4[s[0]] for s in caso2['secciones'] if s[0] not in ('UROANÁLISIS', 'COPROLÓGICO Y PRUEBAS EN HECES')] + [
+    ('INMUNOHEMATOLOGÍA', HEMA, [('Grupo sanguíneo y Rh', 'A positivo', '', '', '', 'Aglutinación en gel')])]
+caso4['obs'] = ['Pruebas reflejas activadas: reticulocitos por anemia; IgA total y anti-transglutaminasa IgA por déficit de hierro y ALT elevada; ácido metilmalónico por vitamina B12 entre 180 y 350 pg/mL.',
+                'Anti-transglutaminasa IgA positiva con IgA total normal. Se informa el valor para interpretación clínica.',
+                'Fecha de última menstruación informada: 20/09/2026. Intervalos hormonales de fase folicular. Sin anticonceptivo hormonal.',
+                'Documento generado por Saludly como ejemplo de formato. Laboratorio, paciente, documento y resultados son ficticios.']
+
+CASOS = {'1': (caso1, 'Ejemplo_resultados_LCD-2026-100123_hombre.pdf'), '2': (caso2, 'Ejemplo_resultados_LCD-2026-100124_mujer.pdf'),
+         '3': (caso3, 'Ejemplo_resultados_LCD-2026-100125_hombre_critico.pdf'), '4': (caso4, 'Ejemplo_resultados_LCD-2026-100126_mujer_digestivo.pdf')}
+
 if __name__ == '__main__':
-    build(caso1, '/home/claude/saludly/Ejemplo_resultados_LCD-2026-100123_hombre.pdf')
-    build(caso2, '/home/claude/saludly/Ejemplo_resultados_LCD-2026-100124_mujer.pdf')
-    print('ok')
+    # Uso: python generar_pdf_ejemplo.py [1 2 3]   (sin argumentos genera los tres en esta carpeta)
+    aqui = os.path.dirname(os.path.abspath(__file__))
+    for k in sys.argv[1:] or sorted(CASOS):
+        caso, nombre = CASOS[k]
+        build(caso, os.path.join(aqui, nombre)); print(nombre)
