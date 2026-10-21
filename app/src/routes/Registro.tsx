@@ -127,7 +127,11 @@ export function Registro() {
           <strong className="font-medium text-ink">Servidores fuera de Colombia.</strong> Usamos proveedores con servidores en Brasil, Estados Unidos y otros países (Supabase, Vercel, Google y Meta). Ellos guardan y procesan tus datos solo por cuenta de Saludly, con contrato y medidas de seguridad.
         </p>
         <p>
-          <strong className="font-medium text-ink">Tus derechos.</strong> Puedes conocer, corregir y borrar tus datos, y retirar esta autorización, escribiendo a carlos@saludly.online.
+          <strong className="font-medium text-ink">Tus derechos.</strong> Puedes conocer, corregir y borrar tus datos, y retirar esta autorización, escribiendo a carlos@saludly.online. Lee la{" "}
+          <a href="/privacidad" target="_blank" rel="noreferrer" className="text-primary underline">
+            Política de tratamiento de datos
+          </a>
+          .
         </p>
       </div>
       <div className="mt-8 grid gap-3">

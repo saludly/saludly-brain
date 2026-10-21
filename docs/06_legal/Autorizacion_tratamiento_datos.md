@@ -8,7 +8,7 @@
 
 En Saludly tus datos son privados: **solo los ve el equipo de salud de Saludly** y los proveedores que necesitamos para prestarte el servicio. No los vendemos ni los usamos para publicidad.
 
-Al crear tu cuenta autorizas a Carlos Araujo [apellidos y cédula], quien opera la marca Saludly, a tratar tus datos así:
+Al crear tu cuenta autorizas a Carlos Daniel Araujo Godoy (C.C. 7.201.208), quien opera la marca Saludly, a tratar tus datos así:
 
 **1. Qué datos.** Tu nombre, cédula, edad, sexo, correo, celular y dirección. Y **datos de salud**: tus objetivos, peso, talla, actividad física, tus respuestas al cuestionario, las medidas que toma la enfermera y los resultados de tu laboratorio.
 

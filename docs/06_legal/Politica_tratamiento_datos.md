@@ -1,14 +1,14 @@
 # Política de tratamiento de datos personales de Saludly
 
-> **BORRADOR del 20 de octubre de 2026, para revisión de un abogado.** No es asesoría legal. Los campos entre corchetes [ ] faltan por llenar. Base: Ley 1581 de 2012 y Decreto 1074 de 2015 (que recoge el Decreto 1377 de 2013).
+> **BORRADOR del 20 de octubre de 2026, para revisión de un abogado.** No es asesoría legal. Publicada en https://app.saludly.online/privacidad el 21 de octubre de 2026 (la app la lee de este archivo, de la sección 1 a la 10). Base: Ley 1581 de 2012 y Decreto 1074 de 2015 (que recoge el Decreto 1377 de 2013).
 
 ## 1. Responsable del tratamiento
 
-- **Nombre:** Carlos Araujo [apellidos completos], persona natural, que opera la marca Saludly. Saludly todavía no está constituida como sociedad (20 de octubre de 2026); cuando lo esté, la sociedad pasa a ser la responsable y se actualiza esta política.
-- **Cédula:** [ ]
-- **Domicilio y dirección:** [ ], Bogotá, Colombia
+- **Nombre:** Carlos Daniel Araujo Godoy, persona natural, que opera la marca Saludly. Saludly todavía no está constituida como sociedad (20 de octubre de 2026); cuando lo esté, la sociedad pasa a ser la responsable y se actualiza esta política.
+- **Cédula:** 7.201.208
+- **Domicilio y dirección:** Carrera 7G # 150-25, Bogotá, Colombia
 - **Correo para datos personales:** carlos@saludly.online
-- **Teléfono:** [ ]
+- **Teléfono:** 300 520 7995
 - **Sitio web:** https://saludly.online
 
 ## 2. Qué datos tratamos
@@ -50,7 +50,7 @@ Para prestar el servicio usamos proveedores que tratan los datos **por cuenta de
 | Google | Inicio de sesión con Google, si lo eliges | Estados Unidos y otros países |
 | Bold | Pagos | Colombia |
 | Meta (WhatsApp Business) | Mensajes por WhatsApp, si los autorizas | Estados Unidos y otros países |
-| [Laboratorio aliado] | Toma y análisis de la muestra | Colombia |
+| Laboratorio clínico aliado | Toma y análisis de la muestra | Colombia |
 
 Con los proveedores que reciben datos fuera de Colombia, Saludly firma o acepta un **contrato de transmisión de datos**, que exige mantener la confidencialidad y seguridad de los datos y usarlos solo para el servicio (artículo 2.2.2.25.5.2 del Decreto 1074 de 2015). Además, en tu autorización te pedimos expresamente permiso para esta transmisión internacional.
 
@@ -83,15 +83,15 @@ Escribe a **carlos@saludly.online** con tu nombre, tu cédula, lo que pides y un
 - **Consultas:** te respondemos en máximo **10 días hábiles**. Si no alcanzamos, te avisamos y respondemos en máximo 5 días hábiles más.
 - **Reclamos** (corregir, borrar o revocar): te respondemos en máximo **15 días hábiles**. Si no alcanzamos, te avisamos y respondemos en máximo 8 días hábiles más.
 
-Responsable de atender las solicitudes: [Carlos …, CEO].
+Responsable de atender las solicitudes: Carlos Daniel Araujo Godoy, CEO.
 
 ## 9. Cuánto tiempo guardamos tus datos
 
-Mientras tengas el servicio activo y [ ] años más, para atender reclamos y obligaciones legales. Después se borran o se anonimizan. [Por definir con el abogado si el informe se considera parte de una historia clínica, que tiene sus propios plazos.]
+Mientras tengas el servicio activo y 1 año más, para atender reclamos y obligaciones legales. Después se borran o se anonimizan.
 
 ## 10. Vigencia y cambios
 
-Esta política rige desde el [ ] de [ ] de 2026. Si la cambiamos de forma importante, te avisaremos antes y, si cambia la finalidad, te pediremos una nueva autorización.
+Esta política rige desde el 21 de octubre de 2026. Si la cambiamos de forma importante, te avisaremos antes y, si cambia la finalidad, te pediremos una nueva autorización.
 
 ---
 
