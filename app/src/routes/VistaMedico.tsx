@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import { Marca } from "@/components/Comunes";
 
 /**
  * Lo que ve el médico del paciente al abrir app.saludly.online/m/<enlace> (sin cuenta: el enlace es la llave).
  * Los datos vienen de la función vista-medico de Supabase: solo lo clínico, sin textos internos de Saludly.
- * Primero lo que está fuera de rango y los hallazgos; después todos los resultados por sección.
+ * Mismo estilo del panel del paciente, sin distracciones: resumen con conteos, lo fuera de rango, hallazgos,
+ * lo que reporta el paciente y todos los resultados por sección, con un buscador para ir directo a un biomarcador.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Vista = any;
@@ -65,6 +67,33 @@ function Tabla({ filas }: { filas: Vista[] }) {
   );
 }
 
+/** Sección plegable como en el panel del paciente; se abre sola si tiene algo fuera de rango o si hay búsqueda. */
+function Grupo({ nombre, filas, abiertaInicial }: { nombre: string; filas: Vista[]; abiertaInicial: boolean }) {
+  const [abierta, setAbierta] = useState(abiertaInicial);
+  useEffect(() => setAbierta(abiertaInicial), [abiertaInicial]);
+  const fueraN = filas.filter((r) => FUERA.has(r.clase)).length;
+  return (
+    <section className="mt-4">
+      <button type="button" onClick={() => setAbierta((x) => !x)} aria-expanded={abierta} className="flex w-full items-baseline justify-between gap-4 border-b border-rule pb-3 text-left">
+        <span className="flex items-center gap-3">
+          <span aria-hidden className={`inline-block text-ink-faint transition-transform duration-300 ${abierta ? "rotate-90" : ""}`}>›</span>
+          <h3 className="text-lg font-normal tracking-tight text-ink">{nombre}</h3>
+        </span>
+        <span className="font-mono text-[11px] tabular-nums text-ink-faint">
+          {filas.length} resultados{fueraN > 0 && <span className="text-attention"> · {fueraN} fuera de rango</span>}
+        </span>
+      </button>
+      {abierta && (
+        <div className="mt-3">
+          <Tabla filas={filas} />
+        </div>
+      )}
+    </section>
+  );
+}
+
+const normal = (s: string) => s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
+
 function Seccion({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
@@ -80,6 +109,7 @@ export function VistaMedico() {
   const { slug } = useParams({ strict: false }) as { slug: string };
   const [v, setV] = useState<Vista | null>(null);
   const [error, setError] = useState(false);
+  const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/vista-medico?e=${encodeURIComponent(slug)}`)
@@ -87,6 +117,16 @@ export function VistaMedico() {
       .then(setV)
       .catch(() => setError(true));
   }, [slug]);
+
+  const q = normal(busqueda.trim());
+  const secciones = useMemo(() => {
+    const m = new Map<string, Vista[]>();
+    for (const r of v?.resultados ?? []) {
+      if (q && !normal(`${r.nombre} ${r.seccion ?? ""}`).includes(q)) continue;
+      m.set(r.seccion ?? "Otros", [...(m.get(r.seccion ?? "Otros") ?? []), r]);
+    }
+    return [...m];
+  }, [v, q]);
 
   if (error)
     return (
@@ -97,8 +137,9 @@ export function VistaMedico() {
   if (!v) return <main className="min-h-screen bg-background" />;
 
   const fuera = v.resultados.filter((r: Vista) => FUERA.has(r.clase));
-  const secciones = new Map<string, Vista[]>();
-  for (const r of v.resultados) secciones.set(r.seccion ?? "Otros", [...(secciones.get(r.seccion ?? "Otros") ?? []), r]);
+  const enRango = v.resultados.filter((r: Vista) => r.clase === "en_rango").length;
+  const pct = (n: number) => (v.resultados.length ? (n / v.resultados.length) * 100 : 0);
+  const encontrados = secciones.reduce((n, [, f]) => n + f.length, 0);
   const pr = v.paciente_reporta ?? {};
   const med = v.medidas ?? {};
 
@@ -107,8 +148,10 @@ export function VistaMedico() {
       <div className="mx-auto max-w-4xl px-5 pb-20 pt-8">
         <Marca derecha="Resumen para el médico" />
 
-        <header className="mt-10 rounded-3xl border border-rule p-6">
-          <h1 className="text-2xl font-light tracking-tight text-ink">{v.paciente.nombre}</h1>
+        <p className="mt-10 text-[11px] uppercase tracking-[0.18em] text-optimal">Resumen clínico · revisado por Saludly</p>
+        <h1 className="mt-2 text-4xl font-light tracking-tight text-ink">{v.paciente.nombre}</h1>
+        <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_auto]">
+        <header className="rounded-3xl border border-rule p-6">
           <dl className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
             <Dato k="Edad" v={`${v.paciente.edad} años`} />
             <Dato k="Sexo" v={v.paciente.sexo === "hombre" ? "Masculino" : "Femenino"} />
@@ -120,6 +163,48 @@ export function VistaMedico() {
             <Dato k="Ciudad" v={v.informe.ciudad} />
           </dl>
         </header>
+          <div className="rounded-3xl border border-rule px-6 py-5 shadow-[0_16px_40px_-32px_rgba(20,30,60,0.55)] lg:min-w-[260px]">
+            <dl className="flex flex-wrap items-start gap-x-8 gap-y-4">
+              {[
+                { n: v.resultados.length, l: "Total", c: "text-ink" },
+                { n: enRango, l: "En rango", c: "text-optimal" },
+                { n: fuera.length, l: "Fuera de rango", c: "text-attention" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <dd className={`font-mono text-2xl tabular-nums ${s.c}`}>{s.n}</dd>
+                  <dt className="mt-1 text-[12px] text-ink-faint">{s.l}</dt>
+                </div>
+              ))}
+            </dl>
+            <div className="mt-5 flex gap-1.5">
+              <span className="h-1.5 rounded-full bg-optimal" style={{ width: `${pct(enRango)}%` }} />
+              <span className="h-1.5 rounded-full bg-attention" style={{ width: `${pct(fuera.length)}%` }} />
+            </div>
+          </div>
+        </div>
+
+        <div className="sticky top-0 z-30 -mx-5 mt-8 bg-background/95 px-5 py-3 backdrop-blur">
+          <label className="flex items-center gap-3 rounded-full border border-rule bg-background px-5 py-3 focus-within:border-optimal">
+            <Search className="h-4 w-4 shrink-0 text-ink-faint" strokeWidth={1.8} />
+            <input
+              type="search"
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+              placeholder="Buscar un biomarcador: ferritina, TSH, LDL…"
+              className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-faint"
+            />
+          </label>
+          {q && <p className="mt-2 px-2 text-xs text-ink-faint">{encontrados ? `${encontrados} resultado${encontrados === 1 ? "" : "s"}` : "Ningún biomarcador coincide con la búsqueda."}</p>}
+        </div>
+
+        {q ? (
+          <div className="mt-2">
+            {secciones.map(([s, filas]) => (
+              <Grupo key={s} nombre={s} filas={filas} abiertaInicial />
+            ))}
+          </div>
+        ) : (
+          <>
 
         <Seccion titulo="Medidas de la visita">
           <dl className="grid grid-cols-2 gap-4 sm:grid-cols-5">
@@ -201,15 +286,12 @@ export function VistaMedico() {
         </Seccion>
 
         <Seccion titulo="Todos los resultados">
-          <div className="space-y-8">
-            {[...secciones].map(([s, filas]) => (
-              <div key={s}>
-                <h3 className="mb-2 text-sm text-ink">{s}</h3>
-                <Tabla filas={filas} />
-              </div>
-            ))}
-          </div>
+          {secciones.map(([s, filas]) => (
+            <Grupo key={s} nombre={s} filas={filas} abiertaInicial={filas.some((r) => FUERA.has(r.clase))} />
+          ))}
         </Seccion>
+          </>
+        )}
 
         <p className="mt-12 text-xs leading-relaxed text-ink-faint">
           Resumen preventivo de Saludly a partir del PDF del laboratorio y de las medidas de la visita. No es un diagnóstico: la interpretación
