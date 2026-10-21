@@ -3,12 +3,13 @@ import { useNavigate } from "@tanstack/react-router";
 import { CalendarClock, MessageCircle, Stethoscope } from "lucide-react";
 import { Marca } from "@/components/Comunes";
 import { Espera } from "@/components/Espera";
+import { Agendar } from "@/components/Agendar";
 import { siguientePaso, useSesion } from "@/lib/sesion";
 import C from "@/lib/contenido.json";
 
 /**
- * Después del cuestionario. Muestra si el pago ya está confirmado; la agenda en la app (Google Calendar) viene después.
- * Mientras tanto, Carlos coordina la visita por WhatsApp (1 por día, lunes a viernes, de 7 a 11 a. m.).
+ * Después del cuestionario. Con el pago confirmado, el paciente agenda aquí la visita (Google Calendar de Saludly);
+ * si no, ve que estamos confirmando el pago.
  */
 export function Listo() {
   const s = useSesion();
@@ -31,11 +32,12 @@ export function Listo() {
         <section className="rise mt-14">
           <h1 className="text-3xl font-light tracking-tight text-ink">¡Listo{nombre ? `, ${nombre}` : ""}! Ya tenemos tus respuestas.</h1>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">Ahora necesitamos tomar tu muestra y algunas medidas en una visita corta de la enfermera.</p>
+          {pagoConfirmado && <Agendar />}
           <div className="mt-8 space-y-3">
             {[
-              pagoConfirmado
-                ? { icono: CalendarClock, t: "Tu pago está confirmado", d: "Agendamos tu visita de lunes a viernes, entre las 7 y las 11 de la mañana. Te escribimos por WhatsApp para confirmar el día." }
-                : { icono: CalendarClock, t: "Estamos confirmando tu pago", d: "Apenas lo confirmemos te avisamos por WhatsApp para agendar la visita de la enfermera." },
+              ...(pagoConfirmado
+                ? []
+                : [{ icono: CalendarClock, t: "Estamos confirmando tu pago", d: "Apenas lo confirmemos te avisamos por WhatsApp y aquí mismo podrás agendar la visita de la enfermera." }]),
               { icono: Stethoscope, t: "Ve en ayunas", d: C.ayuno.aviso },
               { icono: MessageCircle, t: "Te avisamos por WhatsApp", d: "Cuando estén tus resultados y un médico los revise, te enviamos un mensaje para que los veas aquí." },
             ].map((x) => (
