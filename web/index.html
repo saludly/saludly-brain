@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Saludly: chequeo preventivo a domicilio en Bogotá con más de 120 biomarcadores y un informe claro.">
+<title>Saludly · Salud preventiva en tu bolsillo</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600;700&amp;family=Funnel+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>[hidden]{display:none !important}
+body{margin:0;background:#FDFDFD}
+a{color:#1670B8}a:hover{color:#0A2236}
+.sl-root{font-family:"Funnel Sans","Helvetica Neue",Helvetica,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.sl-display{font-family:"Funnel Display","Funnel Sans","Helvetica Neue",Helvetica,system-ui,sans-serif}
+.sl-root section{scroll-margin-top:84px}
+.sl-root a:focus-visible,.sl-root button:focus-visible{outline:2px solid #2B9EF0;outline-offset:3px}
+.sl-hero-media{aspect-ratio:16/9}
+.sl-hero-copy{position:absolute;top:0;bottom:0;left:7%;width:40%;display:flex;flex-direction:column;justify-content:center}
+.sl-glow-warm{animation:slWarm 16s ease-in-out infinite alternate}
+.sl-glow-cool{animation:slCool 16s ease-in-out infinite alternate}
+@keyframes slWarm{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:.15;transform:translate(3%,-2%) scale(1.06)}}
+@keyframes slCool{0%{opacity:0;transform:translate(0,0) scale(1.04)}100%{opacity:1;transform:translate(-2%,2%) scale(1)}}
+.sl-navlinks{display:flex}
+.sl-parts{position:relative;display:block;width:26px;height:26px}
+.sl-parts i{position:absolute;border-radius:50%}
+.sl-parts i:nth-child(1){left:3px;top:4px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift1 2.58s ease-in-out -0.31s infinite}
+.sl-parts i:nth-child(2){left:14px;top:2px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift2 2.83s ease-in-out -0.46s infinite}
+.sl-parts i:nth-child(3){left:9px;top:9px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift3 2.31s ease-in-out -1.2s infinite}
+.sl-parts i:nth-child(4){left:19px;top:8px;width:3px;height:3px;background:#FF6B35;animation:slDrift4 3.67s ease-in-out -2.4s infinite}
+.sl-parts i:nth-child(5){left:2px;top:15px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift1 3.42s ease-in-out -0.67s infinite}
+.sl-parts i:nth-child(6){left:12px;top:16px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift2 3.06s ease-in-out -0.83s infinite}
+.sl-parts i:nth-child(7){left:20px;top:18px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift3 2.48s ease-in-out -0.32s infinite}
+.sl-parts i:nth-child(8){left:7px;top:21px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift4 2.54s ease-in-out -2.78s infinite}
+.sl-parts i:nth-child(9){left:16px;top:12px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift1 3.53s ease-in-out -2.42s infinite}
+.sl-parts i:nth-child(10){left:5px;top:10px;width:3px;height:3px;background:#FF6B35;animation:slDrift2 3.48s ease-in-out -0.58s infinite}
+.sl-parts i:nth-child(11){left:22px;top:3px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift3 2.7s ease-in-out -1.88s infinite}
+.sl-parts i:nth-child(12){left:11px;top:4px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift4 3.37s ease-in-out -2.56s infinite}
+@keyframes slDrift1{0%,100%{transform:translate(0,0);opacity:.35}50%{transform:translate(3px,-4px);opacity:1}}
+@keyframes slDrift2{0%,100%{transform:translate(0,0);opacity:.9}50%{transform:translate(-4px,3px);opacity:.3}}
+@keyframes slDrift3{0%,100%{transform:translate(0,0);opacity:.5}33%{transform:translate(2px,3px);opacity:1}66%{transform:translate(-3px,-1px);opacity:.4}}
+@keyframes slDrift4{0%,100%{transform:translate(0,0);opacity:1}50%{transform:translate(1px,4px);opacity:.25}}
+.sl-ticker{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 28%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 28%,#000 72%,transparent 100%)}
+.sl-ticker-track{animation:slTicker 34s linear infinite;will-change:transform}
+.sl-ticker-track.sl-rev{animation-direction:reverse;animation-duration:40s}
+.sl-ticker-wrap:hover .sl-ticker-track{animation-play-state:paused}
+@keyframes slTicker{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.sl-pulse{animation:slPulse 1.8s ease-out infinite}
+@keyframes slPulse{0%{box-shadow:0 0 0 0 rgba(255,107,53,.45)}100%{box-shadow:0 0 0 12px rgba(255,107,53,0)}}
+.sl-progress{animation:slProg 2.4s ease-in-out infinite;transform-origin:0 50%}
+@keyframes slProg{0%{transform:scaleX(.15)}60%{transform:scaleX(.85)}100%{transform:scaleX(.15)}}
+.sl-tile{transition:transform .45s cubic-bezier(.32,.72,0,1),background-color .35s ease,box-shadow .35s ease}
+.sl-cycle-list{display:none}
+.sl-logo{filter:grayscale(1);opacity:.55}
+.sl-glass{-webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%)}
+.sl-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.sl-marquee-track{display:flex;gap:20px;width:max-content;animation:slMarq 48s linear infinite;will-change:transform}
+.sl-marquee:hover .sl-marquee-track{animation-play-state:paused}
+@keyframes slMarq{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+.sl-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0;padding:0}
+.sl-dz-rows{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.sl-dz-track{animation:slMarqDz 70s linear infinite;will-change:transform}
+.sl-dz-track.sl-rev{animation-direction:reverse;animation-duration:80s}
+@keyframes slMarqDz{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.dz-rise{stroke-dasharray:100;animation:dzRise 7s ease-in-out infinite}
+@keyframes dzRise{0%,14%{stroke-dashoffset:100;opacity:1}36%,90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.dz-p1{animation:dzP1 7s ease-in-out infinite}
+@keyframes dzP1{0%{opacity:0}6%,90%{opacity:1}100%{opacity:0}}
+.dz-g1{animation:dzP1 7s ease-in-out infinite}
+.dz-p2,.dz-g2{animation:dzP2 7s ease-in-out infinite}
+@keyframes dzP2{0%,34%{opacity:0}40%,90%{opacity:1}100%{opacity:0}}
+.dz-hold,.dz-p3,.dz-g3{animation:dzP3 7s ease-in-out infinite}
+@keyframes dzP3{0%,50%{opacity:0}58%,90%{opacity:1}100%{opacity:0}}
+.dz-ring{transform-box:fill-box;transform-origin:center;animation:dzRing 1.8s ease-out infinite}
+@keyframes dzRing{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+.sl-dz-paused .sl-dz-track,.sl-dz-paused .sl-chart *{animation-play-state:paused !important}
+.sl-btn-outline-blue:hover{background:#1670B8;color:#FFFFFF}
+.sl-ben-card{transition:transform .35s cubic-bezier(.32,.72,0,1),box-shadow .35s ease}
+.sl-ben-card:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(22,112,184,0.14);border-color:#BFDDF6 !important}
+.sl-ben-feat{grid-column:span 2}
+@media (max-width:1080px){
+.sl-ben-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.sl-ben-feat{grid-column:auto}
+}
+@media (max-width:640px){
+.sl-ben-grid{grid-template-columns:minmax(0,1fr) !important}
+}
+.sl-btn-black:hover{background:#1A2E44;color:#FFFFFF}
+.sl-btn-outline:hover{background:rgba(0,0,0,0.06);color:#000000}
+.sl-btn-primary:hover{background:#56B2F3;color:#04192B}
+.sl-btn-white:hover{background:#E6EDF3;color:#0A0F14}
+.sl-link-row:hover{color:#7CC4F7}
+@media (max-width:1024px){
+.sl-hero-media{aspect-ratio:10/9;overflow:hidden}
+.sl-hero-media video{width:125% !important;left:-28.75% !important;height:auto !important;aspect-ratio:4/3 !important}
+.sl-hero-copy{position:relative;width:auto;left:auto;padding:8px 20px 56px}
+.sl-glow{width:100% !important}
+}
+@media (max-width:900px){
+.sl-navlinks{display:none}
+#sl-hero{padding-top:104px}
+}
+@media (max-width:980px){
+.sl-qm-text{order:-1}
+.sl-wear-text{order:-1}
+}
+@media (max-width:720px){
+.sl-root{overflow-x:clip}
+.sl-sec{padding-top:72px !important;padding-bottom:80px !important}
+.sl-hero-media{aspect-ratio:1/1.08}
+.sl-hero-media video{width:150% !important;left:-44.5% !important}
+.sl-hero-copy{padding:4px 20px 48px !important}
+.sl-ticker-grid{grid-template-columns:minmax(0,1fr) !important;height:300px !important;padding:0 20px !important}
+.sl-ticker-b{display:none}
+.sl-logos{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px !important}
+.sl-logos li{font-size:15px !important;text-align:center}
+.sl-doc{width:210px !important}
+.sl-doc-photo{width:210px !important;height:276px !important}
+.sl-memb-photo{border-radius:28px !important}
+.sl-dz-stage{height:400px !important;margin-top:36px !important}
+#sl-prevenir .sl-dz-row:first-child{top:12px !important}
+#sl-prevenir .sl-dz-row:last-child{top:352px !important}
+.sl-cycle-fit{aspect-ratio:1/1}
+.sl-cycle-ring{position:absolute !important;left:0;top:0;width:520px !important;max-width:none !important;transform-origin:0 0;transform:var(--cyc-s,none)}
+.sl-cycle-ring .sl-tile span{font-size:14px !important}
+}
+@media (max-width:380px){
+.sl-root h1{font-size:36px !important}
+.sl-root h2{font-size:32px !important}
+}
+@media (prefers-reduced-motion:reduce){
+.sl-island,.sl-layer,.sl-tile,.sl-ben-card{transition:none !important}
+.sl-parts i,.sl-dz-track,.dz-rise,.dz-p1,.dz-g1,.dz-p2,.dz-g2,.dz-hold,.dz-p3,.dz-g3,.dz-ring,.sl-ticker-track,.sl-pulse,.sl-progress,.sl-marquee-track,.sl-glow-warm,.sl-glow-cool{animation:none}
+.sl-marquee{overflow-x:auto}
+}
+</style>
+</helmet>
+<div class="sl-root" style="position: relative; background: #FDFDFD; color: #0A2236; min-width: 0">
+
+<div style="position: sticky; top: 0; height: 0; z-index: 50">
+<div id="sl-island" class="sl-island" style="position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: {{islandW}}; height: {{islandH}}; border-radius: {{islandR}}; background: #000000; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 12px 32px rgba(10,34,54,0.28); overflow: hidden; transition: width 0.55s cubic-bezier(0.32,0.72,0,1), height 0.55s cubic-bezier(0.32,0.72,0,1), border-radius 0.55s cubic-bezier(0.32,0.72,0,1)">
+
+<nav aria-label="Principal" class="sl-layer" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 8px 0 24px; opacity: {{navO}}; visibility: {{navV}}; transform: {{navT}}; transition: opacity 0.25s ease, transform 0.45s cubic-bezier(0.32,0.72,0,1), visibility 0.25s">
+<a href="#sl-hero" class="sl-display" style="font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: #FFFFFF; text-decoration: none">Saludly</a>
+<div class="sl-navlinks" style="align-items: center; gap: 24px">
+<a href="#sl-como" style="font-size: 15px; color: rgba(255,255,255,0.78); text-decoration: none">Cómo funciona</a>
+<a href="#sl-medimos" style="font-size: 15px; color: rgba(255,255,255,0.78); text-decoration: none">Qué medimos</a>
+<a href="#sl-edad" style="font-size: 15px; color: rgba(255,255,255,0.78); text-decoration: none">Edad biológica</a>
+<a href="#agendar" style="font-size: 15px; color: rgba(255,255,255,0.78); text-decoration: none">Membresía</a>
+</div>
+<a href="https://app.saludly.online/entrar" class="sl-btn-white" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; color: #0A0F14; font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap">Empezar</a>
+</nav>
+
+<div class="sl-layer" style="position: absolute; inset: 0; display: flex; align-items: center; gap: 8px; padding: 0 6px; opacity: {{compactO}}; visibility: {{compactV}}; transform: {{compactT}}; transition: opacity 0.25s ease, transform 0.45s cubic-bezier(0.32,0.72,0,1), visibility 0.25s">
+<button type="button" onClick="{{toggleOpen}}" aria-expanded="{{ariaExpanded}}" aria-controls="sl-island-menu" aria-label="Abrir menú" style="flex-grow: 1; min-width: 0; height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 14px; border: 0; border-radius: 22px; background: transparent; color: #FFFFFF; font: inherit; cursor: pointer; text-align: left">
+<span class="sl-parts" aria-hidden="true" style="flex-shrink: 0"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+<span style="font-size: 15px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{sectionLabel}}</span>
+</button>
+<a href="https://app.saludly.online/entrar" class="sl-btn-white" style="flex-shrink: 0; display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 20px; background: #FFFFFF; color: #0A0F14; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap">Empezar</a>
+</div>
+
+<div id="sl-island-menu" class="sl-layer" style="position: absolute; inset: 0; display: flex; flex-direction: column; padding: 10px 10px 10px 24px; box-sizing: border-box; opacity: {{openO}}; visibility: {{openV}}; transform: {{openT}}; transition: opacity 0.3s ease 0.08s, transform 0.5s cubic-bezier(0.32,0.72,0,1), visibility 0.3s">
+<div style="display: flex; align-items: center; justify-content: space-between; height: 48px">
+<span class="sl-display" style="font-size: 20px; font-weight: 600; letter-spacing: -0.01em">Saludly</span>
+<button type="button" onClick="{{close}}" aria-label="Cerrar menú" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 22px; background: rgba(255,255,255,0.08); color: #FFFFFF; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+<div style="display: flex; flex-direction: column; padding: 8px 14px 14px 0">
+<a href="#sl-como" onClick="{{close}}" class="sl-link-row sl-display" style="display: flex; align-items: center; min-height: 50px; font-size: 23px; font-weight: 500; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08)">Cómo funciona</a>
+<a href="#sl-medimos" onClick="{{close}}" class="sl-link-row sl-display" style="display: flex; align-items: center; min-height: 50px; font-size: 23px; font-weight: 500; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08)">Qué medimos</a>
+<a href="#sl-edad" onClick="{{close}}" class="sl-link-row sl-display" style="display: flex; align-items: center; min-height: 50px; font-size: 23px; font-weight: 500; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08)">Edad biológica</a>
+<a href="#agendar" onClick="{{close}}" class="sl-link-row sl-display" style="display: flex; align-items: center; min-height: 50px; font-size: 23px; font-weight: 500; color: #FFFFFF; text-decoration: none">Membresía</a>
+</div>
+<div style="margin-top: auto; margin-left: -14px; padding: 16px; border-radius: 24px; background: #0E2A42; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="sl-parts" aria-hidden="true" style="flex-shrink: 0"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Toma de muestra a domicilio</span>
+<span style="font-size: 13px; color: rgba(255,255,255,0.66)">Bogotá, agenda desde la app</span>
+</div>
+</div>
+<a href="https://app.saludly.online/entrar" onClick="{{close}}" class="sl-btn-white" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 24px; background: #FFFFFF; color: #0A0F14; font-size: 15px; font-weight: 600; text-decoration: none">Empezar</a>
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="sl-hero" aria-label="Portada" style="position: relative; background: #FDFDFD">
+<div id="sl-sentinel" aria-hidden="true" style="position: absolute; top: 72px; left: 0; width: 1px; height: 1px"></div>
+<div class="sl-hero-media" style="position: relative; width: 100%">
+<video id="sl-video" poster="./assets/portada-poster.jpg" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="auto" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; display: block; pointer-events: none">
+<source src="./assets/portada.webm" type="video/webm">
+<source src="./assets/portada.mp4" type="video/mp4">
+</video>
+</div>
+<div class="sl-glow" aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 64%; pointer-events: none; mix-blend-mode: multiply; overflow: hidden">
+<div class="sl-glow-warm" style="position: absolute; inset: 0; background: radial-gradient(42% 46% at 30% 56%, rgba(232,206,150,0.72) 0%, rgba(240,222,182,0.38) 45%, rgba(253,253,253,0) 100%), radial-gradient(30% 34% at 58% 30%, rgba(238,214,168,0.42) 0%, rgba(253,253,253,0) 100%)"></div>
+<div class="sl-glow-cool" style="position: absolute; inset: 0; opacity: 0; background: radial-gradient(42% 46% at 30% 56%, rgba(43,158,240,0.36) 0%, rgba(140,200,246,0.22) 45%, rgba(253,253,253,0) 100%), radial-gradient(30% 34% at 58% 30%, rgba(43,158,240,0.22) 0%, rgba(253,253,253,0) 100%)"></div>
+</div>
+<div class="sl-hero-copy" style="gap: 22px">
+<h1 class="sl-display" style="margin: 0; font-size: clamp(40px, 4.6vw, 72px); line-height: 1.0; font-weight: 600; letter-spacing: -0.03em; max-width: 11ch">Salud preventiva en tu bolsillo</h1>
+<p style="margin: 0; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.5; color: #3E5266; max-width: 34ch">Una muestra de sangre en tu casa y una IA médica que lee más de 100 biomarcadores en conjunto, para encontrar a tiempo lo que puedes prevenir con tu médico.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 10px">
+<a href="https://app.saludly.online/entrar" class="sl-btn-black" style="display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 52px; padding: 0 28px; box-sizing: border-box; border-radius: 26px; background: #0A2236; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none; margin-right: 12px">Empezar</a><a href="#sl-medimos" class="sl-btn-outline" style="display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 52px; padding: 0 28px; box-sizing: border-box; border-radius: 26px; background: transparent; border: 1.5px solid #000000; color: #000000; font-size: 16px; font-weight: 600; text-decoration: none">Ver demo</a>
+</div>
+</div>
+</section>
+
+<section id="sl-panel" class="sl-sec" aria-labelledby="sl-panel-t" style="position: relative; z-index: 1; background: transparent; padding: 88px 24px 112px">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 40px 72px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<h2 id="sl-panel-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 600; letter-spacing: -0.03em">100+ biomarcadores</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E5266; max-width: 38ch">Metabolismo, corazón, riñón, hígado, tiroides, sangre y vitaminas. Una visita, un panel completo.</p>
+</div>
+<div class="sl-ticker-wrap sl-ticker-grid" aria-hidden="true" style="position: relative; height: 360px; border-radius: 28px; background: rgba(241,245,249,0.72); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); border: 1px solid #E1E8EF; overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding: 0 28px">
+<div class="sl-ticker" style="overflow: hidden">
+<div class="sl-ticker-track" style="display: flex; flex-direction: column">
+<sc-for list="{{tickerA}}" as="item" hint-placeholder-count="12">
+<div style="position: relative; display: flex; align-items: flex-end; height: 58px; padding-bottom: 8px; box-sizing: border-box; border-bottom: 1.5px solid #B9C6D3">
+<span class="sl-display" style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; letter-spacing: -0.01em; color: #0A2236; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 72%">{{item.name}}</span>
+<span style="position: absolute; top: 12px; right: 0; font-size: 11px; font-weight: 600; line-height: 1; padding: 4px 7px; border-radius: 4px; color: {{item.pillInk}}; background: {{item.pillBg}}">{{item.status}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div class="sl-ticker sl-ticker-b" style="overflow: hidden">
+<div class="sl-ticker-track sl-rev" style="display: flex; flex-direction: column">
+<sc-for list="{{tickerB}}" as="item" hint-placeholder-count="12">
+<div style="position: relative; display: flex; align-items: flex-end; height: 58px; padding-bottom: 8px; box-sizing: border-box; border-bottom: 1.5px solid #B9C6D3">
+<span class="sl-display" style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; letter-spacing: -0.01em; color: #0A2236; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 72%">{{item.name}}</span>
+<span style="position: absolute; top: 12px; right: 0; font-size: 11px; font-weight: 600; line-height: 1; padding: 4px 7px; border-radius: 4px; color: {{item.pillInk}}; background: {{item.pillBg}}">{{item.status}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sl-como" class="sl-sec" aria-labelledby="sl-como-t" style="background: #FDFDFD; padding: 40px 24px 120px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<h2 id="sl-como-t" class="sl-display" style="margin: 0; text-align: center; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em">Cómo funciona</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px 28px">
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div id="sl-step-1" style="position: relative; width: 100%; aspect-ratio: {{s1A}}; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E6EBF0; box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
+<div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{s1T}}">
+<dc-import name="Paso1Tubo" hint-size="800px,800px"></dc-import>
+</div>
+<span class="sl-display" aria-label="Paso 1" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: #8794A3">1</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #111111">Agenda y toma en casa</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #111111">Eliges día y hora en la app. Una enfermera certificada llega con el kit clínico de Saludly.</p>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div id="sl-step-2" style="position: relative; width: 100%; aspect-ratio: {{s2A}}; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E6EBF0; box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
+<div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{s2T}}">
+<dc-import name="Paso2Agente" hint-size="800px,800px"></dc-import>
+</div>
+<span class="sl-display" aria-label="Paso 2" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: #8794A3">2</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #111111">Laboratorio e interpretación</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #111111">Un laboratorio clínico aliado en Bogotá procesa tu panel. Saludly IA lee los resultados en conjunto.</p>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div id="sl-step-3" style="position: relative; width: 100%; aspect-ratio: {{s3A}}; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E6EBF0; box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
+<div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{s3T}}">
+<dc-import name="Paso3App" hint-size="800px,800px"></dc-import>
+</div>
+<span class="sl-display" aria-label="Paso 3" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: #8794A3">3</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #111111">Recibes tu informe</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #111111">En la app, en pocos días hábiles, con prioridades claras y qué revisar con un profesional.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="sl-medimos" class="sl-sec" aria-labelledby="sl-medimos-t" style="background: #FFFFFF; padding: 120px 24px; border-top: 1px solid #EDF1F5">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 56px 80px; align-items: center">
+<div id="sl-qm" style="justify-self: center; position: relative; width: 100%; max-width: 600px; aspect-ratio: {{qmA}}; overflow: hidden; background: #FFFFFF">
+<div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{qmT}}">
+<dc-import name="QueMedimos" hint-size="800px,800px"></dc-import>
+</div>
+</div>
+
+<div class="sl-qm-text" style="display: flex; flex-direction: column; gap: 22px">
+<h2 id="sl-medimos-t" class="sl-display" style="margin: 0; font-size: clamp(38px, 4.4vw, 64px); line-height: 1.0; font-weight: 600; letter-spacing: -0.03em">Qué medimos</h2>
+<h3 class="sl-display" style="margin: 0; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.15; font-weight: 500; letter-spacing: -0.015em; max-width: 20ch">IA que explica tus resultados, con fuentes verificables.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E5266; max-width: 42ch">Saludly IA se apoya en guías clínicas internacionales y literatura revisada por pares, y cada interpretación cita su fuente. No diagnostica: te muestra qué conversar con tu médico.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #0A2236">Guías de 12 especialidades detrás de tu informe</h4>
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px">
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Medicina general</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Medicina interna</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Medicina familiar</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Endocrinología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Cardiología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Nefrología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Gastroenterología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Hematología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Ginecología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Urología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Geriatría</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Nutrición y dietética</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sl-wear" hidden class="sl-sec" aria-labelledby="sl-wear-t" style="background: #FDFDFD; padding: 96px 24px">
+<div class="sl-wear-box" style="max-width: 1200px; margin: 0 auto; border-radius: 36px; background: linear-gradient(150deg, #F3F5F8 0%, #E9EDF2 55%, #EEF2F6 100%); border: 1px solid #E3E8EE; padding: clamp(24px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 48px 64px; align-items: center">
+
+<div class="sl-wear-panel" style="justify-self: center; width: 100%; max-width: 440px; border-radius: 28px; background: #FFFFFF; box-shadow: 0 30px 60px rgba(10,34,54,0.10); padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span class="sl-display" style="font-size: 18px; font-weight: 600; color: #0A0F14">Conexiones</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 14px; background: {{wStatusBg}}; color: {{wStatusInk}}; font-size: 12.5px; font-weight: 600"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: currentColor"></span>{{wStatus}}</span>
+</div>
+<div style="border-radius: 18px; background: #F5F7F9">
+<div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; ">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(160deg,#FF6B8A,#E8355B); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Apple Salud o Health Connect</span>
+<span style="font-size: 12.5px; color: #6B7A89">{{w0Sub}}</span>
+</div>
+<button type="button" role="switch" aria-checked="{{w0On}}" aria-label="Apple Salud o Health Connect" onClick="{{w0Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w0Bg}}; cursor: pointer; transition: background .25s ease">
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w0X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+</button>
+</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid #E6EBF0;">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: #1C232D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="7" y="6" width="10" height="12" rx="3"></rect><path d="M9 6l1-3h4l1 3M9 18l1 3h4l1-3"></path></svg></span>
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Reloj</span>
+<span style="font-size: 12.5px; color: #6B7A89">{{w1Sub}}</span>
+</div>
+<button type="button" role="switch" aria-checked="{{w1On}}" aria-label="Reloj" onClick="{{w1Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w1Bg}}; cursor: pointer; transition: background .25s ease">
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w1X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+</button>
+</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid #E6EBF0;">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: #1C232D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><circle cx="12" cy="12" r="6.5"></circle><circle cx="12" cy="12" r="2.5"></circle></svg></span>
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Anillo</span>
+<span style="font-size: 12.5px; color: #6B7A89">{{w2Sub}}</span>
+</div>
+<button type="button" role="switch" aria-checked="{{w2On}}" aria-label="Anillo" onClick="{{w2Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w2Bg}}; cursor: pointer; transition: background .25s ease">
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w2X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+</button>
+</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid #E6EBF0;">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: #5B6776; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4"></rect><path d="M9 10a3 3 0 0 1 6 0"></path><path d="M12 10l1.5-1.5"></path></svg></span>
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Báscula inteligente</span>
+<span style="font-size: 12.5px; color: #6B7A89">{{w3Sub}}</span>
+</div>
+<button type="button" role="switch" aria-checked="{{w3On}}" aria-label="Báscula inteligente" onClick="{{w3Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w3Bg}}; cursor: pointer; transition: background .25s ease">
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w3X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+</button>
+</div>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #6B7A89; padding-top: 4px">Lo que Saludly IA suma a tu informe</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t0Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #1DC48A"></span>Pasos</span>
+<span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t0C}}; font-variant-numeric: tabular-nums">{{t0V}}</span>
+</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t1Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #6C7FE0"></span>Sueño</span>
+<span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t1C}}; font-variant-numeric: tabular-nums">{{t1V}}</span>
+</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t2Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #FF6B35"></span>Variabilidad cardiaca</span>
+<span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t2C}}; font-variant-numeric: tabular-nums">{{t2V}}</span>
+</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t3Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #9FB0C0"></span>Peso</span>
+<span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t3C}}; font-variant-numeric: tabular-nums">{{t3V}}</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 22px; border: 1.5px dashed #CBD5DF; color: #8794A3; font-size: 14px; font-weight: 600">+ Agregar un dispositivo</div>
+</div>
+
+<div class="sl-wear-text" style="display: flex; flex-direction: column; gap: 20px">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 14px; background: #FFFFFF; border: 1px solid #DCE3EA; font-size: 13px; font-weight: 600; color: #1670B8">Opcional · recomendado</span>
+<h2 id="sl-wear-t" class="sl-display" style="margin: 0; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.025em; color: #0A0F14">Tu muestra es la base.<br>Tu reloj suma contexto.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E5266; max-width: 46ch">No necesitas un wearable para usar Saludly: tu informe sale de tus 100+ biomarcadores. Si conectas tu reloj, anillo o báscula, Saludly IA suma sueño, actividad, variabilidad cardiaca y peso para leer tus resultados con más contexto y precisión.</p>
+<ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #E1E8EF">
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #E1E8EF"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: #0A0F14">Conecta con un toque</span><span style="font-size: 14.5px; line-height: 1.5; color: #52667A">Sueño, frecuencia cardiaca y actividad llegan solos a tu app.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #E1E8EF"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-5 4 10 2-5h4"></path></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: #0A0F14">Datos de todos los días</span><span style="font-size: 14.5px; line-height: 1.5; color: #52667A">Tu panel muestra un momento; tu reloj muestra cómo vives entre tomas.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #E1E8EF"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"></rect><circle cx="16" cy="12" r="2"></circle></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: #0A0F14">Tú decides qué se comparte</span><span style="font-size: 14.5px; line-height: 1.5; color: #52667A">Activa o desactiva cada tipo de dato cuando quieras.</span></div></li>
+</ul>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 600; color: #6B7A89">Compatible con</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px"><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Apple Salud</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Health Connect</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Samsung Health</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Fitbit</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Garmin</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Oura</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">WHOOP</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Polar</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Xiaomi</li></ul>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="sl-prevenir" class="sl-sec {{dzClass}}" aria-labelledby="sl-prevenir-t" style="background: #F7F9FB; padding: 112px 0 96px; border-top: 1px solid #EDF1F5; overflow: hidden">
+<div style="max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center">
+<h2 id="sl-prevenir-t" class="sl-display" style="margin: 0; font-size: clamp(32px, 4vw, 56px); line-height: 1.06; font-weight: 500; letter-spacing: -0.03em; max-width: 22ch">Señales tempranas de <em style="font-style: italic; color: #1670B8">condiciones que se pueden prevenir</em></h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; font-size: 15px; color: #2F4357">
+<li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.6 2.6L16 9.5"></path></svg>Establece tu línea base</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.6 2.6L16 9.5"></path></svg>Seguimiento en cada toma</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.6 2.6L16 9.5"></path></svg>Mira cómo cambia tu cuerpo</li>
+</ul>
+</div>
+
+<div class="sl-dz-stage" style="position: relative; height: 340px; margin-top: 56px">
+<div class="sl-dz-rows" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0">
+<div class="sl-dz-row" style="position: absolute; left: 0; right: 0; top: 118px; overflow: hidden">
+<div class="sl-dz-track" style="display: flex; width: max-content">
+<sc-for list="{{dzA}}" as="z" hint-placeholder-count="16">
+<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-size: clamp(16px, 1.4vw, 19px); color: #52667A; white-space: nowrap">{{z.name}}<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 3px; background: #B9C6D3"></span></span>
+</sc-for>
+</div>
+</div>
+<div class="sl-dz-row" style="position: absolute; left: 0; right: 0; top: 172px; overflow: hidden">
+<div class="sl-dz-track sl-rev" style="display: flex; width: max-content">
+<sc-for list="{{dzB}}" as="z" hint-placeholder-count="16">
+<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-size: clamp(16px, 1.4vw, 19px); color: #52667A; white-space: nowrap">{{z.name}}<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 3px; background: #B9C6D3"></span></span>
+</sc-for>
+</div>
+</div>
+</div>
+<ul class="sl-vh" aria-label="Condiciones con señales en el panel">
+<sc-for list="{{dzAll}}" as="z" hint-placeholder-count="16"><li>{{z.name}}</li></sc-for>
+</ul>
+
+<figure class="sl-glass" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(380px, 88%); aspect-ratio: 380 / 270; margin: 0; border-radius: 26px; background: linear-gradient(140deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.22) 100%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.9); overflow: hidden">
+<svg class="sl-chart" viewBox="0 0 380 270" width="100%" height="100%" role="img" aria-label="Ejemplo: un biomarcador fuera del rango de referencia vuelve al rango en las siguientes tomas.">
+<defs>
+<linearGradient id="dzIn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1DC48A" stop-opacity="0.16"></stop><stop offset="1" stop-color="#1DC48A" stop-opacity="0"></stop></linearGradient>
+</defs>
+<text x="22" y="30" font-family="Funnel Sans, Helvetica, sans-serif" font-size="12" font-weight="600" fill="#3E5266">Ferritina · ejemplo</text>
+<rect x="56" y="44" width="304" height="96" fill="url(#dzIn)"></rect>
+<rect x="22" y="44" width="14" height="96" rx="5" fill="none" stroke="#9FB0C0" stroke-width="1.2"></rect>
+<rect x="22" y="146" width="14" height="76" rx="5" fill="#E2703E"></rect>
+<text x="46" y="98" font-family="ui-monospace, Menlo, monospace" font-size="9.5" letter-spacing="1" fill="#3E5266">EN RANGO</text>
+<text x="46" y="190" font-family="ui-monospace, Menlo, monospace" font-size="9.5" letter-spacing="1" fill="#3E5266">FUERA DE RANGO</text>
+<line x1="44" y1="143" x2="360" y2="143" stroke="#C4CFDA" stroke-width="1" stroke-dasharray="3 4"></line>
+<line class="dz-g1" x1="170" y1="180" x2="170" y2="234" stroke="#D3DCE5" stroke-width="1"></line>
+<line class="dz-g2" x1="250" y1="82" x2="250" y2="234" stroke="#D3DCE5" stroke-width="1"></line>
+<line class="dz-g3" x1="330" y1="82" x2="330" y2="234" stroke="#D3DCE5" stroke-width="1"></line>
+<path class="dz-rise" d="M170 180 L250 82" fill="none" stroke="#9FB0C0" stroke-width="1.4" pathLength="100"></path>
+<path class="dz-hold" d="M250 82 L330 82" fill="none" stroke="#9FB0C0" stroke-width="1.2" stroke-dasharray="3 4"></path>
+<circle class="dz-p1" cx="170" cy="180" r="6" fill="#E2703E" stroke="#FFFFFF" stroke-width="2"></circle>
+<circle class="dz-p2" cx="250" cy="82" r="6" fill="#1DC48A" stroke="#FFFFFF" stroke-width="2"></circle>
+<g class="dz-p3">
+<circle class="dz-ring" cx="330" cy="82" r="16" fill="none" stroke="#1DC48A" stroke-width="1.2"></circle>
+<circle cx="330" cy="82" r="10" fill="none" stroke="#1DC48A" stroke-width="1.6" stroke-opacity="0.6"></circle>
+<circle cx="330" cy="82" r="4.5" fill="#1DC48A"></circle>
+</g>
+<g font-family="Funnel Sans, Helvetica, sans-serif" font-size="10.5" fill="#52667A" text-anchor="middle">
+<text x="170" y="252">Toma 1</text>
+<text x="250" y="252">Toma 2</text>
+<text x="330" y="252">Próxima toma</text>
+</g>
+</svg>
+</figure>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 8px 24px 0; text-align: center">
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #52667A; max-width: 60ch">Saludly no diagnostica. Identifica señales en tus biomarcadores para revisar con un profesional de salud.</p>
+</div>
+</section>
+
+<section id="sl-respaldo" hidden class="sl-sec" aria-label="Instituciones y médicos aliados" style="background: #FDFDFD; padding: 96px 0 112px">
+<div style="display: flex; flex-direction: column; gap: 56px">
+<ul class="sl-logos" aria-label="Instituciones aliadas" style="list-style: none; margin: 0 auto; padding: 0 24px; width: 100%; max-width: 1200px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 40px">
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
+</ul>
+<div class="sl-marquee" aria-label="Médicos que participan">
+<div class="sl-marquee-track">
+<sc-for list="{{doctorsLoop}}" as="d" hint-placeholder-count="12">
+<figure class="sl-doc" style="flex: 0 0 auto; width: 260px; margin: 0; display: flex; flex-direction: column; gap: 14px">
+<div class="sl-doc-photo" style="position: relative; width: 260px; height: 340px; border-radius: 24px; overflow: hidden; background: #DDE5EC">
+<div aria-hidden="true" style="position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center"><svg width="210" height="270" viewBox="0 0 220 290" fill="#C4D0DB"><circle cx="110" cy="92" r="52"></circle><path d="M10 290c0-70 45-122 100-122s100 52 100 122z"></path></svg></div>
+<span style="position: absolute; top: 16px; left: 16px; font-size: 12px; color: #52667A">[FOTO DEL MÉDICO]</span>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px">
+<span style="font-size: 16px; font-weight: 600; line-height: 1.3; color: #0A2236">{{d.name}}</span>
+<span style="font-size: 14px; line-height: 1.4; color: #52667A">{{d.spec}}</span>
+</figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sl-edad" class="sl-sec" aria-labelledby="sl-edad-t" style="position: relative; overflow: hidden; background: #FAFBFD; padding: 120px 24px; border-top: 1px solid #EDF1F5">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<div class="sl-glow-warm" style="position: absolute; inset: -6%; background: radial-gradient(38% 42% at 22% 30%, rgba(228,196,128,0.85) 0%, rgba(236,212,160,0.42) 45%, rgba(250,251,253,0) 100%), radial-gradient(34% 40% at 80% 72%, rgba(232,200,138,0.72) 0%, rgba(250,251,253,0) 100%), radial-gradient(28% 32% at 56% 18%, rgba(240,214,166,0.55) 0%, rgba(250,251,253,0) 100%)"></div>
+<div class="sl-glow-cool" style="position: absolute; inset: -6%; opacity: 0; background: radial-gradient(38% 42% at 22% 30%, rgba(43,158,240,0.5) 0%, rgba(120,190,245,0.28) 45%, rgba(250,251,253,0) 100%), radial-gradient(34% 40% at 80% 72%, rgba(43,158,240,0.45) 0%, rgba(250,251,253,0) 100%), radial-gradient(28% 32% at 56% 18%, rgba(43,158,240,0.32) 0%, rgba(250,251,253,0) 100%)"></div>
+</div>
+<div style="position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<h2 id="sl-edad-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 500; letter-spacing: -0.03em">Tu edad biológica.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #2F4357; max-width: 52ch">No es la edad de tu cédula: es una estimación a partir de tus marcadores de metabolismo, inflamación y función de órganos.</p>
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 28px">
+<div aria-hidden="true" style="opacity: 0.55; position: absolute; left: 6%; top: -6%; width: 46%; aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,53,0.55) 0%, rgba(255,107,53,0) 68%); pointer-events: none"></div>
+<div aria-hidden="true" style="opacity: 0.55; position: absolute; right: 2%; bottom: -8%; width: 52%; aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle, rgba(43,158,240,0.6) 0%, rgba(43,158,240,0) 68%); pointer-events: none"></div>
+<div class="sl-glass" style="position: relative; aspect-ratio: 1 / 1; border-radius: 34px; padding: clamp(24px, 3vw, 36px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.12) 100%); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25)">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3E5266">Edad biológica estimada</span>
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#C24A17" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="15.5"></circle><path d="M10 18.5h3.5l2-5 3 8 2-4h3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="sl-display" style="font-size: clamp(72px, 8vw, 112px); line-height: 0.88; font-weight: 500; letter-spacing: -0.04em; color: #C24A17; font-variant-numeric: tabular-nums">{{edadTxt}}</span><span style="font-size: 18px; color: #3E5266">años</span></div>
+<span style="font-size: 16px; line-height: 1.5; color: #2F4357; max-width: 30ch">4 años por debajo de la edad cronológica.</span>
+</div>
+</div>
+<div class="sl-glass" style="position: relative; aspect-ratio: 1 / 1; border-radius: 34px; padding: clamp(24px, 3vw, 36px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.12) 100%); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25)">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3E5266">Resultados en rango</span>
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#1670B8" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="15.5"></circle><path d="M10 18.5h3.5l2-5 3 8 2-4h3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="sl-display" style="font-size: clamp(72px, 8vw, 112px); line-height: 0.88; font-weight: 500; letter-spacing: -0.04em; color: #1670B8; font-variant-numeric: tabular-nums">{{scoreTxt}}</span><span style="font-size: 18px; color: #3E5266">/100</span></div>
+<span style="font-size: 16px; line-height: 1.5; color: #2F4357; max-width: 30ch">Cuántos de tus biomarcadores están dentro del rango de referencia de tu laboratorio.</span>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2F4357; max-width: 62ch">Cifras de ejemplo. La edad biológica es una referencia para conversar con tu médico, no un diagnóstico. Metodología: PhenoAge, con los resultados de tu laboratorio.</p>
+</div>
+</section>
+
+<section id="sl-ciclo" class="sl-sec" aria-labelledby="sl-ciclo-t" style="background: #FDFDFD; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 40px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<h2 id="sl-ciclo-t" class="sl-display" style="margin: 0; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em">Prevención que se repite</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E5266; max-width: 46ch">Medir una vez dice cómo estás. Medir de nuevo cada 12 meses dice si lo que cambiaste funciona.</p>
+</div>
+
+<div id="sl-cycle-fit" class="sl-cycle-fit" style="position: relative; width: 100%; max-width: 620px; --cyc-s: {{cycT}}">
+<div class="sl-cycle-ring" style="position: relative; width: 100%; max-width: 620px; aspect-ratio: 1 / 1">
+<svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<circle cx="50" cy="50" r="38" fill="none" stroke="#B7D8F3" stroke-width="0.5" stroke-dasharray="1.2 1.6"></circle>
+<path d="M-1.4 -1.4 L0 0 L-1.4 1.4" fill="none" stroke="#2B9EF0" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(72.3 19.3) rotate(36)"></path>
+<path d="M-1.4 -1.4 L0 0 L-1.4 1.4" fill="none" stroke="#2B9EF0" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(86.1 61.7) rotate(108)"></path>
+<path d="M-1.4 -1.4 L0 0 L-1.4 1.4" fill="none" stroke="#2B9EF0" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(50 88) rotate(180)"></path>
+<path d="M-1.4 -1.4 L0 0 L-1.4 1.4" fill="none" stroke="#2B9EF0" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(13.9 61.7) rotate(252)"></path>
+<path d="M-1.4 -1.4 L0 0 L-1.4 1.4" fill="none" stroke="#2B9EF0" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(27.7 19.3) rotate(324)"></path>
+</svg>
+<div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46%; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
+<span class="sl-display" style="font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -0.02em; color: #1670B8">Saludly</span>
+<span style="font-size: 15px; line-height: 1.5; color: #3E5266; min-height: 4.5em" aria-live="polite">{{cycleText}}</span>
+</div>
+
+<button type="button" onClick="{{c0}}" class="sl-tile" aria-pressed="{{c0p}}" style="position: absolute; left: 50%; top: 12%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c0bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c0s}}); box-shadow: {{c0sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v13a2 2 0 0 0 4 0V3"></path><path d="M10 11h4"></path></svg>
+<span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Toma de muestra</span>
+</button>
+<button type="button" onClick="{{c1}}" class="sl-tile" aria-pressed="{{c1p}}" style="position: absolute; left: 86.1%; top: 38.3%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c1bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c1s}}); box-shadow: {{c1sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16"></path><path d="M8 15l3-4 3 2 4-6"></path></svg>
+<span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Récord de biomarcadores</span>
+</button>
+<button type="button" onClick="{{c2}}" class="sl-tile" aria-pressed="{{c2p}}" style="position: absolute; left: 72.3%; top: 80.7%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c2bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c2s}}); box-shadow: {{c2sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+<span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Resultados de prevención</span>
+</button>
+<button type="button" onClick="{{c3}}" class="sl-tile" aria-pressed="{{c3p}}" style="position: absolute; left: 27.7%; top: 80.7%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c3bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c3s}}); box-shadow: {{c3sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"></path></svg>
+<span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Recomendaciones</span>
+</button>
+<button type="button" onClick="{{c4}}" class="sl-tile" aria-pressed="{{c4p}}" style="position: absolute; left: 13.9%; top: 38.3%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c4bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c4s}}); box-shadow: {{c4sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"></path><path d="M10 13v3a4 4 0 0 0 8 0v-2"></path><circle cx="18" cy="12" r="2"></circle></svg>
+<span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Consulta médica</span>
+</button>
+</div>
+</div>
+
+<ol class="sl-cycle-list" style="list-style: none; margin: 0; padding: 0; width: 100%; flex-direction: column; gap: 10px">
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">1</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Toma de muestra</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Una enfermera certificada toma tus muestras en casa.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">2</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Récord de biomarcadores</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Tus resultados quedan guardados en la app, toma tras toma.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">3</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Resultados de prevención</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Qué está bien, qué merece atención y qué patrones aparecen.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">4</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Recomendaciones</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Hábitos concretos. Suplementos, solo si tu médico los indica.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">5</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Consulta médica</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Llevas el informe a un profesional y defines el seguimiento. Y vuelves a medir.</span></div></li>
+</ol>
+</div>
+</section>
+
+<section id="sl-beneficios" class="sl-sec" aria-labelledby="sl-ben-t" style="background: radial-gradient(38% 45% at 12% 18%, rgba(43,158,240,0.12), rgba(43,158,240,0) 70%), radial-gradient(40% 50% at 88% 85%, rgba(43,158,240,0.10), rgba(43,158,240,0) 70%), #F7FAFD; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<h2 id="sl-ben-t" class="sl-display" style="margin: 0; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em; max-width: 18ch">Lo que ganas con Saludly</h2>
+<div class="sl-ben-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px">
+<article class="sl-ben-card sl-ben-feat" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Edad biológica</span><span style="font-size: 12px; color: #6B7A89">Toma 2</span></div><div style="display: flex; align-items: baseline; gap: 6px"><span class="sl-display" style="font-size: 30px; font-weight: 600; color: #0A0F14">41,2</span><span style="font-size: 12px; color: #6B7A89">años</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">−4 años</span></div><svg viewBox="0 0 220 50" width="100%" height="50" aria-hidden="true"><path d="M0 40 C40 38 60 30 90 28 S150 18 220 10" fill="none" stroke="#1DC48A" stroke-width="2"></path><circle cx="220" cy="10" r="3.5" fill="#1DC48A"></circle></svg></div></div>
+<div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 0-9-9"></path><path d="M12 7v5l3 2"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Cuida tu longevidad</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Sigue tu edad biológica toma tras toma y cuida a tiempo lo que más pesa en tus años con salud.</p>
+</div>
+</div>
+</article>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Señales a revisar</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #FFE6DA; color: #9A3A12; font-size: 11px; font-weight: 600">2 nuevas</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #FF6B35; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Glucosa y HbA1c</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #FFE6DA; color: #9A3A12; font-size: 11px; font-weight: 600">Revisar</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #FF6B35; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Perfil de lípidos</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #FFE6DA; color: #9A3A12; font-size: 11px; font-weight: 600">Revisar</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #1DC48A; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Tiroides</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">En rango</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #1DC48A; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Riñón</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">En rango</span></div></div></div>
+<div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Prevención a tiempo</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Señales tempranas de glucosa, corazón, riñón e hígado antes de que aparezcan síntomas.</p>
+</div>
+</div>
+</article>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Ferritina</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">En rango</span></div><div style="display: flex; align-items: baseline; gap: 6px"><span class="sl-display" style="font-size: 30px; font-weight: 600; color: #0A0F14">38</span><span style="font-size: 12px; color: #6B7A89">ng/mL</span></div><div style="position: relative; height: 14px"><div style="position: absolute; left: 0; right: 0; top: 5px; height: 4px; border-radius: 2px; background: #ECEFF2"></div><div style="position: absolute; left: 18%; width: 60%; top: 5px; height: 4px; border-radius: 2px; background: #CFE6F8"></div><div style="position: absolute; left: 34%; top: 0; width: 14px; height: 14px; margin-left: -7px; border-radius: 7px; background: #2B9EF0; box-shadow: 0 0 0 3px #FFFFFF"></div></div><div style="display: flex; justify-content: space-between; font-size: 11px; color: #8794A3"><span>Bajo</span><span>Rango de referencia</span><span>Alto</span></div><span style="font-size: 12px; line-height: 1.4; color: #3E5266">Reserva de hierro: se lee junto a hemoglobina y VCM.</span></div></div>
+<div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4M12 16h.01"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Conoce tu cuerpo</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Cada biomarcador frente a su rango de referencia, explicado en lenguaje claro.</p>
+</div>
+</div>
+</article>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Tu meta de la semana</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">5 de 7</span></div><span style="font-size: 13px; color: #2F4357">Caminar 30 minutos al día</span><div style="display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 5px"><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>L</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>M</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>M</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #F1F4F7"></span>J</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>V</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>S</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #F1F4F7"></span>D</span></div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #52667A"><span>Próximo control</span><span style="font-weight: 600; color: #0A0F14">en 12 meses</span></div></div></div>
+<div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="0.8"></circle></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Metas claras</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Objetivos semanales concretos y tu próximo control en 12 meses para ver qué cambió.</p>
+</div>
+</div>
+</article>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Para tu consulta</span><span style="font-size: 12px; color: #6B7A89">Medicina general</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; background: #1DC48A; display: flex; align-items: center; justify-content: center"><svg width="9" height="9" viewBox="0 0 12 12"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 13px; color: #2F4357">Mostrar glucosa y HbA1c</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; background: #1DC48A; display: flex; align-items: center; justify-content: center"><svg width="9" height="9" viewBox="0 0 12 12"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 13px; color: #2F4357">Preguntar por el perfil de lípidos</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; border: 1.5px solid #CBD5DF; display: flex; align-items: center; justify-content: center"></span><span style="font-size: 13px; color: #2F4357">Definir el próximo control</span></div><span style="align-self: flex-start; margin-top: 2px; padding: 6px 12px; border-radius: 14px; background: #0A0F14; color: #FFFFFF; font-size: 11.5px; font-weight: 600">Compartir informe</span></div></div>
+<div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"></path><path d="M10 13v3a4 4 0 0 0 8 0v-2"></path><circle cx="18" cy="12" r="2"></circle></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Decide con tu médico</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Llega a consulta con un informe ordenado y las preguntas correctas. Saludly no diagnostica.</p>
+</div>
+</div>
+</article>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Tu toma en casa</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">Confirmada</span></div><div style="display: flex; flex-direction: column; gap: 2px"><span class="sl-display" style="font-size: 22px; font-weight: 600; color: #0A0F14">Mañana, 7:30 a. m.</span><span style="font-size: 12px; color: #6B7A89">En ayunas · Bogotá</span></div><div style="display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; background: #F5F7F9"><span style="width: 30px; height: 30px; border-radius: 15px; background: #2B9EF0; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M9 3h6M10 3v13a2 2 0 0 0 4 0V3"></path></svg></span><div style="display: flex; flex-direction: column"><span style="font-size: 12.5px; font-weight: 600; color: #0A0F14">Enfermera certificada</span><span style="font-size: 11px; color: #6B7A89">Kit clínico Saludly</span></div></div></div></div>
+<div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-5H9v5H5a1 1 0 0 1-1-1z"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Todo desde tu casa</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Una enfermera certificada va a tu casa con el kit clínico de Saludly. Sin filas ni traslados.</p>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="agendar" class="sl-sec" aria-labelledby="sl-memb-t" style="background: #FFFFFF; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 48px 80px; align-items: center">
+<div class="sl-memb-photo" style="position: relative; aspect-ratio: 1 / 1; border-radius: 36px; overflow: hidden; background: #F1F5F9"><img src="./assets/membresia.jpg" alt="Mujer mayor sonriente con una raqueta y una pelota de tenis en una cancha." style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block"></div>
+<div style="display: flex; flex-direction: column; gap: 22px">
+<h2 id="sl-memb-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 600; letter-spacing: -0.03em; max-width: 14ch">Membresía Saludly</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #52667A; max-width: 38ch">Mide, actúa con tu médico y vuelve a medir para ver qué cambió.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px"><span class="sl-display" style="font-size: clamp(44px, 11vw, 56px); line-height: 1; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap">10 cupos</span><span style="font-size: 15px; color: #52667A">de lanzamiento en Bogotá</span></div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>100+ biomarcadores en tu panel de sangre</li>
+<li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Toma a domicilio con enfermera certificada</li>
+<li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Informe preventivo con Saludly IA</li>
+<li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edad biológica y plan en 3 pasos</li>
+<li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Resultados en pocos días hábiles, revisados por un médico</li>
+<li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Seguimiento sugerido con un profesional de salud</li>
+</ul>
+<a href="https://app.saludly.online/entrar" class="sl-btn-black" style="display: flex; align-items: center; justify-content: center; height: 56px; max-width: 420px; border-radius: 28px; background: #0A2236; color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: none">Empezar</a>
+<span style="font-size: 13px; color: #52667A">Solo en Bogotá. El valor lo ves en la app al crear tu cuenta. <a href="https://app.saludly.online/privacidad" style="color: inherit">Política de datos</a></span>
+</div>
+</div>
+</section>
+
+<footer style="background: #0A2236; color: rgba(255,255,255,0.7); padding: 48px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; font-size: 14px; line-height: 1.6">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span class="sl-display" style="font-size: 20px; font-weight: 600; color: #FFFFFF">Saludly</span>
+<span>Salud preventiva a domicilio en Bogotá.</span>
+</div>
+<p style="margin: 0; max-width: 52ch">Saludly entrega informes preventivos. No diagnostica ni reemplaza la consulta con un profesional de salud. © 2026 Saludly. <a href="https://app.saludly.online/privacidad" style="color: #FFFFFF">Política de tratamiento de datos</a></p>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"loopVideo":{"editor":"boolean","default":true},"autoCycle":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":9900}}'>
+class Component extends DCLogic {
+  state = { scrolled: false, open: false, narrow: false, section: 'sl-hero', sys: 'cardio', cycle: 0, s1T: 'scale(0.46)', s2T: 'scale(0.46)', s3T: 'scale(0.46)', qmT: 'scale(0.7)', s1A: '1 / 1', s2A: '1 / 1', s3A: '1 / 1', qmA: '1 / 1', cycT: 'none', dzPaused: false, edadV: 41.2, scoreV: 80, wOn: [true, true, true, false] };
+
+  componentDidMount() {
+    this._tries = 0;
+    this._labels = {
+      'sl-hero': 'Chequeo preventivo en casa',
+      'sl-panel': '100+ biomarcadores',
+      'sl-como': 'Cómo funciona',
+      'sl-medimos': 'Qué medimos',
+      'sl-wear': 'Conecta tu reloj',
+      'sl-prevenir': 'Qué puedes prevenir',
+      'sl-respaldo': 'Respaldo médico',
+      'sl-edad': 'Edad biológica',
+      'sl-ciclo': 'Tu ciclo de prevención',
+      'sl-beneficios': 'Beneficios',
+      'agendar': 'Membresía'
+    };
+    this._onDown = (e) => {
+      if (!this.state.open) return;
+      const isl = document.getElementById('sl-island');
+      if (isl && !isl.contains(e.target)) this.setState({ open: false });
+    };
+    document.addEventListener('pointerdown', this._onDown);
+    try {
+      this._mq = window.matchMedia('(max-width: 900px)');
+      this._onMq = () => this.setState({ narrow: this._mq.matches });
+      this._onMq();
+      if (this._mq.addEventListener) this._mq.addEventListener('change', this._onMq);
+    } catch (e) {}
+    try { this._reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this._reduce = false; }
+    this._startCycle();
+    this._wire();
+    this._fitSteps();
+    this._wireCount();
+  }
+
+  _wireCount() {
+    const sec = document.getElementById('sl-edad');
+    if (!sec) { if ((this._cntTries = (this._cntTries || 0) + 1) < 20) this._cntTimer = setTimeout(() => this._wireCount(), 150); return; }
+    if (this._reduce || !('IntersectionObserver' in window)) return;
+    this.setState({ edadV: 0, scoreV: 0 });
+    this._cio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting && !this._counting && this.state.scoreV === 0) this._runCount();
+        if (!en.isIntersecting && !this._counting) this.setState({ edadV: 0, scoreV: 0 });
+      });
+    }, { threshold: 0.35 });
+    this._cio.observe(sec);
+  }
+
+  _runCount() {
+    this._counting = true;
+    const dur = 1800, t0 = performance.now();
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      this.setState({ edadV: Math.round(41.2 * e * 10) / 10, scoreV: Math.round(80 * e) });
+      if (p < 1) this._raf = requestAnimationFrame(step); else this._counting = false;
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  _fitSteps() {
+    const ids = [['sl-step-1', 's1', false], ['sl-step-2', 's2', false], ['sl-step-3', 's3', false], ['sl-qm', 'qm', true], ['sl-cycle-fit', 'cyc', 'ring']];
+    const els = ids.map((d) => document.getElementById(d[0]));
+    if (!els[0]) { if ((this._fitTries = (this._fitTries || 0) + 1) < 20) this._fitTimer = setTimeout(() => this._fitSteps(), 150); return; }
+    let mq = null;
+    try { mq = window.matchMedia('(max-width: 720px)'); } catch (e) {}
+    const fit = () => {
+      const phone = !!(mq && mq.matches);
+      const next = {};
+      ids.forEach((d, i) => {
+        const el = els[i]; if (!el) return;
+        const w = el.clientWidth; if (!(w > 0)) return;
+        let T, A;
+        if (d[2] === 'ring') {
+          const sc = Math.round((w / 520) * 10000) / 10000;
+          T = phone ? 'scale(' + sc + ')' : 'none';
+          if (this.state.cycT !== T) next.cycT = T;
+          return;
+        }
+        if (d[2] && phone) {
+          const sc = Math.round((w / 370) * 10000) / 10000;
+          T = 'translate(' + (-215 * sc).toFixed(2) + 'px, ' + (-36 * sc).toFixed(2) + 'px) scale(' + sc + ')';
+          A = '370 / 740';
+        } else {
+          const sc = Math.round((w / 800) * 10000) / 10000;
+          T = 'scale(' + sc + ')';
+          A = '1 / 1';
+        }
+        if (this.state[d[1] + 'T'] !== T) next[d[1] + 'T'] = T;
+        if (this.state[d[1] + 'A'] !== A) next[d[1] + 'A'] = A;
+      });
+      if (Object.keys(next).length) this.setState(next);
+    };
+    fit();
+    this._fitAll = fit;
+    if ('ResizeObserver' in window) { this._ro = new ResizeObserver(fit); els.forEach((el) => { if (el) this._ro.observe(el); }); }
+    this._onResize = fit; window.addEventListener('resize', fit);
+  }
+
+  _startCycle() {
+    clearInterval(this._cyc);
+    if (this._reduce || (this.props.autoCycle === false)) return;
+    this._cyc = setInterval(() => this.setState({ cycle: (this.state.cycle + 1) % 5 }), 3200);
+  }
+
+  _wire() {
+    const sentinel = document.getElementById('sl-sentinel');
+    const island = document.getElementById('sl-island');
+    if (!sentinel || !island) {
+      if (this._tries++ < 20) this._timer = setTimeout(() => this._wire(), 150);
+      return;
+    }
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.open) this.setState({ open: false }); };
+    island.addEventListener('keydown', this._onKey);
+    this._island = island;
+    if ('IntersectionObserver' in window) {
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          const above = !en.isIntersecting && en.boundingClientRect.top < 0;
+          if (above !== this.state.scrolled) this.setState({ scrolled: above, open: above ? this.state.open : false });
+        });
+      });
+      this._io.observe(sentinel);
+      this._so = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting && en.target.id !== this.state.section) this.setState({ section: en.target.id });
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      Object.keys(this._labels).forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) this._so.observe(el);
+      });
+    }
+    const v = document.getElementById('sl-video');
+    if (v) {
+      v.muted = true;
+      v.loop = this.props.loopVideo ?? true;
+      if (this._reduce) { v.pause(); }
+      else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const v = document.getElementById('sl-video');
+    if (v) v.loop = this.props.loopVideo ?? true;
+    if (prevProps && prevProps.autoCycle !== this.props.autoCycle) this._startCycle();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._timer);
+    clearInterval(this._cyc);
+    clearTimeout(this._fitTimer);
+    clearTimeout(this._cntTimer);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._cio) this._cio.disconnect();
+    if (this._ro) this._ro.disconnect();
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    document.removeEventListener('pointerdown', this._onDown);
+    if (this._island && this._onKey) this._island.removeEventListener('keydown', this._onKey);
+    if (this._mq && this._mq.removeEventListener) this._mq.removeEventListener('change', this._onMq);
+    if (this._io) this._io.disconnect();
+    if (this._so) this._so.disconnect();
+  }
+
+  renderVals() {
+    const s = this.state;
+    const mode = s.open ? 'open' : (s.scrolled || s.narrow) ? 'compact' : 'nav';
+    const dims = {
+      nav: { w: 'min(860px, calc(100% - 32px))', h: '60px', r: '30px' },
+      compact: { w: s.narrow ? 'min(360px, calc(100% - 24px))' : '320px', h: '52px', r: '26px' },
+      open: { w: 'min(400px, calc(100% - 24px))', h: '452px', r: '32px' }
+    }[mode];
+    const layer = (name) => mode === name
+      ? { o: '1', v: 'visible', t: 'scale(1)' }
+      : { o: '0', v: 'hidden', t: name === 'open' ? 'scale(0.96)' : 'scale(0.9)' };
+    const n = layer('nav'), c = layer('compact'), op = layer('open');
+    const doctors = [1, 2, 3, 4, 5, 6].map(() => ({ name: '[NOMBRE DEL MÉDICO]', spec: '[Especialidad] · ReTHUS [N.º]', photo: '', hasPhoto: false }));
+    const dzA0 = ['Prediabetes', 'Diabetes tipo 2', 'Resistencia a la insulina', 'Colesterol alto', 'Hipertrigliceridemia', 'Enfermedad cardiovascular', 'Hígado graso', 'Anemia por deficiencia de hierro'];
+    const dzB0 = ['Enfermedad renal crónica', 'Hipotiroidismo', 'Hipertiroidismo', 'Deficiencia de vitamina B12', 'Alteraciones de sodio y potasio', 'Alteraciones de plaquetas', 'Daño hepático', 'Riesgo cardiovascular heredado por Lp(a)'];
+    const toZ = (arr) => arr.map((name) => ({ name }));
+    const wOn = s.wOn || [true, true, true, false];
+    const wSubOn = ['Sincronizado hace 2 min', 'Frecuencia cardiaca y VFC', 'Fases del sueño y temperatura', 'Peso y composición'];
+    const wv = {};
+    for (let i = 0; i < 4; i++) {
+      wv['w' + i + 'On'] = wOn[i] ? 'true' : 'false';
+      wv['w' + i + 'Bg'] = wOn[i] ? '#1DC48A' : '#CBD5DF';
+      wv['w' + i + 'X'] = wOn[i] ? '18px' : '0px';
+      wv['w' + i + 'Sub'] = wOn[i] ? wSubOn[i] : 'Desconectado';
+      wv['w' + i + 'Tog'] = () => { const n = (this.state.wOn || [true, true, true, false]).slice(); n[i] = !n[i]; this.setState({ wOn: n }); };
+    }
+    const tileOn = [wOn[0], wOn[2] || wOn[1], wOn[1] || wOn[2], wOn[3]];
+    const tileVal = ['8.214', '7 h 19', '48 ms', '68,4 kg'];
+    for (let i = 0; i < 4; i++) {
+      wv['t' + i + 'V'] = tileOn[i] ? tileVal[i] : 'Apagado';
+      wv['t' + i + 'C'] = tileOn[i] ? '#0A0F14' : '#9FB0C0';
+      wv['t' + i + 'Op'] = tileOn[i] ? '1' : '0.6';
+    }
+    const nOn = wOn.filter(Boolean).length;
+    wv.wStatus = nOn === 4 ? 'Todo sincronizado' : nOn === 0 ? 'Sin dispositivos' : nOn + ' de 4 conectados';
+    wv.wStatusBg = nOn === 4 ? '#E3F7EE' : '#EEF2F6';
+    wv.wStatusInk = nOn === 4 ? '#0B6B4A' : '#52667A';
+    const labels = this._labels || {};
+    const label = (!s.scrolled && s.narrow) ? 'Saludly' : (labels[s.section] || 'Saludly');
+
+    const ok = { status: 'En rango', pillBg: '#C7F0DF', pillInk: '#0B4A33' };
+    const rev = { status: 'Revisar', pillBg: '#FFDCCD', pillInk: '#7A2A0C' };
+    const mk = (arr) => arr.map(([name, st]) => ({ name, status: st.status, pillBg: st.pillBg, pillInk: st.pillInk }));
+    const a = mk([['Vitamina D', ok], ['TSH', ok], ['T4 libre', ok], ['Creatinina', ok], ['Ferritina', rev], ['HbA1c', rev], ['Colesterol LDL', rev], ['ApoB', ok], ['Lipoproteína(a)', ok], ['Vitamina B12', ok]]);
+    const b = mk([['Insulina', ok], ['Triglicéridos', ok], ['Colesterol HDL', ok], ['Hemoglobina', ok], ['Plaquetas', ok], ['ALT', ok], ['AST', ok], ['Sodio', ok], ['Potasio', ok], ['Glucosa', rev]]);
+
+    const sysData = [
+      { id: 'tiroides', name: 'Tiroides', short: 'Tiroides', x: 100, y: 72, side: 'r', items: ['TSH', 'T4 libre'] },
+      { id: 'cardio', name: 'Cardiovascular', short: 'Cardiovascular', x: 114, y: 116, side: 'l', items: ['Colesterol total', 'LDL', 'HDL', 'Triglicéridos', 'ApoB', 'ApoA1', 'Lipoproteína(a)'] },
+      { id: 'higado', name: 'Hígado', short: 'Hígado', x: 86, y: 150, side: 'l', items: ['ALT', 'AST'] },
+      { id: 'rinon', name: 'Riñón', short: 'Riñón', x: 118, y: 176, side: 'r', items: ['Creatinina sérica', 'Albúmina urinaria', 'Creatinina urinaria'] },
+      { id: 'metab', name: 'Metabolismo', short: 'Metabolismo', x: 98, y: 214, side: 'l', items: ['Glucosa', 'HbA1c', 'Insulina'] },
+      { id: 'sangre', name: 'Sangre y hierro', short: 'Sangre', x: 166, y: 228, side: 'r', items: ['Hemoglobina', 'VCM', 'Ferritina', 'Plaquetas'] }
+    ];
+    const systems = sysData.map((d) => {
+      const sel = d.id === s.sys;
+      return {
+        name: d.name, short: d.short,
+        left: (d.x / 200 * 100).toFixed(2) + '%',
+        top: (d.y / 470 * 100).toFixed(2) + '%',
+        labelPos: d.side === 'r' ? 'left: 26px' : 'right: 26px',
+        dotColor: sel ? '#FF6B35' : '#2B9EF0',
+        dotClass: sel ? 'sl-pulse' : '',
+        labelColor: sel ? '#0A2236' : '#52667A',
+        labelWeight: sel ? '700' : '500',
+        pressed: sel ? 'true' : 'false',
+        pick: () => this.setState({ sys: d.id })
+      };
+    });
+    const cur = sysData.find((d) => d.id === s.sys) || sysData[1];
+
+    const texts = [
+      'Una enfermera certificada toma tus muestras en casa.',
+      'Tus resultados quedan guardados en la app, toma tras toma.',
+      'Saludly IA ordena qué está bien, qué merece atención y qué patrones aparecen.',
+      'Hábitos concretos para trabajar. Suplementos, solo si tu médico los indica.',
+      'Llevas el informe a un profesional y defines el seguimiento. Y vuelves a medir.'
+    ];
+    const tile = (i) => {
+      const on = s.cycle === i;
+      return {
+        bg: on ? '#0A2236' : '#1670B8',
+        sc: on ? '1.08' : '1',
+        sh: on ? '0 18px 36px rgba(10,34,54,0.28)' : '0 6px 14px rgba(22,112,184,0.18)',
+        p: on ? 'true' : 'false',
+        go: () => { this.setState({ cycle: i }); this._startCycle(); }
+      };
+    };
+    const t = [0, 1, 2, 3, 4].map(tile);
+
+    return {
+      islandW: dims.w, islandH: dims.h, islandR: dims.r,
+      navO: n.o, navV: n.v, navT: n.t,
+      compactO: c.o, compactV: c.v, compactT: c.t,
+      openO: op.o, openV: op.v, openT: op.t,
+      ...wv,
+      sectionLabel: label,
+      edadTxt: s.edadV.toFixed(1).replace('.', ','),
+      scoreTxt: String(s.scoreV),
+      dzA: toZ(dzA0.concat(dzA0, dzA0, dzA0)),
+      dzB: toZ(dzB0.concat(dzB0, dzB0, dzB0)),
+      dzAll: toZ(dzA0.concat(dzB0)),
+      dzClass: s.dzPaused ? 'sl-dz-paused' : '',
+      dzPressed: s.dzPaused ? 'true' : 'false',
+      dzLabel: s.dzPaused ? 'Reanudar movimiento' : 'Pausar movimiento',
+      toggleDz: () => this.setState({ dzPaused: !this.state.dzPaused }),
+
+      s1T: s.s1T, s2T: s.s2T, s3T: s.s3T, qmT: s.qmT,
+      s1A: s.s1A, s2A: s.s2A, s3A: s.s3A, qmA: s.qmA,
+      cycT: s.cycT,
+      doctorsLoop: doctors.concat(doctors),
+      ariaExpanded: s.open ? 'true' : 'false',
+      toggleOpen: () => this.setState({ open: !this.state.open }),
+      close: () => this.setState({ open: false }),
+      tickerA: a.concat(a), tickerB: b.concat(b),
+      systems: systems,
+      sysName: cur.name,
+      sysItems: cur.items.map((x) => ({ label: x })),
+      cycleText: texts[s.cycle],
+      c0: t[0].go, c0bg: t[0].bg, c0s: t[0].sc, c0sh: t[0].sh, c0p: t[0].p,
+      c1: t[1].go, c1bg: t[1].bg, c1s: t[1].sc, c1sh: t[1].sh, c1p: t[1].p,
+      c2: t[2].go, c2bg: t[2].bg, c2s: t[2].sc, c2sh: t[2].sh, c2p: t[2].p,
+      c3: t[3].go, c3bg: t[3].bg, c3s: t[3].sc, c3sh: t[3].sh, c3p: t[3].p,
+      c4: t[4].go, c4bg: t[4].bg, c4s: t[4].sc, c4sh: t[4].sh, c4p: t[4].p
+    };
+  }
+}
+</script>
+</body>
+</html>

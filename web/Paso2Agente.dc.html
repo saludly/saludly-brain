@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Paso 2 · Saludly IA</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.p2-flow{stroke-dasharray:4 10;animation:p2-flow .9s linear infinite}
+@keyframes p2-flow{to{stroke-dashoffset:-28}}
+.p2-spin{transform-box:fill-box;transform-origin:center;animation:p2-spin 3.2s linear infinite}
+@keyframes p2-spin{to{transform:rotate(360deg)}}
+.p2-pulse{transform-box:fill-box;transform-origin:center;animation:p2-pulse 1.6s ease-out infinite}
+@keyframes p2-pulse{0%{transform:scale(1);opacity:.35}100%{transform:scale(1.6);opacity:0}}
+.p2-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#8A96A3;animation:p2-bounce 1s ease-in-out infinite}
+.p2-dot2{animation-delay:.15s}.p2-dot3{animation-delay:.3s}
+@keyframes p2-bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+.p2-caret{display:inline-block;width:2px;height:1em;background:#1576C2;margin-left:2px;vertical-align:-2px;animation:p2-blink .8s steps(1) infinite}
+@keyframes p2-blink{50%{opacity:0}}
+.p2-live{animation:p2-live 1.2s ease-in-out infinite}
+@keyframes p2-live{50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.p2-flow,.p2-spin,.p2-pulse,.p2-dot,.p2-caret,.p2-live{animation:none}}
+</style>
+</helmet>
+<div style="width: 800px; height: 800px; position: relative; overflow: hidden; background: #FFFFFF; font-family: Manrope, 'Helvetica Neue', Helvetica, sans-serif; color: #0F1B2A">
+<div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; opacity: {{rootOp}}; transition: opacity .45s ease">
+
+<div style="position: absolute; left: 0; top: 32px; width: 800px; display: flex; justify-content: center; gap: 8px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 8px; border-radius: 999px; border: 1px solid {{s.bd}}; background: {{s.bg}}; color: {{s.fg}}; font-size: 13px; font-weight: 700; transition: background .3s ease, color .3s ease, border-color .3s ease">
+<sc-if value="{{s.done}}" hint-placeholder-val="{{ false }}">
+<span style="width: 20px; height: 20px; border-radius: 50%; background: #1DC48A; display: flex; align-items: center; justify-content: center">
+<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</sc-if>
+<sc-if value="{{s.active}}" hint-placeholder-val="{{ false }}">
+<span style="width: 20px; height: 20px; border-radius: 50%; background: #2B9EF0; display: flex; align-items: center; justify-content: center">
+<span class="p2-live" style="width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF"></span>
+</span>
+</sc-if>
+<sc-if value="{{s.pending}}" hint-placeholder-val="{{ true }}">
+<span style="width: 20px; height: 20px; border-radius: 50%; background: #E6EBF0; color: #5B6776; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{s.num}}</span>
+</sc-if>
+<span>{{s.label}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="position: absolute; left: 0; top: 94px; width: 800px; text-align: center; font-size: 14px; font-weight: 600; color: #5B6776"><span style="color: #0F1B2A; font-weight: 800; font-variant-numeric: tabular-nums">{{count}}{{countPlus}}</span> biomarcadores recibidos</div>
+
+<svg style="position: absolute; left: 0; top: 0" width="800" height="800" viewBox="0 0 800 800" aria-hidden="true">
+<g fill="none" stroke="#E3E8EE" stroke-width="2">
+<path d="M100 204 C100 262 400 248 400 300" opacity="{{l0}}"></path>
+<path d="M250 204 C250 262 400 248 400 300" opacity="{{l1}}"></path>
+<path d="M400 204 L400 300" opacity="{{l2}}"></path>
+<path d="M550 204 C550 262 400 248 400 300" opacity="{{l3}}"></path>
+<path d="M700 204 C700 262 400 248 400 300" opacity="{{l4}}"></path>
+<path d="M400 400 L400 446" opacity="{{l2}}"></path>
+</g>
+<g fill="none" stroke="#2B9EF0" stroke-width="2.4" stroke-linecap="round" opacity="{{flowOp}}">
+<path class="p2-flow" d="M100 204 C100 262 400 248 400 300"></path>
+<path class="p2-flow" d="M250 204 C250 262 400 248 400 300"></path>
+<path class="p2-flow" d="M400 204 L400 300"></path>
+<path class="p2-flow" d="M550 204 C550 262 400 248 400 300"></path>
+<path class="p2-flow" d="M700 204 C700 262 400 248 400 300"></path>
+</g>
+<g fill="none" stroke="#1DC48A" stroke-width="2.4" stroke-linecap="round" opacity="{{outOp}}">
+<path class="p2-flow" d="M400 400 L400 446"></path>
+</g>
+<g opacity="{{flowOp}}">
+<circle class="p2-pulse" cx="400" cy="350" r="50" fill="#2B9EF0"></circle>
+</g>
+<g opacity="{{spinOp}}">
+<circle class="p2-spin" cx="400" cy="350" r="64" fill="none" stroke="#2B9EF0" stroke-width="2" stroke-dasharray="10 12" stroke-linecap="round"></circle>
+</g>
+<circle cx="400" cy="350" r="50" fill="{{orbFill}}"></circle>
+<circle cx="400" cy="350" r="50" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"></circle>
+<path d="M400 322 C403.5 341 409 346.5 428 350 C409 353.5 403.5 359 400 378 C396.5 359 391 353.5 372 350 C391 346.5 396.5 341 400 322 Z" fill="#FFFFFF"></path>
+<path d="M424 322 C425 328 426.5 329.5 432 330.5 C426.5 331.5 425 333 424 339 C423 333 421.5 331.5 416 330.5 C421.5 329.5 423 328 424 322 Z" fill="#FFFFFF" fill-opacity="0.85"></path>
+<g opacity="{{doneOp}}">
+<circle cx="436" cy="386" r="14" fill="#1DC48A" stroke="#FFFFFF" stroke-width="3"></circle>
+<path d="M430 386.4 L434.4 390.6 L442 382.4" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+</svg>
+
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="5">
+<div style="position: absolute; top: 140px; left: {{c.x}}px; width: 140px; height: 64px; box-sizing: border-box; padding: 10px 12px; border-radius: 14px; border: 1px solid #E3E8EE; background: #FFFFFF; box-shadow: 0 8px 20px rgba(15,27,42,0.06); opacity: {{c.op}}; transform: translateY({{c.ty}}px); transition: opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1); display: flex; flex-direction: column; justify-content: center; gap: 2px">
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; color: #5B6776">
+<span>{{c.label}}</span>
+<sc-if value="{{c.linked}}" hint-placeholder-val="{{ false }}">
+<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="7" fill="#1DC48A"></circle><path d="M4 7.2 L6.2 9.2 L10 5" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</sc-if>
+</div>
+<div style="font-size: 18px; font-weight: 800; letter-spacing: -0.2px">{{c.value}} <span style="font-size: 12px; font-weight: 600; color: #5B6776">{{c.unit}}</span></div>
+</div>
+</sc-for>
+
+<div style="position: absolute; left: 110px; top: 446px; width: 580px; height: 330px; box-sizing: border-box; padding: 20px; border-radius: 22px; border: 1px solid #E3E8EE; background: #FFFFFF; box-shadow: 0 18px 40px rgba(15,27,42,0.08); display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 36px; height: 36px; border-radius: 50%; background: #2B9EF0; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C10.9 7.4 12.6 9.1 18 10 C12.6 10.9 10.9 12.6 10 18 C9.1 12.6 7.4 10.9 2 10 C7.4 9.1 9.1 7.4 10 2 Z" fill="#FFFFFF"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="font-size: 15px; font-weight: 800">Saludly IA</div>
+<div style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #5B6776">
+<span style="width: 7px; height: 7px; border-radius: 50%; background: {{statusDot}}"></span>
+<span>{{status}}</span>
+</div>
+</div>
+</div>
+
+<div style="display: flex; justify-content: flex-end; opacity: {{userOp}}; transform: translateY({{userTy}}px); transition: opacity .35s ease, transform .45s cubic-bezier(.2,.8,.2,1)">
+<div style="max-width: 360px; padding: 10px 14px; border-radius: 16px 16px 4px 16px; background: #1576C2; color: #FFFFFF; font-size: 15px; font-weight: 600">¿Cómo salieron mis resultados?</div>
+</div>
+
+<sc-if value="{{showTyping}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex">
+<div style="display: flex; gap: 5px; align-items: center; padding: 14px 16px; border-radius: 16px 16px 16px 4px; background: #F2F6FA">
+<span class="p2-dot"></span><span class="p2-dot p2-dot2"></span><span class="p2-dot p2-dot3"></span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{showText}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex">
+<div style="max-width: 470px; padding: 12px 16px; border-radius: 16px 16px 16px 4px; background: #F2F6FA; font-size: 15.5px; font-weight: 500; line-height: 1.5; color: #0F1B2A">{{typed}}<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}"><span class="p2-caret"></span></sc-if></div>
+</div>
+</sc-if>
+
+<div style="position: absolute; left: 20px; bottom: 18px; display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 8px; border-radius: 999px; background: #E8F8F1; color: #0B6B4A; font-size: 13px; font-weight: 800; opacity: {{doneOp}}; transform: translateY({{doneTy}}px); transition: opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1)">
+<span style="width: 20px; height: 20px; border-radius: 50%; background: #1DC48A; display: flex; align-items: center; justify-content: center">
+<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+<span>Informe preventivo listo</span>
+</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"speed":{"editor":"range","default":1,"min":0.5,"max":2,"step":0.1,"unit":"x"},"frame":{"editor":"enum","default":"Animado","options":["Animado","Final"]},"$preview":{"width":800,"height":800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { t: 0 };
+    this.LOOP = 12600;
+    this.MSG = 'Revisé tus más de 100 biomarcadores en conjunto. Glucosa y HbA1c están por encima del rango de referencia del laboratorio y aparecen juntas. Te sugiero revisarlas con medicina general.';
+  }
+  componentDidMount() {
+    var reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    this.reduce = reduce;
+    if (reduce) { this.forceUpdate(); return; }
+    var self = this;
+    this.timer = setInterval(function () {
+      var sp = self.props.speed ?? 1;
+      self.setState(function (s) { return { t: (s.t + 40 * sp) % self.LOOP }; });
+    }, 40);
+  }
+  componentWillUnmount() { if (this.timer) clearInterval(this.timer); }
+  renderVals() {
+    var final = (this.props.frame ?? 'Animado') === 'Final' || this.reduce;
+    var t = final ? 11000 : (this.state.t || 0);
+    var CONNECT = 1900, USER = 3600, TYPE = 4300, TEXT = 5300, CPS = 18, DONE = 8900, FADE = 12000;
+    var clamp = function (x) { return Math.max(0, Math.min(1, x)); };
+
+    var raw = [
+      { label: 'Glucosa', value: '108', unit: 'mg/dL' },
+      { label: 'HbA1c', value: '5.8', unit: '%' },
+      { label: 'LDL', value: '138', unit: 'mg/dL' },
+      { label: 'TSH', value: '2.1', unit: 'mIU/L' },
+      { label: 'Vitamina D', value: '24', unit: 'ng/mL' }
+    ];
+    var vis = [];
+    var chips = raw.map(function (c, i) {
+      var on = t >= 300 + i * 220;
+      vis.push(on ? 1 : 0);
+      return { label: c.label, value: c.value, unit: c.unit, x: 30 + i * 150, op: on ? 1 : 0, ty: on ? 0 : -14, linked: t >= CONNECT + i * 120 };
+    });
+
+    var idx = t < CONNECT ? 0 : t < USER ? 1 : t < DONE ? 2 : 3;
+    var labels = ['Recibiendo datos', 'Conectando al agente', 'Respondiendo', 'Listo'];
+    var steps = labels.map(function (l, i) {
+      var done = i < idx || (idx === 3 && i === 3);
+      var active = !done && i === idx;
+      var pending = !done && !active;
+      return {
+        label: l, num: i + 1, done: done, active: active, pending: pending,
+        bg: done ? '#E8F8F1' : active ? '#EAF5FE' : '#F4F6F8',
+        fg: done ? '#0B6B4A' : active ? '#0E5A99' : '#5B6776',
+        bd: done ? '#BDEBD7' : active ? '#9ED2F8' : '#E6EBF0'
+      };
+    });
+
+    var n = clamp((t - TEXT) / 1) > 0 ? Math.min(this.MSG.length, Math.floor((t - TEXT) / CPS)) : 0;
+    var status = t < CONNECT ? 'esperando datos' : t < USER ? 'conectando 100+ biomarcadores' : t < TEXT ? 'analizando patrones' : t < DONE ? 'escribiendo…' : 'informe listo';
+    var connected = t >= CONNECT;
+
+    return {
+      rootOp: t >= FADE ? 0 : 1,
+      steps: steps,
+      count: Math.round(100 * clamp((t - 300) / 1500)),
+      countPlus: t >= 1800 ? '+' : '',
+      chips: chips,
+      l0: vis[0], l1: vis[1], l2: vis[2], l3: vis[3], l4: vis[4],
+      flowOp: connected && t < DONE ? 1 : 0,
+      outOp: t >= TEXT && t < DONE ? 1 : 0,
+      spinOp: t >= USER && t < DONE ? 1 : 0,
+      orbFill: connected ? '#2B9EF0' : '#B9DDF9',
+      doneOp: t >= DONE ? 1 : 0,
+      doneTy: t >= DONE ? 0 : 8,
+      status: status,
+      statusDot: t >= DONE ? '#1DC48A' : connected ? '#2B9EF0' : '#B7C0CA',
+      userOp: t >= USER ? 1 : 0,
+      userTy: t >= USER ? 0 : 8,
+      showTyping: t >= TYPE && t < TEXT,
+      showText: t >= TEXT,
+      typed: this.MSG.slice(0, n),
+      typing: t >= TEXT && n < this.MSG.length
+    };
+  }
+}
+</script>
+</body>
+</html>
