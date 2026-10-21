@@ -66,6 +66,46 @@ def perfil_y_enfermera(c, v):
     return perfil, enf
 
 
+def publicar(sb, pdf, orden, paciente_id=None, cedula=None, documento_pdf=None, forzar=False):
+    """PDF + datos del paciente → informe en la tabla informes. Devuelve un resumen; si algo falta, lanza SystemExit con el motivo.
+    La usan este script y la función de Vercel (app/api/procesar.py) que llama la vista del médico."""
+    filtro = f"cedula=eq.{urllib.parse.quote(cedula)}" if cedula else f"id=eq.{urllib.parse.quote(paciente_id)}"
+    p = sb.uno("pacientes", f"{filtro}&select=id,tipo_documento,cedula,fecha_nacimiento,edad,sexo")
+    if not p: raise SystemExit("No hay ningún paciente con esa cédula o id.")
+    if sb.uno("informes", f"paciente_id=eq.{p['id']}&orden=eq.{urllib.parse.quote(orden)}&estado=eq.aprobado&select=id"):
+        raise SystemExit(f"El informe de la orden {orden} ya está aprobado: no se reemplaza.")
+    if not sb.uno("autorizaciones", f"paciente_id=eq.{p['id']}&acepta_datos=is.true&select=id"):
+        raise SystemExit("El paciente no ha firmado la autorización de datos: no se puede procesar.")
+    c = sb.uno("cuestionarios", f"paciente_id=eq.{p['id']}") or {}
+    v = sb.uno("visitas", f"paciente_id=eq.{p['id']}")
+    faltan = [n for n, ok in (("cuestionario completo", c.get("completo")), ("visita de la enfermera", v)) if not ok]
+    if faltan and not forzar: raise SystemExit(f"Falta: {', '.join(faltan)}. Marca «publicar igual» para seguir.")
+
+    perfil, enf = perfil_y_enfermera(c, v)
+    if not perfil.get("objetivos"): raise SystemExit("El paciente no ha elegido sus metas.")
+    documento = documento_pdf or f"{p['tipo_documento']} {p['cedula']}"
+    if p.get("fecha_nacimiento"):  # la edad de la cuenta, a hoy
+        n, hoy = date.fromisoformat(p["fecha_nacimiento"]), date.today()
+        p["edad"] = hoy.year - n.year - ((hoy.month, hoy.day) < (n.month, n.day))
+    codigo, inf = saludly.generar(pdf, documento, orden, perfil, enf)
+    if codigo != 0: raise SystemExit(f"No se generó el informe ({inf.get('estado')}): {inf.get('motivo')}")
+
+    avisos = []
+    if inf["perfil"].get("sexo") and inf["perfil"]["sexo"] != p["sexo"]:
+        avisos.append(f"Sexo: la cuenta dice {p['sexo']} y el PDF {inf['perfil']['sexo']}; se usó el del PDF.")
+    if inf["perfil"].get("edad") and abs(inf["perfil"]["edad"] - p["edad"]) > 1:
+        avisos.append(f"Edad: la cuenta dice {p['edad']} y el PDF {inf['perfil']['edad']}; se usó la del PDF.")
+    if documento_pdf: avisos.append("Prueba con PDF sintético: el documento del PDF no es el del paciente.")
+    if faltan: avisos.append(f"Publicado sin: {', '.join(faltan)}.")
+    if c.get("medicamentos_otros"): avisos.append(f"Otros medicamentos que escribió el paciente: {c['medicamentos_otros']}.")
+    inf["medico"]["avisos_publicacion"] = avisos
+
+    estado = "retenido" if inf["estado"] == "retenido_hasta_llamada" else "en_revision"
+    sb.pedir("POST", "informes?on_conflict=paciente_id,orden", dict(paciente_id=p["id"], orden=orden, informe=inf, estado=estado),
+             {"Prefer": "resolution=merge-duplicates,return=minimal"})
+    return dict(informe_id=inf["informe_id"], estado=estado, paciente_ref=inf["paciente_ref"], avisos=avisos)
+
+
 def main():
     ap = argparse.ArgumentParser(description="PDF + datos del paciente en Supabase → informe en revisión")
     ap.add_argument("--pdf", required=True)
@@ -76,42 +116,9 @@ def main():
     ap.add_argument("--documento-pdf", help="solo para pruebas con PDF sintético: el documento que trae el PDF")
     ap.add_argument("--forzar", action="store_true", help="publicar aunque falte el cuestionario completo o la visita")
     a = ap.parse_args()
-
-    sb = Supabase(leer_env())
-    filtro = f"cedula=eq.{urllib.parse.quote(a.cedula)}" if a.cedula else f"id=eq.{urllib.parse.quote(a.paciente_id)}"
-    p = sb.uno("pacientes", f"{filtro}&select=id,tipo_documento,cedula,fecha_nacimiento,edad,sexo")
-    if not p: raise SystemExit("No hay ningún paciente con esa cédula o id.")
-    if not sb.uno("autorizaciones", f"paciente_id=eq.{p['id']}&acepta_datos=is.true&select=id"):
-        raise SystemExit("El paciente no ha firmado la autorización de datos: no se puede procesar.")
-    c = sb.uno("cuestionarios", f"paciente_id=eq.{p['id']}") or {}
-    v = sb.uno("visitas", f"paciente_id=eq.{p['id']}")
-    faltan = [n for n, ok in (("cuestionario completo", c.get("completo")), ("visita de la enfermera", v)) if not ok]
-    if faltan and not a.forzar: raise SystemExit(f"Falta: {', '.join(faltan)}. Use --forzar para publicar igual.")
-
-    perfil, enf = perfil_y_enfermera(c, v)
-    if not perfil.get("objetivos"): raise SystemExit("El paciente no ha elegido sus metas.")
-    documento = a.documento_pdf or f"{p['tipo_documento']} {p['cedula']}"
-    if p.get("fecha_nacimiento"):  # la edad de la cuenta, a hoy
-        n, hoy = date.fromisoformat(p["fecha_nacimiento"]), date.today()
-        p["edad"] = hoy.year - n.year - ((hoy.month, hoy.day) < (n.month, n.day))
-    codigo, inf = saludly.generar(a.pdf, documento, a.orden, perfil, enf)
-    if codigo != 0: raise SystemExit(f"No se generó el informe ({inf.get('estado')}): {inf.get('motivo')}")
-
-    avisos = []
-    if inf["perfil"].get("sexo") and inf["perfil"]["sexo"] != p["sexo"]:
-        avisos.append(f"Sexo: la cuenta dice {p['sexo']} y el PDF {inf['perfil']['sexo']}; se usó el del PDF.")
-    if inf["perfil"].get("edad") and abs(inf["perfil"]["edad"] - p["edad"]) > 1:
-        avisos.append(f"Edad: la cuenta dice {p['edad']} y el PDF {inf['perfil']['edad']}; se usó la del PDF.")
-    if a.documento_pdf: avisos.append("Prueba con PDF sintético: el documento del PDF no es el del paciente.")
-    if faltan: avisos.append(f"Publicado sin: {', '.join(faltan)}.")
-    if c.get("medicamentos_otros"): avisos.append(f"Otros medicamentos que escribió el paciente: {c['medicamentos_otros']}.")
-    inf["medico"]["avisos_publicacion"] = avisos
-
-    estado = "retenido" if inf["estado"] == "retenido_hasta_llamada" else "en_revision"
-    sb.pedir("POST", "informes?on_conflict=paciente_id,orden", dict(paciente_id=p["id"], orden=a.orden, informe=inf, estado=estado),
-             {"Prefer": "resolution=merge-duplicates,return=minimal"})
-    print(f"Informe {inf['informe_id']} publicado como «{estado}» para {inf['paciente_ref']}.")
-    for x in avisos: print("  aviso:", x)
+    r = publicar(Supabase(leer_env()), a.pdf, a.orden, a.paciente_id, a.cedula, a.documento_pdf, a.forzar)
+    print(f"Informe {r['informe_id']} publicado como «{r['estado']}» para {r['paciente_ref']}.")
+    for x in r["avisos"]: print("  aviso:", x)
     print("Revíselo y apruébelo en la vista /medico de la app.")
 
 

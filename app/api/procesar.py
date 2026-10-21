@@ -1,0 +1,71 @@
+"""
+Saludly · Función de Vercel: el médico sube el PDF del laboratorio en /medico y aquí se analiza (Fase 6).
+
+POST /api/procesar con la sesión del médico (Authorization: Bearer <token de Supabase>) y un JSON:
+  {"paciente_id": "...", "orden": "LCD-...", "pdf_base64": "...", "documento_pdf": null, "forzar": false}
+Revisa que quien llama esté en la tabla `equipo`, guarda el PDF solo en /tmp mientras se lee, corre
+codigo/pipeline/publicar.publicar() (lector → motor → informe) y lo borra. El informe queda "en_revision".
+El código del análisis viaja en saludly_lib/ (lo copia app/desplegar.sh); las llaves vienen de las variables
+de entorno de Vercel (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY).
+"""
+import base64, json, os, sys, tempfile, urllib.parse, urllib.request
+from http.server import BaseHTTPRequestHandler
+
+LIB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "saludly_lib")
+sys.path.insert(0, os.path.join(LIB, "codigo", "pipeline"))
+import publicar as P
+
+MAX_PDF = 3 * 1024 * 1024  # Vercel acepta hasta 4,5 MB por petición; en base64 el PDF crece un tercio
+
+
+def quien_llama(token, env):
+    """Correo del usuario de la sesión, si el token es válido."""
+    req = urllib.request.Request(env["SUPABASE_URL"].rstrip("/") + "/auth/v1/user",
+                                 headers={"apikey": env["SUPABASE_SERVICE_ROLE_KEY"], "Authorization": f"Bearer {token}"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return (json.load(r).get("email") or "").lower()
+    except Exception:
+        return ""
+
+
+class handler(BaseHTTPRequestHandler):
+    def responder(self, codigo, cuerpo):
+        datos = json.dumps(cuerpo, ensure_ascii=False).encode()
+        self.send_response(codigo)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(datos)))
+        self.end_headers()
+        self.wfile.write(datos)
+
+    def do_POST(self):
+        env = dict(os.environ)
+        token = (self.headers.get("Authorization") or "").removeprefix("Bearer ").strip()
+        correo = quien_llama(token, env) if token else ""
+        sb = P.Supabase(env)
+        if not correo or not sb.uno("equipo", f"correo=eq.{urllib.parse.quote(correo)}&select=correo"):
+            return self.responder(403, {"error": "Solo el equipo de Saludly puede subir resultados."})
+        try:
+            d = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)) or b"{}")
+            pdf = base64.b64decode(d.get("pdf_base64") or "", validate=True)
+        except Exception:
+            return self.responder(400, {"error": "No llegó un PDF válido."})
+        if not pdf.startswith(b"%PDF") or len(pdf) > MAX_PDF:
+            return self.responder(400, {"error": "El archivo no es un PDF o pesa más de 3 MB."})
+        if not d.get("paciente_id") or not (d.get("orden") or "").strip():
+            return self.responder(400, {"error": "Falta el paciente o el número de orden."})
+
+        # El PDF no se guarda: vive en /tmp solo mientras se lee.
+        f = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+        try:
+            f.write(pdf)
+            f.close()
+            r = P.publicar(sb, f.name, d["orden"].strip(), paciente_id=d["paciente_id"],
+                           documento_pdf=(d.get("documento_pdf") or None), forzar=bool(d.get("forzar")))
+            return self.responder(200, r)
+        except SystemExit as e:
+            return self.responder(422, {"error": str(e)})
+        except Exception as e:  # sin datos del paciente en el mensaje
+            return self.responder(500, {"error": f"Falló el análisis ({type(e).__name__})."})
+        finally:
+            os.unlink(f.name)

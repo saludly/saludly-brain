@@ -9,7 +9,8 @@ import type { Informe } from "@/lib/informe";
 /**
  * Vista del médico revisor y de administración (solo para correos en la tabla `equipo`).
  * Lista los pacientes del piloto con su avance; abre cada informe para revisarlo, verlo como el paciente y aprobarlo.
- * Aprobar no envía WhatsApp: eso lo hace `python codigo/whatsapp/avisar.py` con los aprobados sin avisar.
+ * "Subir resultado" manda el PDF del laboratorio a /api/procesar (función de Vercel: lector → motor → informe en revisión).
+ * Aprobar avisa al paciente por WhatsApp con la función avisar-resultados de Supabase.
  */
 interface Fila {
   id: string;
@@ -44,6 +45,68 @@ function Lista({ titulo, items }: { titulo: string; items: unknown }) {
   );
 }
 
+/** Subir el PDF del laboratorio de un paciente: se analiza en el servidor y queda "en revisión". El PDF no se guarda. */
+function SubirResultado({ fila, alTerminar }: { fila: Fila; alTerminar: () => void }) {
+  const s = useSesion();
+  const [archivo, setArchivo] = useState<File | null>(null);
+  const [orden, setOrden] = useState("");
+  const [forzar, setForzar] = useState(false);
+  const [documentoPrueba, setDocumentoPrueba] = useState("");
+  const [ocupado, setOcupado] = useState(false);
+  const [mensaje, setMensaje] = useState<{ ok: boolean; texto: string } | null>(null);
+
+  const enviar = async () => {
+    if (!archivo) return;
+    setOcupado(true);
+    setMensaje(null);
+    const bytes = new Uint8Array(await archivo.arrayBuffer());
+    let binario = "";
+    for (let i = 0; i < bytes.length; i += 0x8000) binario += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+    try {
+      const r = await fetch("/api/procesar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${s.sesion?.access_token}` },
+        body: JSON.stringify({ paciente_id: fila.id, orden: orden.trim(), pdf_base64: btoa(binario), forzar, documento_pdf: documentoPrueba.trim() || null }),
+      });
+      const d = (await r.json().catch(() => ({}))) as { error?: string; estado?: string; avisos?: string[] };
+      if (!r.ok) setMensaje({ ok: false, texto: d.error ?? "No se pudo analizar el PDF." });
+      else {
+        setMensaje({ ok: true, texto: `Listo: el informe quedó ${ESTADO[d.estado ?? ""]?.toLowerCase() ?? d.estado}.${d.avisos?.length ? ` Avisos: ${d.avisos.join(" ")}` : ""}` });
+        alTerminar();
+      }
+    } catch {
+      setMensaje({ ok: false, texto: "No hubo conexión con el servidor. Intenta de nuevo." });
+    }
+    setOcupado(false);
+  };
+
+  return (
+    <div className="mt-4 w-full space-y-3 rounded-2xl bg-surface p-4">
+      <label className="block text-xs text-ink-muted">
+        PDF del laboratorio
+        <input type="file" accept="application/pdf" onChange={(e) => setArchivo(e.target.files?.[0] ?? null)} className="mt-1 block w-full text-sm text-ink" />
+      </label>
+      <label className="block text-xs text-ink-muted">
+        Número de orden (como aparece en el PDF)
+        <input value={orden} onChange={(e) => setOrden(e.target.value.toUpperCase())} placeholder="LCD-2026-000000" className="mt-1 block w-full rounded-xl border border-rule bg-background px-3 py-2 text-sm text-ink" />
+      </label>
+      {(!fila.cuestionario || !fila.visita) && (
+        <label className="flex items-center gap-2 text-xs text-ink-muted">
+          <input type="checkbox" checked={forzar} onChange={(e) => setForzar(e.target.checked)} /> Publicar igual (falta el cuestionario o la visita)
+        </label>
+      )}
+      <details className="text-xs text-ink-faint">
+        <summary className="cursor-pointer">Solo para pruebas con PDF de ejemplo</summary>
+        <input value={documentoPrueba} onChange={(e) => setDocumentoPrueba(e.target.value)} placeholder="Documento que trae el PDF, p. ej. CC 0000000005" className="mt-2 block w-full rounded-xl border border-rule bg-background px-3 py-2 text-sm text-ink" />
+      </details>
+      <button type="button" onClick={() => void enviar()} disabled={!archivo || !orden.trim() || ocupado} className="rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground disabled:opacity-40">
+        {ocupado ? "Analizando…" : "Analizar resultado"}
+      </button>
+      {mensaje && <p className={`text-sm ${mensaje.ok ? "text-optimal" : "text-attention"}`}>{mensaje.texto}</p>}
+    </div>
+  );
+}
+
 function Revision({ fila, alVolver }: { fila: Fila; alVolver: () => void }) {
   const s = useSesion();
   const { revisar } = useInforme();
@@ -63,8 +126,12 @@ function Revision({ fila, alVolver }: { fila: Fila; alVolver: () => void }) {
       .from("informes")
       .update({ estado: "aprobado", aprobado: new Date().toISOString(), aprobado_por: s.sesion?.user.email })
       .eq("id", fila.informe!.id);
+    if (!error) {
+      setEstado("aprobado");
+      // Aviso por WhatsApp con la plantilla resultados_listos (la función revisa que el paciente aceptó WhatsApp).
+      await supabase.functions.invoke("avisar-resultados", { body: { informe_id: fila.informe!.id } });
+    }
     setOcupado(false);
-    if (!error) setEstado("aprobado");
   };
 
   if (!inf) return <p className="mt-10 text-sm text-ink-muted">Cargando el informe…</p>;
@@ -154,6 +221,7 @@ export function Medico() {
   const navigate = useNavigate();
   const [filas, setFilas] = useState<Fila[] | null>(null);
   const [abierta, setAbierta] = useState<Fila | null>(null);
+  const [subiendo, setSubiendo] = useState<string | null>(null);
 
   const cargar = useCallback(async () => {
     const [p, c, v, i] = await Promise.all([
@@ -194,7 +262,7 @@ export function Medico() {
           <section className="mt-10">
             <h1 className="text-3xl font-light tracking-tight text-ink">Pacientes del piloto</h1>
             <p className="mt-2 text-sm text-ink-muted">
-              Para generar un informe: <code className="font-mono text-xs">python codigo/pipeline/publicar.py --pdf … --cedula … --orden …</code>
+              Cuando llegue el PDF del laboratorio, toca «Subir resultado» en el paciente: se analiza solo y queda para que lo revises y apruebes.
             </p>
             <div className="mt-6 space-y-3">
               {filas === null && <p className="text-sm text-ink-muted">Cargando…</p>}
@@ -213,11 +281,21 @@ export function Medico() {
                       {f.informe && <Chip ok={f.informe.estado === "aprobado"} texto={`Informe: ${ESTADO[f.informe.estado]}${f.informe.avisado ? " · avisado" : ""}`} />}
                     </div>
                   </div>
-                  {f.informe && (
-                    <button type="button" onClick={() => setAbierta(f)} className="rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground">
-                      Revisar informe
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setSubiendo(subiendo === f.id ? null : f.id)}
+                      className="rounded-full border border-rule px-5 py-2.5 text-sm text-ink"
+                    >
+                      Subir resultado
                     </button>
-                  )}
+                    {f.informe && (
+                      <button type="button" onClick={() => setAbierta(f)} className="rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground">
+                        Revisar informe
+                      </button>
+                    )}
+                  </div>
+                  {subiendo === f.id && <SubirResultado fila={f} alTerminar={() => void cargar()} />}
                 </div>
               ))}
             </div>
