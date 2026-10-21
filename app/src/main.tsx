@@ -9,6 +9,7 @@ import { Panel } from "@/routes/Panel";
 import { Plan } from "@/routes/Plan";
 import { Entrar } from "@/routes/Entrar";
 import { Registro } from "@/routes/Registro";
+import { Pago } from "@/routes/Pago";
 import { Cuestionario } from "@/routes/Cuestionario";
 import { Listo } from "@/routes/Listo";
 import { Visita } from "@/routes/Visita";
@@ -73,6 +74,7 @@ const rutas = [
   createRoute({ getParentRoute: () => raiz, path: "/", component: Inicio }),
   createRoute({ getParentRoute: () => raiz, path: "/entrar", component: Entrar }),
   createRoute({ getParentRoute: () => raiz, path: "/registro", component: Registro }),
+  createRoute({ getParentRoute: () => raiz, path: "/pago", component: Pago }),
   createRoute({ getParentRoute: () => raiz, path: "/cuestionario", component: Cuestionario }),
   createRoute({ getParentRoute: () => raiz, path: "/listo", component: Listo }),
   createRoute({ getParentRoute: () => raiz, path: "/visita", component: Visita }),

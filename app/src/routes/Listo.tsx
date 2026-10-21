@@ -3,12 +3,12 @@ import { useNavigate } from "@tanstack/react-router";
 import { CalendarClock, MessageCircle, Stethoscope } from "lucide-react";
 import { Marca } from "@/components/Comunes";
 import { Espera } from "@/components/Espera";
-import { siguientePaso, supabase, useSesion } from "@/lib/sesion";
+import { siguientePaso, useSesion } from "@/lib/sesion";
 import C from "@/lib/contenido.json";
 
 /**
- * Después del cuestionario. En el piloto, Carlos coordina la visita por WhatsApp (1 por día, lunes a viernes,
- * de 7 a 11 a. m., desde 2 días después de la compra); la agenda en la app viene después.
+ * Después del cuestionario. Muestra si el pago ya está confirmado; la agenda en la app (Google Calendar) viene después.
+ * Mientras tanto, Carlos coordina la visita por WhatsApp (1 por día, lunes a viernes, de 7 a 11 a. m.).
  */
 export function Listo() {
   const s = useSesion();
@@ -19,11 +19,7 @@ export function Listo() {
     if (ir !== "/listo") void navigate({ to: ir });
   }, [s, navigate]);
 
-  // Al llegar aquí sale el WhatsApp para agendar la visita (una sola vez: la función revisa si ya se envió).
-  const avisar = s.cuestionario?.completo && !s.cuestionario.aviso_listo;
-  useEffect(() => {
-    if (avisar) void supabase.functions.invoke("avisar-listo");
-  }, [avisar]);
+  const pagoConfirmado = s.pago?.estado === "confirmado";
   const nombre = s.paciente?.nombre.split(" ")[0];
   // Ya pasó la enfermera: solo queda esperar el laboratorio.
   if (s.visita) return <Espera />;
@@ -37,7 +33,9 @@ export function Listo() {
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">Ahora necesitamos tomar tu muestra y algunas medidas en una visita corta de la enfermera.</p>
           <div className="mt-8 space-y-3">
             {[
-              { icono: CalendarClock, t: "Agendamos tu visita", d: "Te escribiremos por WhatsApp para acordar el día: de lunes a viernes, entre las 7 y las 11 de la mañana." },
+              pagoConfirmado
+                ? { icono: CalendarClock, t: "Tu pago está confirmado", d: "Agendamos tu visita de lunes a viernes, entre las 7 y las 11 de la mañana. Te escribimos por WhatsApp para confirmar el día." }
+                : { icono: CalendarClock, t: "Estamos confirmando tu pago", d: "Apenas lo confirmemos te avisamos por WhatsApp para agendar la visita de la enfermera." },
               { icono: Stethoscope, t: "Ve en ayunas", d: C.ayuno.aviso },
               { icono: MessageCircle, t: "Te avisamos por WhatsApp", d: "Cuando estén tus resultados y un médico los revise, te enviamos un mensaje para que los veas aquí." },
             ].map((x) => (

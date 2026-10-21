@@ -48,6 +48,12 @@ export interface Cuestionario {
   aviso_listo?: string | null;
 }
 
+export interface Pago {
+  codigo: string;
+  estado: "pendiente" | "comprobante" | "confirmado" | "rechazado";
+  nota: string | null;
+}
+
 export interface Visita {
   presion_sistolica: number | null;
   presion_diastolica: number | null;
@@ -85,6 +91,10 @@ interface Valor {
   cuestionario: Cuestionario | null;
   visita: Visita | null;
   informe: Informe | null;
+  pago: Pago | null;
+  /** El paciente vio la pantalla de pago y eligió seguir con las preguntas mientras confirmamos. */
+  pagoVisto: boolean;
+  marcarPagoVisto: () => void;
   esEquipo: boolean;
   recargar: () => Promise<void>;
   salir: () => Promise<void>;
@@ -101,6 +111,8 @@ export function SesionProvider({ children }: { children: ReactNode }) {
   const [visita, setVisita] = useState<Visita | null>(null);
   const [informe, setInforme] = useState<Informe | null>(null);
   const [esEquipo, setEsEquipo] = useState(false);
+  const [pago, setPago] = useState<Pago | null>(null);
+  const [pagoVisto, setPagoVisto] = useState(false);
 
   const cargarDatos = useCallback(async (s: Session | null) => {
     if (!s) {
@@ -110,16 +122,23 @@ export function SesionProvider({ children }: { children: ReactNode }) {
       setVisita(null);
       setInforme(null);
       setEsEquipo(false);
+      setPago(null);
       return;
     }
     const yo = s.user.id;
-    const [p, a, c, v, i, e] = await Promise.all([
+    try {
+      setPagoVisto(localStorage.getItem(`saludly-pago-visto-${yo}`) === "1");
+    } catch {
+      /* sin almacenamiento: se vuelve a mostrar la pantalla de pago */
+    }
+    const [p, a, c, v, i, e, g] = await Promise.all([
       supabase.from("pacientes").select("*").eq("id", yo).maybeSingle(),
       supabase.from("autorizaciones").select("id").eq("paciente_id", yo).eq("version", VERSION_AUTORIZACION).limit(1),
       supabase.from("cuestionarios").select("*").eq("paciente_id", yo).maybeSingle(),
       supabase.from("visitas").select("*").eq("paciente_id", yo).maybeSingle(),
       supabase.from("informes").select("informe").eq("paciente_id", yo).eq("estado", "aprobado").order("creado", { ascending: false }).limit(1),
       supabase.rpc("es_equipo"),
+      supabase.from("pagos").select("codigo, estado, nota").eq("paciente_id", yo).maybeSingle(),
     ]);
     setPaciente((p.data as Paciente | null) ?? null);
     setAutorizado((a.data?.length ?? 0) > 0);
@@ -127,6 +146,7 @@ export function SesionProvider({ children }: { children: ReactNode }) {
     setVisita((v.data as Visita | null) ?? null);
     setInforme(((i.data?.[0] as { informe: Informe } | undefined)?.informe) ?? null);
     setEsEquipo(e.data === true);
+    setPago((g.data as Pago | null) ?? null);
   }, []);
 
   useEffect(() => {
@@ -143,11 +163,19 @@ export function SesionProvider({ children }: { children: ReactNode }) {
   }, [cargarDatos]);
 
   const recargar = useCallback(() => cargarDatos(sesion), [cargarDatos, sesion]);
+  const marcarPagoVisto = useCallback(() => {
+    setPagoVisto(true);
+    try {
+      if (sesion) localStorage.setItem(`saludly-pago-visto-${sesion.user.id}`, "1");
+    } catch {
+      /* ignorar */
+    }
+  }, [sesion]);
   const salir = useCallback(async () => {
     await supabase.auth.signOut();
   }, []);
 
-  return <Ctx.Provider value={{ cargando, sesion, paciente, autorizado, cuestionario, visita, informe, esEquipo, recargar, salir }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ cargando, sesion, paciente, autorizado, cuestionario, visita, informe, pago, pagoVisto, marcarPagoVisto, esEquipo, recargar, salir }}>{children}</Ctx.Provider>;
 }
 
 export function useSesion() {
@@ -157,10 +185,12 @@ export function useSesion() {
 }
 
 /** A qué pantalla debe ir el paciente según lo que ya completó. */
-export function siguientePaso(v: Valor): "/entrar" | "/registro" | "/cuestionario" | "/listo" | "/recorrido" | "/medico" {
+export function siguientePaso(v: Valor): "/entrar" | "/registro" | "/pago" | "/cuestionario" | "/listo" | "/recorrido" | "/medico" {
   if (!v.sesion) return "/entrar";
   if (v.esEquipo && !v.paciente) return "/medico";
   if (!v.paciente || !v.autorizado) return "/registro";
+  // El pago se muestra después del registro; el cuestionario se puede responder mientras Carlos lo confirma.
+  if (!v.pago || (v.pago.estado === "pendiente" && !v.pagoVisto) || v.pago.estado === "rechazado") return "/pago";
   if (!v.cuestionario?.completo) return "/cuestionario";
   if (v.informe) return "/recorrido";
   return "/listo";

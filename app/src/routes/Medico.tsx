@@ -21,7 +21,10 @@ interface Fila {
   cuestionario: boolean;
   visita: boolean;
   informe: { id: number; orden: string; estado: string; creado: string; aprobado: string | null; avisado: string | null } | null;
+  pago: { codigo: string; estado: string; comprobante: string | null; comprobante_recibido: string | null } | null;
 }
+
+const PAGO: Record<string, string> = { pendiente: "Pago pendiente", comprobante: "Pago por confirmar", confirmado: "Pago confirmado", rechazado: "Pago rechazado" };
 
 const ESTADO: Record<string, string> = { en_revision: "En revisión", aprobado: "Aprobado", retenido: "Retenido: llamar" };
 
@@ -103,6 +106,143 @@ function SubirResultado({ fila, alTerminar }: { fila?: Fila; alTerminar: () => v
       </button>
       {mensaje && <p className={`text-sm ${mensaje.ok ? "text-optimal" : "text-attention"}`}>{mensaje.texto}</p>}
     </div>
+  );
+}
+
+/** Comprobantes que llegaron por WhatsApp: se ven aquí y se confirman o rechazan (sale el WhatsApp al paciente). */
+function PagosPorConfirmar({ filas, alCambiar }: { filas: Fila[]; alCambiar: () => void }) {
+  const pendientes = filas.filter((f) => f.pago?.estado === "comprobante");
+  const [urls, setUrls] = useState<Record<string, string>>({});
+  const [ocupado, setOcupado] = useState<string | null>(null);
+  const [rechazando, setRechazando] = useState<string | null>(null);
+  const [nota, setNota] = useState("");
+
+  const rutas = pendientes.map((f) => `${f.id}|${f.pago?.comprobante ?? ""}`).join(",");
+  useEffect(() => {
+    for (const par of rutas.split(",").filter(Boolean)) {
+      const [id, ruta] = par.split("|");
+      if (ruta)
+        void supabase.storage
+          .from("comprobantes")
+          .createSignedUrl(ruta, 600)
+          .then(({ data }) => data && setUrls((u) => ({ ...u, [id!]: data.signedUrl })));
+    }
+  }, [rutas]);
+
+  const decidir = async (f: Fila, confirmar: boolean) => {
+    setOcupado(f.id);
+    await supabase.functions.invoke("confirmar-pago", { body: { paciente_id: f.id, confirmar, nota: confirmar ? null : nota } });
+    setOcupado(null);
+    setRechazando(null);
+    setNota("");
+    alCambiar();
+  };
+
+  if (!pendientes.length) return null;
+  return (
+    <section className="mt-6 rounded-3xl border border-attention/40 bg-attention-soft p-5">
+      <h2 className="text-lg font-light text-ink">Pagos por confirmar ({pendientes.length})</h2>
+      <div className="mt-4 space-y-4">
+        {pendientes.map((f) => (
+          <article key={f.id} className="flex flex-wrap items-start gap-4 rounded-2xl bg-background p-4">
+            {urls[f.id] ? (
+              f.pago?.comprobante?.endsWith(".pdf") ? (
+                <a href={urls[f.id]} target="_blank" rel="noreferrer" className="rounded-xl border border-rule px-4 py-6 text-sm text-optimal">
+                  Ver PDF del comprobante
+                </a>
+              ) : (
+                <a href={urls[f.id]} target="_blank" rel="noreferrer">
+                  <img src={urls[f.id]} alt={`Comprobante de ${f.nombre}`} className="h-40 w-auto rounded-xl border border-rule object-contain" />
+                </a>
+              )
+            ) : (
+              <div className="h-40 w-28 rounded-xl bg-surface" />
+            )}
+            <div className="min-w-0 flex-1">
+              <p className="text-base text-ink">{f.nombre}</p>
+              <p className="text-xs text-ink-muted">
+                Código {f.pago?.codigo} · WhatsApp …{f.celular_whatsapp.slice(-4)}
+              </p>
+              {rechazando === f.id ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <input value={nota} onChange={(e) => setNota(e.target.value)} placeholder="Motivo (lo verá el paciente)" className="min-w-0 flex-1 rounded-xl border border-rule px-3 py-2 text-sm text-ink" />
+                  <button type="button" disabled={ocupado === f.id} onClick={() => void decidir(f, false)} className="rounded-full border border-rule px-5 py-2 text-sm text-ink disabled:opacity-40">
+                    Rechazar
+                  </button>
+                </div>
+              ) : (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <button type="button" disabled={ocupado === f.id} onClick={() => void decidir(f, true)} className="rounded-full bg-optimal px-5 py-2 text-sm text-primary-foreground disabled:opacity-40">
+                    Confirmar pago
+                  </button>
+                  <button type="button" onClick={() => setRechazando(f.id)} className="rounded-full border border-rule px-5 py-2 text-sm text-ink">
+                    Rechazar
+                  </button>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/** Datos del pago que ve el paciente (llave Bre-B, valor, titular, WhatsApp de Saludly): se cambian aquí, sin tocar código. */
+function ConfigPago() {
+  const [abierta, setAbierta] = useState(false);
+  const [valores, setValores] = useState<Record<string, string>>({});
+  const [guardado, setGuardado] = useState(false);
+  const CAMPOS: [string, string, string][] = [
+    ["pago_llave_breb", "Llave Bre-B", "Celular, cédula o correo de la llave"],
+    ["pago_valor", "Valor del paquete", "$000.000"],
+    ["pago_titular", "Titular de la cuenta", "Nombre que verá el paciente"],
+    ["whatsapp_saludly", "WhatsApp de Saludly", "Con indicativo, sin +: 57300…"],
+  ];
+
+  useEffect(() => {
+    if (abierta)
+      void supabase
+        .from("configuracion")
+        .select("clave, valor")
+        .then(({ data }) => setValores(Object.fromEntries((data ?? []).map((x) => [x.clave, x.valor ?? ""]))));
+  }, [abierta]);
+
+  const guardar = async () => {
+    for (const [k] of CAMPOS) await supabase.from("configuracion").update({ valor: valores[k]?.trim() || null, actualizado: new Date().toISOString() }).eq("clave", k);
+    setGuardado(true);
+  };
+
+  return (
+    <section className="mt-4">
+      <button type="button" onClick={() => setAbierta((x) => !x)} className="text-sm text-optimal underline-offset-4 hover:underline">
+        {abierta ? "Cerrar datos de pago" : "Datos de pago (llave Bre-B y valor)"}
+      </button>
+      {abierta && (
+        <div className="mt-3 grid gap-3 rounded-2xl bg-surface p-4 sm:grid-cols-2">
+          {CAMPOS.map(([k, l, ph]) => (
+            <label key={k} className="block text-xs text-ink-muted">
+              {l}
+              <input
+                value={valores[k] ?? ""}
+                placeholder={ph}
+                onChange={(e) => {
+                  setGuardado(false);
+                  setValores((v) => ({ ...v, [k]: e.target.value }));
+                }}
+                className="mt-1 block w-full rounded-xl border border-rule bg-background px-3 py-2 text-sm text-ink"
+              />
+            </label>
+          ))}
+          <div className="flex items-center gap-3 sm:col-span-2">
+            <button type="button" onClick={() => void guardar()} className="rounded-full bg-optimal px-5 py-2 text-sm text-primary-foreground">
+              Guardar
+            </button>
+            {guardado && <span className="text-xs text-optimal">Guardado. El paciente ya ve los datos nuevos.</span>}
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
 
@@ -223,15 +363,17 @@ export function Medico() {
   const [subiendo, setSubiendo] = useState<string | null>(null);  // id del paciente, o "todos" para la carga general
 
   const cargar = useCallback(async () => {
-    const [p, c, v, i] = await Promise.all([
+    const [p, c, v, i, g] = await Promise.all([
       supabase.from("pacientes").select("id,nombre,edad,sexo,celular_whatsapp").order("creado"),
       supabase.from("cuestionarios").select("paciente_id,completo"),
       supabase.from("visitas").select("paciente_id"),
       supabase.from("informes").select("id,paciente_id,orden,estado,creado,aprobado,avisado").order("creado", { ascending: false }),
+      supabase.from("pagos").select("paciente_id,codigo,estado,comprobante,comprobante_recibido"),
     ]);
     setFilas(
       (p.data ?? []).map((x) => ({
-        ...(x as Omit<Fila, "cuestionario" | "visita" | "informe">),
+        ...(x as Omit<Fila, "cuestionario" | "visita" | "informe" | "pago">),
+        pago: (g.data?.find((y) => y.paciente_id === x.id) as Fila["pago"]) ?? null,
         cuestionario: !!c.data?.find((y) => y.paciente_id === x.id && y.completo),
         visita: !!v.data?.find((y) => y.paciente_id === x.id),
         informe: (i.data?.find((y) => y.paciente_id === x.id) as Fila["informe"]) ?? null,
@@ -248,7 +390,7 @@ export function Medico() {
   return (
     <main className="min-h-screen bg-background">
       <div className="mx-auto max-w-5xl px-6 py-8 sm:px-10">
-        <Marca derecha="Vista del médico" />
+        <Marca derecha="Administración" />
         {abierta ? (
           <Revision
             fila={abierta}
@@ -263,6 +405,8 @@ export function Medico() {
             <p className="mt-2 text-sm text-ink-muted">
               Cuando llegue el PDF del laboratorio, toca «Subir resultado» en el paciente: se analiza solo y queda para que lo revises y apruebes.
             </p>
+            <PagosPorConfirmar filas={filas ?? []} alCambiar={() => void cargar()} />
+            <ConfigPago />
             <button type="button" onClick={() => setSubiendo(subiendo === "todos" ? null : "todos")} className="mt-5 rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground">
               Subir resultado del laboratorio
             </button>
@@ -281,6 +425,7 @@ export function Medico() {
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       <Chip ok={f.cuestionario} texto={f.cuestionario ? "Cuestionario completo" : "Cuestionario pendiente"} />
                       <Chip ok={f.visita} texto={f.visita ? "Visita hecha" : "Sin visita"} />
+                      {f.pago && <Chip ok={f.pago.estado === "confirmado"} texto={`${PAGO[f.pago.estado]} · ${f.pago.codigo}`} />}
                       {f.informe && <Chip ok={f.informe.estado === "aprobado"} texto={`Informe: ${ESTADO[f.informe.estado]}${f.informe.avisado ? " · avisado" : ""}`} />}
                     </div>
                   </div>

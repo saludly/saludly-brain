@@ -97,7 +97,7 @@ export function Registro() {
     }
     await s.recargar();
     setOcupado(false);
-    void navigate({ to: "/cuestionario" });
+    void navigate({ to: "/pago" });
   };
 
   if (paso === 1)
