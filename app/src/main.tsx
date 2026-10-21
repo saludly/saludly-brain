@@ -40,7 +40,24 @@ function NoEncontrada() {
   );
 }
 
+/** Si una pantalla falla: el mensaje en español, el detalle para mandárselo a Saludly y un botón para reintentar. */
+function ErrorPantalla({ error }: { error: Error }) {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-6">
+      <div className="max-w-md text-center">
+        <h1 className="text-2xl font-light text-ink">Algo salió mal al abrir esta pantalla.</h1>
+        <p className="mt-3 text-sm text-ink-muted">Toca "Volver a intentar". Si sigue pasando, mándale a Saludly una captura de esta pantalla.</p>
+        <p className="mt-4 break-words rounded-2xl bg-surface p-3 text-left font-mono text-xs text-ink-faint">{error?.message || String(error)}</p>
+        <button type="button" onClick={() => window.location.assign("/")} className="mt-6 inline-flex rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground">
+          Volver a intentar
+        </button>
+      </div>
+    </div>
+  );
+}
+
 const raiz = createRootRoute({
+  errorComponent: ErrorPantalla,
   component: () => (
     <>
       <BarraDemo />
