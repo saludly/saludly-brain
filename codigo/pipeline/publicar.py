@@ -15,6 +15,7 @@ Reglas:
 - Si la edad o el sexo de la cuenta no coinciden con el PDF, manda el PDF y se avisa en la vista del médico.
 """
 import argparse, json, os, sys, urllib.error, urllib.parse, urllib.request
+from datetime import date
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -78,7 +79,7 @@ def main():
 
     sb = Supabase(leer_env())
     filtro = f"cedula=eq.{urllib.parse.quote(a.cedula)}" if a.cedula else f"id=eq.{urllib.parse.quote(a.paciente_id)}"
-    p = sb.uno("pacientes", f"{filtro}&select=id,cedula,edad,sexo")
+    p = sb.uno("pacientes", f"{filtro}&select=id,tipo_documento,cedula,fecha_nacimiento,edad,sexo")
     if not p: raise SystemExit("No hay ningún paciente con esa cédula o id.")
     if not sb.uno("autorizaciones", f"paciente_id=eq.{p['id']}&acepta_datos=is.true&select=id"):
         raise SystemExit("El paciente no ha firmado la autorización de datos: no se puede procesar.")
@@ -89,7 +90,10 @@ def main():
 
     perfil, enf = perfil_y_enfermera(c, v)
     if not perfil.get("objetivos"): raise SystemExit("El paciente no ha elegido sus metas.")
-    documento = a.documento_pdf or f"CC {p['cedula']}"
+    documento = a.documento_pdf or f"{p['tipo_documento']} {p['cedula']}"
+    if p.get("fecha_nacimiento"):  # la edad de la cuenta, a hoy
+        n, hoy = date.fromisoformat(p["fecha_nacimiento"]), date.today()
+        p["edad"] = hoy.year - n.year - ((hoy.month, hoy.day) < (n.month, n.day))
     codigo, inf = saludly.generar(a.pdf, documento, a.orden, perfil, enf)
     if codigo != 0: raise SystemExit(f"No se generó el informe ({inf.get('estado')}): {inf.get('motivo')}")
 

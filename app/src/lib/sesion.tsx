@@ -12,10 +12,16 @@ export const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.m
 
 export const VERSION_AUTORIZACION = "AUT-2026-10-v1";
 
+/** CC: cédula de ciudadanía · CE: cédula de extranjería · PPT: Permiso por Protección Temporal · PA: pasaporte. */
+export type TipoDocumento = "CC" | "CE" | "PPT" | "PA";
+
 export interface Paciente {
   id: string;
   nombre: string;
+  tipo_documento: TipoDocumento;
+  /** Número del documento, sea cual sea el tipo. */
   cedula: string;
+  fecha_nacimiento: string | null;
   celular_whatsapp: string;
   direccion: string;
   edad: number;

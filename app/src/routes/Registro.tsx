@@ -1,7 +1,28 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Campo, Opcion, Pantalla, Titulo, claseEntrada } from "@/components/Formulario";
-import { VERSION_AUTORIZACION, siguientePaso, supabase, useSesion } from "@/lib/sesion";
+import { VERSION_AUTORIZACION, siguientePaso, supabase, useSesion, type TipoDocumento } from "@/lib/sesion";
+
+const DOCUMENTOS: { valor: TipoDocumento; texto: string }[] = [
+  { valor: "CC", texto: "Cédula de ciudadanía" },
+  { valor: "CE", texto: "Cédula de extranjería" },
+  { valor: "PPT", texto: "Permiso por Protección Temporal (PPT)" },
+  { valor: "PA", texto: "Pasaporte" },
+];
+
+/** Años cumplidos a hoy (la base la vuelve a calcular al guardar). */
+function edadDe(fecha: string) {
+  const [a, m, d] = fecha.split("-").map(Number);
+  if (!a || !m || !d) return NaN;
+  const hoy = new Date();
+  return hoy.getFullYear() - a - (hoy.getMonth() + 1 < m || (hoy.getMonth() + 1 === m && hoy.getDate() < d) ? 1 : 0);
+}
+
+/** Fecha de hoy en formato AAAA-MM-DD, para el límite del calendario. */
+function hoyISO() {
+  const h = new Date();
+  return `${h.getFullYear()}-${String(h.getMonth() + 1).padStart(2, "0")}-${String(h.getDate()).padStart(2, "0")}`;
+}
 
 /** Datos de la cuenta y autorización de tratamiento de datos (docs/06_legal/Autorizacion_tratamiento_datos.md). */
 export function Registro() {
@@ -9,10 +30,11 @@ export function Registro() {
   const navigate = useNavigate();
   const [paso, setPaso] = useState(1);
   const [nombre, setNombre] = useState("");
+  const [tipoDocumento, setTipoDocumento] = useState<TipoDocumento>("CC");
   const [cedula, setCedula] = useState("");
   const [celular, setCelular] = useState("");
   const [direccion, setDireccion] = useState("");
-  const [edad, setEdad] = useState("");
+  const [nacimiento, setNacimiento] = useState("");
   const [sexo, setSexo] = useState<"hombre" | "mujer" | "">("");
   const [aceptaDatos, setAceptaDatos] = useState(false);
   const [aceptaWhatsapp, setAceptaWhatsapp] = useState(false);
@@ -25,17 +47,21 @@ export function Registro() {
     else if (s.paciente && s.autorizado) void navigate({ to: siguientePaso(s) });
     else if (s.paciente) {
       setNombre(s.paciente.nombre);
+      setTipoDocumento(s.paciente.tipo_documento);
       setCedula(s.paciente.cedula);
       setCelular(s.paciente.celular_whatsapp.slice(2));
       setDireccion(s.paciente.direccion);
-      setEdad(String(s.paciente.edad));
+      setNacimiento(s.paciente.fecha_nacimiento ?? "");
       setSexo(s.paciente.sexo);
       setPaso(2);
     }
   }, [s, navigate]);
 
+  const soloNumeros = tipoDocumento === "CC" || tipoDocumento === "PPT";
+  const edad = edadDe(nacimiento);
+  const documentoValido = soloNumeros ? /^\d{5,12}$/.test(cedula) : /^[A-Z0-9]{4,15}$/.test(cedula);
   const datosValidos =
-    nombre.trim().length >= 3 && /^\d{5,12}$/.test(cedula) && /^3\d{9}$/.test(celular) && direccion.trim().length >= 5 && Number(edad) >= 18 && Number(edad) <= 110 && sexo !== "";
+    nombre.trim().length >= 3 && documentoValido && /^3\d{9}$/.test(celular) && direccion.trim().length >= 5 && edad >= 18 && edad <= 110 && sexo !== "";
 
   const guardarDatos = async () => {
     setError(null);
@@ -43,10 +69,12 @@ export function Registro() {
     const { error } = await supabase.from("pacientes").upsert({
       id: s.sesion!.user.id,
       nombre: nombre.trim(),
+      tipo_documento: tipoDocumento,
       cedula,
       celular_whatsapp: `57${celular}`,
       direccion: direccion.trim(),
-      edad: Number(edad),
+      fecha_nacimiento: nacimiento,
+      edad,
       sexo,
     });
     setOcupado(false);
@@ -80,8 +108,30 @@ export function Registro() {
           <Campo etiqueta="Nombre completo">
             <input autoComplete="name" value={nombre} onChange={(e) => setNombre(e.target.value)} className={claseEntrada} />
           </Campo>
-          <Campo etiqueta="Número de cédula" ayuda="Solo números, sin puntos.">
-            <input inputMode="numeric" value={cedula} onChange={(e) => setCedula(e.target.value.replace(/\D/g, ""))} className={claseEntrada} />
+          <Campo etiqueta="Tipo de documento">
+            <select
+              value={tipoDocumento}
+              onChange={(e) => {
+                setTipoDocumento(e.target.value as TipoDocumento);
+                setCedula("");
+              }}
+              className={claseEntrada}
+            >
+              {DOCUMENTOS.map((d) => (
+                <option key={d.valor} value={d.valor}>
+                  {d.texto}
+                </option>
+              ))}
+            </select>
+          </Campo>
+          <Campo etiqueta="Número de documento" ayuda={soloNumeros ? "Solo números, sin puntos." : "Letras y números, sin espacios ni guiones."}>
+            <input
+              inputMode={soloNumeros ? "numeric" : "text"}
+              autoCapitalize="characters"
+              value={cedula}
+              onChange={(e) => setCedula(soloNumeros ? e.target.value.replace(/\D/g, "").slice(0, 12) : e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 15))}
+              className={claseEntrada}
+            />
           </Campo>
           <Campo etiqueta="Celular con WhatsApp" ayuda="Ahí te avisaremos cuando estén tus resultados.">
             <div className="flex gap-2">
@@ -92,17 +142,21 @@ export function Registro() {
           <Campo etiqueta="Dirección para la visita en Bogotá">
             <input autoComplete="street-address" value={direccion} onChange={(e) => setDireccion(e.target.value)} className={claseEntrada} placeholder="Calle, número, apartamento" />
           </Campo>
-          <Campo etiqueta="Edad">
-            <input inputMode="numeric" value={edad} onChange={(e) => setEdad(e.target.value.replace(/\D/g, "").slice(0, 3))} className={`${claseEntrada} max-w-[8rem]`} />
+          <Campo
+            etiqueta="Fecha de nacimiento"
+            ayuda={nacimiento && !Number.isNaN(edad) ? (edad < 18 ? "El servicio es solo para mayores de 18 años." : `Tienes ${edad} años.`) : undefined}
+          >
+            <input type="date" autoComplete="bday" min="1900-01-01" max={hoyISO()} value={nacimiento} onChange={(e) => setNacimiento(e.target.value)} className={claseEntrada} />
           </Campo>
-          <div>
-            <span className="text-[11px] uppercase tracking-[0.16em] text-ink-faint">Sexo</span>
-            <p className="mt-1 text-xs text-ink-muted">El que usa el laboratorio para comparar tus resultados.</p>
-            <div className="mt-2 grid grid-cols-2 gap-3">
-              <Opcion activa={sexo === "mujer"} onClick={() => setSexo("mujer")} texto="Mujer" />
-              <Opcion activa={sexo === "hombre"} onClick={() => setSexo("hombre")} texto="Hombre" />
-            </div>
-          </div>
+          <Campo etiqueta="Sexo" ayuda="El que usa el laboratorio para comparar tus resultados.">
+            <select value={sexo} onChange={(e) => setSexo(e.target.value as "hombre" | "mujer" | "")} className={claseEntrada}>
+              <option value="" disabled>
+                Elige una opción
+              </option>
+              <option value="hombre">Masculino</option>
+              <option value="mujer">Femenino</option>
+            </select>
+          </Campo>
         </div>
       </Pantalla>
     );
