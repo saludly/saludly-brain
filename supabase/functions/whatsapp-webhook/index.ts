@@ -18,6 +18,7 @@ const MENU =
 
 const RESPUESTAS: Record<string, (nombre: string) => string> = {
   hola: (n) => `¡Hola${n ? `, ${n}` : ""}! 👋 Soy el asistente de Saludly.\n\n${MENU}`,
+  otro: (n) => `Recibimos tu mensaje${n ? `, ${n}` : ""} 🙌 Una persona del equipo de Saludly te responde muy pronto.\n\n${MENU}`,
   "1": () =>
     "📅 Las visitas son de lunes a viernes, entre las 7 y las 11 de la mañana, y debes estar en ayunas. Escríbenos el día y la hora que te quedan mejor y te confirmamos hoy mismo.",
   "2": () => `🔎 Tus resultados aparecen en tu app cuando un médico los revisa: ${APP}\nSi todavía no están, te escribimos apenas estén listos.`,
@@ -33,7 +34,8 @@ function clave(texto: string) {
   if (/^3\b|persona|asesor|humano/.test(t)) return "3";
   if (/^baja\b|^stop\b|^no mas\b/.test(t)) return "baja";
   if (/^alta\b/.test(t)) return "alta";
-  return "hola";
+  if (!t || /^(hola|buenas|buenos|buen dia|hi|hello|menu|inicio|ayuda)\b/.test(t)) return "hola";
+  return "otro"; // una pregunta libre: la responde una persona (queda en whatsapp_mensajes)
 }
 
 async function firmaValida(req: Request, cuerpo: string) {

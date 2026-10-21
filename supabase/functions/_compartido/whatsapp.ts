@@ -11,9 +11,17 @@ async function enviar(cuerpo: Record<string, unknown>) {
   return r.ok;
 }
 
-/** Plantilla aprobada (la única forma de escribir primero), con el nombre como {{1}}. */
-export const enviarPlantilla = (a: string, plantilla: string, nombre: string) =>
-  enviar({ to: a, type: "template", template: { name: plantilla, language: { code: "es" }, components: [{ type: "body", parameters: [{ type: "text", text: nombre }] }] } });
+/** Plantilla aprobada (la única forma de escribir primero); los parámetros llenan {{1}}, {{2}}… del cuerpo. */
+export const enviarPlantilla = (a: string, plantilla: string, parametros: string | string[]) =>
+  enviar({
+    to: a,
+    type: "template",
+    template: {
+      name: plantilla,
+      language: { code: "es" },
+      components: [{ type: "body", parameters: [parametros].flat().map((text) => ({ type: "text", text })) }],
+    },
+  });
 
 /** Texto libre: solo llega dentro de las 24 horas siguientes al último mensaje del paciente. */
 export const enviarTexto = (a: string, texto: string) => enviar({ to: a, type: "text", text: { body: texto } });
