@@ -44,6 +44,8 @@ export interface Cuestionario {
   antecedentes: string[];
   embarazo: string | null;
   completo: boolean;
+  /** Cuándo salió el WhatsApp para agendar la visita (lo marca la función avisar-listo). */
+  aviso_listo?: string | null;
 }
 
 export interface Visita {

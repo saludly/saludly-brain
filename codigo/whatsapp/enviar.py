@@ -47,6 +47,22 @@ def enviar_texto(a, texto, env=None):
     return r["messages"][0]["id"]
 
 
+def enviar_plantilla(a, plantilla, parametros=(), env=None, idioma="es"):
+    """Envía una plantilla aprobada por Meta (la única forma de escribir primero). Devuelve el id del mensaje."""
+    env = env or leer_env()
+    token, numero = env.get("WHATSAPP_TOKEN"), env.get("WHATSAPP_PHONE_NUMBER_ID")
+    if not token or not numero: raise SystemExit("Falta WHATSAPP_TOKEN o WHATSAPP_PHONE_NUMBER_ID en el .env")
+    componentes = [dict(type="body", parameters=[dict(type="text", text=str(x)) for x in parametros])] if parametros else []
+    cuerpo = json.dumps(dict(messaging_product="whatsapp", to=a, type="template",
+                             template=dict(name=plantilla, language=dict(code=idioma), components=componentes))).encode()
+    req = urllib.request.Request(API.format(numero), data=cuerpo, headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+    try:
+        r = json.load(urllib.request.urlopen(req, timeout=20))
+    except urllib.error.HTTPError as e:
+        raise SystemExit(f"Meta respondió {e.code}: {e.read().decode()[:400]}")
+    return r["messages"][0]["id"]
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--a", required=True, help="número con indicativo, sin +, por ejemplo 573005207995")

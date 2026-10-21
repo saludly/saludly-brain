@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { CalendarClock, MessageCircle, Stethoscope } from "lucide-react";
 import { Marca } from "@/components/Comunes";
-import { siguientePaso, useSesion } from "@/lib/sesion";
+import { Espera } from "@/components/Espera";
+import { siguientePaso, supabase, useSesion } from "@/lib/sesion";
 import C from "@/lib/contenido.json";
 
 /**
@@ -17,7 +18,15 @@ export function Listo() {
     const ir = siguientePaso(s);
     if (ir !== "/listo") void navigate({ to: ir });
   }, [s, navigate]);
+
+  // Al llegar aquí sale el WhatsApp para agendar la visita (una sola vez: la función revisa si ya se envió).
+  const avisar = s.cuestionario?.completo && !s.cuestionario.aviso_listo;
+  useEffect(() => {
+    if (avisar) void supabase.functions.invoke("avisar-listo");
+  }, [avisar]);
   const nombre = s.paciente?.nombre.split(" ")[0];
+  // Ya pasó la enfermera: solo queda esperar el laboratorio.
+  if (s.visita) return <Espera />;
 
   return (
     <main className="min-h-screen bg-background">
