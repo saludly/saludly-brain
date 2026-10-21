@@ -61,7 +61,7 @@ Deno.serve(async (req) => {
       for (const m of cambio.value?.messages ?? []) {
         const de: string = m.from;
         const texto: string = m.text?.body ?? m.button?.text ?? m.interactive?.button_reply?.title ?? "";
-        const { data: p } = await admin.from("pacientes").select("id, nombre").eq("celular_whatsapp", de).maybeSingle();
+        const { data: p } = await admin.from("pacientes").select("id, nombre").eq("celular_whatsapp", de).order("creado", { ascending: false }).limit(1).maybeSingle();
         const k = clave(texto);
         await admin.from("whatsapp_mensajes").insert({ paciente_id: p?.id ?? null, celular: de, texto: texto.slice(0, 1000), opcion: k });
         if (p && (k === "baja" || k === "alta")) {
