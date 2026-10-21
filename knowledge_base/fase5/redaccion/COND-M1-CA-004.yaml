@@ -1,13 +1,13 @@
 id: COND-M1-CA-004
 tipo: condicion
-titulo_paciente: "Su lipoproteína(a) está alta"
-que_es: "La lipoproteína(a) es un tipo de colesterol que depende sobre todo de lo que usted heredó de sus padres, no de sus hábitos."
+titulo_paciente: "Tu lipoproteína(a) está alta"
+que_es: "La lipoproteína(a) es un tipo de colesterol que depende sobre todo de lo que heredaste de tus padres, no de tus hábitos."
 por_que_te_aparece:
-  - "Su lipoproteína(a) salió en {lpa}. La referencia es 50 mg/dL o 105 nmol/L, según la unidad del laboratorio."
-riesgo_claro: "Con los años suma al riesgo de problemas del corazón y de las arterias, sobre todo si se junta con LDL alto, presión alta o cigarrillo. Por eso cuidar esos otros factores pesa todavía más en su caso."
-ejemplo_simple: "Es como vivir en una zona donde llueve mucho: usted no puede cambiar el clima, pero sí reforzar el techo."
-incertidumbre: "Este valor casi no cambia en la vida, así que no hace falta repetirlo salvo que su médico lo pida. Su médico lo suma a sus demás factores."
-cuando_consultar: "Coménteselo a su médico. Sus familiares cercanos pueden medírsela una vez."
+  - "Tu lipoproteína(a) salió en {lpa}. La referencia es 50 mg/dL o 105 nmol/L, según la unidad del laboratorio."
+riesgo_claro: "Con los años suma al riesgo de problemas del corazón y de las arterias, sobre todo si se junta con LDL alto, presión alta o cigarrillo. Por eso cuidar esos otros factores pesa todavía más en tu caso."
+ejemplo_simple: "Es como vivir en una zona donde llueve mucho: no puedes cambiar el clima, pero sí reforzar el techo."
+incertidumbre: "Este valor casi no cambia en la vida, así que no hace falta repetirlo salvo que tu médico lo pida. Tu médico lo suma a tus demás factores."
+cuando_consultar: "Coméntalo con tu médico. Tus familiares cercanos pueden medírsela una vez."
 aviso_whatsapp: null
 fuentes: ["ESC/EAS 2025, actualización de dislipidemias", "ACC/AHA 2026"]
 estado_revision: aprobada

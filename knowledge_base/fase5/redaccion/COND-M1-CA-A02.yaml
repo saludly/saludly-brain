@@ -1,12 +1,12 @@
 id: COND-M1-CA-A02
 tipo: condicion
-titulo_paciente: "Su marcador de inflamación leve está elevado"
+titulo_paciente: "Tu marcador de inflamación leve está elevado"
 que_es: "La PCR ultrasensible mide una inflamación leve del cuerpo, de esas que no dan síntomas pero pueden afectar las arterias."
 por_que_te_aparece:
-  - "Su PCR ultrasensible salió en {hs_crp}, por encima de 2 mg/L."
+  - "Tu PCR ultrasensible salió en {hs_crp}, por encima de 2 mg/L."
 riesgo_claro: "Si esta inflamación leve se mantiene por años, puede sumar al desgaste de las arterias y al riesgo del corazón."
-ejemplo_simple: "Piénselo como un fogón con brasas pequeñas: no se ve la llama, pero sigue calentando la olla."
-incertidumbre: "Ojo: sube por cosas pasajeras, como una gripa reciente, el ejercicio fuerte o el cigarrillo. Hay que repetirla para confirmarla, y su médico la interpreta."
+ejemplo_simple: "Piénsalo como un fogón con brasas pequeñas: no se ve la llama, pero sigue calentando la olla."
+incertidumbre: "Ojo: sube por cosas pasajeras, como una gripa reciente, el ejercicio fuerte o el cigarrillo. Hay que repetirla para confirmarla, y tu médico la interpreta."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ESC/EAS 2025 (modificador de riesgo)"]

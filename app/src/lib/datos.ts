@@ -65,9 +65,9 @@ export function estadoDeEscalamiento(e: Escalamiento): Estado {
 
 export const PLAZO: Record<Escalamiento, string> = {
   0: "Para cuidar con hábitos",
-  1: "Para su próximo control",
+  1: "Para tu próximo control",
   2: "Consulta en 2 a 4 semanas",
-  3: "El equipo médico lo llamará hoy",
+  3: "El equipo médico te llamará hoy",
 };
 
 /** Límites numéricos del intervalo del laboratorio ("13,5 – 17,5", "< 5", "> 40"). Null si el texto no se puede leer. */

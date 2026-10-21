@@ -1,15 +1,15 @@
 id: COND-M2-TI-005
 tipo: condicion
-titulo_paciente: "Su TSH está baja y sus hormonas tiroideas, altas"
+titulo_paciente: "Tu TSH está baja y tus hormonas tiroideas, altas"
 que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar. La tiroides es una glándula del cuello que regula el gasto de energía."
 por_que_te_aparece:
-  - "Su TSH salió en {tsh}, por debajo del rango del laboratorio."
-  - "Su T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
-  - "Su T3 libre, la forma más activa de esa hormona, salió en {free_t3}."
+  - "Tu TSH salió en {tsh}, por debajo del rango del laboratorio."
+  - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
+  - "Tu T3 libre, la forma más activa de esa hormona, salió en {free_t3}."
 riesgo_claro: "Si la tiroides trabaja de más y no se atiende, puede causar palpitaciones, pérdida de peso y nervios, y con el tiempo afectar el corazón y los huesos. Con manejo médico, esto se puede controlar."
 ejemplo_simple: "Es como un motor acelerado todo el tiempo: gasta más y se desgasta más rápido."
-incertidumbre: "Su médico confirma el resultado y busca la causa con otros exámenes. Mientras tanto, no empiece ni cambie medicamentos por su cuenta."
-cuando_consultar: "Le recomendamos una consulta médica en las próximas semanas. Si tiene palpitaciones fuertes, falta de aire o temblor intenso, consulte antes."
+incertidumbre: "Tu médico confirma el resultado y busca la causa con otros exámenes. Mientras tanto, no empieces ni cambies medicamentos por tu cuenta."
+cuando_consultar: "Te recomendamos una consulta médica en las próximas semanas. Si tieness palpitaciones fuertes, falta de aire o temblor intenso, consulta antes."
 aviso_whatsapp: null
 fuentes: ["ATA 2016"]
 estado_revision: aprobada

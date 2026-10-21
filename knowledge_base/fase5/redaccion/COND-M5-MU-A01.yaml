@@ -1,14 +1,14 @@
 id: COND-M5-MU-A01
 tipo: condicion
-titulo_paciente: "Su hemoglobina está baja para el embarazo"
-que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno a todo su cuerpo y también a su bebé."
+titulo_paciente: "Tu hemoglobina está baja para el embarazo"
+que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno a todo tu cuerpo y también a tu bebé."
 por_que_te_aparece:
-  - "Su hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa en el embarazo a la altura de Bogotá, está por debajo de lo recomendado."
-  - "Su ferritina, que es la reserva de hierro de su cuerpo, salió en {ferritin}."
+  - "Tu hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa en el embarazo a la altura de Bogotá, está por debajo de lo recomendado."
+  - "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en {ferritin}."
 riesgo_claro: "En el embarazo el cuerpo necesita más hierro. Si la hemoglobina sigue baja, puede aparecer más cansancio y llegar menos oxígeno al bebé."
 ejemplo_simple: "Es como un camión de reparto con menos cupo justo en la temporada de más pedidos: conviene reforzarlo a tiempo."
-incertidumbre: "Su control prenatal define la causa y el manejo. La alimentación ayuda, pero cualquier suplemento lo indica ese equipo."
-cuando_consultar: "Coménteselo pronto a su control prenatal, en los próximos días."
+incertidumbre: "Tu control prenatal define la causa y el manejo. La alimentación ayuda, pero cualquier suplemento lo indica ese equipo."
+cuando_consultar: "Coméntalo pronto en tu control prenatal, en los próximos días."
 aviso_whatsapp: null
 fuentes: ["OMS 2024, cortes de hemoglobina"]
 estado_revision: aprobada

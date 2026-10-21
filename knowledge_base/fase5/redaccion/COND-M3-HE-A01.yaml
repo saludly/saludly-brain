@@ -1,14 +1,14 @@
 id: COND-M3-HE-A01
 tipo: condicion
-titulo_paciente: "Su hemoglobina está baja, con señales de inflamación"
+titulo_paciente: "Tu hemoglobina está baja, con señales de inflamación"
 que_es: "La proteína C reactiva mide la inflamación del cuerpo. Cuando hay inflamación, al cuerpo le cuesta usar su hierro para fabricar glóbulos rojos."
 por_que_te_aparece:
-  - "Su hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo de lo recomendado."
-  - "Su proteína C reactiva, que mide inflamación, salió en {hs_crp}, por encima de lo esperado."
-  - "Su ferritina, la reserva de hierro, salió en {ferritin}, así que la falta de hierro no parece ser la causa."
+  - "Tu hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo de lo recomendado."
+  - "Tu proteína C reactiva, que mide inflamación, salió en {hs_crp}, por encima de lo esperado."
+  - "Tu ferritina, la reserva de hierro, salió en {ferritin}, así que la falta de hierro no parece ser la causa."
 riesgo_claro: "Si no se busca la causa de la inflamación, la hemoglobina puede seguir baja y lo que está de fondo puede avanzar sin atención."
 ejemplo_simple: "Es como una bodega llena con la puerta trabada: el hierro está, pero el cuerpo no logra sacarlo para usarlo."
-incertidumbre: "Este patrón es compatible con una hemoglobina baja por inflamación y no por falta de hierro. Un solo examen no basta para saber la causa: su médico la busca y decide qué estudios hacer."
+incertidumbre: "Este patrón es compatible con una hemoglobina baja por inflamación y no por falta de hierro. Un solo examen no basta para saber la causa: tu médico la busca y decide qué estudios hacer."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["OMS 2020, ferritina"]

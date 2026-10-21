@@ -1,14 +1,14 @@
 id: COND-M5-UR-001
 tipo: condicion
-titulo_paciente: "Su PSA está por encima del valor de referencia"
+titulo_paciente: "Tu PSA está por encima del valor de referencia"
 que_es: "El PSA es una proteína que produce la próstata, una glándula pequeña del hombre que ayuda a formar el semen."
 por_que_te_aparece:
-  - "Su PSA total salió en {psa_total}, por encima del valor de referencia."
+  - "Tu PSA total salió en {psa_total}, por encima del valor de referencia."
   - "La proporción de PSA libre, un dato que ayuda al médico a interpretarlo, salió en {psa_libre_porcentaje}."
 riesgo_claro: "El PSA puede subir por causas benignas, como el crecimiento de la próstata con la edad o una inflamación. Como también sirve para detectar cambios a tiempo, vale la pena revisarlo."
 ejemplo_simple: "Es como una luz del tablero del carro: no dice qué pasa, pero indica que conviene que un mecánico lo revise."
-incertidumbre: "Un solo valor no confirma nada. La eyaculación, montar en bicicleta o una infección urinaria en los días previos pueden subirlo, y su médico puede pedir repetirlo."
-cuando_consultar: "Pida una consulta médica en las próximas semanas para evaluarlo."
+incertidumbre: "Un solo valor no confirma nada. La eyaculación, montar en bicicleta o una infección urinaria en los días previos pueden subirlo, y tu médico puede pedir repetirlo."
+cuando_consultar: "Pide una consulta médica en las próximas semanas para evaluarlo."
 aviso_whatsapp: null
 fuentes: ["Res. 3280 de 2018", "AUA/SUO 2026, detección temprana de cáncer de próstata"]
 estado_revision: aprobada

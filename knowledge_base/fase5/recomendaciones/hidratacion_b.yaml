@@ -1,108 +1,108 @@
 # Recomendaciones de hidratación · hallazgos de M3, M6 y SEG-014, y objetivos deportivos (rendimiento, maraton, atletico).
 # Con enfermedad renal o sodio bajo (posible restricción de líquidos) no aplican: ahí manda la indicación del médico.
 # Numeración 200 a 299.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-HID-201
   tipo: hidratacion
   titulo: "Agua repartida a lo largo del día"
-  texto_base: "Lleve una botella de agua y tome sorbos durante el día, sin esperar a tener mucha sed. Las aromáticas sin azúcar y las sopas también suman."
-  meta_concreta: "Esta semana, termine al menos 2 botellas de agua de unos 750 ml entre la mañana y la tarde, y revise que su orina sea amarillo claro."
-  por_que: "Cuando toma poca agua, algunos valores de la sangre se concentran; una buena hidratación ayuda a que el riñón trabaje cómodo."
+  texto_base: "Lleva una botella de agua y toma sorbos durante el día, sin esperar a tener mucha sed. Las aromáticas sin azúcar y las sopas también suman."
+  meta_concreta: "Esta semana, termina al menos 2 botellas de agua de unos 750 ml entre la mañana y la tarde, y revisa que tu orina sea amarillo claro."
+  por_que: "Cuando tomas poca agua, algunos valores de la sangre se concentran; una buena hidratación ayuda a que el riñón trabaje cómodo."
   se_activa_con: ["SEG-014", "bun:alto", "bun_creatinine_ratio:alto"]
   prioriza_objetivos: ["salud_general", "energia_sueno", "prevenir"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "💧 Reto de hoy: deje una botella de agua en su escritorio o en su maleta y termínela antes del almuerzo."
+  whatsapp: "💧 Reto de hoy: deja una botella de agua en tu escritorio o en tu maleta y termínala antes del almuerzo."
   fuentes: ["KDIGO 2024, guía de enfermedad renal crónica", "EFSA 2010, valores de referencia para el agua"]
 
 - id: REC-HID-202
   tipo: hidratacion
-  titulo: "Hidrátese bien antes del próximo hemograma"
-  texto_base: "Tome agua de forma regular durante el día y, sobre todo, en los días antes de repetir su hemograma. Llegue al examen bien hidratado."
-  meta_concreta: "Los 3 días antes de su próximo hemograma, tome agua en cada comida y entre comidas."
+  titulo: "Hidrátate bien antes del próximo hemograma"
+  texto_base: "Toma agua de forma regular durante el día y, sobre todo, en los días antes de repetir tu hemograma. Llega al examen bien hidratado."
+  meta_concreta: "Los 3 días antes de tu próximo hemograma, toma agua en cada comida y entre comidas."
   por_que: "Cuando falta agua, la sangre se concentra y los glóbulos rojos pueden verse más altos de lo que son."
   se_activa_con: ["COND-M3-HE-007"]
   prioriza_objetivos: ["salud_general", "rendimiento", "atletico"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "💧 Un recordatorio fácil: un vaso de agua al levantarse, otro con cada comida y uno a media tarde."
+  whatsapp: "💧 Un recordatorio fácil: un vaso de agua al levantarte, otro con cada comida y uno a media tarde."
   fuentes: ["BSH 2019, investigación y manejo de la eritrocitosis"]
 
 - id: REC-HID-203
   tipo: hidratacion
   titulo: "Más agua para ayudar a eliminar el ácido úrico"
-  texto_base: "Mantenga una buena hidratación con agua durante todo el día, y más en días de calor o de ejercicio. Evite que el agua se reemplace por gaseosa o cerveza."
+  texto_base: "Mantén una buena hidratación con agua durante todo el día, y más en días de calor o de ejercicio. Evita que el agua se reemplace por gaseosa o cerveza."
   meta_concreta: "Esta semana, un vaso de agua con cada comida y uno entre comidas, todos los días."
-  por_que: "El riñón elimina el ácido úrico por la orina, y lo hace mejor cuando usted está bien hidratado."
+  por_que: "El riñón elimina el ácido úrico por la orina, y lo hace mejor cuando estás bien hidratado."
   se_activa_con: ["COND-M6-RE-001", "uric_acid:alto"]
   prioriza_objetivos: ["prevenir", "salud_general", "bajar_peso"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "💧 Hoy acompañe cada comida con un vaso de agua. Es un hábito sencillo que ayuda a sus riñones."
+  whatsapp: "💧 Hoy acompaña cada comida con un vaso de agua. Es un hábito sencillo que ayuda a tus riñones."
   fuentes: ["ACR 2020, guía para el manejo de la gota"]
 
 - id: REC-HID-204
   tipo: hidratacion
-  titulo: "Hidrátese durante y después de entrenar fuerte"
-  texto_base: "Si hace ejercicio intenso, tome agua antes, durante y después. Si nota la orina muy oscura o un dolor muscular fuera de lo común, busque atención médica."
-  meta_concreta: "En cada entrenamiento de esta semana, lleve su botella y termínela antes de terminar la sesión."
+  titulo: "Hidrátate durante y después de entrenar fuerte"
+  texto_base: "Si haces ejercicio intenso, toma agua antes, durante y después. Si notas la orina muy oscura o un dolor muscular fuera de lo común, busca atención médica."
+  meta_concreta: "En cada entrenamiento de esta semana, lleva tu botella y termínala antes de terminar la sesión."
   por_que: "El ejercicio muy exigente sin agua suficiente hace que los músculos sufran más y que el riñón trabaje de más."
   se_activa_con: ["SEG-007", "REL-008", "ck_cpk:alto"]
   prioriza_objetivos: ["rendimiento", "atletico", "masa_muscular", "maraton"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "💧 Antes de su próximo entrenamiento, llene su botella y llévela consigo. Hidratarse durante la sesión también es parte del entrenamiento."
+  whatsapp: "💧 Antes de tu próximo entrenamiento, llena tu botella y llévala contigo. Hidratarte durante la sesión también es parte del entrenamiento."
   fuentes: ["ACSM 2007, posición sobre ejercicio y reposición de líquidos"]
 
 - id: REC-HID-205
   tipo: hidratacion
-  titulo: "En carreras largas, beba por sed y sume sales"
-  texto_base: "En entrenamientos o carreras de más de una hora, beba según su sed en los puestos de hidratación y use bebidas con sales (electrolitos). No tome agua de más ni a la fuerza."
-  meta_concreta: "En su próxima salida larga, pruebe su plan de bebida con sales en lugar de estrenarlo el día de la carrera."
+  titulo: "En carreras largas, bebe por sed y suma sales"
+  texto_base: "En entrenamientos o carreras de más de una hora, bebe según tu sed en los puestos de hidratación y usa bebidas con sales (electrolitos). No tomes agua de más ni a la fuerza."
+  meta_concreta: "En tu próxima salida larga, prueba tu plan de bebida con sales en lugar de estrenarlo el día de la carrera."
   por_que: "En esfuerzos largos se pierde sodio con el sudor, y tomar solo agua en exceso puede bajar el sodio de la sangre."
   se_activa_con: ["objetivo:maraton"]
   prioriza_objetivos: ["maraton", "rendimiento"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "🏃 En su próxima salida larga, practique lo que va a beber el día de la carrera. Beba según su sed y no a la fuerza."
+  whatsapp: "🏃 En tu próxima salida larga, practica lo que vas a beber el día de la carrera. Bebe según tu sed y no a la fuerza."
   fuentes: ["ACSM 2007, posición sobre ejercicio y reposición de líquidos", "Consenso internacional de hiponatremia asociada al ejercicio 2015"]
 
 - id: REC-HID-206
   tipo: hidratacion
-  titulo: "Pésese antes y después de entrenar"
-  texto_base: "Pésese sin ropa o con ropa ligera antes y después de una sesión larga. Si pierde más de un kilo, la próxima vez tome un poco más de líquido durante el entrenamiento."
-  meta_concreta: "Esta semana, pésese antes y después de 2 entrenamientos y anote la diferencia."
-  por_que: "Perder más del 2 % del peso con el sudor baja el rendimiento; la báscula le dice cuánto líquido necesita."
+  titulo: "Pésate antes y después de entrenar"
+  texto_base: "Pésate sin ropa o con ropa ligera antes y después de una sesión larga. Si pierdes más de un kilo, la próxima vez toma un poco más de líquido durante el entrenamiento."
+  meta_concreta: "Esta semana, pésate antes y después de 2 entrenamientos y anota la diferencia."
+  por_que: "Perder más del 2 % del peso con el sudor baja el rendimiento; la báscula te dice cuánto líquido necesitas."
   se_activa_con: ["objetivo:rendimiento", "objetivo:maraton", "objetivo:atletico"]
   prioriza_objetivos: ["rendimiento", "maraton", "atletico"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "⚖️ Pruebe esto en su próximo entrenamiento largo: pésese antes y después y anote la diferencia. Le dice cuánto líquido necesita."
+  whatsapp: "⚖️ Prueba esto en tu próximo entrenamiento largo: pésate antes y después y anota la diferencia. Te dice cuánto líquido necesitas."
   fuentes: ["ACSM 2007, posición sobre ejercicio y reposición de líquidos", "ACSM, AND y DC 2016, nutrición y rendimiento deportivo"]
 
 - id: REC-HID-207
   tipo: hidratacion
   titulo: "En Bogotá, la altura también deshidrata"
-  texto_base: "En la altura y con aire seco se pierde más agua al respirar, aunque no sude mucho. Lleve agua a sus entrenamientos aunque haga frío."
-  meta_concreta: "En cada entrenamiento de esta semana, lleve agua y tome unos sorbos cada 15 a 20 minutos."
+  texto_base: "En la altura y con aire seco pierdes más agua al respirar, aunque no sudes mucho. Lleva agua a tus entrenamientos aunque haga frío."
+  meta_concreta: "En cada entrenamiento de esta semana, lleva agua y toma unos sorbos cada 15 a 20 minutos."
   por_que: "A más de 2.600 metros el cuerpo pierde más líquido por la respiración, y el frío quita la sensación de sed."
   se_activa_con: ["objetivo:rendimiento", "objetivo:maraton", "objetivo:atletico"]
   prioriza_objetivos: ["rendimiento", "maraton", "atletico"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "🏔️ Aunque haga frío en Bogotá, lleve agua a su entrenamiento de hoy. En la altura se pierde líquido al respirar."
+  whatsapp: "🏔️ Aunque haga frío en Bogotá, lleva agua a tu entrenamiento de hoy. En la altura se pierde líquido al respirar."
   fuentes: ["ACSM 2007, posición sobre ejercicio y reposición de líquidos", "Wilderness Medical Society, guía de enfermedades de altura"]
 
 - id: REC-HID-208
   tipo: hidratacion
-  titulo: "Recupere líquidos y sales después del ejercicio"
-  texto_base: "Después de entrenar, tome agua y coma algo con un poco de sal y potasio, como fruta (banano, naranja), un caldo o un sándwich. Así se recupera mejor."
-  meta_concreta: "Después de cada entrenamiento de esta semana, tome agua y coma algo en la hora siguiente."
+  titulo: "Recupera líquidos y sales después del ejercicio"
+  texto_base: "Después de entrenar, toma agua y come algo con un poco de sal y potasio, como fruta (banano, naranja), un caldo o un sándwich. Así te recuperas mejor."
+  meta_concreta: "Después de cada entrenamiento de esta semana, toma agua y come algo en la hora siguiente."
   por_que: "Con el sudor se van agua y sales; reponerlas con comida y agua ayuda a la recuperación."
   se_activa_con: ["objetivo:rendimiento", "objetivo:maraton", "objetivo:atletico"]
   prioriza_objetivos: ["rendimiento", "maraton", "atletico", "masa_muscular"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-004", "COND-M2-NE-005", "medicamento:diuretico"]
   requiere_consulta_previa: false
-  whatsapp: "🍌 Después de entrenar hoy: agua y un banano o una fruta en la hora siguiente. Su recuperación empieza ahí."
+  whatsapp: "🍌 Después de entrenar hoy: agua y un banano o una fruta en la hora siguiente. Tu recuperación empieza ahí."
   fuentes: ["ACSM, AND y DC 2016, nutrición y rendimiento deportivo"]

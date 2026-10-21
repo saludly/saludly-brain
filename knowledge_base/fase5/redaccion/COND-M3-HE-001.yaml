@@ -1,13 +1,13 @@
 id: COND-M3-HE-001
 tipo: condicion
-titulo_paciente: "Su hemoglobina está baja para la altura de Bogotá"
-que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno a todo su cuerpo."
+titulo_paciente: "Tu hemoglobina está baja para la altura de Bogotá"
+que_es: "La hemoglobina es la proteína de los glóbulos rojos que lleva el oxígeno a todo tu cuerpo."
 por_que_te_aparece:
-  - "Su hemoglobina salió en {hemoglobin}. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."
+  - "Tu hemoglobina salió en {hemoglobin}. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."
   - "Comparada con ese límite, está en el rango que las guías llaman anemia, que tiene varias causas posibles."
 riesgo_claro: "Si no se busca la causa, el cuerpo recibe menos oxígeno: puede aparecer cansancio, mareo o falta de aire, y lo que la produce puede seguir avanzando. Encontrar la causa es el primer paso para corregirla."
-ejemplo_simple: "Piénselo como un camión de reparto con menos cajas: llega a todas partes, pero entrega menos oxígeno del que el cuerpo necesita."
-incertidumbre: "Un solo examen no basta para saber la causa. Más abajo le contamos qué muestran sus otros resultados, y su médico confirma de dónde viene."
+ejemplo_simple: "Piénsalo como un camión de reparto con menos cajas: llega a todas partes, pero entrega menos oxígeno del que el cuerpo necesita."
+incertidumbre: "Un solo examen no basta para saber la causa. Más abajo te contamos qué muestran tus otros resultados, y tu médico confirma de dónde viene."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["OMS 2024, cortes de hemoglobina para definir anemia"]

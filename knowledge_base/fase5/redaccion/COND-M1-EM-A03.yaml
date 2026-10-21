@@ -1,13 +1,13 @@
 id: COND-M1-EM-A03
 tipo: condicion
-titulo_paciente: "Una señal de que su páncreas produce poca insulina"
-que_es: "El péptido C es una sustancia que el páncreas libera junto con la insulina. Sirve para saber cuánta insulina produce su cuerpo."
+titulo_paciente: "Una señal de que tu páncreas produce poca insulina"
+que_es: "El péptido C es una sustancia que el páncreas libera junto con la insulina. Sirve para saber cuánta insulina produce tu cuerpo."
 por_que_te_aparece:
-  - "Su péptido C salió en {c_peptide}, por debajo de 0,6 ng/mL."
-  - "Su hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, salió en {hba1c}."
+  - "Tu péptido C salió en {c_peptide}, por debajo de 0,6 ng/mL."
+  - "Tu hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, salió en {hba1c}."
 riesgo_claro: "Si el cuerpo produce poca insulina y el manejo no se ajusta, el azúcar puede seguir alto y ser más difícil de controlar con los años."
 ejemplo_simple: "Es como una fábrica que produce menos de lo que el pueblo necesita: no basta con pedir que la gente consuma menos."
-incertidumbre: "Una glucosa muy alta reciente puede bajar este valor por un tiempo. Su médico lo confirma y puede pedir otros exámenes para definir el manejo."
+incertidumbre: "Una glucosa muy alta reciente puede bajar este valor por un tiempo. Tu médico lo confirma y puede pedir otros exámenes para definir el manejo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ADA, Standards of Care 2025, clasificación de la diabetes"]

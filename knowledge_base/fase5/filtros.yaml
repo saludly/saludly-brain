@@ -7,7 +7,7 @@
 
 preguntas:
   alergias:
-    texto: "¿Tiene alguna alergia o intolerancia a alimentos?"
+    texto: "¿Tienes alguna alergia o intolerancia a alimentos?"
     multiple: true
     opciones:
       - {id: mani, texto: "Maní"}
@@ -20,15 +20,15 @@ preguntas:
       - {id: gluten, texto: "Gluten o enfermedad celíaca"}
       - {id: soya, texto: "Soya"}
       - {id: ajonjoli, texto: "Ajonjolí"}
-    otra: "Otra (escríbala)"          # texto libre: no filtra solo; se avisa en la vista médica para revisar a mano
+    otra: "Otra (escríbela)"          # texto libre: no filtra solo; se avisa en la vista médica para revisar a mano
   dieta:
-    texto: "¿Qué tipo de alimentación lleva?"
+    texto: "¿Qué tipo de alimentación llevas?"
     opciones:
       - {id: normal, texto: "Como de todo"}
       - {id: vegetariana, texto: "Vegetariana (sin carne ni pescado; sí huevo y lácteos)"}
       - {id: vegana, texto: "Vegana (nada de origen animal)"}
   medicamentos:
-    texto: "¿Toma alguno de estos medicamentos?"
+    texto: "¿Tomas alguno de estos medicamentos?"
     multiple: true
     opciones:
       - {id: warfarina, texto: "Warfarina (anticoagulante)"}

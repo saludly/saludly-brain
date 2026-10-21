@@ -1,15 +1,15 @@
 # Actividades saludables (bienestar general) · vitamina D. Numeración 200 a 299.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-SAL-201
   tipo: actividades_saludables
   titulo: "Sol prudente en la mañana"
-  texto_base: "Salga a caminar al aire libre unos minutos en la mañana, con brazos o piernas descubiertos. Evite el sol fuerte del mediodía y use protector en la cara; en Bogotá el sol quema rápido aunque esté nublado."
+  texto_base: "Sal a caminar al aire libre unos minutos en la mañana, con brazos o piernas descubiertos. Evita el sol fuerte del mediodía y usa protector en la cara; en Bogotá el sol quema rápido aunque esté nublado."
   meta_concreta: "Esta semana, 4 caminatas de 15 minutos al aire libre antes de las 10 de la mañana."
   por_que: "La piel fabrica vitamina D con el sol, pero el exceso de sol daña la piel; poco tiempo y en las horas suaves es suficiente."
   se_activa_con: ["vitamin_d:bajo", "COND-M3-NU-A03", "REL-020"]
   prioriza_objetivos: ["energia_sueno", "envejecer_saludable", "salud_general", "masa_muscular"]
   contraindicada_si: ["vitamin_d:alto"]
   requiere_consulta_previa: false
-  whatsapp: "☀️ Plan de mañana: 15 minutos caminando al aire libre antes de las 10. Recuerde el protector en la cara, que en Bogotá el sol quema aunque esté nublado."
+  whatsapp: "☀️ Plan de mañana: 15 minutos caminando al aire libre antes de las 10. Recuerda protector en la cara, que en Bogotá el sol quema aunque esté nublado."
   fuentes: ["Endocrine Society 2024, vitamina D para la prevención de enfermedades", "OMS, índice UV solar mundial"]

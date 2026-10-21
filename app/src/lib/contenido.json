@@ -13,7 +13,7 @@
   {
    "id": "condicion_existente",
    "nombre": "Cuidar una condición que ya tengo",
-   "enfoque": "Seguimiento con su médico tratante; nunca reemplaza su tratamiento"
+   "enfoque": "Seguimiento con tu médico tratante; nunca reemplaza tu tratamiento"
   },
   {
    "id": "bajar_peso",
@@ -52,7 +52,7 @@
   }
  ],
  "alergias": {
-  "texto": "¿Tiene alguna alergia o intolerancia a alimentos?",
+  "texto": "¿Tienes alguna alergia o intolerancia a alimentos?",
   "multiple": true,
   "opciones": [
    {
@@ -96,10 +96,10 @@
     "texto": "Ajonjolí"
    }
   ],
-  "otra": "Otra (escríbala)"
+  "otra": "Otra (escríbela)"
  },
  "dieta": {
-  "texto": "¿Qué tipo de alimentación lleva?",
+  "texto": "¿Qué tipo de alimentación llevas?",
   "opciones": [
    {
     "id": "normal",
@@ -116,7 +116,7 @@
   ]
  },
  "medicamentos": {
-  "texto": "¿Toma alguno de estos medicamentos?",
+  "texto": "¿Tomas alguno de estos medicamentos?",
   "multiple": true,
   "opciones": [
    {
@@ -146,7 +146,7 @@
   ]
  },
  "actividad": {
-  "texto": "¿Cuánto se mueve en una semana normal?",
+  "texto": "¿Cuánto te mueves en una semana normal?",
   "opciones": [
    {
     "id": "sedentario",
@@ -167,11 +167,11 @@
   ]
  },
  "biotina": {
-  "texto": "¿Toma biotina o algún suplemento para el pelo, la piel o las uñas?",
+  "texto": "¿Tomas biotina o algún suplemento para el pelo, la piel o las uñas?",
   "ayuda": "La biotina puede cambiar algunos resultados del laboratorio, como los de tiroides."
  },
  "fuma": {
-  "texto": "¿Fuma o vapea?",
+  "texto": "¿Fumas o vapeas?",
   "opciones": [
    {
     "id": "nunca",
@@ -188,7 +188,7 @@
   ]
  },
  "alcohol": {
-  "texto": "¿Con qué frecuencia toma bebidas con alcohol?",
+  "texto": "¿Con qué frecuencia tomas bebidas con alcohol?",
   "opciones": [
    {
     "id": "no",
@@ -209,7 +209,7 @@
   ]
  },
  "antecedentes": {
-  "texto": "¿Alguno de sus padres o hermanos ha tenido…?",
+  "texto": "¿Alguno de tus padres o hermanos ha tenido…?",
   "multiple": true,
   "opciones": [
    {
@@ -235,7 +235,7 @@
   ]
  },
  "embarazo": {
-  "texto": "¿Está embarazada?",
+  "texto": "¿Estás embarazada?",
   "solo_sexo": "mujer",
   "opciones": [
    {
@@ -253,6 +253,6 @@
   ]
  },
  "ayuno": {
-  "aviso": "La visita es en ayunas: no coma nada desde 10 horas antes. Puede tomar agua."
+  "aviso": "La visita es en ayunas: no comas nada desde 10 horas antes. Puedes tomar agua."
  }
 }

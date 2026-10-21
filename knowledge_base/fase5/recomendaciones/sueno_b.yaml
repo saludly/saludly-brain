@@ -1,28 +1,28 @@
 # Recomendaciones de sueño · M3 y M6. Numeración 200 a 299.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-SUE-201
   tipo: sueno
-  titulo: "Cuéntele a su médico si ronca o se despierta cansado"
-  texto_base: "Si ronca fuerte, alguien lo ha visto dejar de respirar dormido o se despierta cansado aunque duerma lo suficiente, cuénteselo a su médico."
-  meta_concreta: "Esta semana, pregúntele a quien duerme con usted si ronca o hace pausas al respirar, y anótelo para la consulta."
+  titulo: "Cuéntale a tu médico si roncas o te despiertas cansado"
+  texto_base: "Si roncas fuerte, alguien te ha visto dejar de respirar dormido o te despiertas cansado aunque duermas lo suficiente, cuéntaselo a tu médico."
+  meta_concreta: "Esta semana, pregunta a quien duerme contigo si roncas o haces pausas al respirar, y anótalo para la consulta."
   por_que: "Las pausas al respirar durante el sueño bajan el oxígeno y el cuerpo puede responder fabricando más glóbulos rojos."
   se_activa_con: ["COND-M3-HE-007"]
   prioriza_objetivos: ["energia_sueno", "rendimiento", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "😴 Pregúntele a quien duerme con usted si ronca fuerte. Si es así, anótelo para su próxima cita médica."
+  whatsapp: "😴 Pregunta a quien duerme contigo si roncas fuerte. Si es así, anótalo para tu próxima cita médica."
   fuentes: ["BSH 2019, investigación y manejo de la eritrocitosis"]
 
 - id: REC-SUE-202
   tipo: sueno
-  titulo: "Duerma de 7 a 9 horas con horario fijo"
-  texto_base: "Acuéstese y levántese a la misma hora todos los días, también el fin de semana, y apunte a dormir entre 7 y 9 horas."
-  meta_concreta: "Durante 2 semanas, misma hora de levantarse todos los días, con máximo 30 minutos de diferencia."
+  titulo: "Duerme de 7 a 9 horas con horario fijo"
+  texto_base: "Acuéstate y levántate a la misma hora todos los días, también el fin de semana, y apunta a dormir entre 7 y 9 horas."
+  meta_concreta: "Durante 2 semanas, misma hora de levantarte todos los días, con máximo 30 minutos de diferencia."
   por_que: "Dormir bien ayuda a recuperar el músculo, regular el apetito y cuidar el metabolismo."
   se_activa_con: ["COND-M4-GA-001", "REL-006", "COND-M6-MI-A02", "SEG-007"]
   prioriza_objetivos: ["energia_sueno", "rendimiento", "bajar_peso", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "⏰ Esta noche, ponga una alarma para acostarse a la misma hora de siempre. Un horario fijo es la base de un buen descanso."
+  whatsapp: "⏰ Esta noche, pon una alarma para acostarte a la misma hora de siempre. Un horario fijo es la base de un buen descanso."
   fuentes: ["AASM y SRS 2015, recomendación de horas de sueño en adultos", "ACSM, AND y DC 2016, nutrición y rendimiento deportivo"]

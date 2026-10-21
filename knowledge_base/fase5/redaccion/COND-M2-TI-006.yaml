@@ -1,14 +1,14 @@
 id: COND-M2-TI-006
 tipo: condicion
-titulo_paciente: "Su TSH está por encima del valor recomendado en el embarazo"
+titulo_paciente: "Tu TSH está por encima del valor recomendado en el embarazo"
 que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar. En el embarazo, la tiroides necesita trabajar más."
 por_que_te_aparece:
-  - "Su TSH salió en {tsh}. En el embarazo, el valor recomendado es hasta 4,0 mUI/L."
-  - "Su T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
-riesgo_claro: "Si no se revisa, la tiroides podría quedarse corta justo cuando más se necesita, y eso importa para usted y para su embarazo. Revisarlo pronto es la mejor forma de cuidarlos a ambos."
+  - "Tu TSH salió en {tsh}. En el embarazo, el valor recomendado es hasta 4,0 mUI/L."
+  - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
+riesgo_claro: "Si no se revisa, la tiroides podría quedarse corta justo cuando más se necesita, y eso importa para ti y para tu embarazo. Revisarlo pronto es la mejor forma de cuidarlos a ambos."
 ejemplo_simple: "Es como una cocina que en temporada alta necesita más ayudantes: hay que asegurarse de que alcancen."
-incertidumbre: "Un solo examen no basta, y los valores cambian según la semana de embarazo. Su médico o quien lleva su control prenatal lo confirma."
-cuando_consultar: "Coménteselo pronto a su médico o a quien lleva su control prenatal."
+incertidumbre: "Un solo examen no basta, y los valores cambian según la semana de embarazo. Tu médico o quien lleva tu control prenatal lo confirma."
+cuando_consultar: "Coméntalo pronto con tu médico o a quien lleva tu control prenatal."
 aviso_whatsapp: null
 fuentes: ["Consenso colombiano de hipotiroidismo 2023"]
 estado_revision: aprobada

@@ -1,7 +1,7 @@
 {
   "name": "Saludly",
   "short_name": "Saludly",
-  "description": "Su informe preventivo de Saludly: resultados, lo que merece atención y su plan.",
+  "description": "Tu informe preventivo de Saludly: resultados, lo que merece atención y tu plan.",
   "lang": "es-CO",
   "start_url": "/",
   "scope": "/",

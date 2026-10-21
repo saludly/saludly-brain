@@ -1,13 +1,13 @@
 id: COND-M1-EM-001
 tipo: condicion
-titulo_paciente: "Su glucosa está en zona de alerta"
-que_es: "La glucosa es el azúcar que viaja por su sangre. Es la gasolina de su cuerpo: la necesita, pero en su justa medida."
+titulo_paciente: "Tu glucosa está en zona de alerta"
+que_es: "La glucosa es el azúcar que viaja por tu sangre. Es la gasolina de tu cuerpo: la necesitas, pero en su justa medida."
 por_que_te_aparece:
-  - "Su glucosa en ayunas salió en {glucose}. Entre 100 y 125 mg/dL decimos que está en zona de alerta: no es diabetes, pero ya merece su atención."
-  - "Su hemoglobina glicada, que muestra el promedio de azúcar de los últimos 3 meses, salió en {hba1c}. La zona de alerta va de 5,7 a 6,4 %."
-riesgo_claro: "Si se queda así por años, sube la probabilidad de llegar a diabetes, que con el tiempo puede afectar su corazón, sus riñones y su vista. La buena noticia: en esta etapa, los cambios en su alimentación y su actividad pueden hacer una gran diferencia."
-ejemplo_simple: "Piénselo como la alarma de humo que suena antes del incendio: le avisa a tiempo para que actúe."
-incertidumbre: "Ojo: un solo examen no basta para confirmarlo. Un ayuno corto, algunos medicamentos o la anemia pueden alterar el resultado; su médico puede pedirle repetirlo."
+  - "Tu glucosa en ayunas salió en {glucose}. Entre 100 y 125 mg/dL decimos que está en zona de alerta: no es diabetes, pero ya merece tu atención."
+  - "Tu hemoglobina glicada, que muestra el promedio de azúcar de los últimos 3 meses, salió en {hba1c}. La zona de alerta va de 5,7 a 6,4 %."
+riesgo_claro: "Si se queda así por años, sube la probabilidad de llegar a diabetes, que con el tiempo puede afectar tu corazón, tus riñones y tu vista. La buena noticia: en esta etapa, los cambios en tu alimentación y tu actividad pueden hacer una gran diferencia."
+ejemplo_simple: "Piénsalo como la alarma de humo que suena antes del incendio: te avisa a tiempo para que actúes."
+incertidumbre: "Ojo: un solo examen no basta para confirmarlo. Un ayuno corto, algunos medicamentos o la anemia pueden alterar el resultado; tu médico puede pedirte repetirlo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ADA Standards of Care 2026, sección 2", "GPC Colombia DM2 2016"]

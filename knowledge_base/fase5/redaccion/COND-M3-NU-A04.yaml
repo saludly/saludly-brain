@@ -3,11 +3,11 @@ tipo: condicion
 titulo_paciente: "Otras vitaminas y nutrientes"
 que_es: "Además de las vitaminas principales, medimos otras como la B1, la B6, la A, la E, la C, el omega 3 o la coenzima Q10, que apoyan distintas funciones del cuerpo."
 por_que_te_aparece:
-  - "Uno o más de estos valores salió fuera del rango del laboratorio. En su informe puede ver cuál y su valor."
+  - "Uno o más de estos valores salió fuera del rango del laboratorio. En tu informe puedes ver cuál y su valor."
 riesgo_claro: "Si una vitamina se mantiene baja mucho tiempo, puede afectar la energía, la piel, la vista o los nervios. Algunas, como la A y la E, se acumulan si se toman de más."
 ejemplo_simple: "Son como los repuestos pequeños de un carro: no se ven, pero cuando faltan o sobran, algo deja de andar bien."
-incertidumbre: "Un solo examen no basta, y algunas vitaminas cambian con la comida o con el transporte de la muestra. Si quiere suplementar alguna, consúltelo con su médico. Si toma biotina, algunos exámenes deben repetirse sin ella."
+incertidumbre: "Un solo examen no basta, y algunas vitaminas cambian con la comida o con el transporte de la muestra. Si quieres suplementar alguna, consúltelo con tu médico. Si tomas biotina, algunos exámenes deben repetirse sin ella."
 cuando_consultar: null
-aviso_whatsapp: "Ya están listos sus resultados en Saludly. Entre a su informe para verlos y conocer qué puede hacer."
+aviso_whatsapp: "Ya están listos tus resultados en Saludly. Entra a tu informe para verlos y conocer qué puedes hacer."
 fuentes: ["Regla de vitaminas (documento 07)", "FDA, interferencia de biotina en inmunoensayos", "ficha vitamin_b1 (Wernicke)"]
 estado_revision: aprobada

@@ -78,7 +78,7 @@ export function BarraDemo() {
 export function PieLegal() {
   return (
     <footer className="mt-20 border-t border-rule py-8 text-xs leading-relaxed text-ink-faint">
-      Este informe es preventivo y no es un diagnóstico. Un médico de Saludly lo revisó. Ante cualquier duda, consulte con su médico.
+      Este informe es preventivo y no es un diagnóstico. Un médico de Saludly lo revisó. Ante cualquier duda, consulta con tu médico.
     </footer>
   );
 }

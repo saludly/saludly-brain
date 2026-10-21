@@ -1,14 +1,14 @@
 id: SEG-002
 tipo: seguridad
-titulo_paciente: "Su cortisol está fuera del rango"
+titulo_paciente: "Tu cortisol está fuera del rango"
 que_es: "El cortisol es una hormona de las glándulas suprarrenales que ayuda a manejar el estrés, el azúcar y la presión. Es más alto en la mañana."
 por_que_te_aparece:
-  - "Su cortisol de la mañana salió en {cortisol}, fuera del rango de referencia."
-  - "Su ACTH, la hormona del cerebro que da la orden de producir cortisol, salió en {acth}."
-riesgo_claro: "Si el cortisol se mantiene fuera de rango, con el tiempo puede afectar la presión, el azúcar, el peso o la energía. Por eso lo revisa su médico."
+  - "Tu cortisol de la mañana salió en {cortisol}, fuera del rango de referencia."
+  - "Tu ACTH, la hormona del cerebro que da la orden de producir cortisol, salió en {acth}."
+riesgo_claro: "Si el cortisol se mantiene fuera de rango, con el tiempo puede afectar la presión, el azúcar, el peso o la energía. Por eso lo revisa tu médico."
 ejemplo_simple: "Es como el termostato del aire acondicionado: si marca muy alto o muy bajo, hay que revisar si es el aparato o el sensor."
 incertidumbre: "El estrés de la toma, la hora, los corticoides, el anticonceptivo con estrógenos o el embarazo lo cambian mucho. Un solo valor no basta."
-cuando_consultar: "Le recomendamos una consulta médica en las próximas semanas. Si tiene mucho cansancio, mareo al ponerse de pie o pérdida de peso, consulte antes."
+cuando_consultar: "Te recomendamos una consulta médica en las próximas semanas. Si tieness mucho cansancio, mareo al ponerte de pie o pérdida de peso, consulta antes."
 aviso_whatsapp: null
 fuentes: ["Fichas cortisol y acth del Knowledge Base"]
 estado_revision: aprobada

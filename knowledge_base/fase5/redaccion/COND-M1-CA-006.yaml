@@ -1,12 +1,12 @@
 id: COND-M1-CA-006
 tipo: condicion
-titulo_paciente: "Su presión arterial está por encima de 130/80"
+titulo_paciente: "Tu presión arterial está por encima de 130/80"
 que_es: "La presión arterial es la fuerza con la que la sangre empuja las paredes de las arterias."
 por_que_te_aparece:
-  - "En la visita, la enfermera midió su presión en {presion}. Desde 130/80 mmHg, las guías piden confirmarla con mediciones en casa."
+  - "En la visita, la enfermera midió tu presión en {presion}. Desde 130/80 mmHg, las guías piden confirmarla con mediciones en casa."
 riesgo_claro: "Si la presión se mantiene alta por años, va desgastando el corazón, los riñones, el cerebro y los ojos, casi siempre sin dar síntomas. Por eso vale tanto medirla."
-ejemplo_simple: "Piénselo como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta."
-incertidumbre: "Ojo: una sola visita no confirma hipertensión. Los nervios, el café o el esfuerzo la suben. Lo ideal es medirla en casa varios días con un tensiómetro validado y revisarlo con su médico."
+ejemplo_simple: "Piénsalo como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta."
+incertidumbre: "Ojo: una sola visita no confirma hipertensión. Los nervios, el café o el esfuerzo la suben. Lo ideal es medirla en casa varios días con un tensiómetro validado y revisarlo con tu médico."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["GPC Colombia HTA 2025 (Minsalud e IETS)", "AHA/ACC 2025, presión arterial alta"]

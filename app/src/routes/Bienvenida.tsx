@@ -9,7 +9,7 @@ import { useInforme } from "@/lib/contexto";
  * Recorrido que ve el paciente al abrir su informe por primera vez (mismo formato del recorrido de Lovable).
  * Las preguntas (objetivos, actividad, cuestionario) van en la PWA antes de la visita, no aquí.
  */
-const PASOS = ["Su resumen", "Edad biológica", "Lo que está bien", "Lo que merece atención", "Su plan"];
+const PASOS = ["Tu resumen", "Edad biológica", "Lo que está bien", "Lo que merece atención", "Tu plan"];
 
 export function Bienvenida() {
   const { informe } = useInforme();
@@ -48,9 +48,9 @@ export function Bienvenida() {
         </nav>
 
         <section key={paso} className="rise mt-10 flex-1">
-          {titulo === "Su resumen" && (
+          {titulo === "Tu resumen" && (
             <div>
-              <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">Sus resultados están listos.</h1>
+              <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">Tus resultados están listos.</h1>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-muted">{p.resumen}</p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl bg-optimal p-6 text-primary-foreground">
@@ -70,9 +70,9 @@ export function Bienvenida() {
 
           {titulo === "Edad biológica" && eb && (
             <div>
-              <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">Su edad biológica estimada.</h1>
+              <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">Tu edad biológica estimada.</h1>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-muted">
-                No es la edad de su cédula: es una estimación de cómo está funcionando su cuerpo, calculada con 9 de sus resultados.
+                No es la edad de tu cédula: es una estimación de cómo está funcionando tu cuerpo, calculada con 9 de tus resultados.
               </p>
               <div className="mt-8 rounded-2xl border border-rule p-6">
                 <div className="flex items-baseline gap-1.5">
@@ -81,8 +81,8 @@ export function Bienvenida() {
                 </div>
                 <p className="mt-3 text-sm text-ink-muted">
                   {eb.diferencia <= 0
-                    ? `${Math.abs(eb.diferencia).toLocaleString("es-CO")} años menos que su edad (${informe.perfil.edad}).`
-                    : `${eb.diferencia.toLocaleString("es-CO")} años más que su edad (${informe.perfil.edad}).`}
+                    ? `${Math.abs(eb.diferencia).toLocaleString("es-CO")} años menos que tu edad (${informe.perfil.edad}).`
+                    : `${eb.diferencia.toLocaleString("es-CO")} años más que tu edad (${informe.perfil.edad}).`}
                 </p>
               </div>
               <p className="mt-4 text-xs leading-relaxed text-ink-muted">
@@ -94,7 +94,7 @@ export function Bienvenida() {
           {titulo === "Lo que está bien" && (
             <div>
               <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">Lo que está bien.</h1>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-muted">Estos resultados son su base. Mantenerlos cuesta mucho menos que recuperarlos.</p>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-muted">Estos resultados son tu base. Mantenerlos cuesta mucho menos que recuperarlos.</p>
               <div className="mt-8 space-y-3">
                 {p.lo_que_esta_bien.slice(0, 5).map((b) => (
                   <article key={b.grupo} className="rounded-2xl border border-rule bg-optimal-soft p-5">
@@ -123,15 +123,15 @@ export function Bienvenida() {
                 ))}
               </div>
               {p.lo_que_merece_atencion.length > 4 && (
-                <p className="mt-4 text-xs text-ink-muted">Y {p.lo_que_merece_atencion.length - 4} más en su panel.</p>
+                <p className="mt-4 text-xs text-ink-muted">Y {p.lo_que_merece_atencion.length - 4} más en tu panel.</p>
               )}
             </div>
           )}
 
-          {titulo === "Su plan" && (
+          {titulo === "Tu plan" && (
             <div>
               <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">Por dónde empezar.</h1>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-muted">Tres cambios para esta semana, elegidos según sus resultados y sus metas.</p>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-muted">Tres cambios para esta semana, elegidos según tus resultados y tus metas.</p>
               <div className="mt-8 space-y-3">
                 {tresRecs.map((r, i) => (
                   <article key={r.recomendacion_id} className="flex gap-4 rounded-2xl border border-rule p-5">
@@ -144,11 +144,11 @@ export function Bienvenida() {
                 ))}
               </div>
               <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-                Puede ver su{" "}
+                Puedes ver tu{" "}
                 <Link to="/plan" className="text-optimal underline-offset-4 hover:underline">
                   plan completo
                 </Link>{" "}
-                cuando entre a su panel.
+                cuando entres a tu panel.
               </p>
             </div>
           )}

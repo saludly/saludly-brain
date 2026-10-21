@@ -61,7 +61,7 @@ export function Indicadores() {
   return (
     <section className="mt-16">
       <div className="flex items-baseline justify-between border-b border-rule pb-4">
-        <h2 className="text-2xl font-light tracking-tight text-ink">Su resumen</h2>
+        <h2 className="text-2xl font-light tracking-tight text-ink">Tu resumen</h2>
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">Informe preventivo</span>
       </div>
 
@@ -77,7 +77,7 @@ export function Indicadores() {
               <span className="font-mono text-xl text-primary-foreground/60">/{res.length}</span>
             </div>
             <p className="mt-3 text-xs leading-relaxed text-primary-foreground/80">
-              Un conteo de sus resultados frente al rango de su laboratorio. No es una calificación de su salud.
+              Un conteo de tus resultados frente al rango de tu laboratorio. No es una calificación de tu salud.
             </p>
           </div>
         </div>
@@ -94,8 +94,8 @@ export function Indicadores() {
               </div>
               <p className="mt-2 text-center text-xs text-ink-muted">
                 {eb.diferencia <= 0
-                  ? `${Math.abs(eb.diferencia).toLocaleString("es-CO")} años menos que su edad.`
-                  : `${eb.diferencia.toLocaleString("es-CO")} años más que su edad.`}{" "}
+                  ? `${Math.abs(eb.diferencia).toLocaleString("es-CO")} años menos que tu edad.`
+                  : `${eb.diferencia.toLocaleString("es-CO")} años más que tu edad.`}{" "}
                 Es una estimación, no un diagnóstico.
               </p>
             </div>

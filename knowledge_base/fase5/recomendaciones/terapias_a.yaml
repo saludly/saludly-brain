@@ -1,94 +1,94 @@
 # Recomendaciones de terapias (servicios no farmacológicos) · lote A
 # Numeración 100 a 199. Siempre como sugerencia de consulta, nunca como tratamiento. Pendiente de revisión de Carlos.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-TER-101
   tipo: terapias
   titulo: "Una cita con nutricionista"
-  texto_base: "Si quiere, pida una cita con un nutricionista para armar un plan de alimentación a su medida, con sus gustos, horarios y presupuesto."
-  meta_concreta: "Averigüe esta semana cómo pedir cita con nutrición en su EPS o prepagada."
+  texto_base: "Si quieres, pide una cita con un nutricionista para armar un plan de alimentación a tu medida, con tus gustos, horarios y presupuesto."
+  meta_concreta: "Averigua esta semana cómo pedir cita con nutrición en tu EPS o prepagada."
   por_que: "Un plan personalizado es más fácil de mantener que una dieta genérica."
   se_activa_con: ["COND-M1-EM-002", "COND-M1-EM-003", "COND-M1-EM-004", "COND-M1-CA-002", "COND-M1-CA-003", "COND-M5-MU-001", "REL-001", "REL-028", "objetivo:bajar_peso"]
   prioriza_objetivos: ["bajar_peso", "condicion_existente", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🥗 ¿Le gustaría un plan de alimentación hecho a su medida? Averigüe esta semana cómo pedir cita con nutrición en su EPS."
+  whatsapp: "🥗 ¿Te gustaría un plan de alimentación hecho a tu medida? Averigua esta semana cómo pedir cita con nutrición en tu EPS."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5 (terapia nutricional)", "2013 AHA/ACC/TOS Guideline for the Management of Overweight and Obesity in Adults"]
 
 - id: REC-TER-102
   tipo: terapias
-  titulo: "Nutrición pensada para sus riñones"
-  texto_base: "Pregúntele a su médico si le conviene una cita con nutrición para ajustar la sal, la proteína y los líquidos a sus riñones."
-  meta_concreta: "Lleve esta pregunta a su próxima cita médica."
+  titulo: "Nutrición pensada para tus riñones"
+  texto_base: "Pregúntale a tu médico si te conviene una cita con nutrición para ajustar la sal, la proteína y los líquidos a tus riñones."
+  meta_concreta: "Lleva esta pregunta a tu próxima cita médica."
   por_que: "Cuando los riñones necesitan cuidado, la alimentación se ajusta con un profesional."
   se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-003", "REL-010"]
   prioriza_objetivos: ["condicion_existente", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "🩺 En su próxima cita pregunte si le conviene una consulta con nutrición para cuidar sus riñones."
+  whatsapp: "🩺 En tu próxima cita pregunta si te conviene una consulta con nutrición para cuidar tus riñones."
   fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD, capítulo 3"]
 
 - id: REC-TER-103
   tipo: terapias
   titulo: "Actividad física guiada"
-  texto_base: "Si le cuesta empezar o no sabe qué ejercicios hacer, busque un programa de actividad física guiada por un profesional, en su caja de compensación o su EPS."
-  meta_concreta: "Averigüe esta semana un programa de actividad guiada cerca de usted."
-  por_que: "Un profesional ajusta el ejercicio a su condición y le ayuda a progresar sin lesiones."
+  texto_base: "Si te cuesta empezar o no sabes qué ejercicios hacer, busca un programa de actividad física guiada por un profesional, en tu caja de compensación o tu EPS."
+  meta_concreta: "Averigua esta semana un programa de actividad guiada cerca de ti."
+  por_que: "Un profesional ajusta el ejercicio a tu condición y te ayuda a progresar sin lesiones."
   se_activa_con: ["COND-M1-EM-002", "COND-M1-EM-004", "COND-M5-MU-004", "objetivo:masa_muscular", "objetivo:envejecer_saludable"]
   prioriza_objetivos: ["masa_muscular", "envejecer_saludable", "bajar_peso"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🏋️ ¿Quiere empezar a hacer ejercicio con guía? Esta semana averigüe los programas de su caja de compensación o su EPS."
+  whatsapp: "🏋️ ¿Quieres empezar a hacer ejercicio con guía? Esta semana averigua los programas de tu caja de compensación o tu EPS."
   fuentes: ["OMS, Directrices sobre actividad física 2020", "ADA Standards of Care in Diabetes 2025, sección 5"]
 
 - id: REC-TER-104
   tipo: terapias
   titulo: "Un programa de educación en diabetes"
-  texto_base: "Pregúntele a su médico o a su EPS por un programa de educación sobre el azúcar en la sangre: enseña a comer, moverse y hacer seguimiento."
-  meta_concreta: "Pregunte por el programa en su próxima cita."
+  texto_base: "Pregúntale a tu médico o a tu EPS por un programa de educación sobre el azúcar en la sangre: enseña a comer, moverse y hacer seguimiento."
+  meta_concreta: "Pregunta por el programa en tu próxima cita."
   por_que: "Las personas que participan en estos programas manejan mejor su glucosa y se sienten más seguras."
   se_activa_con: ["COND-M1-EM-002", "COND-M1-EM-001"]
   prioriza_objetivos: ["condicion_existente", "prevenir", "bajar_peso"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "📚 En su próxima cita pregunte si hay un programa educativo para cuidar su azúcar. Aprender en grupo ayuda mucho."
+  whatsapp: "📚 En tu próxima cita pregunta si hay un programa educativo para cuidar tu azúcar. Aprender en grupo ayuda mucho."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5 (DSMES)", "CDC National Diabetes Prevention Program"]
 
 - id: REC-TER-105
   tipo: terapias
-  titulo: "Apoyo psicológico si lo necesita"
-  texto_base: "Si el estrés, la ansiedad o el ánimo bajo le están quitando el sueño o las ganas, hablar con un psicólogo puede ayudarle."
-  meta_concreta: "Si se identifica, averigüe esta semana cómo pedir cita con psicología."
+  titulo: "Apoyo psicológico si lo necesitas"
+  texto_base: "Si el estrés, la ansiedad o el ánimo bajo te están quitando el sueño o las ganas, hablar con un psicólogo puede ayudarte."
+  meta_concreta: "Si te identificas, averigua esta semana cómo pedir cita con psicología."
   por_que: "Cuidar la salud mental también cuida el sueño, la alimentación y el corazón."
   se_activa_con: ["general", "objetivo:energia_sueno"]
   prioriza_objetivos: ["energia_sueno", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "💬 Si últimamente el estrés o el ánimo le están quitando el sueño, hablar con un psicólogo puede ayudarle. No tiene que hacerlo solo."
+  whatsapp: "💬 Si últimamente el estrés o el ánimo te están quitando el sueño, hablar con un psicólogo puede ayudarte. No tienes que hacerlo solo."
   fuentes: ["AHA Scientific Statement: Psychological Health, Well-Being, and the Mind-Heart-Body Connection 2021", "OMS, Plan de acción integral sobre salud mental 2013-2030"]
 
 - id: REC-TER-106
   tipo: terapias
   titulo: "Nutrición deportiva"
-  texto_base: "Si entrena para una carrera o competencia, considere una cita con un nutricionista deportivo para planear su alimentación e hidratación."
-  meta_concreta: "Busque esta semana un nutricionista deportivo y pregunte por una cita."
-  por_que: "Un plan según sus entrenamientos mejora el rendimiento y la recuperación."
+  texto_base: "Si entrenas para una carrera o competencia, considera una cita con un nutricionista deportivo para planear tu alimentación e hidratación."
+  meta_concreta: "Busca esta semana un nutricionista deportivo y pregunta por una cita."
+  por_que: "Un plan según tus entrenamientos mejora el rendimiento y la recuperación."
   se_activa_con: ["objetivo:maraton", "objetivo:rendimiento", "objetivo:atletico"]
   prioriza_objetivos: ["maraton", "rendimiento", "atletico"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🏃 Si está preparando una carrera, una cita con nutrición deportiva le puede ayudar a planear comida e hidratación."
+  whatsapp: "🏃 Si estás preparando una carrera, una cita con nutrición deportiva te puede ayudar a planear comida e hidratación."
   fuentes: ["ACSM, AND y DC: Nutrition and Athletic Performance 2016"]
 
 - id: REC-TER-107
   tipo: terapias
   titulo: "Apoyo para dejar de fumar"
-  texto_base: "Pida en su EPS el programa de cesación de tabaco: combina acompañamiento y, si su médico lo considera, tratamiento."
-  meta_concreta: "Pregunte por el programa esta semana."
+  texto_base: "Pide en tu EPS el programa de cesación de tabaco: combina acompañamiento y, si tu médico lo considera, tratamiento."
+  meta_concreta: "Pregunta por el programa esta semana."
   por_que: "Dejar el cigarrillo solo es difícil; con acompañamiento es más probable lograrlo."
   se_activa_con: ["COND-M1-CA-005", "COND-M1-CA-002", "REL-003"]
   prioriza_objetivos: ["prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🚭 Si fuma, pregunte esta semana en su EPS por el programa para dejar el cigarrillo. Con acompañamiento es más fácil."
+  whatsapp: "🚭 Si fumas, pregunta esta semana en tu EPS por el programa para dejar el cigarrillo. Con acompañamiento es más fácil."
   fuentes: ["USPSTF, Tobacco Smoking Cessation in Adults 2021", "OMS, Informe sobre la epidemia mundial de tabaquismo 2023"]

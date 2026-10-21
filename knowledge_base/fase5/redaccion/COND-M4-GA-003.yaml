@@ -1,14 +1,14 @@
 id: COND-M4-GA-003
 tipo: condicion
-titulo_paciente: "Sus pruebas del hígado relacionadas con la bilis están por encima del rango"
+titulo_paciente: "Tus pruebas del hígado relacionadas con la bilis están por encima del rango"
 que_es: "La fosfatasa alcalina y la GGT son enzimas que suben cuando la bilis, el líquido que hace el hígado para digerir las grasas, no fluye bien."
 por_que_te_aparece:
-  - "Su fosfatasa alcalina salió en {alp}, por encima del rango."
-  - "Su GGT salió en {ggt}, por encima del rango."
-  - "Su bilirrubina directa, un pigmento que sale con la bilis, salió en {bilirubin_direct}."
+  - "Tu fosfatasa alcalina salió en {alp}, por encima del rango."
+  - "Tu GGT salió en {ggt}, por encima del rango."
+  - "Tu bilirrubina directa, un pigmento que sale con la bilis, salió en {bilirubin_direct}."
 riesgo_claro: "Si la causa no se busca, el flujo de la bilis puede seguir alterado y con el tiempo afectar al hígado."
 ejemplo_simple: "Es como un desagüe que corre más lento de lo normal: hay que revisar dónde está el freno."
-incertidumbre: "Algunos medicamentos, el embarazo o el crecimiento de los huesos también las suben. Un solo examen no basta: su médico revisa la causa y decide si hacen falta otros estudios."
+incertidumbre: "Algunos medicamentos, el embarazo o el crecimiento de los huesos también las suben. Un solo examen no basta: tu médico revisa la causa y decide si hacen falta otros estudios."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["ACG 2017"]

@@ -1,14 +1,14 @@
 id: COND-M5-MU-003
 tipo: condicion
-titulo_paciente: "Su prolactina está por encima del rango"
+titulo_paciente: "Tu prolactina está por encima del rango"
 que_es: "La prolactina es la hormona que estimula la producción de leche. También sube con el estrés y con algunos medicamentos."
 por_que_te_aparece:
-  - "Su prolactina salió en {prolactin}, por encima del rango de referencia."
+  - "Tu prolactina salió en {prolactin}, por encima del rango de referencia."
   - "La prueba de macroprolactina, que revisa si la prolactina es de una forma que casi no actúa en el cuerpo, salió en {macroprolactin}."
 riesgo_claro: "Si se mantiene alta, puede alterar la menstruación, la fertilidad y el deseo sexual, y con los años debilitar los huesos."
 ejemplo_simple: "Es como un termómetro que marca alto porque se quedó al sol: antes de concluir algo, hay que medir de nuevo en buenas condiciones."
 incertidumbre: "Muchas veces sube por el estrés de la toma o por medicamentos, así que hay que repetirla en la mañana y en reposo."
-cuando_consultar: "Coménteselo a su médico, y antes si nota salida de leche por los pezones o cambios en la menstruación."
-aviso_whatsapp: "Hay un resultado hormonal en su informe de Saludly que conviene repetir. Ábralo cuando pueda."
+cuando_consultar: "Coméntalo con tu médico, y antes si notas salida de leche por los pezones o cambios en la menstruación."
+aviso_whatsapp: "Hay un resultado hormonal en tu informe de Saludly que conviene repetir. Ábrelo cuando puedas."
 fuentes: ["Endocrine Society 2011", "Febrasgo y SBEM 2024"]
 estado_revision: aprobada

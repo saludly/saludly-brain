@@ -1,14 +1,14 @@
 id: REL-010
 tipo: patron
-titulo_paciente: "Dos señales de su riñón al mismo tiempo"
+titulo_paciente: "Dos señales de tu riñón al mismo tiempo"
 que_es: "Los riñones filtran la sangre: la TFG mide qué tan bien filtran, y la albúmina en la orina muestra si el filtro deja escapar proteína."
 por_que_te_aparece:
-  - "Su filtración renal (TFG) se calculó en {egfr}, por debajo de 60."
-  - "Su relación albúmina/creatinina en orina, que mide la proteína que se escapa por el filtro, salió en {uacr}."
+  - "Tu filtración renal (TFG) se calculó en {egfr}, por debajo de 60."
+  - "Tu relación albúmina/creatinina en orina, que mide la proteína que se escapa por el filtro, salió en {uacr}."
 riesgo_claro: "Si estas dos señales se mantienen, el riñón puede ir perdiendo función con los años, y el corazón también trabaja con más esfuerzo."
 ejemplo_simple: "Es como un colador que filtra más despacio y además tiene algunos huecos: las dos cosas juntas piden revisarlo."
 incertidumbre: "Un solo examen no basta: el ejercicio, la fiebre o una infección urinaria pueden alterar estos valores, y se confirma con otra toma en unos 3 meses."
-cuando_consultar: "Pida una consulta médica en las próximas semanas."
+cuando_consultar: "Pide una consulta médica en las próximas semanas."
 aviso_whatsapp: null
 fuentes: ["KDIGO 2024"]
 estado_revision: aprobada

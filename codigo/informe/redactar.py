@@ -11,9 +11,9 @@ import control_salida as CS
 import nutricion as NU
 import recomendar as RE
 
-PLAZOS = {3: "El equipo médico de Saludly lo va a llamar hoy. Su informe se publica después de esa llamada.",
-          2: "Pida una consulta médica en las próximas 2 a 4 semanas y lleve este informe.",
-          1: "Coménteselo a su médico en su próximo control, en los próximos 3 meses.",
+PLAZOS = {3: "El equipo médico de Saludly te va a llamar hoy. Tu informe se publica después de esa llamada.",
+          2: "Pide una consulta médica en las próximas 2 a 4 semanas y lleva este informe.",
+          1: "Coméntalo con tu médico en tu próximo control, en los próximos 3 meses.",
           0: None}
 NIVEL_TXT = {"resultado_observado": "Resultado observado", "patron_compatible": "Patrón compatible", "riesgo_potencial": "Riesgo potencial",
              "condicion_requiere_evaluacion": "Requiere evaluación médica"}
@@ -140,7 +140,7 @@ def armar(motor_out, ctx, objetivos, C, paciente_ref, dias_recetas=7):
         if medidos and all(clases[b] in ("en_rango", None) for b in medidos) and any(clases[b] == "en_rango" for b in medidos):
             bien.append(dict(grupo=m["id"], nombre=m.get("nombre"), texto=m["texto_bien"]))
 
-    # ---------- Qué puede hacer
+    # ---------- Qué puedes hacer
     perfil_fil = {k: (ctx or {}).get(k) for k in ("alergias", "dieta", "medicamentos")}
     recs = RE.seleccionar(C["recomendaciones"], motor_out, objetivos, sexo=(ctx or {}).get("sexo"), perfil=perfil_fil,
                           consulta_si=(C.get("filtros") or {}).get("consulta_previa_si"))
@@ -160,15 +160,15 @@ def armar(motor_out, ctx, objetivos, C, paciente_ref, dias_recetas=7):
     n_at = len(atencion)
     nombres_obj = [C["objetivos"][o]["nombre"].lower() for o in objetivos if o in C["objetivos"]]
     if n_at == 0:
-        resumen = "Sus resultados están dentro de los rangos de referencia en lo que revisamos. Le dejamos ideas para mantenerse así."
+        resumen = "Tus resultados están dentro de los rangos de referencia en lo que revisamos. Te dejamos ideas para mantenerte así."
     else:
         principal = atencion[0]["titulo"].lower()
-        resumen = (f"Revisamos sus resultados y encontramos {n_at} {'punto' if n_at == 1 else 'puntos'} que vale la pena atender; "
+        resumen = (f"Revisamos tus resultados y encontramos {n_at} {'punto' if n_at == 1 else 'puntos'} que vale la pena atender; "
                    f"el más importante es: {principal}. ")
-        resumen += {3: "Nuestro equipo médico lo va a llamar hoy para hablarlo.", 2: "Le recomendamos una consulta médica en las próximas semanas.",
-                    1: "Nada requiere urgencia; son cosas para cuidar y comentar en su próximo control.", 0: "Son cosas para cuidar con hábitos."}[min(esc_max, 3)]
+        resumen += {3: "Nuestro equipo médico te va a llamar hoy para hablarlo.", 2: "Te recomendamos una consulta médica en las próximas semanas.",
+                    1: "Nada requiere urgencia; son cosas para cuidar y comentar en tu próximo control.", 0: "Son cosas para cuidar con hábitos."}[min(esc_max, 3)]
     if bien: resumen += f" También hay buenas noticias: {len(bien)} {'grupo' if len(bien) == 1 else 'grupos'} de resultados están en rango."
-    if nombres_obj: resumen += f" Ordenamos las recomendaciones pensando en sus metas: {', '.join(nombres_obj)}."
+    if nombres_obj: resumen += f" Ordenamos las recomendaciones pensando en tus metas: {', '.join(nombres_obj)}."
 
     # ---------- Nutrición y recetas
     cat = NU.catalogo(C["recetas"], C["alimentos"])
@@ -183,9 +183,9 @@ def armar(motor_out, ctx, objetivos, C, paciente_ref, dias_recetas=7):
     retenido = esc_max >= 3 or bool(motor_out.get("llamadas"))
     wa = dict(resultado_listo=None, recordatorio_consulta=None, recomendaciones_semanales=[], recetas_diarias=[] if retenido else recetas_msg)   # retenido: nada sale hasta la llamada
     if not retenido:
-        wa["resultado_listo"] = "Hola 👋 Sus resultados de Saludly ya están listos en su panel. Ábralo cuando pueda: ahí le explicamos todo con calma."
+        wa["resultado_listo"] = "Hola 👋 Tus resultados de Saludly ya están listos en tu panel. Ábrelo cuando puedas: ahí te explicamos todo con calma."
         if esc_max == 2:
-            wa["recordatorio_consulta"] = "Hola 👋 En su informe de Saludly hay un resultado que conviene revisar con un médico en las próximas semanas. Abra su panel para ver el detalle."
+            wa["recordatorio_consulta"] = "Hola 👋 En tu informe de Saludly hay un resultado que conviene revisar con un médico en las próximas semanas. Abre tu panel para ver el detalle."
         wa["recomendaciones_semanales"] = [dict(semana=i + 1, recomendacion_id=r["recomendacion_id"], texto=r["whatsapp"]) for i, r in enumerate([r for r in recs if r.get("whatsapp") and not r["requiere_consulta_previa"]][:8])]
 
     # ---------- Vista médica
@@ -219,10 +219,10 @@ def armar(motor_out, ctx, objetivos, C, paciente_ref, dias_recetas=7):
     nota_alimentacion = None
     if partes or perfil_fil.get("dieta") in ("vegetariana", "vegana"):
         que = []
-        if partes: que.append("su alergia o intolerancia a " + ", ".join(partes))
-        if perfil_fil.get("dieta") in ("vegetariana", "vegana"): que.append(f"su alimentación {perfil_fil['dieta']}")
-        nota_alimentacion = (f"Sus recetas ya tienen en cuenta {' y '.join(que)}. "
-                             "Si alguna recomendación nombra un alimento que usted no come entre varias opciones, elija otra de la lista.")
+        if partes: que.append("tu alergia o intolerancia a " + ", ".join(partes))
+        if perfil_fil.get("dieta") in ("vegetariana", "vegana"): que.append(f"tu alimentación {perfil_fil['dieta']}")
+        nota_alimentacion = (f"Tus recetas ya tienen en cuenta {' y '.join(que)}. "
+                             "Si alguna recomendación nombra un alimento que no comes entre varias opciones, elige otra de la lista.")
 
     paciente = dict(resumen=resumen, nota_alimentacion=nota_alimentacion, lo_que_esta_bien=bien, lo_que_merece_atencion=atencion, que_podria_significar=significado,
                     que_puedes_hacer=[{k: v for k, v in r.items() if k != "whatsapp"} for r in recs], cuando_consultar=cuando, informativos=informativos)

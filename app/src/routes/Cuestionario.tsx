@@ -9,7 +9,7 @@ import C from "@/lib/contenido.json";
  * (objetivos.yaml, filtros.yaml y cuestionario.yaml, exportados con codigo/herramientas/exportar_app.py).
  * Cada paso se guarda al avanzar, así que se puede retomar.
  */
-const PASOS = ["Sus metas", "Su cuerpo", "Sus medicamentos", "Su alimentación", "Sus hábitos", "Su familia"];
+const PASOS = ["Tus metas", "Tu cuerpo", "Tus medicamentos", "Tu alimentación", "Tus hábitos", "Tu familia"];
 
 function alternar(lista: string[], id: string, maximo?: number) {
   if (lista.includes(id)) return lista.filter((x) => x !== id);
@@ -71,7 +71,7 @@ export function Cuestionario() {
     };
     const { error } = await supabase.from("cuestionarios").upsert(fila);
     setOcupado(false);
-    if (error) return setError("No pudimos guardar sus respuestas. Intente de nuevo.");
+    if (error) return setError("No pudimos guardar tus respuestas. Intenta de nuevo.");
     if (ultimo) {
       await s.recargar();
       void navigate({ to: "/listo" });
@@ -92,7 +92,7 @@ export function Cuestionario() {
     >
       {paso === 0 && (
         <>
-          <Titulo texto="Sus metas definen el orden de sus recomendaciones. Nunca cambian sus resultados.">Elija sus 3 metas principales.</Titulo>
+          <Titulo texto="Tus metas definen el orden de tus recomendaciones. Nunca cambian tus resultados.">Elige tus 3 metas principales.</Titulo>
           <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">{d.objetivos.length} de 3 elegidas</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {C.objetivos.map((o) => (
@@ -104,7 +104,7 @@ export function Cuestionario() {
 
       {paso === 1 && (
         <>
-          <Titulo texto="Si no sabe su peso o su estatura, déjelos en blanco: la enfermera los mide en la visita.">Cuéntenos de su cuerpo.</Titulo>
+          <Titulo texto="Si no sabes tu peso o tu estatura, déjalos en blanco: la enfermera los mide en la visita.">Cuéntanos de tu cuerpo.</Titulo>
           <div className="mt-8 grid grid-cols-2 gap-4">
             <Campo etiqueta="Peso (kg)">
               <input inputMode="decimal" value={peso} onChange={(e) => setPeso(e.target.value.replace(",", ".").replace(/[^\d.]/g, ""))} className={claseEntrada} placeholder="70" />
@@ -130,7 +130,7 @@ export function Cuestionario() {
             <Opcion activa={d.toma_biotina === false} onClick={() => cambiar({ toma_biotina: false })} texto="No" />
           </div>
           <p className="mt-10 text-base text-ink">{C.medicamentos.texto}</p>
-          <p className="mt-1 text-xs text-ink-muted">Algunos cambian lo que le podemos recomendar. Puede elegir varios.</p>
+          <p className="mt-1 text-xs text-ink-muted">Algunos cambian lo que te podemos recomendar. Puedes elegir varios.</p>
           <div className="mt-4 grid gap-3">
             {C.medicamentos.opciones.map((o) => (
               <Opcion
@@ -155,7 +155,7 @@ export function Cuestionario() {
             />
           </div>
           <div className="mt-5">
-            <Campo etiqueta="¿Toma otros medicamentos?" ayuda="Escríbalos si los recuerda; se los mostramos a su médico.">
+            <Campo etiqueta="¿Tomas otros medicamentos?" ayuda="Escríbelos si los recuerdas; se los mostramos a tu médico.">
               <input value={d.medicamentos_otros ?? ""} onChange={(e) => cambiar({ medicamentos_otros: e.target.value })} className={claseEntrada} placeholder="Por ejemplo: losartán, levotiroxina…" />
             </Campo>
           </div>
@@ -164,7 +164,7 @@ export function Cuestionario() {
 
       {paso === 3 && (
         <>
-          <Titulo texto="Sus recetas y recomendaciones no incluirán lo que no puede comer.">{C.alergias.texto}</Titulo>
+          <Titulo texto="Tus recetas y recomendaciones no incluirán lo que no puedes comer.">{C.alergias.texto}</Titulo>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {C.alergias.opciones.map((o) => (
               <Opcion
@@ -204,7 +204,7 @@ export function Cuestionario() {
 
       {paso === 4 && (
         <>
-          <Titulo texto="Sin juicios: nos ayuda a leer mejor sus resultados.">{C.fuma.texto}</Titulo>
+          <Titulo texto="Sin juicios: nos ayuda a leer mejor tus resultados.">{C.fuma.texto}</Titulo>
           <div className="mt-6 grid gap-3">
             {C.fuma.opciones.map((o) => (
               <Opcion key={o.id} activa={d.fuma === o.id} onClick={() => cambiar({ fuma: o.id })} texto={o.texto} />
@@ -221,7 +221,7 @@ export function Cuestionario() {
 
       {paso === 5 && (
         <>
-          <Titulo texto="Algunas condiciones vienen de familia y cambian cómo leemos sus resultados.">{C.antecedentes.texto}</Titulo>
+          <Titulo texto="Algunas condiciones vienen de familia y cambian cómo leemos tus resultados.">{C.antecedentes.texto}</Titulo>
           <div className="mt-6 grid gap-3">
             {C.antecedentes.opciones.map((o) => (
               <Opcion

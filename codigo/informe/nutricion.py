@@ -89,7 +89,7 @@ def metas(ctx, objetivos, motor_out):
     """Metas diarias orientativas. Sin peso o talla no se personaliza."""
     peso, talla, edad, sexo = ctx.get("peso_kg"), ctx.get("talla_m"), ctx.get("edad"), ctx.get("sexo")
     egfr = (motor_out.get("calculados") or {}).get("egfr")
-    notas = ["Meta orientativa, no una prescripción: un nutricionista la ajusta a su caso."]
+    notas = ["Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso."]
     if not (peso and talla and edad and sexo in ("hombre", "mujer")):
         return dict(personalizada=False, motivo="faltan peso y talla de la enfermera", notas=notas,
                     sodio_mg_max=2000, azucar_anadida_g_max=None, fibra_g_min=25 if sexo == "mujer" else 30)
@@ -100,13 +100,13 @@ def metas(ctx, objetivos, motor_out):
     if "bajar_peso" in objetivos and imc >= 20:
         kcal *= 0.85; kcal = max(kcal, 1500 if sexo == "hombre" else 1200); notas.append("Con un déficit moderado para bajar de peso sin pasar hambre.")
     elif any(o in objetivos for o in ("masa_muscular", "maraton", "rendimiento", "atletico")):
-        kcal *= 1.10; notas.append("Con un poco más de energía para su entrenamiento.")
+        kcal *= 1.10; notas.append("Con un poco más de energía para tu entrenamiento.")
     g_kg = 1.0
     if any(o in objetivos for o in ("masa_muscular", "atletico")): g_kg = 1.6
     elif any(o in objetivos for o in ("rendimiento", "maraton")): g_kg = 1.4
     elif "bajar_peso" in objetivos or "envejecer_saludable" in objetivos or edad >= 65: g_kg = 1.2
     if egfr is not None and egfr < 60:
-        g_kg = min(g_kg, 0.8); notas.append("Con la función de su riñón, la proteína no se aumenta: consúltelo con un nutricionista.")
+        g_kg = min(g_kg, 0.8); notas.append("Con la función de tu riñón, la proteína no se aumenta: consúltalo con un nutricionista.")
     prot = g_kg * peso
     grasa = kcal * 0.28 / 9
     carb = (kcal - prot * 4 - grasa * 9) / 4
@@ -161,7 +161,7 @@ def mensaje_receta(r, alimentos_cat, meta):
     pasos = "\n".join(f"{k + 1}. {p}" for k, p in enumerate(r["pasos"]))
     aporte = ""
     if meta.get("personalizada") and meta.get("proteina_g"):
-        aporte = f"\nCubre cerca del {round(100 * n['proteina_g'] / meta['proteina_g'])} % de su proteína del día."
+        aporte = f"\nCubre cerca del {round(100 * n['proteina_g'] / meta['proteina_g'])} % de tu proteína del día."
     texto = (f"🍽️ *Receta del día: {r['nombre']}*\n{r['tiempo_comida'].capitalize()} · {r.get('tiempo_min') or '—'} min · {r['porciones']} porciones\n\n"
              f"*Por porción:* {_num(n['kcal'])} kcal · proteína {_num(n['proteina_g'])} g · carbohidratos {_num(n['carbohidratos_g'])} g · "
              f"grasa {_num(n['grasa_g'])} g · fibra {_num(n['fibra_g'])} g · sodio {_num(n['sodio_mg'])} mg{aporte}\n\n"

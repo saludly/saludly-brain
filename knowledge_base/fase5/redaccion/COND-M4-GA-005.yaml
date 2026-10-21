@@ -1,12 +1,12 @@
 id: COND-M4-GA-005
 tipo: condicion
-titulo_paciente: "Apareció la bacteria H. pylori en su muestra de heces"
+titulo_paciente: "Apareció la bacteria H. pylori en tu muestra de heces"
 que_es: "La H. pylori es una bacteria muy común que vive en el estómago y muchas veces no da síntomas."
 por_que_te_aparece:
-  - "En su muestra de heces se detectó la bacteria H. pylori."
+  - "En tu muestra de heces se detectó la bacteria H. pylori."
 riesgo_claro: "Si no se trata, con los años puede irritar el estómago y favorecer heridas en su pared. La buena noticia: tiene tratamiento."
 ejemplo_simple: "Es como una gotera pequeña: hoy no molesta, pero con los años va dañando el techo si no se arregla."
-incertidumbre: "Las guías colombianas recomiendan tratarla aunque no haya síntomas. Su médico confirma el resultado y decide el tratamiento en una consulta en las próximas semanas. No se automedique con antibióticos."
+incertidumbre: "Las guías colombianas recomiendan tratarla aunque no haya síntomas. Tu médico confirma el resultado y decide el tratamiento en una consulta en las próximas semanas. No te automediques con antibióticos."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Asociación Colombiana de Gastroenterología 2025, H. pylori"]

@@ -22,19 +22,19 @@ export function Entrar() {
   const conGoogle = async () => {
     setError(null);
     const { error } = await supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: `${window.location.origin}/registro` } });
-    if (error) setError("El ingreso con Google todavía no está activo. Por ahora, use su correo.");
+    if (error) setError("El ingreso con Google todavía no está activo. Por ahora, usa tu correo.");
   };
 
   const conCorreo = async () => {
     setError(null);
     setAviso(null);
-    if (!/^\S+@\S+\.\S+$/.test(correo)) return setError("Revise su correo electrónico.");
+    if (!/^\S+@\S+\.\S+$/.test(correo)) return setError("Revisa tu correo electrónico.");
     if (clave.length < 8) return setError("La contraseña debe tener al menos 8 caracteres.");
     setOcupado(true);
     if (modo === "crear") {
       const { data, error } = await supabase.auth.signUp({ email: correo, password: clave, options: { emailRedirectTo: `${window.location.origin}/registro` } });
-      if (error) setError(error.message.includes("registered") ? "Ese correo ya tiene cuenta. Elija «Ya tengo cuenta»." : "No pudimos crear la cuenta. Intente de nuevo.");
-      else if (!data.session) setAviso("Le enviamos un correo para confirmar su cuenta. Ábralo y toque el enlace para continuar.");
+      if (error) setError(error.message.includes("registered") ? "Ese correo ya tiene cuenta. Elige «Ya tengo cuenta»." : "No pudimos crear la cuenta. Intenta de nuevo.");
+      else if (!data.session) setAviso("Te enviamos un correo para confirmar tu cuenta. Ábrelo y toca el enlace para continuar.");
     } else {
       const { error } = await supabase.auth.signInWithPassword({ email: correo, password: clave });
       if (error) setError("El correo o la contraseña no coinciden.");
@@ -47,11 +47,11 @@ export function Entrar() {
       <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 py-8">
         <Marca />
         <section className="rise mt-14">
-          <h1 className="text-3xl font-light tracking-tight text-ink">{modo === "crear" ? "Cree su cuenta Saludly." : "Bienvenido de nuevo."}</h1>
+          <h1 className="text-3xl font-light tracking-tight text-ink">{modo === "crear" ? "Crea tu cuenta Saludly." : "Bienvenido de nuevo."}</h1>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
             {modo === "crear"
-              ? "Con su cuenta verá sus resultados, su plan y le avisaremos por WhatsApp cuando todo esté listo."
-              : "Entre con el correo con el que creó su cuenta."}
+              ? "Con tu cuenta verás tus resultados, tu plan y te avisaremos por WhatsApp cuando todo esté listo."
+              : "Entra con el correo con el que creaste tu cuenta."}
           </p>
 
           <button
@@ -69,7 +69,7 @@ export function Entrar() {
           </button>
 
           <div className="my-7 flex items-center gap-3 text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-            <span className="h-px flex-1 bg-rule" />o con su correo<span className="h-px flex-1 bg-rule" />
+            <span className="h-px flex-1 bg-rule" />o con tu correo<span className="h-px flex-1 bg-rule" />
           </div>
 
           <div className="space-y-4">

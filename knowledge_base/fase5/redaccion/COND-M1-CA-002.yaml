@@ -1,13 +1,13 @@
 id: COND-M1-CA-002
 tipo: condicion
-titulo_paciente: "Su colesterol LDL está muy alto"
+titulo_paciente: "Tu colesterol LDL está muy alto"
 que_es: "El colesterol LDL es la grasa de la sangre que se pega a las paredes de las arterias. Desde 190 mg/dL, las guías lo consideran alto por sí solo."
 por_que_te_aparece:
-  - "Su colesterol LDL salió en {ldl_c}, en 190 mg/dL o más: el nivel que las guías consideran alto por sí solo."
-riesgo_claro: "Un LDL así de alto, sostenido por años, acelera el estrechamiento de las arterias. Por eso vale la pena atenderlo pronto, aunque hoy se sienta bien."
-ejemplo_simple: "Piénselo como un río que arrastra mucho barro: entre más barro lleva, más rápido se llenan las orillas."
-incertidumbre: "Un solo examen no muestra la causa. A veces viene de familia y otras veces de otra condición, como la tiroides. Su médico lo confirma."
-cuando_consultar: "Le recomendamos una consulta médica en las próximas semanas. También vale la pena que sus padres, hermanos e hijos se revisen el colesterol."
+  - "Tu colesterol LDL salió en {ldl_c}, en 190 mg/dL o más: el nivel que las guías consideran alto por sí solo."
+riesgo_claro: "Un LDL así de alto, sostenido por años, acelera el estrechamiento de las arterias. Por eso vale la pena atenderlo pronto, aunque hoy te sientas bien."
+ejemplo_simple: "Piénsalo como un río que arrastra mucho barro: entre más barro lleva, más rápido se llenan las orillas."
+incertidumbre: "Un solo examen no muestra la causa. A veces viene de familia y otras veces de otra condición, como la tiroides. Tu médico lo confirma."
+cuando_consultar: "Te recomendamos una consulta médica en las próximas semanas. También vale la pena que tus padres, hermanos e hijos se revisen el colesterol."
 aviso_whatsapp: null
 fuentes: ["GPC Colombia dislipidemias 2014"]
 estado_revision: aprobada

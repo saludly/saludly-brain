@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.join(RAIZ, "codigo", "informe"))
 import control_salida as CS
 
 API = "https://graph.facebook.com/v25.0/{}/messages"
-BIENVENIDA = ("¡Bienvenido a Saludly, {nombre}! 🌱 Ya es saludable e inteligente: tomó la decisión de conocer su cuerpo para cuidarlo. "
-              "Abra su app y cuéntenos sus objetivos para empezar.")
+BIENVENIDA = ("¡Bienvenido a Saludly, {nombre}! 🌱 Ya eres saludable e inteligente: tomaste la decisión de conocer tu cuerpo para cuidarlo. "
+              "Abre tu app y cuéntanos tus objetivos para empezar.")
 
 
 def leer_env():

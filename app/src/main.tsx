@@ -28,7 +28,7 @@ function NoEncontrada() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <p className="mt-4 text-sm text-muted-foreground">La página que busca no existe.</p>
+        <p className="mt-4 text-sm text-muted-foreground">La página que buscas no existe.</p>
         <Link to="/panel" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground">
           Ir a mi panel
         </Link>

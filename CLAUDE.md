@@ -30,7 +30,7 @@ knowledge_base/          fuente de verdad clínica, legible por máquina
   relaciones/REL-*.md    31 relaciones entre módulos (tipo: patron | vigilar | fuera_de_patrones)
   seguridad/SEG-*.md     15 reglas de seguridad
   casos/                 casos de prueba: unitarios (json/yaml/csv) y de punta a punta (e2e/E2E-01 hombre, E2E-02 mujer)
-  fase5/                 contenido para el paciente (Fase 5), de "usted" desde el 20 oct 2026: ESQUEMAS.md (formatos y reglas de lenguaje), objetivos.yaml (los 10),
+  fase5/                 contenido para el paciente (Fase 5), de tú (Carlos lo confirmó el 21 oct 2026): ESQUEMAS.md (formatos y reglas de lenguaje), objetivos.yaml (los 10),
                          filtros.yaml (alergias, dieta y medicamentos: preguntas de la PWA y reglas, aprobadas el 20 oct 2026),
                          frases_prohibidas.yaml (generado), redaccion/<ID>.yaml (119 textos por hallazgo y modulos.yaml),
                          recomendaciones/<tipo>_a|b.yaml (189), recetas/alimentos.yaml (140) y desayunos|meriendas|almuerzos|cenas.yaml (190)
@@ -93,7 +93,7 @@ python codigo/pipeline/saludly.py --pdf … --documento … --orden … --perfil
 ## Deuda técnica conocida
 
 - **Copias de la Knowledge Base.** `codigo/motor/motor/kb/`, `codigo/motor/pruebas/00_INDEX.json`, `codigo/motor/pruebas/E2E-*.json` y `codigo/lector_pdf/pruebas/E2E-*.json` son copias de `knowledge_base/`. Hoy están sincronizadas. Si cambias una ficha, cópiala a `codigo/motor/motor/kb/` y corre `python codigo/herramientas/generar_indice.py`, que regenera el índice y sus dos copias. Conviene que el motor lea directo de `knowledge_base/`.
-- **El RAG en Supabase** se actualizó el 20 de octubre de 2026 (1.401 fragmentos: fichas, textos para el paciente en usted, recomendaciones y filtros). El plan gratis pausa el proyecto tras 7 días sin uso: hay que reactivarlo antes de subir. Cada vez que cambie la Knowledge Base: `fragmentar.py`, `vectorizar.py` (incremental), `probar_busqueda.py` y `subir.py` (ver `codigo/rag/README.md`).
+- **El RAG en Supabase** se actualizó el 21 de octubre de 2026 (1.401 fragmentos: fichas, textos para el paciente en tú, recomendaciones y filtros). El plan gratis pausa el proyecto tras 7 días sin uso: hay que reactivarlo antes de subir. Cada vez que cambie la Knowledge Base: `fragmentar.py`, `vectorizar.py` (incremental), `probar_busqueda.py` y `subir.py` (ver `codigo/rag/README.md`).
 - **Contenido de la Fase 5 aprobado** por Carlos el 11 de octubre de 2026 (`estado_revision: aprobada`). Las decisiones y las correcciones de ese día están en `docs/02_plan_y_decisiones/Fase5_decisiones_para_revisar.md`.
 - **El lector está duplicado** en `codigo/motor/motor/lector.py` y `codigo/lector_pdf/lector.py`, que hoy son idénticos.
 - **Git.** El repositorio usa git desde el 9 de octubre de 2026 (rama `main`, sin remoto). `.gitattributes` normaliza los saltos de línea, así que las salidas de las pruebas solo aparecen como cambiadas si cambia su contenido.

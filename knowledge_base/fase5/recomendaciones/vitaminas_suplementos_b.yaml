@@ -1,159 +1,159 @@
 # Recomendaciones de vitaminas y suplementos (regla de vitaminas, documento 07.3). Alimentos primero; el suplemento
 # solo como opción general para hablar con el médico. Sin dosis ni marcas. Numeración 200 a 299.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-VIT-201
   tipo: vitaminas_suplementos
-  titulo: "Hable con su médico antes de suplementar vitamina D"
-  texto_base: "Primero sume alimentos con vitamina D y sol prudente. Si quiere usar un suplemento, consúltelo con su médico: su médico decide si lo necesita y cómo usarlo."
-  meta_concreta: "En su próxima consulta, pregúntele a su médico si en su caso conviene un suplemento de vitamina D."
+  titulo: "Habla con tu médico antes de suplementar vitamina D"
+  texto_base: "Primero suma alimentos con vitamina D y sol prudente. Si quieres usar un suplemento, consúltalo con tu médico: él decide si lo necesitas y cómo usarlo."
+  meta_concreta: "En tu próxima consulta, pregunta a tu médico si en tu caso conviene un suplemento de vitamina D."
   por_que: "La vitamina D ayuda a los huesos y los músculos; en exceso también puede hacer daño, por eso se decide con el médico."
   se_activa_con: ["vitamin_d:bajo", "COND-M3-NU-A03", "REL-020"]
   prioriza_objetivos: ["masa_muscular", "envejecer_saludable", "atletico", "energia_sueno"]
   contraindicada_si: ["vitamin_d:alto"]
   requiere_consulta_previa: false
-  whatsapp: "☀️ Si está pensando en tomar vitaminas, anote la pregunta para su próxima cita: su médico le dirá si las necesita y cómo usarlas."
+  whatsapp: "☀️ Si estás pensando en tomar vitaminas, anota la pregunta para tu próxima cita: tu médico te dirá si las necesitas y cómo usarlas."
   fuentes: ["Endocrine Society 2024, vitamina D para la prevención de enfermedades"]
 
 - id: REC-VIT-202
   tipo: vitaminas_suplementos
-  titulo: "Revise con su médico los suplementos con vitamina D"
-  texto_base: "Haga una lista de todos los suplementos, multivitamínicos y productos naturales que usa y revísela con su médico, porque varios traen vitamina D."
-  meta_concreta: "Esta semana, escriba la lista de suplementos que usa y llévela a su próxima cita."
+  titulo: "Revisa con tu médico los suplementos con vitamina D"
+  texto_base: "Haz una lista de todos los suplementos, multivitamínicos y productos naturales que usas y revísala con tu médico, porque varios traen vitamina D."
+  meta_concreta: "Esta semana, escribe la lista de suplementos que usas y llévala a tu próxima cita."
   por_que: "La vitamina D alta casi siempre viene de suplementos y puede subir el calcio."
   se_activa_con: ["vitamin_d:alto"]
   prioriza_objetivos: ["salud_general", "condicion_existente", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "📸 Tarea de la semana: tómeles foto a las etiquetas de las vitaminas y suplementos que usa y llévelas a su próxima cita médica."
+  whatsapp: "📸 Tarea de la semana: toma foto a las etiquetas de las vitaminas y suplementos que usas y llévalas a tu próxima cita médica."
   fuentes: ["Endocrine Society 2024, vitamina D para la prevención de enfermedades", "Regla de vitaminas, documento 07.3"]
 
 - id: REC-VIT-203
   tipo: vitaminas_suplementos
-  titulo: "Converse con su médico sobre la vitamina B12"
-  texto_base: "Además de los alimentos, pregúntele a su médico si necesita reponer la vitamina B12 y de qué forma. Es especialmente importante si no come productos animales, o si usa metformina o medicamentos para la acidez."
-  meta_concreta: "Pida una cita en el próximo mes y lleve la lista de sus medicamentos."
+  titulo: "Conversa con tu médico sobre la vitamina B12"
+  texto_base: "Además de los alimentos, pregunta a tu médico si necesitas reponer la vitamina B12 y de qué forma. Es especialmente importante si no comes productos animales, si usas metformina o medicamentos para la acidez."
+  meta_concreta: "Pide una cita en el próximo mes y lleva la lista de tus medicamentos."
   por_que: "Algunas personas no absorben bien la B12 de la comida y necesitan otra forma de reponerla, que define el médico."
   se_activa_con: ["COND-M3-NU-001", "COND-M3-HE-004", "REL-015", "vitamin_b12:bajo"]
   prioriza_objetivos: ["energia_sueno", "envejecer_saludable", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "📅 Recordatorio: agende su cita médica de este mes y lleve la lista de los medicamentos que usa, incluidos los de la acidez."
+  whatsapp: "📅 Recordatorio: agenda tu cita médica de este mes y lleva la lista de los medicamentos que usas, incluidos los de la acidez."
   fuentes: ["NICE NG239 2024, déficit de vitamina B12", "BSH 2014, diagnóstico y tratamiento de los trastornos de cobalamina y folato"]
 
 - id: REC-VIT-204
   tipo: vitaminas_suplementos
-  titulo: "Si busca un embarazo, pregunte por el ácido fólico"
-  texto_base: "Si está buscando un embarazo o podría quedar embarazada, hable pronto con su médico sobre el ácido fólico. Fuera de ese caso, priorice los alimentos con folato."
-  meta_concreta: "Si planea un embarazo, pida la cita de control preconcepcional este mes."
-  por_que: "El folato es clave en las primeras semanas del embarazo, incluso antes de saber que está embarazada."
+  titulo: "Si buscas un embarazo, pregunta por el ácido fólico"
+  texto_base: "Si estás buscando un embarazo o podrías quedar embarazada, habla pronto con tu médico sobre el ácido fólico. Fuera de ese caso, prioriza los alimentos con folato."
+  meta_concreta: "Si planeas un embarazo, pide la cita de control preconcepcional este mes."
+  por_que: "El folato es clave en las primeras semanas del embarazo, incluso antes de saber que estás embarazada."
   se_activa_con: ["COND-M3-NU-002", "folate:bajo", "REL-015"]
   prioriza_objetivos: ["prevenir", "salud_general", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🤰 Si está pensando en un embarazo, este es buen momento para una cita de control con su médico. Planear con tiempo hace la diferencia."
+  whatsapp: "🤰 Si estás pensando en un embarazo, este es buen momento para una cita de control con tu médico. Planear con tiempo hace la diferencia."
   fuentes: ["OMS, suplementación con ácido fólico antes de la concepción", "OMS, folato en la nutrición humana"]
 
 - id: REC-VIT-205
   tipo: vitaminas_suplementos
   titulo: "Hierro solo con indicación médica"
-  texto_base: "No empiece suplementos de hierro ni multivitamínicos con hierro por su cuenta. Si su médico se lo formula, siga su indicación y pregúntele cuándo repetir el control."
-  meta_concreta: "Antes de comprar cualquier vitamina, revise con su médico si trae hierro."
+  texto_base: "No empieces suplementos de hierro ni multivitamínicos con hierro por tu cuenta. Si tu médico te lo formula, sigue su indicación y pregúntale cuándo repetir el control."
+  meta_concreta: "Antes de comprar cualquier vitamina, revisa con tu médico si trae hierro."
   por_que: "El hierro de más se acumula en el cuerpo; y si falta, primero hay que saber por qué."
   se_activa_con: ["COND-M3-HE-002", "COND-M3-HE-003", "REL-013", "REL-014", "COND-M3-HE-006", "COND-M3-HE-A04"]
   prioriza_objetivos: ["maraton", "rendimiento", "energia_sueno", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "💊 Antes de comprar vitaminas en la droguería, pregúntele a su médico si le convienen. No todas sirven para todos."
+  whatsapp: "💊 Antes de comprar vitaminas en la droguería, pregúntale a tu médico si te convienen. No todas sirven para todos."
   fuentes: ["BSG 2021, guía de anemia por déficit de hierro en adultos", "EASL 2022, guía de hemocromatosis", "BSH, tamizaje de hemoglobinopatías"]
 
 - id: REC-VIT-206
   tipo: vitaminas_suplementos
   titulo: "Sin suplementos de hierro ni de vitamina C por ahora"
-  texto_base: "Hasta hablar con su médico, no use suplementos de hierro, de vitamina C ni multivitamínicos que los contengan. Las frutas sí las puede comer normalmente."
-  meta_concreta: "Esta semana, revise las etiquetas de sus suplementos y aparte los que traen hierro o vitamina C hasta la consulta."
+  texto_base: "Hasta hablar con tu médico, no uses suplementos de hierro, de vitamina C ni multivitamínicos que los contengan. Las frutas sí las puedes comer normalmente."
+  meta_concreta: "Esta semana, revisa las etiquetas de tus suplementos y aparta los que traen hierro o vitamina C hasta la consulta."
   por_que: "La vitamina C en suplemento aumenta la absorción de hierro, y por ahora conviene no sumar más."
   se_activa_con: ["COND-M3-HE-006"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🔎 Esta semana revise las etiquetas de las vitaminas que tiene en casa y llévelas a su próxima cita médica para revisarlas juntos."
+  whatsapp: "🔎 Esta semana revisa las etiquetas de las vitaminas que tienes en casa y llévalas a tu próxima cita médica para revisarlas juntos."
   fuentes: ["EASL 2022, guía de hemocromatosis"]
 
 - id: REC-VIT-207
   tipo: vitaminas_suplementos
-  titulo: "Magnesio: alimentos primero y suplemento solo con su médico"
-  texto_base: "Priorice los alimentos con magnesio. Si quiere un suplemento, consúltelo antes con su médico y cuéntele si usa diuréticos o medicamentos para la acidez, que pueden bajarlo."
-  meta_concreta: "En su próxima cita, revise con su médico sus medicamentos y si conviene un suplemento."
+  titulo: "Magnesio: alimentos primero y suplemento solo con tu médico"
+  texto_base: "Prioriza los alimentos con magnesio. Si quieres un suplemento, consúltalo antes con tu médico y cuéntale si usas diuréticos o medicamentos para la acidez, que pueden bajarlo."
+  meta_concreta: "En tu próxima cita, revisa con tu médico tus medicamentos y si conviene un suplemento."
   por_que: "Algunos medicamentos bajan el magnesio, y el suplemento no le sirve a todo el mundo, sobre todo si los riñones filtran menos."
   se_activa_con: ["magnesium:bajo", "SEG-008"]
   prioriza_objetivos: ["rendimiento", "maraton", "energia_sueno"]
   contraindicada_si: ["COND-M2-NE-001", "magnesium:alto"]
   requiere_consulta_previa: false
-  whatsapp: "📋 Si usa medicamentos para la acidez o para orinar más, anótelo para su próxima cita médica. Su médico revisará si afectan sus minerales."
+  whatsapp: "📋 Si usas medicamentos para la acidez o para orinar más, anótalo para tu próxima cita médica. Tu médico revisará si afectan tus minerales."
   fuentes: ["NIH ODS, ficha de magnesio para profesionales"]
 
 - id: REC-VIT-208
   tipo: vitaminas_suplementos
   titulo: "Zinc: alimentos primero"
-  texto_base: "Cubra el zinc con la comida. Si está pensando en un suplemento, háblelo antes con su médico, porque el zinc de más puede bajar el cobre."
-  meta_concreta: "Durante un mes, una fuente de zinc al día en sus comidas y ningún suplemento sin hablar con su médico."
+  texto_base: "Cubre el zinc con la comida. Si estás pensando en un suplemento, háblalo antes con tu médico, porque el zinc de más puede bajar el cobre."
+  meta_concreta: "Durante un mes, una fuente de zinc al día en tus comidas y ningún suplemento sin hablar con tu médico."
   por_que: "La comida variada suele bastar, y el exceso de zinc en suplemento altera otros minerales."
   se_activa_con: ["zinc:bajo", "SEG-014"]
   prioriza_objetivos: ["salud_general", "atletico", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🍽️ Recuerde: la mejor fuente de minerales es su plato. Si piensa en suplementos, consúltelo primero con su médico."
+  whatsapp: "🍽️ Recuerda: la mejor fuente de minerales es tu plato. Si piensas en suplementos, consúltalo primero con tu médico."
   fuentes: ["NIH ODS, ficha de zinc para profesionales"]
 
 - id: REC-VIT-209
   tipo: vitaminas_suplementos
-  titulo: "Lleve a la cita sus suplementos y productos naturales"
-  texto_base: "Muéstrele a su médico todos los suplementos, productos naturales, tés adelgazantes y medicamentos que usa, incluso los que compra sin fórmula."
-  meta_concreta: "Antes de su próxima cita, haga la lista completa con el nombre de cada producto y desde cuándo lo usa."
+  titulo: "Lleva a la cita tus suplementos y productos naturales"
+  texto_base: "Muestra a tu médico todos los suplementos, productos naturales, tés adelgazantes y medicamentos que usas, incluso los que compras sin fórmula."
+  meta_concreta: "Antes de tu próxima cita, haz la lista completa con nombre de cada producto y desde cuándo lo usas."
   por_que: "Varios productos naturales y suplementos pueden alterar las pruebas del hígado."
   se_activa_con: ["COND-M4-GA-002", "COND-M4-GA-003", "REL-006"]
   prioriza_objetivos: ["condicion_existente", "prevenir", "bajar_peso"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🛍️ Tarea sencilla: junte en una bolsa los suplementos y productos naturales que usa y llévelos a su próxima cita médica."
+  whatsapp: "🛍️ Tarea sencilla: junta en una bolsa los suplementos y productos naturales que usas y llévalos a tu próxima cita médica."
   fuentes: ["ACG 2017, evaluación de pruebas hepáticas alteradas"]
 
 - id: REC-VIT-210
   tipo: vitaminas_suplementos
-  titulo: "Pregunte por la biotina antes de su próximo examen"
-  texto_base: "Si usa biotina o un producto para el pelo, la piel o las uñas, pregúntele a su médico si debe dejarla unos días antes de repetir sus exámenes."
-  meta_concreta: "Antes de su próximo examen de sangre, confirme con su médico cuántos días antes dejar la biotina."
+  titulo: "Pregunta por la biotina antes de tu próximo examen"
+  texto_base: "Si usas biotina o un producto para el pelo, la piel o las uñas, pregunta a tu médico si debes dejarla unos días antes de repetir tus exámenes."
+  meta_concreta: "Antes de tu próximo examen de sangre, confirma con tu médico cuántos días antes dejar la biotina."
   por_que: "La biotina altera varios exámenes de laboratorio, como los de tiroides y algunas vitaminas, y puede dar resultados engañosos."
   se_activa_con: ["biotin:alto"]
   prioriza_objetivos: ["salud_general", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🧪 Antes de su próximo examen de sangre, cuéntele al laboratorio y a su médico si usa productos para el pelo, la piel o las uñas."
+  whatsapp: "🧪 Antes de tu próximo examen de sangre, cuéntale al laboratorio y a tu médico si usas productos para el pelo, la piel o las uñas."
   fuentes: ["FDA 2019, comunicación de seguridad sobre interferencia de la biotina en pruebas de laboratorio"]
 
 - id: REC-VIT-211
   tipo: vitaminas_suplementos
-  titulo: "Revise con su médico las vitaminas A o E"
-  texto_base: "Si usa suplementos o multivitamínicos, llévelos a una consulta médica para revisar si traen vitamina A o E y si debe seguir con ellos."
-  meta_concreta: "Agende una cita en el próximo mes y lleve las etiquetas de sus suplementos."
+  titulo: "Revisa con tu médico las vitaminas A o E"
+  texto_base: "Si usas suplementos o multivitamínicos, llévalos a una consulta médica para revisar si traen vitamina A o E y si debes seguir con ellos."
+  meta_concreta: "Agenda una cita en el próximo mes y lleva las etiquetas de tus suplementos."
   por_que: "Las vitaminas A y E se acumulan en el cuerpo y en exceso pueden afectar el hígado o la coagulación."
   se_activa_con: ["vitamin_a:alto", "vitamin_e:alto"]
   prioriza_objetivos: ["salud_general", "envejecer_saludable", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "📅 Este mes, aproveche su cita médica para revisar las vitaminas que usa. Lleve las etiquetas."
+  whatsapp: "📅 Este mes, aprovecha tu cita médica para revisar las vitaminas que usas. Lleva las etiquetas."
   fuentes: ["NIH ODS, fichas de vitamina A y vitamina E para profesionales", "Regla de vitaminas, documento 07.3"]
 
 - id: REC-VIT-212
   tipo: vitaminas_suplementos
-  titulo: "Con anticoagulantes, ningún suplemento sin su médico"
-  texto_base: "Si toma un anticoagulante, no empiece ningún suplemento ni producto natural sin consultarlo: el omega-3, la vitamina E, el ginkgo, la cúrcuma o el ajo en cápsulas pueden aumentar el riesgo de sangrado o cambiar el efecto del medicamento."
-  meta_concreta: "Haga una lista de los suplementos y productos naturales que usa y revísela con su médico."
+  titulo: "Con anticoagulantes, ningún suplemento sin tu médico"
+  texto_base: "Si tomas un anticoagulante, no empieces ningún suplemento ni producto natural sin consultarlo: el omega-3, la vitamina E, el ginkgo, la cúrcuma o el ajo en cápsulas pueden aumentar el riesgo de sangrado o cambiar el efecto del medicamento."
+  meta_concreta: "Haz una lista de los suplementos y productos naturales que usas y revísala con tu médico."
   por_que: "Algunos suplementos suman su efecto al del anticoagulante y otros lo alteran."
   se_activa_con: ["medicamento:warfarina", "medicamento:anticoagulante_directo"]
   prioriza_objetivos: []
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "💊 Antes de empezar cualquier suplemento o producto natural, consúltelo con su médico: con su anticoagulante, algunos pueden aumentar el sangrado."
+  whatsapp: "💊 Antes de empezar cualquier suplemento o producto natural, consúltalo con tu médico: con tu anticoagulante, algunos pueden aumentar el sangrado."
   fuentes: ["NIH NCCIH, Herb-drug interactions", "por verificar"]

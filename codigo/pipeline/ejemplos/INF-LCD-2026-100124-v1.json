@@ -3,7 +3,7 @@
  "paciente_ref": "P-4D8E7AE7",
  "orden": "LCD-2026-100124",
  "fecha_toma": "2026-10-01",
- "generado": "2026-10-21T00:07:35",
+ "generado": "2026-10-21T00:37:11",
  "estado": "en_revision",
  "panel": "solo_sangre",
  "escalamiento_maximo": 2,
@@ -40,38 +40,38 @@
   "activo": false
  },
  "paciente": {
-  "resumen": "Revisamos sus resultados y encontramos 6 puntos que vale la pena atender; el más importante es: sus resultados de hierro cuentan la misma historia. Le recomendamos una consulta médica en las próximas semanas. También hay buenas noticias: 9 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en sus metas: tener más energía y dormir mejor, correr una maratón o carrera larga, mejorar mi salud en general.",
+  "resumen": "Revisamos tus resultados y encontramos 6 puntos que vale la pena atender; el más importante es: tus resultados de hierro cuentan la misma historia. Te recomendamos una consulta médica en las próximas semanas. También hay buenas noticias: 9 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en tus metas: tener más energía y dormir mejor, correr una maratón o carrera larga, mejorar mi salud en general.",
   "nota_alimentacion": null,
   "lo_que_esta_bien": [
    {
     "grupo": "COND-M4-IN-002",
-    "nombre": "Usted cuenta con defensas contra la hepatitis B por la vacuna",
-    "texto": "No se encontró el virus ni señales de contacto con él, y sus defensas (anti-HBs) salieron en 85 mUI/mL, un nivel que protege."
+    "nombre": "Tienes defensas contra la hepatitis B por la vacuna",
+    "texto": "No se encontró el virus ni señales de contacto con él, y tus defensas (anti-HBs) salieron en 85 mUI/mL, un nivel que protege."
    },
    {
     "grupo": "glucosa_metabolismo",
     "nombre": "Azúcar y metabolismo",
-    "texto": "Su azúcar en la sangre y la forma en que su cuerpo la maneja están dentro de los rangos de referencia."
+    "texto": "Tu azúcar en la sangre y la forma en que tu cuerpo la maneja están dentro de los rangos de referencia."
    },
    {
     "grupo": "higado",
     "nombre": "Hígado",
-    "texto": "Sus enzimas del hígado y su bilirrubina están dentro de los rangos de referencia."
+    "texto": "Tus enzimas del hígado y tu bilirrubina están dentro de los rangos de referencia."
    },
    {
     "grupo": "rinon",
     "nombre": "Riñones",
-    "texto": "Sus riñones están filtrando dentro de lo esperado para su edad."
+    "texto": "Tus riñones están filtrando dentro de lo esperado para tu edad."
    },
    {
     "grupo": "inflamacion",
     "nombre": "Inflamación",
-    "texto": "Sus marcadores de inflamación están dentro de los rangos de referencia."
+    "texto": "Tus marcadores de inflamación están dentro de los rangos de referencia."
    },
    {
     "grupo": "hormonas",
     "nombre": "Hormonas",
-    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para su edad y su sexo."
+    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para tu edad y tu sexo."
    },
    {
     "grupo": "corazon",
@@ -81,12 +81,12 @@
    {
     "grupo": "proteinas",
     "nombre": "Proteínas de la sangre",
-    "texto": "Sus proteínas de la sangre y sus anticuerpos generales están dentro de los rangos de referencia."
+    "texto": "Tus proteínas de la sangre y tus anticuerpos generales están dentro de los rangos de referencia."
    },
    {
     "grupo": "coagulacion",
     "nombre": "Coagulación",
-    "texto": "Sus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
+    "texto": "Tus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
    }
   ],
   "lo_que_merece_atencion": [
@@ -94,26 +94,26 @@
     "hallazgo_id": "H-8E7AE7-01",
     "referencia": "REL-013",
     "tipo": "patron",
-    "titulo": "Sus resultados de hierro cuentan la misma historia",
+    "titulo": "Tus resultados de hierro cuentan la misma historia",
     "escalamiento": 2,
     "nivel_lenguaje": null,
     "coincidencia": "alta",
     "que_es": "El hierro sirve para fabricar la hemoglobina de los glóbulos rojos. Cuando falta, las reservas bajan y los glóbulos rojos salen más pequeños y desiguales.",
     "por_que": [
-     "Su ferritina, que es la reserva de hierro de su cuerpo, salió en 7 ng/mL.",
-     "Su saturación de transferrina, que muestra cuánto hierro está circulando, salió en 8,8 %.",
-     "Su VCM, el tamaño de sus glóbulos rojos, salió en 78,2 fL, y su RDW, que mide qué tan distintos son entre sí, en 16,4 %.",
-     "Su hemoglobina salió en 11,2 g/dL. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."
+     "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en 7 ng/mL.",
+     "Tu saturación de transferrina, que muestra cuánto hierro está circulando, salió en 8,8 %.",
+     "Tu VCM, el tamaño de tus glóbulos rojos, salió en 78,2 fL, y tu RDW, que mide qué tan distintos son entre sí, en 16,4 %.",
+     "Tu hemoglobina salió en 11,2 g/dL. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."
     ],
     "ejemplo": "Es como una despensa que se va vaciando: primero se acaban las reservas y después empieza a faltar para cocinar.",
     "agrupa": [
      {
       "referencia": "COND-M3-HE-001",
-      "titulo": "Su hemoglobina está baja para la altura de Bogotá"
+      "titulo": "Tu hemoglobina está baja para la altura de Bogotá"
      },
      {
       "referencia": "COND-M3-HE-002",
-      "titulo": "Su hemoglobina y sus reservas de hierro están bajas"
+      "titulo": "Tu hemoglobina y tus reservas de hierro están bajas"
      }
     ]
    },
@@ -121,13 +121,13 @@
     "hallazgo_id": "H-8E7AE7-02",
     "referencia": "COND-M6-RE-A01",
     "tipo": "condicion",
-    "titulo": "Sus anticuerpos antinucleares (ANA) salieron positivos",
+    "titulo": "Tus anticuerpos antinucleares (ANA) salieron positivos",
     "escalamiento": 2,
     "nivel_lenguaje": "Resultado observado",
     "coincidencia": null,
     "que_es": "Los ANA son anticuerpos, unas proteínas de las defensas, que reconocen partes de las propias células. Se encuentran en muchas personas sanas.",
     "por_que": [
-     "Sus anticuerpos antinucleares (ANA) salieron positivos."
+     "Tus anticuerpos antinucleares (ANA) salieron positivos."
     ],
     "ejemplo": "Es como una alarma de carro muy sensible: a veces suena con el viento; por eso se revisa con calma antes de concluir algo.",
     "agrupa": []
@@ -136,28 +136,28 @@
     "hallazgo_id": "H-8E7AE7-03",
     "referencia": "COND-M1-CA-004",
     "tipo": "condicion",
-    "titulo": "Su lipoproteína(a) está alta",
+    "titulo": "Tu lipoproteína(a) está alta",
     "escalamiento": 1,
     "nivel_lenguaje": "Riesgo potencial",
     "coincidencia": "alta",
-    "que_es": "La lipoproteína(a) es un tipo de colesterol que depende sobre todo de lo que usted heredó de sus padres, no de sus hábitos.",
+    "que_es": "La lipoproteína(a) es un tipo de colesterol que depende sobre todo de lo que heredaste de tus padres, no de tus hábitos.",
     "por_que": [
-     "Su lipoproteína(a) salió en 64 mg/dL. La referencia es 50 mg/dL o 105 nmol/L, según la unidad del laboratorio."
+     "Tu lipoproteína(a) salió en 64 mg/dL. La referencia es 50 mg/dL o 105 nmol/L, según la unidad del laboratorio."
     ],
-    "ejemplo": "Es como vivir en una zona donde llueve mucho: usted no puede cambiar el clima, pero sí reforzar el techo.",
+    "ejemplo": "Es como vivir en una zona donde llueve mucho: no puedes cambiar el clima, pero sí reforzar el techo.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-8E7AE7-04",
     "referencia": "COND-M2-TI-001",
     "tipo": "condicion",
-    "titulo": "Su TSH está un poco alta, con la hormona tiroidea normal",
+    "titulo": "Tu TSH está un poco alta, con la hormona tiroidea normal",
     "escalamiento": 1,
     "nivel_lenguaje": "Patrón compatible",
     "coincidencia": "alta",
     "que_es": "La TSH es la hormona que le indica a la tiroides cuánto trabajar. La tiroides es una glándula del cuello que regula el gasto de energía.",
     "por_que": [
-     "Su TSH salió en 6,9 µUI/mL. La referencia es hasta 5,0 entre los 18 y los 60 años, y hasta 6,0 después de los 60."
+     "Tu TSH salió en 6,9 µUI/mL. La referencia es hasta 5,0 entre los 18 y los 60 años, y hasta 6,0 después de los 60."
     ],
     "ejemplo": "Es como un jefe que tiene que insistir más para que el empleado haga el mismo trabajo.",
     "agrupa": []
@@ -166,28 +166,28 @@
     "hallazgo_id": "H-8E7AE7-05",
     "referencia": "COND-M1-CA-001",
     "tipo": "condicion",
-    "titulo": "Su colesterol está por encima del valor de tamizaje",
+    "titulo": "Tu colesterol está por encima del valor de tamizaje",
     "escalamiento": 1,
     "nivel_lenguaje": "Riesgo potencial",
     "coincidencia": "moderada",
     "que_es": "El colesterol LDL y el no-HDL miden la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias.",
     "por_que": [
-     "Su colesterol LDL salió en 136 mg/dL. El valor que usamos para tamizaje es 130 mg/dL."
+     "Tu colesterol LDL salió en 136 mg/dL. El valor que usamos para tamizaje es 130 mg/dL."
     ],
-    "ejemplo": "Piénselo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
+    "ejemplo": "Piénsalo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-8E7AE7-07",
     "referencia": "COND-M3-NU-A03",
     "tipo": "condicion",
-    "titulo": "Su vitamina D está fuera del rango",
+    "titulo": "Tu vitamina D está fuera del rango",
     "escalamiento": 0,
     "nivel_lenguaje": null,
     "coincidencia": null,
     "que_es": "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos. El cuerpo la fabrica con el sol.",
     "por_que": [
-     "Su vitamina D salió en 17,8 ng/mL, fuera del rango del laboratorio."
+     "Tu vitamina D salió en 17,8 ng/mL, fuera del rango del laboratorio."
     ],
     "ejemplo": "Es como el cemento de una pared: los ladrillos están, pero sin suficiente cemento la pared queda menos firme.",
     "agrupa": []
@@ -197,42 +197,42 @@
    {
     "hallazgo_id": "H-8E7AE7-01",
     "texto": "Si la falta de hierro sigue, puede aparecer anemia, con cansancio, menos concentración y menos rendimiento físico. Detectarlo ahora permite actuar antes.",
-    "incertidumbre": "Una inflamación o un suplemento reciente pueden cambiar estos valores. Su médico busca la causa y decide si hace falta algo más que la alimentación."
+    "incertidumbre": "Una inflamación o un suplemento reciente pueden cambiar estos valores. Tu médico busca la causa y decide si hace falta algo más que la alimentación."
    },
    {
     "hallazgo_id": "H-8E7AE7-02",
-    "texto": "Por sí solo no indica ninguna enfermedad. Si además hay síntomas, su médico puede pedir otros exámenes para entender mejor el resultado.",
-    "incertidumbre": "Es un resultado frecuente en personas sanas. Su importancia depende del título, del patrón y de los síntomas, y eso lo valora su médico."
+    "texto": "Por sí solo no indica ninguna enfermedad. Si además hay síntomas, tu médico puede pedir otros exámenes para entender mejor el resultado.",
+    "incertidumbre": "Es un resultado frecuente en personas sanas. Su importancia depende del título, del patrón y de los síntomas, y eso lo valora tu médico."
    },
    {
     "hallazgo_id": "H-8E7AE7-03",
-    "texto": "Con los años suma al riesgo de problemas del corazón y de las arterias, sobre todo si se junta con LDL alto, presión alta o cigarrillo. Por eso cuidar esos otros factores pesa todavía más en su caso.",
-    "incertidumbre": "Este valor casi no cambia en la vida, así que no hace falta repetirlo salvo que su médico lo pida. Su médico lo suma a sus demás factores."
+    "texto": "Con los años suma al riesgo de problemas del corazón y de las arterias, sobre todo si se junta con LDL alto, presión alta o cigarrillo. Por eso cuidar esos otros factores pesa todavía más en tu caso.",
+    "incertidumbre": "Este valor casi no cambia en la vida, así que no hace falta repetirlo salvo que tu médico lo pida. Tu médico lo suma a tus demás factores."
    },
    {
     "hallazgo_id": "H-8E7AE7-04",
     "texto": "Si la TSH sigue subiendo con los años, la tiroides podría quedarse corta y causar cansancio, frío, aumento de peso o colesterol alto.",
-    "incertidumbre": "Es un hallazgo frecuente y a veces se normaliza solo. Una enfermedad reciente o algunos medicamentos lo alteran. Hay que repetirlo en unos meses, y su médico lo interpreta."
+    "incertidumbre": "Es un hallazgo frecuente y a veces se normaliza solo. Una enfermedad reciente o algunos medicamentos lo alteran. Hay que repetirlo en unos meses, y tu médico lo interpreta."
    },
    {
     "hallazgo_id": "H-8E7AE7-05",
     "texto": "Si se mantiene alto durante años, las arterias se van estrechando y aumenta la probabilidad de problemas del corazón y del cerebro. La buena noticia: la alimentación y el movimiento ayudan a bajarlo.",
-    "incertidumbre": "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para usted depende de su riesgo cardiovascular global, que revisa su médico."
+    "incertidumbre": "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para ti depende de tu riesgo cardiovascular global, que revisa tu médico."
    },
    {
     "hallazgo_id": "H-8E7AE7-07",
     "texto": "Si se mantiene baja durante años, los huesos pueden debilitarse. Si está alta por suplementos, se puede acumular en el cuerpo.",
-    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puede mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quiere suplementarla o ya usa suplementos, coménteselo a su médico."
+    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puedes mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quieres suplementarla o ya tomas suplementos, coméntalo con tu médico."
    }
   ],
   "que_puedes_hacer": [
    {
     "recomendacion_id": "REC-ALI-201",
     "tipo": "alimentacion",
-    "titulo": "Sume alimentos con hierro y acompáñelos con vitamina C",
-    "texto": "Incluya en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñelos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro.",
-    "meta": "Esta semana, coma leguminosas o carne magra con una fruta rica en vitamina C en al menos 5 almuerzos.",
-    "por_que": "El hierro de los alimentos repone poco a poco sus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor.",
+    "titulo": "Suma alimentos con hierro y acompáñalos con vitamina C",
+    "texto": "Incluye en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñalos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro.",
+    "meta": "Esta semana, come leguminosas o carne magra con una fruta rica en vitamina C en al menos 5 almuerzos.",
+    "por_que": "El hierro de los alimentos repone poco a poco tus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor.",
     "hallazgos": [
      "COND-M3-HE-002",
      "REL-013"
@@ -246,9 +246,9 @@
    {
     "recomendacion_id": "REC-ALI-202",
     "tipo": "alimentacion",
-    "titulo": "Deje el tinto y el té para después de comer",
-    "texto": "Tome el café, el tinto o el té por lo menos una hora antes o después de las comidas principales, no junto con ellas.",
-    "meta": "Durante 2 semanas, ningún café ni té junto con el almuerzo; si lo quiere, que sea una hora después.",
+    "titulo": "Deja el tinto y el té para después de comer",
+    "texto": "Toma el café, el tinto o el té por lo menos una hora antes o después de las comidas principales, no junto con ellas.",
+    "meta": "Durante 2 semanas, ningún café ni té junto con el almuerzo; si lo quieres, que sea una hora después.",
     "por_que": "El café y el té tienen sustancias que frenan la absorción del hierro de la comida.",
     "hallazgos": [
      "COND-M3-HE-002",
@@ -264,7 +264,7 @@
     "recomendacion_id": "REC-ACT-203",
     "tipo": "actividad",
     "titulo": "Antes de entrenar fuerte, primero la consulta",
-    "texto": "Antes de entrenamientos intensos, series largas o preparar una carrera, hable con su médico. Mientras tanto, manténgase activo con caminatas suaves y descanse si se siente muy cansado o le falta el aire.",
+    "texto": "Antes de entrenamientos intensos, series largas o preparar una carrera, habla con tu médico. Mientras tanto, mantente activo con caminatas suaves y descansa si te sientes muy cansado o te falta el aire.",
     "meta": "Hasta la consulta, solo caminatas suaves de 20 a 30 minutos y ninguna sesión intensa.",
     "por_que": "Con menos glóbulos rojos llega menos oxígeno a los músculos, y forzar el cuerpo puede causar mareo o mucha fatiga.",
     "hallazgos": [
@@ -280,8 +280,8 @@
     "recomendacion_id": "REC-CTL-201",
     "tipo": "controles",
     "titulo": "Consulta médica para buscar la causa",
-    "texto": "Agende una consulta médica en las próximas semanas. Su médico buscará por qué su sangre tiene menos glóbulos rojos o hierro y decidirá el tratamiento.",
-    "meta": "Pida la cita en los próximos 7 días y asista antes de 4 semanas, con este informe.",
+    "texto": "Agenda una consulta médica en las próximas semanas. Tu médico buscará por qué tu sangre tiene menos glóbulos rojos o hierro y decidirá el tratamiento.",
+    "meta": "Pide la cita en los próximos 7 días y asiste antes de 4 semanas, con este informe.",
     "por_que": "Lo importante no es solo reponer lo que falta, sino encontrar por qué falta.",
     "hallazgos": [
      "COND-M3-HE-001",
@@ -297,8 +297,8 @@
     "recomendacion_id": "REC-VIT-205",
     "tipo": "vitaminas_suplementos",
     "titulo": "Hierro solo con indicación médica",
-    "texto": "No empiece suplementos de hierro ni multivitamínicos con hierro por su cuenta. Si su médico se lo formula, siga su indicación y pregúntele cuándo repetir el control.",
-    "meta": "Antes de comprar cualquier vitamina, revise con su médico si trae hierro.",
+    "texto": "No empieces suplementos de hierro ni multivitamínicos con hierro por tu cuenta. Si tu médico te lo formula, sigue su indicación y pregúntale cuándo repetir el control.",
+    "meta": "Antes de comprar cualquier vitamina, revisa con tu médico si trae hierro.",
     "por_que": "El hierro de más se acumula en el cuerpo; y si falta, primero hay que saber por qué.",
     "hallazgos": [
      "COND-M3-HE-002",
@@ -313,9 +313,9 @@
    {
     "recomendacion_id": "REC-CTL-202",
     "tipo": "controles",
-    "titulo": "Cuéntele este resultado a su médico",
-    "texto": "Lleve este informe a su próximo control médico. Si ya no tiene menstruación, pida la cita pronto para buscar la causa de las reservas bajas de hierro.",
-    "meta": "Pida la cita este mes; si ya no menstrúa, en las próximas 2 semanas.",
+    "titulo": "Cuéntale este resultado a tu médico",
+    "texto": "Lleva este informe a tu próximo control médico. Si ya no tienes menstruación, pide la cita pronto para buscar la causa de las reservas bajas de hierro.",
+    "meta": "Pide la cita este mes; si ya no menstrúas, en las próximas 2 semanas.",
     "por_que": "Las reservas de hierro bajan antes que la hemoglobina; detectarlo a tiempo permite corregirlo antes de que aparezca anemia.",
     "hallazgos": [
      "REL-013"
@@ -329,9 +329,9 @@
    {
     "recomendacion_id": "REC-CTL-224",
     "tipo": "controles",
-    "titulo": "Consulte si tiene síntomas en articulaciones, piel o boca",
-    "texto": "Agende una consulta médica si tiene dolor o hinchazón de articulaciones, manchas en la piel con el sol, llagas en la boca, fiebre sin causa o los dedos se le ponen blancos con el frío.",
-    "meta": "Durante el próximo mes, anote si aparece alguno de estos síntomas y, si aparece, pida cita.",
+    "titulo": "Consulta si tienes síntomas en articulaciones, piel o boca",
+    "texto": "Agenda una consulta médica si tienes dolor o hinchazón de articulaciones, manchas en la piel con el sol, llagas en la boca, fiebre sin causa o los dedos se ponen blancos con el frío.",
+    "meta": "Durante el próximo mes, anota si aparece alguno de estos síntomas y, si aparece, pide cita.",
     "por_que": "Este resultado aparece también en personas sanas; lo que orienta al médico son los síntomas.",
     "hallazgos": [
      "COND-M6-RE-A01"
@@ -345,9 +345,9 @@
     "recomendacion_id": "REC-TER-201",
     "tipo": "terapias",
     "titulo": "Consulta con nutricionista",
-    "texto": "Pida una cita con un nutricionista para armar un plan de comidas a su medida, que tenga en cuenta sus gustos, su presupuesto y sus resultados.",
-    "meta": "Pida la cita con nutrición en su EPS o con Saludly en el próximo mes.",
-    "por_que": "Un plan hecho para usted es más fácil de sostener que una lista general de alimentos.",
+    "texto": "Pide una cita con un nutricionista para armar un plan de comidas a tu medida, que tenga en cuenta tus gustos, tu presupuesto y tus resultados.",
+    "meta": "Pide la cita con nutrición en tu EPS o con Saludly en el próximo mes.",
+    "por_que": "Un plan hecho para ti es más fácil de sostener que una lista general de alimentos.",
     "hallazgos": [
      "COND-M3-HE-002"
     ],
@@ -359,9 +359,9 @@
    {
     "recomendacion_id": "REC-CTL-108",
     "tipo": "controles",
-    "titulo": "Repita los exámenes de tiroides",
-    "texto": "Repita la TSH y la T4 libre en la mañana, como indique su médico, y cuéntele si tuvo alguna enfermedad reciente o usa medicamentos o suplementos.",
-    "meta": "Pida su cita en las próximas 4 semanas.",
+    "titulo": "Repite los exámenes de tiroides",
+    "texto": "Repite la TSH y la T4 libre en la mañana, como indique tu médico, y cuéntale si tuviste alguna enfermedad reciente o usas medicamentos o suplementos.",
+    "meta": "Pide tu cita en las próximas 4 semanas.",
     "por_que": "Los resultados de tiroides cambian con enfermedades recientes y algunos medicamentos; repetirlos confirma el hallazgo.",
     "hallazgos": [
      "COND-M2-TI-001",
@@ -375,9 +375,9 @@
    {
     "recomendacion_id": "REC-VIT-101",
     "tipo": "vitaminas_suplementos",
-    "titulo": "Cuéntele a su médico si usa biotina",
-    "texto": "Si usa suplementos para el pelo, la piel o las uñas, o multivitamínicos, revise si tienen biotina y coménteselo a su médico antes de repetir los exámenes de tiroides.",
-    "meta": "Revise hoy las etiquetas de sus suplementos y anote si alguno dice biotina.",
+    "titulo": "Cuéntale a tu médico si usas biotina",
+    "texto": "Si usas suplementos para el pelo, la piel o las uñas, o multivitamínicos, revisa si tienen biotina y coméntalo con tu médico antes de repetir los exámenes de tiroides.",
+    "meta": "Revisa hoy las etiquetas de tus suplementos y anota si alguno dice biotina.",
     "por_que": "La biotina puede alterar el resultado de los exámenes de tiroides y hacerlos parecer distintos de lo que son.",
     "hallazgos": [
      "COND-M2-TI-001",
@@ -393,8 +393,8 @@
     "recomendacion_id": "REC-VIT-104",
     "tipo": "vitaminas_suplementos",
     "titulo": "Sin yodo ni algas extra",
-    "texto": "No use suplementos de yodo, algas ni productos para la tiroides sin indicación de su médico. La sal yodada de la cocina es suficiente.",
-    "meta": "Revise hoy si algún suplemento o té que usa tiene yodo o algas y coménteselo en su cita.",
+    "texto": "No uses suplementos de yodo, algas ni productos para la tiroides sin indicación de tu médico. La sal yodada de la cocina es suficiente.",
+    "meta": "Revisa hoy si algún suplemento o té que usas tiene yodo o algas y coméntalo en tu cita.",
     "por_que": "El exceso de yodo puede desajustar la tiroides en cualquier dirección.",
     "hallazgos": [
      "COND-M2-TI-001",
@@ -409,7 +409,7 @@
     "recomendacion_id": "REC-ALI-205",
     "tipo": "alimentacion",
     "titulo": "Alimentos que aportan vitamina D",
-    "texto": "Incluya pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
+    "texto": "Incluye pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
     "meta": "Esta semana, pescado graso al menos 2 veces y huevo entero en 3 desayunos.",
     "por_que": "Pocos alimentos tienen vitamina D; los pescados grasos y el huevo están entre los mejores para sumar un poco.",
     "hallazgos": [
@@ -423,8 +423,8 @@
    {
     "recomendacion_id": "REC-HAB-201",
     "tipo": "habitos",
-    "titulo": "Reduzca el alcohol",
-    "texto": "Tome menos alcohol y deje varios días de la semana sin nada. Lo ideal para su hígado y su sangre es no tomar; si toma, que sea poco y nunca hasta emborracharse.",
+    "titulo": "Reduce el alcohol",
+    "texto": "Toma menos alcohol y deja varios días de la semana sin nada. Lo ideal para tu hígado y tu sangre es no tomar; si tomas, que sea poco y nunca hasta emborracharte.",
     "meta": "Durante las próximas 4 semanas, al menos 5 días sin alcohol cada semana y ninguna ocasión con más de 2 tragos.",
     "por_que": "El alcohol inflama el hígado, cambia el tamaño de los glóbulos rojos y gasta vitaminas como el folato.",
     "hallazgos": [
@@ -438,8 +438,8 @@
    {
     "recomendacion_id": "REC-ACT-102",
     "tipo": "actividad",
-    "titulo": "Muévase 150 minutos a la semana",
-    "texto": "Sume al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
+    "titulo": "Muévete 150 minutos a la semana",
+    "texto": "Suma al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
     "meta": "30 minutos de caminata rápida, 5 días esta semana.",
     "por_que": "La actividad aeróbica regular mejora el colesterol, la presión, el azúcar y el peso al mismo tiempo.",
     "hallazgos": [
@@ -457,37 +457,37 @@
   "cuando_consultar": [
    {
     "escalamiento": 2,
-    "texto": "Pida una consulta médica en las próximas 2 a 4 semanas y lleve este informe.",
+    "texto": "Pide una consulta médica en las próximas 2 a 4 semanas y lleva este informe.",
     "hallazgos": [
      {
       "hallazgo_id": "H-8E7AE7-01",
-      "titulo": "Sus resultados de hierro cuentan la misma historia",
+      "titulo": "Tus resultados de hierro cuentan la misma historia",
       "detalle": null
      },
      {
       "hallazgo_id": "H-8E7AE7-02",
-      "titulo": "Sus anticuerpos antinucleares (ANA) salieron positivos",
-      "detalle": "Coménteselo a su médico, sobre todo si tiene dolor en las articulaciones, manchas en la piel o fiebre sin causa."
+      "titulo": "Tus anticuerpos antinucleares (ANA) salieron positivos",
+      "detalle": "Coméntalo con tu médico, sobre todo si tienes dolor en las articulaciones, manchas en la piel o fiebre sin causa."
      }
     ]
    },
    {
     "escalamiento": 1,
-    "texto": "Coménteselo a su médico en su próximo control, en los próximos 3 meses.",
+    "texto": "Coméntalo con tu médico en tu próximo control, en los próximos 3 meses.",
     "hallazgos": [
      {
       "hallazgo_id": "H-8E7AE7-03",
-      "titulo": "Su lipoproteína(a) está alta",
-      "detalle": "Coménteselo a su médico. Sus familiares cercanos pueden medírsela una vez."
+      "titulo": "Tu lipoproteína(a) está alta",
+      "detalle": "Coméntalo con tu médico. Tus familiares cercanos pueden medírsela una vez."
      },
      {
       "hallazgo_id": "H-8E7AE7-04",
-      "titulo": "Su TSH está un poco alta, con la hormona tiroidea normal",
+      "titulo": "Tu TSH está un poco alta, con la hormona tiroidea normal",
       "detalle": null
      },
      {
       "hallazgo_id": "H-8E7AE7-05",
-      "titulo": "Su colesterol está por encima del valor de tamizaje",
+      "titulo": "Tu colesterol está por encima del valor de tamizaje",
       "detalle": null
      }
     ]
@@ -1818,8 +1818,8 @@
    "azucar_anadida_g_max": 54,
    "formula": "Mifflin-St Jeor × actividad, ajustado por objetivo; proteína en g/kg según objetivo",
    "notas": [
-    "Meta orientativa, no una prescripción: un nutricionista la ajusta a su caso.",
-    "Con un poco más de energía para su entrenamiento."
+    "Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso.",
+    "Con un poco más de energía para tu entrenamiento."
    ]
   },
   "restricciones": {
@@ -2078,85 +2078,85 @@
   ]
  },
  "whatsapp": {
-  "resultado_listo": "Hola 👋 Sus resultados de Saludly ya están listos en su panel. Ábralo cuando pueda: ahí le explicamos todo con calma.",
-  "recordatorio_consulta": "Hola 👋 En su informe de Saludly hay un resultado que conviene revisar con un médico en las próximas semanas. Abra su panel para ver el detalle.",
+  "resultado_listo": "Hola 👋 Tus resultados de Saludly ya están listos en tu panel. Ábrelo cuando puedas: ahí te explicamos todo con calma.",
+  "recordatorio_consulta": "Hola 👋 En tu informe de Saludly hay un resultado que conviene revisar con un médico en las próximas semanas. Abre tu panel para ver el detalle.",
   "recomendaciones_semanales": [
    {
     "semana": 1,
     "recomendacion_id": "REC-ALI-201",
-    "texto": "🍊 Hoy en el almuerzo ponga lentejas o fríjoles y de postre una guayaba o una naranja. La fruta ayuda a que su cuerpo aproveche mejor el hierro."
+    "texto": "🍊 Hoy en el almuerzo pon lentejas o fríjoles y de postre una guayaba o una naranja. La fruta ayuda a que tu cuerpo aproveche mejor el hierro."
    },
    {
     "semana": 2,
     "recomendacion_id": "REC-ALI-202",
-    "texto": "☕ Un truco sencillo para esta semana: el tinto o el té, mejor una hora después del almuerzo y no con la comida. Así aprovecha más lo que come."
+    "texto": "☕ Un truco sencillo para esta semana: el tinto o el té, mejor una hora después del almuerzo y no con la comida. Así aprovechas más lo que comes."
    },
    {
     "semana": 3,
     "recomendacion_id": "REC-CTL-201",
-    "texto": "📅 Le recordamos agendar su consulta médica de seguimiento. Si quiere, le ayudamos a pedir la cita: respóndanos aquí."
+    "texto": "📅 Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
    },
    {
     "semana": 4,
     "recomendacion_id": "REC-VIT-205",
-    "texto": "💊 Antes de comprar vitaminas en la droguería, pregúntele a su médico si le convienen. No todas sirven para todos."
+    "texto": "💊 Antes de comprar vitaminas en la droguería, pregúntale a tu médico si te convienen. No todas sirven para todos."
    },
    {
     "semana": 5,
     "recomendacion_id": "REC-CTL-202",
-    "texto": "📅 ¿Ya agendó su control médico? Lleve su informe de Saludly para que su médico lo revise con usted."
+    "texto": "📅 ¿Ya agendaste tu control médico? Lleva tu informe de Saludly para que tu médico lo revise contigo."
    },
    {
     "semana": 6,
     "recomendacion_id": "REC-CTL-224",
-    "texto": "🩺 Si en estas semanas nota dolor o hinchazón en las articulaciones, escríbanos o consulte a su médico."
+    "texto": "🩺 Si en estas semanas notas dolor o hinchazón en las articulaciones, escríbenos o consulta a tu médico."
    },
    {
     "semana": 7,
     "recomendacion_id": "REC-TER-201",
-    "texto": "🥗 ¿Le gustaría un plan de comidas hecho a su medida? Pida su cita con nutrición este mes; si quiere, le ayudamos a agendarla."
+    "texto": "🥗 ¿Te gustaría un plan de comidas hecho a tu medida? Pide tu cita con nutrición este mes; si quieres, te ayudamos a agendarla."
    },
    {
     "semana": 8,
     "recomendacion_id": "REC-CTL-108",
-    "texto": "📅 Le recordamos pedir su cita para repetir sus exámenes de tiroides en la mañana."
+    "texto": "📅 Te recordamos pedir tu cita para repetir tus exámenes de tiroides en la mañana."
    }
   ],
   "recetas_diarias": [
    {
     "dia": 1,
     "receta_id": "RCT-ALM-035",
-    "texto": "🍽️ *Receta del día: Tilapia sudada con yuca y arroz*\nAlmuerzo · 30 min · 2 porciones\n\n*Por porción:* 560 kcal · proteína 40 g · carbohidratos 76 g · grasa 11 g · fibra 7 g · sodio 504 mg\nCubre cerca del 49 % de su proteína del día.\n\n*Ingredientes*\n• 2 filetes de tilapia (cruda)\n• 2 tomates (tomate chonto)\n• 1/2 cebolla grande (cebolla cabezona)\n• 1/2 pimentón (pimentón rojo)\n• 1 diente de ajo\n• 2 trozos medianos de yuca cocida\n• 3/4 de taza de arroz blanco cocido\n• 1 puñado de cilantro\n• 1 cucharada de aceite de canola\n• 1 limón\n• una pizca de sal\n\n*Preparación*\n1. Sofríe tomate, cebolla, pimentón y ajo en el aceite hasta formar una salsa.\n2. Pon los filetes encima con un chorrito de agua y limón.\n3. Tapa y cocina 10 minutos a fuego bajo sin voltearlos.\n4. Ajusta la sal, añade cilantro y sirve con yuca y arroz.\n\n💡 Sudar el pescado en lugar de freírlo evita la grasa extra del aceite caliente."
+    "texto": "🍽️ *Receta del día: Tilapia sudada con yuca y arroz*\nAlmuerzo · 30 min · 2 porciones\n\n*Por porción:* 560 kcal · proteína 40 g · carbohidratos 76 g · grasa 11 g · fibra 7 g · sodio 504 mg\nCubre cerca del 49 % de tu proteína del día.\n\n*Ingredientes*\n• 2 filetes de tilapia (cruda)\n• 2 tomates (tomate chonto)\n• 1/2 cebolla grande (cebolla cabezona)\n• 1/2 pimentón (pimentón rojo)\n• 1 diente de ajo\n• 2 trozos medianos de yuca cocida\n• 3/4 de taza de arroz blanco cocido\n• 1 puñado de cilantro\n• 1 cucharada de aceite de canola\n• 1 limón\n• una pizca de sal\n\n*Preparación*\n1. Sofríe tomate, cebolla, pimentón y ajo en el aceite hasta formar una salsa.\n2. Pon los filetes encima con un chorrito de agua y limón.\n3. Tapa y cocina 10 minutos a fuego bajo sin voltearlos.\n4. Ajusta la sal, añade cilantro y sirve con yuca y arroz.\n\n💡 Sudar el pescado en lugar de freírlo evita la grasa extra del aceite caliente."
    },
    {
     "dia": 2,
     "receta_id": "RCT-DES-018",
-    "texto": "🍽️ *Receta del día: Tostadas integrales con atún y aguacate*\nDesayuno · 8 min · 1 porciones\n\n*Por porción:* 381 kcal · proteína 30 g · carbohidratos 47 g · grasa 9 g · fibra 9 g · sodio 321 mg\nCubre cerca del 37 % de su proteína del día.\n\n*Ingredientes*\n• 2 tajadas de pan integral\n• 1 lata pequeña escurrida (atún en agua (lata, escurrido))\n• 1/2 tomate (tomate chonto)\n• 2 cucharadas picada de cebolla cabezona\n• 1/2 limón\n• 2 tajadas de aguacate\n• 1 mandarina\n\n*Preparación*\n1. Mezcle el atún escurrido con el tomate, la cebolla picada y el limón.\n2. Tueste el pan y ponga encima el aguacate y la mezcla de atún.\n3. Acompañe con la mandarina.\n\n💡 Escoja atún en agua y escúrralo bien para comer menos sodio."
+    "texto": "🍽️ *Receta del día: Tostadas integrales con atún y aguacate*\nDesayuno · 8 min · 1 porciones\n\n*Por porción:* 381 kcal · proteína 30 g · carbohidratos 47 g · grasa 9 g · fibra 9 g · sodio 321 mg\nCubre cerca del 37 % de tu proteína del día.\n\n*Ingredientes*\n• 2 tajadas de pan integral\n• 1 lata pequeña escurrida (atún en agua (lata, escurrido))\n• 1/2 tomate (tomate chonto)\n• 2 cucharadas picada de cebolla cabezona\n• 1/2 limón\n• 2 tajadas de aguacate\n• 1 mandarina\n\n*Preparación*\n1. Mezcla el atún escurrido con el tomate, la cebolla picada y el limón.\n2. Tuesta el pan y pon encima el aguacate y la mezcla de atún.\n3. Acompaña con la mandarina.\n\n💡 Escoge atún en agua y escúrrelo bien para comer menos sodio."
    },
    {
     "dia": 3,
     "receta_id": "RCT-CEN-039",
-    "texto": "🍽️ *Receta del día: Ensalada tibia de atún, papa y habichuela*\nCena · 20 min · 2 porciones\n\n*Por porción:* 367 kcal · proteína 29 g · carbohidratos 45 g · grasa 8 g · fibra 6 g · sodio 92 mg\nCubre cerca del 36 % de su proteína del día.\n\n*Ingredientes*\n• 1 lata escurrida (atún en agua (lata, escurrido))\n• 3 papas grandes (papa cocida)\n• 1 taza y media de habichuela\n• 1 huevo (huevo entero)\n• 1 tomate (tomate chonto)\n• unas rodajas de cebolla cabezona\n• 2 cucharaditas de aceite de oliva\n• 1 limón\n• 1 cucharada picada de perejil\n\n*Preparación*\n1. Cocine la habichuela y el huevo en agua por 8 minutos.\n2. Corte la papa, el tomate y el huevo en trozos.\n3. Mezcle todo con el atún escurrido, la cebolla y el perejil.\n4. Aliñe con el aceite y el limón.\n\n💡 Escoja atún en agua en vez de aceite: tiene menos grasa y el mismo sabor."
+    "texto": "🍽️ *Receta del día: Ensalada tibia de atún, papa y habichuela*\nCena · 20 min · 2 porciones\n\n*Por porción:* 367 kcal · proteína 29 g · carbohidratos 45 g · grasa 8 g · fibra 6 g · sodio 92 mg\nCubre cerca del 36 % de tu proteína del día.\n\n*Ingredientes*\n• 1 lata escurrida (atún en agua (lata, escurrido))\n• 3 papas grandes (papa cocida)\n• 1 taza y media de habichuela\n• 1 huevo (huevo entero)\n• 1 tomate (tomate chonto)\n• unas rodajas de cebolla cabezona\n• 2 cucharaditas de aceite de oliva\n• 1 limón\n• 1 cucharada picada de perejil\n\n*Preparación*\n1. Cocina la habichuela y el huevo en agua por 8 minutos.\n2. Corta la papa, el tomate y el huevo en trozos.\n3. Mezcla todo con el atún escurrido, la cebolla y el perejil.\n4. Aliña con el aceite y el limón.\n\n💡 Escoge atún en agua en vez de aceite: tiene menos grasa y el mismo sabor."
    },
    {
     "dia": 4,
     "receta_id": "RCT-ALM-039",
-    "texto": "🍽️ *Receta del día: Lomo de cerdo con piña asada, arroz y brócoli*\nAlmuerzo · 30 min · 2 porciones\n\n*Por porción:* 535 kcal · proteína 40 g · carbohidratos 65 g · grasa 13 g · fibra 7 g · sodio 509 mg\nCubre cerca del 49 % de su proteína del día.\n\n*Ingredientes*\n• 2 medallones de lomo de cerdo (crudo)\n• 2 rodajas de piña\n• 2 tazas de arroz integral cocido\n• 2 tazas de brócoli\n• 1 diente de ajo\n• 1 cucharada de aceite de canola\n• 1 pizca de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Adoba el lomo con ajo, pimienta y la sal.\n2. Ásalo en la plancha con el aceite hasta que esté bien cocido por dentro.\n3. En la misma plancha dora las rodajas de piña 2 minutos por lado.\n4. Sirve con el arroz integral y el brócoli al vapor.\n\n💡 El lomo es el corte más magro del cerdo; evita la costilla y la tocineta."
+    "texto": "🍽️ *Receta del día: Lomo de cerdo con piña asada, arroz y brócoli*\nAlmuerzo · 30 min · 2 porciones\n\n*Por porción:* 535 kcal · proteína 40 g · carbohidratos 65 g · grasa 13 g · fibra 7 g · sodio 509 mg\nCubre cerca del 49 % de tu proteína del día.\n\n*Ingredientes*\n• 2 medallones de lomo de cerdo (crudo)\n• 2 rodajas de piña\n• 2 tazas de arroz integral cocido\n• 2 tazas de brócoli\n• 1 diente de ajo\n• 1 cucharada de aceite de canola\n• 1 pizca de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Adoba el lomo con ajo, pimienta y la sal.\n2. Ásalo en la plancha con el aceite hasta que esté bien cocido por dentro.\n3. En la misma plancha dora las rodajas de piña 2 minutos por lado.\n4. Sirve con el arroz integral y el brócoli al vapor.\n\n💡 El lomo es el corte más magro del cerdo; evita la costilla y la tocineta."
    },
    {
     "dia": 5,
     "receta_id": "RCT-MER-013",
-    "texto": "🍽️ *Receta del día: Edamame con limón*\nMerienda · 8 min · 1 porciones\n\n*Por porción:* 172 kcal · proteína 17 g · carbohidratos 13 g · grasa 7 g · fibra 8 g · sodio 202 mg\nCubre cerca del 21 % de su proteína del día.\n\n*Ingredientes*\n• 1 taza de edamame (fríjol de soya verde)\n• 1/2 limón\n• una pizca de sal\n\n*Preparación*\n1. Cocine el edamame cinco minutos en agua hirviendo y escúrralo.\n2. Exprima el limón encima con una pizca de sal.\n\n💡 Es una merienda vegetal con proteína; se consigue congelado en los supermercados."
+    "texto": "🍽️ *Receta del día: Edamame con limón*\nMerienda · 8 min · 1 porciones\n\n*Por porción:* 172 kcal · proteína 17 g · carbohidratos 13 g · grasa 7 g · fibra 8 g · sodio 202 mg\nCubre cerca del 21 % de tu proteína del día.\n\n*Ingredientes*\n• 1 taza de edamame (fríjol de soya verde)\n• 1/2 limón\n• una pizca de sal\n\n*Preparación*\n1. Cocina el edamame cinco minutos en agua hirviendo y escúrrelo.\n2. Exprime el limón encima con una pizca de sal.\n\n💡 Es una merienda vegetal con proteína; se consigue congelado en los supermercados."
    },
    {
     "dia": 6,
     "receta_id": "RCT-CEN-036",
-    "texto": "🍽️ *Receta del día: Ensalada tibia de lenteja con huevo*\nCena · 15 min · 2 porciones\n\n*Por porción:* 370 kcal · proteína 23 g · carbohidratos 42 g · grasa 13 g · fibra 16 g · sodio 114 mg\nCubre cerca del 29 % de su proteína del día.\n\n*Ingredientes*\n• 2 tazas de lenteja cocida\n• 2 huevos (huevo entero)\n• 1 tomate grande (tomate chonto)\n• un cuarto de cebolla (cebolla cabezona)\n• 2 puñados de rúgula\n• medio pimentón (pimentón rojo)\n• 1 cucharada de aceite de oliva\n• 2 cucharaditas de vinagre\n• 1 cucharadita de mostaza\n\n*Preparación*\n1. Cocine los huevos 8 minutos y pártalos en cuartos.\n2. Caliente la lenteja un par de minutos.\n3. Mezcle el aceite, el vinagre y la mostaza para el aliño.\n4. Combine la lenteja con las verduras, el aliño y los huevos encima.\n\n💡 Sin sal añadida: la mostaza y el vinagre ya le dan un sabor intenso."
+    "texto": "🍽️ *Receta del día: Ensalada tibia de lenteja con huevo*\nCena · 15 min · 2 porciones\n\n*Por porción:* 370 kcal · proteína 23 g · carbohidratos 42 g · grasa 13 g · fibra 16 g · sodio 114 mg\nCubre cerca del 29 % de tu proteína del día.\n\n*Ingredientes*\n• 2 tazas de lenteja cocida\n• 2 huevos (huevo entero)\n• 1 tomate grande (tomate chonto)\n• un cuarto de cebolla (cebolla cabezona)\n• 2 puñados de rúgula\n• medio pimentón (pimentón rojo)\n• 1 cucharada de aceite de oliva\n• 2 cucharaditas de vinagre\n• 1 cucharadita de mostaza\n\n*Preparación*\n1. Cocina los huevos 8 minutos y pártelos en cuartos.\n2. Calienta la lenteja un par de minutos.\n3. Mezcla el aceite, el vinagre y la mostaza para el aliño.\n4. Combina la lenteja con las verduras, el aliño y los huevos encima.\n\n💡 Sin sal añadida: la mostaza y el vinagre ya le dan un sabor intenso."
    },
    {
     "dia": 7,
     "receta_id": "RCT-DES-013",
-    "texto": "🍽️ *Receta del día: Hígado encebollado con arepa y guayaba*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 389 kcal · proteína 26 g · carbohidratos 50 g · grasa 10 g · fibra 9 g · sodio 548 mg\nCubre cerca del 33 % de su proteína del día.\n\n*Ingredientes*\n• 1 filete pequeño de hígado de res (crudo)\n• 1/2 cebolla (cebolla cabezona)\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• 1 arepa (arepa de maíz blanco (sin sal))\n• 1 guayaba grande\n• una pizca de sal\n\n*Preparación*\n1. Corte el hígado en tiras y dórelo rápido en el aceite caliente.\n2. Agregue la cebolla en plumas y el tomate, y cocine tres minutos más.\n3. Sirva con la arepa asada y la guayaba en trozos.\n\n💡 No cocine de más el hígado: queda duro; la guayaba ayuda a aprovechar su hierro."
+    "texto": "🍽️ *Receta del día: Hígado encebollado con arepa y guayaba*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 389 kcal · proteína 26 g · carbohidratos 50 g · grasa 10 g · fibra 9 g · sodio 548 mg\nCubre cerca del 33 % de tu proteína del día.\n\n*Ingredientes*\n• 1 filete pequeño de hígado de res (crudo)\n• 1/2 cebolla (cebolla cabezona)\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• 1 arepa (arepa de maíz blanco (sin sal))\n• 1 guayaba grande\n• una pizca de sal\n\n*Preparación*\n1. Corta el hígado en tiras y dóralo rápido en el aceite caliente.\n2. Agrega la cebolla en plumas y el tomate, y cocina tres minutos más.\n3. Sirve con la arepa asada y la guayaba en trozos.\n\n💡 No cocines de más el hígado: queda duro; la guayaba ayuda a aprovechar su hierro."
    }
   ]
  },
@@ -2176,7 +2176,7 @@
     "frase_permitida": "Tus reservas de hierro, el tamaño de tus glóbulos rojos y su variación cuentan la misma historia: falta hierro.",
     "fuerza": "guía (OMS 2020)",
     "hallazgo_id": "H-8E7AE7-01",
-    "texto_paciente": "Sus resultados de hierro cuentan la misma historia"
+    "texto_paciente": "Tus resultados de hierro cuentan la misma historia"
    },
    {
     "tipo": "condicion",
@@ -2189,7 +2189,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8E7AE7-02",
-    "texto_paciente": "Sus anticuerpos antinucleares (ANA) salieron positivos"
+    "texto_paciente": "Tus anticuerpos antinucleares (ANA) salieron positivos"
    },
    {
     "tipo": "condicion",
@@ -2202,7 +2202,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8E7AE7-03",
-    "texto_paciente": "Su lipoproteína(a) está alta"
+    "texto_paciente": "Tu lipoproteína(a) está alta"
    },
    {
     "tipo": "condicion",
@@ -2221,7 +2221,7 @@
      }
     ],
     "hallazgo_id": "H-8E7AE7-04",
-    "texto_paciente": "Su TSH está un poco alta, con la hormona tiroidea normal"
+    "texto_paciente": "Tu TSH está un poco alta, con la hormona tiroidea normal"
    },
    {
     "tipo": "condicion",
@@ -2234,7 +2234,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8E7AE7-05",
-    "texto_paciente": "Su colesterol está por encima del valor de tamizaje"
+    "texto_paciente": "Tu colesterol está por encima del valor de tamizaje"
    },
    {
     "tipo": "condicion",
@@ -2246,7 +2246,7 @@
     "nota": null,
     "fuerza": "guia",
     "patrones": [],
-    "texto_paciente": "El resultado de sus pruebas de hepatitis B"
+    "texto_paciente": "El resultado de tus pruebas de hepatitis B"
    },
    {
     "tipo": "condicion",
@@ -2259,7 +2259,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8E7AE7-07",
-    "texto_paciente": "Su vitamina D está fuera del rango"
+    "texto_paciente": "Tu vitamina D está fuera del rango"
    }
   ],
   "condiciones": {
@@ -4068,11 +4068,11 @@
    "osmolality"
   ],
   "que_conviene_confirmar": [
-   "Su colesterol está por encima del valor de tamizaje: coincidencia moderada, confirmar con una segunda medición."
+   "Tu colesterol está por encima del valor de tamizaje: coincidencia moderada, confirmar con una segunda medición."
   ],
   "preguntas_para_el_profesional": [
-   "¿Conviene confirmar o descartar «Sus resultados de hierro cuentan la misma historia» (REL-013) y en qué plazo?",
-   "¿Conviene confirmar o descartar «Sus anticuerpos antinucleares (ANA) salieron positivos» (COND-M6-RE-A01) y en qué plazo?"
+   "¿Conviene confirmar o descartar «Tus resultados de hierro cuentan la misma historia» (REL-013) y en qué plazo?",
+   "¿Conviene confirmar o descartar «Tus anticuerpos antinucleares (ANA) salieron positivos» (COND-M6-RE-A01) y en qué plazo?"
   ],
   "restricciones_nutricionales": {
    "exigir": [

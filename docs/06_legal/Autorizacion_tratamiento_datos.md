@@ -1,6 +1,6 @@
 # Autorización para el tratamiento de datos personales (texto de la aplicación)
 
-> **BORRADOR del 20 de octubre de 2026, para revisión de un abogado.** Este texto aparece al crear la cuenta, justo después del pago. Versión: `AUT-2026-10-v1`. La aplicación guarda la versión, la fecha y la hora de cada aceptación.
+> **BORRADOR del 20 de octubre de 2026 (texto para el paciente en tú desde el 21 de octubre), para revisión de un abogado.** Este texto aparece al crear la cuenta, justo después del pago. Versión: `AUT-2026-10-v1`. La aplicación guarda la versión, la fecha y la hora de cada aceptación.
 
 ---
 

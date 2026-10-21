@@ -19,12 +19,12 @@
     - {alimento: pan_integral, gramos: 80, medida: "2 tajadas gruesas"}
     - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
   pasos:
-    - "Cocine la pechuga en el caldo durante 15 minutos y desméchela."
-    - "Sofría la cebolla y el ajo en el aceite."
-    - "Agregue la ahuyama y el caldo, y cocine hasta que ablande."
-    - "Licúe, sazone con la sal y sirva con el pollo encima y el pan tostado."
+    - "Cocina la pechuga en el caldo durante 15 minutos y desméchala."
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega la ahuyama y el caldo, y cocina hasta que ablande."
+    - "Licúa, sazona con la sal y sirve con el pollo encima y el pan tostado."
   etiquetas: [colombiana, sin_lactosa, economica]
-  consejo: "Cena dos a tres horas antes de acostarse para dormir más liviano."
+  consejo: "Cena dos a tres horas antes de acostarte para dormir más liviano."
 
 - id: RCT-CEN-002
   nombre: "Crema de espinaca con huevo y tostadas integrales"
@@ -43,10 +43,10 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla larga en el aceite."
-    - "Agregue la papa, el agua y la espinaca, y cocine 5 minutos."
-    - "Licúe con la leche, caliente otra vez y sazone."
-    - "Cocine los huevos en agua 8 minutos y sírvalos partidos sobre la crema, con el pan tostado."
+    - "Sofríe la cebolla larga en el aceite."
+    - "Agrega la papa, el agua y la espinaca, y cocina 5 minutos."
+    - "Licúa con la leche, calienta otra vez y sazona."
+    - "Cocina los huevos en agua 8 minutos y sírvelos partidos sobre la crema, con el pan tostado."
   etiquetas: [vegetariano, colombiana, economica]
   consejo: "La espinaca aporta hierro; un poco de limón en la crema ayuda a aprovecharlo."
 
@@ -67,12 +67,12 @@
     - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
   pasos:
-    - "Sofría la cebolla y el ajo en el aceite."
-    - "Agregue el brócoli, la papa y el agua, y cocine 8 minutos."
-    - "Licúe con la leche y caliente sin dejar hervir."
-    - "Sirva con el queso en cubos y el pan tostado."
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega el brócoli, la papa y el agua, y cocina 8 minutos."
+    - "Licúa con la leche y calienta sin dejar hervir."
+    - "Sirve con el queso en cubos y el pan tostado."
   etiquetas: [vegetariano, colombiana]
-  consejo: "No le agregue sal: el queso campesino ya aporta la suficiente."
+  consejo: "No le agregues sal: el queso campesino ya aporta la suficiente."
 
 - id: RCT-CEN-004
   nombre: "Omelette de champiñones y espinaca con arepa"
@@ -90,12 +90,12 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Saltee los champiñones en el aceite hasta que suelten el agua."
-    - "Agregue la espinaca y deje que se marchite."
-    - "Bata los huevos y la clara con la sal y viértalos en la sartén."
-    - "Doble el omelette cuando cuaje y sírvalo con la arepa asada y el tomate en rodajas."
+    - "Saltea los champiñones en el aceite hasta que suelten el agua."
+    - "Agrega la espinaca y deja que se marchite."
+    - "Bate los huevos y la clara con la sal y viértelos en la sartén."
+    - "Dobla el omelette cuando cuaje y sírvelo con la arepa asada y el tomate en rodajas."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, rapida, colombiana]
-  consejo: "Una cena con proteína y verdura le ayuda a no buscar dulces en la noche."
+  consejo: "Una cena con proteína y verdura te ayuda a no buscar dulces en la noche."
 
 - id: RCT-CEN-005
   nombre: "Omelette de claras con pimentón y queso, con pan integral"
@@ -113,12 +113,12 @@
     - {alimento: aguacate, gramos: 50, medida: "un cuarto de aguacate"}
     - {alimento: aceite_canola, gramos: 4, medida: "1 cucharadita rasa"}
   pasos:
-    - "Saltee el pimentón y la cebolla en el aceite por 3 minutos."
-    - "Bata las claras con el huevo y viértalas sobre las verduras."
-    - "Ponga el queso encima, tape y deje cuajar a fuego bajo."
-    - "Sirva con el pan tostado y el aguacate."
+    - "Saltea el pimentón y la cebolla en el aceite por 3 minutos."
+    - "Bate las claras con el huevo y viértelas sobre las verduras."
+    - "Pon el queso encima, tapa y deja cuajar a fuego bajo."
+    - "Sirve con el pan tostado y el aguacate."
   etiquetas: [vegetariano, rapida]
-  consejo: "Las claras dan proteína con muy poca grasa; combínelas con un huevo entero para más sabor."
+  consejo: "Las claras dan proteína con muy poca grasa; combínalas con un huevo entero para más sabor."
 
 - id: RCT-CEN-006
   nombre: "Arepa rellena de pollo desmechado y aguacate"
@@ -136,9 +136,9 @@
     - {alimento: limon, gramos: 15, medida: "medio limón"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Cocine la pechuga en agua con cebolla y desméchela."
-    - "Mezcle el pollo con el aguacate en cubos, el tomate, el cilantro y el limón."
-    - "Ase las arepas, ábralas por un lado y rellénelas."
+    - "Cocina la pechuga en agua con cebolla y desméchala."
+    - "Mezcla el pollo con el aguacate en cubos, el tomate, el cilantro y el limón."
+    - "Asa las arepas, ábrelas por un lado y rellénalas."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
   consejo: "El aguacate reemplaza la mayonesa y aporta grasa buena para el corazón."
 
@@ -157,9 +157,9 @@
     - {alimento: limon, gramos: 10, medida: "un chorrito"}
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
   pasos:
-    - "Ase la arepa hasta que dore por ambos lados."
-    - "Ábrala y rellénela con el queso y el tomate en rodajas."
-    - "Sirva con lechuga y pepino aliñados con limón y aceite."
+    - "Asa la arepa hasta que dore por ambos lados."
+    - "Ábrela y rellénala con el queso y el tomate en rodajas."
+    - "Sirve con lechuga y pepino aliñados con limón y aceite."
   etiquetas: [vegetariano, sin_gluten, colombiana, rapida, economica]
   consejo: "Una cena rápida no tiene que ser de paquete: con tres ingredientes sale en diez minutos."
 
@@ -179,11 +179,11 @@
     - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Caliente el fríjol con la cebolla, el comino y un poco de agua, y aplástelo con un tenedor."
-    - "Ase las arepas y ábralas."
-    - "Rellene con el fríjol, el tomate picado, el aguacate y el cilantro."
+    - "Calienta el fríjol con la cebolla, el comino y un poco de agua, y aplástalo con un tenedor."
+    - "Asa las arepas y ábrelas."
+    - "Rellena con el fríjol, el tomate picado, el aguacate y el cilantro."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, colombiana, economica, rapida]
-  consejo: "El fríjol con el maíz de la arepa forma una proteína más completa, ideal si no come carne."
+  consejo: "El fríjol con el maíz de la arepa forma una proteína más completa, ideal si no comes carne."
 
 - id: RCT-CEN-009
   nombre: "Ensalada completa de atún, garbanzo y verduras"
@@ -201,11 +201,11 @@
     - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: limon, gramos: 20, medida: "1 limón"}
   pasos:
-    - "Escurra bien el atún y el garbanzo."
-    - "Pique la lechuga, el tomate, el pepino y la cebolla."
-    - "Mezcle todo y aliñe con el aceite y el limón."
+    - "Escurre bien el atún y el garbanzo."
+    - "Pica la lechuga, el tomate, el pepino y la cebolla."
+    - "Mezcla todo y aliña con el aceite y el limón."
   etiquetas: [sin_lactosa, sin_gluten, rapida, economica]
-  consejo: "El atún en lata ya trae sal; no le agregue más."
+  consejo: "El atún en lata ya trae sal; no le agregues más."
 
 - id: RCT-CEN-010
   nombre: "Ensalada de pollo a la plancha con quinua y aguacate"
@@ -225,12 +225,12 @@
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
     - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
   pasos:
-    - "Sazone el pollo con sal y pimienta, y áselo a la plancha 5 minutos por lado."
-    - "Córtelo en tiras."
-    - "Mezcle la lechuga, el tomate, la zanahoria y la quinua."
-    - "Ponga el pollo y el aguacate encima y aliñe con limón y aceite."
+    - "Sazona el pollo con sal y pimienta, y ásalo a la plancha 5 minutos por lado."
+    - "Córtalo en tiras."
+    - "Mezcla la lechuga, el tomate, la zanahoria y la quinua."
+    - "Pon el pollo y el aguacate encima y aliña con limón y aceite."
   etiquetas: [sin_lactosa, sin_gluten]
-  consejo: "Cocine la quinua para varios días y guárdela en la nevera: así la cena sale en minutos."
+  consejo: "Cocina la quinua para varios días y guárdala en la nevera: así la cena sale en minutos."
 
 - id: RCT-CEN-011
   nombre: "Tilapia a la plancha con verduras salteadas y papa criolla"
@@ -249,10 +249,10 @@
     - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
   pasos:
-    - "Marine la tilapia con limón, ajo y la mitad de la sal por 10 minutos."
-    - "Saltee las verduras en tiras con la mitad del aceite."
-    - "Ase la tilapia en la plancha con el resto del aceite, 3 minutos por lado."
-    - "Sirva con las papas criollas cocidas."
+    - "Marina la tilapia con limón, ajo y la mitad de la sal por 10 minutos."
+    - "Saltea las verduras en tiras con la mitad del aceite."
+    - "Asa la tilapia en la plancha con el resto del aceite, 3 minutos por lado."
+    - "Sirve con las papas criollas cocidas."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
   consejo: "El pescado blanco es liviano y se digiere fácil, buena opción para la noche."
 
@@ -273,10 +273,10 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Caliente el horno a 200 grados."
-    - "Ponga la trucha en un refractario con ajo, perejil, limón y la sal."
-    - "Hornee de 12 a 15 minutos, hasta que la carne se separe fácil."
-    - "Sirva con el arroz integral y la ensalada aliñada con el aceite."
+    - "Calienta el horno a 200 grados."
+    - "Pon la trucha en un refractario con ajo, perejil, limón y la sal."
+    - "Hornea de 12 a 15 minutos, hasta que la carne se separe fácil."
+    - "Sirve con el arroz integral y la ensalada aliñada con el aceite."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
   consejo: "La trucha es un pescado de agua dulce de Colombia y aporta grasas buenas para el corazón."
 
@@ -295,12 +295,12 @@
     - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Cocine el brócoli al vapor por 5 minutos."
-    - "Sazone el salmón con sal, pimienta y ajo."
-    - "Áselo en una sartén caliente sin aceite, empezando por la piel, 4 minutos por lado."
-    - "Sirva con la batata en rodajas y el brócoli con limón."
+    - "Cocina el brócoli al vapor por 5 minutos."
+    - "Sazona el salmón con sal, pimienta y ajo."
+    - "Ásalo en una sartén caliente sin aceite, empezando por la piel, 4 minutos por lado."
+    - "Sirve con la batata en rodajas y el brócoli con limón."
   etiquetas: [sin_lactosa, sin_gluten]
-  consejo: "El salmón ya trae su propia grasa: no necesita aceite para asarlo."
+  consejo: "El salmón ya trae su propia grasa: no necesitas aceite para asarlo."
 
 - id: RCT-CEN-014
   nombre: "Merluza en salsa de tomate con arroz integral"
@@ -319,10 +319,10 @@
     - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla, el pimentón y el ajo en el aceite."
-    - "Agregue la salsa de tomate y el orégano, y cocine 5 minutos."
-    - "Ponga los filetes en la salsa, sazone, tape y cocine 8 minutos."
-    - "Sirva con el arroz integral."
+    - "Sofríe la cebolla, el pimentón y el ajo en el aceite."
+    - "Agrega la salsa de tomate y el orégano, y cocina 5 minutos."
+    - "Pon los filetes en la salsa, sazona, tapa y cocina 8 minutos."
+    - "Sirve con el arroz integral."
   etiquetas: [sin_lactosa, sin_gluten]
   consejo: "Las hierbas como el orégano dan sabor y ayudan a usar menos sal."
 
@@ -343,12 +343,12 @@
     - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
   pasos:
-    - "Caliente el horno a 200 grados."
-    - "Corte el pollo y las verduras en trozos parecidos."
-    - "Mezcle todo con el aceite, el ajo, el orégano y la sal en una bandeja."
-    - "Hornee 30 minutos, moviendo a la mitad del tiempo."
+    - "Calienta el horno a 200 grados."
+    - "Corta el pollo y las verduras en trozos parecidos."
+    - "Mezcla todo con el aceite, el ajo, el orégano y la sal en una bandeja."
+    - "Hornea 30 minutos, moviendo a la mitad del tiempo."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
-  consejo: "Hornee una bandeja grande y guarde una porción para el almuerzo del día siguiente."
+  consejo: "Hornea una bandeja grande y guarda una porción para el almuerzo del día siguiente."
 
 - id: RCT-CEN-016
   nombre: "Tortillas de maíz con pollo, repollo morado y aguacate"
@@ -368,10 +368,10 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Corte el pollo en tiras y sazónelo con comino y sal."
-    - "Saltéelo en el aceite hasta que dore."
-    - "Caliente las tortillas en una sartén seca."
-    - "Rellénelas con el pollo, el repollo, el tomate, el aguacate, el cilantro y limón."
+    - "Corta el pollo en tiras y sazónalo con comino y sal."
+    - "Saltéalo en el aceite hasta que dore."
+    - "Calienta las tortillas en una sartén seca."
+    - "Rellénalas con el pollo, el repollo, el tomate, el aguacate, el cilantro y limón."
   etiquetas: [sin_lactosa, sin_gluten]
   consejo: "El repollo morado le da color y fibra; mientras más colores en el plato, mejor."
 
@@ -391,10 +391,10 @@
     - {alimento: lechuga, gramos: 60, medida: "1 taza"}
     - {alimento: limon, gramos: 15, medida: "medio limón"}
   pasos:
-    - "Pique el tomate, la cebolla y el cilantro, y mézclelos con el limón."
-    - "Caliente el fríjol y aplástelo un poco."
-    - "Caliente las tortillas y úntelas con el fríjol."
-    - "Agregue la lechuga, el pico de gallo y el queso desmenuzado."
+    - "Pica el tomate, la cebolla y el cilantro, y mézclalos con el limón."
+    - "Calienta el fríjol y aplástalo un poco."
+    - "Calienta las tortillas y úntalas con el fríjol."
+    - "Agrega la lechuga, el pico de gallo y el queso desmenuzado."
   etiquetas: [vegetariano, sin_gluten, rapida, economica]
   consejo: "Sin sal añadida: el queso y el limón dan todo el sabor que necesita."
 
@@ -415,10 +415,10 @@
     - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
   pasos:
-    - "Sofría la cebolla y el ajo en el aceite."
-    - "Agregue la carne y cocine hasta que pierda el color rosado."
-    - "Sume el pimentón, la zanahoria y la salsa de soya, y cocine 3 minutos."
-    - "Sirva la mezcla con el arroz dentro de las hojas de lechuga."
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega la carne y cocina hasta que pierda el color rosado."
+    - "Suma el pimentón, la zanahoria y la salsa de soya, y cocina 3 minutos."
+    - "Sirve la mezcla con el arroz dentro de las hojas de lechuga."
   etiquetas: [sin_lactosa, rapida]
   consejo: "La salsa de soya ya es salada; con ella no hace falta agregar sal."
 
@@ -441,12 +441,12 @@
     - {alimento: comino, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla, el ajo y el tomate en el aceite."
-    - "Agregue la zanahoria, el apio, la papa en cubos y el agua."
-    - "Cocine 10 minutos y sume las lentejas y el comino."
-    - "Deje hervir 5 minutos más y sazone."
+    - "Sofríe la cebolla, el ajo y el tomate en el aceite."
+    - "Agrega la zanahoria, el apio, la papa en cubos y el agua."
+    - "Cocina 10 minutos y suma las lentejas y el comino."
+    - "Deja hervir 5 minutos más y sazona."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, colombiana, economica]
-  consejo: "Las lentejas dan proteína y fibra a bajo costo; acompáñelas con una fruta cítrica para el hierro."
+  consejo: "Las lentejas dan proteína y fibra a bajo costo; acompáñalas con una fruta cítrica para el hierro."
 
 - id: RCT-CEN-020
   nombre: "Sopa de garbanzo con espinaca"
@@ -466,12 +466,12 @@
     - {alimento: comino, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla, el ajo y el tomate en el aceite."
-    - "Agregue la zanahoria, el garbanzo, el comino y el agua, y cocine 10 minutos."
-    - "Sume la espinaca al final y deje 2 minutos."
-    - "Sazone y sirva caliente."
+    - "Sofríe la cebolla, el ajo y el tomate en el aceite."
+    - "Agrega la zanahoria, el garbanzo, el comino y el agua, y cocina 10 minutos."
+    - "Suma la espinaca al final y deja 2 minutos."
+    - "Sazona y sirve caliente."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, economica]
-  consejo: "Una sopa con leguminosa en la noche llena sin dejarlo pesado."
+  consejo: "Una sopa con leguminosa en la noche llena sin dejarte pesado."
 
 - id: RCT-CEN-021
   nombre: "Sopa de arveja seca con zanahoria y cilantro"
@@ -490,10 +490,10 @@
     - {alimento: aceite_canola, gramos: 8, medida: "2 cucharaditas rasas"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla larga y el ajo en el aceite."
-    - "Agregue la zanahoria y la papa en cubos con el agua."
-    - "Cocine 10 minutos, sume la arveja y licúe la mitad para espesar."
-    - "Sazone y termine con el cilantro."
+    - "Sofríe la cebolla larga y el ajo en el aceite."
+    - "Agrega la zanahoria y la papa en cubos con el agua."
+    - "Cocina 10 minutos, suma la arveja y licúa la mitad para espesar."
+    - "Sazona y termina con el cilantro."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, colombiana, economica]
   consejo: "Licuar parte de la sopa la hace cremosa sin necesidad de crema de leche."
 
@@ -514,10 +514,10 @@
     - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: limon, gramos: 15, medida: "medio limón"}
   pasos:
-    - "Corte el tofu en cubos y dórelo en la mitad del aceite."
-    - "Saltee el ajo y las verduras en el resto del aceite por 4 minutos."
-    - "Sirva la quinua en el fondo del plato con las verduras y el tofu encima."
-    - "Termine con limón y ajonjolí."
+    - "Corta el tofu en cubos y dóralo en la mitad del aceite."
+    - "Saltea el ajo y las verduras en el resto del aceite por 4 minutos."
+    - "Sirve la quinua en el fondo del plato con las verduras y el tofu encima."
+    - "Termina con limón y ajonjolí."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten]
   consejo: "Sin sal añadida: el limón y el ajonjolí tostado dan sabor de sobra."
 
@@ -539,10 +539,10 @@
     - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Saltee los camarones con el ajo y la mitad del aceite, 2 minutos por lado."
-    - "Pique el mango, el pepino, la cebolla y el cilantro."
-    - "Arme el bowl con la quinua, la ensalada y los camarones."
-    - "Aliñe con el limón, el resto del aceite y la sal."
+    - "Saltea los camarones con el ajo y la mitad del aceite, 2 minutos por lado."
+    - "Pica el mango, el pepino, la cebolla y el cilantro."
+    - "Arma el bowl con la quinua, la ensalada y los camarones."
+    - "Aliña con el limón, el resto del aceite y la sal."
   etiquetas: [sin_lactosa, sin_gluten, rapida]
   consejo: "Los camarones se cocinan en minutos; si los pasas de tiempo se ponen duros."
 
@@ -563,9 +563,9 @@
     - {alimento: comino, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Caliente la lenteja con el comino y la sal."
-    - "Mezcle el repollo, la zanahoria y el tomate con el limón."
-    - "Sirva el arroz, la lenteja, la ensalada y el aguacate en un mismo plato hondo."
+    - "Calienta la lenteja con el comino y la sal."
+    - "Mezcla el repollo, la zanahoria y el tomate con el limón."
+    - "Sirve el arroz, la lenteja, la ensalada y el aguacate en un mismo plato hondo."
   etiquetas: [vegano, vegetariano, sin_lactosa, sin_gluten, economica, rapida]
   consejo: "El arroz con lenteja juntos dan una proteína completa sin necesidad de carne."
 
@@ -587,12 +587,12 @@
     - {alimento: agua, gramos: 800, medida: "3 tazas y media"}
     - {alimento: sal, gramos: 2, medida: "1 pizca grande"}
   pasos:
-    - "Hierva el pollo en el agua con la cebolla y el ajo por 15 minutos."
-    - "Agregue la mazorca, la zanahoria y la habichuela, y cocine 10 minutos."
-    - "Sume la papa en cubos, sazone y deje 5 minutos más."
-    - "Sirva con el pollo desmechado y el cilantro."
+    - "Hierve el pollo en el agua con la cebolla y el ajo por 15 minutos."
+    - "Agrega la mazorca, la zanahoria y la habichuela, y cocina 10 minutos."
+    - "Suma la papa en cubos, sazona y deja 5 minutos más."
+    - "Sirve con el pollo desmechado y el cilantro."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, economica]
-  consejo: "Una sopa caliente en las noches frías de Bogotá ayuda a relajarse antes de dormir."
+  consejo: "Una sopa caliente en las noches frías de Bogotá ayuda a relajarte antes de dormir."
 
 - id: RCT-CEN-026
   nombre: "Pechuga de pavo a la plancha con puré de ahuyama"
@@ -611,10 +611,10 @@
     - {alimento: canela, gramos: 0.5, medida: "1 pizca"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Cocine la ahuyama y la papa en agua hasta que ablanden."
-    - "Hágalas puré con la leche y la canela."
-    - "Sazone el pavo con ajo y sal, y áselo con el aceite 4 minutos por lado."
-    - "Sirva con el puré y la espinaca salteada un minuto."
+    - "Cocina la ahuyama y la papa en agua hasta que ablanden."
+    - "Hazlas puré con la leche y la canela."
+    - "Sazona el pavo con ajo y sal, y ásalo con el aceite 4 minutos por lado."
+    - "Sirve con el puré y la espinaca salteada un minuto."
   etiquetas: [sin_gluten]
   consejo: "Una pizca de canela realza el dulce natural de la ahuyama sin agregar azúcar."
 
@@ -636,12 +636,12 @@
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
     - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
   pasos:
-    - "Sazone el lomo con sal y pimienta."
-    - "Áselo a la plancha con la mitad del aceite, 4 minutos por lado."
-    - "Ase la piña en la misma plancha hasta que dore."
-    - "Sirva con la papa y la ensalada aliñada con limón y el resto del aceite."
+    - "Sazona el lomo con sal y pimienta."
+    - "Ásalo a la plancha con la mitad del aceite, 4 minutos por lado."
+    - "Asa la piña en la misma plancha hasta que dore."
+    - "Sirve con la papa y la ensalada aliñada con limón y el resto del aceite."
   etiquetas: [sin_lactosa, sin_gluten]
-  consejo: "Retire la grasa visible del cerdo antes de cocinarlo para bajar la grasa saturada."
+  consejo: "Retira la grasa visible del cerdo antes de cocinarlo para bajar la grasa saturada."
 
 - id: RCT-CEN-028
   nombre: "Carne de res salteada con habichuela y arroz integral"
@@ -659,10 +659,10 @@
     - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
   pasos:
-    - "Saltee la carne en la mitad del aceite a fuego alto por 3 minutos y retírela."
-    - "En el resto del aceite saltee la cebolla, el ajo, el pimentón y la habichuela."
-    - "Devuelva la carne, agregue la salsa de soya y mezcle 1 minuto."
-    - "Sirva con el arroz integral."
+    - "Saltea la carne en la mitad del aceite a fuego alto por 3 minutos y retírala."
+    - "En el resto del aceite saltea la cebolla, el ajo, el pimentón y la habichuela."
+    - "Devuelve la carne, agrega la salsa de soya y mezcla 1 minuto."
+    - "Sirve con el arroz integral."
   etiquetas: [sin_lactosa]
   consejo: "Cortar la carne en tiras delgadas hace que se cocine rápido y quede tierna."
 
@@ -685,12 +685,12 @@
     - {alimento: pepino, gramos: 80, medida: "medio pepino pequeño"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Aplaste las lentejas y mézclelas con la avena, la zanahoria, la cebolla, el ajo, el comino y la sal."
-    - "Forme 4 hamburguesas y déjelas reposar 10 minutos."
-    - "Dórelas en el aceite 4 minutos por lado a fuego medio."
-    - "Sirva con la ensalada de lechuga, tomate y pepino."
+    - "Aplasta las lentejas y mézclalas con la avena, la zanahoria, la cebolla, el ajo, el comino y la sal."
+    - "Forma 4 hamburguesas y déjalas reposar 10 minutos."
+    - "Dóralas en el aceite 4 minutos por lado a fuego medio."
+    - "Sirve con la ensalada de lechuga, tomate y pepino."
   etiquetas: [vegano, vegetariano, sin_lactosa, economica]
-  consejo: "Haga el doble y congela las hamburguesas crudas para otra noche."
+  consejo: "Haz el doble y congela las hamburguesas crudas para otra noche."
 
 - id: RCT-CEN-030
   nombre: "Tortilla de papa y cebolla con ensalada"
@@ -707,12 +707,12 @@
     - {alimento: tomate, gramos: 120, medida: "1 tomate grande"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Corte la papa cocida en rodajas finas y sofría la cebolla en el aceite."
-    - "Bata los huevos con la sal y mézclelos con la papa y la cebolla."
-    - "Cocine a fuego bajo, tapado, por 8 minutos."
-    - "Dele vuelta con ayuda de un plato, cocine 3 minutos más y sirva con la ensalada."
+    - "Corta la papa cocida en rodajas finas y sofríe la cebolla en el aceite."
+    - "Bate los huevos con la sal y mézclalos con la papa y la cebolla."
+    - "Cocina a fuego bajo, tapado, por 8 minutos."
+    - "Dale vuelta con ayuda de un plato, cocina 3 minutos más y sirve con la ensalada."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, economica]
-  consejo: "Usar papa ya cocida evita freírla y reduzca mucho el aceite."
+  consejo: "Usar papa ya cocida evita freírla y reduce mucho el aceite."
 
 - id: RCT-CEN-031
   nombre: "Berenjena rellena de carne molida y tomate"
@@ -732,10 +732,10 @@
     - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Parte las berenjenas a lo largo, saque la pulpa con una cuchara y píquela."
-    - "Sofría la cebolla, el ajo, la carne y la pulpa en el aceite."
-    - "Agregue la salsa de tomate, el orégano y la sal, y rellene las berenjenas."
-    - "Cubra con el queso y hornee 25 minutos a 190 grados; sirva con el pan."
+    - "Parte las berenjenas a lo largo, saca la pulpa con una cuchara y pícala."
+    - "Sofríe la cebolla, el ajo, la carne y la pulpa en el aceite."
+    - "Agrega la salsa de tomate, el orégano y la sal, y rellena las berenjenas."
+    - "Cubre con el queso y hornea 25 minutos a 190 grados; sirve con el pan."
   etiquetas: []
   consejo: "La berenjena da volumen y fibra con muy pocas calorías."
 
@@ -756,10 +756,10 @@
     - {alimento: aceite_oliva, gramos: 8, medida: "2 cucharaditas rasas"}
     - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Parte los calabacines a lo largo y vacíelos con una cuchara."
-    - "Sofría la cebolla, los champiñones, el tomate y la pulpa picada en el aceite."
-    - "Mezcle con la quinua, el huevo batido, el orégano y la mitad del queso."
-    - "Rellene, ponga el resto del queso encima y hornee 20 minutos a 190 grados."
+    - "Parte los calabacines a lo largo y vacíalos con una cuchara."
+    - "Sofríe la cebolla, los champiñones, el tomate y la pulpa picada en el aceite."
+    - "Mezcla con la quinua, el huevo batido, el orégano y la mitad del queso."
+    - "Rellena, pon el resto del queso encima y hornea 20 minutos a 190 grados."
   etiquetas: [vegetariano, sin_gluten]
   consejo: "No necesita sal: el queso campesino aporta la suficiente."
 
@@ -780,10 +780,10 @@
     - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla y el ajo en la mitad del aceite."
-    - "Agregue la coliflor, la papa y el caldo, y cocine 10 minutos."
-    - "Licúe hasta que quede suave."
-    - "Ase el pollo con sal, pimienta y el resto del aceite, y sírvalo en tiras sobre la crema."
+    - "Sofríe la cebolla y el ajo en la mitad del aceite."
+    - "Agrega la coliflor, la papa y el caldo, y cocina 10 minutos."
+    - "Licúa hasta que quede suave."
+    - "Asa el pollo con sal, pimienta y el resto del aceite, y sírvelo en tiras sobre la crema."
   etiquetas: [sin_lactosa, sin_gluten]
   consejo: "La papa le da cremosidad a la crema sin necesidad de crema de leche."
 
@@ -805,12 +805,12 @@
     - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Saltee los champiñones, la cebolla y el ajo en el aceite hasta que doren."
-    - "Agregue la papa y el agua, y cocine 5 minutos."
-    - "Licúe con la bebida de almendra y sazone."
-    - "Sirva con huevo duro picado y el pan tostado."
+    - "Saltea los champiñones, la cebolla y el ajo en el aceite hasta que doren."
+    - "Agrega la papa y el agua, y cocina 5 minutos."
+    - "Licúa con la bebida de almendra y sazona."
+    - "Sirve con huevo duro picado y el pan tostado."
   etiquetas: [vegetariano, sin_lactosa]
-  consejo: "La bebida de almendra sin azúcar reemplaza la leche si la lactosa le cae mal."
+  consejo: "La bebida de almendra sin azúcar reemplaza la leche si la lactosa te cae mal."
 
 - id: RCT-CEN-035
   nombre: "Pimentones rellenos de arroz integral y fríjol"
@@ -829,10 +829,10 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Corte la tapa de los pimentones y quíteles las semillas."
-    - "Sofría la cebolla y el tomate en el aceite, y mezcle con el arroz, el fríjol, el comino y la sal."
-    - "Rellene los pimentones y cubra con el queso."
-    - "Hornee 25 minutos a 190 grados."
+    - "Corta la tapa de los pimentones y quítales las semillas."
+    - "Sofríe la cebolla y el tomate en el aceite, y mezcla con el arroz, el fríjol, el comino y la sal."
+    - "Rellena los pimentones y cubre con el queso."
+    - "Hornea 25 minutos a 190 grados."
   etiquetas: [vegetariano, sin_gluten, colombiana]
   consejo: "El pimentón aporta vitamina C, que ayuda a aprovechar el hierro del fríjol."
 
@@ -853,10 +853,10 @@
     - {alimento: vinagre, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: mostaza, gramos: 5, medida: "1 cucharadita"}
   pasos:
-    - "Cocine los huevos 8 minutos y pártalos en cuartos."
-    - "Caliente la lenteja un par de minutos."
-    - "Mezcle el aceite, el vinagre y la mostaza para el aliño."
-    - "Combine la lenteja con las verduras, el aliño y los huevos encima."
+    - "Cocina los huevos 8 minutos y pártelos en cuartos."
+    - "Calienta la lenteja un par de minutos."
+    - "Mezcla el aceite, el vinagre y la mostaza para el aliño."
+    - "Combina la lenteja con las verduras, el aliño y los huevos encima."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, rapida, economica]
   consejo: "Sin sal añadida: la mostaza y el vinagre ya le dan un sabor intenso."
 
@@ -875,9 +875,9 @@
     - {alimento: limon, gramos: 20, medida: "1 limón"}
     - {alimento: cilantro, gramos: 5, medida: "1 cucharada picada"}
   pasos:
-    - "Caliente las sardinas con su salsa en una olla pequeña."
-    - "Mezcle el repollo, la zanahoria, la cebolla y el cilantro con el limón."
-    - "Ase las arepas y sirva todo junto."
+    - "Calienta las sardinas con su salsa en una olla pequeña."
+    - "Mezcla el repollo, la zanahoria, la cebolla y el cilantro con el limón."
+    - "Asa las arepas y sirve todo junto."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, rapida, economica]
   consejo: "Las sardinas en lata son económicas y aportan grasas buenas y calcio de sus espinas blandas."
 
@@ -896,11 +896,11 @@
     - {alimento: aceite_canola, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría el tomate y la cebolla larga picados en el aceite por 3 minutos."
-    - "Agregue los huevos batidos con la sal y revuelva a fuego bajo."
-    - "Sirva con las papas criollas cocidas y el aguacate en tajadas."
+    - "Sofríe el tomate y la cebolla larga picados en el aceite por 3 minutos."
+    - "Agrega los huevos batidos con la sal y revuelve a fuego bajo."
+    - "Sirve con las papas criollas cocidas y el aguacate en tajadas."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, colombiana, rapida, economica]
-  consejo: "Cocine los huevos a fuego bajo: quedan más suaves y no necesitan más aceite."
+  consejo: "Cocina los huevos a fuego bajo: quedan más suaves y no necesitan más aceite."
 
 - id: RCT-CEN-039
   nombre: "Ensalada tibia de atún, papa y habichuela"
@@ -919,12 +919,12 @@
     - {alimento: limon, gramos: 20, medida: "1 limón"}
     - {alimento: perejil, gramos: 5, medida: "1 cucharada picada"}
   pasos:
-    - "Cocine la habichuela y el huevo en agua por 8 minutos."
-    - "Corte la papa, el tomate y el huevo en trozos."
-    - "Mezcle todo con el atún escurrido, la cebolla y el perejil."
-    - "Aliñe con el aceite y el limón."
+    - "Cocina la habichuela y el huevo en agua por 8 minutos."
+    - "Corta la papa, el tomate y el huevo en trozos."
+    - "Mezcla todo con el atún escurrido, la cebolla y el perejil."
+    - "Aliña con el aceite y el limón."
   etiquetas: [sin_lactosa, sin_gluten, economica]
-  consejo: "Escoja atún en agua en vez de aceite: tiene menos grasa y el mismo sabor."
+  consejo: "Escoge atún en agua en vez de aceite: tiene menos grasa y el mismo sabor."
 
 - id: RCT-CEN-040
   nombre: "Tofu salteado con verduras y arroz integral"
@@ -943,10 +943,10 @@
     - {alimento: salsa_soya_baja_sodio, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
   pasos:
-    - "Seque el tofu con un paño, córtelo en cubos y dórelo en la mitad del aceite."
-    - "Saltee el ajo y las verduras en el resto del aceite a fuego alto."
-    - "Agregue el tofu y la salsa de soya, y mezcle 1 minuto."
-    - "Sirva sobre el arroz integral."
+    - "Seca el tofu con un paño, córtalo en cubos y dóralo en la mitad del aceite."
+    - "Saltea el ajo y las verduras en el resto del aceite a fuego alto."
+    - "Agrega el tofu y la salsa de soya, y mezcla 1 minuto."
+    - "Sirve sobre el arroz integral."
   etiquetas: [vegano, vegetariano, sin_lactosa]
   consejo: "Secar bien el tofu antes de dorarlo hace que quede crocante con poco aceite."
 
@@ -969,12 +969,12 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla y el ajo en el aceite, agregue el agua y las verduras en cubos."
-    - "Cocine 12 minutos y sume la quinua."
-    - "Rompa los huevos directo en la sopa y déjelos cuajar 4 minutos sin revolver."
-    - "Sazone y termine con el cilantro."
+    - "Sofríe la cebolla y el ajo en el aceite, agrega el agua y las verduras en cubos."
+    - "Cocina 12 minutos y suma la quinua."
+    - "Rompe los huevos directo en la sopa y déjalos cuajar 4 minutos sin revolver."
+    - "Sazona y termina con el cilantro."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, colombiana, economica]
-  consejo: "Si le despierta con hambre en la noche, una cena con proteína como esta ayuda."
+  consejo: "Si te despiertas con hambre en la noche, una cena con proteína como esta ayuda."
 
 - id: RCT-CEN-042
   nombre: "Ensalada de garbanzo, pepino y tomate con yogur griego"
@@ -994,10 +994,10 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Mezcle el yogur con el ajo rallado, el limón y la sal."
-    - "Pique el pepino, el tomate, la cebolla y el perejil."
-    - "Combine las verduras con el garbanzo y el aceite."
-    - "Sirva con la salsa de yogur por encima."
+    - "Mezcla el yogur con el ajo rallado, el limón y la sal."
+    - "Pica el pepino, el tomate, la cebolla y el perejil."
+    - "Combina las verduras con el garbanzo y el aceite."
+    - "Sirve con la salsa de yogur por encima."
   etiquetas: [vegetariano, sin_gluten, rapida]
   consejo: "El yogur griego natural da cremosidad y proteína, sin el azúcar de las salsas compradas."
 
@@ -1018,10 +1018,10 @@
     - {alimento: aceite_oliva, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Saltee el ajo en el aceite sin dejar que se queme."
-    - "Agregue el calabacín en tiras y el tomate picado, y cocine 3 minutos."
-    - "Sume los camarones y cocínelos 3 minutos."
-    - "Mezcle con la pasta, la sal, el limón y el perejil."
+    - "Saltea el ajo en el aceite sin dejar que se queme."
+    - "Agrega el calabacín en tiras y el tomate picado, y cocina 3 minutos."
+    - "Suma los camarones y cocínalos 3 minutos."
+    - "Mezcla con la pasta, la sal, el limón y el perejil."
   etiquetas: [sin_lactosa, rapida]
   consejo: "Más verdura y menos pasta en el plato: así la cena llena y queda liviana."
 
@@ -1043,10 +1043,10 @@
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
     - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
   pasos:
-    - "Dore el pollo en tiras con la mitad del aceite y retírelo."
-    - "Saltee la cebolla, el ajo y los champiñones en el resto del aceite."
-    - "Agregue 100 gramos de la bebida de almendra, devuelva el pollo y cocine 5 minutos."
-    - "Haga puré la papa con el resto de la bebida y sirva con el brócoli al vapor."
+    - "Dora el pollo en tiras con la mitad del aceite y retíralo."
+    - "Saltea la cebolla, el ajo y los champiñones en el resto del aceite."
+    - "Agrega 100 gramos de la bebida de almendra, devuelve el pollo y cocina 5 minutos."
+    - "Haz puré la papa con el resto de la bebida y sirve con el brócoli al vapor."
   etiquetas: [sin_lactosa, sin_gluten]
   consejo: "Una salsa con champiñones y bebida vegetal sustituye la crema de leche con mucha menos grasa saturada."
 
@@ -1066,11 +1066,11 @@
     - {alimento: aceite_canola, gramos: 10, medida: "2 cucharaditas"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla en aros y el tomate en el aceite hasta que estén blandos."
-    - "Agregue el hígado en tiras con la sal y cocine 3 minutos por lado."
-    - "Sirva con el arroz y la lechuga con limón."
+    - "Sofríe la cebolla en aros y el tomate en el aceite hasta que estén blandos."
+    - "Agrega el hígado en tiras con la sal y cocina 3 minutos por lado."
+    - "Sirve con el arroz y la lechuga con limón."
   etiquetas: [colombiana, sin_lactosa, sin_gluten, economica, rapida]
-  consejo: "El hígado es de las fuentes más ricas en hierro; no lo cocine de más para que no quede duro."
+  consejo: "El hígado es de las fuentes más ricas en hierro; no lo cocines de más para que no quede duro."
 
 - id: RCT-CEN-046
   nombre: "Muslos de pollo al horno con batata y brócoli"
@@ -1088,9 +1088,9 @@
     - {alimento: pimienta, gramos: 0.5, medida: "al gusto"}
     - {alimento: oregano_seco, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Caliente el horno a 200 grados."
-    - "Marine el pollo con ajo, limón, orégano y pimienta."
-    - "Hornéelo 25 minutos, agregue la batata y el brócoli con el aceite, y hornee 10 minutos más."
+    - "Calienta el horno a 200 grados."
+    - "Marina el pollo con ajo, limón, orégano y pimienta."
+    - "Hornéalo 25 minutos, agrega la batata y el brócoli con el aceite, y hornea 10 minutos más."
   etiquetas: [sin_lactosa, sin_gluten]
   consejo: "Sin sal añadida: el ajo, el limón y el orégano dan todo el sabor."
 
@@ -1112,10 +1112,10 @@
     - {alimento: pan_integral, gramos: 60, medida: "2 tajadas"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Sofría la cebolla y el ajo en el aceite."
-    - "Agregue la zanahoria en rodajas y el agua, y cocine 12 minutos."
-    - "Sume la lenteja y el comino, y licúe hasta que quede suave."
-    - "Sirva con semillas de girasol encima y el pan tostado."
+    - "Sofríe la cebolla y el ajo en el aceite."
+    - "Agrega la zanahoria en rodajas y el agua, y cocina 12 minutos."
+    - "Suma la lenteja y el comino, y licúa hasta que quede suave."
+    - "Sirve con semillas de girasol encima y el pan tostado."
   etiquetas: [vegano, vegetariano, sin_lactosa, economica]
   consejo: "Las semillas encima dan textura crocante y grasas buenas."
 
@@ -1134,9 +1134,9 @@
     - {alimento: aceite_canola, gramos: 3, medida: "media cucharadita"}
     - {alimento: sal, gramos: 1, medida: "1 pizca"}
   pasos:
-    - "Saltee la espinaca en el aceite hasta que se marchite."
-    - "Agregue los huevos batidos con la sal y revuelva."
-    - "Caliente las tortillas y rellénelas con el huevo, el tomate y el aguacate."
+    - "Saltea la espinaca en el aceite hasta que se marchite."
+    - "Agrega los huevos batidos con la sal y revuelve."
+    - "Calienta las tortillas y rellénalas con el huevo, el tomate y el aguacate."
   etiquetas: [vegetariano, sin_lactosa, sin_gluten, rapida, economica]
   consejo: "Para las noches con poco tiempo: diez minutos y una cena completa."
 
@@ -1157,10 +1157,10 @@
     - {alimento: perejil, gramos: 5, medida: "1 cucharada picada"}
     - {alimento: sal, gramos: 1.5, medida: "1 pizca"}
   pasos:
-    - "Caliente el horno a 200 grados."
-    - "Ponga cada filete sobre papel aluminio con las verduras en tiras, el limón, el perejil y la sal."
-    - "Cierre bien los paquetes y hornee 18 minutos."
-    - "Sirva con las papas criollas cocidas."
+    - "Calienta el horno a 200 grados."
+    - "Pon cada filete sobre papel aluminio con las verduras en tiras, el limón, el perejil y la sal."
+    - "Cierra bien los paquetes y hornea 18 minutos."
+    - "Sirve con las papas criollas cocidas."
   etiquetas: [colombiana, sin_lactosa, sin_gluten]
   consejo: "Cocinar en papillote conserva el jugo del pescado sin agregar aceite."
 
@@ -1180,9 +1180,9 @@
     - {alimento: aceite_oliva, gramos: 5, medida: "1 cucharadita"}
     - {alimento: vinagre, gramos: 5, medida: "1 cucharadita"}
   pasos:
-    - "Lave y seque la rúgula y la lechuga."
-    - "Corte la pera en láminas finas."
-    - "Arme el plato con las hojas, la pera, las nueces y el queso cottage."
-    - "Aliñe con el aceite y el vinagre, y acompañe con el pan tostado."
+    - "Lava y seca la rúgula y la lechuga."
+    - "Corta la pera en láminas finas."
+    - "Arma el plato con las hojas, la pera, las nueces y el queso cottage."
+    - "Aliña con el aceite y el vinagre, y acompaña con el pan tostado."
   etiquetas: [vegetariano, rapida]
   consejo: "Las nueces aportan grasas buenas; un puñado pequeño es suficiente."

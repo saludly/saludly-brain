@@ -3,7 +3,7 @@
  "paciente_ref": "P-692679E5",
  "orden": "LCD-2026-100126",
  "fecha_toma": "2026-10-01",
- "generado": "2026-10-21T00:07:44",
+ "generado": "2026-10-21T00:37:25",
  "estado": "en_revision",
  "panel": "solo_sangre",
  "escalamiento_maximo": 2,
@@ -40,48 +40,48 @@
   "activo": false
  },
  "paciente": {
-  "resumen": "Revisamos sus resultados y encontramos 5 puntos que vale la pena atender; el más importante es: sus resultados de hierro cuentan la misma historia. Le recomendamos una consulta médica en las próximas semanas. También hay buenas noticias: 11 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en sus metas: tener más energía y dormir mejor, mejorar mi salud en general, prevenir enfermedades.",
+  "resumen": "Revisamos tus resultados y encontramos 5 puntos que vale la pena atender; el más importante es: tus resultados de hierro cuentan la misma historia. Te recomendamos una consulta médica en las próximas semanas. También hay buenas noticias: 11 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en tus metas: tener más energía y dormir mejor, mejorar mi salud en general, prevenir enfermedades.",
   "nota_alimentacion": null,
   "lo_que_esta_bien": [
    {
     "grupo": "COND-M4-IN-002",
-    "nombre": "Usted cuenta con defensas contra la hepatitis B por la vacuna",
-    "texto": "No se encontró el virus ni señales de contacto con él, y sus defensas (anti-HBs) salieron en 85 mUI/mL, un nivel que protege."
+    "nombre": "Tienes defensas contra la hepatitis B por la vacuna",
+    "texto": "No se encontró el virus ni señales de contacto con él, y tus defensas (anti-HBs) salieron en 85 mUI/mL, un nivel que protege."
    },
    {
     "grupo": "glucosa_metabolismo",
     "nombre": "Azúcar y metabolismo",
-    "texto": "Su azúcar en la sangre y la forma en que su cuerpo la maneja están dentro de los rangos de referencia."
+    "texto": "Tu azúcar en la sangre y la forma en que tu cuerpo la maneja están dentro de los rangos de referencia."
    },
    {
     "grupo": "lipidos",
     "nombre": "Colesterol y grasas",
-    "texto": "Su colesterol y sus triglicéridos están dentro de los rangos recomendados. Mantenerlos así ayuda a cuidar sus arterias con los años."
+    "texto": "Tu colesterol y tus triglicéridos están dentro de los rangos recomendados. Mantenerlos así ayuda a cuidar tus arterias con los años."
    },
    {
     "grupo": "rinon",
     "nombre": "Riñones",
-    "texto": "Sus riñones están filtrando dentro de lo esperado para su edad."
+    "texto": "Tus riñones están filtrando dentro de lo esperado para tu edad."
    },
    {
     "grupo": "electrolitos",
     "nombre": "Sales y minerales de la sangre",
-    "texto": "Sus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
+    "texto": "Tus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
    },
    {
     "grupo": "tiroides",
     "nombre": "Tiroides",
-    "texto": "Las hormonas de su tiroides están dentro de los rangos de referencia."
+    "texto": "Las hormonas de tu tiroides están dentro de los rangos de referencia."
    },
    {
     "grupo": "inflamacion",
     "nombre": "Inflamación",
-    "texto": "Sus marcadores de inflamación están dentro de los rangos de referencia."
+    "texto": "Tus marcadores de inflamación están dentro de los rangos de referencia."
    },
    {
     "grupo": "hormonas",
     "nombre": "Hormonas",
-    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para su edad y su sexo."
+    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para tu edad y tu sexo."
    },
    {
     "grupo": "corazon",
@@ -91,12 +91,12 @@
    {
     "grupo": "proteinas",
     "nombre": "Proteínas de la sangre",
-    "texto": "Sus proteínas de la sangre y sus anticuerpos generales están dentro de los rangos de referencia."
+    "texto": "Tus proteínas de la sangre y tus anticuerpos generales están dentro de los rangos de referencia."
    },
    {
     "grupo": "coagulacion",
     "nombre": "Coagulación",
-    "texto": "Sus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
+    "texto": "Tus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
    }
   ],
   "lo_que_merece_atencion": [
@@ -104,26 +104,26 @@
     "hallazgo_id": "H-2679E5-01",
     "referencia": "REL-013",
     "tipo": "patron",
-    "titulo": "Sus resultados de hierro cuentan la misma historia",
+    "titulo": "Tus resultados de hierro cuentan la misma historia",
     "escalamiento": 2,
     "nivel_lenguaje": null,
     "coincidencia": "alta",
     "que_es": "El hierro sirve para fabricar la hemoglobina de los glóbulos rojos. Cuando falta, las reservas bajan y los glóbulos rojos salen más pequeños y desiguales.",
     "por_que": [
-     "Su ferritina, que es la reserva de hierro de su cuerpo, salió en 6 ng/mL.",
-     "Su saturación de transferrina, que muestra cuánto hierro está circulando, salió en 6,9 %.",
-     "Su VCM, el tamaño de sus glóbulos rojos, salió en 76,1 fL, y su RDW, que mide qué tan distintos son entre sí, en 17,2 %.",
-     "Su hemoglobina salió en 11 g/dL. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."
+     "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en 6 ng/mL.",
+     "Tu saturación de transferrina, que muestra cuánto hierro está circulando, salió en 6,9 %.",
+     "Tu VCM, el tamaño de tus glóbulos rojos, salió en 76,1 fL, y tu RDW, que mide qué tan distintos son entre sí, en 17,2 %.",
+     "Tu hemoglobina salió en 11 g/dL. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."
     ],
     "ejemplo": "Es como una despensa que se va vaciando: primero se acaban las reservas y después empieza a faltar para cocinar.",
     "agrupa": [
      {
       "referencia": "COND-M3-HE-001",
-      "titulo": "Su hemoglobina está baja para la altura de Bogotá"
+      "titulo": "Tu hemoglobina está baja para la altura de Bogotá"
      },
      {
       "referencia": "COND-M3-HE-002",
-      "titulo": "Su hemoglobina y sus reservas de hierro están bajas"
+      "titulo": "Tu hemoglobina y tus reservas de hierro están bajas"
      }
     ]
    },
@@ -131,13 +131,13 @@
     "hallazgo_id": "H-2679E5-02",
     "referencia": "COND-M4-GA-006",
     "tipo": "condicion",
-    "titulo": "Su prueba relacionada con la intolerancia al gluten salió positiva",
+    "titulo": "Tu prueba relacionada con la intolerancia al gluten salió positiva",
     "escalamiento": 2,
     "nivel_lenguaje": "Patrón compatible",
     "coincidencia": "moderada",
     "que_es": "La anti-transglutaminasa es un anticuerpo que el cuerpo puede producir cuando reacciona contra el gluten, una proteína del trigo, la cebada y el centeno.",
     "por_que": [
-     "Su anti-transglutaminasa IgA salió en 86 U/mL, por encima del rango."
+     "Tu anti-transglutaminasa IgA salió en 86 U/mL, por encima del rango."
     ],
     "ejemplo": "Es como una alarma que se activa con un visitante específico: hay que confirmar si ese visitante es realmente el problema.",
     "agrupa": []
@@ -146,13 +146,13 @@
     "hallazgo_id": "H-2679E5-03",
     "referencia": "COND-M3-NU-002",
     "tipo": "condicion",
-    "titulo": "Su folato está bajo",
+    "titulo": "Tu folato está bajo",
     "escalamiento": 1,
     "nivel_lenguaje": "Riesgo potencial",
     "coincidencia": "alta",
     "que_es": "El folato es una vitamina del grupo B que el cuerpo usa para fabricar glóbulos rojos y que es clave al inicio de un embarazo.",
     "por_que": [
-     "Su folato salió en 2,8 ng/mL, por debajo de lo recomendado."
+     "Tu folato salió en 2,8 ng/mL, por debajo de lo recomendado."
     ],
     "ejemplo": "Es como la harina en una panadería: si falta, se hornea menos pan.",
     "agrupa": []
@@ -161,14 +161,14 @@
     "hallazgo_id": "H-2679E5-04",
     "referencia": "COND-M4-GA-002",
     "tipo": "condicion",
-    "titulo": "Su enzima del hígado (ALT) está por encima de lo esperado",
+    "titulo": "Tu enzima del hígado (ALT) está por encima de lo esperado",
     "escalamiento": 1,
     "nivel_lenguaje": "Patrón compatible",
     "coincidencia": "moderada",
     "que_es": "La ALT es una enzima que vive dentro de las células del hígado. Cuando esas células se irritan, sale a la sangre.",
     "por_que": [
-     "Su ALT salió en 52 U/L, por encima del valor esperado.",
-     "Su AST, otra enzima que está en el hígado y en los músculos, salió en 41 U/L."
+     "Tu ALT salió en 52 U/L, por encima del valor esperado.",
+     "Tu AST, otra enzima que está en el hígado y en los músculos, salió en 41 U/L."
     ],
     "ejemplo": "Es como el polvo que suelta una pared cuando la golpean: avisa que algo la molesta, pero no dice qué tan grande es el golpe.",
     "agrupa": []
@@ -177,13 +177,13 @@
     "hallazgo_id": "H-2679E5-06",
     "referencia": "COND-M3-NU-A03",
     "tipo": "condicion",
-    "titulo": "Su vitamina D está fuera del rango",
+    "titulo": "Tu vitamina D está fuera del rango",
     "escalamiento": 0,
     "nivel_lenguaje": null,
     "coincidencia": null,
     "que_es": "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos. El cuerpo la fabrica con el sol.",
     "por_que": [
-     "Su vitamina D salió en 14,2 ng/mL, fuera del rango del laboratorio."
+     "Tu vitamina D salió en 14,2 ng/mL, fuera del rango del laboratorio."
     ],
     "ejemplo": "Es como el cemento de una pared: los ladrillos están, pero sin suficiente cemento la pared queda menos firme.",
     "agrupa": []
@@ -193,37 +193,37 @@
    {
     "hallazgo_id": "H-2679E5-01",
     "texto": "Si la falta de hierro sigue, puede aparecer anemia, con cansancio, menos concentración y menos rendimiento físico. Detectarlo ahora permite actuar antes.",
-    "incertidumbre": "Una inflamación o un suplemento reciente pueden cambiar estos valores. Su médico busca la causa y decide si hace falta algo más que la alimentación."
+    "incertidumbre": "Una inflamación o un suplemento reciente pueden cambiar estos valores. Tu médico busca la causa y decide si hace falta algo más que la alimentación."
    },
    {
     "hallazgo_id": "H-2679E5-02",
     "texto": "Si la reacción al gluten se confirma y no se maneja, con el tiempo puede afectar la absorción de nutrientes como el hierro.",
-    "incertidumbre": "Una prueba positiva no basta para confirmarlo: hacen falta otros estudios. Siga comiendo como siempre, porque quitar el gluten antes de tiempo altera esos estudios, y pida una consulta médica."
+    "incertidumbre": "Una prueba positiva no basta para confirmarlo: hacen falta otros estudios. Sigue comiendo como siempre, porque quitar el gluten antes de tiempo altera esos estudios, y pida una consulta médica."
    },
    {
     "hallazgo_id": "H-2679E5-03",
     "texto": "Si se mantiene bajo, con el tiempo puede aparecer anemia. En una mujer que queda embarazada, puede afectar el desarrollo temprano del bebé.",
-    "incertidumbre": "Un solo examen no basta: la comida reciente, el alcohol y algunos medicamentos cambian el valor. Conviene mejorarlo con la alimentación y comentarlo con su médico, sobre todo si busca un embarazo."
+    "incertidumbre": "Un solo examen no basta: la comida reciente, el alcohol y algunos medicamentos cambian el valor. Conviene mejorarlo con la alimentación y comentarlo con tu médico, sobre todo si buscas un embarazo."
    },
    {
     "hallazgo_id": "H-2679E5-04",
     "texto": "Si la causa no se atiende, la irritación del hígado puede mantenerse durante años y afectar cómo funciona.",
-    "incertidumbre": "Hay varias causas posibles, la mayoría relacionadas con hábitos: ejercicio intenso, alcohol, alimentación, medicamentos o productos herbales. Un solo examen no basta: conviene repetirla y revisarla con su médico."
+    "incertidumbre": "Hay varias causas posibles, la mayoría relacionadas con hábitos: ejercicio intenso, alcohol, alimentación, medicamentos o productos herbales. Un solo examen no basta: conviene repetirla y revisarla con tu médico."
    },
    {
     "hallazgo_id": "H-2679E5-06",
     "texto": "Si se mantiene baja durante años, los huesos pueden debilitarse. Si está alta por suplementos, se puede acumular en el cuerpo.",
-    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puede mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quiere suplementarla o ya usa suplementos, coménteselo a su médico."
+    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puedes mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quieres suplementarla o ya tomas suplementos, coméntalo con tu médico."
    }
   ],
   "que_puedes_hacer": [
    {
     "recomendacion_id": "REC-ALI-201",
     "tipo": "alimentacion",
-    "titulo": "Sume alimentos con hierro y acompáñelos con vitamina C",
-    "texto": "Incluya en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñelos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro.",
-    "meta": "Esta semana, coma leguminosas o carne magra con una fruta rica en vitamina C en al menos 5 almuerzos.",
-    "por_que": "El hierro de los alimentos repone poco a poco sus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor.",
+    "titulo": "Suma alimentos con hierro y acompáñalos con vitamina C",
+    "texto": "Incluye en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñalos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro.",
+    "meta": "Esta semana, come leguminosas o carne magra con una fruta rica en vitamina C en al menos 5 almuerzos.",
+    "por_que": "El hierro de los alimentos repone poco a poco tus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor.",
     "hallazgos": [
      "COND-M3-HE-002",
      "REL-013"
@@ -236,9 +236,9 @@
    {
     "recomendacion_id": "REC-ALI-202",
     "tipo": "alimentacion",
-    "titulo": "Deje el tinto y el té para después de comer",
-    "texto": "Tome el café, el tinto o el té por lo menos una hora antes o después de las comidas principales, no junto con ellas.",
-    "meta": "Durante 2 semanas, ningún café ni té junto con el almuerzo; si lo quiere, que sea una hora después.",
+    "titulo": "Deja el tinto y el té para después de comer",
+    "texto": "Toma el café, el tinto o el té por lo menos una hora antes o después de las comidas principales, no junto con ellas.",
+    "meta": "Durante 2 semanas, ningún café ni té junto con el almuerzo; si lo quieres, que sea una hora después.",
     "por_que": "El café y el té tienen sustancias que frenan la absorción del hierro de la comida.",
     "hallazgos": [
      "COND-M3-HE-002",
@@ -253,7 +253,7 @@
     "recomendacion_id": "REC-ACT-203",
     "tipo": "actividad",
     "titulo": "Antes de entrenar fuerte, primero la consulta",
-    "texto": "Antes de entrenamientos intensos, series largas o preparar una carrera, hable con su médico. Mientras tanto, manténgase activo con caminatas suaves y descanse si se siente muy cansado o le falta el aire.",
+    "texto": "Antes de entrenamientos intensos, series largas o preparar una carrera, habla con tu médico. Mientras tanto, mantente activo con caminatas suaves y descansa si te sientes muy cansado o te falta el aire.",
     "meta": "Hasta la consulta, solo caminatas suaves de 20 a 30 minutos y ninguna sesión intensa.",
     "por_que": "Con menos glóbulos rojos llega menos oxígeno a los músculos, y forzar el cuerpo puede causar mareo o mucha fatiga.",
     "hallazgos": [
@@ -267,8 +267,8 @@
     "recomendacion_id": "REC-CTL-201",
     "tipo": "controles",
     "titulo": "Consulta médica para buscar la causa",
-    "texto": "Agende una consulta médica en las próximas semanas. Su médico buscará por qué su sangre tiene menos glóbulos rojos o hierro y decidirá el tratamiento.",
-    "meta": "Pida la cita en los próximos 7 días y asista antes de 4 semanas, con este informe.",
+    "texto": "Agenda una consulta médica en las próximas semanas. Tu médico buscará por qué tu sangre tiene menos glóbulos rojos o hierro y decidirá el tratamiento.",
+    "meta": "Pide la cita en los próximos 7 días y asiste antes de 4 semanas, con este informe.",
     "por_que": "Lo importante no es solo reponer lo que falta, sino encontrar por qué falta.",
     "hallazgos": [
      "COND-M3-HE-001",
@@ -283,9 +283,9 @@
     "recomendacion_id": "REC-TER-201",
     "tipo": "terapias",
     "titulo": "Consulta con nutricionista",
-    "texto": "Pida una cita con un nutricionista para armar un plan de comidas a su medida, que tenga en cuenta sus gustos, su presupuesto y sus resultados.",
-    "meta": "Pida la cita con nutrición en su EPS o con Saludly en el próximo mes.",
-    "por_que": "Un plan hecho para usted es más fácil de sostener que una lista general de alimentos.",
+    "texto": "Pide una cita con un nutricionista para armar un plan de comidas a tu medida, que tenga en cuenta tus gustos, tu presupuesto y tus resultados.",
+    "meta": "Pide la cita con nutrición en tu EPS o con Saludly en el próximo mes.",
+    "por_que": "Un plan hecho para ti es más fácil de sostener que una lista general de alimentos.",
     "hallazgos": [
      "COND-M6-MI-001",
      "COND-M3-HE-002"
@@ -297,8 +297,8 @@
     "recomendacion_id": "REC-VIT-205",
     "tipo": "vitaminas_suplementos",
     "titulo": "Hierro solo con indicación médica",
-    "texto": "No empiece suplementos de hierro ni multivitamínicos con hierro por su cuenta. Si su médico se lo formula, siga su indicación y pregúntele cuándo repetir el control.",
-    "meta": "Antes de comprar cualquier vitamina, revise con su médico si trae hierro.",
+    "texto": "No empieces suplementos de hierro ni multivitamínicos con hierro por tu cuenta. Si tu médico te lo formula, sigue su indicación y pregúntale cuándo repetir el control.",
+    "meta": "Antes de comprar cualquier vitamina, revisa con tu médico si trae hierro.",
     "por_que": "El hierro de más se acumula en el cuerpo; y si falta, primero hay que saber por qué.",
     "hallazgos": [
      "COND-M3-HE-002",
@@ -312,9 +312,9 @@
    {
     "recomendacion_id": "REC-ALI-214",
     "tipo": "alimentacion",
-    "titulo": "Siga comiendo como siempre hasta la consulta",
-    "texto": "No quite el gluten (pan, pasta, galletas, avena común) antes de su consulta. Si lo saca antes, las pruebas que confirman el resultado pueden salir falsamente normales.",
-    "meta": "Mantenga su alimentación habitual, con pan o pasta varias veces a la semana, hasta que su médico le indique otra cosa.",
+    "titulo": "Sigue comiendo como siempre hasta la consulta",
+    "texto": "No quites el gluten (pan, pasta, galletas, avena común) antes de tu consulta. Si lo sacas antes, las pruebas que confirman el resultado pueden salir falsamente normales.",
+    "meta": "Mantén tu alimentación habitual, con pan o pasta varias veces a la semana, hasta que tu médico te indique otra cosa.",
     "por_que": "Las pruebas de confirmación solo funcionan si el cuerpo sigue en contacto con el gluten.",
     "hallazgos": [
      "COND-M4-GA-006"
@@ -327,9 +327,9 @@
    {
     "recomendacion_id": "REC-CTL-202",
     "tipo": "controles",
-    "titulo": "Cuéntele este resultado a su médico",
-    "texto": "Lleve este informe a su próximo control médico. Si ya no tiene menstruación, pida la cita pronto para buscar la causa de las reservas bajas de hierro.",
-    "meta": "Pida la cita este mes; si ya no menstrúa, en las próximas 2 semanas.",
+    "titulo": "Cuéntale este resultado a tu médico",
+    "texto": "Lleva este informe a tu próximo control médico. Si ya no tienes menstruación, pide la cita pronto para buscar la causa de las reservas bajas de hierro.",
+    "meta": "Pide la cita este mes; si ya no menstrúas, en las próximas 2 semanas.",
     "por_que": "Las reservas de hierro bajan antes que la hemoglobina; detectarlo a tiempo permite corregirlo antes de que aparezca anemia.",
     "hallazgos": [
      "REL-013"
@@ -342,10 +342,10 @@
    {
     "recomendacion_id": "REC-CTL-213",
     "tipo": "controles",
-    "titulo": "Consulta médica antes de cambiar su dieta",
-    "texto": "Agende una consulta médica para confirmar este resultado. Su médico decidirá qué exámenes siguen y cuándo cambiar la alimentación.",
-    "meta": "Pida la cita en las próximas 2 semanas.",
-    "por_que": "Este resultado se confirma con otros exámenes que necesitan que siga comiendo como siempre.",
+    "titulo": "Consulta médica antes de cambiar tu dieta",
+    "texto": "Agenda una consulta médica para confirmar este resultado. Tu médico decidirá qué exámenes siguen y cuándo cambiar la alimentación.",
+    "meta": "Pide la cita en las próximas 2 semanas.",
+    "por_que": "Este resultado se confirma con otros exámenes que necesitan que sigas comiendo como siempre.",
     "hallazgos": [
      "COND-M4-GA-006"
     ],
@@ -357,8 +357,8 @@
    {
     "recomendacion_id": "REC-HAB-201",
     "tipo": "habitos",
-    "titulo": "Reduzca el alcohol",
-    "texto": "Tome menos alcohol y deje varios días de la semana sin nada. Lo ideal para su hígado y su sangre es no tomar; si toma, que sea poco y nunca hasta emborracharse.",
+    "titulo": "Reduce el alcohol",
+    "texto": "Toma menos alcohol y deja varios días de la semana sin nada. Lo ideal para tu hígado y tu sangre es no tomar; si tomas, que sea poco y nunca hasta emborracharte.",
     "meta": "Durante las próximas 4 semanas, al menos 5 días sin alcohol cada semana y ninguna ocasión con más de 2 tragos.",
     "por_que": "El alcohol inflama el hígado, cambia el tamaño de los glóbulos rojos y gasta vitaminas como el folato.",
     "hallazgos": [
@@ -376,8 +376,8 @@
     "recomendacion_id": "REC-TER-203",
     "tipo": "terapias",
     "titulo": "Apoyo profesional para reducir el alcohol",
-    "texto": "Si le cuesta reducir el alcohol, pida apoyo a su médico o a un psicólogo. Hay programas que ayudan a lograrlo paso a paso.",
-    "meta": "Este mes, hable con su médico o con un profesional de salud mental sobre un plan para tomar menos.",
+    "texto": "Si te cuesta reducir el alcohol, pide apoyo a tu médico o a un psicólogo. Hay programas que ayudan a lograrlo paso a paso.",
+    "meta": "Este mes, habla con tu médico o con un profesional de salud mental sobre un plan para tomar menos.",
     "por_que": "Con acompañamiento, cambiar un hábito es más fácil y dura más.",
     "hallazgos": [
      "COND-M4-GA-002"
@@ -393,7 +393,7 @@
     "recomendacion_id": "REC-ALI-205",
     "tipo": "alimentacion",
     "titulo": "Alimentos que aportan vitamina D",
-    "texto": "Incluya pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
+    "texto": "Incluye pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
     "meta": "Esta semana, pescado graso al menos 2 veces y huevo entero en 3 desayunos.",
     "por_que": "Pocos alimentos tienen vitamina D; los pescados grasos y el huevo están entre los mejores para sumar un poco.",
     "hallazgos": [
@@ -408,7 +408,7 @@
     "recomendacion_id": "REC-SAL-201",
     "tipo": "actividades_saludables",
     "titulo": "Sol prudente en la mañana",
-    "texto": "Salga a caminar al aire libre unos minutos en la mañana, con brazos o piernas descubiertos. Evite el sol fuerte del mediodía y use protector en la cara; en Bogotá el sol quema rápido aunque esté nublado.",
+    "texto": "Sal a caminar al aire libre unos minutos en la mañana, con brazos o piernas descubiertos. Evita el sol fuerte del mediodía y usa protector en la cara; en Bogotá el sol quema rápido aunque esté nublado.",
     "meta": "Esta semana, 4 caminatas de 15 minutos al aire libre antes de las 10 de la mañana.",
     "por_que": "La piel fabrica vitamina D con el sol, pero el exceso de sol daña la piel; poco tiempo y en las horas suaves es suficiente.",
     "hallazgos": [
@@ -423,9 +423,9 @@
    {
     "recomendacion_id": "REC-VIT-201",
     "tipo": "vitaminas_suplementos",
-    "titulo": "Hable con su médico antes de suplementar vitamina D",
-    "texto": "Primero sume alimentos con vitamina D y sol prudente. Si quiere usar un suplemento, consúltelo con su médico: su médico decide si lo necesita y cómo usarlo.",
-    "meta": "En su próxima consulta, pregúntele a su médico si en su caso conviene un suplemento de vitamina D.",
+    "titulo": "Habla con tu médico antes de suplementar vitamina D",
+    "texto": "Primero suma alimentos con vitamina D y sol prudente. Si quieres usar un suplemento, consúltalo con tu médico: él decide si lo necesitas y cómo usarlo.",
+    "meta": "En tu próxima consulta, pregunta a tu médico si en tu caso conviene un suplemento de vitamina D.",
     "por_que": "La vitamina D ayuda a los huesos y los músculos; en exceso también puede hacer daño, por eso se decide con el médico.",
     "hallazgos": [
      "COND-M3-NU-A03"
@@ -439,32 +439,32 @@
   "cuando_consultar": [
    {
     "escalamiento": 2,
-    "texto": "Pida una consulta médica en las próximas 2 a 4 semanas y lleve este informe.",
+    "texto": "Pide una consulta médica en las próximas 2 a 4 semanas y lleva este informe.",
     "hallazgos": [
      {
       "hallazgo_id": "H-2679E5-01",
-      "titulo": "Sus resultados de hierro cuentan la misma historia",
+      "titulo": "Tus resultados de hierro cuentan la misma historia",
       "detalle": null
      },
      {
       "hallazgo_id": "H-2679E5-02",
-      "titulo": "Su prueba relacionada con la intolerancia al gluten salió positiva",
+      "titulo": "Tu prueba relacionada con la intolerancia al gluten salió positiva",
       "detalle": null
      }
     ]
    },
    {
     "escalamiento": 1,
-    "texto": "Coménteselo a su médico en su próximo control, en los próximos 3 meses.",
+    "texto": "Coméntalo con tu médico en tu próximo control, en los próximos 3 meses.",
     "hallazgos": [
      {
       "hallazgo_id": "H-2679E5-03",
-      "titulo": "Su folato está bajo",
+      "titulo": "Tu folato está bajo",
       "detalle": null
      },
      {
       "hallazgo_id": "H-2679E5-04",
-      "titulo": "Su enzima del hígado (ALT) está por encima de lo esperado",
+      "titulo": "Tu enzima del hígado (ALT) está por encima de lo esperado",
       "detalle": null
      }
     ]
@@ -1767,7 +1767,7 @@
    "azucar_anadida_g_max": 41,
    "formula": "Mifflin-St Jeor × actividad, ajustado por objetivo; proteína en g/kg según objetivo",
    "notas": [
-    "Meta orientativa, no una prescripción: un nutricionista la ajusta a su caso."
+    "Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso."
    ]
   },
   "restricciones": {
@@ -2028,85 +2028,85 @@
   ]
  },
  "whatsapp": {
-  "resultado_listo": "Hola 👋 Sus resultados de Saludly ya están listos en su panel. Ábralo cuando pueda: ahí le explicamos todo con calma.",
-  "recordatorio_consulta": "Hola 👋 En su informe de Saludly hay un resultado que conviene revisar con un médico en las próximas semanas. Abra su panel para ver el detalle.",
+  "resultado_listo": "Hola 👋 Tus resultados de Saludly ya están listos en tu panel. Ábrelo cuando puedas: ahí te explicamos todo con calma.",
+  "recordatorio_consulta": "Hola 👋 En tu informe de Saludly hay un resultado que conviene revisar con un médico en las próximas semanas. Abre tu panel para ver el detalle.",
   "recomendaciones_semanales": [
    {
     "semana": 1,
     "recomendacion_id": "REC-ALI-201",
-    "texto": "🍊 Hoy en el almuerzo ponga lentejas o fríjoles y de postre una guayaba o una naranja. La fruta ayuda a que su cuerpo aproveche mejor el hierro."
+    "texto": "🍊 Hoy en el almuerzo pon lentejas o fríjoles y de postre una guayaba o una naranja. La fruta ayuda a que tu cuerpo aproveche mejor el hierro."
    },
    {
     "semana": 2,
     "recomendacion_id": "REC-ALI-202",
-    "texto": "☕ Un truco sencillo para esta semana: el tinto o el té, mejor una hora después del almuerzo y no con la comida. Así aprovecha más lo que come."
+    "texto": "☕ Un truco sencillo para esta semana: el tinto o el té, mejor una hora después del almuerzo y no con la comida. Así aprovechas más lo que comes."
    },
    {
     "semana": 3,
     "recomendacion_id": "REC-CTL-201",
-    "texto": "📅 Le recordamos agendar su consulta médica de seguimiento. Si quiere, le ayudamos a pedir la cita: respóndanos aquí."
+    "texto": "📅 Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
    },
    {
     "semana": 4,
     "recomendacion_id": "REC-TER-201",
-    "texto": "🥗 ¿Le gustaría un plan de comidas hecho a su medida? Pida su cita con nutrición este mes; si quiere, le ayudamos a agendarla."
+    "texto": "🥗 ¿Te gustaría un plan de comidas hecho a tu medida? Pide tu cita con nutrición este mes; si quieres, te ayudamos a agendarla."
    },
    {
     "semana": 5,
     "recomendacion_id": "REC-VIT-205",
-    "texto": "💊 Antes de comprar vitaminas en la droguería, pregúntele a su médico si le convienen. No todas sirven para todos."
+    "texto": "💊 Antes de comprar vitaminas en la droguería, pregúntale a tu médico si te convienen. No todas sirven para todos."
    },
    {
     "semana": 6,
     "recomendacion_id": "REC-ALI-214",
-    "texto": "🍞 Un recordatorio: mientras llega su consulta médica, siga comiendo como siempre, sin cambiar su dieta por su cuenta."
+    "texto": "🍞 Un recordatorio: mientras llega tu consulta médica, sigue comiendo como siempre, sin cambiar tu dieta por tu cuenta."
    },
    {
     "semana": 7,
     "recomendacion_id": "REC-CTL-202",
-    "texto": "📅 ¿Ya agendó su control médico? Lleve su informe de Saludly para que su médico lo revise con usted."
+    "texto": "📅 ¿Ya agendaste tu control médico? Lleva tu informe de Saludly para que tu médico lo revise contigo."
    },
    {
     "semana": 8,
     "recomendacion_id": "REC-CTL-213",
-    "texto": "📅 Le recordamos agendar su consulta médica de seguimiento. Si quiere, le ayudamos a pedir la cita: respóndanos aquí."
+    "texto": "📅 Te recordamos agendar tu consulta médica de seguimiento. Si quieres, te ayudamos a pedir la cita: respóndenos aquí."
    }
   ],
   "recetas_diarias": [
    {
     "dia": 1,
     "receta_id": "RCT-ALM-031",
-    "texto": "🍽️ *Receta del día: Tacos de pollo en tortilla de maíz con repollo*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 523 kcal · proteína 43 g · carbohidratos 60 g · grasa 14 g · fibra 13 g · sodio 529 mg\nCubre cerca del 85 % de su proteína del día.\n\n*Ingredientes*\n• 1 pechuga (pechuga de pollo sin piel (cruda))\n• 6 tortillas pequeñas (tortilla de maíz)\n• 1 1/2 tazas en tiras de repollo morado\n• 1 tomate grande (tomate chonto)\n• 1/2 cebolla (cebolla cabezona)\n• 1/2 aguacate\n• 1 limón\n• 4 cucharadas de yogur griego natural\n• 1 pizca de comino\n• 1/2 pimentón (pimentón rojo)\n• una pizca de sal\n\n*Preparación*\n1. Corta el pollo en tiras y ásalo con pimentón, cebolla y comino.\n2. Calienta las tortillas en una sartén seca.\n3. Rellénalas con el pollo, repollo morado, tomate y aguacate.\n4. Termina con yogur griego, limón y la sal.\n\n💡 El yogur griego reemplaza la crema agria con más proteína y menos grasa."
+    "texto": "🍽️ *Receta del día: Tacos de pollo en tortilla de maíz con repollo*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 523 kcal · proteína 43 g · carbohidratos 60 g · grasa 14 g · fibra 13 g · sodio 529 mg\nCubre cerca del 85 % de tu proteína del día.\n\n*Ingredientes*\n• 1 pechuga (pechuga de pollo sin piel (cruda))\n• 6 tortillas pequeñas (tortilla de maíz)\n• 1 1/2 tazas en tiras de repollo morado\n• 1 tomate grande (tomate chonto)\n• 1/2 cebolla (cebolla cabezona)\n• 1/2 aguacate\n• 1 limón\n• 4 cucharadas de yogur griego natural\n• 1 pizca de comino\n• 1/2 pimentón (pimentón rojo)\n• una pizca de sal\n\n*Preparación*\n1. Corta el pollo en tiras y ásalo con pimentón, cebolla y comino.\n2. Calienta las tortillas en una sartén seca.\n3. Rellénalas con el pollo, repollo morado, tomate y aguacate.\n4. Termina con yogur griego, limón y la sal.\n\n💡 El yogur griego reemplaza la crema agria con más proteína y menos grasa."
    },
    {
     "dia": 2,
     "receta_id": "RCT-DES-045",
-    "texto": "🍽️ *Receta del día: Pudín de chía con cacao y banano*\nDesayuno · 5 min · 1 porciones\n\n*Por porción:* 396 kcal · proteína 18 g · carbohidratos 45 g · grasa 20 g · fibra 17 g · sodio 102 mg\nCubre cerca del 35 % de su proteína del día.\n\n*Ingredientes*\n• 2 cucharadas de semillas de chía\n• 1 taza de bebida de soya sin azúcar\n• 1 cucharada de cacao en polvo sin azúcar\n• 1 banano\n• 1 cucharada de maní sin sal\n\n*Preparación*\n1. La noche anterior, mezcle la chía con la bebida de soya, el cacao y medio banano aplastado.\n2. Deje en la nevera toda la noche para que espese.\n3. En la mañana agregue el resto del banano en rodajas y el maní.\n\n💡 Revuelva la chía a los diez minutos de mezclarla para que no se formen grumos."
+    "texto": "🍽️ *Receta del día: Pudín de chía con cacao y banano*\nDesayuno · 5 min · 1 porciones\n\n*Por porción:* 396 kcal · proteína 18 g · carbohidratos 45 g · grasa 20 g · fibra 17 g · sodio 102 mg\nCubre cerca del 35 % de tu proteína del día.\n\n*Ingredientes*\n• 2 cucharadas de semillas de chía\n• 1 taza de bebida de soya sin azúcar\n• 1 cucharada de cacao en polvo sin azúcar\n• 1 banano\n• 1 cucharada de maní sin sal\n\n*Preparación*\n1. La noche anterior, mezcla la chía con la bebida de soya, el cacao y medio banano aplastado.\n2. Deja en la nevera toda la noche para que espese.\n3. En la mañana agrega el resto del banano en rodajas y el maní.\n\n💡 Revuelve la chía a los diez minutos de mezclarla para que no se formen grumos."
    },
    {
     "dia": 3,
     "receta_id": "RCT-CEN-010",
-    "texto": "🍽️ *Receta del día: Ensalada de pollo a la plancha con quinua y aguacate*\nCena · 25 min · 2 porciones\n\n*Por porción:* 374 kcal · proteína 34 g · carbohidratos 32 g · grasa 13 g · fibra 8 g · sodio 392 mg\nCubre cerca del 66 % de su proteína del día.\n\n*Ingredientes*\n• 1 pechuga mediana (pechuga de pollo sin piel (cruda))\n• 1 taza y cuarto de quinua cocida\n• 2 tazas de lechuga\n• 1 tomate (tomate chonto)\n• media zanahoria rallada\n• un tercio de aguacate\n• 1 limón\n• 1 cucharadita de aceite de oliva\n• al gusto de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Sazone el pollo con sal y pimienta, y áselo a la plancha 5 minutos por lado.\n2. Córtelo en tiras.\n3. Mezcle la lechuga, el tomate, la zanahoria y la quinua.\n4. Ponga el pollo y el aguacate encima y aliñe con limón y aceite.\n\n💡 Cocine la quinua para varios días y guárdela en la nevera: así la cena sale en minutos."
+    "texto": "🍽️ *Receta del día: Ensalada de pollo a la plancha con quinua y aguacate*\nCena · 25 min · 2 porciones\n\n*Por porción:* 374 kcal · proteína 34 g · carbohidratos 32 g · grasa 13 g · fibra 8 g · sodio 392 mg\nCubre cerca del 66 % de tu proteína del día.\n\n*Ingredientes*\n• 1 pechuga mediana (pechuga de pollo sin piel (cruda))\n• 1 taza y cuarto de quinua cocida\n• 2 tazas de lechuga\n• 1 tomate (tomate chonto)\n• media zanahoria rallada\n• un tercio de aguacate\n• 1 limón\n• 1 cucharadita de aceite de oliva\n• al gusto de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Sazona el pollo con sal y pimienta, y ásalo a la plancha 5 minutos por lado.\n2. Córtalo en tiras.\n3. Mezcla la lechuga, el tomate, la zanahoria y la quinua.\n4. Pon el pollo y el aguacate encima y aliña con limón y aceite.\n\n💡 Cocina la quinua para varios días y guárdala en la nevera: así la cena sale en minutos."
    },
    {
     "dia": 4,
     "receta_id": "RCT-ALM-017",
-    "texto": "🍽️ *Receta del día: Hígado encebollado con papa y ensalada de tomate y naranja*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 546 kcal · proteína 33 g · carbohidratos 72 g · grasa 15 g · fibra 9 g · sodio 502 mg\nCubre cerca del 64 % de su proteína del día.\n\n*Ingredientes*\n• 2 filetes de hígado de res (crudo)\n• 1 cebolla grande (cebolla cabezona)\n• 3 papas medianas (papa cocida)\n• 1 tomate grande (tomate chonto)\n• 1 naranja en gajos\n• 2 tazas de lechuga\n• 4 cucharaditas de aceite de canola\n• 1 diente de ajo\n• una pizca de sal\n\n*Preparación*\n1. Corta el hígado en tiras y retira las membranas.\n2. Dora la cebolla en plumas con el ajo en el aceite hasta que esté blanda.\n3. Agrega el hígado y cocínalo 4 minutos sin dejar que se endurezca.\n4. Ajusta la sal y sirve con papa y una ensalada de lechuga, tomate y naranja.\n\n💡 La naranja de la ensalada aporta vitamina C, que ayuda a aprovechar el hierro del hígado."
+    "texto": "🍽️ *Receta del día: Hígado encebollado con papa y ensalada de tomate y naranja*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 546 kcal · proteína 33 g · carbohidratos 72 g · grasa 15 g · fibra 9 g · sodio 502 mg\nCubre cerca del 64 % de tu proteína del día.\n\n*Ingredientes*\n• 2 filetes de hígado de res (crudo)\n• 1 cebolla grande (cebolla cabezona)\n• 3 papas medianas (papa cocida)\n• 1 tomate grande (tomate chonto)\n• 1 naranja en gajos\n• 2 tazas de lechuga\n• 4 cucharaditas de aceite de canola\n• 1 diente de ajo\n• una pizca de sal\n\n*Preparación*\n1. Corta el hígado en tiras y retira las membranas.\n2. Dora la cebolla en plumas con el ajo en el aceite hasta que esté blanda.\n3. Agrega el hígado y cocínalo 4 minutos sin dejar que se endurezca.\n4. Ajusta la sal y sirve con papa y una ensalada de lechuga, tomate y naranja.\n\n💡 La naranja de la ensalada aporta vitamina C, que ayuda a aprovechar el hierro del hígado."
    },
    {
     "dia": 5,
     "receta_id": "RCT-MER-013",
-    "texto": "🍽️ *Receta del día: Edamame con limón*\nMerienda · 8 min · 1 porciones\n\n*Por porción:* 172 kcal · proteína 17 g · carbohidratos 13 g · grasa 7 g · fibra 8 g · sodio 202 mg\nCubre cerca del 33 % de su proteína del día.\n\n*Ingredientes*\n• 1 taza de edamame (fríjol de soya verde)\n• 1/2 limón\n• una pizca de sal\n\n*Preparación*\n1. Cocine el edamame cinco minutos en agua hirviendo y escúrralo.\n2. Exprima el limón encima con una pizca de sal.\n\n💡 Es una merienda vegetal con proteína; se consigue congelado en los supermercados."
+    "texto": "🍽️ *Receta del día: Edamame con limón*\nMerienda · 8 min · 1 porciones\n\n*Por porción:* 172 kcal · proteína 17 g · carbohidratos 13 g · grasa 7 g · fibra 8 g · sodio 202 mg\nCubre cerca del 33 % de tu proteína del día.\n\n*Ingredientes*\n• 1 taza de edamame (fríjol de soya verde)\n• 1/2 limón\n• una pizca de sal\n\n*Preparación*\n1. Cocina el edamame cinco minutos en agua hirviendo y escúrrelo.\n2. Exprime el limón encima con una pizca de sal.\n\n💡 Es una merienda vegetal con proteína; se consigue congelado en los supermercados."
    },
    {
     "dia": 6,
     "receta_id": "RCT-CEN-022",
-    "texto": "🍽️ *Receta del día: Bowl de quinua con tofu y verduras salteadas*\nCena · 25 min · 2 porciones\n\n*Por porción:* 443 kcal · proteína 30 g · carbohidratos 42 g · grasa 20 g · fibra 11 g · sodio 81 mg\nCubre cerca del 60 % de su proteína del día.\n\n*Ingredientes*\n• 1 bloque pequeño de tofu firme\n• 1 taza y media de quinua cocida\n• 1 taza y media de ramitos de brócoli\n• medio pimentón grande (pimentón rojo)\n• 1 zanahoria pequeña\n• 1 diente de ajo\n• 2 cucharaditas de ajonjolí\n• 2 cucharaditas de aceite de canola\n• medio limón\n\n*Preparación*\n1. Corte el tofu en cubos y dórelo en la mitad del aceite.\n2. Saltee el ajo y las verduras en el resto del aceite por 4 minutos.\n3. Sirva la quinua en el fondo del plato con las verduras y el tofu encima.\n4. Termine con limón y ajonjolí.\n\n💡 Sin sal añadida: el limón y el ajonjolí tostado dan sabor de sobra."
+    "texto": "🍽️ *Receta del día: Bowl de quinua con tofu y verduras salteadas*\nCena · 25 min · 2 porciones\n\n*Por porción:* 443 kcal · proteína 30 g · carbohidratos 42 g · grasa 20 g · fibra 11 g · sodio 81 mg\nCubre cerca del 60 % de tu proteína del día.\n\n*Ingredientes*\n• 1 bloque pequeño de tofu firme\n• 1 taza y media de quinua cocida\n• 1 taza y media de ramitos de brócoli\n• medio pimentón grande (pimentón rojo)\n• 1 zanahoria pequeña\n• 1 diente de ajo\n• 2 cucharaditas de ajonjolí\n• 2 cucharaditas de aceite de canola\n• medio limón\n\n*Preparación*\n1. Corta el tofu en cubos y dóralo en la mitad del aceite.\n2. Saltea el ajo y las verduras en el resto del aceite por 4 minutos.\n3. Sirve la quinua en el fondo del plato con las verduras y el tofu encima.\n4. Termina con limón y ajonjolí.\n\n💡 Sin sal añadida: el limón y el ajonjolí tostado dan sabor de sobra."
    },
    {
     "dia": 7,
     "receta_id": "RCT-DES-013",
-    "texto": "🍽️ *Receta del día: Hígado encebollado con arepa y guayaba*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 389 kcal · proteína 26 g · carbohidratos 50 g · grasa 10 g · fibra 9 g · sodio 548 mg\nCubre cerca del 52 % de su proteína del día.\n\n*Ingredientes*\n• 1 filete pequeño de hígado de res (crudo)\n• 1/2 cebolla (cebolla cabezona)\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• 1 arepa (arepa de maíz blanco (sin sal))\n• 1 guayaba grande\n• una pizca de sal\n\n*Preparación*\n1. Corte el hígado en tiras y dórelo rápido en el aceite caliente.\n2. Agregue la cebolla en plumas y el tomate, y cocine tres minutos más.\n3. Sirva con la arepa asada y la guayaba en trozos.\n\n💡 No cocine de más el hígado: queda duro; la guayaba ayuda a aprovechar su hierro."
+    "texto": "🍽️ *Receta del día: Hígado encebollado con arepa y guayaba*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 389 kcal · proteína 26 g · carbohidratos 50 g · grasa 10 g · fibra 9 g · sodio 548 mg\nCubre cerca del 52 % de tu proteína del día.\n\n*Ingredientes*\n• 1 filete pequeño de hígado de res (crudo)\n• 1/2 cebolla (cebolla cabezona)\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• 1 arepa (arepa de maíz blanco (sin sal))\n• 1 guayaba grande\n• una pizca de sal\n\n*Preparación*\n1. Corta el hígado en tiras y dóralo rápido en el aceite caliente.\n2. Agrega la cebolla en plumas y el tomate, y cocina tres minutos más.\n3. Sirve con la arepa asada y la guayaba en trozos.\n\n💡 No cocines de más el hígado: queda duro; la guayaba ayuda a aprovechar su hierro."
    }
   ]
  },
@@ -2126,7 +2126,7 @@
     "frase_permitida": "Tus reservas de hierro, el tamaño de tus glóbulos rojos y su variación cuentan la misma historia: falta hierro.",
     "fuerza": "guía (OMS 2020)",
     "hallazgo_id": "H-2679E5-01",
-    "texto_paciente": "Sus resultados de hierro cuentan la misma historia"
+    "texto_paciente": "Tus resultados de hierro cuentan la misma historia"
    },
    {
     "tipo": "condicion",
@@ -2139,7 +2139,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-2679E5-02",
-    "texto_paciente": "Su prueba relacionada con la intolerancia al gluten salió positiva"
+    "texto_paciente": "Tu prueba relacionada con la intolerancia al gluten salió positiva"
    },
    {
     "tipo": "condicion",
@@ -2152,7 +2152,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-2679E5-03",
-    "texto_paciente": "Su folato está bajo"
+    "texto_paciente": "Tu folato está bajo"
    },
    {
     "tipo": "condicion",
@@ -2165,7 +2165,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-2679E5-04",
-    "texto_paciente": "Su enzima del hígado (ALT) está por encima de lo esperado"
+    "texto_paciente": "Tu enzima del hígado (ALT) está por encima de lo esperado"
    },
    {
     "tipo": "condicion",
@@ -2177,7 +2177,7 @@
     "nota": null,
     "fuerza": "guia",
     "patrones": [],
-    "texto_paciente": "El resultado de sus pruebas de hepatitis B"
+    "texto_paciente": "El resultado de tus pruebas de hepatitis B"
    },
    {
     "tipo": "condicion",
@@ -2190,7 +2190,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-2679E5-06",
-    "texto_paciente": "Su vitamina D está fuera del rango"
+    "texto_paciente": "Tu vitamina D está fuera del rango"
    }
   ],
   "condiciones": {
@@ -3894,12 +3894,12 @@
    "osmolality"
   ],
   "que_conviene_confirmar": [
-   "Su prueba relacionada con la intolerancia al gluten salió positiva: coincidencia moderada, confirmar con una segunda medición.",
-   "Su enzima del hígado (ALT) está por encima de lo esperado: coincidencia moderada, confirmar con una segunda medición."
+   "Tu prueba relacionada con la intolerancia al gluten salió positiva: coincidencia moderada, confirmar con una segunda medición.",
+   "Tu enzima del hígado (ALT) está por encima de lo esperado: coincidencia moderada, confirmar con una segunda medición."
   ],
   "preguntas_para_el_profesional": [
-   "¿Conviene confirmar o descartar «Sus resultados de hierro cuentan la misma historia» (REL-013) y en qué plazo?",
-   "¿Conviene confirmar o descartar «Su prueba relacionada con la intolerancia al gluten salió positiva» (COND-M4-GA-006) y en qué plazo?"
+   "¿Conviene confirmar o descartar «Tus resultados de hierro cuentan la misma historia» (REL-013) y en qué plazo?",
+   "¿Conviene confirmar o descartar «Tu prueba relacionada con la intolerancia al gluten salió positiva» (COND-M4-GA-006) y en qué plazo?"
   ],
   "restricciones_nutricionales": {
    "exigir": [

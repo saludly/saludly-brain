@@ -1,14 +1,14 @@
 id: COND-M4-GA-001
 tipo: condicion
-titulo_paciente: "Su índice de salud del hígado (FIB-4) está fuera de la zona baja"
-que_es: "El FIB-4 es un cálculo con su edad, dos enzimas del hígado y sus plaquetas, que estima si el hígado podría estar volviéndose más rígido con los años."
+titulo_paciente: "Tu índice de salud del hígado (FIB-4) está fuera de la zona baja"
+que_es: "El FIB-4 es un cálculo con tu edad, dos enzimas del hígado y tus plaquetas, que estima si el hígado podría estar volviéndose más rígido con los años."
 por_que_te_aparece:
-  - "Su índice FIB-4 salió en {fib4}, por encima de la zona baja."
-  - "Sus enzimas del hígado salieron así: ALT en {alt} y AST en {ast}."
-  - "Sus plaquetas, que también entran en el cálculo, salieron en {platelets}."
+  - "Tu índice FIB-4 salió en {fib4}, por encima de la zona baja."
+  - "Tus enzimas del hígado salieron así: ALT en {alt} y AST en {ast}."
+  - "Tus plaquetas, que también entran en el cálculo, salieron en {platelets}."
 riesgo_claro: "Si el hígado acumula grasa e inflamación durante años sin atenderse, puede ir perdiendo flexibilidad y funcionar peor. La buena noticia: el hígado responde muy bien a los cambios de hábitos."
-ejemplo_simple: "Piénselo como un detector de humo: no confirma que haya fuego, pero avisa que vale la pena revisar."
-incertidumbre: "Un índice no basta para saber cómo está el hígado: el ejercicio intenso lo cambia, y en menores de 35 años es menos confiable. Su médico puede pedir una prueba de elasticidad del hígado para estudiarlo mejor."
+ejemplo_simple: "Piénsalo como un detector de humo: no confirma que haya fuego, pero avisa que vale la pena revisar."
+incertidumbre: "Un índice no basta para saber cómo está el hígado: el ejercicio intenso lo cambia, y en menores de 35 años es menos confiable. Tu médico puede pedir una prueba de elasticidad del hígado para estudiarlo mejor."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["EASL-EASD-EASO 2024, hígado graso metabólico"]

@@ -1,14 +1,14 @@
 id: REL-012
 tipo: patron
-titulo_paciente: "Su paratiroides responde a cómo filtra su riñón"
+titulo_paciente: "Tu paratiroides responde a cómo filtra tu riñón"
 que_es: "La PTH es la hormona de las glándulas paratiroides, que regulan el calcio y el fósforo. Cuando el riñón filtra menos, suele subir."
 por_que_te_aparece:
-  - "Su PTH salió en {pth}, por encima del rango."
-  - "Su filtración renal (TFG) se calculó en {egfr}, por debajo de 60."
-  - "Su vitamina D, que también influye en la PTH, salió en {vitamin_d}."
+  - "Tu PTH salió en {pth}, por encima del rango."
+  - "Tu filtración renal (TFG) se calculó en {egfr}, por debajo de 60."
+  - "Tu vitamina D, que también influye en la PTH, salió en {vitamin_d}."
 riesgo_claro: "Si se mantiene, el equilibrio del calcio y el fósforo se altera y, con los años, puede afectar los huesos y los vasos sanguíneos."
 ejemplo_simple: "Es como un termostato que trabaja más cuando la casa pierde calor: la PTH sube para compensar lo que el riñón ya no hace igual."
-incertidumbre: "La vitamina D baja también sube la PTH. Su médico lo interpreta junto con el resto de sus resultados del riñón."
+incertidumbre: "La vitamina D baja también sube la PTH. Tu médico lo interpreta junto con el resto de tus resultados del riñón."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["KDIGO"]

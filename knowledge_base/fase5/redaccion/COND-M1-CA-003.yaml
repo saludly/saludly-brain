@@ -1,11 +1,11 @@
 id: COND-M1-CA-003
 tipo: condicion
-titulo_paciente: "Sus triglicéridos están por encima del rango deseable"
+titulo_paciente: "Tus triglicéridos están por encima del rango deseable"
 que_es: "Los triglicéridos son la grasa que el cuerpo fabrica y guarda cuando recibe más azúcar, harinas o alcohol de los que gasta."
 por_que_te_aparece:
-  - "Sus triglicéridos salieron en {triglycerides}, por encima de 150 mg/dL, que es el límite deseable."
+  - "Tus triglicéridos salieron en {triglycerides}, por encima de 150 mg/dL, que es el límite deseable."
 riesgo_claro: "Si se mantienen altos por años, suman al riesgo de problemas del corazón. Cuando suben muchísimo, también pueden inflamar el páncreas, un órgano de la digestión. La buena noticia: suelen responder rápido a los cambios en la comida y el alcohol."
-ejemplo_simple: "Piénselo como una despensa que se llena de más: lo que el cuerpo no gasta, lo guarda como grasa en la sangre."
+ejemplo_simple: "Piénsalo como una despensa que se llena de más: lo que el cuerpo no gasta, lo guarda como grasa en la sangre."
 incertidumbre: "Ojo: una sola medición no demuestra que estén altos siempre. El ayuno, el alcohol de los días anteriores y algunos medicamentos los cambian, así que conviene repetirlos."
 cuando_consultar: null
 aviso_whatsapp: null

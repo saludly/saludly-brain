@@ -2,186 +2,186 @@
 # Numeración 100 a 199. Pendiente de revisión de Carlos.
 # Regla: el ejercicio intenso no se muestra con hallazgos cardiovasculares de escalamiento 2 o 3, tiroides con exceso
 # de hormona o cortisol bajo (contraindicada_si); en su lugar aparece REC-ACT-104, que pide consulta previa.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-ACT-101
   tipo: actividad
-  titulo: "Camine después de comer"
-  texto_base: "Salga a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto."
+  titulo: "Camina después de comer"
+  texto_base: "Sal a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto."
   meta_concreta: "Caminar 15 minutos después del almuerzo, 5 días esta semana."
   por_que: "Los músculos en movimiento usan el azúcar de la comida y ayudan a que la glucosa suba menos."
   se_activa_con: ["COND-M1-EM-001", "COND-M1-EM-002", "COND-M1-EM-003", "COND-M1-EM-A04", "COND-M5-MU-001", "REL-001", "REL-028"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🚶 Hoy, después del almuerzo, salga a caminar 15 minutos a paso cómodo. Es de lo que más ayuda a su cuerpo a manejar el azúcar."
+  whatsapp: "🚶 Hoy, después del almuerzo, sal a caminar 15 minutos a paso cómodo. Es de lo que más ayuda a tu cuerpo a manejar el azúcar."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5", "Buffey et al., Sports Medicine 2022 (caminata posprandial)"]
 
 - id: REC-ACT-102
   tipo: actividad
-  titulo: "Muévase 150 minutos a la semana"
-  texto_base: "Sume al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días."
+  titulo: "Muévete 150 minutos a la semana"
+  texto_base: "Suma al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días."
   meta_concreta: "30 minutos de caminata rápida, 5 días esta semana."
   por_que: "La actividad aeróbica regular mejora el colesterol, la presión, el azúcar y el peso al mismo tiempo."
   se_activa_con: ["COND-M1-CA-001", "COND-M1-CA-003", "COND-M1-CA-004", "COND-M1-CA-006", "COND-M1-EM-003", "COND-M1-EM-004", "COND-M2-TI-001", "COND-M5-UR-002", "COND-M5-MU-004", "REL-001", "REL-003", "REL-017", "REL-024", "REL-028"]
   prioriza_objetivos: ["prevenir", "bajar_peso", "salud_general", "envejecer_saludable"]
   contraindicada_si: ["COND-M1-CA-002", "COND-M1-CA-007", "COND-M2-TI-005", "COND-M2-TI-009"]
   requiere_consulta_previa: false
-  whatsapp: "👟 Esta semana la meta son 30 minutos de caminata rápida 5 días. Puede partirlos en dos caminatas de 15."
+  whatsapp: "👟 Esta semana la meta son 30 minutos de caminata rápida 5 días. Puedes partirlos en dos caminatas de 15."
   fuentes: ["OMS, Directrices sobre actividad física y hábitos sedentarios 2020", "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease"]
 
 - id: REC-ACT-103
   tipo: actividad
   titulo: "Fuerza dos veces por semana"
-  texto_base: "Haga ejercicios de fuerza dos días a la semana: sentadillas a una silla, flexiones contra la pared, bandas elásticas o pesas livianas, trabajando piernas, espalda y brazos."
+  texto_base: "Haz ejercicios de fuerza dos días a la semana: sentadillas a una silla, flexiones contra la pared, bandas elásticas o pesas livianas, trabajando piernas, espalda y brazos."
   meta_concreta: "Dos sesiones de 20 minutos de fuerza esta semana, en días no seguidos."
   por_que: "El músculo es el mayor consumidor de azúcar del cuerpo; ganar fuerza mejora la glucosa, los huesos y la autonomía."
   se_activa_con: ["COND-M1-EM-002", "COND-M1-EM-003", "COND-M1-EM-004", "COND-M5-MU-004", "COND-M5-UR-002", "REL-024", "general"]
   prioriza_objetivos: ["masa_muscular", "envejecer_saludable", "bajar_peso", "atletico"]
   contraindicada_si: ["COND-M1-CA-002", "COND-M1-CA-007", "COND-M2-TI-005", "COND-M2-TI-009"]
   requiere_consulta_previa: false
-  whatsapp: "💪 Hoy haga 3 series de 10 sentadillas a una silla y 10 flexiones contra la pared. Fuerza dos veces por semana hace la diferencia."
+  whatsapp: "💪 Hoy haz 3 series de 10 sentadillas a una silla y 10 flexiones contra la pared. Fuerza dos veces por semana hace la diferencia."
   fuentes: ["OMS, Directrices sobre actividad física y hábitos sedentarios 2020", "ADA Standards of Care in Diabetes 2025, sección 5"]
 
 - id: REC-ACT-104
   tipo: actividad
-  titulo: "Consulte antes de entrenar fuerte"
-  texto_base: "Antes de empezar o aumentar ejercicio intenso, como correr, levantar pesas pesadas o hacer intervalos, hable con su médico. Mientras tanto, caminar a paso cómodo es una buena opción."
-  meta_concreta: "Esta semana, pida la cita y, mientras tanto, camine 20 minutos a paso cómodo 4 días."
-  por_que: "Con este resultado conviene que su médico defina qué intensidad de ejercicio es segura para usted."
+  titulo: "Consulta antes de entrenar fuerte"
+  texto_base: "Antes de empezar o aumentar ejercicio intenso, como correr, levantar pesas pesadas o hacer intervalos, habla con tu médico. Mientras tanto, caminar a paso cómodo es una buena opción."
+  meta_concreta: "Esta semana, pide la cita y, mientras tanto, camina 20 minutos a paso cómodo 4 días."
+  por_que: "Con este resultado conviene que tu médico defina qué intensidad de ejercicio es segura para ti."
   se_activa_con: ["COND-M1-CA-002", "COND-M1-CA-005", "COND-M1-CA-006", "COND-M1-CA-007", "COND-M2-NE-003", "COND-M2-TI-004", "COND-M2-TI-005", "COND-M2-TI-009", "SEG-002"]
   prioriza_objetivos: ["condicion_existente", "rendimiento", "maraton", "atletico", "masa_muscular"]
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "🩺 Antes de subir la intensidad de su ejercicio, hable con su médico. Mientras tanto, una caminata tranquila de 20 minutos es buena idea."
+  whatsapp: "🩺 Antes de subir la intensidad de tu ejercicio, habla con tu médico. Mientras tanto, una caminata tranquila de 20 minutos es buena idea."
   fuentes: ["ACSM's Guidelines for Exercise Testing and Prescription, 11.a ed. 2021 (preparticipación)", "GPC Colombia HTA 2025 (Minsalud e IETS)"]
 
 - id: REC-ACT-105
   tipo: actividad
-  titulo: "Interrumpa el tiempo sentado"
-  texto_base: "Si pasa mucho tiempo sentado, levántese cada 30 a 60 minutos y camine o estírese 2 o 3 minutos. Use una alarma en el celular para acordarse."
+  titulo: "Interrumpe el tiempo sentado"
+  texto_base: "Si pasas mucho tiempo sentado, levántate cada 30 a 60 minutos y camina o estírate 2 o 3 minutos. Usa una alarma en el celular para acordarte."
   meta_concreta: "Una pausa activa cada hora durante la jornada, 5 días esta semana."
-  por_que: "Estar sentado muchas horas seguidas empeora el manejo del azúcar, aunque haga ejercicio otros días."
+  por_que: "Estar sentado muchas horas seguidas empeora el manejo del azúcar aunque hagas ejercicio otros días."
   se_activa_con: ["COND-M1-EM-001", "COND-M1-EM-002", "COND-M1-EM-004", "COND-M1-EM-A04", "general"]
   prioriza_objetivos: ["bajar_peso", "salud_general", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "⏰ Ponga una alarma cada hora hoy: cuando suene, párese, camine o estírese 2 minutos. Su cuerpo se lo agradece."
+  whatsapp: "⏰ Pon una alarma cada hora hoy: cuando suene, párate, camina o estírate 2 minutos. Tu cuerpo lo agradece."
   fuentes: ["OMS, Directrices sobre actividad física y hábitos sedentarios 2020", "ADA Standards of Care in Diabetes 2025, sección 5"]
 
 - id: REC-ACT-106
   tipo: actividad
   titulo: "Fuerza con progresión"
-  texto_base: "Entrene fuerza dos o tres veces por semana con ejercicios para los grandes grupos musculares. Cuando complete sus repeticiones con buena técnica, suba un poco el peso o las repeticiones."
+  texto_base: "Entrena fuerza dos o tres veces por semana con ejercicios para los grandes grupos musculares. Cuando completes tus repeticiones con buena técnica, sube un poco el peso o las repeticiones."
   meta_concreta: "Tres sesiones de fuerza esta semana, anotando peso y repeticiones de cada ejercicio."
   por_que: "El músculo crece cuando recibe un estímulo un poco mayor cada semana, con buena técnica y descanso."
   se_activa_con: ["objetivo:masa_muscular", "objetivo:atletico"]
   prioriza_objetivos: ["masa_muscular", "atletico", "envejecer_saludable"]
   contraindicada_si: ["COND-M1-CA-002", "COND-M1-CA-005", "COND-M1-CA-006", "COND-M1-CA-007", "COND-M2-TI-004", "COND-M2-TI-005", "COND-M2-TI-009"]
   requiere_consulta_previa: false
-  whatsapp: "📝 En su próximo entrenamiento anote el peso y las repeticiones de cada ejercicio. Así sabrá cuándo subir un poco la carga."
+  whatsapp: "📝 En tu próximo entrenamiento anota peso y repeticiones de cada ejercicio. Así sabrás cuándo subir un poco la carga."
   fuentes: ["ACSM Position Stand: Progression Models in Resistance Training for Healthy Adults 2009", "OMS, Directrices sobre actividad física 2020"]
 
 - id: REC-ACT-107
   tipo: actividad
-  titulo: "Suba el kilometraje poco a poco"
-  texto_base: "Aumente su volumen de carrera de forma gradual, más o menos un 10 por ciento por semana, con una sola salida larga semanal y una semana más suave cada tres o cuatro."
-  meta_concreta: "Esta semana, planee sus salidas y no suba más de un 10 por ciento sobre los kilómetros de la semana pasada."
+  titulo: "Sube el kilometraje poco a poco"
+  texto_base: "Aumenta tu volumen de carrera de forma gradual, más o menos un 10 por ciento por semana, con una sola salida larga semanal y una semana más suave cada tres o cuatro."
+  meta_concreta: "Esta semana, planea tus salidas y no subas más de un 10 por ciento sobre los kilómetros de la semana pasada."
   por_que: "Subir la carga de golpe es la causa más común de lesiones en corredores."
   se_activa_con: ["objetivo:maraton"]
   prioriza_objetivos: ["maraton", "rendimiento", "atletico"]
   contraindicada_si: ["COND-M1-CA-002", "COND-M1-CA-005", "COND-M1-CA-006", "COND-M1-CA-007", "COND-M2-TI-004", "COND-M2-TI-005", "COND-M2-TI-009", "COND-M2-NE-005", "hemoglobin:bajo"]
   requiere_consulta_previa: false
-  whatsapp: "🏃 Para su plan de carrera: esta semana no suba más de un 10 por ciento los kilómetros. Progresar despacio lo aleja de las lesiones."
+  whatsapp: "🏃 Para tu plan de carrera: esta semana no subas más de un 10 por ciento los kilómetros. Progresar despacio te aleja de las lesiones."
   fuentes: ["ACSM's Guidelines for Exercise Testing and Prescription, 11.a ed. 2021", "Nielsen et al., Br J Sports Med 2014 (progresión en corredores)"]
 
 - id: REC-ACT-108
   tipo: actividad
   titulo: "Intervalos una vez por semana"
-  texto_base: "Si ya entrena con regularidad, agregue una sesión semanal de intervalos: periodos cortos a buen ritmo seguidos de recuperación suave, con calentamiento antes."
+  texto_base: "Si ya entrenas con regularidad, agrega una sesión semanal de intervalos: periodos cortos a buen ritmo seguidos de recuperación suave, con calentamiento antes."
   meta_concreta: "Una sesión de intervalos esta semana: 6 repeticiones de 1 minuto rápido y 2 minutos suave."
   por_que: "Los intervalos mejoran la capacidad del corazón y los pulmones en menos tiempo que el ejercicio continuo."
   se_activa_con: ["objetivo:rendimiento", "objetivo:atletico"]
   prioriza_objetivos: ["rendimiento", "atletico", "maraton"]
   contraindicada_si: ["COND-M1-CA-002", "COND-M1-CA-005", "COND-M1-CA-006", "COND-M1-CA-007", "COND-M2-TI-004", "COND-M2-TI-005", "COND-M2-TI-009", "hemoglobin:bajo"]
   requiere_consulta_previa: false
-  whatsapp: "⏱️ Esta semana pruebe una sesión de intervalos: caliente bien y haga 6 veces 1 minuto rápido y 2 minutos suave."
+  whatsapp: "⏱️ Esta semana prueba una sesión de intervalos: calienta bien y haz 6 veces 1 minuto rápido y 2 minutos suave."
   fuentes: ["ACSM's Guidelines for Exercise Testing and Prescription, 11.a ed. 2021", "OMS, Directrices sobre actividad física 2020"]
 
 - id: REC-ACT-109
   tipo: actividad
   titulo: "Equilibrio y movilidad"
-  texto_base: "Practique ejercicios de equilibrio y movilidad, como pararse en un pie apoyado en una silla, caminar en línea recta o hacer yoga o tai chi."
+  texto_base: "Practica ejercicios de equilibrio y movilidad, como pararte en un pie apoyado en una silla, caminar en línea recta o hacer yoga o tai chi."
   meta_concreta: "Tres sesiones de 10 minutos de equilibrio esta semana."
   por_que: "El equilibrio se pierde con los años si no se entrena, y cuidarlo previene caídas."
   se_activa_con: ["COND-M5-MU-004", "objetivo:envejecer_saludable"]
   prioriza_objetivos: ["envejecer_saludable", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🦩 Mientras se cepilla los dientes hoy, párese en un pie apoyado en el lavamanos 30 segundos y cambie de pie."
+  whatsapp: "🦩 Mientras te cepillas los dientes hoy, párate en un pie apoyado en el lavamanos 30 segundos y cambia de pie."
   fuentes: ["OMS, Directrices sobre actividad física 2020 (actividad multicomponente en mayores)"]
 
 - id: REC-ACT-110
   tipo: actividad
-  titulo: "Muévase de día para dormir mejor"
-  texto_base: "Haga su actividad física de preferencia en la mañana o la tarde, al aire libre si puede, y evite el ejercicio intenso en las dos horas antes de dormir."
+  titulo: "Muévete de día para dormir mejor"
+  texto_base: "Haz tu actividad física de preferencia en la mañana o la tarde, al aire libre si puedes, y evita el ejercicio intenso en las dos horas antes de dormir."
   meta_concreta: "Caminar 20 minutos antes de las 5 de la tarde, 5 días esta semana."
   por_que: "La actividad y la luz del día ayudan a regular el reloj del cuerpo y a dormir más profundo."
   se_activa_con: ["objetivo:energia_sueno"]
   prioriza_objetivos: ["energia_sueno", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "☀️ Hoy salga a caminar 20 minutos con luz del día. Moverse temprano ayuda a que esta noche duerma mejor."
+  whatsapp: "☀️ Hoy sal a caminar 20 minutos con luz del día. Moverte temprano ayuda a que esta noche duermas mejor."
   fuentes: ["AASM, Healthy Sleep Habits", "OMS, Directrices sobre actividad física 2020"]
 
 - id: REC-ACT-111
   tipo: actividad
-  titulo: "Respete los días de descanso"
-  texto_base: "Programe al menos uno o dos días de descanso o actividad suave por semana y alterne los grupos musculares que entrena."
-  meta_concreta: "Esta semana, marque en su calendario dos días de descanso o actividad suave."
+  titulo: "Respeta los días de descanso"
+  texto_base: "Programa al menos uno o dos días de descanso o actividad suave por semana y alterna los grupos musculares que entrenas."
+  meta_concreta: "Esta semana, marca en tu calendario dos días de descanso o actividad suave."
   por_que: "El músculo y el rendimiento mejoran durante la recuperación, no solo durante el entrenamiento."
   se_activa_con: ["objetivo:atletico", "objetivo:rendimiento", "objetivo:maraton", "objetivo:masa_muscular"]
   prioriza_objetivos: ["atletico", "rendimiento", "maraton", "masa_muscular"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "📅 Revise su semana de entrenamiento y marque dos días de descanso o actividad suave. Descansar también es entrenar."
+  whatsapp: "📅 Revisa tu semana de entrenamiento y marca dos días de descanso o actividad suave. Descansar también es entrenar."
   fuentes: ["ACSM Position Stand: Progression Models in Resistance Training 2009", "ACSM's Guidelines for Exercise Testing and Prescription, 11.a ed. 2021"]
 
 - id: REC-ACT-112
   tipo: actividad
-  titulo: "Sume pasos a su día"
-  texto_base: "Agregue pasos a lo que ya hace: bájese una parada antes, use las escaleras y camine mientras habla por teléfono."
-  meta_concreta: "Esta semana, sume 1.000 pasos diarios a lo que camina normalmente."
+  titulo: "Suma pasos a tu día"
+  texto_base: "Agrega pasos a lo que ya haces: bájate una parada antes, usa las escaleras y camina mientras hablas por teléfono."
+  meta_concreta: "Esta semana, suma 1.000 pasos diarios a lo que caminas normalmente."
   por_que: "Cada paso cuenta: moverse más en el día ayuda al peso, al azúcar y al ánimo."
   se_activa_con: ["general", "objetivo:bajar_peso"]
   prioriza_objetivos: ["bajar_peso", "salud_general", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "👣 Hoy use las escaleras en vez del ascensor y camine mientras habla por teléfono. Son pasos que suman."
+  whatsapp: "👣 Hoy usa las escaleras en vez del ascensor y camina mientras hablas por teléfono. Son pasos que suman."
   fuentes: ["OMS, Directrices sobre actividad física y hábitos sedentarios 2020", "Paluch et al., Lancet Public Health 2022 (pasos diarios)"]
 
 - id: REC-ACT-113
   tipo: actividad
-  titulo: "Aproveche la ciclovía"
-  texto_base: "Los domingos y festivos aproveche la ciclovía de Bogotá para caminar, trotar suave, patinar o montar bicicleta, solo o en familia."
+  titulo: "Aprovecha la ciclovía"
+  texto_base: "Los domingos y festivos aprovecha la ciclovía de Bogotá para caminar, trotar suave, patinar o montar bicicleta, solo o en familia."
   meta_concreta: "Este domingo, 45 minutos en la ciclovía."
   por_que: "Es una forma gratuita y agradable de sumar minutos de actividad a la semana."
   se_activa_con: ["general"]
   prioriza_objetivos: ["salud_general", "bajar_peso", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🚲 Plan para este domingo: 45 minutos en la ciclovía, caminando o en bicicleta. Mejor si invita a alguien."
+  whatsapp: "🚲 Plan para este domingo: 45 minutos en la ciclovía, caminando o en bicicleta. Mejor si invitas a alguien."
   fuentes: ["OMS, Directrices sobre actividad física y hábitos sedentarios 2020"]
 
 - id: REC-ACT-114
   tipo: actividad
-  titulo: "Fuerza para cuidar sus huesos"
-  texto_base: "Combine ejercicios de fuerza con actividades de impacto suave, como caminar rápido, subir escaleras o bailar, para estimular los huesos."
+  titulo: "Fuerza para cuidar tus huesos"
+  texto_base: "Combina ejercicios de fuerza con actividades de impacto suave, como caminar rápido, subir escaleras o bailar, para estimular los huesos."
   meta_concreta: "Esta semana, dos sesiones de fuerza y tres caminatas rápidas de 30 minutos."
   por_que: "Los huesos se fortalecen cuando reciben carga; esto es clave en la transición a la menopausia y con la edad."
   se_activa_con: ["COND-M5-MU-004", "objetivo:envejecer_saludable", "COND-M5-MU-002"]
   prioriza_objetivos: ["envejecer_saludable", "masa_muscular", "prevenir"]
   contraindicada_si: ["COND-M1-CA-002", "COND-M1-CA-007", "COND-M2-TI-005", "COND-M2-TI-009"]
   requiere_consulta_previa: false
-  whatsapp: "💃 Hoy suba escaleras en vez de usar el ascensor y baile una canción en casa. Sus huesos también necesitan movimiento."
+  whatsapp: "💃 Hoy sube escaleras en vez de usar el ascensor y baila una canción en casa. Tus huesos también necesitan movimiento."
   fuentes: ["The Menopause Society (NAMS), Management of osteoporosis in postmenopausal women 2021", "OMS, Directrices sobre actividad física 2020"]

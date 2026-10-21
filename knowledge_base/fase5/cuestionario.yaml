@@ -5,7 +5,7 @@
 # estado_revision: propuesta (las preguntas no cambian umbrales; alimentan el contexto del motor)
 
 actividad:
-  texto: "¿Cuánto se mueve en una semana normal?"
+  texto: "¿Cuánto te mueves en una semana normal?"
   opciones:
     - {id: sedentario, texto: "Casi no me muevo"}
     - {id: ligero, texto: "Camino o hago algo de ejercicio 1 o 2 veces por semana"}
@@ -13,18 +13,18 @@ actividad:
     - {id: alto, texto: "Entreno 5 veces o más por semana"}
 
 biotina:
-  texto: "¿Toma biotina o algún suplemento para el pelo, la piel o las uñas?"
+  texto: "¿Tomas biotina o algún suplemento para el pelo, la piel o las uñas?"
   ayuda: "La biotina puede cambiar algunos resultados del laboratorio, como los de tiroides."
 
 fuma:
-  texto: "¿Fuma o vapea?"
+  texto: "¿Fumas o vapeas?"
   opciones:
     - {id: nunca, texto: "Nunca he fumado"}
     - {id: antes, texto: "Fumaba, pero lo dejé"}
     - {id: si, texto: "Sí, fumo o vapeo"}
 
 alcohol:
-  texto: "¿Con qué frecuencia toma bebidas con alcohol?"
+  texto: "¿Con qué frecuencia tomas bebidas con alcohol?"
   opciones:
     - {id: "no", texto: "No tomo"}
     - {id: ocasional, texto: "De vez en cuando, menos de una vez por semana"}
@@ -32,7 +32,7 @@ alcohol:
     - {id: diario, texto: "Casi todos los días"}
 
 antecedentes:
-  texto: "¿Alguno de sus padres o hermanos ha tenido…?"
+  texto: "¿Alguno de tus padres o hermanos ha tenido…?"
   multiple: true
   opciones:
     - {id: diabetes, texto: "Diabetes"}
@@ -42,7 +42,7 @@ antecedentes:
     - {id: cancer_colon, texto: "Cáncer de colon"}
 
 embarazo:
-  texto: "¿Está embarazada?"
+  texto: "¿Estás embarazada?"
   solo_sexo: mujer
   opciones:
     - {id: "no", texto: "No"}
@@ -50,4 +50,4 @@ embarazo:
     - {id: no_se, texto: "No estoy segura"}
 
 ayuno:
-  aviso: "La visita es en ayunas: no coma nada desde 10 horas antes. Puede tomar agua."
+  aviso: "La visita es en ayunas: no comas nada desde 10 horas antes. Puedes tomar agua."

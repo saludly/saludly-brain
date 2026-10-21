@@ -1,14 +1,14 @@
 id: COND-M3-HE-002
 tipo: condicion
-titulo_paciente: "Su hemoglobina y sus reservas de hierro están bajas"
-que_es: "La ferritina es la reserva de hierro de su cuerpo. El hierro es el material con el que se fabrica la hemoglobina, que lleva el oxígeno."
+titulo_paciente: "Tu hemoglobina y tus reservas de hierro están bajas"
+que_es: "La ferritina es la reserva de hierro de tu cuerpo. El hierro es el material con el que se fabrica la hemoglobina, que lleva el oxígeno."
 por_que_te_aparece:
-  - "Su hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo de lo recomendado."
-  - "Su ferritina, que es la reserva de hierro de su cuerpo, salió en {ferritin}, más baja de lo esperado."
-  - "Su saturación de transferrina, que muestra cuánto hierro circula listo para usarse, salió en {transferrin_saturation}."
+  - "Tu hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo de lo recomendado."
+  - "Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en {ferritin}, más baja de lo esperado."
+  - "Tu saturación de transferrina, que muestra cuánto hierro circula listo para usarse, salió en {transferrin_saturation}."
 riesgo_claro: "Si no se atiende, el cansancio y la falta de aire pueden aumentar, y la razón por la que el cuerpo pierde o no recibe hierro sigue sin encontrarse."
-ejemplo_simple: "Piénselo como una despensa casi vacía: la cocina sigue funcionando, pero cada día cuesta más preparar la comida."
-incertidumbre: "Este patrón es compatible con falta de hierro, la causa más frecuente de hemoglobina baja, y tiene tratamiento. Lo importante es saber por qué falta: eso lo define su médico en una consulta en las próximas semanas."
+ejemplo_simple: "Piénsalo como una despensa casi vacía: la cocina sigue funcionando, pero cada día cuesta más preparar la comida."
+incertidumbre: "Este patrón es compatible con falta de hierro, la causa más frecuente de hemoglobina baja, y tiene tratamiento. Lo importante es saber por qué falta: eso lo define tu médico en una consulta en las próximas semanas."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["OMS 2020, ferritina", "OMS 2024, cortes de hemoglobina"]

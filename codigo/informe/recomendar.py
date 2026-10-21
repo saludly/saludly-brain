@@ -101,7 +101,7 @@ def seleccionar(catalogo, motor_out, objetivos, maximo=14, sexo=None, perfil=Non
     for x in final:
         x.pop("_orden"); x.pop("_activadores")
         if x["requiere_consulta_previa"] and not x["texto"].lower().startswith("antes"):
-            x["texto"] = "Antes de empezar, coménteselo a su médico. " + x["texto"]
+            x["texto"] = "Antes de empezar, coméntalo con tu médico. " + x["texto"]
     return final
 
 

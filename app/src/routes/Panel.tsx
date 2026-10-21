@@ -41,7 +41,7 @@ export function Panel() {
         <Indicadores />
         <section id="resultados" className="rise mt-16 scroll-mt-24" style={{ "--rise-delay": "0.3s" } as CSSProperties}>
           <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule pb-4">
-            <h2 className="text-2xl font-light tracking-tight text-ink">Todos sus resultados</h2>
+            <h2 className="text-2xl font-light tracking-tight text-ink">Todos tus resultados</h2>
             <div className="flex flex-wrap gap-2">
               {FILTROS.map((f) => (
                 <button

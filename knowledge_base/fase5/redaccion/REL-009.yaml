@@ -1,15 +1,15 @@
 id: REL-009
 tipo: patron
-titulo_paciente: "Sus glóbulos rojos se están renovando más rápido"
+titulo_paciente: "Tus glóbulos rojos se están renovando más rápido"
 que_es: "Los glóbulos rojos viven unos cuatro meses. Cuando se destruyen antes, la médula fabrica más y varios resultados de la sangre cambian a la vez."
 por_que_te_aparece:
-  - "Su hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo del rango."
-  - "Sus reticulocitos, los glóbulos rojos recién fabricados, salieron en {reticulocytes_pct}."
-  - "Su bilirrubina total, un pigmento que se forma cuando se rompen los glóbulos rojos, salió en {bilirubin_total}."
+  - "Tu hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está por debajo del rango."
+  - "Tus reticulocitos, los glóbulos rojos recién fabricados, salieron en {reticulocytes_pct}."
+  - "Tu bilirrubina total, un pigmento que se forma cuando se rompen los glóbulos rojos, salió en {bilirubin_total}."
 riesgo_claro: "Si los glóbulos rojos se pierden más rápido de lo que se reponen, puede aparecer cansancio, palidez y falta de aire. Por eso conviene buscar la causa."
 ejemplo_simple: "Es como una fábrica que trabaja horas extra porque los productos se dañan rápido en la bodega: produce más, pero no alcanza."
-incertidumbre: "A veces la muestra se daña al tomarla y altera estos valores. Su médico puede pedir otros exámenes para confirmarlo."
-cuando_consultar: "Pida una consulta médica en las próximas semanas."
+incertidumbre: "A veces la muestra se daña al tomarla y altera estos valores. Tu médico puede pedir otros exámenes para confirmarlo."
+cuando_consultar: "Pide una consulta médica en las próximas semanas."
 aviso_whatsapp: null
 fuentes: ["Documento de relaciones, grupo 2.3"]
 estado_revision: aprobada

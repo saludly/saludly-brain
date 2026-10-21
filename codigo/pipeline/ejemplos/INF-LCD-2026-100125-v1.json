@@ -3,7 +3,7 @@
  "paciente_ref": "P-398901AD",
  "orden": "LCD-2026-100125",
  "fecha_toma": "2026-10-01",
- "generado": "2026-10-21T00:07:39",
+ "generado": "2026-10-21T00:37:18",
  "estado": "retenido_hasta_llamada",
  "panel": "solo_sangre",
  "escalamiento_maximo": 3,
@@ -40,48 +40,48 @@
   "activo": false
  },
  "paciente": {
-  "resumen": "Revisamos sus resultados y encontramos 7 puntos que vale la pena atender; el más importante es: su azúcar y sus grasas se mueven juntos. Nuestro equipo médico lo va a llamar hoy para hablarlo. También hay buenas noticias: 12 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en sus metas: prevenir enfermedades, bajar de peso, tener más energía y dormir mejor.",
+  "resumen": "Revisamos tus resultados y encontramos 7 puntos que vale la pena atender; el más importante es: tu azúcar y tus grasas se mueven juntos. Nuestro equipo médico te va a llamar hoy para hablarlo. También hay buenas noticias: 12 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en tus metas: prevenir enfermedades, bajar de peso, tener más energía y dormir mejor.",
   "nota_alimentacion": null,
   "lo_que_esta_bien": [
    {
     "grupo": "COND-M4-IN-002",
-    "nombre": "Usted cuenta con defensas contra la hepatitis B por la vacuna",
-    "texto": "No se encontró el virus ni señales de contacto con él, y sus defensas (anti-HBs) salieron en 58 mUI/mL, un nivel que protege."
+    "nombre": "Tienes defensas contra la hepatitis B por la vacuna",
+    "texto": "No se encontró el virus ni señales de contacto con él, y tus defensas (anti-HBs) salieron en 58 mUI/mL, un nivel que protege."
    },
    {
     "grupo": "hemograma",
     "nombre": "Hemograma",
-    "texto": "Sus glóbulos rojos, blancos y plaquetas están dentro de los rangos de referencia."
+    "texto": "Tus glóbulos rojos, blancos y plaquetas están dentro de los rangos de referencia."
    },
    {
     "grupo": "rinon",
     "nombre": "Riñones",
-    "texto": "Sus riñones están filtrando dentro de lo esperado para su edad."
+    "texto": "Tus riñones están filtrando dentro de lo esperado para tu edad."
    },
    {
     "grupo": "electrolitos",
     "nombre": "Sales y minerales de la sangre",
-    "texto": "Sus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
+    "texto": "Tus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
    },
    {
     "grupo": "tiroides",
     "nombre": "Tiroides",
-    "texto": "Las hormonas de su tiroides están dentro de los rangos de referencia."
+    "texto": "Las hormonas de tu tiroides están dentro de los rangos de referencia."
    },
    {
     "grupo": "hierro",
     "nombre": "Hierro",
-    "texto": "Sus reservas de hierro y el hierro que circula en su sangre están dentro de los rangos de referencia."
+    "texto": "Tus reservas de hierro y el hierro que circula en tu sangre están dentro de los rangos de referencia."
    },
    {
     "grupo": "inflamacion",
     "nombre": "Inflamación",
-    "texto": "Sus marcadores de inflamación están dentro de los rangos de referencia."
+    "texto": "Tus marcadores de inflamación están dentro de los rangos de referencia."
    },
    {
     "grupo": "hormonas",
     "nombre": "Hormonas",
-    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para su edad y su sexo."
+    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para tu edad y tu sexo."
    },
    {
     "grupo": "corazon",
@@ -91,17 +91,17 @@
    {
     "grupo": "proteinas",
     "nombre": "Proteínas de la sangre",
-    "texto": "Sus proteínas de la sangre y sus anticuerpos generales están dentro de los rangos de referencia."
+    "texto": "Tus proteínas de la sangre y tus anticuerpos generales están dentro de los rangos de referencia."
    },
    {
     "grupo": "coagulacion",
     "nombre": "Coagulación",
-    "texto": "Sus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
+    "texto": "Tus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
    },
    {
     "grupo": "serologias",
     "nombre": "Pruebas de infecciones y anticuerpos",
-    "texto": "En las pruebas de infecciones y de anticuerpos que se hicieron no se encontraron anticuerpos ni marcadores reactivos. Si tiene síntomas o una exposición reciente, coménteselo a su médico."
+    "texto": "En las pruebas de infecciones y de anticuerpos que se hicieron no se encontraron anticuerpos ni marcadores reactivos. Si tienes síntomas o una exposición reciente, coméntalo con tu médico."
    }
   ],
   "lo_que_merece_atencion": [
@@ -109,30 +109,30 @@
     "hallazgo_id": "H-8901AD-01",
     "referencia": "REL-001",
     "tipo": "patron",
-    "titulo": "Su azúcar y sus grasas se mueven juntos",
+    "titulo": "Tu azúcar y tus grasas se mueven juntos",
     "escalamiento": 3,
     "nivel_lenguaje": null,
     "coincidencia": "alta",
     "que_es": "Cuando al cuerpo le cuesta más manejar el azúcar, varios resultados cambian a la vez: la glucosa, la insulina, los triglicéridos y el colesterol bueno.",
     "por_que": [
-     "Su glucosa en ayunas salió en 386 mg/dL, y su hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, en 10,8 %.",
-     "Sus triglicéridos, un tipo de grasa en la sangre, salieron en 612 mg/dL, y su colesterol HDL, el colesterol bueno, en 34 mg/dL.",
-     "Su índice HOMA-IR, que estima cuánto le cuesta a la insulina hacer su trabajo, salió en 13,53.",
-     "Usted cumple al menos 3 de los 5 componentes: cintura, triglicéridos, colesterol HDL, presión y glucosa."
+     "Tu glucosa en ayunas salió en 386 mg/dL, y tu hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, en 10,8 %.",
+     "Tus triglicéridos, un tipo de grasa en la sangre, salieron en 612 mg/dL, y tu colesterol HDL, el colesterol bueno, en 34 mg/dL.",
+     "Tu índice HOMA-IR, que estima cuánto le cuesta a la insulina hacer su trabajo, salió en 13,53.",
+     "Cumples al menos 3 de los 5 componentes: cintura, triglicéridos, colesterol HDL, presión y glucosa."
     ],
     "ejemplo": "Es como una cocina donde la nevera ya no cierra bien: no falla una sola cosa; todo el sistema trabaja de más.",
     "agrupa": [
      {
       "referencia": "COND-M1-EM-002",
-      "titulo": "Su glucosa está en el rango que las guías usan para diabetes"
+      "titulo": "Tu glucosa está en el rango que las guías usan para diabetes"
      },
      {
       "referencia": "COND-M1-EM-003",
-      "titulo": "Usted cumple varios componentes del síndrome metabólico"
+      "titulo": "Cumples varios componentes del síndrome metabólico"
      },
      {
       "referencia": "COND-M1-CA-003",
-      "titulo": "Sus triglicéridos están por encima del rango deseable"
+      "titulo": "Tus triglicéridos están por encima del rango deseable"
      }
     ]
    },
@@ -140,13 +140,13 @@
     "hallazgo_id": "H-8901AD-02",
     "referencia": "SEG-010",
     "tipo": "seguridad",
-    "titulo": "Un resultado de su metabolismo para revisar",
+    "titulo": "Un resultado de tu metabolismo para revisar",
     "escalamiento": 1,
     "nivel_lenguaje": null,
     "coincidencia": null,
-    "que_es": "El péptido C muestra cuánta insulina produce su cuerpo; la fructosamina, el promedio de azúcar de las últimas semanas; y el NT-proBNP, el esfuerzo del corazón.",
+    "que_es": "El péptido C muestra cuánta insulina produce tu cuerpo; la fructosamina, el promedio de azúcar de las últimas semanas; y el NT-proBNP, el esfuerzo del corazón.",
     "por_que": [
-     "Su fructosamina salió en 412 µmol/L."
+     "Tu fructosamina salió en 412 µmol/L."
     ],
     "ejemplo": "Es como una luz del tablero que se enciende: no dice qué falla, pero indica que vale la pena revisar.",
     "agrupa": []
@@ -155,14 +155,14 @@
     "hallazgo_id": "H-8901AD-03",
     "referencia": "COND-M1-EM-004",
     "tipo": "condicion",
-    "titulo": "Su índice de masa corporal está por encima del rango saludable",
+    "titulo": "Tu índice de masa corporal está por encima del rango saludable",
     "escalamiento": 1,
     "nivel_lenguaje": "Resultado observado",
     "coincidencia": "alta",
-    "que_es": "El índice de masa corporal (IMC) relaciona su peso con su estatura para estimar si hay exceso de grasa en el cuerpo.",
+    "que_es": "El índice de masa corporal (IMC) relaciona tu peso con tu estatura para estimar si hay exceso de grasa en el cuerpo.",
     "por_que": [
-     "Con el peso y la talla que midió la enfermera, su IMC salió en 31,8. La OMS usa 25 para sobrepeso y 30 para obesidad.",
-     "Su cintura midió 104 cm. Esta medida muestra si la grasa se acumula en el abdomen (en población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
+     "Con el peso y la talla que midió la enfermera, tu IMC salió en 31,8. La OMS usa 25 para sobrepeso y 30 para obesidad.",
+     "Tu cintura midió 104 cm. Esta medida muestra si la grasa se acumula en el abdomen (en población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
     ],
     "ejemplo": "Es como cargar una maleta extra todo el día: al principio no se nota, pero con el tiempo cansa la espalda y las rodillas.",
     "agrupa": []
@@ -171,59 +171,59 @@
     "hallazgo_id": "H-8901AD-04",
     "referencia": "COND-M1-CA-001",
     "tipo": "condicion",
-    "titulo": "Su colesterol está por encima del valor de tamizaje",
+    "titulo": "Tu colesterol está por encima del valor de tamizaje",
     "escalamiento": 1,
     "nivel_lenguaje": "Riesgo potencial",
     "coincidencia": "moderada",
     "que_es": "El colesterol LDL y el no-HDL miden la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias.",
     "por_que": [
-     "Su colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en 212 mg/dL. El valor de tamizaje es 160 mg/dL."
+     "Tu colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en 212 mg/dL. El valor de tamizaje es 160 mg/dL."
     ],
-    "ejemplo": "Piénselo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
+    "ejemplo": "Piénsalo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-8901AD-05",
     "referencia": "COND-M1-CA-006",
     "tipo": "condicion",
-    "titulo": "Su presión arterial está por encima de 130/80",
+    "titulo": "Tu presión arterial está por encima de 130/80",
     "escalamiento": 1,
     "nivel_lenguaje": "Patrón compatible",
     "coincidencia": "moderada",
     "que_es": "La presión arterial es la fuerza con la que la sangre empuja las paredes de las arterias.",
     "por_que": [
-     "En la visita, la enfermera midió su presión en 136/86 mmHg. Desde 130/80 mmHg, las guías piden confirmarla con mediciones en casa."
+     "En la visita, la enfermera midió tu presión en 136/86 mmHg. Desde 130/80 mmHg, las guías piden confirmarla con mediciones en casa."
     ],
-    "ejemplo": "Piénselo como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta.",
+    "ejemplo": "Piénsalo como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-8901AD-06",
     "referencia": "COND-M4-GA-001",
     "tipo": "condicion",
-    "titulo": "Su índice de salud del hígado (FIB-4) está fuera de la zona baja",
+    "titulo": "Tu índice de salud del hígado (FIB-4) está fuera de la zona baja",
     "escalamiento": 1,
     "nivel_lenguaje": "Riesgo potencial",
     "coincidencia": "moderada",
-    "que_es": "El FIB-4 es un cálculo con su edad, dos enzimas del hígado y sus plaquetas, que estima si el hígado podría estar volviéndose más rígido con los años.",
+    "que_es": "El FIB-4 es un cálculo con tu edad, dos enzimas del hígado y tus plaquetas, que estima si el hígado podría estar volviéndose más rígido con los años.",
     "por_que": [
-     "Su índice FIB-4 salió en 1,46, por encima de la zona baja.",
-     "Sus enzimas del hígado salieron así: ALT en 34 U/L y AST en 39 U/L."
+     "Tu índice FIB-4 salió en 1,46, por encima de la zona baja.",
+     "Tus enzimas del hígado salieron así: ALT en 34 U/L y AST en 39 U/L."
     ],
-    "ejemplo": "Piénselo como un detector de humo: no confirma que haya fuego, pero avisa que vale la pena revisar.",
+    "ejemplo": "Piénsalo como un detector de humo: no confirma que haya fuego, pero avisa que vale la pena revisar.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-8901AD-08",
     "referencia": "COND-M3-NU-A03",
     "tipo": "condicion",
-    "titulo": "Su vitamina D está fuera del rango",
+    "titulo": "Tu vitamina D está fuera del rango",
     "escalamiento": 0,
     "nivel_lenguaje": null,
     "coincidencia": null,
     "que_es": "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos. El cuerpo la fabrica con el sol.",
     "por_que": [
-     "Su vitamina D salió en 24,6 ng/mL, fuera del rango del laboratorio."
+     "Tu vitamina D salió en 24,6 ng/mL, fuera del rango del laboratorio."
     ],
     "ejemplo": "Es como el cemento de una pared: los ladrillos están, pero sin suficiente cemento la pared queda menos firme.",
     "agrupa": []
@@ -233,45 +233,45 @@
    {
     "hallazgo_id": "H-8901AD-01",
     "texto": "Si este patrón se mantiene durante años, aumenta la probabilidad de llegar a diabetes y de que se dañen los vasos sanguíneos del corazón. La buena noticia: como van juntos, los mismos hábitos mejoran todos a la vez.",
-    "incertidumbre": "Este patrón no es un diagnóstico. Un ayuno incompleto o algunos medicamentos pueden mover estos valores, y su médico decide si hay que repetirlos."
+    "incertidumbre": "Este patrón no es un diagnóstico. Un ayuno incompleto o algunos medicamentos pueden mover estos valores, y tu médico decide si hay que repetirlos."
    },
    {
     "hallazgo_id": "H-8901AD-02",
-    "texto": "Si alguno se mantiene fuera de rango, puede relacionarse con el manejo del azúcar o con el trabajo del corazón. Por eso lo revisa su médico.",
-    "incertidumbre": "Por sí solos no confirman nada. La albúmina baja, la vitamina C o el riñón pueden alterarlos, y su médico los lee con sus otros resultados."
+    "texto": "Si alguno se mantiene fuera de rango, puede relacionarse con el manejo del azúcar o con el trabajo del corazón. Por eso lo revisa tu médico.",
+    "incertidumbre": "Por sí solos no confirman nada. La albúmina baja, la vitamina C o el riñón pueden alterarlos, y tu médico los lee con tus otros resultados."
    },
    {
     "hallazgo_id": "H-8901AD-03",
     "texto": "Con los años, el exceso de grasa, sobre todo en el abdomen, aumenta la probabilidad de diabetes, presión alta, problemas del corazón y dolor de articulaciones. La buena noticia: bajar aunque sea un poco de peso ya trae beneficios.",
-    "incertidumbre": "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y su médico ayudan a interpretarlo."
+    "incertidumbre": "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y tu médico ayudan a interpretarlo."
    },
    {
     "hallazgo_id": "H-8901AD-04",
     "texto": "Si se mantiene alto durante años, las arterias se van estrechando y aumenta la probabilidad de problemas del corazón y del cerebro. La buena noticia: la alimentación y el movimiento ayudan a bajarlo.",
-    "incertidumbre": "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para usted depende de su riesgo cardiovascular global, que revisa su médico."
+    "incertidumbre": "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para ti depende de tu riesgo cardiovascular global, que revisa tu médico."
    },
    {
     "hallazgo_id": "H-8901AD-05",
     "texto": "Si la presión se mantiene alta por años, va desgastando el corazón, los riñones, el cerebro y los ojos, casi siempre sin dar síntomas. Por eso vale tanto medirla.",
-    "incertidumbre": "Ojo: una sola visita no confirma hipertensión. Los nervios, el café o el esfuerzo la suben. Lo ideal es medirla en casa varios días con un tensiómetro validado y revisarlo con su médico."
+    "incertidumbre": "Ojo: una sola visita no confirma hipertensión. Los nervios, el café o el esfuerzo la suben. Lo ideal es medirla en casa varios días con un tensiómetro validado y revisarlo con tu médico."
    },
    {
     "hallazgo_id": "H-8901AD-06",
     "texto": "Si el hígado acumula grasa e inflamación durante años sin atenderse, puede ir perdiendo flexibilidad y funcionar peor. La buena noticia: el hígado responde muy bien a los cambios de hábitos.",
-    "incertidumbre": "Un índice no basta para saber cómo está el hígado: el ejercicio intenso lo cambia, y en menores de 35 años es menos confiable. Su médico puede pedir una prueba de elasticidad del hígado para estudiarlo mejor."
+    "incertidumbre": "Un índice no basta para saber cómo está el hígado: el ejercicio intenso lo cambia, y en menores de 35 años es menos confiable. Tu médico puede pedir una prueba de elasticidad del hígado para estudiarlo mejor."
    },
    {
     "hallazgo_id": "H-8901AD-08",
     "texto": "Si se mantiene baja durante años, los huesos pueden debilitarse. Si está alta por suplementos, se puede acumular en el cuerpo.",
-    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puede mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quiere suplementarla o ya usa suplementos, coménteselo a su médico."
+    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puedes mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quieres suplementarla o ya tomas suplementos, coméntalo con tu médico."
    }
   ],
   "que_puedes_hacer": [
    {
     "recomendacion_id": "REC-ACT-102",
     "tipo": "actividad",
-    "titulo": "Muévase 150 minutos a la semana",
-    "texto": "Sume al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
+    "titulo": "Muévete 150 minutos a la semana",
+    "texto": "Suma al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
     "meta": "30 minutos de caminata rápida, 5 días esta semana.",
     "por_que": "La actividad aeróbica regular mejora el colesterol, la presión, el azúcar y el peso al mismo tiempo.",
     "hallazgos": [
@@ -293,7 +293,7 @@
     "recomendacion_id": "REC-HAB-102",
     "tipo": "habitos",
     "titulo": "Menos alcohol",
-    "texto": "Reduzca el alcohol: mientras menos, mejor. Tenga días de la semana sin nada de alcohol y, cuando tome, alterne cada trago con un vaso de agua.",
+    "texto": "Reduce el alcohol: mientras menos, mejor. Ten días de la semana sin nada de alcohol y, cuando tomes, alterna cada trago con un vaso de agua.",
     "meta": "Esta semana, al menos 5 días sin alcohol.",
     "por_que": "El alcohol sube los triglicéridos y la presión, aporta calorías vacías y afecta el sueño.",
     "hallazgos": [
@@ -314,8 +314,8 @@
     "recomendacion_id": "REC-TER-101",
     "tipo": "terapias",
     "titulo": "Una cita con nutricionista",
-    "texto": "Si quiere, pida una cita con un nutricionista para armar un plan de alimentación a su medida, con sus gustos, horarios y presupuesto.",
-    "meta": "Averigüe esta semana cómo pedir cita con nutrición en su EPS o prepagada.",
+    "texto": "Si quieres, pide una cita con un nutricionista para armar un plan de alimentación a tu medida, con tus gustos, horarios y presupuesto.",
+    "meta": "Averigua esta semana cómo pedir cita con nutrición en tu EPS o prepagada.",
     "por_que": "Un plan personalizado es más fácil de mantener que una dieta genérica.",
     "hallazgos": [
      "COND-M1-EM-002",
@@ -333,8 +333,8 @@
    {
     "recomendacion_id": "REC-ALI-102",
     "tipo": "alimentacion",
-    "titulo": "Llene medio plato con verduras",
-    "texto": "En el almuerzo y la comida, sirva primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa.",
+    "titulo": "Llena medio plato con verduras",
+    "texto": "En el almuerzo y la comida, sirve primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa.",
     "meta": "Medio plato de verduras en el almuerzo, 5 días esta semana.",
     "por_que": "La fibra de las verduras hace que el azúcar de la comida entre más despacio a la sangre y da saciedad.",
     "hallazgos": [
@@ -353,9 +353,9 @@
    {
     "recomendacion_id": "REC-HAB-101",
     "tipo": "habitos",
-    "titulo": "Ponga fecha para dejar de fumar",
-    "texto": "Si fuma o vapea, elija una fecha en las próximas semanas para dejarlo y pida apoyo en su EPS o con su médico: con acompañamiento es más fácil lograrlo.",
-    "meta": "Esta semana, escoja su fecha para dejar de fumar y cuéntesela a una persona cercana.",
+    "titulo": "Pon fecha para dejar de fumar",
+    "texto": "Si fumas o vapeas, elige una fecha en las próximas semanas para dejarlo y pide apoyo en tu EPS o con tu médico: con acompañamiento es más fácil lograrlo.",
+    "meta": "Esta semana, escoge tu fecha para dejar de fumar y cuéntasela a una persona cercana.",
     "por_que": "El cigarrillo daña las arterias, sube la presión y empeora el colesterol; dejarlo es de lo que más protege el corazón.",
     "hallazgos": [
      "COND-M1-CA-001",
@@ -372,8 +372,8 @@
     "recomendacion_id": "REC-SUE-101",
     "tipo": "sueno",
     "titulo": "Horario fijo para dormir",
-    "texto": "Acuéstese y levántese a la misma hora todos los días, también el fin de semana, buscando dormir entre 7 y 9 horas.",
-    "meta": "Esta semana, misma hora de levantarse los 7 días, con máximo una hora de diferencia.",
+    "texto": "Acuéstate y levántate a la misma hora todos los días, también el fin de semana, buscando dormir entre 7 y 9 horas.",
+    "meta": "Esta semana, misma hora de levantarte los 7 días, con máximo una hora de diferencia.",
     "por_que": "Dormir poco o a deshoras altera el manejo del azúcar, el apetito, la presión y las hormonas.",
     "hallazgos": [
      "COND-M1-EM-003",
@@ -391,7 +391,7 @@
     "recomendacion_id": "REC-ACT-103",
     "tipo": "actividad",
     "titulo": "Fuerza dos veces por semana",
-    "texto": "Haga ejercicios de fuerza dos días a la semana: sentadillas a una silla, flexiones contra la pared, bandas elásticas o pesas livianas, trabajando piernas, espalda y brazos.",
+    "texto": "Haz ejercicios de fuerza dos días a la semana: sentadillas a una silla, flexiones contra la pared, bandas elásticas o pesas livianas, trabajando piernas, espalda y brazos.",
     "meta": "Dos sesiones de 20 minutos de fuerza esta semana, en días no seguidos.",
     "por_que": "El músculo es el mayor consumidor de azúcar del cuerpo; ganar fuerza mejora la glucosa, los huesos y la autonomía.",
     "hallazgos": [
@@ -407,8 +407,8 @@
    {
     "recomendacion_id": "REC-ALI-101",
     "tipo": "alimentacion",
-    "titulo": "Cambie las bebidas azucaradas por agua",
-    "texto": "Reemplace gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar.",
+    "titulo": "Cambia las bebidas azucaradas por agua",
+    "texto": "Reemplaza gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar.",
     "meta": "Esta semana, cero bebidas azucaradas en el almuerzo y la comida.",
     "por_que": "Las bebidas azucaradas suben la glucosa y los triglicéridos rápido y no quitan el hambre.",
     "hallazgos": [
@@ -426,9 +426,9 @@
    {
     "recomendacion_id": "REC-ALI-106",
     "tipo": "alimentacion",
-    "titulo": "Use el método del plato",
-    "texto": "Arme su plato así: la mitad con verduras, un cuarto con proteína como pollo, pescado, huevo o fríjol, y un cuarto con arroz, papa, yuca o arepa.",
-    "meta": "Arme así su almuerzo 5 días esta semana.",
+    "titulo": "Usa el método del plato",
+    "texto": "Arma tu plato así: la mitad con verduras, un cuarto con proteína como pollo, pescado, huevo o fríjol, y un cuarto con arroz, papa, yuca o arepa.",
+    "meta": "Arma así tu almuerzo 5 días esta semana.",
     "por_que": "Ordena las porciones sin contar calorías y evita que el carbohidrato ocupe todo el plato.",
     "hallazgos": [
      "COND-M1-EM-002",
@@ -443,9 +443,9 @@
    {
     "recomendacion_id": "REC-SUE-106",
     "tipo": "sueno",
-    "titulo": "Cuéntele a su médico si ronca",
-    "texto": "Si ronca fuerte, alguien nota que deja de respirar al dormir o se levanta cansado aunque duerma suficiente, coméntelo en su consulta.",
-    "meta": "Pregúntele a quien duerme cerca si ronca fuerte y anote la respuesta para su próxima consulta.",
+    "titulo": "Cuéntale a tu médico si roncas",
+    "texto": "Si roncas fuerte, alguien nota que dejas de respirar al dormir o te levantas cansado aunque duermas suficiente, coméntalo en tu consulta.",
+    "meta": "Pregúntale a quien duerme cerca si roncas fuerte y anota la respuesta para tu próxima consulta.",
     "por_que": "Las pausas al respirar durante el sueño se relacionan con presión alta, más peso y peor manejo del azúcar, y se pueden evaluar.",
     "hallazgos": [
      "COND-M1-EM-004",
@@ -463,8 +463,8 @@
    {
     "recomendacion_id": "REC-ACT-101",
     "tipo": "actividad",
-    "titulo": "Camine después de comer",
-    "texto": "Salga a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto.",
+    "titulo": "Camina después de comer",
+    "texto": "Sal a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto.",
     "meta": "Caminar 15 minutos después del almuerzo, 5 días esta semana.",
     "por_que": "Los músculos en movimiento usan el azúcar de la comida y ayudan a que la glucosa suba menos.",
     "hallazgos": [
@@ -481,10 +481,10 @@
    {
     "recomendacion_id": "REC-ACT-105",
     "tipo": "actividad",
-    "titulo": "Interrumpa el tiempo sentado",
-    "texto": "Si pasa mucho tiempo sentado, levántese cada 30 a 60 minutos y camine o estírese 2 o 3 minutos. Use una alarma en el celular para acordarse.",
+    "titulo": "Interrumpe el tiempo sentado",
+    "texto": "Si pasas mucho tiempo sentado, levántate cada 30 a 60 minutos y camina o estírate 2 o 3 minutos. Usa una alarma en el celular para acordarte.",
     "meta": "Una pausa activa cada hora durante la jornada, 5 días esta semana.",
-    "por_que": "Estar sentado muchas horas seguidas empeora el manejo del azúcar, aunque haga ejercicio otros días.",
+    "por_que": "Estar sentado muchas horas seguidas empeora el manejo del azúcar aunque hagas ejercicio otros días.",
     "hallazgos": [
      "COND-M1-EM-002",
      "COND-M1-EM-004"
@@ -498,8 +498,8 @@
    {
     "recomendacion_id": "REC-HAB-201",
     "tipo": "habitos",
-    "titulo": "Reduzca el alcohol",
-    "texto": "Tome menos alcohol y deje varios días de la semana sin nada. Lo ideal para su hígado y su sangre es no tomar; si toma, que sea poco y nunca hasta emborracharse.",
+    "titulo": "Reduce el alcohol",
+    "texto": "Toma menos alcohol y deja varios días de la semana sin nada. Lo ideal para tu hígado y tu sangre es no tomar; si tomas, que sea poco y nunca hasta emborracharte.",
     "meta": "Durante las próximas 4 semanas, al menos 5 días sin alcohol cada semana y ninguna ocasión con más de 2 tragos.",
     "por_que": "El alcohol inflama el hígado, cambia el tamaño de los glóbulos rojos y gasta vitaminas como el folato.",
     "hallazgos": [
@@ -519,7 +519,7 @@
     "recomendacion_id": "REC-ALI-205",
     "tipo": "alimentacion",
     "titulo": "Alimentos que aportan vitamina D",
-    "texto": "Incluya pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
+    "texto": "Incluye pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
     "meta": "Esta semana, pescado graso al menos 2 veces y huevo entero en 3 desayunos.",
     "por_que": "Pocos alimentos tienen vitamina D; los pescados grasos y el huevo están entre los mejores para sumar un poco.",
     "hallazgos": [
@@ -534,42 +534,42 @@
   "cuando_consultar": [
    {
     "escalamiento": 3,
-    "texto": "El equipo médico de Saludly lo va a llamar hoy. Su informe se publica después de esa llamada.",
+    "texto": "El equipo médico de Saludly te va a llamar hoy. Tu informe se publica después de esa llamada.",
     "hallazgos": [
      {
       "hallazgo_id": "H-8901AD-01",
-      "titulo": "Su azúcar y sus grasas se mueven juntos",
+      "titulo": "Tu azúcar y tus grasas se mueven juntos",
       "detalle": null
      }
     ]
    },
    {
     "escalamiento": 1,
-    "texto": "Coménteselo a su médico en su próximo control, en los próximos 3 meses.",
+    "texto": "Coméntalo con tu médico en tu próximo control, en los próximos 3 meses.",
     "hallazgos": [
      {
       "hallazgo_id": "H-8901AD-02",
-      "titulo": "Un resultado de su metabolismo para revisar",
+      "titulo": "Un resultado de tu metabolismo para revisar",
       "detalle": null
      },
      {
       "hallazgo_id": "H-8901AD-03",
-      "titulo": "Su índice de masa corporal está por encima del rango saludable",
+      "titulo": "Tu índice de masa corporal está por encima del rango saludable",
       "detalle": null
      },
      {
       "hallazgo_id": "H-8901AD-04",
-      "titulo": "Su colesterol está por encima del valor de tamizaje",
+      "titulo": "Tu colesterol está por encima del valor de tamizaje",
       "detalle": null
      },
      {
       "hallazgo_id": "H-8901AD-05",
-      "titulo": "Su presión arterial está por encima de 130/80",
+      "titulo": "Tu presión arterial está por encima de 130/80",
       "detalle": null
      },
      {
       "hallazgo_id": "H-8901AD-06",
-      "titulo": "Su índice de salud del hígado (FIB-4) está fuera de la zona baja",
+      "titulo": "Tu índice de salud del hígado (FIB-4) está fuera de la zona baja",
       "detalle": null
      }
     ]
@@ -1784,7 +1784,7 @@
    "azucar_anadida_g_max": 43,
    "formula": "Mifflin-St Jeor × actividad, ajustado por objetivo; proteína en g/kg según objetivo",
    "notas": [
-    "Meta orientativa, no una prescripción: un nutricionista la ajusta a su caso.",
+    "Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso.",
     "Con un déficit moderado para bajar de peso sin pasar hambre."
    ]
   },
@@ -2068,7 +2068,7 @@
     "frase_permitida": "Varios de tus resultados (glucosa, triglicéridos, colesterol HDL e insulina) apuntan en la misma dirección: el cuerpo está teniendo más trabajo para manejar el azúcar. Por eso los explicamos juntos.",
     "fuerza": "guía (ADA, declaración armonizada de síndrome metabólico)",
     "hallazgo_id": "H-8901AD-01",
-    "texto_paciente": "Su azúcar y sus grasas se mueven juntos"
+    "texto_paciente": "Tu azúcar y tus grasas se mueven juntos"
    },
    {
     "tipo": "seguridad",
@@ -2081,7 +2081,7 @@
     ],
     "fuerza": "guia",
     "hallazgo_id": "H-8901AD-02",
-    "texto_paciente": "Un resultado de su metabolismo para revisar"
+    "texto_paciente": "Un resultado de tu metabolismo para revisar"
    },
    {
     "tipo": "condicion",
@@ -2094,7 +2094,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8901AD-03",
-    "texto_paciente": "Su índice de masa corporal está por encima del rango saludable"
+    "texto_paciente": "Tu índice de masa corporal está por encima del rango saludable"
    },
    {
     "tipo": "condicion",
@@ -2113,7 +2113,7 @@
      }
     ],
     "hallazgo_id": "H-8901AD-04",
-    "texto_paciente": "Su colesterol está por encima del valor de tamizaje"
+    "texto_paciente": "Tu colesterol está por encima del valor de tamizaje"
    },
    {
     "tipo": "condicion",
@@ -2126,7 +2126,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8901AD-05",
-    "texto_paciente": "Su presión arterial está por encima de 130/80"
+    "texto_paciente": "Tu presión arterial está por encima de 130/80"
    },
    {
     "tipo": "condicion",
@@ -2139,7 +2139,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8901AD-06",
-    "texto_paciente": "Su índice de salud del hígado (FIB-4) está fuera de la zona baja"
+    "texto_paciente": "Tu índice de salud del hígado (FIB-4) está fuera de la zona baja"
    },
    {
     "tipo": "condicion",
@@ -2151,7 +2151,7 @@
     "nota": null,
     "fuerza": "guia",
     "patrones": [],
-    "texto_paciente": "El resultado de sus pruebas de hepatitis B"
+    "texto_paciente": "El resultado de tus pruebas de hepatitis B"
    },
    {
     "tipo": "condicion",
@@ -2164,7 +2164,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-8901AD-08",
-    "texto_paciente": "Su vitamina D está fuera del rango"
+    "texto_paciente": "Tu vitamina D está fuera del rango"
    }
   ],
   "condiciones": {
@@ -3957,12 +3957,12 @@
    "osmolality"
   ],
   "que_conviene_confirmar": [
-   "Su colesterol está por encima del valor de tamizaje: coincidencia moderada, confirmar con una segunda medición.",
-   "Su presión arterial está por encima de 130/80: coincidencia moderada, confirmar con una segunda medición.",
-   "Su índice de salud del hígado (FIB-4) está fuera de la zona baja: coincidencia moderada, confirmar con una segunda medición."
+   "Tu colesterol está por encima del valor de tamizaje: coincidencia moderada, confirmar con una segunda medición.",
+   "Tu presión arterial está por encima de 130/80: coincidencia moderada, confirmar con una segunda medición.",
+   "Tu índice de salud del hígado (FIB-4) está fuera de la zona baja: coincidencia moderada, confirmar con una segunda medición."
   ],
   "preguntas_para_el_profesional": [
-   "¿Conviene confirmar o descartar «Su azúcar y sus grasas se mueven juntos» (REL-001) y en qué plazo?"
+   "¿Conviene confirmar o descartar «Tu azúcar y tus grasas se mueven juntos» (REL-001) y en qué plazo?"
   ],
   "restricciones_nutricionales": {
    "exigir": [

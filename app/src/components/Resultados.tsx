@@ -81,10 +81,10 @@ export function Categoria({ nombre, items, onSelect }: { nombre: string; items: 
 }
 
 const GUIA = {
-  en_rango: "Su resultado está dentro del rango de referencia de su laboratorio. Siga cuidando sus hábitos.",
-  fuera: "Su resultado está fuera del rango de referencia. Un solo examen no basta para sacar conclusiones: revise en su informe qué puede significar y qué puede hacer.",
-  pronto: "El laboratorio marcó este resultado para revisarlo pronto. Nuestro equipo médico se comunica con usted.",
-  sin_lectura: "Este resultado no se pudo interpretar con seguridad. Su médico lo revisa.",
+  en_rango: "Tu resultado está dentro del rango de referencia de tu laboratorio. Sigue cuidando tus hábitos.",
+  fuera: "Tu resultado está fuera del rango de referencia. Un solo examen no basta para sacar conclusiones: revisa en tu informe qué puede significar y qué puedes hacer.",
+  pronto: "El laboratorio marcó este resultado para revisarlo pronto. Nuestro equipo médico se comunica contigo.",
+  sin_lectura: "Este resultado no se pudo interpretar con seguridad. Tu médico lo revisa.",
 };
 
 export function DetalleResultado({ r, onClose }: { r: Resultado | null; onClose: () => void }) {
@@ -144,7 +144,7 @@ export function DetalleResultado({ r, onClose }: { r: Resultado | null; onClose:
             </div>
             <div className="mt-9 space-y-6">
               <div>
-                <h4 className="text-[11px] uppercase tracking-[0.18em] text-ink-faint">Qué significa su resultado</h4>
+                <h4 className="text-[11px] uppercase tracking-[0.18em] text-ink-faint">Qué significa tu resultado</h4>
                 <p className="mt-2 text-sm leading-relaxed text-ink-muted">{r.motivo ?? GUIA[e]}</p>
               </div>
               {relacionados.length > 0 && (

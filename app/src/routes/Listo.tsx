@@ -24,13 +24,13 @@ export function Listo() {
       <div className="mx-auto flex min-h-screen max-w-xl flex-col px-6 py-8">
         <Marca />
         <section className="rise mt-14">
-          <h1 className="text-3xl font-light tracking-tight text-ink">¡Listo{nombre ? `, ${nombre}` : ""}! Ya tenemos sus respuestas.</h1>
-          <p className="mt-3 text-sm leading-relaxed text-ink-muted">Ahora necesitamos tomar su muestra y algunas medidas en una visita corta de la enfermera.</p>
+          <h1 className="text-3xl font-light tracking-tight text-ink">¡Listo{nombre ? `, ${nombre}` : ""}! Ya tenemos tus respuestas.</h1>
+          <p className="mt-3 text-sm leading-relaxed text-ink-muted">Ahora necesitamos tomar tu muestra y algunas medidas en una visita corta de la enfermera.</p>
           <div className="mt-8 space-y-3">
             {[
-              { icono: CalendarClock, t: "Agendamos su visita", d: "Le escribiremos por WhatsApp para acordar el día: de lunes a viernes, entre las 7 y las 11 de la mañana." },
-              { icono: Stethoscope, t: "Vaya en ayunas", d: C.ayuno.aviso },
-              { icono: MessageCircle, t: "Le avisamos por WhatsApp", d: "Cuando estén sus resultados y un médico los revise, le enviamos un mensaje para que los vea aquí." },
+              { icono: CalendarClock, t: "Agendamos tu visita", d: "Te escribiremos por WhatsApp para acordar el día: de lunes a viernes, entre las 7 y las 11 de la mañana." },
+              { icono: Stethoscope, t: "Ve en ayunas", d: C.ayuno.aviso },
+              { icono: MessageCircle, t: "Te avisamos por WhatsApp", d: "Cuando estén tus resultados y un médico los revise, te enviamos un mensaje para que los veas aquí." },
             ].map((x) => (
               <article key={x.t} className="flex gap-4 rounded-2xl border border-rule p-5">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-optimal-soft text-optimal">

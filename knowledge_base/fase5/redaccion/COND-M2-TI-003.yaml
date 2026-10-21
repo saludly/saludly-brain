@@ -3,8 +3,8 @@ tipo: condicion
 titulo_paciente: "Su hormona tiroidea está baja sin que la TSH suba"
 que_es: "La TSH sale de la hipófisis, una glándula pequeña en la base del cerebro, y le ordena a la tiroides producir su hormona."
 por_que_te_aparece:
-  - "Su T4 libre, la hormona que produce la tiroides, salió en {free_t4}, por debajo del rango del laboratorio."
-  - "Su TSH salió en {tsh}. Con la T4 libre baja se esperaría que subiera, y no lo hizo."
+  - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}, por debajo del rango del laboratorio."
+  - "Tu TSH salió en {tsh}. Con la T4 libre baja se esperaría que subiera, y no lo hizo."
 riesgo_claro: "Si la tiroides produce poca hormona por mucho tiempo, puede causar cansancio, frío y lentitud. Además, conviene saber por qué la señal no sube."
 ejemplo_simple: "Es como una casa fría donde el termostato no pide calefacción: hay que revisar el termostato, no solo la caldera."
 incertidumbre: "Es un patrón poco común. Una enfermedad fuerte reciente, los corticoides o fallas del examen pueden causarlo. Hay que repetirlo y revisarlo con endocrinología."

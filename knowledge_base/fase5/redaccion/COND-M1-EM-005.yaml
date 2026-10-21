@@ -1,12 +1,12 @@
 id: COND-M1-EM-005
 tipo: condicion
-titulo_paciente: "Su glucosa en ayunas salió más baja de lo esperado"
+titulo_paciente: "Tu glucosa en ayunas salió más baja de lo esperado"
 que_es: "La glucosa es el azúcar de la sangre y el combustible principal del cerebro."
 por_que_te_aparece:
-  - "Su glucosa en ayunas salió en {glucose}, por debajo de 70 mg/dL."
+  - "Tu glucosa en ayunas salió en {glucose}, por debajo de 70 mg/dL."
 riesgo_claro: "Si la glucosa baja de verdad con frecuencia, puede causar mareo, sudor frío, temblor o desmayos. Por eso conviene saber por qué pasa."
 ejemplo_simple: "Es como un carro que marca poca gasolina: puede ser el tanque o puede ser el medidor, y hay que revisar cuál."
-incertidumbre: "Muchas veces es un falso bajo, porque la muestra tardó en procesarse. Hay que repetirla, y su médico decide si hace falta estudiar más."
+incertidumbre: "Muchas veces es un falso bajo, porque la muestra tardó en procesarse. Hay que repetirla, y tu médico decide si hace falta estudiar más."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Clasificación ADA de hipoglucemia (Standards 2024, tabla 6.4)"]

@@ -3,14 +3,14 @@ tipo: seguridad
 titulo_paciente: "Un valor hormonal fuera del rango esperado"
 que_es: "El estradiol, la LH, la progesterona y la DHEA-S son hormonas que participan en el ciclo menstrual, la fertilidad y otras funciones del cuerpo."
 por_que_te_aparece:
-  - "Su estradiol salió en {estradiol}."
-  - "Su LH, una hormona del cerebro que regula los ovarios o los testículos, salió en {lh}."
-  - "Su progesterona salió en {progesterone}."
-  - "Su DHEA-S, una hormona de las glándulas suprarrenales, salió en {dhea_s}."
+  - "Tu estradiol salió en {estradiol}."
+  - "Tu LH, una hormona del cerebro que regula los ovarios o los testículos, salió en {lh}."
+  - "Tu progesterona salió en {progesterone}."
+  - "Tu DHEA-S, una hormona de las glándulas suprarrenales, salió en {dhea_s}."
 riesgo_claro: "Si se mantiene fuera de rango, puede relacionarse con cambios en la menstruación, la fertilidad, la piel o el vello. Por eso conviene revisarlo."
 ejemplo_simple: "Es como tomarle una foto a una ola: según el momento, la ola se ve alta o baja."
 incertidumbre: "Estas hormonas cambian mucho según el día del ciclo. Un solo valor no basta para sacar conclusiones."
-cuando_consultar: "Si sus ciclos son irregulares, o nota acné o vello que aparecen rápido, coménteselo a su médico."
-aviso_whatsapp: "Hay un resultado hormonal en su informe de Saludly para revisar. Ábralo cuando pueda."
+cuando_consultar: "Si tus ciclos son irregulares, o nota acné o vello que aparecen rápido, coméntalo con tu médico."
+aviso_whatsapp: "Hay un resultado hormonal en tu informe de Saludly para revisar. Ábrelo cuando puedas."
 fuentes: ["Fichas dhea_s, estradiol, lh y progesterone del Knowledge Base"]
 estado_revision: aprobada

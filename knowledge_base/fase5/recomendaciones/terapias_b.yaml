@@ -1,55 +1,55 @@
 # Terapias no farmacológicas (siempre como sugerencia de consulta, nunca como tratamiento) · M3, M4, M6.
 # Numeración 200 a 299.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-TER-201
   tipo: terapias
   titulo: "Consulta con nutricionista"
-  texto_base: "Pida una cita con un nutricionista para armar un plan de comidas a su medida, que tenga en cuenta sus gustos, su presupuesto y sus resultados."
-  meta_concreta: "Pida la cita con nutrición en su EPS o con Saludly en el próximo mes."
-  por_que: "Un plan hecho para usted es más fácil de sostener que una lista general de alimentos."
+  texto_base: "Pide una cita con un nutricionista para armar un plan de comidas a tu medida, que tenga en cuenta tus gustos, tu presupuesto y tus resultados."
+  meta_concreta: "Pide la cita con nutrición en tu EPS o con Saludly en el próximo mes."
+  por_que: "Un plan hecho para ti es más fácil de sostener que una lista general de alimentos."
   se_activa_con: ["COND-M6-MI-001", "COND-M4-GA-001", "REL-006", "COND-M6-RE-001", "COND-M3-NU-001", "COND-M3-HE-002"]
   prioriza_objetivos: ["bajar_peso", "masa_muscular", "envejecer_saludable", "maraton"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🥗 ¿Le gustaría un plan de comidas hecho a su medida? Pida su cita con nutrición este mes; si quiere, le ayudamos a agendarla."
+  whatsapp: "🥗 ¿Te gustaría un plan de comidas hecho a tu medida? Pide tu cita con nutrición este mes; si quieres, te ayudamos a agendarla."
   fuentes: ["GLIM 2019, criterios de desnutrición", "EASL-EASD-EASO 2024, guía de práctica clínica del hígado graso metabólico (MASLD)"]
 
 - id: REC-TER-202
   tipo: terapias
   titulo: "Actividad física guiada"
-  texto_base: "Si le cuesta empezar o no sabe qué ejercicios hacer, busque un programa de actividad física guiado por un profesional, como los de su caja de compensación o su EPS."
-  meta_concreta: "Este mes, inscríbase en un programa guiado de ejercicio y asista al menos 2 veces por semana."
+  texto_base: "Si te cuesta empezar o no sabes qué ejercicios hacer, busca un programa de actividad física guiado por un profesional, como los de tu caja de compensación o tu EPS."
+  meta_concreta: "Este mes, inscríbete en un programa guiado de ejercicio y asiste al menos 2 veces por semana."
   por_que: "Con acompañamiento el ejercicio es más seguro y es más fácil mantenerlo."
   se_activa_con: ["COND-M4-GA-001", "REL-006", "COND-M6-MI-001", "COND-M6-MI-A02"]
   prioriza_objetivos: ["bajar_peso", "envejecer_saludable", "masa_muscular", "salud_general"]
   contraindicada_si: ["COND-M3-HE-010"]
   requiere_consulta_previa: false
-  whatsapp: "🏋️ Moverse acompañado es más fácil. Averigüe esta semana qué programas de ejercicio guiado ofrece su caja de compensación."
+  whatsapp: "🏋️ Moverse acompañado es más fácil. Averigua esta semana qué programas de ejercicio guiado ofrece tu caja de compensación."
   fuentes: ["OMS 2020, directrices sobre actividad física y hábitos sedentarios"]
 
 - id: REC-TER-203
   tipo: terapias
   titulo: "Apoyo profesional para reducir el alcohol"
-  texto_base: "Si le cuesta reducir el alcohol, pida apoyo a su médico o a un psicólogo. Hay programas que ayudan a lograrlo paso a paso."
-  meta_concreta: "Este mes, hable con su médico o con un profesional de salud mental sobre un plan para tomar menos."
+  texto_base: "Si te cuesta reducir el alcohol, pide apoyo a tu médico o a un psicólogo. Hay programas que ayudan a lograrlo paso a paso."
+  meta_concreta: "Este mes, habla con tu médico o con un profesional de salud mental sobre un plan para tomar menos."
   por_que: "Con acompañamiento, cambiar un hábito es más fácil y dura más."
   se_activa_con: ["COND-M4-GA-A02", "COND-M3-HE-009", "COND-M4-GA-002"]
   prioriza_objetivos: ["prevenir", "salud_general", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "💬 Cambiar un hábito es más fácil con apoyo. Si quiere hablar con un profesional, escríbanos y lo orientamos."
+  whatsapp: "💬 Cambiar un hábito es más fácil con apoyo. Si quieres hablar con un profesional, escríbenos y te orientamos."
   fuentes: ["OMS 2023, intervenciones breves para el consumo de alcohol en atención primaria", "EASL 2018, guía de enfermedad hepática relacionada con el alcohol"]
 
 - id: REC-TER-204
   tipo: terapias
   titulo: "Programa para dejar de fumar"
-  texto_base: "Pida en su EPS el programa para dejar de fumar. Combinar consejería con el tratamiento que indique el médico aumenta mucho la posibilidad de lograrlo."
-  meta_concreta: "Este mes, pida su primera cita en el programa para dejar de fumar."
+  texto_base: "Pide en tu EPS el programa para dejar de fumar. Combinar consejería con el tratamiento que indique el médico aumenta mucho la posibilidad de lograrlo."
+  meta_concreta: "Este mes, pide tu primera cita en el programa para dejar de fumar."
   por_que: "Dejar el cigarrillo con apoyo funciona mejor que intentarlo solo."
   se_activa_con: ["COND-M3-HE-007", "COND-M3-HE-A02"]
   prioriza_objetivos: ["prevenir", "rendimiento", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🚭 Dejar de fumar es más fácil con ayuda. Pregunte esta semana en su EPS por el programa para dejarlo."
+  whatsapp: "🚭 Dejar de fumar es más fácil con ayuda. Pregunta esta semana en tu EPS por el programa para dejarlo."
   fuentes: ["OMS 2024, guía de tratamiento para dejar el tabaco en adultos"]

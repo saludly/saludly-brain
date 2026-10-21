@@ -1,14 +1,14 @@
 id: REL-020
 tipo: patron
-titulo_paciente: "Su vitamina D está baja y su paratiroides trabaja de más"
+titulo_paciente: "Tu vitamina D está baja y tu paratiroides trabaja de más"
 que_es: "La vitamina D ayuda a absorber el calcio. Cuando falta, las glándulas paratiroides producen más PTH para mantener el calcio en la sangre."
 por_que_te_aparece:
-  - "Su vitamina D salió en {vitamin_d}, por debajo del rango."
-  - "Su PTH, la hormona de las paratiroides, salió en {pth}, por encima del rango."
-  - "Su calcio corregido salió en {calcio_corregido} y su fósforo en {phosphorus}."
+  - "Tu vitamina D salió en {vitamin_d}, por debajo del rango."
+  - "Tu PTH, la hormona de las paratiroides, salió en {pth}, por encima del rango."
+  - "Tu calcio corregido salió en {calcio_corregido} y tu fósforo en {phosphorus}."
 riesgo_claro: "Si se mantiene, el cuerpo puede sacar calcio de los huesos para compensar, y con los años los huesos se debilitan."
 ejemplo_simple: "Es como sacar de los ahorros para pagar el mes: funciona un tiempo, pero las reservas se gastan."
-incertidumbre: "El riñón y algunos medicamentos también cambian estos valores. Su médico decide cómo confirmarlo."
+incertidumbre: "El riñón y algunos medicamentos también cambian estos valores. Tu médico decide cómo confirmarlo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Quinto Taller Internacional de hiperparatiroidismo 2022"]

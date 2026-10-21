@@ -1,14 +1,14 @@
 id: COND-M4-IN-001
 tipo: condicion
-titulo_paciente: "El resultado de su prueba de hepatitis C"
+titulo_paciente: "El resultado de tu prueba de hepatitis C"
 que_es: "La hepatitis C es un virus que afecta el hígado. La prueba de anticuerpos muestra si el cuerpo estuvo en contacto con él, y la prueba de ARN, si el virus está activo."
 por_que_te_aparece:
-  - "Su prueba de anticuerpos de hepatitis C salió reactiva."
+  - "Tu prueba de anticuerpos de hepatitis C salió reactiva."
   - "La prueba que busca el virus activo (ARN) le permite a nuestro médico saber si es una infección actual o pasada."
 riesgo_claro: "Si el virus está activo y no se trata, con los años puede ir afectando el hígado sin dar síntomas."
 ejemplo_simple: "Es como encontrar huellas de un visitante en la casa: hay que confirmar si todavía está adentro o si ya se fue."
-incertidumbre: "Un resultado reactivo no basta por sí solo: puede ser una infección activa, una infección pasada ya resuelta o, a veces, un falso positivo. Hoy existen tratamientos muy efectivos, y nuestro médico le explicará los pasos a seguir."
-cuando_consultar: "Nuestro médico lo va a llamar para explicarle su resultado y los pasos a seguir."
+incertidumbre: "Un resultado reactivo no basta por sí solo: puede ser una infección activa, una infección pasada ya resuelta o, a veces, un falso positivo. Hoy existen tratamientos muy efectivos, y nuestro médico te explicará los pasos a seguir."
+cuando_consultar: "Nuestro médico te va a llamar para explicarte tu resultado y los pasos a seguir."
 aviso_whatsapp: null
 fuentes: ["Minsalud, tamización de hepatitis C", "USPSTF 2020"]
 estado_revision: aprobada

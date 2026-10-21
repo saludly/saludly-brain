@@ -21,14 +21,14 @@ export function Cuerpo() {
     <section className="relative overflow-hidden pb-8 pt-6">
       <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr]">
         <div className="rise order-2 lg:order-1">
-          <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-optimal">Su informe · revisado por un médico</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-optimal">Tu informe · revisado por un médico</p>
           <h1 className="mt-3 text-4xl font-light leading-[1.08] tracking-tight text-ink sm:text-5xl">
-            Todo su cuerpo,
+            Todo tu cuerpo,
             <br />
             medido.
           </h1>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted">
-            {res.length} resultados analizados. Cada uno se compara con el rango de referencia de su laboratorio.
+            {res.length} resultados analizados. Cada uno se compara con el rango de referencia de tu laboratorio.
           </p>
           <div className="mt-8 max-w-sm rounded-3xl border border-rule bg-background px-6 py-5 shadow-[0_16px_40px_-32px_rgba(20,30,60,0.55)]">
             <dl className="flex flex-wrap items-start gap-x-8 gap-y-4">
@@ -90,7 +90,7 @@ export function Cuerpo() {
               { k: "Sistemas en rango", v: `${sistemasEnRango} de ${sistemas.length}` },
               { k: "Fecha de la toma", v: fechaLarga(informe.fecha_toma) },
               { k: "Siguiente paso", v: PLAZO[informe.escalamiento_maximo] },
-              { k: "Sus metas", v: informe.objetivos.map((o) => o.nombre).join(" · ") || "—" },
+              { k: "Tus metas", v: informe.objetivos.map((o) => o.nombre).join(" · ") || "—" },
             ].map((r) => (
               <div key={r.k}>
                 <div className="text-[11px] uppercase tracking-[0.16em] text-ink-faint">{r.k}</div>

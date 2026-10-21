@@ -1,13 +1,13 @@
 id: COND-M6-RE-A01
 tipo: condicion
-titulo_paciente: "Sus anticuerpos antinucleares (ANA) salieron positivos"
+titulo_paciente: "Tus anticuerpos antinucleares (ANA) salieron positivos"
 que_es: "Los ANA son anticuerpos, unas proteínas de las defensas, que reconocen partes de las propias células. Se encuentran en muchas personas sanas."
 por_que_te_aparece:
-  - "Sus anticuerpos antinucleares (ANA) salieron positivos."
-riesgo_claro: "Por sí solo no indica ninguna enfermedad. Si además hay síntomas, su médico puede pedir otros exámenes para entender mejor el resultado."
+  - "Tus anticuerpos antinucleares (ANA) salieron positivos."
+riesgo_claro: "Por sí solo no indica ninguna enfermedad. Si además hay síntomas, tu médico puede pedir otros exámenes para entender mejor el resultado."
 ejemplo_simple: "Es como una alarma de carro muy sensible: a veces suena con el viento; por eso se revisa con calma antes de concluir algo."
-incertidumbre: "Es un resultado frecuente en personas sanas. Su importancia depende del título, del patrón y de los síntomas, y eso lo valora su médico."
-cuando_consultar: "Coménteselo a su médico, sobre todo si tiene dolor en las articulaciones, manchas en la piel o fiebre sin causa."
+incertidumbre: "Es un resultado frecuente en personas sanas. Su importancia depende del título, del patrón y de los síntomas, y eso lo valora tu médico."
+cuando_consultar: "Coméntalo con tu médico, sobre todo si tienes dolor en las articulaciones, manchas en la piel o fiebre sin causa."
 aviso_whatsapp: null
 fuentes: ["Satoh 2012 (prevalencia en población general)", "Criterios EULAR/ACR 2019 para lupus"]
 estado_revision: aprobada

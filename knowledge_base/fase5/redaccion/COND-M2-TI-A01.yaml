@@ -1,13 +1,13 @@
 id: COND-M2-TI-A01
 tipo: condicion
-titulo_paciente: "Sus anticuerpos de la tiroides salieron positivos"
+titulo_paciente: "Tus anticuerpos de la tiroides salieron positivos"
 que_es: "Los anticuerpos tiroideos muestran si el propio sistema de defensa del cuerpo está afectando a la tiroides. A eso se le llama causa autoinmune."
 por_que_te_aparece:
-  - "Sus anticuerpos anti-TPO salieron en {anti_tpo}, por encima del rango del laboratorio."
-  - "Sus anticuerpos antitiroglobulina, otro anticuerpo de la tiroides, salieron en {anti_tg}."
+  - "Tus anticuerpos anti-TPO salieron en {anti_tpo}, por encima del rango del laboratorio."
+  - "Tus anticuerpos antitiroglobulina, otro anticuerpo de la tiroides, salieron en {anti_tg}."
 riesgo_claro: "Con los años, este proceso puede hacer que la tiroides trabaje menos. Por eso se vigila con controles periódicos."
 ejemplo_simple: "Es como una alarma de la casa que a veces confunde a los de la casa con intrusos."
-incertidumbre: "Muchas personas con estos anticuerpos mantienen la tiroides funcionando bien por años. Es la causa más común, y su médico decide cada cuánto revisarla."
+incertidumbre: "Muchas personas con estos anticuerpos mantienen la tiroides funcionando bien por años. Es la causa más común, y tu médico decide cada cuánto revisarla."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Consenso colombiano de hipotiroidismo 2023", "AACE/ATA"]

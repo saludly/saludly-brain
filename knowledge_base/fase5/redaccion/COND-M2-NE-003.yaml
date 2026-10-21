@@ -1,14 +1,14 @@
 id: COND-M2-NE-003
 tipo: condicion
-titulo_paciente: "Una señal en sus riñones junto con glucosa o presión altas"
+titulo_paciente: "Una señal en tus riñones junto con glucosa o presión altas"
 que_es: "La glucosa alta y la presión alta pueden afectar con los años los pequeños filtros de los riñones. Por eso se vigilan juntos."
 por_que_te_aparece:
-  - "Su filtración renal estimada salió en {egfr}. La referencia es 60 o más."
-  - "Su relación albúmina/creatinina en orina salió en {uacr}. La referencia es menos de 30 mg/g."
-  - "Además, sus resultados o su historia muestran glucosa en rango de diabetes o presión alta."
+  - "Tu filtración renal estimada salió en {egfr}. La referencia es 60 o más."
+  - "Tu relación albúmina/creatinina en orina salió en {uacr}. La referencia es menos de 30 mg/g."
+  - "Además, tus resultados o tu historia muestran glucosa en rango de diabetes o presión alta."
 riesgo_claro: "Si el azúcar y la presión no se controlan, los riñones pueden perder función poco a poco con los años. Controlarlos es también la mejor forma de cuidarlos."
 ejemplo_simple: "Es como un filtro de agua conectado a una llave con demasiada presión: se desgasta más rápido."
-incertidumbre: "Hay que confirmar la señal con otra muestra. Solo su médico puede decir cuál es la causa y cómo cuidar sus riñones."
+incertidumbre: "Hay que confirmar la señal con otra muestra. Solo tu médico puede decir cuál es la causa y cómo cuidar tus riñones."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["GPC Colombia DM2 2016", "GPC Colombia HTA 2025", "KDIGO 2024"]

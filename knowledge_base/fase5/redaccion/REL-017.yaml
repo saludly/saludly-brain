@@ -1,11 +1,11 @@
 id: REL-017
 tipo: patron
-titulo_paciente: "Su tiroides y sus anticuerpos se mueven juntos"
+titulo_paciente: "Tu tiroides y tus anticuerpos se mueven juntos"
 que_es: "La tiroides es una glándula del cuello que marca el ritmo del cuerpo. A veces las defensas producen anticuerpos contra ella y la hacen trabajar más lento."
 por_que_te_aparece:
-  - "Su TSH, la hormona que le pide trabajar a la tiroides, salió en {tsh}, por encima del rango."
-  - "Su T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
-  - "Sus anticuerpos anti-TPO, que muestran si las defensas reaccionan contra la tiroides, salieron en {anti_tpo}."
+  - "Tu TSH, la hormona que le pide trabajar a la tiroides, salió en {tsh}, por encima del rango."
+  - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
+  - "Tus anticuerpos anti-TPO, que muestran si las defensas reaccionan contra la tiroides, salieron en {anti_tpo}."
 riesgo_claro: "Si la tiroides se vuelve más lenta con el tiempo, puede dar cansancio, frío, aumento de peso y subir el colesterol."
 ejemplo_simple: "Es como un empleado al que el jefe le pide trabajar más fuerte: la TSH sube cuando la tiroides se queda corta."
 incertidumbre: "La biotina, una enfermedad reciente o algunos medicamentos pueden alterar estos valores. Lo usual es repetir la TSH en 2 a 3 meses."

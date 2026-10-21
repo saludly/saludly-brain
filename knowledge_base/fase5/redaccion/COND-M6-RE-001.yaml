@@ -1,13 +1,13 @@
 id: COND-M6-RE-001
 tipo: condicion
-titulo_paciente: "Su ácido úrico está por encima del rango"
+titulo_paciente: "Tu ácido úrico está por encima del rango"
 que_es: "El ácido úrico es un desecho que se forma al procesar algunos alimentos y que los riñones eliminan por la orina."
 por_que_te_aparece:
-  - "Su ácido úrico salió en {uric_acid}, por encima del rango de referencia."
+  - "Tu ácido úrico salió en {uric_acid}, por encima del rango de referencia."
 riesgo_claro: "Si se mantiene alto por años, puede formar cristales en las articulaciones o en los riñones, y suele ir de la mano con el exceso de peso, el azúcar y la presión. Los hábitos ayudan a bajarlo."
 ejemplo_simple: "Es como el azúcar en una limonada demasiado dulce: cuando hay mucha, deja de disolverse y se asienta en el fondo."
 incertidumbre: "Lo suben de forma pasajera la deshidratación, el ayuno largo, el ejercicio intenso o algunos medicamentos. Sin síntomas, no necesita medicamentos."
-cuando_consultar: "Coménteselo a su médico en su próximo control. Consulte antes si una articulación se le hincha y le duele de repente."
-aviso_whatsapp: "Su informe de Saludly trae consejos de hábitos para su ácido úrico. Ábralo cuando pueda."
+cuando_consultar: "Coméntalo con tu médico en tu próximo control. Consulta antes si una articulación se te hincha y te duele de repente."
+aviso_whatsapp: "Tu informe de Saludly trae consejos de hábitos para tu ácido úrico. Ábrelo cuando puedas."
 fuentes: ["ACR 2020, gota"]
 estado_revision: aprobada

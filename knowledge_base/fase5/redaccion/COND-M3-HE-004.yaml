@@ -1,14 +1,14 @@
 id: COND-M3-HE-004
 tipo: condicion
-titulo_paciente: "Su hemoglobina está baja, con glóbulos rojos grandes y vitaminas bajas"
+titulo_paciente: "Tu hemoglobina está baja, con glóbulos rojos grandes y vitaminas bajas"
 que_es: "La vitamina B12 y el folato son vitaminas que el cuerpo necesita para fabricar glóbulos rojos. Cuando faltan, salen menos glóbulos rojos y más grandes."
 por_que_te_aparece:
-  - "Su hemoglobina salió en {hemoglobin}, por debajo del límite que se usa para la altura de Bogotá, y el tamaño de sus glóbulos rojos (volumen corpuscular medio) salió en {mcv}."
-  - "Su vitamina B12 salió en {vitamin_b12}."
-  - "Su folato, una vitamina del grupo B, salió en {folate}."
+  - "Tu hemoglobina salió en {hemoglobin}, por debajo del límite que se usa para la altura de Bogotá, y el tamaño de tus glóbulos rojos (volumen corpuscular medio) salió en {mcv}."
+  - "Tu vitamina B12 salió en {vitamin_b12}."
+  - "Tu folato, una vitamina del grupo B, salió en {folate}."
 riesgo_claro: "Si no se atiende, el cansancio puede aumentar y, cuando falta B12, con el tiempo se pueden afectar los nervios, con hormigueo o adormecimiento."
 ejemplo_simple: "Es como una fábrica de ladrillos a la que le falta un material: salen menos ladrillos, y más grandes de lo normal."
-incertidumbre: "Este patrón merece una consulta médica en las próximas semanas. Su médico confirma qué vitamina falta y por qué, porque el alcohol, la tiroides y algunos medicamentos también cambian estos valores."
+incertidumbre: "Este patrón merece una consulta médica en las próximas semanas. Tu médico confirma qué vitamina falta y por qué, porque el alcohol, la tiroides y algunos medicamentos también cambian estos valores."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["NICE NG239 2024", "OMS, folato"]

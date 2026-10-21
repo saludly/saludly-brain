@@ -1,14 +1,14 @@
 id: REL-015
 tipo: patron
-titulo_paciente: "Sus vitaminas B están bajas y su homocisteína, alta"
+titulo_paciente: "Tus vitaminas B están bajas y tu homocisteína, alta"
 que_es: "La vitamina B12 y el folato ayudan a fabricar glóbulos rojos y a procesar la homocisteína, una sustancia que se acumula cuando estas vitaminas no alcanzan."
 por_que_te_aparece:
-  - "Su vitamina B12 salió en {vitamin_b12}."
-  - "Su folato, otra vitamina del grupo B, salió en {folate}."
-  - "Su homocisteína salió en {homocysteine}, por encima del rango, lo que muestra que estas vitaminas no están alcanzando."
+  - "Tu vitamina B12 salió en {vitamin_b12}."
+  - "Tu folato, otra vitamina del grupo B, salió en {folate}."
+  - "Tu homocisteína salió en {homocysteine}, por encima del rango, lo que muestra que estas vitaminas no están alcanzando."
 riesgo_claro: "Si la falta sigue por meses, puede dar anemia, cansancio, hormigueo en manos y pies o problemas de memoria."
 ejemplo_simple: "Es como una línea de ensamble a la que le faltan tornillos: el trabajo se acumula y se nota en el producto final."
-incertidumbre: "El riñón, la tiroides o suplementos recientes también mueven estos valores. Su médico define la causa y el manejo."
+incertidumbre: "El riñón, la tiroides o suplementos recientes también mueven estos valores. Tu médico define la causa y el manejo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["NICE NG239 2024"]

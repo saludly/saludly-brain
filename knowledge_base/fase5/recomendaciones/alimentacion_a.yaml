@@ -1,167 +1,167 @@
 # Recomendaciones de alimentación · lote A (M1, M2, M5, sus patrones, generales y por objetivo)
 # Numeración 100 a 199. Pendiente de revisión de Carlos.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-ALI-101
   tipo: alimentacion
-  titulo: "Cambie las bebidas azucaradas por agua"
-  texto_base: "Reemplace gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar."
+  titulo: "Cambia las bebidas azucaradas por agua"
+  texto_base: "Reemplaza gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar."
   meta_concreta: "Esta semana, cero bebidas azucaradas en el almuerzo y la comida."
   por_que: "Las bebidas azucaradas suben la glucosa y los triglicéridos rápido y no quitan el hambre."
   se_activa_con: ["COND-M1-EM-001", "COND-M1-EM-002", "COND-M1-EM-003", "COND-M1-EM-A04", "COND-M1-CA-003", "COND-M5-MU-001", "REL-001", "REL-028"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "💧 Hoy cambie la gaseosa o el jugo de caja del almuerzo por agua o limonada sin azúcar. Es un cambio pequeño que ayuda mucho."
+  whatsapp: "💧 Hoy cambia la gaseosa o el jugo de caja del almuerzo por agua o limonada sin azúcar. Es un cambio pequeño que ayuda mucho."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5", "OMS, Directriz sobre la ingesta de azúcares 2015"]
 
 - id: REC-ALI-102
   tipo: alimentacion
-  titulo: "Llene medio plato con verduras"
-  texto_base: "En el almuerzo y la comida, sirva primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa."
+  titulo: "Llena medio plato con verduras"
+  texto_base: "En el almuerzo y la comida, sirve primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa."
   meta_concreta: "Medio plato de verduras en el almuerzo, 5 días esta semana."
   por_que: "La fibra de las verduras hace que el azúcar de la comida entre más despacio a la sangre y da saciedad."
   se_activa_con: ["COND-M1-EM-001", "COND-M1-EM-002", "COND-M1-EM-003", "COND-M1-EM-004", "COND-M1-CA-001", "COND-M5-UR-002", "REL-001", "REL-024", "REL-028"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "salud_general", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🥗 Reto de hoy: que la mitad de su plato del almuerzo sea verdura o ensalada. Empiece a comer por ahí."
+  whatsapp: "🥗 Reto de hoy: que la mitad de tu plato del almuerzo sea verdura o ensalada. Empieza a comer por ahí."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5 (método del plato)", "Guías alimentarias basadas en alimentos para la población colombiana, ICBF 2020"]
 
 - id: REC-ALI-103
   tipo: alimentacion
-  titulo: "Sume avena y fibra soluble"
-  texto_base: "Incluya avena en hojuelas, guayaba, manzana con cáscara o leguminosas como lentejas y garbanzos varias veces por semana. Su fibra ayuda a bajar el colesterol LDL."
+  titulo: "Suma avena y fibra soluble"
+  texto_base: "Incluye avena en hojuelas, guayaba, manzana con cáscara o leguminosas como lentejas y garbanzos varias veces por semana. Su fibra ayuda a bajar el colesterol LDL."
   meta_concreta: "Desayuno con avena en hojuelas 4 días esta semana."
   por_que: "La fibra soluble atrapa parte del colesterol en el intestino y ayuda a que el cuerpo elimine más."
   se_activa_con: ["COND-M1-CA-001", "COND-M1-CA-002", "COND-M1-CA-004", "COND-M1-CA-005", "REL-003"]
   prioriza_objetivos: ["prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: ["COND-M2-NE-004", "potassium:alto"]
   requiere_consulta_previa: false
-  whatsapp: "🥣 Esta semana pruebe un desayuno con avena en hojuelas y fruta picada. Es una forma sencilla de cuidar su colesterol."
+  whatsapp: "🥣 Esta semana prueba un desayuno con avena en hojuelas y fruta picada. Es una forma sencilla de cuidar tu colesterol."
   fuentes: ["2018 AHA/ACC Guideline on the Management of Blood Cholesterol", "ESC/EAS Guidelines for the management of dyslipidaemias 2019"]
 
 - id: REC-ALI-104
   tipo: alimentacion
-  titulo: "Cambie grasas saturadas por grasas saludables"
-  texto_base: "Use aceite de oliva o canola en vez de manteca o mantequilla, prefiera carnes magras y cambie los fritos y embutidos por aguacate, nueces o pescado."
-  meta_concreta: "Esta semana, cocine sin manteca y reemplace los embutidos del desayuno por huevo o queso campesino bajo en grasa."
+  titulo: "Cambia grasas saturadas por grasas saludables"
+  texto_base: "Usa aceite de oliva o canola en vez de manteca o mantequilla, prefiere carnes magras y cambia los fritos y embutidos por aguacate, nueces o pescado."
+  meta_concreta: "Esta semana, cocina sin manteca y reemplaza los embutidos del desayuno por huevo o queso campesino bajo en grasa."
   por_que: "Las grasas saturadas suben el colesterol LDL; las insaturadas ayudan a cuidar las arterias."
   se_activa_con: ["COND-M1-CA-001", "COND-M1-CA-002", "COND-M1-CA-004", "COND-M1-CA-005", "COND-M5-MU-004", "REL-003"]
   prioriza_objetivos: ["prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: ["alergia:huevo", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "🫒 Esta semana cambie la manteca o la mantequilla por aceite de oliva o canola al cocinar. Sus arterias lo notan con el tiempo."
+  whatsapp: "🫒 Esta semana cambia la manteca o la mantequilla por aceite de oliva o canola al cocinar. Tus arterias lo notan con el tiempo."
   fuentes: ["2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease", "2021 AHA Dietary Guidance to Improve Cardiovascular Health"]
 
 - id: REC-ALI-105
   tipo: alimentacion
   titulo: "Menos harinas refinadas y azúcar"
-  texto_base: "Reduzca pan blanco, galletas, ponqués, postres y paquetes. Prefiera arepa, papa, plátano o arroz en porciones pequeñas, y pan integral."
-  meta_concreta: "Esta semana, cambie el postre diario por una fruta entera al menos 5 días."
+  texto_base: "Reduce pan blanco, galletas, ponqués, postres y paquetes. Prefiere arepa, papa, plátano o arroz en porciones pequeñas, y pan integral."
+  meta_concreta: "Esta semana, cambia el postre diario por una fruta entera al menos 5 días."
   por_que: "El azúcar y las harinas refinadas suben rápido la glucosa y el cuerpo convierte el exceso en triglicéridos."
   se_activa_con: ["COND-M1-EM-001", "COND-M1-EM-003", "COND-M1-EM-A04", "COND-M1-CA-003", "COND-M5-MU-001", "REL-001", "REL-028"]
   prioriza_objetivos: ["bajar_peso", "prevenir", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🍎 Hoy cambie el postre o el ponqué de la tarde por una fruta entera. Su cuerpo maneja mejor el azúcar así."
+  whatsapp: "🍎 Hoy cambia el postre o el ponqué de la tarde por una fruta entera. Tu cuerpo maneja mejor el azúcar así."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5", "International Evidence-based Guideline for PCOS 2023"]
 
 - id: REC-ALI-106
   tipo: alimentacion
-  titulo: "Use el método del plato"
-  texto_base: "Arme su plato así: la mitad con verduras, un cuarto con proteína como pollo, pescado, huevo o fríjol, y un cuarto con arroz, papa, yuca o arepa."
-  meta_concreta: "Arme así su almuerzo 5 días esta semana."
+  titulo: "Usa el método del plato"
+  texto_base: "Arma tu plato así: la mitad con verduras, un cuarto con proteína como pollo, pescado, huevo o fríjol, y un cuarto con arroz, papa, yuca o arepa."
+  meta_concreta: "Arma así tu almuerzo 5 días esta semana."
   por_que: "Ordena las porciones sin contar calorías y evita que el carbohidrato ocupe todo el plato."
   se_activa_con: ["COND-M1-EM-002", "COND-M1-EM-003", "COND-M1-EM-004", "objetivo:bajar_peso"]
   prioriza_objetivos: ["bajar_peso", "condicion_existente", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🍽️ Truco para el almuerzo: mitad verdura, un cuarto proteína y un cuarto arroz, papa o arepa. Pruébelo hoy."
+  whatsapp: "🍽️ Truco para el almuerzo: mitad verdura, un cuarto proteína y un cuarto arroz, papa o arepa. Pruébalo hoy."
   fuentes: ["ADA Standards of Care in Diabetes 2025, sección 5", "Guías alimentarias para la población colombiana, ICBF 2020"]
 
 - id: REC-ALI-107
   tipo: alimentacion
-  titulo: "Bájele a la sal"
-  texto_base: "Quite el salero de la mesa, cocine con hierbas, ajo y limón, y reduzca embutidos, caldos en cubo, salsas de paquete y mecato salado."
+  titulo: "Bájale a la sal"
+  texto_base: "Quita el salero de la mesa, cocina con hierbas, ajo y limón, y reduce embutidos, caldos en cubo, salsas de paquete y mecato salado."
   meta_concreta: "Esta semana, sin salero en la mesa y sin caldos en cubo al cocinar."
   por_que: "La sal en exceso sube la presión arterial y hace trabajar más a los riñones."
   se_activa_con: ["COND-M1-CA-005", "COND-M1-CA-006", "COND-M1-CA-007", "COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "COND-M2-TI-008", "REL-010"]
   prioriza_objetivos: ["prevenir", "condicion_existente", "envejecer_saludable"]
   contraindicada_si: ["COND-M2-NE-005", "sodium:bajo", "COND-M2-TI-009"]
   requiere_consulta_previa: false
-  whatsapp: "🧂 Hoy cocine con ajo, cebolla, cilantro y limón en vez de caldo en cubo, y deje el salero fuera de la mesa."
+  whatsapp: "🧂 Hoy cocina con ajo, cebolla, cilantro y limón en vez de caldo en cubo, y deja el salero fuera de la mesa."
   fuentes: ["GPC Colombia HTA 2025 (Minsalud e IETS)", "KDIGO 2024 Clinical Practice Guideline for CKD", "OMS, Directriz sobre la ingesta de sodio 2012"]
 
 - id: REC-ALI-108
   tipo: alimentacion
-  titulo: "Coma al estilo DASH"
-  texto_base: "Prefiera frutas, verduras, leguminosas, lácteos bajos en grasa y frutos secos sin sal, y reduzca carnes procesadas y dulces. Es un patrón que ayuda a bajar la presión."
-  meta_concreta: "Esta semana, incluya una fruta y una verdura en cada comida principal."
+  titulo: "Come al estilo DASH"
+  texto_base: "Prefiere frutas, verduras, leguminosas, lácteos bajos en grasa y frutos secos sin sal, y reduce carnes procesadas y dulces. Es un patrón que ayuda a bajar la presión."
+  meta_concreta: "Esta semana, incluye una fruta y una verdura en cada comida principal."
   por_que: "Este patrón de alimentación baja la presión arterial casi tanto como reducir la sal."
   se_activa_con: ["COND-M1-CA-006", "COND-M1-CA-005"]
   prioriza_objetivos: ["prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-003", "COND-M2-NE-004", "REL-010", "potassium:alto"]
   requiere_consulta_previa: false
-  whatsapp: "🥦 Esta semana sume una fruta y una verdura a cada comida principal. Es de las mejores ayudas para la presión."
+  whatsapp: "🥦 Esta semana suma una fruta y una verdura a cada comida principal. Es de las mejores ayudas para la presión."
   fuentes: ["GPC Colombia HTA 2025 (Minsalud e IETS)", "2017 ACC/AHA Guideline for High Blood Pressure in Adults"]
 
 - id: REC-ALI-109
   tipo: alimentacion
-  titulo: "No se salte comidas mientras se aclara"
-  texto_base: "Mientras su médico revisa el resultado, coma a horas regulares y no pase muchas horas sin comer. Lleve una fruta o un puñado de frutos secos si sale."
-  meta_concreta: "Esta semana, tres comidas al día sin saltarse ninguna."
+  titulo: "No te saltes comidas mientras se aclara"
+  texto_base: "Mientras tu médico revisa el resultado, come a horas regulares y no pases muchas horas sin comer. Lleva una fruta o un puñado de frutos secos si sales."
+  meta_concreta: "Esta semana, tres comidas al día sin saltarte ninguna."
   por_que: "Pasar muchas horas sin comer puede bajar más la glucosa y causar mareo o temblor."
   se_activa_con: ["COND-M1-EM-005"]
   prioriza_objetivos: ["energia_sueno", "salud_general", "condicion_existente"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🍌 Esta semana no se salte comidas y lleve una fruta en el bolso. Si se siente mareado o tembloroso, coma algo y cuénteselo a su médico."
+  whatsapp: "🍌 Esta semana no te saltes comidas y lleva una fruta en el bolso. Si te sientes mareado o tembloroso, come algo y cuéntale a tu médico."
   fuentes: ["Endocrine Society, Evaluation and Management of Adult Hypoglycemic Disorders 2009"]
 
 - id: REC-ALI-110
   tipo: alimentacion
   titulo: "Proteína sin excesos"
-  texto_base: "No aumente la proteína ni siga dietas altas en proteína mientras su médico revisa sus riñones. Pregúntele cuánta proteína le conviene."
-  meta_concreta: "Lleve esta pregunta a su próxima consulta: ¿cuánta proteína me conviene comer?"
-  por_que: "Mucha proteína hace trabajar más a los riñones; la cantidad adecuada la define su médico o nutricionista."
+  texto_base: "No aumentes la proteína ni sigas dietas altas en proteína mientras tu médico revisa tus riñones. Pregúntale cuánta proteína te conviene."
+  meta_concreta: "Lleva esta pregunta a tu próxima consulta: ¿cuánta proteína me conviene comer?"
+  por_que: "Mucha proteína hace trabajar más a los riñones; la cantidad adecuada la define tu médico o nutricionista."
   se_activa_con: ["COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "REL-010"]
   prioriza_objetivos: ["condicion_existente", "masa_muscular", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: true
-  whatsapp: "🩺 Antes de cambiar cuánta proteína come, pregúntele a su médico qué cantidad le conviene. Anote la pregunta para su cita."
+  whatsapp: "🩺 Antes de cambiar cuánta proteína comes, pregúntale a tu médico qué cantidad te conviene. Anota la pregunta para tu cita."
   fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD, capítulo 3"]
 
 - id: REC-ALI-111
   tipo: alimentacion
   titulo: "Cuidado con la sal light"
-  texto_base: "No use sal light ni sustitutos de sal bajos en sodio, porque suelen llevar potasio. Tampoco aumente alimentos o jugos con mucho potasio hasta repetir el examen."
-  meta_concreta: "Revise hoy la etiqueta de la sal de su casa: si dice cloruro de potasio, guárdela hasta hablar con su médico."
+  texto_base: "No uses sal light ni sustitutos de sal bajos en sodio, porque suelen llevar potasio. Tampoco aumentes alimentos o jugos con mucho potasio hasta repetir el examen."
+  meta_concreta: "Revisa hoy la etiqueta de la sal de tu casa: si dice cloruro de potasio, guárdala hasta hablar con tu médico."
   por_que: "Si el potasio está alto, sumar más potasio sin control puede afectar el ritmo del corazón."
   se_activa_con: ["COND-M2-NE-004", "potassium:alto"]
   prioriza_objetivos: ["condicion_existente", "salud_general", "prevenir"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🔎 Revise la etiqueta de la sal que usa en casa. Si dice cloruro de potasio, guárdela hasta hablar con su médico."
+  whatsapp: "🔎 Revisa la etiqueta de la sal que usas en casa. Si dice cloruro de potasio, guárdala hasta hablar con tu médico."
   fuentes: ["KDIGO 2024 Clinical Practice Guideline for CKD", "KDIGO Controversies Conference on Potassium 2020"]
 
 - id: REC-ALI-112
   tipo: alimentacion
   titulo: "Pescado dos veces por semana"
-  texto_base: "Coma pescado dos veces por semana, mejor si es sardina, atún, trucha o salmón, preparado al horno, a la plancha o sudado, no frito."
+  texto_base: "Come pescado dos veces por semana, mejor si es sardina, atún, trucha o salmón, preparado al horno, a la plancha o sudado, no frito."
   meta_concreta: "Dos almuerzos con pescado esta semana."
   por_que: "El pescado aporta grasas omega 3 que cuidan el corazón y reemplaza carnes con más grasa saturada."
   se_activa_con: ["COND-M1-CA-001", "COND-M1-CA-003", "COND-M1-CA-004", "COND-M1-CA-005", "REL-003", "objetivo:envejecer_saludable"]
   prioriza_objetivos: ["prevenir", "envejecer_saludable", "salud_general"]
   contraindicada_si: ["alergia:pescado", "dieta:vegetariana", "dieta:vegana"]
   requiere_consulta_previa: false
-  whatsapp: "🐟 Esta semana programe dos almuerzos con pescado: trucha, sardina o atún, a la plancha o sudado."
+  whatsapp: "🐟 Esta semana programa dos almuerzos con pescado: trucha, sardina o atún, a la plancha o sudado."
   fuentes: ["2021 AHA Dietary Guidance to Improve Cardiovascular Health", "AHA Science Advisory on Seafood 2018"]
 
 - id: REC-ALI-113
   tipo: alimentacion
   titulo: "Calcio y vitamina D desde los alimentos"
-  texto_base: "Incluya cada día alimentos con calcio, como leche, yogur o kumis sin azúcar, queso, sardinas con espina y verduras de hoja verde, y huevo o pescado para la vitamina D."
+  texto_base: "Incluye cada día alimentos con calcio, como leche, yogur o kumis sin azúcar, queso, sardinas con espina y verduras de hoja verde, y huevo o pescado para la vitamina D."
   meta_concreta: "Dos porciones de lácteos o alimentos con calcio al día, 5 días esta semana."
   por_que: "Después de los 40 y en la transición a la menopausia los huesos pierden densidad más rápido; el calcio de la comida ayuda a protegerlos."
   se_activa_con: ["COND-M5-MU-004", "objetivo:envejecer_saludable", "COND-M5-MU-002"]
@@ -170,69 +170,69 @@
   requiere_consulta_previa: false
   por_dieta:
     vegana:
-      texto_base: "Incluya cada día alimentos con calcio de origen vegetal: bebidas vegetales fortificadas con calcio, verduras de hoja verde como brócoli o repollo, fríjoles y ajonjolí o almendras si no les tiene alergia."
+      texto_base: "Incluye cada día alimentos con calcio de origen vegetal: bebidas vegetales fortificadas con calcio, verduras de hoja verde como brócoli o repollo, fríjoles y ajonjolí o almendras si no les tienes alergia."
       meta_concreta: "Dos porciones de alimentos con calcio al día, 5 días esta semana."
-      whatsapp: "🥦 Hoy sume una bebida vegetal fortificada con calcio y un plato con brócoli o fríjoles. Sus huesos se lo agradecen con los años."
-  whatsapp: "🦴 Hoy sume un yogur o kumis sin azúcar y un poco de queso a sus comidas. Sus huesos se lo agradecen con los años."
+      whatsapp: "🥦 Hoy suma una bebida vegetal fortificada con calcio y un plato con brócoli o fríjoles. Tus huesos te lo agradecen con los años."
+  whatsapp: "🦴 Hoy suma un yogur o kumis sin azúcar y un poco de queso a tus comidas. Tus huesos te lo agradecen con los años."
   fuentes: ["The Menopause Society (NAMS), Management of osteoporosis in postmenopausal women 2021", "ACOG Clinical Consensus: Management of Postmenopausal Osteoporosis 2022"]
 
 - id: REC-ALI-114
   tipo: alimentacion
   titulo: "Proteína en cada comida"
-  texto_base: "Incluya una porción de proteína en el desayuno, el almuerzo y la comida: huevo, pollo, pescado, carne magra, fríjol, lenteja, queso o yogur."
+  texto_base: "Incluye una porción de proteína en el desayuno, el almuerzo y la comida: huevo, pollo, pescado, carne magra, fríjol, lenteja, queso o yogur."
   meta_concreta: "Esta semana, una fuente de proteína en las 3 comidas principales, 5 días."
   por_que: "El músculo se construye mejor cuando la proteína se reparte durante el día, junto con el entrenamiento de fuerza."
   se_activa_con: ["objetivo:masa_muscular", "objetivo:atletico", "objetivo:envejecer_saludable"]
   prioriza_objetivos: ["masa_muscular", "atletico", "envejecer_saludable"]
   contraindicada_si: ["COND-M2-NE-001", "COND-M2-NE-002", "COND-M2-NE-003", "REL-010", "alergia:huevo", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "🍳 Revise su desayuno de mañana: ¿tiene huevo, queso, yogur o fríjol? Repartir la proteína en el día ayuda a sus músculos."
+  whatsapp: "🍳 Revisa tu desayuno de mañana: ¿tiene huevo, queso, yogur o fríjol? Repartir la proteína en el día ayuda a tus músculos."
   fuentes: ["ISSN Position Stand: Protein and Exercise 2017", "ACSM, AND y DC: Nutrition and Athletic Performance 2016"]
 
 - id: REC-ALI-115
   tipo: alimentacion
-  titulo: "Coma bien alrededor del entrenamiento"
-  texto_base: "Una o dos horas antes de entrenar, coma algo con carbohidrato fácil, como banano o pan. Después, combine proteína con carbohidrato, por ejemplo yogur con fruta o arroz con pollo."
+  titulo: "Come bien alrededor del entrenamiento"
+  texto_base: "Una o dos horas antes de entrenar, come algo con carbohidrato fácil, como banano o pan. Después, combina proteína con carbohidrato, por ejemplo yogur con fruta o arroz con pollo."
   meta_concreta: "Esta semana, una comida con proteína y carbohidrato en las 2 horas después de cada entrenamiento."
   por_que: "Comer antes da energía para entrenar y comer después ayuda a recuperar el músculo y las reservas de energía."
   se_activa_con: ["objetivo:rendimiento", "objetivo:maraton", "objetivo:atletico"]
   prioriza_objetivos: ["rendimiento", "maraton", "atletico"]
   contraindicada_si: ["COND-M2-NE-004", "potassium:alto", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "💪 Después de entrenar hoy, coma algo con proteína y carbohidrato, como yogur con fruta o arroz con pollo. Así se recupera mejor."
+  whatsapp: "💪 Después de entrenar hoy, come algo con proteína y carbohidrato, como yogur con fruta o arroz con pollo. Así recuperas mejor."
   fuentes: ["ACSM, AND y DC: Nutrition and Athletic Performance 2016", "ISSN Position Stand: Nutrient Timing 2017"]
 
 - id: REC-ALI-116
   tipo: alimentacion
-  titulo: "Hierro en su plato si corre largo"
-  texto_base: "Incluya carnes rojas magras, pollo, pescado, lentejas o fríjoles varias veces por semana, y acompáñelos con una fruta con vitamina C como guayaba, naranja o mandarina. Evite el café o el té justo con las comidas."
+  titulo: "Hierro en tu plato si corres largo"
+  texto_base: "Incluye carnes rojas magras, pollo, pescado, lentejas o fríjoles varias veces por semana, y acompáñalos con una fruta con vitamina C como guayaba, naranja o mandarina. Evita el café o el té justo con las comidas."
   meta_concreta: "Cuatro almuerzos esta semana con una fuente de hierro y una fruta con vitamina C."
   por_que: "Quien corre largas distancias pierde más hierro, y el hierro es clave para llevar oxígeno a los músculos."
   se_activa_con: ["objetivo:maraton", "objetivo:rendimiento"]
   prioriza_objetivos: ["maraton", "rendimiento", "energia_sueno"]
   contraindicada_si: ["ferritin:alto", "transferrin_saturation:alto"]
   requiere_consulta_previa: false
-  whatsapp: "🍊 Hoy acompañe las lentejas o la carne del almuerzo con un jugo natural de naranja o una guayaba. Así aprovecha mejor el hierro."
+  whatsapp: "🍊 Hoy acompaña las lentejas o la carne del almuerzo con un jugo natural de naranja o una guayaba. Así aprovechas mejor el hierro."
   fuentes: ["ACSM, AND y DC: Nutrition and Athletic Performance 2016", "IOC Consensus Statement on Relative Energy Deficiency in Sport 2023"]
 
 - id: REC-ALI-117
   tipo: alimentacion
   titulo: "Cena liviana y temprano"
-  texto_base: "Cene al menos dos horas antes de acostarse y prefiera algo liviano. Evite las comidas muy grasosas, picantes o abundantes en la noche."
-  meta_concreta: "Esta semana, termine de cenar 2 horas antes de acostarse, 5 noches."
+  texto_base: "Cena al menos dos horas antes de acostarte y prefiere algo liviano. Evita las comidas muy grasosas, picantes o abundantes en la noche."
+  meta_concreta: "Esta semana, termina de cenar 2 horas antes de acostarte, 5 noches."
   por_que: "Acostarse con el estómago lleno dificulta conciliar el sueño y puede causar acidez."
   se_activa_con: ["objetivo:energia_sueno"]
   prioriza_objetivos: ["energia_sueno", "bajar_peso"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🌙 Esta noche intente cenar liviano y terminar 2 horas antes de acostarse. Va a notar que duerme mejor."
+  whatsapp: "🌙 Esta noche intenta cenar liviano y terminar 2 horas antes de acostarte. Vas a notar que duermes mejor."
   fuentes: ["AHA Life's Essential 8, 2022 (sueño)", "AASM, Healthy Sleep Habits"]
 
 - id: REC-ALI-118
   tipo: alimentacion
   titulo: "Horarios fijos de comida"
-  texto_base: "Coma más o menos a la misma hora cada día y empiece con un desayuno que tenga proteína, como huevo, queso o yogur, y una fruta."
-  meta_concreta: "Esta semana, desayune antes de las 9 de la mañana con proteína, 5 días."
+  texto_base: "Come más o menos a la misma hora cada día y empieza con un desayuno que tenga proteína, como huevo, queso o yogur, y una fruta."
+  meta_concreta: "Esta semana, desayuna antes de las 9 de la mañana con proteína, 5 días."
   por_que: "Los horarios regulares ayudan a tener energía estable durante el día y a regular el reloj del cuerpo."
   se_activa_con: ["objetivo:energia_sueno", "COND-M1-EM-005"]
   prioriza_objetivos: ["energia_sueno", "salud_general", "bajar_peso"]
@@ -240,47 +240,47 @@
   requiere_consulta_previa: false
   por_dieta:
     vegana:
-      texto_base: "Coma más o menos a la misma hora cada día y empiece con un desayuno que tenga proteína vegetal, como fríjol, garbanzo o arepa con aguacate y semillas, y una fruta."
-      meta_concreta: "Esta semana, desayune antes de las 9 de la mañana con proteína, 5 días."
-      whatsapp: "🌅 Mañana desayune antes de las 9 con algo de proteína vegetal, como fríjol o garbanzo, y una fruta. Es la base para tener energía todo el día."
-  whatsapp: "🌅 Mañana desayune con huevo, queso o yogur y una fruta antes de las 9. Es la base para tener energía todo el día."
+      texto_base: "Come más o menos a la misma hora cada día y empieza con un desayuno que tenga proteína vegetal, como fríjol, garbanzo o arepa con aguacate y semillas, y una fruta."
+      meta_concreta: "Esta semana, desayuna antes de las 9 de la mañana con proteína, 5 días."
+      whatsapp: "🌅 Mañana desayuna antes de las 9 con algo de proteína vegetal, como fríjol o garbanzo, y una fruta. Es la base para tener energía todo el día."
+  whatsapp: "🌅 Mañana desayuna con huevo, queso o yogur y una fruta antes de las 9. Es la base para tener energía todo el día."
   fuentes: ["AHA Scientific Statement: Meal Timing and Frequency 2017"]
 
 - id: REC-ALI-119
   tipo: alimentacion
-  titulo: "Coma despacio y en plato mediano"
-  texto_base: "Sirva en un plato mediano, coma sentado, sin pantallas, y tómese al menos 20 minutos por comida. Espere un rato antes de repetir."
-  meta_concreta: "Esta semana, almuerce sin celular ni televisión, 5 días."
+  titulo: "Come despacio y en plato mediano"
+  texto_base: "Sirve en un plato mediano, come sentado, sin pantallas, y tómate al menos 20 minutos por comida. Espera un rato antes de repetir."
+  meta_concreta: "Esta semana, almuerza sin celular ni televisión, 5 días."
   por_que: "El cuerpo tarda unos minutos en sentir que está lleno; comer despacio ayuda a no comer de más."
   se_activa_con: ["COND-M1-EM-004", "objetivo:bajar_peso"]
   prioriza_objetivos: ["bajar_peso", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🍽️ Hoy almuerce sin celular y sin televisión, despacio. Dele tiempo a su cuerpo de avisarle que ya está lleno."
+  whatsapp: "🍽️ Hoy almuerza sin celular y sin televisión, despacio. Dale tiempo a tu cuerpo de avisarte que ya está lleno."
   fuentes: ["2013 AHA/ACC/TOS Guideline for the Management of Overweight and Obesity in Adults"]
 
 - id: REC-ALI-120
   tipo: alimentacion
   titulo: "Más comida casera, menos ultraprocesados"
-  texto_base: "Prefiera comida preparada en casa con ingredientes frescos y reduzca paquetes, salchichas, nuggets, gaseosas y comidas rápidas."
-  meta_concreta: "Esta semana, cambie el mecato de paquete de la tarde por fruta, maní sin sal o yogur, 4 días."
+  texto_base: "Prefiere comida preparada en casa con ingredientes frescos y reduce paquetes, salchichas, nuggets, gaseosas y comidas rápidas."
+  meta_concreta: "Esta semana, cambia el mecato de paquete de la tarde por fruta, maní sin sal o yogur, 4 días."
   por_que: "Los ultraprocesados tienen mucha sal, azúcar y grasa, y poca fibra."
   se_activa_con: ["general"]
   prioriza_objetivos: ["salud_general", "prevenir", "bajar_peso"]
   contraindicada_si: ["alergia:mani", "alergia:leche"]
   requiere_consulta_previa: false
-  whatsapp: "🍏 Para la media tarde de hoy, cambie el paquete de mecato por una fruta o un yogur sin azúcar."
+  whatsapp: "🍏 Para la media tarde de hoy, cambia el paquete de mecato por una fruta o un yogur sin azúcar."
   fuentes: ["Guías alimentarias para la población colombiana, ICBF 2020", "OMS, Alimentación sana, nota descriptiva 2020"]
 
 - id: REC-ALI-121
   tipo: alimentacion
   titulo: "Frutas y verduras todos los días"
-  texto_base: "Coma al menos cinco porciones al día entre frutas y verduras, de colores variados. Una porción es una fruta mediana o una taza de verdura."
+  texto_base: "Come al menos cinco porciones al día entre frutas y verduras, de colores variados. Una porción es una fruta mediana o una taza de verdura."
   meta_concreta: "Cinco porciones de frutas y verduras al día, 4 días esta semana."
   por_que: "Aportan fibra, vitaminas y antioxidantes que protegen el corazón y ayudan a la digestión."
   se_activa_con: ["general", "COND-M5-UR-001"]
   prioriza_objetivos: ["salud_general", "prevenir", "envejecer_saludable"]
   contraindicada_si: ["COND-M2-NE-004", "potassium:alto"]
   requiere_consulta_previa: false
-  whatsapp: "🍓 Cuente hoy sus frutas y verduras: la meta son cinco porciones. Una fruta en el desayuno y ensalada en el almuerzo ya suman."
+  whatsapp: "🍓 Cuenta hoy tus frutas y verduras: la meta son cinco porciones. Una fruta en el desayuno y ensalada en el almuerzo ya suman."
   fuentes: ["OMS, Alimentación sana, nota descriptiva 2020", "Guías alimentarias para la población colombiana, ICBF 2020"]

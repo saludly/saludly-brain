@@ -1,14 +1,14 @@
 id: COND-M3-NU-001
 tipo: condicion
-titulo_paciente: "Su vitamina B12 está baja"
+titulo_paciente: "Tu vitamina B12 está baja"
 que_es: "La vitamina B12 ayuda a fabricar glóbulos rojos y a mantener sanos los nervios. Viene de alimentos de origen animal."
 por_que_te_aparece:
-  - "Su vitamina B12 salió en {vitamin_b12}, por debajo de lo recomendado."
+  - "Tu vitamina B12 salió en {vitamin_b12}, por debajo de lo recomendado."
   - "El ácido metilmalónico, que sube cuando al cuerpo le falta B12, salió en {methylmalonic_acid}."
 riesgo_claro: "Si se mantiene baja durante meses, puede causar cansancio y anemia, y afectar los nervios, con hormigueo o adormecimiento en manos y pies. La buena noticia: se corrige bien cuando se detecta."
 ejemplo_simple: "Es como el aceite del motor: si baja poco a poco, el carro anda un tiempo, pero las piezas se van desgastando."
-incertidumbre: "Un solo examen no basta: los suplementos recientes, los anticonceptivos y el embarazo cambian el valor. Revíselo con su médico, sobre todo si usa metformina o medicamentos para la acidez, o no come productos de origen animal."
-cuando_consultar: "Si tiene hormigueo, adormecimiento o problemas de equilibrio, consulte pronto."
+incertidumbre: "Un solo examen no basta: los suplementos recientes, los anticonceptivos y el embarazo cambian el valor. Revísalo con tu médico, sobre todo si tomas metformina o medicamentos para la acidez, o no comes productos de origen animal."
+cuando_consultar: "Si tieness hormigueo, adormecimiento o problemas de equilibrio, consulta pronto."
 aviso_whatsapp: null
 fuentes: ["NICE NG239 2024"]
 estado_revision: aprobada

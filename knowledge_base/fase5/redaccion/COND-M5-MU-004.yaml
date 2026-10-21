@@ -1,14 +1,14 @@
 id: COND-M5-MU-004
 tipo: informativa
-titulo_paciente: "Sus hormonas muestran la transición a la menopausia"
+titulo_paciente: "Tus hormonas muestran la transición a la menopausia"
 que_es: "La transición a la menopausia es una etapa natural de la vida en la que los ovarios bajan su actividad poco a poco. No es una enfermedad."
 por_que_te_aparece:
-  - "Su FSH, la hormona que estimula los ovarios, salió en {fsh}, un valor que suele verse en esta etapa."
-  - "Su estradiol, la principal hormona de los ovarios, salió en {estradiol}."
+  - "Tu FSH, la hormona que estimula los ovarios, salió en {fsh}, un valor que suele verse en esta etapa."
+  - "Tu estradiol, la principal hormona de los ovarios, salió en {estradiol}."
 riesgo_claro: "Con menos estrógeno, los huesos pierden firmeza más rápido y el corazón pierde parte de su protección. Por eso es un muy buen momento para cuidarlos."
 ejemplo_simple: "Es como un cambio de estación: el cuerpo se ajusta a un clima nuevo, y vale la pena prepararse para disfrutarlo bien."
-incertidumbre: "La FSH varía de un mes a otro y no dice por sí sola en qué momento de la transición está usted. Su médico lo valora con sus ciclos y con cómo se siente."
-cuando_consultar: "Hable con su médico sobre cómo se siente (calores, sueño, ánimo) y sobre cómo cuidar sus huesos y su corazón en esta etapa."
-aviso_whatsapp: "Su informe de Saludly trae información y consejos para esta etapa de su vida. Ábralo cuando pueda."
+incertidumbre: "La FSH varía de un mes a otro y no dice por sí sola en qué momento de la transición estás. Tu médico lo valora con tus ciclos y con cómo te sientes."
+cuando_consultar: "Habla con tu médico sobre cómo te sientes (calores, sueño, ánimo) y sobre cómo cuidar tus huesos y tu corazón en esta etapa."
+aviso_whatsapp: "Tu informe de Saludly trae información y consejos para esta etapa de tu vida. Ábrelo cuando puedas."
 fuentes: ["STRAW+10 (2012), etapas del envejecimiento reproductivo", "NICE NG23, menopausia"]
 estado_revision: aprobada

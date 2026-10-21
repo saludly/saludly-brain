@@ -11,12 +11,12 @@ export function Retenido() {
           <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-optimal-soft text-optimal">
             <Phone className="h-5 w-5" strokeWidth={1.6} />
           </span>
-          <h1 className="mt-6 text-2xl font-light tracking-tight text-ink">Nuestro equipo médico lo va a llamar hoy.</h1>
+          <h1 className="mt-6 text-2xl font-light tracking-tight text-ink">Nuestro equipo médico te va a llamar hoy.</h1>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            Uno de sus resultados necesita que un médico se lo explique con calma. Su informe completo aparecerá aquí después de esa llamada.
+            Uno de tus resultados necesita que un médico te lo explique con calma. Tu informe completo aparecerá aquí después de esa llamada.
           </p>
           <p className="mt-6 text-xs leading-relaxed text-ink-faint">
-            Si se siente mal, con dolor en el pecho, falta de aire, confusión o desmayo, vaya a urgencias.
+            Si te sientes mal, con dolor en el pecho, falta de aire, confusión o desmayo, ve a urgencias.
           </p>
         </div>
       </div>

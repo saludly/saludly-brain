@@ -1,13 +1,13 @@
 id: COND-M4-IN-003
 tipo: condicion
-titulo_paciente: "El resultado de sus pruebas de la enfermedad de Chagas"
+titulo_paciente: "El resultado de tus pruebas de la enfermedad de Chagas"
 que_es: "La enfermedad de Chagas es una infección por un parásito que transmite un insecto conocido como pito, y puede no dar síntomas durante muchos años."
 por_que_te_aparece:
-  - "Sus dos pruebas para la enfermedad de Chagas salieron reactivas."
+  - "Tus dos pruebas para la enfermedad de Chagas salieron reactivas."
 riesgo_claro: "Si no se revisa, con los años puede afectar el corazón o el sistema digestivo. Por eso el seguimiento médico es importante, y la infección tiene manejo."
 ejemplo_simple: "Es como un inquilino silencioso: puede pasar años sin hacer ruido; por eso conviene que alguien revise la casa de vez en cuando."
 incertidumbre: "Dos pruebas reactivas son una señal importante, pero quien confirma y explica el resultado es el médico. Los pasos incluyen una revisión del corazón."
-cuando_consultar: "Nuestro médico lo va a llamar para explicarle su resultado y los pasos a seguir."
+cuando_consultar: "Nuestro médico te va a llamar para explicarte tu resultado y los pasos a seguir."
 aviso_whatsapp: null
 fuentes: ["Minsalud, algoritmo de Chagas (pieza para gestantes)"]
 estado_revision: aprobada

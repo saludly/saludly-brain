@@ -1,13 +1,13 @@
 id: COND-M2-NE-A02
 tipo: condicion
-titulo_paciente: "La cistatina C ayuda a confirmar la filtración de sus riñones"
+titulo_paciente: "La cistatina C ayuda a confirmar la filtración de tus riñones"
 que_es: "La cistatina C es otra sustancia de la sangre que sirve para estimar cuánto filtran los riñones, sin depender de los músculos."
 por_que_te_aparece:
-  - "Su filtración renal estimada con creatinina salió en {egfr}."
+  - "Tu filtración renal estimada con creatinina salió en {egfr}."
   - "Con la cistatina C, que salió en {cystatin_c}, la filtración combinada quedó en {egfr_creatinina_cistatina}."
-riesgo_claro: "Ayuda a no exagerar ni subestimar el estado de sus riñones. Si la filtración baja de verdad y no se cuida, pueden perder función con los años."
-ejemplo_simple: "Es como pesarse en una segunda balanza cuando la primera puede estar descalibrada."
-incertidumbre: "La creatinina depende de su masa muscular; por eso esta segunda prueba ayuda. Aun así, su médico confirma el resultado con controles en el tiempo."
+riesgo_claro: "Ayuda a no exagerar ni subestimar el estado de tus riñones. Si la filtración baja de verdad y no se cuida, pueden perder función con los años."
+ejemplo_simple: "Es como pesarte en una segunda balanza cuando la primera puede estar descalibrada."
+incertidumbre: "La creatinina depende de tu masa muscular; por eso esta segunda prueba ayuda. Aun así, tu médico confirma el resultado con controles en el tiempo."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["KDIGO 2024"]

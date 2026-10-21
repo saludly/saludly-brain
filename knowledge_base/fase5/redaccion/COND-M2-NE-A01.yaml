@@ -1,12 +1,12 @@
 id: COND-M2-NE-A01
 tipo: condicion
-titulo_paciente: "Su potasio está por debajo del rango"
+titulo_paciente: "Tu potasio está por debajo del rango"
 que_es: "El potasio es un mineral que ayuda a que los músculos, los nervios y el corazón funcionen bien."
 por_que_te_aparece:
-  - "Su potasio salió en {potassium}, por debajo del rango del laboratorio."
+  - "Tu potasio salió en {potassium}, por debajo del rango del laboratorio."
 riesgo_claro: "Si se mantiene bajo, puede causar cansancio, calambres o debilidad, y a veces se relaciona con la presión alta. Por eso se busca la causa."
 ejemplo_simple: "Es como un carro con poco aceite: sigue andando, pero el motor trabaja forzado."
-incertidumbre: "Algunos diuréticos, el vómito, la diarrea o los laxantes lo bajan. Su médico revisa la causa y decide si hace falta estudiar las hormonas de la presión."
+incertidumbre: "Algunos diuréticos, el vómito, la diarrea o los laxantes lo bajan. Tu médico revisa la causa y decide si hace falta estudiar las hormonas de la presión."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Endocrine Society 2025, hiperaldosteronismo primario"]

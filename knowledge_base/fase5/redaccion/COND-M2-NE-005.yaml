@@ -1,13 +1,13 @@
 id: COND-M2-NE-005
 tipo: condicion
-titulo_paciente: "Su sodio está por debajo del rango"
+titulo_paciente: "Tu sodio está por debajo del rango"
 que_es: "El sodio es un mineral que mantiene el equilibrio del agua en el cuerpo y ayuda a que los nervios funcionen."
 por_que_te_aparece:
-  - "Su sodio salió en {sodium}, por debajo de 135 mmol/L."
-  - "Como su glucosa estaba alta, también calculamos el sodio corregido, que salió en {sodio_corregido}."
+  - "Tu sodio salió en {sodium}, por debajo de 135 mmol/L."
+  - "Como tu glucosa estaba alta, también calculamos el sodio corregido, que salió en {sodio_corregido}."
 riesgo_claro: "Si se mantiene bajo o baja más, puede causar cansancio, dolor de cabeza, confusión o caídas, sobre todo en personas mayores."
 ejemplo_simple: "Es como un jugo con demasiada agua: queda bajito de sabor porque se diluyó."
-incertidumbre: "Puede relacionarse con medicamentos, como algunos diuréticos o antidepresivos, o con tomar mucha agua. Conviene repetirlo, y su médico revisa la causa."
+incertidumbre: "Puede relacionarse con medicamentos, como algunos diuréticos o antidepresivos, o con tomar mucha agua. Conviene repetirlo, y tu médico revisa la causa."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Guía europea de hiponatremia 2014"]

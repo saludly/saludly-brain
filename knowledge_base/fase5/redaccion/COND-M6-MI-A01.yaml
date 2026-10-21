@@ -1,13 +1,13 @@
 id: COND-M6-MI-A01
 tipo: condicion
-titulo_paciente: "Sus resultados se leen según su edad"
-que_es: "Algunos exámenes cambian con la edad, así que leemos cada resultado con los rangos y las reglas que corresponden a su etapa de vida."
+titulo_paciente: "Tus resultados se leen según tu edad"
+que_es: "Algunos exámenes cambian con la edad, así que leemos cada resultado con los rangos y las reglas que corresponden a tu etapa de vida."
 por_que_te_aparece:
-  - "Por ejemplo, su TSH, la hormona que regula la tiroides, salió en {tsh} y se compara con el corte que corresponde a su edad."
-  - "Su FSH, una hormona que regula los ovarios, salió en {fsh}. Su lectura cambia antes y después de los 40 años."
+  - "Por ejemplo, tu TSH, la hormona que regula la tiroides, salió en {tsh} y se compara con el corte que corresponde a tu edad."
+  - "Tu FSH, una hormona que regula los ovarios, salió en {fsh}. Su lectura cambia antes y después de los 40 años."
 riesgo_claro: "Leer un resultado con el rango de otra edad puede hacer que algo parezca alterado sin estarlo, o al revés."
 ejemplo_simple: "Es como la talla de los zapatos: lo que le queda bien a un niño no le queda bien a un adulto."
-incertidumbre: "Algunos rangos por edad todavía tienen pocos datos, sobre todo en mayores de 65 años. Su médico lo tiene en cuenta."
+incertidumbre: "Algunos rangos por edad todavía tienen pocos datos, sobre todo en mayores de 65 años. Tu médico lo tiene en cuenta."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["Reglas de los Lotes 1 a 6", "OMS 2024, cortes de hemoglobina"]

@@ -1,65 +1,65 @@
 # Recomendaciones de actividades saludables · lote A (bienestar general y por objetivo)
 # Numeración 100 a 199. Pendiente de revisión de Carlos.
-# 20 de octubre de 2026: textos pasados a "usted" con emoji en WhatsApp; aprobado por Carlos el 20 de octubre de 2026.
+# 21 de octubre de 2026: de nuevo en tú (decisión de Carlos), con emoji en cada mensaje de WhatsApp.
 
 - id: REC-SAL-101
   tipo: actividades_saludables
   titulo: "Tiempo al aire libre"
-  texto_base: "Pase al menos 20 minutos al día al aire libre: un parque, un sendero o una caminata por su barrio."
+  texto_base: "Pasa al menos 20 minutos al día al aire libre: un parque, un sendero o una caminata por tu barrio."
   meta_concreta: "Veinte minutos al aire libre, 4 días esta semana."
-  por_que: "Estar en la naturaleza baja el estrés, mejora el ánimo y suma movimiento sin darse cuenta."
+  por_que: "Estar en la naturaleza baja el estrés, mejora el ánimo y suma movimiento sin darte cuenta."
   se_activa_con: ["general", "objetivo:energia_sueno"]
   prioriza_objetivos: ["salud_general", "energia_sueno", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🌳 Hoy regálese 20 minutos en un parque o caminando por su barrio. El aire libre le hace bien al ánimo."
+  whatsapp: "🌳 Hoy regálate 20 minutos en un parque o caminando por tu barrio. El aire libre le hace bien al ánimo."
   fuentes: ["White et al., Scientific Reports 2019 (tiempo en la naturaleza y bienestar)", "OMS, Urban green spaces and health 2016"]
 
 - id: REC-SAL-102
   tipo: actividades_saludables
-  titulo: "Cultive sus relaciones"
-  texto_base: "Programe cada semana un encuentro con amigos o familia: una comida, una llamada larga o una caminata juntos."
+  titulo: "Cultiva tus relaciones"
+  texto_base: "Programa cada semana un encuentro con amigos o familia: una comida, una llamada larga o una caminata juntos."
   meta_concreta: "Un plan con alguien cercano esta semana."
   por_que: "Las relaciones cercanas protegen la salud del corazón y la mente tanto como otros hábitos."
   se_activa_con: ["general", "objetivo:envejecer_saludable"]
   prioriza_objetivos: ["envejecer_saludable", "salud_general", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🤝 Escríbale hoy a un amigo o familiar que no ve hace rato y cuadren un café o una caminata esta semana."
+  whatsapp: "🤝 Escríbele hoy a un amigo o familiar que no ves hace rato y cuadren un café o una caminata esta semana."
   fuentes: ["OMS, Comisión sobre la conexión social 2023", "Holt-Lunstad et al., PLoS Medicine 2010 (relaciones sociales y salud)"]
 
 - id: REC-SAL-103
   tipo: actividades_saludables
-  titulo: "Lea antes de dormir"
-  texto_base: "Cambie el celular de la noche por un libro o una revista en papel durante 15 minutos antes de dormir."
+  titulo: "Lee antes de dormir"
+  texto_base: "Cambia el celular de la noche por un libro o una revista en papel durante 15 minutos antes de dormir."
   meta_concreta: "Quince minutos de lectura en papel antes de dormir, 4 noches esta semana."
   por_que: "Leer en papel relaja y evita la luz de las pantallas, que retrasa el sueño."
   se_activa_con: ["general", "objetivo:energia_sueno"]
   prioriza_objetivos: ["energia_sueno", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "📖 Esta noche cambie el celular por 15 minutos de un libro antes de dormir. Su mente se desconecta mejor."
+  whatsapp: "📖 Esta noche cambia el celular por 15 minutos de un libro antes de dormir. Tu mente se desconecta mejor."
   fuentes: ["AASM, Healthy Sleep Habits"]
 
 - id: REC-SAL-104
   tipo: actividades_saludables
-  titulo: "Aprenda algo nuevo"
-  texto_base: "Dedique un rato cada semana a aprender algo nuevo: un instrumento, un idioma, un juego de mesa o una manualidad."
+  titulo: "Aprende algo nuevo"
+  texto_base: "Dedica un rato cada semana a aprender algo nuevo: un instrumento, un idioma, un juego de mesa o una manualidad."
   meta_concreta: "Treinta minutos de una actividad nueva, 2 veces esta semana."
   por_que: "Mantener la mente activa y aprendiendo ayuda a cuidar la memoria con los años."
   se_activa_con: ["objetivo:envejecer_saludable"]
   prioriza_objetivos: ["envejecer_saludable", "salud_general"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🎸 ¿Hay algo que siempre quiso aprender? Esta semana dedíquele 30 minutos dos veces."
+  whatsapp: "🎸 ¿Hay algo que siempre quisiste aprender? Esta semana dedícale 30 minutos dos veces."
   fuentes: ["OMS, Reducción del riesgo de deterioro cognitivo y demencia 2019", "Livingston et al., Lancet Commission on Dementia 2024"]
 
 - id: REC-SAL-105
   tipo: actividades_saludables
-  titulo: "Cocine en familia"
-  texto_base: "Cocine en casa con su familia o sus amigos al menos una vez por semana, con recetas sencillas y frescas."
+  titulo: "Cocina en familia"
+  texto_base: "Cocina en casa con tu familia o tus amigos al menos una vez por semana, con recetas sencillas y frescas."
   meta_concreta: "Una comida cocinada en compañía esta semana."
-  por_que: "Cocinar en casa mejora lo que come y le regala un rato agradable con los suyos."
+  por_que: "Cocinar en casa mejora lo que comes y comparte un rato agradable con los tuyos."
   se_activa_con: ["general", "objetivo:bajar_peso"]
   prioriza_objetivos: ["bajar_peso", "salud_general"]
   contraindicada_si: []
@@ -69,26 +69,26 @@
 
 - id: REC-SAL-106
   tipo: actividades_saludables
-  titulo: "Una actividad que disfrute"
-  texto_base: "Elija una actividad que disfrute y lo ponga a moverse, como bailar, jugar fútbol con amigos, nadar o hacer jardinería, y póngala en su agenda."
-  meta_concreta: "Agende una sesión de su actividad favorita esta semana."
-  por_que: "Es más fácil mantener la actividad física cuando es algo que a uno le gusta hacer."
+  titulo: "Una actividad que disfrutes"
+  texto_base: "Elige una actividad que disfrutes y te mueva, como bailar, jugar fútbol con amigos, nadar o hacer jardinería, y ponla en tu agenda."
+  meta_concreta: "Agenda una sesión de tu actividad favorita esta semana."
+  por_que: "Es más fácil mantener la actividad física cuando es algo que te gusta hacer."
   se_activa_con: ["general", "objetivo:salud_general"]
   prioriza_objetivos: ["salud_general", "bajar_peso", "energia_sueno"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "⚽ ¿Qué le gusta hacer que lo ponga a moverse? Bailar, jugar fútbol, nadar... Agéndelo esta semana."
+  whatsapp: "⚽ ¿Qué te gusta hacer que te ponga a moverte? Bailar, jugar fútbol, nadar... Agéndalo esta semana."
   fuentes: ["OMS, Directrices sobre actividad física y hábitos sedentarios 2020"]
 
 - id: REC-SAL-107
   tipo: actividades_saludables
   titulo: "Un momento de pausa al día"
-  texto_base: "Tome 10 minutos al día para algo que lo calme: escuchar música, rezar, meditar, escribir o simplemente sentarse sin pantallas."
+  texto_base: "Toma 10 minutos al día para algo que te calme: escuchar música, rezar, meditar, escribir o simplemente sentarte sin pantallas."
   meta_concreta: "Diez minutos de pausa al día, 5 días esta semana."
   por_que: "Un rato de calma diario ayuda a bajar el estrés acumulado."
   se_activa_con: ["general", "objetivo:energia_sueno"]
   prioriza_objetivos: ["energia_sueno", "salud_general", "envejecer_saludable"]
   contraindicada_si: []
   requiere_consulta_previa: false
-  whatsapp: "🧘 Hoy regálese 10 minutos sin pantallas: música, escribir o simplemente respirar. Ese rato también es salud."
+  whatsapp: "🧘 Hoy regálate 10 minutos sin pantallas: música, escribir o simplemente respirar. Ese rato también es salud."
   fuentes: ["AHA Scientific Statement: Psychological Health, Well-Being, and the Mind-Heart-Body Connection 2021"]

@@ -3,7 +3,7 @@
  "paciente_ref": "P-51260FC6",
  "orden": "LCD-2026-100123",
  "fecha_toma": "2026-10-01",
- "generado": "2026-10-21T00:07:30",
+ "generado": "2026-10-21T00:37:03",
  "estado": "en_revision",
  "panel": "solo_sangre",
  "escalamiento_maximo": 1,
@@ -40,33 +40,33 @@
   "activo": false
  },
  "paciente": {
-  "resumen": "Revisamos sus resultados y encontramos 8 puntos que vale la pena atender; el más importante es: su azúcar y sus grasas se mueven juntos. Nada requiere urgencia; son cosas para cuidar y comentar en su próximo control. También hay buenas noticias: 9 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en sus metas: bajar de peso, tener más energía y dormir mejor, prevenir enfermedades.",
+  "resumen": "Revisamos tus resultados y encontramos 8 puntos que vale la pena atender; el más importante es: tu azúcar y tus grasas se mueven juntos. Nada requiere urgencia; son cosas para cuidar y comentar en tu próximo control. También hay buenas noticias: 9 grupos de resultados están en rango. Ordenamos las recomendaciones pensando en tus metas: bajar de peso, tener más energía y dormir mejor, prevenir enfermedades.",
   "nota_alimentacion": null,
   "lo_que_esta_bien": [
    {
     "grupo": "hemograma",
     "nombre": "Hemograma",
-    "texto": "Sus glóbulos rojos, blancos y plaquetas están dentro de los rangos de referencia."
+    "texto": "Tus glóbulos rojos, blancos y plaquetas están dentro de los rangos de referencia."
    },
    {
     "grupo": "electrolitos",
     "nombre": "Sales y minerales de la sangre",
-    "texto": "Sus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
+    "texto": "Tus sales y minerales de la sangre, como el sodio, el potasio y el calcio, están dentro de los rangos de referencia."
    },
    {
     "grupo": "tiroides",
     "nombre": "Tiroides",
-    "texto": "Las hormonas de su tiroides están dentro de los rangos de referencia."
+    "texto": "Las hormonas de tu tiroides están dentro de los rangos de referencia."
    },
    {
     "grupo": "hierro",
     "nombre": "Hierro",
-    "texto": "Sus reservas de hierro y el hierro que circula en su sangre están dentro de los rangos de referencia."
+    "texto": "Tus reservas de hierro y el hierro que circula en tu sangre están dentro de los rangos de referencia."
    },
    {
     "grupo": "hormonas",
     "nombre": "Hormonas",
-    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para su edad y su sexo."
+    "texto": "Las hormonas que se midieron están dentro de los rangos de referencia para tu edad y tu sexo."
    },
    {
     "grupo": "corazon",
@@ -76,17 +76,17 @@
    {
     "grupo": "proteinas",
     "nombre": "Proteínas de la sangre",
-    "texto": "Sus proteínas de la sangre y sus anticuerpos generales están dentro de los rangos de referencia."
+    "texto": "Tus proteínas de la sangre y tus anticuerpos generales están dentro de los rangos de referencia."
    },
    {
     "grupo": "coagulacion",
     "nombre": "Coagulación",
-    "texto": "Sus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
+    "texto": "Tus pruebas de coagulación, que miden cómo la sangre forma un tapón ante una herida, están dentro de los rangos de referencia."
    },
    {
     "grupo": "serologias",
     "nombre": "Pruebas de infecciones y anticuerpos",
-    "texto": "En las pruebas de infecciones y de anticuerpos que se hicieron no se encontraron anticuerpos ni marcadores reactivos. Si tiene síntomas o una exposición reciente, coménteselo a su médico."
+    "texto": "En las pruebas de infecciones y de anticuerpos que se hicieron no se encontraron anticuerpos ni marcadores reactivos. Si tienes síntomas o una exposición reciente, coméntalo con tu médico."
    }
   ],
   "lo_que_merece_atencion": [
@@ -94,30 +94,30 @@
     "hallazgo_id": "H-260FC6-01",
     "referencia": "REL-001",
     "tipo": "patron",
-    "titulo": "Su azúcar y sus grasas se mueven juntos",
+    "titulo": "Tu azúcar y tus grasas se mueven juntos",
     "escalamiento": 1,
     "nivel_lenguaje": null,
     "coincidencia": "alta",
     "que_es": "Cuando al cuerpo le cuesta más manejar el azúcar, varios resultados cambian a la vez: la glucosa, la insulina, los triglicéridos y el colesterol bueno.",
     "por_que": [
-     "Su glucosa en ayunas salió en 112 mg/dL, y su hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, en 6 %.",
-     "Sus triglicéridos, un tipo de grasa en la sangre, salieron en 238 mg/dL, y su colesterol HDL, el colesterol bueno, en 36 mg/dL.",
-     "Su índice HOMA-IR, que estima cuánto le cuesta a la insulina hacer su trabajo, salió en 5,48.",
-     "Usted cumple al menos 3 de los 5 componentes: cintura, triglicéridos, colesterol HDL, presión y glucosa."
+     "Tu glucosa en ayunas salió en 112 mg/dL, y tu hemoglobina glicada, el promedio de azúcar de los últimos 3 meses, en 6 %.",
+     "Tus triglicéridos, un tipo de grasa en la sangre, salieron en 238 mg/dL, y tu colesterol HDL, el colesterol bueno, en 36 mg/dL.",
+     "Tu índice HOMA-IR, que estima cuánto le cuesta a la insulina hacer su trabajo, salió en 5,48.",
+     "Cumples al menos 3 de los 5 componentes: cintura, triglicéridos, colesterol HDL, presión y glucosa."
     ],
     "ejemplo": "Es como una cocina donde la nevera ya no cierra bien: no falla una sola cosa; todo el sistema trabaja de más.",
     "agrupa": [
      {
       "referencia": "COND-M1-EM-001",
-      "titulo": "Su glucosa está en zona de alerta"
+      "titulo": "Tu glucosa está en zona de alerta"
      },
      {
       "referencia": "COND-M1-EM-003",
-      "titulo": "Usted cumple varios componentes del síndrome metabólico"
+      "titulo": "Cumples varios componentes del síndrome metabólico"
      },
      {
       "referencia": "COND-M1-CA-003",
-      "titulo": "Sus triglicéridos están por encima del rango deseable"
+      "titulo": "Tus triglicéridos están por encima del rango deseable"
      }
     ]
    },
@@ -125,30 +125,30 @@
     "hallazgo_id": "H-260FC6-02",
     "referencia": "COND-M1-CA-001",
     "tipo": "condicion",
-    "titulo": "Su colesterol está por encima del valor de tamizaje",
+    "titulo": "Tu colesterol está por encima del valor de tamizaje",
     "escalamiento": 1,
     "nivel_lenguaje": "Riesgo potencial",
     "coincidencia": "alta",
     "que_es": "El colesterol LDL y el no-HDL miden la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias.",
     "por_que": [
-     "Su colesterol LDL salió en 142 mg/dL. El valor que usamos para tamizaje es 130 mg/dL.",
-     "Su colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en 192 mg/dL. El valor de tamizaje es 160 mg/dL."
+     "Tu colesterol LDL salió en 142 mg/dL. El valor que usamos para tamizaje es 130 mg/dL.",
+     "Tu colesterol no-HDL, que suma todas las grasas que pueden tapar las arterias, salió en 192 mg/dL. El valor de tamizaje es 160 mg/dL."
     ],
-    "ejemplo": "Piénselo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
+    "ejemplo": "Piénsalo como una tubería por la que pasa agua con grasa: con los años se va tapando poco a poco.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-260FC6-03",
     "referencia": "COND-M1-EM-004",
     "tipo": "condicion",
-    "titulo": "Su índice de masa corporal está por encima del rango saludable",
+    "titulo": "Tu índice de masa corporal está por encima del rango saludable",
     "escalamiento": 1,
     "nivel_lenguaje": "Resultado observado",
     "coincidencia": "alta",
-    "que_es": "El índice de masa corporal (IMC) relaciona su peso con su estatura para estimar si hay exceso de grasa en el cuerpo.",
+    "que_es": "El índice de masa corporal (IMC) relaciona tu peso con tu estatura para estimar si hay exceso de grasa en el cuerpo.",
     "por_que": [
-     "Con el peso y la talla que midió la enfermera, su IMC salió en 28,4. La OMS usa 25 para sobrepeso y 30 para obesidad.",
-     "Su cintura midió 98 cm. Esta medida muestra si la grasa se acumula en el abdomen (en población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
+     "Con el peso y la talla que midió la enfermera, tu IMC salió en 28,4. La OMS usa 25 para sobrepeso y 30 para obesidad.",
+     "Tu cintura midió 98 cm. Esta medida muestra si la grasa se acumula en el abdomen (en población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."
     ],
     "ejemplo": "Es como cargar una maleta extra todo el día: al principio no se nota, pero con el tiempo cansa la espalda y las rodillas.",
     "agrupa": []
@@ -157,13 +157,13 @@
     "hallazgo_id": "H-260FC6-04",
     "referencia": "COND-M4-IN-002",
     "tipo": "condicion",
-    "titulo": "Le falta protección contra la hepatitis B",
+    "titulo": "Te falta protección contra la hepatitis B",
     "escalamiento": 1,
     "nivel_lenguaje": "Requiere evaluación médica",
     "coincidencia": "alta",
-    "que_es": "La hepatitis B es un virus que afecta el hígado. Estas pruebas muestran si hay infección, si la hubo en el pasado o si usted cuenta con defensas, por ejemplo por la vacuna.",
+    "que_es": "La hepatitis B es un virus que afecta el hígado. Estas pruebas muestran si hay infección, si la hubo en el pasado o si cuentas con defensas, por ejemplo por la vacuna.",
     "por_que": [
-     "No se encontró el virus ni señales de contacto con él, pero sus defensas (anti-HBs) salieron en 4,2 mUI/mL, por debajo del nivel que protege (10 mUI/mL)."
+     "No se encontró el virus ni señales de contacto con él, pero tus defensas (anti-HBs) salieron en 4,2 mUI/mL, por debajo del nivel que protege (10 mUI/mL)."
     ],
     "ejemplo": "Es como una casa con la puerta sin candado: no ha entrado nadie, pero conviene ponérselo.",
     "agrupa": []
@@ -172,13 +172,13 @@
     "hallazgo_id": "H-260FC6-05",
     "referencia": "COND-M6-RE-001",
     "tipo": "condicion",
-    "titulo": "Su ácido úrico está por encima del rango",
+    "titulo": "Tu ácido úrico está por encima del rango",
     "escalamiento": 1,
     "nivel_lenguaje": "Resultado observado",
     "coincidencia": "alta",
     "que_es": "El ácido úrico es un desecho que se forma al procesar algunos alimentos y que los riñones eliminan por la orina.",
     "por_que": [
-     "Su ácido úrico salió en 7,6 mg/dL, por encima del rango de referencia."
+     "Tu ácido úrico salió en 7,6 mg/dL, por encima del rango de referencia."
     ],
     "ejemplo": "Es como el azúcar en una limonada demasiado dulce: cuando hay mucha, deja de disolverse y se asienta en el fondo.",
     "agrupa": []
@@ -187,28 +187,28 @@
     "hallazgo_id": "H-260FC6-06",
     "referencia": "COND-M1-CA-006",
     "tipo": "condicion",
-    "titulo": "Su presión arterial está por encima de 130/80",
+    "titulo": "Tu presión arterial está por encima de 130/80",
     "escalamiento": 1,
     "nivel_lenguaje": "Patrón compatible",
     "coincidencia": "moderada",
     "que_es": "La presión arterial es la fuerza con la que la sangre empuja las paredes de las arterias.",
     "por_que": [
-     "En la visita, la enfermera midió su presión en 128/82 mmHg. Desde 130/80 mmHg, las guías piden confirmarla con mediciones en casa."
+     "En la visita, la enfermera midió tu presión en 128/82 mmHg. Desde 130/80 mmHg, las guías piden confirmarla con mediciones en casa."
     ],
-    "ejemplo": "Piénselo como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta.",
+    "ejemplo": "Piénsalo como una manguera con demasiada presión: aguanta un tiempo, pero con los años se desgasta.",
     "agrupa": []
    },
    {
     "hallazgo_id": "H-260FC6-07",
     "referencia": "COND-M4-GA-002",
     "tipo": "condicion",
-    "titulo": "Su enzima del hígado (ALT) está por encima de lo esperado",
+    "titulo": "Tu enzima del hígado (ALT) está por encima de lo esperado",
     "escalamiento": 1,
     "nivel_lenguaje": "Patrón compatible",
     "coincidencia": "moderada",
     "que_es": "La ALT es una enzima que vive dentro de las células del hígado. Cuando esas células se irritan, sale a la sangre.",
     "por_que": [
-     "Su ALT salió en 58 U/L, por encima del valor esperado."
+     "Tu ALT salió en 58 U/L, por encima del valor esperado."
     ],
     "ejemplo": "Es como el polvo que suelta una pared cuando la golpean: avisa que algo la molesta, pero no dice qué tan grande es el golpe.",
     "agrupa": []
@@ -217,13 +217,13 @@
     "hallazgo_id": "H-260FC6-08",
     "referencia": "COND-M3-NU-A03",
     "tipo": "condicion",
-    "titulo": "Su vitamina D está fuera del rango",
+    "titulo": "Tu vitamina D está fuera del rango",
     "escalamiento": 0,
     "nivel_lenguaje": null,
     "coincidencia": null,
     "que_es": "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos. El cuerpo la fabrica con el sol.",
     "por_que": [
-     "Su vitamina D salió en 21,4 ng/mL, fuera del rango del laboratorio."
+     "Tu vitamina D salió en 21,4 ng/mL, fuera del rango del laboratorio."
     ],
     "ejemplo": "Es como el cemento de una pared: los ladrillos están, pero sin suficiente cemento la pared queda menos firme.",
     "agrupa": []
@@ -233,22 +233,22 @@
    {
     "hallazgo_id": "H-260FC6-01",
     "texto": "Si este patrón se mantiene durante años, aumenta la probabilidad de llegar a diabetes y de que se dañen los vasos sanguíneos del corazón. La buena noticia: como van juntos, los mismos hábitos mejoran todos a la vez.",
-    "incertidumbre": "Este patrón no es un diagnóstico. Un ayuno incompleto o algunos medicamentos pueden mover estos valores, y su médico decide si hay que repetirlos."
+    "incertidumbre": "Este patrón no es un diagnóstico. Un ayuno incompleto o algunos medicamentos pueden mover estos valores, y tu médico decide si hay que repetirlos."
    },
    {
     "hallazgo_id": "H-260FC6-02",
     "texto": "Si se mantiene alto durante años, las arterias se van estrechando y aumenta la probabilidad de problemas del corazón y del cerebro. La buena noticia: la alimentación y el movimiento ayudan a bajarlo.",
-    "incertidumbre": "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para usted depende de su riesgo cardiovascular global, que revisa su médico."
+    "incertidumbre": "Ojo: un solo perfil de lípidos no basta, y un ayuno corto lo altera. Lo que significa para ti depende de tu riesgo cardiovascular global, que revisa tu médico."
    },
    {
     "hallazgo_id": "H-260FC6-03",
     "texto": "Con los años, el exceso de grasa, sobre todo en el abdomen, aumenta la probabilidad de diabetes, presión alta, problemas del corazón y dolor de articulaciones. La buena noticia: bajar aunque sea un poco de peso ya trae beneficios.",
-    "incertidumbre": "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y su médico ayudan a interpretarlo."
+    "incertidumbre": "El IMC no distingue músculo de grasa, así que en personas muy musculosas puede salir alto. La cintura y tu médico ayudan a interpretarlo."
    },
    {
     "hallazgo_id": "H-260FC6-04",
     "texto": "Sin defensas suficientes, el virus se puede adquirir por sangre o por relaciones sexuales. La vacuna lo previene y es segura.",
-    "incertidumbre": "Si ya se vacunó hace años, puede que sus defensas hayan bajado. Su médico decide si basta con un refuerzo o con el esquema completo."
+    "incertidumbre": "Si ya te vacunaste hace años, puede que tus defensas hayan bajado. Tu médico decide si basta con un refuerzo o con el esquema completo."
    },
    {
     "hallazgo_id": "H-260FC6-05",
@@ -258,25 +258,25 @@
    {
     "hallazgo_id": "H-260FC6-06",
     "texto": "Si la presión se mantiene alta por años, va desgastando el corazón, los riñones, el cerebro y los ojos, casi siempre sin dar síntomas. Por eso vale tanto medirla.",
-    "incertidumbre": "Ojo: una sola visita no confirma hipertensión. Los nervios, el café o el esfuerzo la suben. Lo ideal es medirla en casa varios días con un tensiómetro validado y revisarlo con su médico."
+    "incertidumbre": "Ojo: una sola visita no confirma hipertensión. Los nervios, el café o el esfuerzo la suben. Lo ideal es medirla en casa varios días con un tensiómetro validado y revisarlo con tu médico."
    },
    {
     "hallazgo_id": "H-260FC6-07",
     "texto": "Si la causa no se atiende, la irritación del hígado puede mantenerse durante años y afectar cómo funciona.",
-    "incertidumbre": "Hay varias causas posibles, la mayoría relacionadas con hábitos: ejercicio intenso, alcohol, alimentación, medicamentos o productos herbales. Un solo examen no basta: conviene repetirla y revisarla con su médico."
+    "incertidumbre": "Hay varias causas posibles, la mayoría relacionadas con hábitos: ejercicio intenso, alcohol, alimentación, medicamentos o productos herbales. Un solo examen no basta: conviene repetirla y revisarla con tu médico."
    },
    {
     "hallazgo_id": "H-260FC6-08",
     "texto": "Si se mantiene baja durante años, los huesos pueden debilitarse. Si está alta por suplementos, se puede acumular en el cuerpo.",
-    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puede mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quiere suplementarla o ya usa suplementos, coménteselo a su médico."
+    "incertidumbre": "Un solo valor no basta, y cambia con el sol y la época. Si está baja, puedes mejorarla con pescados grasos, huevo, lácteos fortificados y sol prudente. Si quieres suplementarla o ya tomas suplementos, coméntalo con tu médico."
    }
   ],
   "que_puedes_hacer": [
    {
     "recomendacion_id": "REC-ACT-102",
     "tipo": "actividad",
-    "titulo": "Muévase 150 minutos a la semana",
-    "texto": "Sume al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
+    "titulo": "Muévete 150 minutos a la semana",
+    "texto": "Suma al menos 150 minutos a la semana de actividad moderada, como caminar rápido, montar bicicleta o bailar, repartidos en la mayoría de los días.",
     "meta": "30 minutos de caminata rápida, 5 días esta semana.",
     "por_que": "La actividad aeróbica regular mejora el colesterol, la presión, el azúcar y el peso al mismo tiempo.",
     "hallazgos": [
@@ -298,7 +298,7 @@
     "recomendacion_id": "REC-HAB-102",
     "tipo": "habitos",
     "titulo": "Menos alcohol",
-    "texto": "Reduzca el alcohol: mientras menos, mejor. Tenga días de la semana sin nada de alcohol y, cuando tome, alterne cada trago con un vaso de agua.",
+    "texto": "Reduce el alcohol: mientras menos, mejor. Ten días de la semana sin nada de alcohol y, cuando tomes, alterna cada trago con un vaso de agua.",
     "meta": "Esta semana, al menos 5 días sin alcohol.",
     "por_que": "El alcohol sube los triglicéridos y la presión, aporta calorías vacías y afecta el sueño.",
     "hallazgos": [
@@ -319,8 +319,8 @@
     "recomendacion_id": "REC-SUE-101",
     "tipo": "sueno",
     "titulo": "Horario fijo para dormir",
-    "texto": "Acuéstese y levántese a la misma hora todos los días, también el fin de semana, buscando dormir entre 7 y 9 horas.",
-    "meta": "Esta semana, misma hora de levantarse los 7 días, con máximo una hora de diferencia.",
+    "texto": "Acuéstate y levántate a la misma hora todos los días, también el fin de semana, buscando dormir entre 7 y 9 horas.",
+    "meta": "Esta semana, misma hora de levantarte los 7 días, con máximo una hora de diferencia.",
     "por_que": "Dormir poco o a deshoras altera el manejo del azúcar, el apetito, la presión y las hormonas.",
     "hallazgos": [
      "COND-M1-EM-001",
@@ -338,8 +338,8 @@
    {
     "recomendacion_id": "REC-ALI-101",
     "tipo": "alimentacion",
-    "titulo": "Cambie las bebidas azucaradas por agua",
-    "texto": "Reemplace gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar.",
+    "titulo": "Cambia las bebidas azucaradas por agua",
+    "texto": "Reemplaza gaseosas, jugos de caja, té frío embotellado y bebidas endulzadas por agua, agua con limón o aromáticas sin azúcar.",
     "meta": "Esta semana, cero bebidas azucaradas en el almuerzo y la comida.",
     "por_que": "Las bebidas azucaradas suben la glucosa y los triglicéridos rápido y no quitan el hambre.",
     "hallazgos": [
@@ -358,8 +358,8 @@
    {
     "recomendacion_id": "REC-ALI-102",
     "tipo": "alimentacion",
-    "titulo": "Llene medio plato con verduras",
-    "texto": "En el almuerzo y la comida, sirva primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa.",
+    "titulo": "Llena medio plato con verduras",
+    "texto": "En el almuerzo y la comida, sirve primero las verduras o la ensalada hasta llenar la mitad del plato; el resto, proteína y un carbohidrato como arroz, papa o arepa.",
     "meta": "Medio plato de verduras en el almuerzo, 5 días esta semana.",
     "por_que": "La fibra de las verduras hace que el azúcar de la comida entre más despacio a la sangre y da saciedad.",
     "hallazgos": [
@@ -379,8 +379,8 @@
     "recomendacion_id": "REC-ALI-105",
     "tipo": "alimentacion",
     "titulo": "Menos harinas refinadas y azúcar",
-    "texto": "Reduzca pan blanco, galletas, ponqués, postres y paquetes. Prefiera arepa, papa, plátano o arroz en porciones pequeñas, y pan integral.",
-    "meta": "Esta semana, cambie el postre diario por una fruta entera al menos 5 días.",
+    "texto": "Reduce pan blanco, galletas, ponqués, postres y paquetes. Prefiere arepa, papa, plátano o arroz en porciones pequeñas, y pan integral.",
+    "meta": "Esta semana, cambia el postre diario por una fruta entera al menos 5 días.",
     "por_que": "El azúcar y las harinas refinadas suben rápido la glucosa y el cuerpo convierte el exceso en triglicéridos.",
     "hallazgos": [
      "COND-M1-EM-001",
@@ -399,8 +399,8 @@
    {
     "recomendacion_id": "REC-HAB-201",
     "tipo": "habitos",
-    "titulo": "Reduzca el alcohol",
-    "texto": "Tome menos alcohol y deje varios días de la semana sin nada. Lo ideal para su hígado y su sangre es no tomar; si toma, que sea poco y nunca hasta emborracharse.",
+    "titulo": "Reduce el alcohol",
+    "texto": "Toma menos alcohol y deja varios días de la semana sin nada. Lo ideal para tu hígado y tu sangre es no tomar; si tomas, que sea poco y nunca hasta emborracharte.",
     "meta": "Durante las próximas 4 semanas, al menos 5 días sin alcohol cada semana y ninguna ocasión con más de 2 tragos.",
     "por_que": "El alcohol inflama el hígado, cambia el tamaño de los glóbulos rojos y gasta vitaminas como el folato.",
     "hallazgos": [
@@ -421,8 +421,8 @@
     "recomendacion_id": "REC-TER-101",
     "tipo": "terapias",
     "titulo": "Una cita con nutricionista",
-    "texto": "Si quiere, pida una cita con un nutricionista para armar un plan de alimentación a su medida, con sus gustos, horarios y presupuesto.",
-    "meta": "Averigüe esta semana cómo pedir cita con nutrición en su EPS o prepagada.",
+    "texto": "Si quieres, pide una cita con un nutricionista para armar un plan de alimentación a tu medida, con tus gustos, horarios y presupuesto.",
+    "meta": "Averigua esta semana cómo pedir cita con nutrición en tu EPS o prepagada.",
     "por_que": "Un plan personalizado es más fácil de mantener que una dieta genérica.",
     "hallazgos": [
      "COND-M1-EM-003",
@@ -439,8 +439,8 @@
    {
     "recomendacion_id": "REC-ACT-101",
     "tipo": "actividad",
-    "titulo": "Camine después de comer",
-    "texto": "Salga a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto.",
+    "titulo": "Camina después de comer",
+    "texto": "Sal a caminar 10 a 15 minutos después del almuerzo y de la comida, a paso cómodo. Puede ser alrededor de la casa, la oficina o el conjunto.",
     "meta": "Caminar 15 minutos después del almuerzo, 5 días esta semana.",
     "por_que": "Los músculos en movimiento usan el azúcar de la comida y ayudan a que la glucosa suba menos.",
     "hallazgos": [
@@ -458,10 +458,10 @@
    {
     "recomendacion_id": "REC-ACT-105",
     "tipo": "actividad",
-    "titulo": "Interrumpa el tiempo sentado",
-    "texto": "Si pasa mucho tiempo sentado, levántese cada 30 a 60 minutos y camine o estírese 2 o 3 minutos. Use una alarma en el celular para acordarse.",
+    "titulo": "Interrumpe el tiempo sentado",
+    "texto": "Si pasas mucho tiempo sentado, levántate cada 30 a 60 minutos y camina o estírate 2 o 3 minutos. Usa una alarma en el celular para acordarte.",
     "meta": "Una pausa activa cada hora durante la jornada, 5 días esta semana.",
-    "por_que": "Estar sentado muchas horas seguidas empeora el manejo del azúcar, aunque haga ejercicio otros días.",
+    "por_que": "Estar sentado muchas horas seguidas empeora el manejo del azúcar aunque hagas ejercicio otros días.",
     "hallazgos": [
      "COND-M1-EM-001",
      "COND-M1-EM-004",
@@ -477,7 +477,7 @@
     "recomendacion_id": "REC-ACT-201",
     "tipo": "actividad",
     "titulo": "150 minutos de actividad moderada a la semana",
-    "texto": "Camine rápido, monte bicicleta, nade o baile al menos 150 minutos a la semana, repartidos en varios días. A ritmo moderado puede hablar, pero no cantar.",
+    "texto": "Camina rápido, monta bicicleta, nada o baila al menos 150 minutos a la semana, repartidos en varios días. A ritmo moderado puedes hablar pero no cantar.",
     "meta": "Esta semana, 5 caminatas rápidas de 30 minutos.",
     "por_que": "La actividad regular ayuda a bajar la grasa del hígado y mejora cómo el cuerpo usa el azúcar, incluso sin bajar mucho de peso.",
     "hallazgos": [
@@ -495,9 +495,9 @@
    {
     "recomendacion_id": "REC-SUE-106",
     "tipo": "sueno",
-    "titulo": "Cuéntele a su médico si ronca",
-    "texto": "Si ronca fuerte, alguien nota que deja de respirar al dormir o se levanta cansado aunque duerma suficiente, coméntelo en su consulta.",
-    "meta": "Pregúntele a quien duerme cerca si ronca fuerte y anote la respuesta para su próxima consulta.",
+    "titulo": "Cuéntale a tu médico si roncas",
+    "texto": "Si roncas fuerte, alguien nota que dejas de respirar al dormir o te levantas cansado aunque duermas suficiente, coméntalo en tu consulta.",
+    "meta": "Pregúntale a quien duerme cerca si roncas fuerte y anota la respuesta para tu próxima consulta.",
     "por_que": "Las pausas al respirar durante el sueño se relacionan con presión alta, más peso y peor manejo del azúcar, y se pueden evaluar.",
     "hallazgos": [
      "COND-M1-EM-004",
@@ -515,9 +515,9 @@
    {
     "recomendacion_id": "REC-CTL-215",
     "tipo": "controles",
-    "titulo": "Pregunte por la vacuna de la hepatitis B",
-    "texto": "Sus defensas contra la hepatitis B no alcanzan el nivel de protección. Pregúntele a su médico o en su EPS por la vacuna, que es segura y eficaz.",
-    "meta": "Este mes, pregunte en su EPS o a su médico por el esquema de vacunación y pida la primera dosis de la vacuna.",
+    "titulo": "Pregunta por la vacuna de la hepatitis B",
+    "texto": "Tus defensas contra la hepatitis B no alcanzan el nivel de protección. Pregunta a tu médico o en tu EPS por la vacuna, que es segura y eficaz.",
+    "meta": "Este mes, pregunta en tu EPS o a tu médico por el esquema de vacunación y pide la primera dosis de la vacuna.",
     "por_que": "La vacuna es la mejor forma de prevenir esta infección del hígado.",
     "hallazgos": [
      "COND-M4-IN-002#susceptible"
@@ -531,7 +531,7 @@
     "recomendacion_id": "REC-ALI-205",
     "tipo": "alimentacion",
     "titulo": "Alimentos que aportan vitamina D",
-    "texto": "Incluya pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
+    "texto": "Incluye pescados grasos como sardina, atún, salmón o trucha, huevo entero y lácteos fortificados con vitamina D.",
     "meta": "Esta semana, pescado graso al menos 2 veces y huevo entero en 3 desayunos.",
     "por_que": "Pocos alimentos tienen vitamina D; los pescados grasos y el huevo están entre los mejores para sumar un poco.",
     "hallazgos": [
@@ -546,41 +546,41 @@
   "cuando_consultar": [
    {
     "escalamiento": 1,
-    "texto": "Coménteselo a su médico en su próximo control, en los próximos 3 meses.",
+    "texto": "Coméntalo con tu médico en tu próximo control, en los próximos 3 meses.",
     "hallazgos": [
      {
       "hallazgo_id": "H-260FC6-01",
-      "titulo": "Su azúcar y sus grasas se mueven juntos",
+      "titulo": "Tu azúcar y tus grasas se mueven juntos",
       "detalle": null
      },
      {
       "hallazgo_id": "H-260FC6-02",
-      "titulo": "Su colesterol está por encima del valor de tamizaje",
+      "titulo": "Tu colesterol está por encima del valor de tamizaje",
       "detalle": null
      },
      {
       "hallazgo_id": "H-260FC6-03",
-      "titulo": "Su índice de masa corporal está por encima del rango saludable",
+      "titulo": "Tu índice de masa corporal está por encima del rango saludable",
       "detalle": null
      },
      {
       "hallazgo_id": "H-260FC6-04",
-      "titulo": "Le falta protección contra la hepatitis B",
-      "detalle": "Pregunte en su EPS o a su médico por la vacuna de la hepatitis B en los próximos meses."
+      "titulo": "Te falta protección contra la hepatitis B",
+      "detalle": "Pregunta en tu EPS o a tu médico por la vacuna de la hepatitis B en los próximos meses."
      },
      {
       "hallazgo_id": "H-260FC6-05",
-      "titulo": "Su ácido úrico está por encima del rango",
-      "detalle": "Coménteselo a su médico en su próximo control. Consulte antes si una articulación se le hincha y le duele de repente."
+      "titulo": "Tu ácido úrico está por encima del rango",
+      "detalle": "Coméntalo con tu médico en tu próximo control. Consulta antes si una articulación se te hincha y te duele de repente."
      },
      {
       "hallazgo_id": "H-260FC6-06",
-      "titulo": "Su presión arterial está por encima de 130/80",
+      "titulo": "Tu presión arterial está por encima de 130/80",
       "detalle": null
      },
      {
       "hallazgo_id": "H-260FC6-07",
-      "titulo": "Su enzima del hígado (ALT) está por encima de lo esperado",
+      "titulo": "Tu enzima del hígado (ALT) está por encima de lo esperado",
       "detalle": null
      }
     ]
@@ -1779,7 +1779,7 @@
    "azucar_anadida_g_max": 50,
    "formula": "Mifflin-St Jeor × actividad, ajustado por objetivo; proteína en g/kg según objetivo",
    "notas": [
-    "Meta orientativa, no una prescripción: un nutricionista la ajusta a su caso.",
+    "Meta orientativa, no una prescripción: un nutricionista la ajusta a tu caso.",
     "Con un déficit moderado para bajar de peso sin pasar hambre."
    ]
   },
@@ -2042,85 +2042,85 @@
   ]
  },
  "whatsapp": {
-  "resultado_listo": "Hola 👋 Sus resultados de Saludly ya están listos en su panel. Ábralo cuando pueda: ahí le explicamos todo con calma.",
+  "resultado_listo": "Hola 👋 Tus resultados de Saludly ya están listos en tu panel. Ábrelo cuando puedas: ahí te explicamos todo con calma.",
   "recordatorio_consulta": null,
   "recomendaciones_semanales": [
    {
     "semana": 1,
     "recomendacion_id": "REC-ACT-102",
-    "texto": "👟 Esta semana la meta son 30 minutos de caminata rápida 5 días. Puede partirlos en dos caminatas de 15."
+    "texto": "👟 Esta semana la meta son 30 minutos de caminata rápida 5 días. Puedes partirlos en dos caminatas de 15."
    },
    {
     "semana": 2,
     "recomendacion_id": "REC-HAB-102",
-    "texto": "🥤 Reto de la semana: 5 días sin alcohol. Si sale, alterne cada trago con un vaso de agua."
+    "texto": "🥤 Reto de la semana: 5 días sin alcohol. Si sales, alterna cada trago con un vaso de agua."
    },
    {
     "semana": 3,
     "recomendacion_id": "REC-SUE-101",
-    "texto": "😴 Elija hoy su hora fija para levantarse y respétela toda la semana, también el sábado y el domingo. Su cuerpo se organiza mejor."
+    "texto": "😴 Elige hoy tu hora fija para levantarte y respétala toda la semana, también el sábado y el domingo. Tu cuerpo se organiza mejor."
    },
    {
     "semana": 4,
     "recomendacion_id": "REC-ALI-101",
-    "texto": "💧 Hoy cambie la gaseosa o el jugo de caja del almuerzo por agua o limonada sin azúcar. Es un cambio pequeño que ayuda mucho."
+    "texto": "💧 Hoy cambia la gaseosa o el jugo de caja del almuerzo por agua o limonada sin azúcar. Es un cambio pequeño que ayuda mucho."
    },
    {
     "semana": 5,
     "recomendacion_id": "REC-ALI-102",
-    "texto": "🥗 Reto de hoy: que la mitad de su plato del almuerzo sea verdura o ensalada. Empiece a comer por ahí."
+    "texto": "🥗 Reto de hoy: que la mitad de tu plato del almuerzo sea verdura o ensalada. Empieza a comer por ahí."
    },
    {
     "semana": 6,
     "recomendacion_id": "REC-ALI-105",
-    "texto": "🍎 Hoy cambie el postre o el ponqué de la tarde por una fruta entera. Su cuerpo maneja mejor el azúcar así."
+    "texto": "🍎 Hoy cambia el postre o el ponqué de la tarde por una fruta entera. Tu cuerpo maneja mejor el azúcar así."
    },
    {
     "semana": 7,
     "recomendacion_id": "REC-HAB-201",
-    "texto": "🍋 Este fin de semana, pruebe un plan sin trago: agua con gas y limón, o una aromática. Su cuerpo se lo agradece."
+    "texto": "🍋 Este fin de semana, prueba un plan sin trago: agua con gas y limón, o una aromática. Tu cuerpo lo agradece."
    },
    {
     "semana": 8,
     "recomendacion_id": "REC-TER-101",
-    "texto": "🥗 ¿Le gustaría un plan de alimentación hecho a su medida? Averigüe esta semana cómo pedir cita con nutrición en su EPS."
+    "texto": "🥗 ¿Te gustaría un plan de alimentación hecho a tu medida? Averigua esta semana cómo pedir cita con nutrición en tu EPS."
    }
   ],
   "recetas_diarias": [
    {
     "dia": 1,
     "receta_id": "RCT-ALM-016",
-    "texto": "🍽️ *Receta del día: Tofu salteado con verduras y arroz integral*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 541 kcal · proteína 35 g · carbohidratos 54 g · grasa 25 g · fibra 12 g · sodio 360 mg\nCubre cerca del 34 % de su proteína del día.\n\n*Ingredientes*\n• 1 bloque de tofu firme\n• 1 1/2 tazas de arroz integral cocido\n• 1 1/2 tazas de brócoli\n• 1 pimentón (pimentón rojo)\n• 1 zanahoria en tiras\n• 1 taza en tiras de repollo blanco\n• 1 diente de ajo\n• 1 cucharada de salsa de soya baja en sodio\n• 1 cucharada de aceite de canola\n• 1 cucharada de ajonjolí\n\n*Preparación*\n1. Seca el tofu con un paño y córtalo en cubos.\n2. Dóralo en la mitad del aceite hasta que esté firme y resérvalo.\n3. Saltea el ajo y las verduras en el resto del aceite a fuego alto por 4 minutos.\n4. Devuelve el tofu, agrega la salsa de soya y el ajonjolí, y sirve con el arroz.\n\n💡 No le pongas sal: la salsa de soya ya aporta todo el sodio que el plato necesita."
+    "texto": "🍽️ *Receta del día: Tofu salteado con verduras y arroz integral*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 541 kcal · proteína 35 g · carbohidratos 54 g · grasa 25 g · fibra 12 g · sodio 360 mg\nCubre cerca del 34 % de tu proteína del día.\n\n*Ingredientes*\n• 1 bloque de tofu firme\n• 1 1/2 tazas de arroz integral cocido\n• 1 1/2 tazas de brócoli\n• 1 pimentón (pimentón rojo)\n• 1 zanahoria en tiras\n• 1 taza en tiras de repollo blanco\n• 1 diente de ajo\n• 1 cucharada de salsa de soya baja en sodio\n• 1 cucharada de aceite de canola\n• 1 cucharada de ajonjolí\n\n*Preparación*\n1. Seca el tofu con un paño y córtalo en cubos.\n2. Dóralo en la mitad del aceite hasta que esté firme y resérvalo.\n3. Saltea el ajo y las verduras en el resto del aceite a fuego alto por 4 minutos.\n4. Devuelve el tofu, agrega la salsa de soya y el ajonjolí, y sirve con el arroz.\n\n💡 No le pongas sal: la salsa de soya ya aporta todo el sodio que el plato necesita."
    },
    {
     "dia": 2,
     "receta_id": "RCT-DES-031",
-    "texto": "🍽️ *Receta del día: Calentado vegano de fríjol con maduro*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 469 kcal · proteína 17 g · carbohidratos 87 g · grasa 7 g · fibra 14 g · sodio 422 mg\nCubre cerca del 16 % de su proteína del día.\n\n*Ingredientes*\n• 3/4 de taza de fríjol rojo cocido\n• 1/2 taza de arroz integral cocido\n• 1/4 de plátano (plátano maduro)\n• 2 cucharadas picada de cebolla cabezona\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• una pizca de sal\n\n*Preparación*\n1. Ase el maduro en tajadas en un sartén con unas gotas de aceite.\n2. En el resto del aceite sofría la cebolla y el tomate.\n3. Agregue el fríjol y el arroz, caliente bien y sirva con el maduro.\n\n💡 Fríjol más arroz forman una proteína completa, aun sin carne ni huevo."
+    "texto": "🍽️ *Receta del día: Calentado vegano de fríjol con maduro*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 469 kcal · proteína 17 g · carbohidratos 87 g · grasa 7 g · fibra 14 g · sodio 422 mg\nCubre cerca del 16 % de tu proteína del día.\n\n*Ingredientes*\n• 3/4 de taza de fríjol rojo cocido\n• 1/2 taza de arroz integral cocido\n• 1/4 de plátano (plátano maduro)\n• 2 cucharadas picada de cebolla cabezona\n• 1/2 tomate (tomate chonto)\n• 1 cucharadita de aceite de canola\n• una pizca de sal\n\n*Preparación*\n1. Asa el maduro en tajadas en un sartén con unas gotas de aceite.\n2. En el resto del aceite sofríe la cebolla y el tomate.\n3. Agrega el fríjol y el arroz, calienta bien y sirve con el maduro.\n\n💡 Fríjol más arroz forman una proteína completa, aun sin carne ni huevo."
    },
    {
     "dia": 3,
     "receta_id": "RCT-CEN-011",
-    "texto": "🍽️ *Receta del día: Tilapia a la plancha con verduras salteadas y papa criolla*\nCena · 25 min · 2 porciones\n\n*Por porción:* 337 kcal · proteína 33 g · carbohidratos 36 g · grasa 8 g · fibra 8 g · sodio 501 mg\nCubre cerca del 32 % de su proteína del día.\n\n*Ingredientes*\n• 2 filetes de tilapia (cruda)\n• 14 papitas de papa criolla cocida\n• 1 calabacín pequeño\n• 1 zanahoria pequeña\n• 1 taza de habichuela\n• 1 diente grande de ajo\n• 1 limón\n• 2 cucharaditas de aceite de oliva\n• una pizca de sal\n\n*Preparación*\n1. Marine la tilapia con limón, ajo y la mitad de la sal por 10 minutos.\n2. Saltee las verduras en tiras con la mitad del aceite.\n3. Ase la tilapia en la plancha con el resto del aceite, 3 minutos por lado.\n4. Sirva con las papas criollas cocidas.\n\n💡 El pescado blanco es liviano y se digiere fácil, buena opción para la noche."
+    "texto": "🍽️ *Receta del día: Tilapia a la plancha con verduras salteadas y papa criolla*\nCena · 25 min · 2 porciones\n\n*Por porción:* 337 kcal · proteína 33 g · carbohidratos 36 g · grasa 8 g · fibra 8 g · sodio 501 mg\nCubre cerca del 32 % de tu proteína del día.\n\n*Ingredientes*\n• 2 filetes de tilapia (cruda)\n• 14 papitas de papa criolla cocida\n• 1 calabacín pequeño\n• 1 zanahoria pequeña\n• 1 taza de habichuela\n• 1 diente grande de ajo\n• 1 limón\n• 2 cucharaditas de aceite de oliva\n• una pizca de sal\n\n*Preparación*\n1. Marina la tilapia con limón, ajo y la mitad de la sal por 10 minutos.\n2. Saltea las verduras en tiras con la mitad del aceite.\n3. Asa la tilapia en la plancha con el resto del aceite, 3 minutos por lado.\n4. Sirve con las papas criollas cocidas.\n\n💡 El pescado blanco es liviano y se digiere fácil, buena opción para la noche."
    },
    {
     "dia": 4,
     "receta_id": "RCT-ALM-003",
-    "texto": "🍽️ *Receta del día: Sudado de pollo con papa y arroz integral*\nAlmuerzo · 40 min · 2 porciones\n\n*Por porción:* 544 kcal · proteína 41 g · carbohidratos 65 g · grasa 13 g · fibra 7 g · sodio 500 mg\nCubre cerca del 40 % de su proteína del día.\n\n*Ingredientes*\n• 1 pechuga grande (pechuga de pollo sin piel (cruda))\n• 2 papas medianas (papa cocida)\n• 1 1/4 tazas de arroz integral cocido\n• 2 tomates (tomate chonto)\n• 1/2 cebolla (cebolla cabezona)\n• 1 diente de ajo\n• 1 zanahoria\n• 1 cucharada de aceite de canola\n• 1 pizca de comino\n• una pizca de sal\n\n*Preparación*\n1. Sofríe la cebolla, el ajo y el tomate picados en el aceite.\n2. Agrega el pollo en presas, la zanahoria, el comino y medio vaso de agua.\n3. Tapa y cocina a fuego bajo 20 minutos.\n4. Añade la papa en trozos los últimos 10 minutos y ajusta la sal.\n5. Sirve con el arroz integral.\n\n💡 El sudado se cocina en su propio jugo: no necesitas más aceite ni cubitos de caldo."
+    "texto": "🍽️ *Receta del día: Sudado de pollo con papa y arroz integral*\nAlmuerzo · 40 min · 2 porciones\n\n*Por porción:* 544 kcal · proteína 41 g · carbohidratos 65 g · grasa 13 g · fibra 7 g · sodio 500 mg\nCubre cerca del 40 % de tu proteína del día.\n\n*Ingredientes*\n• 1 pechuga grande (pechuga de pollo sin piel (cruda))\n• 2 papas medianas (papa cocida)\n• 1 1/4 tazas de arroz integral cocido\n• 2 tomates (tomate chonto)\n• 1/2 cebolla (cebolla cabezona)\n• 1 diente de ajo\n• 1 zanahoria\n• 1 cucharada de aceite de canola\n• 1 pizca de comino\n• una pizca de sal\n\n*Preparación*\n1. Sofríe la cebolla, el ajo y el tomate picados en el aceite.\n2. Agrega el pollo en presas, la zanahoria, el comino y medio vaso de agua.\n3. Tapa y cocina a fuego bajo 20 minutos.\n4. Añade la papa en trozos los últimos 10 minutos y ajusta la sal.\n5. Sirve con el arroz integral.\n\n💡 El sudado se cocina en su propio jugo: no necesitas más aceite ni cubitos de caldo."
    },
    {
     "dia": 5,
     "receta_id": "RCT-MER-015",
-    "texto": "🍽️ *Receta del día: Salpicón casero sin azúcar*\nMerienda · 10 min · 1 porciones\n\n*Por porción:* 214 kcal · proteína 3 g · carbohidratos 54 g · grasa 1 g · fibra 7 g · sodio 9 mg\nCubre cerca del 3 % de su proteína del día.\n\n*Ingredientes*\n• 1 tajada pequeña de patilla\n• 1/2 tajada de papaya\n• 1/2 banano\n• 1 tajada delgada de piña\n• el jugo de 1 naranja\n\n*Preparación*\n1. Pique todas las frutas en cubos pequeños.\n2. Báñelas con el jugo de naranja recién exprimido y sirva frío.\n\n💡 El jugo de naranja reemplaza la gaseosa del salpicón tradicional sin azúcar añadida."
+    "texto": "🍽️ *Receta del día: Salpicón casero sin azúcar*\nMerienda · 10 min · 1 porciones\n\n*Por porción:* 214 kcal · proteína 3 g · carbohidratos 54 g · grasa 1 g · fibra 7 g · sodio 9 mg\nCubre cerca del 3 % de tu proteína del día.\n\n*Ingredientes*\n• 1 tajada pequeña de patilla\n• 1/2 tajada de papaya\n• 1/2 banano\n• 1 tajada delgada de piña\n• el jugo de 1 naranja\n\n*Preparación*\n1. Pica todas las frutas en cubos pequeños.\n2. Báñalas con el jugo de naranja recién exprimido y sirve frío.\n\n💡 El jugo de naranja reemplaza la gaseosa del salpicón tradicional sin azúcar añadida."
    },
    {
     "dia": 6,
     "receta_id": "RCT-CEN-010",
-    "texto": "🍽️ *Receta del día: Ensalada de pollo a la plancha con quinua y aguacate*\nCena · 25 min · 2 porciones\n\n*Por porción:* 374 kcal · proteína 34 g · carbohidratos 32 g · grasa 13 g · fibra 8 g · sodio 392 mg\nCubre cerca del 33 % de su proteína del día.\n\n*Ingredientes*\n• 1 pechuga mediana (pechuga de pollo sin piel (cruda))\n• 1 taza y cuarto de quinua cocida\n• 2 tazas de lechuga\n• 1 tomate (tomate chonto)\n• media zanahoria rallada\n• un tercio de aguacate\n• 1 limón\n• 1 cucharadita de aceite de oliva\n• al gusto de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Sazone el pollo con sal y pimienta, y áselo a la plancha 5 minutos por lado.\n2. Córtelo en tiras.\n3. Mezcle la lechuga, el tomate, la zanahoria y la quinua.\n4. Ponga el pollo y el aguacate encima y aliñe con limón y aceite.\n\n💡 Cocine la quinua para varios días y guárdela en la nevera: así la cena sale en minutos."
+    "texto": "🍽️ *Receta del día: Ensalada de pollo a la plancha con quinua y aguacate*\nCena · 25 min · 2 porciones\n\n*Por porción:* 374 kcal · proteína 34 g · carbohidratos 32 g · grasa 13 g · fibra 8 g · sodio 392 mg\nCubre cerca del 33 % de tu proteína del día.\n\n*Ingredientes*\n• 1 pechuga mediana (pechuga de pollo sin piel (cruda))\n• 1 taza y cuarto de quinua cocida\n• 2 tazas de lechuga\n• 1 tomate (tomate chonto)\n• media zanahoria rallada\n• un tercio de aguacate\n• 1 limón\n• 1 cucharadita de aceite de oliva\n• al gusto de pimienta negra\n• una pizca de sal\n\n*Preparación*\n1. Sazona el pollo con sal y pimienta, y ásalo a la plancha 5 minutos por lado.\n2. Córtalo en tiras.\n3. Mezcla la lechuga, el tomate, la zanahoria y la quinua.\n4. Pon el pollo y el aguacate encima y aliña con limón y aceite.\n\n💡 Cocina la quinua para varios días y guárdala en la nevera: así la cena sale en minutos."
    },
    {
     "dia": 7,
     "receta_id": "RCT-DES-043",
-    "texto": "🍽️ *Receta del día: Batata asada con huevo, aguacate y kiwi*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 384 kcal · proteína 17 g · carbohidratos 46 g · grasa 16 g · fibra 10 g · sodio 188 mg\nCubre cerca del 16 % de su proteína del día.\n\n*Ingredientes*\n• 1 batata pequeña (batata cocida)\n• 2 huevos (huevo entero)\n• 2 tajadas de aguacate\n• 1 pizca de pimienta negra\n• 1 kiwi\n\n*Preparación*\n1. Corte la batata cocida en rodajas y dórela en un sartén sin aceite.\n2. Cocine los huevos a su gusto.\n3. Sirva con el aguacate, la pimienta y el kiwi en rodajas.\n\n💡 La batata aporta energía de forma más pareja que el pan blanco."
+    "texto": "🍽️ *Receta del día: Batata asada con huevo, aguacate y kiwi*\nDesayuno · 15 min · 1 porciones\n\n*Por porción:* 384 kcal · proteína 17 g · carbohidratos 46 g · grasa 16 g · fibra 10 g · sodio 188 mg\nCubre cerca del 16 % de tu proteína del día.\n\n*Ingredientes*\n• 1 batata pequeña (batata cocida)\n• 2 huevos (huevo entero)\n• 2 tajadas de aguacate\n• 1 pizca de pimienta negra\n• 1 kiwi\n\n*Preparación*\n1. Corta la batata cocida en rodajas y dórala en un sartén sin aceite.\n2. Cocina los huevos a tu gusto.\n3. Sirve con el aguacate, la pimienta y el kiwi en rodajas.\n\n💡 La batata aporta energía de forma más pareja que el pan blanco."
    }
   ]
  },
@@ -2141,7 +2141,7 @@
     "frase_permitida": "Varios de tus resultados (glucosa, triglicéridos, colesterol HDL e insulina) apuntan en la misma dirección: el cuerpo está teniendo más trabajo para manejar el azúcar. Por eso los explicamos juntos.",
     "fuerza": "guía (ADA, declaración armonizada de síndrome metabólico)",
     "hallazgo_id": "H-260FC6-01",
-    "texto_paciente": "Su azúcar y sus grasas se mueven juntos"
+    "texto_paciente": "Tu azúcar y tus grasas se mueven juntos"
    },
    {
     "tipo": "condicion",
@@ -2160,7 +2160,7 @@
      }
     ],
     "hallazgo_id": "H-260FC6-02",
-    "texto_paciente": "Su colesterol está por encima del valor de tamizaje"
+    "texto_paciente": "Tu colesterol está por encima del valor de tamizaje"
    },
    {
     "tipo": "condicion",
@@ -2173,7 +2173,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-260FC6-03",
-    "texto_paciente": "Su índice de masa corporal está por encima del rango saludable"
+    "texto_paciente": "Tu índice de masa corporal está por encima del rango saludable"
    },
    {
     "tipo": "condicion",
@@ -2186,7 +2186,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-260FC6-04",
-    "texto_paciente": "El resultado de sus pruebas de hepatitis B"
+    "texto_paciente": "El resultado de tus pruebas de hepatitis B"
    },
    {
     "tipo": "condicion",
@@ -2199,7 +2199,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-260FC6-05",
-    "texto_paciente": "Su ácido úrico está por encima del rango"
+    "texto_paciente": "Tu ácido úrico está por encima del rango"
    },
    {
     "tipo": "condicion",
@@ -2212,7 +2212,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-260FC6-06",
-    "texto_paciente": "Su presión arterial está por encima de 130/80"
+    "texto_paciente": "Tu presión arterial está por encima de 130/80"
    },
    {
     "tipo": "condicion",
@@ -2234,7 +2234,7 @@
      }
     ],
     "hallazgo_id": "H-260FC6-07",
-    "texto_paciente": "Su enzima del hígado (ALT) está por encima de lo esperado"
+    "texto_paciente": "Tu enzima del hígado (ALT) está por encima de lo esperado"
    },
    {
     "tipo": "condicion",
@@ -2247,7 +2247,7 @@
     "fuerza": "guia",
     "patrones": [],
     "hallazgo_id": "H-260FC6-08",
-    "texto_paciente": "Su vitamina D está fuera del rango"
+    "texto_paciente": "Tu vitamina D está fuera del rango"
    }
   ],
   "condiciones": {
@@ -4069,8 +4069,8 @@
    "osmolality"
   ],
   "que_conviene_confirmar": [
-   "Su presión arterial está por encima de 130/80: coincidencia moderada, confirmar con una segunda medición.",
-   "Su enzima del hígado (ALT) está por encima de lo esperado: coincidencia moderada, confirmar con una segunda medición."
+   "Tu presión arterial está por encima de 130/80: coincidencia moderada, confirmar con una segunda medición.",
+   "Tu enzima del hígado (ALT) está por encima de lo esperado: coincidencia moderada, confirmar con una segunda medición."
   ],
   "preguntas_para_el_profesional": [],
   "restricciones_nutricionales": {

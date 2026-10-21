@@ -1,14 +1,14 @@
 id: COND-M3-HE-009
 tipo: condicion
-titulo_paciente: "Sus glóbulos rojos son más grandes de lo normal"
-que_es: "El volumen corpuscular medio mide el tamaño promedio de sus glóbulos rojos, las células que llevan el oxígeno."
+titulo_paciente: "Tus glóbulos rojos son más grandes de lo normal"
+que_es: "El volumen corpuscular medio mide el tamaño promedio de tus glóbulos rojos, las células que llevan el oxígeno."
 por_que_te_aparece:
-  - "Su volumen corpuscular medio salió en {mcv}, por encima de lo normal."
-  - "Su hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está en el rango esperado."
-  - "Su GGT, una enzima del hígado que puede subir con el alcohol y otras causas, salió en {ggt}."
+  - "Tu volumen corpuscular medio salió en {mcv}, por encima de lo normal."
+  - "Tu hemoglobina salió en {hemoglobin}. Comparada con el límite que se usa para la altura de Bogotá, está en el rango esperado."
+  - "Tu GGT, una enzima del hígado que puede subir con el alcohol y otras causas, salió en {ggt}."
 riesgo_claro: "Por sí solo no suele dar síntomas. Pero si la causa de fondo no se atiende, con el tiempo puede aparecer anemia o afectarse los nervios."
 ejemplo_simple: "Es como un testigo en el tablero del carro: no es la falla, pero avisa que conviene revisar el motor."
-incertidumbre: "Este patrón es compatible con varias causas, como el alcohol, la vitamina B12, el folato o la tiroides. Su médico lo confirma, a veces repitiendo el hemograma con esas vitaminas."
+incertidumbre: "Este patrón es compatible con varias causas, como el alcohol, la vitamina B12, el folato o la tiroides. Tu médico lo confirma, a veces repitiendo el hemograma con esas vitaminas."
 cuando_consultar: null
 aviso_whatsapp: null
 fuentes: ["BSH, evaluación de la macrocitosis"]
