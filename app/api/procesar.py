@@ -2,7 +2,8 @@
 Saludly · Función de Vercel: el médico sube el PDF del laboratorio en /medico y aquí se analiza (Fase 6).
 
 POST /api/procesar con la sesión del médico (Authorization: Bearer <token de Supabase>) y un JSON:
-  {"paciente_id": "...", "orden": "LCD-...", "pdf_base64": "...", "documento_pdf": null, "forzar": false}
+  {"pdf_base64": "...", "paciente_id": null, "documento_pdf": null, "forzar": false}
+La orden y el documento se leen del PDF; sin paciente_id se busca al paciente por el documento.
 Revisa que quien llama esté en la tabla `equipo`, guarda el PDF solo en /tmp mientras se lee, corre
 codigo/pipeline/publicar.publicar() (lector → motor → informe) y lo borra. El informe queda "en_revision".
 El código del análisis viaja en saludly_lib/ (lo copia app/desplegar.sh); las llaves vienen de las variables
@@ -52,15 +53,13 @@ class handler(BaseHTTPRequestHandler):
             return self.responder(400, {"error": "No llegó un PDF válido."})
         if not pdf.startswith(b"%PDF") or len(pdf) > MAX_PDF:
             return self.responder(400, {"error": "El archivo no es un PDF o pesa más de 3 MB."})
-        if not d.get("paciente_id") or not (d.get("orden") or "").strip():
-            return self.responder(400, {"error": "Falta el paciente o el número de orden."})
 
         # El PDF no se guarda: vive en /tmp solo mientras se lee.
         f = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
         try:
             f.write(pdf)
             f.close()
-            r = P.publicar(sb, f.name, d["orden"].strip(), paciente_id=d["paciente_id"],
+            r = P.publicar(sb, f.name, (d.get("orden") or "").strip() or None, paciente_id=d.get("paciente_id") or None,
                            documento_pdf=(d.get("documento_pdf") or None), forzar=bool(d.get("forzar")))
             return self.responder(200, r)
         except SystemExit as e:

@@ -66,12 +66,31 @@ def perfil_y_enfermera(c, v):
     return perfil, enf
 
 
-def publicar(sb, pdf, orden, paciente_id=None, cedula=None, documento_pdf=None, forzar=False):
+def identidad_pdf(pdf):
+    """Documento y número de orden impresos en la primera página del PDF (los mismos que verifica el lector)."""
+    import pdfplumber, lector
+    with pdfplumber.open(pdf) as d:
+        enc = lector.leer_encabezado(d.pages[0])
+    return enc.get("Documento"), enc.get("N.º de orden")
+
+
+def publicar(sb, pdf, orden=None, paciente_id=None, cedula=None, documento_pdf=None, forzar=False):
     """PDF + datos del paciente → informe en la tabla informes. Devuelve un resumen; si algo falta, lanza SystemExit con el motivo.
-    La usan este script y la función de Vercel (app/api/procesar.py) que llama la vista del médico."""
-    filtro = f"cedula=eq.{urllib.parse.quote(cedula)}" if cedula else f"id=eq.{urllib.parse.quote(paciente_id)}"
+    La usan este script y la función de Vercel (app/api/procesar.py) que llama la vista del médico.
+    La orden sale del PDF si no se indica. Sin paciente indicado, se busca el dueño del documento que trae el PDF."""
+    doc_pdf, orden_pdf = identidad_pdf(pdf)
+    orden = (orden or orden_pdf or "").strip()
+    if not orden: raise SystemExit("No se encontró el número de orden en el PDF.")
+    if paciente_id: filtro = f"id=eq.{urllib.parse.quote(paciente_id)}"
+    elif cedula: filtro = f"cedula=eq.{urllib.parse.quote(cedula)}"
+    else:
+        tipo, _, numero = (doc_pdf or "").partition(" ")
+        if not numero: raise SystemExit("No se encontró el documento del paciente en el PDF.")
+        filtro = f"tipo_documento=eq.{urllib.parse.quote(tipo)}&cedula=eq.{urllib.parse.quote(numero.lstrip('0') if tipo in ('CC', 'PPT') else numero)}"
     p = sb.uno("pacientes", f"{filtro}&select=id,tipo_documento,cedula,fecha_nacimiento,edad,sexo")
-    if not p: raise SystemExit("No hay ningún paciente con esa cédula o id.")
+    if not p: raise SystemExit(f"Ningún paciente registrado tiene el documento del PDF ({doc_pdf}).")
+    if not documento_pdf and doc_pdf and doc_pdf.split(" ")[-1].lstrip("0") != p["cedula"].lstrip("0"):
+        raise SystemExit(f"Este PDF es de {doc_pdf} y el paciente elegido tiene {p['tipo_documento']} {p['cedula']}: revisa que sea el paciente correcto.")
     if sb.uno("informes", f"paciente_id=eq.{p['id']}&orden=eq.{urllib.parse.quote(orden)}&estado=eq.aprobado&select=id"):
         raise SystemExit(f"El informe de la orden {orden} ya está aprobado: no se reemplaza.")
     if not sb.uno("autorizaciones", f"paciente_id=eq.{p['id']}&acepta_datos=is.true&select=id"):
@@ -83,7 +102,7 @@ def publicar(sb, pdf, orden, paciente_id=None, cedula=None, documento_pdf=None, 
 
     perfil, enf = perfil_y_enfermera(c, v)
     if not perfil.get("objetivos"): raise SystemExit("El paciente no ha elegido sus metas.")
-    documento = documento_pdf or f"{p['tipo_documento']} {p['cedula']}"
+    documento = documento_pdf or doc_pdf or f"{p['tipo_documento']} {p['cedula']}"
     if p.get("fecha_nacimiento"):  # la edad de la cuenta, a hoy
         n, hoy = date.fromisoformat(p["fecha_nacimiento"]), date.today()
         p["edad"] = hoy.year - n.year - ((hoy.month, hoy.day) < (n.month, n.day))
@@ -109,10 +128,10 @@ def publicar(sb, pdf, orden, paciente_id=None, cedula=None, documento_pdf=None, 
 def main():
     ap = argparse.ArgumentParser(description="PDF + datos del paciente en Supabase → informe en revisión")
     ap.add_argument("--pdf", required=True)
-    quien = ap.add_mutually_exclusive_group(required=True)
+    quien = ap.add_mutually_exclusive_group()
     quien.add_argument("--cedula", help="cédula del paciente, como la escribió en su cuenta")
     quien.add_argument("--paciente-id", help="id del paciente en Supabase (la vista del médico lo muestra)")
-    ap.add_argument("--orden", required=True, help="número de orden del laboratorio")
+    ap.add_argument("--orden", help="número de orden del laboratorio (si no, se lee del PDF)")
     ap.add_argument("--documento-pdf", help="solo para pruebas con PDF sintético: el documento que trae el PDF")
     ap.add_argument("--forzar", action="store_true", help="publicar aunque falte el cuestionario completo o la visita")
     a = ap.parse_args()

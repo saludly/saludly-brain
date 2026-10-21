@@ -45,11 +45,13 @@ function Lista({ titulo, items }: { titulo: string; items: unknown }) {
   );
 }
 
-/** Subir el PDF del laboratorio de un paciente: se analiza en el servidor y queda "en revisión". El PDF no se guarda. */
-function SubirResultado({ fila, alTerminar }: { fila: Fila; alTerminar: () => void }) {
+/**
+ * Subir el PDF del laboratorio: se analiza en el servidor y queda "en revisión". El PDF no se guarda.
+ * La orden y el documento se leen del PDF; sin `fila`, el servidor busca al paciente por el documento.
+ */
+function SubirResultado({ fila, alTerminar }: { fila?: Fila; alTerminar: () => void }) {
   const s = useSesion();
   const [archivo, setArchivo] = useState<File | null>(null);
-  const [orden, setOrden] = useState("");
   const [forzar, setForzar] = useState(false);
   const [documentoPrueba, setDocumentoPrueba] = useState("");
   const [ocupado, setOcupado] = useState(false);
@@ -66,7 +68,7 @@ function SubirResultado({ fila, alTerminar }: { fila: Fila; alTerminar: () => vo
       const r = await fetch("/api/procesar", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${s.sesion?.access_token}` },
-        body: JSON.stringify({ paciente_id: fila.id, orden: orden.trim(), pdf_base64: btoa(binario), forzar, documento_pdf: documentoPrueba.trim() || null }),
+        body: JSON.stringify({ paciente_id: fila?.id ?? null, pdf_base64: btoa(binario), forzar, documento_pdf: documentoPrueba.trim() || null }),
       });
       const d = (await r.json().catch(() => ({}))) as { error?: string; estado?: string; avisos?: string[] };
       if (!r.ok) setMensaje({ ok: false, texto: d.error ?? "No se pudo analizar el PDF." });
@@ -86,11 +88,8 @@ function SubirResultado({ fila, alTerminar }: { fila: Fila; alTerminar: () => vo
         PDF del laboratorio
         <input type="file" accept="application/pdf" onChange={(e) => setArchivo(e.target.files?.[0] ?? null)} className="mt-1 block w-full text-sm text-ink" />
       </label>
-      <label className="block text-xs text-ink-muted">
-        Número de orden (como aparece en el PDF)
-        <input value={orden} onChange={(e) => setOrden(e.target.value.toUpperCase())} placeholder="LCD-2026-000000" className="mt-1 block w-full rounded-xl border border-rule bg-background px-3 py-2 text-sm text-ink" />
-      </label>
-      {(!fila.cuestionario || !fila.visita) && (
+      <p className="text-xs text-ink-faint">El número de orden y el documento se leen del PDF{fila ? " y se comparan con este paciente" : "; el paciente se busca por su documento"}.</p>
+      {(!fila || !fila.cuestionario || !fila.visita) && (
         <label className="flex items-center gap-2 text-xs text-ink-muted">
           <input type="checkbox" checked={forzar} onChange={(e) => setForzar(e.target.checked)} /> Publicar igual (falta el cuestionario o la visita)
         </label>
@@ -99,7 +98,7 @@ function SubirResultado({ fila, alTerminar }: { fila: Fila; alTerminar: () => vo
         <summary className="cursor-pointer">Solo para pruebas con PDF de ejemplo</summary>
         <input value={documentoPrueba} onChange={(e) => setDocumentoPrueba(e.target.value)} placeholder="Documento que trae el PDF, p. ej. CC 0000000005" className="mt-2 block w-full rounded-xl border border-rule bg-background px-3 py-2 text-sm text-ink" />
       </details>
-      <button type="button" onClick={() => void enviar()} disabled={!archivo || !orden.trim() || ocupado} className="rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground disabled:opacity-40">
+      <button type="button" onClick={() => void enviar()} disabled={!archivo || ocupado} className="rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground disabled:opacity-40">
         {ocupado ? "Analizando…" : "Analizar resultado"}
       </button>
       {mensaje && <p className={`text-sm ${mensaje.ok ? "text-optimal" : "text-attention"}`}>{mensaje.texto}</p>}
@@ -221,7 +220,7 @@ export function Medico() {
   const navigate = useNavigate();
   const [filas, setFilas] = useState<Fila[] | null>(null);
   const [abierta, setAbierta] = useState<Fila | null>(null);
-  const [subiendo, setSubiendo] = useState<string | null>(null);
+  const [subiendo, setSubiendo] = useState<string | null>(null);  // id del paciente, o "todos" para la carga general
 
   const cargar = useCallback(async () => {
     const [p, c, v, i] = await Promise.all([
@@ -264,6 +263,10 @@ export function Medico() {
             <p className="mt-2 text-sm text-ink-muted">
               Cuando llegue el PDF del laboratorio, toca «Subir resultado» en el paciente: se analiza solo y queda para que lo revises y apruebes.
             </p>
+            <button type="button" onClick={() => setSubiendo(subiendo === "todos" ? null : "todos")} className="mt-5 rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground">
+              Subir resultado del laboratorio
+            </button>
+            {subiendo === "todos" && <SubirResultado alTerminar={() => void cargar()} />}
             <div className="mt-6 space-y-3">
               {filas === null && <p className="text-sm text-ink-muted">Cargando…</p>}
               {filas?.length === 0 && <p className="text-sm text-ink-muted">Todavía no hay pacientes registrados.</p>}
