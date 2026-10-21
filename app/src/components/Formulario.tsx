@@ -26,7 +26,10 @@ export function Pantalla({
   error?: string | null;
 }) {
   // Cada paso nuevo empieza arriba: si no, se abre donde quedó el anterior (al fondo, junto al botón).
-  useEffect(() => window.scrollTo({ top: 0 }), [paso, etiqueta]);
+  // Con llaves: lo que devuelva scrollTo no debe llegar a React como función de limpieza.
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [paso, etiqueta]);
   return (
     <main className="min-h-screen bg-background">
       <div className="mx-auto flex min-h-screen max-w-3xl flex-col px-6 pb-36 pt-8 sm:px-10">

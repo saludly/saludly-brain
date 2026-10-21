@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { Link, Outlet, RouterProvider, createRootRoute, createRoute, createRouter, useNavigate } from "@tanstack/react-router";
+import { Link, Outlet, RouterProvider, createRootRoute, createRoute, createRouter, useNavigate, type ErrorComponentProps } from "@tanstack/react-router";
 import "./styles.css";
 import { BarraDemo, NavFlotante } from "@/components/Comunes";
 import { InformeProvider } from "@/lib/contexto";
@@ -41,13 +41,13 @@ function NoEncontrada() {
 }
 
 /** Si una pantalla falla: el mensaje en español, el detalle para mandárselo a Saludly y un botón para reintentar. */
-function ErrorPantalla({ error }: { error: Error }) {
+function ErrorPantalla({ error }: ErrorComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-6">
       <div className="max-w-md text-center">
         <h1 className="text-2xl font-light text-ink">Algo salió mal al abrir esta pantalla.</h1>
         <p className="mt-3 text-sm text-ink-muted">Toca "Volver a intentar". Si sigue pasando, mándale a Saludly una captura de esta pantalla.</p>
-        <p className="mt-4 break-words rounded-2xl bg-surface p-3 text-left font-mono text-xs text-ink-faint">{error?.message || String(error)}</p>
+        <p className="mt-4 whitespace-pre-wrap break-words rounded-2xl bg-surface p-3 text-left font-mono text-xs text-ink-faint">{error instanceof Error ? (error.stack ?? error.message).split("\n").slice(0, 5).join("\n") : String(error)}</p>
         <button type="button" onClick={() => window.location.assign("/")} className="mt-6 inline-flex rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground">
           Volver a intentar
         </button>
