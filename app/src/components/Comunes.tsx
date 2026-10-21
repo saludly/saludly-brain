@@ -5,7 +5,7 @@ import { useInforme } from "@/lib/contexto";
 export function Marca({ derecha }: { derecha?: string }) {
   return (
     <header className="flex items-center justify-between gap-4">
-      <img src="/marca/saludly.svg" alt="Saludly" className="h-7 w-auto" />
+      <img src="/marca/saludly.svg" alt="Saludly" className="h-10 w-auto" />
       {derecha && <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-faint">{derecha}</span>}
     </header>
   );
