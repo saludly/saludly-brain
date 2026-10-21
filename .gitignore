@@ -29,3 +29,4 @@ brag-output*/
 # App web (Fase 6)
 app/node_modules/
 app/dist/
+app/.vercel/

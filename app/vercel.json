@@ -1,4 +1,23 @@
 {
-  "rewrites": [{ "source": "/((?!assets/|iconos/|sw.js|manifest.webmanifest|favicon.ico).*)", "destination": "/index.html" }],
-  "headers": [{ "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }]
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/((?!assets/|iconos/|sw.js|manifest.webmanifest|favicon.ico).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
 }
