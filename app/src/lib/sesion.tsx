@@ -1,9 +1,12 @@
 /**
- * Sesión del paciente: cuenta (Supabase Auth con Google o correo), sus datos, su autorización y su cuestionario.
- * Las tablas y sus reglas de acceso están en supabase/migrations/20261021000000_pacientes_pwa.sql.
+ * Sesión del paciente: cuenta (Supabase Auth con Google o correo), sus datos, su autorización, su cuestionario,
+ * la visita de la enfermera y su informe aprobado. También dice si quien entra es del equipo (médico o administración).
+ * Tablas y reglas de acceso: supabase/migrations/20261021051858_pacientes_pwa.sql y 20261022000000_visitas_informes_equipo.sql.
+ * Como el equipo puede leer los datos de todos, cada consulta de la sesión filtra por el propio usuario.
  */
 import { createClient, type Session } from "@supabase/supabase-js";
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import type { Informe } from "./informe";
 
 export const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
 
@@ -37,6 +40,17 @@ export interface Cuestionario {
   completo: boolean;
 }
 
+export interface Visita {
+  presion_sistolica: number | null;
+  presion_diastolica: number | null;
+  cintura_cm: number | null;
+  cadera_cm: number | null;
+  peso_kg: number | null;
+  talla_m: number | null;
+  enfermera: string | null;
+  tomada: string;
+}
+
 export const CUESTIONARIO_VACIO: Cuestionario = {
   objetivos: [],
   peso_kg: null,
@@ -61,6 +75,9 @@ interface Valor {
   paciente: Paciente | null;
   autorizado: boolean;
   cuestionario: Cuestionario | null;
+  visita: Visita | null;
+  informe: Informe | null;
+  esEquipo: boolean;
   recargar: () => Promise<void>;
   salir: () => Promise<void>;
 }
@@ -73,22 +90,35 @@ export function SesionProvider({ children }: { children: ReactNode }) {
   const [paciente, setPaciente] = useState<Paciente | null>(null);
   const [autorizado, setAutorizado] = useState(false);
   const [cuestionario, setCuestionario] = useState<Cuestionario | null>(null);
+  const [visita, setVisita] = useState<Visita | null>(null);
+  const [informe, setInforme] = useState<Informe | null>(null);
+  const [esEquipo, setEsEquipo] = useState(false);
 
   const cargarDatos = useCallback(async (s: Session | null) => {
     if (!s) {
       setPaciente(null);
       setAutorizado(false);
       setCuestionario(null);
+      setVisita(null);
+      setInforme(null);
+      setEsEquipo(false);
       return;
     }
-    const [p, a, c] = await Promise.all([
-      supabase.from("pacientes").select("*").maybeSingle(),
-      supabase.from("autorizaciones").select("id").eq("version", VERSION_AUTORIZACION).limit(1),
-      supabase.from("cuestionarios").select("*").maybeSingle(),
+    const yo = s.user.id;
+    const [p, a, c, v, i, e] = await Promise.all([
+      supabase.from("pacientes").select("*").eq("id", yo).maybeSingle(),
+      supabase.from("autorizaciones").select("id").eq("paciente_id", yo).eq("version", VERSION_AUTORIZACION).limit(1),
+      supabase.from("cuestionarios").select("*").eq("paciente_id", yo).maybeSingle(),
+      supabase.from("visitas").select("*").eq("paciente_id", yo).maybeSingle(),
+      supabase.from("informes").select("informe").eq("paciente_id", yo).eq("estado", "aprobado").order("creado", { ascending: false }).limit(1),
+      supabase.rpc("es_equipo"),
     ]);
     setPaciente((p.data as Paciente | null) ?? null);
     setAutorizado((a.data?.length ?? 0) > 0);
     setCuestionario((c.data as Cuestionario | null) ?? null);
+    setVisita((v.data as Visita | null) ?? null);
+    setInforme(((i.data?.[0] as { informe: Informe } | undefined)?.informe) ?? null);
+    setEsEquipo(e.data === true);
   }, []);
 
   useEffect(() => {
@@ -109,7 +139,7 @@ export function SesionProvider({ children }: { children: ReactNode }) {
     await supabase.auth.signOut();
   }, []);
 
-  return <Ctx.Provider value={{ cargando, sesion, paciente, autorizado, cuestionario, recargar, salir }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ cargando, sesion, paciente, autorizado, cuestionario, visita, informe, esEquipo, recargar, salir }}>{children}</Ctx.Provider>;
 }
 
 export function useSesion() {
@@ -119,9 +149,11 @@ export function useSesion() {
 }
 
 /** A qué pantalla debe ir el paciente según lo que ya completó. */
-export function siguientePaso(v: Valor): "/entrar" | "/registro" | "/cuestionario" | "/listo" {
+export function siguientePaso(v: Valor): "/entrar" | "/registro" | "/cuestionario" | "/listo" | "/recorrido" | "/medico" {
   if (!v.sesion) return "/entrar";
+  if (v.esEquipo && !v.paciente) return "/medico";
   if (!v.paciente || !v.autorizado) return "/registro";
   if (!v.cuestionario?.completo) return "/cuestionario";
+  if (v.informe) return "/recorrido";
   return "/listo";
 }

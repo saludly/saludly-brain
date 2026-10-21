@@ -51,9 +51,20 @@ export function NavFlotante() {
 
 /** Barra para cambiar de caso de ejemplo. Desaparece cuando el informe venga de la cuenta del paciente. */
 export function BarraDemo() {
-  const { caso, cambiarCaso } = useInforme();
+  const { caso, cambiarCaso, origen, revisar } = useInforme();
   const { pathname } = useRouterState({ select: (s) => s.location });
-  if (!RUTAS_INFORME.includes(pathname)) return null;
+  if (!RUTAS_INFORME.includes(pathname) || origen === "propio") return null;
+  if (origen === "revision")
+    return (
+      <div className="border-b border-rule bg-attention-soft px-4 py-2">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 text-[11px] text-ink">
+          <span className="font-mono uppercase tracking-[0.14em]">Vista previa · así lo verá el paciente</span>
+          <Link to="/medico" onClick={() => revisar(null)} className="rounded-full border border-ink/20 bg-background px-3 py-1">
+            Volver a la revisión
+          </Link>
+        </div>
+      </div>
+    );
   return (
     <div className="border-b border-rule bg-surface px-4 py-2">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 text-[11px] text-ink-muted">

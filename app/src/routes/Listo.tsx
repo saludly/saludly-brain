@@ -43,6 +43,19 @@ export function Listo() {
               </article>
             ))}
           </div>
+          {s.visita ? (
+            <p className="mt-8 rounded-2xl bg-optimal-soft p-4 text-sm leading-relaxed text-ink">
+              ✓ La enfermera ya tomó tus medidas. Ahora esperamos los resultados del laboratorio.
+            </p>
+          ) : (
+            <button
+              type="button"
+              onClick={() => void navigate({ to: "/visita" })}
+              className="mt-8 w-full rounded-full bg-optimal px-6 py-4 text-base text-primary-foreground"
+            >
+              Mi enfermera está aquí
+            </button>
+          )}
           <button type="button" onClick={() => void s.salir()} className="mt-10 text-sm text-ink-faint underline-offset-4 hover:underline">
             Cerrar sesión
           </button>

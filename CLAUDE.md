@@ -52,12 +52,16 @@ codigo/
   informe/               Fase 5: redactar.py (informe en 6 partes, vista médica, WhatsApp), recomendar.py (orden 07.4),
                          nutricion.py (nutrientes de recetas, metas y receta del día), control_salida.py, contenido.py
   pipeline/              saludly.py: PDF → lector → motor → informe JSON + Markdown (ver codigo/pipeline/README.md)
+                         publicar.py: PDF + datos del paciente en Supabase → informe "en_revision" en la tabla informes (llave de servicio del .env)
   rag/                   fragmentar, vectorizar (Ollama bge-m3), probar_busqueda y subir a Supabase
   whatsapp/enviar.py     envío por la API oficial de WhatsApp (lee WHATSAPP_TOKEN y WHATSAPP_PHONE_NUMBER_ID del .env; pasa por el control de salida)
+  whatsapp/avisar.py     avisa por WhatsApp a los pacientes con informe aprobado y sin aviso (--simular para ver sin enviar)
 app/                     Fase 6: app del paciente (Vite + React + TanStack Router + Tailwind), traída del dashboard de Lovable con la misma experiencia.
-                         Flujo del paciente: / → /entrar (Supabase Auth: Google o correo) → /registro (datos + autorización AUT-2026-10-v1) → /cuestionario (6 pasos) → /listo.
+                         Flujo del paciente: / → /entrar (Supabase Auth: Google o correo) → /registro (datos + autorización AUT-2026-10-v1) → /cuestionario (6 pasos) → /listo
+                         → /visita ("Mi enfermera está aquí": presión, cintura, cadera, peso, talla) → informe aprobado en /recorrido, /panel, /plan.
+                         /medico: vista del médico (correos en la tabla `equipo`): pacientes, revisión del informe, vista previa y aprobación.
                          Informe: /recorrido, /panel, /plan, hoy con los informes de codigo/pipeline/ejemplos (demo con selector de caso). PWA: manifest, íconos y sw.js (solo en producción).
-                         Tablas pacientes, autorizaciones y cuestionarios con RLS (supabase/migrations/20261021000000_pacientes_pwa.sql). Opciones del cuestionario: `python codigo/herramientas/exportar_app.py` (objetivos, filtros y cuestionario.yaml → app/src/lib/contenido.json).
+                         Tablas pacientes, autorizaciones y cuestionarios con RLS (supabase/migrations/20261021051858_pacientes_pwa.sql). Opciones del cuestionario: `python codigo/herramientas/exportar_app.py` (objetivos, filtros y cuestionario.yaml → app/src/lib/contenido.json).
                          `npm --prefix app run dev` (puerto 5173) · `npm --prefix app run build`
 pdf_ejemplo/             4 PDF sintéticos (LCD-2026-100123 hombre, 100124 mujer, 100125 hombre con valor crítico y 100126 mujer con hallazgos digestivos) y generar_pdf_ejemplo.py [1 2 3 4]
 _archivo/                zips originales, versiones viejas, duplicados

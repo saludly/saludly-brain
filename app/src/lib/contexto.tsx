@@ -1,11 +1,15 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 import { CASOS, informeDeEjemplo } from "./datos";
 import type { Informe } from "./informe";
+import { useSesion } from "./sesion";
 
 interface Valor {
   informe: Informe;
+  /** "propio": el informe aprobado del paciente; "revision": el que el médico está revisando; "demo": un caso de ejemplo. */
+  origen: "propio" | "revision" | "demo";
   caso: string;
   cambiarCaso: (orden: string) => void;
+  revisar: (informe: Informe | null) => void;
 }
 
 const Ctx = createContext<Valor | null>(null);
@@ -23,7 +27,9 @@ function casoInicial() {
 }
 
 export function InformeProvider({ children }: { children: ReactNode }) {
+  const s = useSesion();
   const [caso, setCaso] = useState(casoInicial);
+  const [enRevision, revisar] = useState<Informe | null>(null);
   const cambiarCaso = (orden: string) => {
     setCaso(orden);
     try {
@@ -32,7 +38,12 @@ export function InformeProvider({ children }: { children: ReactNode }) {
       /* ignorar */
     }
   };
-  return <Ctx.Provider value={{ informe: informeDeEjemplo(caso), caso, cambiarCaso }}>{children}</Ctx.Provider>;
+  const [informe, origen]: [Informe, Valor["origen"]] = enRevision
+    ? [enRevision, "revision"]
+    : s.informe
+      ? [s.informe, "propio"]
+      : [informeDeEjemplo(caso), "demo"];
+  return <Ctx.Provider value={{ informe, origen, caso, cambiarCaso, revisar }}>{children}</Ctx.Provider>;
 }
 
 export function useInforme() {

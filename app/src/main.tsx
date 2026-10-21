@@ -11,6 +11,8 @@ import { Entrar } from "@/routes/Entrar";
 import { Registro } from "@/routes/Registro";
 import { Cuestionario } from "@/routes/Cuestionario";
 import { Listo } from "@/routes/Listo";
+import { Visita } from "@/routes/Visita";
+import { Medico } from "@/routes/Medico";
 import { SesionProvider, siguientePaso, useSesion } from "@/lib/sesion";
 
 /** Entrada de la PWA: lleva al paciente al paso que le falta. */
@@ -54,6 +56,8 @@ const rutas = [
   createRoute({ getParentRoute: () => raiz, path: "/registro", component: Registro }),
   createRoute({ getParentRoute: () => raiz, path: "/cuestionario", component: Cuestionario }),
   createRoute({ getParentRoute: () => raiz, path: "/listo", component: Listo }),
+  createRoute({ getParentRoute: () => raiz, path: "/visita", component: Visita }),
+  createRoute({ getParentRoute: () => raiz, path: "/medico", component: Medico }),
   createRoute({ getParentRoute: () => raiz, path: "/recorrido", component: Bienvenida }),
   createRoute({ getParentRoute: () => raiz, path: "/panel", component: Panel }),
   createRoute({ getParentRoute: () => raiz, path: "/plan", component: Plan }),
