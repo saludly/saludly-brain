@@ -1,7 +1,8 @@
 """
 Quinta ronda (22 de octubre de 2026): modo oscuro, portada sin botón de play, sin desenfoques y video liviano.
 
-1. Modo oscuro automático (prefers-color-scheme: dark) sin costo al hacer scroll: cada color de los estilos se
+1. Modo oscuro automático, solo en celulares y tabletas con el modo oscuro activo (ver OSCURO; en el computador la
+   página siempre se ve clara, decisión de Carlos del 22 oct 2026), sin costo al hacer scroll: cada color de los estilos se
    vuelve var(--o-<rol>-<color>, <color original>). En modo claro no hay variables definidas y queda el color de
    siempre; en modo oscuro un solo bloque :root las define. El rol sale de la propiedad (texto, fondo, borde o trazo)
    y el color oscuro se calcula con la luminosidad (ver oscuro()). Los colores de los atributos SVG se cambian con
@@ -19,6 +20,8 @@ import colorsys, os, re
 
 WEB = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVOS = ["index.html", "Paso1Tubo.dc.html", "Paso2Agente.dc.html", "Paso3App.dc.html", "QueMedimos.dc.html"]
+# Cuándo se ve oscura: modo oscuro y pantalla táctil sin mouse (celulares y tabletas, no computadores)
+OSCURO = "(prefers-color-scheme: dark) and (hover: none) and (pointer: coarse)"
 
 COLOR = re.compile(r"#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b|rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(?:,\s*[\d.]+\s*)?\)")
 ROL = {
@@ -177,13 +180,13 @@ def bloque_oscuro(extra=""):
         sel = f'[{attr}="{valor}"]'
         attrs.append(f"{'text' + sel + ',tspan' + sel if es_texto else sel + ':not(text):not(tspan)'}{{{attr}:{nuevo}}}")
     return ("<style>/* Modo oscuro (generado por herramientas/ajustes_2026_10_22.py) */\n"
-            "@media (prefers-color-scheme:dark){\n:root{color-scheme:dark;" + vars_ + "}\n" + "\n".join(attrs) + extra + "\n}\n</style>\n")
+            "@media " + OSCURO + "{\n:root{color-scheme:dark;" + vars_ + "}\n" + "\n".join(attrs) + extra + "\n}\n</style>\n")
 
 
 def ayudante_js(mapa):
     pares = ",".join(f"'{k}':'{v}'" for k, v in sorted(mapa.items()))
     return ("<script>/* Colores del JS en modo oscuro (generado por herramientas/ajustes_2026_10_22.py) */\n"
-            "window.slC=(function(){var m={" + pares + "},q=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):{matches:false};"
+            "window.slC=(function(){var m={" + pares + "},q=window.matchMedia?matchMedia('" + OSCURO + "'):{matches:false};"
             "return function(c,k){return q.matches&&m[(k||'')+c.toUpperCase()]||c;};})();</script>\n")
 
 
@@ -206,7 +209,7 @@ def ajustar_index(t):
     assert all(v in t for v in viejo)
     t = t.replace(viejo[0], '<video id="sl-video" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="auto" disablepictureinpicture="disablepictureinpicture"')
     t = t.replace(viejo[1],
-                  '<source src="./assets/portada-oscura-1280.mp4" type="video/mp4" media="(prefers-color-scheme: dark)">\n'
+                  '<source src="./assets/portada-oscura-1280.mp4" type="video/mp4" media="' + OSCURO + '">\n'
                   '<source src="./assets/portada-1280.webm" type="video/webm">\n<source src="./assets/portada-1280.mp4" type="video/mp4">')
     # Si el navegador no deja reproducir sola (iPhone en bajo consumo), arranca con el primer toque
     viejo = "      else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }"
@@ -235,9 +238,9 @@ def ajustar_index(t):
     # Barra del navegador y fondo del sistema en los dos modos
     viejo = '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">'
     assert viejo in t
-    t = t.replace(viejo, viejo + '\n<meta name="color-scheme" content="light dark">'
-                  '\n<meta name="theme-color" content="#FDFDFD" media="(prefers-color-scheme: light)">'
-                  '\n<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">')
+    # (sin <meta name="color-scheme">: el color-scheme oscuro lo pone el bloque de OSCURO, así el computador no cambia)
+    t = t.replace(viejo, viejo + '\n<meta name="theme-color" content="#000000" media="' + OSCURO + '">'
+                  '\n<meta name="theme-color" content="#FDFDFD">')
     return t
 
 

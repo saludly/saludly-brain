@@ -25,7 +25,8 @@ el escritorio, en "Pagina web de saludly"). Para publicar: `cd web && vercel dep
 Los botones "Empezar" llevan a https://app.saludly.online/entrar. Los cambios de ese día están en herramientas/ajustes_2026_10_21.py.
 
 ## Modo oscuro (desde el 22 de octubre de 2026)
-La página sigue el modo del teléfono o del computador (prefers-color-scheme). Cada color de los estilos es
+La página se ve oscura solo en celulares y tabletas con el modo oscuro activo; en el computador siempre se ve clara
+(condición OSCURO en el script: modo oscuro + pantalla táctil sin mouse). Cada color de los estilos es
 `var(--o-…, <color claro>)`: en modo claro no hay variables y queda el color de siempre; en modo oscuro las define
 un bloque al inicio de index.html. Los colores que pone el JS pasan por `slC()`. Todo lo genera
 herramientas/ajustes_2026_10_22.py; si agregas una sección con colores nuevos, ponle también su color oscuro
