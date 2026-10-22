@@ -90,8 +90,8 @@ Detalle y razones en `docs/02_plan_y_decisiones/Propuesta_ampliacion_condiciones
 | COND-M2-TI-001 | Hipotiroidismo subclínico | Tiroides, paratiroides y suprarrenal | incluida | D1 | 1, 2 | free_t4, tsh |
 | COND-M2-TI-002 | Hipotiroidismo primario | Tiroides, paratiroides y suprarrenal | incluida | D1 | 2 | free_t4, tsh |
 | COND-M2-TI-003 | Sospecha de hipotiroidismo central | Tiroides, paratiroides y suprarrenal | incluida | D1 | 2 | free_t4, tsh |
-| COND-M2-TI-004 | Hipertiroidismo subclínico | Tiroides, paratiroides y suprarrenal | incluida | D1 | 1, 2 | free_t3, free_t4, tsh |
-| COND-M2-TI-005 | Hipertiroidismo manifiesto o T3-toxicosis | Tiroides, paratiroides y suprarrenal | incluida | D1 | 2, 3 | free_t3, free_t4, tsh |
+| COND-M2-TI-004 | Hipertiroidismo subclínico | Tiroides, paratiroides y suprarrenal | incluida | D1 | 1, 2 | free_t4, total_t3, tsh |
+| COND-M2-TI-005 | Hipertiroidismo manifiesto o T3-toxicosis | Tiroides, paratiroides y suprarrenal | incluida | D1 | 2, 3 | free_t4, total_t3, tsh |
 | COND-M2-TI-006 | Disfunción tiroidea en el embarazo | Tiroides, paratiroides y suprarrenal | incluida | D2 | 2 | free_t4, tsh |
 | COND-M2-TI-007 | Hiperparatiroidismo primario | Tiroides, paratiroides y suprarrenal | incluida | D1 | 2, 3 | pth |
 | COND-M2-TI-008 | Hiperaldosteronismo primario (tamizaje en hipertensos) | Tiroides, paratiroides y suprarrenal | incluida | D2 | 2 | aldosterone, renin |
@@ -302,8 +302,8 @@ Ordenados por panel y nombre. "Reglas" son las fichas de condición y de segurid
 | renin | Renina plasmática (actividad o concentración directa) | ng/mL/h (actividad) o mU/L (concentración); se guarda con su tipo | refleja | refleja | ambos | BORRADOR | COND-M2-TI-008 |
 | reticulocytes_pct | Reticulocitos % | % | refleja | refleja | ambos | COMPLETO | COND-M3-HE-001, COND-M4-GA-A01 |
 | reticulocytes_abs | Reticulocitos Absolutos | x10³/µL | refleja | refleja | ambos | COMPLETO | COND-M3-HE-001, COND-M4-GA-A01 |
-| free_t3 | T3 Libre (Triyodotironina libre) | pg/mL | refleja | refleja | ambos | COMPLETO | COND-M2-TI-004, COND-M2-TI-005 |
-| free_t4 | T4 libre | ng/dL | refleja | refleja | ambos | COMPLETO | COND-M2-TI-001, COND-M2-TI-002, COND-M2-TI-003, COND-M2-TI-004, COND-M2-TI-005, COND-M2-TI-006 |
+| total_t3 | T3 total (Triyodotironina total) | ng/dL | estándar | con patrón | ambos | COMPLETO | COND-M2-TI-004, COND-M2-TI-005 |
+| free_t4 | T4 libre | ng/dL | estándar | con patrón | ambos | COMPLETO | COND-M2-TI-001, COND-M2-TI-002, COND-M2-TI-003, COND-M2-TI-004, COND-M2-TI-005, COND-M2-TI-006 |
 | methylmalonic_acid | Ácido metilmalónico sérico | µmol/L | refleja | refleja | ambos | BORRADOR | COND-M3-HE-004, COND-M3-NU-001 |
 | non_hdl_c | Colesterol no-HDL | mg/dL | calculado | con patrón | ambos | COMPLETO | COND-M1-CA-001 |
 | remnant_cholesterol | Colesterol remanente | mg/dL | calculado | solo valor y rango (contexto) | ambos | BORRADOR | COND-M1-CA-001, COND-M1-CA-003, SEG-014 |

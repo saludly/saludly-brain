@@ -3195,7 +3195,6 @@
    "det": "D1",
    "esc": "1, 2",
    "usa": [
-    "free_t3",
     "free_t4",
     "tsh",
     "total_t3"
@@ -3210,7 +3209,6 @@
    "det": "D1",
    "esc": "2, 3",
    "usa": [
-    "free_t3",
     "free_t4",
     "tsh",
     "total_t3"
