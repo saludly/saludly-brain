@@ -180,7 +180,7 @@
  "escalamiento_maximo": 2,
  "notas": [
   "PhenoAge se calcula con advertencia: la anemia sube el RDW.",
-  "Reflejas activadas: T4 libre, T3 libre, anti-TPO, reticulocitos, IgA total, anti-tTG IgA, ácido metilmalónico."
+  "Reflejas activadas: anti-TPO, reticulocitos, IgA total, anti-tTG IgA, ácido metilmalónico."
  ],
  "entrada_resultados": [
   {
@@ -1084,6 +1084,36 @@
    "refleja": false
   },
   {
+   "nombre_original": "T4 libre",
+   "biomarker_id": "free_t4",
+   "campo": null,
+   "valor": 1.02,
+   "valor_original": "1,02",
+   "estado": "medido",
+   "indicador_lab": null,
+   "unidad": "ng/dL",
+   "intervalo_lab": "0,93 – 1,70",
+   "metodo": "Quimioluminiscencia",
+   "seccion": "TIROIDES Y HORMONAS",
+   "muestra": "Suero",
+   "refleja": false
+  },
+  {
+   "nombre_original": "T3 total",
+   "biomarker_id": "total_t3",
+   "campo": null,
+   "valor": 112.0,
+   "valor_original": "112",
+   "estado": "medido",
+   "indicador_lab": null,
+   "unidad": "ng/dL",
+   "intervalo_lab": "80 – 200",
+   "metodo": "Quimioluminiscencia",
+   "seccion": "TIROIDES Y HORMONAS",
+   "muestra": "Suero",
+   "refleja": false
+  },
+  {
    "nombre_original": "Testosterona total",
    "biomarker_id": "testosterone_total",
    "campo": null,
@@ -1247,36 +1277,6 @@
    "seccion": "TIROIDES Y HORMONAS",
    "muestra": "Suero",
    "refleja": false
-  },
-  {
-   "nombre_original": "T4 libre · refleja por TSH fuera de rango",
-   "biomarker_id": "free_t4",
-   "campo": null,
-   "valor": 1.02,
-   "valor_original": "1,02",
-   "estado": "medido",
-   "indicador_lab": null,
-   "unidad": "ng/dL",
-   "intervalo_lab": "0,93 – 1,70",
-   "metodo": "Quimioluminiscencia",
-   "seccion": "PRUEBAS REFLEJAS",
-   "muestra": "Suero",
-   "refleja": true
-  },
-  {
-   "nombre_original": "T3 libre · refleja por TSH fuera de rango",
-   "biomarker_id": "free_t3",
-   "campo": null,
-   "valor": 3.0,
-   "valor_original": "3,0",
-   "estado": "medido",
-   "indicador_lab": null,
-   "unidad": "pg/mL",
-   "intervalo_lab": "2,0 – 4,4",
-   "metodo": "Quimioluminiscencia",
-   "seccion": "PRUEBAS REFLEJAS",
-   "muestra": "Suero",
-   "refleja": true
   },
   {
    "nombre_original": "Anti-TPO · refleja por TSH alta",

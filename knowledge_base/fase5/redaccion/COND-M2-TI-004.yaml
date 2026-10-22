@@ -4,7 +4,7 @@ titulo_paciente: "Tu TSH salió más baja de lo esperado"
 que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar. La tiroides es una glándula del cuello que regula el gasto de energía."
 por_que_te_aparece:
   - "Tu TSH salió en {tsh}, por debajo del rango del laboratorio."
-  - "Tu T4 libre salió en {free_t4} y tu T3 libre en {free_t3}, dentro del rango."
+  - "Tu T4 libre salió en {free_t4} y tu T3 total en {total_t3}, dentro del rango."
 riesgo_claro: "Si la tiroides trabaja un poco de más durante años, puede acelerar el corazón y debilitar los huesos, sobre todo en personas mayores."
 ejemplo_simple: "Es como un acelerador apenas presionado: el carro va un poco más rápido aunque no se note."
 incertidumbre: "Los corticoides, una enfermedad reciente o la biotina pueden bajarla. Hay que repetir TSH, T4 libre y T3, y tu médico lo interpreta."

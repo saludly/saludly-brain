@@ -104,7 +104,7 @@ Valores permitidos: `operador` en {"=", "<", ">"}; `estado` en {"medido", "menor
   },
   "medico": {
     "hallazgos": ["H-100124-01", "H-100124-02", "H-100124-03"],
-    "reflejas": ["free_t4", "free_t3", "anti_tpo", "reticulocytes_pct", "iga", "anti_ttg_iga", "methylmalonic_acid"],
+    "reflejas": ["anti_tpo", "reticulocytes_pct", "iga", "anti_ttg_iga", "methylmalonic_acid"],
     "conflictos_entre_guias": ["…"],
     "datos_faltantes": ["potasio: muestra hemolizada", "vitamina C: muestra no apta"],
     "que_conviene_confirmar": ["…"],

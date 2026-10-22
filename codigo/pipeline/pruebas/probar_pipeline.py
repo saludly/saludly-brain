@@ -90,7 +90,7 @@ for k, inf in (("hombre", h), ("mujer", m)):
         f"{k}: las vitaminas fuera del panel base no se muestran")
     chk(any("fuera del panel del MVP" in x for x in inf["medico"]["dudas_lectura"]), f"{k}: el médico debía ver qué resultados fuera del panel no se usaron")
     chk(not ids & {"urinalysis", "uacr", "fit_stool", "hpylori_stool_ag", "stool_exam"}, f"{k}: orina y heces no se muestran")
-chk(len(m["resultados"]) == 100 and len(h["resultados"]) == 90, f"resultados de sangre del MVP: mujer {len(m['resultados'])} (100), hombre {len(h['resultados'])} (90)")
+chk(len(m["resultados"]) == 100 and len(h["resultados"]) == 92, f"resultados de sangre del MVP: mujer {len(m['resultados'])} (100), hombre {len(h['resultados'])} (92)")
 hb = [x for a in m["paciente"]["lo_que_merece_atencion"] for x in a["por_que"] if "hemoglobina salió" in x]
 chk(hb and all("11,2 g/dL" in x for x in hb) and not any("9,4" in x for x in textos_paciente(m)), "mujer: la hemoglobina se muestra con el valor del PDF (11,2), no con el ajustado")
 chk(not any("si eres hombre" in x.lower() for x in textos_paciente(m)), "mujer: no le sale una frase para hombres")
@@ -102,7 +102,7 @@ cod, c3 = correr("C", enf=dict(presion_sistolica=136, presion_diastolica=86, cin
 chk(cod == 0 and c3["estado"] == "retenido_hasta_llamada" and c3["escalamiento_maximo"] == 3, f"caso 3: debía quedar retenido con escalamiento 3 ({c3.get('estado')})")
 chk(not any(c3["whatsapp"][k] for k in ("resultado_listo", "recordatorio_consulta", "recomendaciones_semanales", "recetas_diarias")), "caso 3: nada sale por WhatsApp antes de la llamada")
 chk(any(r["biomarker_id"] == "glucose" and r["clase"] == "critico" and r["valor_original"] == "386" for r in c3["resultados"]), "caso 3: glucosa 386 tal cual del PDF y con clase crítica")
-chk(len(c3["resultados"]) == 91 and c3["control_salida"]["ok"], f"caso 3: 91 resultados de sangre y control de salida limpio ({len(c3['resultados'])})")
+chk(len(c3["resultados"]) == 93 and c3["control_salida"]["ok"], f"caso 3: 93 resultados de sangre y control de salida limpio ({len(c3['resultados'])})")
 chk(not any("LDL por encima" in a["titulo"] for a in c3["paciente"]["lo_que_merece_atencion"]), "caso 3: con LDL de 128 el título no puede decir que el LDL está alto")
 # Caso 4: hallazgos digestivos (anti-tTG IgA positiva con IgA normal, hierro y folato bajos, ALT alta)
 cod, c4 = correr("D", enf=dict(presion_sistolica=108, presion_diastolica=68, cintura_cm=72, peso_kg=51, talla_m=1.60, tabaquismo=False,
@@ -110,7 +110,7 @@ cod, c4 = correr("D", enf=dict(presion_sistolica=108, presion_diastolica=68, cin
 refs4 = [h["id"] for h in c4["medico"]["hallazgos"]] if cod == 0 else []
 chk(all(x in refs4 for x in ("COND-M4-GA-006", "REL-013", "COND-M3-NU-002", "COND-M4-GA-002")), f"caso 4: faltan hallazgos digestivos ({refs4})")
 chk(cod == 0 and c4["escalamiento_maximo"] == 2 and c4["estado"] == "en_revision" and c4["control_salida"]["ok"], "caso 4: escalamiento 2, publicable y control limpio")
-chk(cod == 0 and not c4["medico"]["dudas_lectura"] and len(c4["resultados"]) == 98, f"caso 4: 98 resultados sin dudas de lectura ({len(c4.get('resultados', []))})")
+chk(cod == 0 and not c4["medico"]["dudas_lectura"] and len(c4["resultados"]) == 100, f"caso 4: 100 resultados sin dudas de lectura ({len(c4.get('resultados', []))})")
 # Potasio alto: se nombra el corazón (decisión de Carlos)
 import yaml
 chk("corazón" in yaml.safe_load(open(os.path.join(RAIZ, "knowledge_base", "fase5", "redaccion", "COND-M2-NE-004.yaml"), encoding="utf-8"))["riesgo_claro"], "potasio alto debía nombrar el corazón")

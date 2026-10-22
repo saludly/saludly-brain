@@ -407,7 +407,7 @@ def ti001(d):
     t, hi = d.v("tsh"), d.hi("tsh")
     if t is None or hi is None or t <= hi: return H(f, "no_activa")
     t4, t4lo, t4hi = d.v("free_t4"), d.lo("free_t4"), d.hi("free_t4")
-    if t4 is None: return H(f, "pendiente_refleja", nota="TSH alta: el laboratorio debe correr T4 libre")
+    if t4 is None: return H(f, "incompleta", faltan=["free_t4"], nota="TSH alta sin T4 libre (va en el panel estándar)")
     if t4lo is not None and t4 < t4lo: return H(f, "no_activa", nota="T4 libre baja: va por TI-002")
     corte = 6.0 if (d.c("edad") or 0) > 60 else 5.0
     conf = [m for m in ("amiodarona", "litio") if m in d.meds()] + (["enfermedad aguda reciente"] if d.c("enfermedad_aguda_reciente") else [])
@@ -422,7 +422,7 @@ def ti002(d):
     if b: return b
     t, hi, t4, lo = d.v("tsh"), d.hi("tsh"), d.v("free_t4"), d.lo("free_t4")
     if None in (t, hi) or t <= hi: return H(f, "no_activa")
-    if t4 is None: return H(f, "pendiente_refleja")
+    if t4 is None: return H(f, "incompleta", faltan=["free_t4"])
     if lo is not None and t4 < lo:
         conf = [m for m in ("amiodarona", "litio") if m in d.meds()]
         return H(f, "activa", "moderada" if conf else "alta", 2, ["tsh_alta", "t4l_baja"], confusores=conf, extra=dict(excluye=["COND-M2-TI-001"]))
@@ -447,11 +447,12 @@ def ti004(d):
     if b: return b
     t, lo = d.v("tsh"), d.lo("tsh")
     if t is None or lo is None or t >= lo: return H(f, "no_activa")
-    t4, t3 = d.v("free_t4"), d.v("free_t3")
-    if t4 is None or t3 is None: return H(f, "pendiente_refleja", nota="TSH baja: el laboratorio debe correr T4 y T3 libres")
-    if t4 > (d.hi("free_t4") or 99) or t3 > (d.hi("free_t3") or 99): return H(f, "no_activa", nota="hormonas altas: va por TI-005")
+    t4, t3 = d.v("free_t4"), d.v("total_t3")
+    if t4 is None or t3 is None: return H(f, "incompleta", faltan=[b for b, x in (("free_t4", t4), ("total_t3", t3)) if x is None], nota="TSH baja sin T4 libre o T3 total (van en el panel estándar)")
+    t3hi = d.hi("total_t3")  # sin intervalo del laboratorio no se compara (la T3 total va en ng/dL)
+    if t4 > (d.hi("free_t4") or 99) or (t3hi is not None and t3 > t3hi): return H(f, "no_activa", nota="hormonas altas: va por TI-005")
     conf = (["corticoides"] if "prednisona" in d.meds() else []) + (["enfermedad aguda reciente"] if d.c("enfermedad_aguda_reciente") else [])
-    return H(f, "activa", "moderada" if conf else "alta", 2 if t < 0.1 else 1, ["tsh_baja", "t4l_normal", "t3l_normal"], confusores=conf)
+    return H(f, "activa", "moderada" if conf else "alta", 2 if t < 0.1 else 1, ["tsh_baja", "t4l_normal", "t3_normal"], confusores=conf)
 
 def ti005(d):
     f = "COND-M2-TI-005"
@@ -460,11 +461,12 @@ def ti005(d):
     if b: return b
     t, lo = d.v("tsh"), d.lo("tsh")
     if t is None or lo is None or t >= lo: return H(f, "no_activa")
-    t4, t3 = d.v("free_t4"), d.v("free_t3")
-    a4, a3 = t4 is not None and t4 > (d.hi("free_t4") or 99), t3 is not None and t3 > (d.hi("free_t3") or 99)
+    t4, t3 = d.v("free_t4"), d.v("total_t3")
+    t3hi = d.hi("total_t3")  # sin intervalo del laboratorio no se compara (la T3 total va en ng/dL)
+    a4, a3 = t4 is not None and t4 > (d.hi("free_t4") or 99), t3 is not None and t3hi is not None and t3 > t3hi
     if not (a4 or a3): return H(f, "no_activa")
-    esc = 3 if any(d.clase(x) == "critico" for x in ("free_t4", "free_t3")) else 2
-    return H(f, "activa", "alta", esc, [k for k, v in [("t4l_alta", a4), ("t3l_alta", a3)] if v],
+    esc = 3 if any(d.clase(x) == "critico" for x in ("free_t4", "total_t3")) else 2
+    return H(f, "activa", "alta", esc, [k for k, v in [("t4l_alta", a4), ("t3_alta", a3)] if v],
              extra=dict(variante="T3-toxicosis" if (a3 and not a4) else None, excluye=["COND-M2-TI-004"]))
 
 def ti006(d):

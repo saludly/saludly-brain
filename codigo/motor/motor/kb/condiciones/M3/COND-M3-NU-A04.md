@@ -15,7 +15,7 @@ reglas:
   bajo: "recomendación de alimentos que la aportan; suplemento solo como opción general para hablar con el médico, sin dosis"
   alto: "preguntar por suplementos"
   vitamina_a_o_e_alta: "sugerir consulta (se acumulan); escalamiento 1"
-  biotina_alta: "bloquear TSH, T4 libre, T3 libre, anticuerpos tiroideos, B12 y folato hasta repetir sin el suplemento; escalamiento 1"
+  biotina_alta: "bloquear TSH, T4 libre, T3 total, anticuerpos tiroideos, B12 y folato hasta repetir sin el suplemento; escalamiento 1"
   vitamina_c: "solo se clasifica con transporte congelado validado; si no, no interpretable"
   tiamina_baja_con_sintomas: "tiamina baja con confusión, alteraciones de la vista o de la marcha y factor de riesgo (alcohol, cirugía bariátrica, desnutrición): escalamiento 3, sospecha de urgencia"
   tiamina_baja_sin_sintomas: "recomendación alimentaria; con alcohol o cirugía bariátrica, escalamiento 1"

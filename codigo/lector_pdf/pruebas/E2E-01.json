@@ -1100,6 +1100,36 @@
    "refleja": false
   },
   {
+   "nombre_original": "T4 libre",
+   "biomarker_id": "free_t4",
+   "campo": null,
+   "valor": 1.18,
+   "valor_original": "1,18",
+   "estado": "medido",
+   "indicador_lab": null,
+   "unidad": "ng/dL",
+   "intervalo_lab": "0,93 – 1,70",
+   "metodo": "Quimioluminiscencia",
+   "seccion": "TIROIDES Y HORMONAS",
+   "muestra": "Suero",
+   "refleja": false
+  },
+  {
+   "nombre_original": "T3 total",
+   "biomarker_id": "total_t3",
+   "campo": null,
+   "valor": 118.0,
+   "valor_original": "118",
+   "estado": "medido",
+   "indicador_lab": null,
+   "unidad": "ng/dL",
+   "intervalo_lab": "80 – 200",
+   "metodo": "Quimioluminiscencia",
+   "seccion": "TIROIDES Y HORMONAS",
+   "muestra": "Suero",
+   "refleja": false
+  },
+  {
    "nombre_original": "Testosterona total",
    "biomarker_id": "testosterone_total",
    "campo": null,

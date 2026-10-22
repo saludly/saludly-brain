@@ -1,6 +1,6 @@
 ## COND-M2-TI-004 · Hipertiroidismo subclínico
 
-**Qué detecta.** TSH baja con T4 libre y T3 libre normales. El riesgo es mayor con TSH menor de 0,1 que entre 0,1 y el límite inferior. Hay que repetir para confirmar. La biotina puede producir exactamente este patrón, por eso la bloquea.
+**Qué detecta.** TSH baja con T4 libre y T3 total normales. El riesgo es mayor con TSH menor de 0,1 que entre 0,1 y el límite inferior. Hay que repetir para confirmar. La biotina puede producir exactamente este patrón, por eso la bloquea.
 
 ```yaml
 id: COND-M2-TI-004
@@ -20,10 +20,10 @@ criterios:
   - id: t4l_normal
     biomarcador: free_t4
     condicion: "dentro del intervalo"
-  - id: t3l_normal
-    biomarcador: free_t3
+  - id: t3_normal
+    biomarcador: total_t3
     condicion: "dentro del intervalo"
-regla_central: "tsh_baja AND t4l_normal AND t3l_normal"
+regla_central: "tsh_baja AND t4l_normal AND t3_normal"
 contexto_obligatorio: ["embarazo == false"]
 bloqueado_si: ["biotina alta o suplemento declarado", "levotiroxina en uso (posible sobredosificación; se lee como control)"]
 coincidencia:
@@ -45,8 +45,8 @@ recomendaciones_sugeridas: ["repetir TSH, T4 libre y T3", "consulta médica"]
 
 | Caso | Datos | Resultado esperado |
 | --- | --- | --- |
-| Leve | TSH 0,18, T4 libre y T3 libre normales | Activa, escalamiento 1 |
-| Suprimida | TSH 0,05, T4 libre y T3 libre normales | Activa, escalamiento 2 |
+| Leve | TSH 0,18, T4 libre y T3 total normales | Activa, escalamiento 1 |
+| Suprimida | TSH 0,05, T4 libre y T3 total normales | Activa, escalamiento 2 |
 | Biotina | TSH 0,08, biotina en el cuestionario | Bloqueada; pide repetir sin biotina |
 | Negativo · PDF ejemplos | TSH 2,10 | No activa |
 

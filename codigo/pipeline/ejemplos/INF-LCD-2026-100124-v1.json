@@ -3,7 +3,7 @@
  "paciente_ref": "P-4D8E7AE7",
  "orden": "LCD-2026-100124",
  "fecha_toma": "2026-10-01",
- "generado": "2026-10-21T00:37:11",
+ "generado": "2026-10-22T00:48:48",
  "estado": "en_revision",
  "panel": "solo_sangre",
  "escalamiento_maximo": 2,
@@ -1277,6 +1277,32 @@
    "refleja": false
   },
   {
+   "biomarker_id": "free_t4",
+   "nombre": "T4 libre",
+   "valor": 1.02,
+   "valor_original": "1,02",
+   "unidad": "ng/dL",
+   "intervalo": "0,93 – 1,70",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "total_t3",
+   "nombre": "T3 total (Triyodotironina total)",
+   "valor": 112.0,
+   "valor_original": "112",
+   "unidad": "ng/dL",
+   "intervalo": "80 – 200",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
    "biomarker_id": "testosterone_total",
    "nombre": "Testosterona Total",
    "valor": 32.0,
@@ -1418,32 +1444,6 @@
    "motivo": null,
    "seccion": "TIROIDES Y HORMONAS",
    "refleja": false
-  },
-  {
-   "biomarker_id": "free_t4",
-   "nombre": "T4 libre",
-   "valor": 1.02,
-   "valor_original": "1,02",
-   "unidad": "ng/dL",
-   "intervalo": "0,93 – 1,70",
-   "clase": "en_rango",
-   "estado": "medido",
-   "motivo": null,
-   "seccion": "PRUEBAS REFLEJAS",
-   "refleja": true
-  },
-  {
-   "biomarker_id": "free_t3",
-   "nombre": "T3 Libre (Triyodotironina libre)",
-   "valor": 3.0,
-   "valor_original": "3,0",
-   "unidad": "pg/mL",
-   "intervalo": "2,0 – 4,4",
-   "clase": "en_rango",
-   "estado": "medido",
-   "motivo": null,
-   "seccion": "PRUEBAS REFLEJAS",
-   "refleja": true
   },
   {
    "biomarker_id": "anti_tpo",
@@ -4104,8 +4104,8 @@
   "hallazgos_sin_texto": []
  },
  "trazabilidad": {
-  "sha256_pdf": "a0ced6ac3dd8c9d91b38c0e2ee72c42032be7786f78727ecca28c2ed0d6c7d1f",
-  "version_kb": "1·2026-10-10",
+  "sha256_pdf": "b5366ccbd99a07d253287e58283327042ca388ffb26ddf99b37997d36536e55d",
+  "version_kb": "1·2026-10-22",
   "version_redaccion": "plantillas-v1",
   "version_modelo": null,
   "calculados": {

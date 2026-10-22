@@ -32,7 +32,7 @@
   estado_revision: aprobada
 - id: tiroides
   nombre: "Tiroides"
-  biomarcadores: [tsh, free_t4, free_t3, anti_tpo, anti_tg]
+  biomarcadores: [tsh, free_t4, total_t3, anti_tpo, anti_tg]
   texto_bien: "Las hormonas de tu tiroides están dentro de los rangos de referencia."
   estado_revision: aprobada
 - id: hierro

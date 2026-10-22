@@ -23,7 +23,7 @@ critico_por_guia:
 no_interpretable_por_contexto:
   ayuno_minimo_8h: [glucose, triglycerides, insulin, homa_ir, ldl_c, remnant_cholesterol, vitamin_k1, phenoage]
   cortisol_fuera_de_6_a_10: [cortisol]
-  biotina: [tsh, free_t4, free_t3, anti_tpo, anti_tg, vitamin_b12, folate, igf1]
+  biotina: [tsh, free_t4, total_t3, anti_tpo, anti_tg, vitamin_b12, folate, igf1]
   hormonas_de_fase: [fsh, lh, estradiol, progesterone]   # sin fecha de última menstruación, con anticonceptivo hormonal, embarazo o menopausia
   embarazo: [fsh, lh, estradiol, progesterone, prolactin, testosterone_total, shbg, alp, phenoage]
   vitamina_c_sin_transporte_validado: [vitamin_c]

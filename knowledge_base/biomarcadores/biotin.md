@@ -39,7 +39,7 @@ Suero. La enfermera pregunta si toma suplementos de biotina o "para el cabello y
 El laboratorio de ejemplo no reporta intervalo ("No establecido"); el laboratorio aliado debe confirmar si lo tiene.
 
 ## E. Interpretación
-Biotina alta, o suplemento declarado, invalida la interpretación de TSH, T4 libre, T3 libre, anticuerpos tiroideos, B12, folato, IGF-1 y otros inmunoensayos hasta repetirlos sin el suplemento. Según el método, puede dar valores falsamente altos o bajos y puede imitar un hipertiroidismo.
+Biotina alta, o suplemento declarado, invalida la interpretación de TSH, T4 libre, T3 total, anticuerpos tiroideos, B12, folato, IGF-1 y otros inmunoensayos hasta repetirlos sin el suplemento. Según el método, puede dar valores falsamente altos o bajos y puede imitar un hipertiroidismo.
 
 ## F. Contexto del paciente y confusores
 Suplementos de belleza, multivitamínicos, dosis altas por indicación médica.
@@ -71,7 +71,7 @@ Advertencia de la FDA sobre interferencia de biotina en pruebas de laboratorio. 
 # RAG_INSTRUCTIONS
 rag_tags: [vitaminas, interferencia, biotina, inmunoensayo, panel_estandar, saludly_brain_v1]
 use_when: ["biotina alta", "suplemento de biotina declarado", "resultados de tiroides incongruentes"]
-combine_with: [tsh, free_t4, free_t3, vitamin_b12, folate, igf1]
+combine_with: [tsh, free_t4, total_t3, vitamin_b12, folate, igf1]
 do_not_use_alone: []
 do_not_conclude: ["deficiencia de biotina"]
 escalate_when: ["biotina alta con resultados de tiroides alterados"]

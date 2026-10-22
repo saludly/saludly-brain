@@ -3,7 +3,7 @@
  "paciente_ref": "P-692679E5",
  "orden": "LCD-2026-100126",
  "fecha_toma": "2026-10-01",
- "generado": "2026-10-21T00:37:25",
+ "generado": "2026-10-22T00:48:58",
  "estado": "en_revision",
  "panel": "solo_sangre",
  "escalamiento_maximo": 2,
@@ -1247,6 +1247,32 @@
    "valor_original": "2,40",
    "unidad": "µUI/mL",
    "intervalo": "0,27 – 4,20",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "free_t4",
+   "nombre": "T4 libre",
+   "valor": 1.02,
+   "valor_original": "1,02",
+   "unidad": "ng/dL",
+   "intervalo": "0,93 – 1,70",
+   "clase": "en_rango",
+   "estado": "medido",
+   "motivo": null,
+   "seccion": "TIROIDES Y HORMONAS",
+   "refleja": false
+  },
+  {
+   "biomarker_id": "total_t3",
+   "nombre": "T3 total (Triyodotironina total)",
+   "valor": 112.0,
+   "valor_original": "112",
+   "unidad": "ng/dL",
+   "intervalo": "80 – 200",
    "clase": "en_rango",
    "estado": "medido",
    "motivo": null,
@@ -3931,8 +3957,8 @@
   "hallazgos_sin_texto": []
  },
  "trazabilidad": {
-  "sha256_pdf": "cdcf54897474eca8a0803587cceb0e1589de3685d565b8d4a2e0d6bcc5839b5c",
-  "version_kb": "1·2026-10-10",
+  "sha256_pdf": "cffa6470484c93f388134ab10a9af384d9b286fb32d5c30b6cf30869a8b981a8",
+  "version_kb": "1·2026-10-22",
   "version_redaccion": "plantillas-v1",
   "version_modelo": null,
   "calculados": {

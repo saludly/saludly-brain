@@ -188,6 +188,8 @@ caso1 = dict(
             ('Relación BUN/creatinina', '15,3', '', '', '10 – 20', 'Calculado')]),
         ('TIROIDES Y HORMONAS', SUERO, [
             ('TSH', '2,10', '', 'µUI/mL', '0,27 – 4,20', QLA),
+            ('T4 libre', '1,18', '', 'ng/dL', '0,93 – 1,70', QLA),
+            ('T3 total', '118', '', 'ng/dL', '80 – 200', QLA),
             ('Testosterona total', '412', '', 'ng/dL', '264 – 916', QLA),
             ('SHBG', '28', '', 'nmol/L', '16,5 – 55,9', QLA),
             ('Estradiol', '28', '', 'pg/mL', '11 – 44', QLA),
@@ -326,6 +328,8 @@ caso2 = dict(
             ('Relación BUN/creatinina', '13,9', '', '', '10 – 20', 'Calculado')]),
         ('TIROIDES Y HORMONAS', SUERO, [
             ('TSH', '6,90', 'H', 'µUI/mL', '0,27 – 4,20', QLA),
+            ('T4 libre', '1,02', '', 'ng/dL', '0,93 – 1,70', QLA),
+            ('T3 total', '112', '', 'ng/dL', '80 – 200', QLA),
             ('Testosterona total', '32', '', 'ng/dL', '8 – 48', QLA),
             ('SHBG', '62', '', 'nmol/L', '24,6 – 122,0', QLA),
             ('FSH', '6,1', '', 'mUI/mL', 'Fase folicular 3,5 – 12,5', QLA),
@@ -338,8 +342,6 @@ caso2 = dict(
             ('ACTH', '18', '', 'pg/mL', '7,2 – 63,3 (mañana)', QLA),
             ('IGF-1', '205', '', 'ng/mL', '115 – 307 (30 – 34 años)', QLA)]),
         ('PRUEBAS REFLEJAS', SUERO, [
-            ('T4 libre · refleja por TSH fuera de rango', '1,02', '', 'ng/dL', '0,93 – 1,70', QLA),
-            ('T3 libre · refleja por TSH fuera de rango', '3,0', '', 'pg/mL', '2,0 – 4,4', QLA),
             ('Anti-TPO · refleja por TSH alta', '186', 'H', 'UI/mL', '< 34', QLA),
             ('Reticulocitos % · refleja por anemia', '1,1', '', '%', '0,5 – 2,0', CIT_F),
             ('Reticulocitos absolutos · refleja por anemia', '47', '', 'x10³/µL', '25 – 75', 'Calculado'),
@@ -406,7 +408,7 @@ caso2 = dict(
     obs=['Potasio no procesado: muestra hemolizada. Se solicita nueva muestra; el resultado no se informa para evitar un valor falsamente alto.',
          'Vitamina C: muestra no apta, llegó refrigerada y la prueba exige plasma congelado protegido de la luz.',
          'ANA positivo 1:160, patrón moteado fino (AC-4). Un título bajo puede encontrarse en personas sanas; se informa título y patrón para interpretación clínica.',
-         'Pruebas reflejas activadas: T4 libre, T3 libre y anti-TPO por TSH alta; reticulocitos por anemia; IgA total y anti-transglutaminasa IgA por déficit de hierro; ácido metilmalónico por vitamina B12 entre 180 y 350 pg/mL.',
+         'Pruebas reflejas activadas: anti-TPO por TSH alta; reticulocitos por anemia; IgA total y anti-transglutaminasa IgA por déficit de hierro; ácido metilmalónico por vitamina B12 entre 180 y 350 pg/mL.',
          'Fecha de última menstruación informada: 23/09/2026 (día 9 del ciclo). Intervalos hormonales de fase folicular. Sin anticonceptivo hormonal.',
          'Documento generado por Saludly como ejemplo de formato. Laboratorio, paciente, documento y resultados son ficticios.'])
 
@@ -452,7 +454,7 @@ _sec['VITAMINAS'] = ('VITAMINAS', SUERO, [
     ('Ácido fólico', '8,6', '', 'ng/mL', '> 3,9', QLA),
     ('25-hidroxivitamina D', '24,6', 'L', 'ng/mL', '30 – 100', QLA)])
 _sec['SEROLOGÍA E INFECCIOSAS'][2][2] = ('Anticuerpos contra antígeno de superficie (anti-HBs)', '58', '', 'mUI/mL', '≥ 10 (inmunidad)', QLA)
-_sec['TIROIDES Y HORMONAS'][2][8] = ('IGF-1', '142', '', 'ng/mL', '71 – 216 (55 – 59 años)', QLA)
+_sec['TIROIDES Y HORMONAS'][2][10] = ('IGF-1', '142', '', 'ng/mL', '71 – 216 (55 – 59 años)', QLA)
 caso3['secciones'] = [_sec[s[0]] for s in caso1['secciones'] if s[0] not in ('UROANÁLISIS', 'COPROLÓGICO Y PRUEBAS EN HECES')] + [
     ('INMUNOHEMATOLOGÍA', HEMA, [('Grupo sanguíneo y Rh', 'O positivo', '', '', '', 'Aglutinación en gel')])]
 caso3['obs'] = ['VALOR CRÍTICO: glucosa en ayunas de 386 mg/dL, confirmada por repetición. Se informó por teléfono al programa Saludly el 01/10/2026 a las 11:20.',
@@ -481,7 +483,7 @@ for i, res, ind in ((0, '52', 'H'), (1, '41', 'H'), (6, '6,8', ''), (7, '3,9', '
 _fila('FUNCIÓN RENAL', 1, '116')                      # CKD-EPI 2021 con creatinina 0,72, mujer de 29 años
 _fila('TIROIDES Y HORMONAS', 0, '2,40')
 _ref = _s4['PRUEBAS REFLEJAS'][2]
-_s4['PRUEBAS REFLEJAS'] = ('PRUEBAS REFLEJAS', _s4['PRUEBAS REFLEJAS'][1], [_ref[3], _ref[4], _ref[5], _ref[6], _ref[7]])
+_s4['PRUEBAS REFLEJAS'] = ('PRUEBAS REFLEJAS', _s4['PRUEBAS REFLEJAS'][1], [_ref[1], _ref[2], _ref[3], _ref[4], _ref[5]])
 _fila('PRUEBAS REFLEJAS', 0, '1,0'); _fila('PRUEBAS REFLEJAS', 1, '45'); _fila('PRUEBAS REFLEJAS', 2, '205')
 _fila('PRUEBAS REFLEJAS', 3, '86', 'H'); _fila('PRUEBAS REFLEJAS', 4, '0,31')
 _fila('MARCADORES CARDIOVASCULARES E INFLAMACIÓN', 4, 'Negativo (< 1:80)')

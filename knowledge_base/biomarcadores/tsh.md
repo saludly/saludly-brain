@@ -27,7 +27,7 @@ alimenta:
 - COND-M2-TI-006
 combine_with:
 - free_t4
-- free_t3
+- total_t3
 - anti_tpo
 tier: 1
 status: COMPLETO
@@ -147,7 +147,7 @@ use_when:
   - "interpretando resultados de este parámetro específico"
   - "combinando este parámetro con otros del mismo panel"
 
-combine_with: ["free_t4", "free_t3", "anti_tpo"]
+combine_with: ["free_t4", "total_t3", "anti_tpo"]
 
 do_not_use_alone:
   - "diagnóstico de cualquier enfermedad"

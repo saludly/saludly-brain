@@ -98,6 +98,9 @@ ESTANDAR = [
     ]),
     ("Tiroides y hormonas", [
         ("TSH", "tsh", "Suero", T, ""),
+        # Carlos, 22 oct 2026: T4 libre y T3 total para todas las personas, ya no como reflejas.
+        ("T4 libre", "free_t4", "Suero", T, "Siempre, junto con la TSH"),
+        ("T3 total", "total_t3", "Suero", T, "Siempre, junto con la TSH. T3 total, no T3 libre"),
         ("Cortisol", "cortisol", "Suero", T, "Toma entre 6:00 y 10:00"),
         ("ACTH", "acth", "Plasma EDTA refrigerado", T, "Refrigerar de inmediato"),
         ("DHEA-S", "dhea_s", "Suero", T, ""),
@@ -138,8 +141,6 @@ EN_PAUSA = [
     ]),
 ]
 REFLEJAS = [
-    ("T4 libre", "free_t4", "TSH fuera de rango", T),
-    ("T3 libre", "free_t3", "TSH fuera de rango", T),
     ("Anticuerpos anti-TPO", "anti_tpo", "TSH alta", T),
     ("Anticuerpos antitiroglobulina", "anti_tg", "Anti-TPO negativo con TSH alta", T),
     ("PTH intacta", "pth", "Calcio corregido alto", T),
@@ -252,8 +253,9 @@ F.append(KeepTogether([Paragraph(f"2. Pruebas reflejas ({N_REF})", S["h1"]),
 
 F += [Paragraph("3. Lo que pedimos en la cotización", S["h1"])]
 for i, linea in enumerate([
+        f"<b>Precio del combo completo por persona:</b> el panel estándar de {N_EST} pruebas, para mujer y para hombre, "
+        "y descuentos por volumen mensual.",
         "Precio por prueba y, si aplica, por paquete (por ejemplo hemograma, perfil lipídico o perfil hepático).",
-        "Precio por persona del panel estándar completo, para mujer y para hombre, y descuentos por volumen mensual.",
         "Precio de cada prueba refleja y tiempo de retención de la muestra para correrlas.",
         "Costo de la toma a domicilio en Bogotá, insumos y transporte refrigerado.",
         "Pruebas que no realizan directamente y si las remiten a otro laboratorio, con su tiempo de entrega.",

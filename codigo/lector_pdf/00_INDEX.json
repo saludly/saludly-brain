@@ -400,7 +400,7 @@
   }
  },
  "version": "1",
- "generado": "2026-10-10",
+ "generado": "2026-10-22",
  "biomarcadores": {
   "abo_rh": {
    "nombre": "Grupo sanguíneo ABO y factor Rh",
@@ -1173,31 +1173,11 @@
     "COND-M3-NU-002"
    ]
   },
-  "free_t3": {
-   "nombre": "T3 Libre (Triyodotironina libre)",
-   "unidad": "pg/mL",
-   "panel": "refleja",
-   "nivel": "refleja",
-   "sinonimos": [
-    "T3 libre",
-    "Triyodotironina libre",
-    "FT3",
-    "T3L",
-    "T3 Libre (Triyodotironina libre)",
-    "T3 Libre",
-    "T3L / FT3",
-    "Free T3 (Free Triiodothyronine)"
-   ],
-   "reglas": [
-    "COND-M2-TI-004",
-    "COND-M2-TI-005"
-   ]
-  },
   "free_t4": {
    "nombre": "T4 libre",
    "unidad": "ng/dL",
-   "panel": "refleja",
-   "nivel": "refleja",
+   "panel": "estándar",
+   "nivel": "con patrón",
    "sinonimos": [
     "T4 libre",
     "Tiroxina libre",
@@ -2502,6 +2482,26 @@
     "COND-M6-MI-002"
    ]
   },
+  "total_t3": {
+   "nombre": "T3 total (Triyodotironina total)",
+   "unidad": "ng/dL",
+   "panel": "estándar",
+   "nivel": "con patrón",
+   "sinonimos": [
+    "T3 total",
+    "T3 Total",
+    "Triyodotironina total",
+    "Triyodotironina",
+    "TT3",
+    "T3T",
+    "T3 total (Triyodotironina total)",
+    "Total T3 (Total Triiodothyronine)"
+   ],
+   "reglas": [
+    "COND-M2-TI-004",
+    "COND-M2-TI-005"
+   ]
+  },
   "transferrin": {
    "nombre": "Transferrina",
    "unidad": "mg/dL",
@@ -3197,7 +3197,8 @@
    "usa": [
     "free_t3",
     "free_t4",
-    "tsh"
+    "tsh",
+    "total_t3"
    ]
   },
   "COND-M2-TI-005": {
@@ -3211,7 +3212,8 @@
    "usa": [
     "free_t3",
     "free_t4",
-    "tsh"
+    "tsh",
+    "total_t3"
    ]
   },
   "COND-M2-TI-006": {

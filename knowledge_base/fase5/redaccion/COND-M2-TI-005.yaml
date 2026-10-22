@@ -5,7 +5,7 @@ que_es: "La TSH es la hormona que le indica a la tiroides cuánto trabajar. La t
 por_que_te_aparece:
   - "Tu TSH salió en {tsh}, por debajo del rango del laboratorio."
   - "Tu T4 libre, la hormona que produce la tiroides, salió en {free_t4}."
-  - "Tu T3 libre, la forma más activa de esa hormona, salió en {free_t3}."
+  - "Tu T3 total, la forma más activa de esa hormona, salió en {total_t3}."
 riesgo_claro: "Si la tiroides trabaja de más y no se atiende, puede causar palpitaciones, pérdida de peso y nervios, y con el tiempo afectar el corazón y los huesos. Con manejo médico, esto se puede controlar."
 ejemplo_simple: "Es como un motor acelerado todo el tiempo: gasta más y se desgasta más rápido."
 incertidumbre: "Tu médico confirma el resultado y busca la causa con otros exámenes. Mientras tanto, no empieces ni cambies medicamentos por tu cuenta."

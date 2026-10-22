@@ -109,7 +109,7 @@ Este es el set que el motor debe pasar antes de atender pacientes, y el document
 **Escalamiento máximo del informe:** 2. El médico revisa antes de publicar.
 
 - PhenoAge se calcula con advertencia: la anemia sube el RDW.
-- Reflejas activadas: T4 libre, T3 libre, anti-TPO, reticulocitos, IgA total, anti-tTG IgA, ácido metilmalónico.
+- Reflejas activadas: anti-TPO, reticulocitos, IgA total, anti-tTG IgA, ácido metilmalónico.
 
 ## Casos unitarios
 
@@ -245,12 +245,12 @@ Uno por fila. El identificador es la ficha más el número del caso dentro de el
 | COND-M2-TI-003#01 | Positivo | T4 libre 0,68, TSH 1,4 | Activa, escalamiento 2 |
 | COND-M2-TI-003#02 | Con corticoides | T4 libre 0,80, TSH 0,9, prednisona | Activa, coincidencia moderada |
 | COND-M2-TI-003#03 | Negativo | T4 libre 1,20, TSH 1,8 | No activa |
-| COND-M2-TI-004#01 | Leve | TSH 0,18, T4 libre y T3 libre normales | Activa, escalamiento 1 |
-| COND-M2-TI-004#02 | Suprimida | TSH 0,05, T4 libre y T3 libre normales | Activa, escalamiento 2 |
+| COND-M2-TI-004#01 | Leve | TSH 0,18, T4 libre y T3 total normales | Activa, escalamiento 1 |
+| COND-M2-TI-004#02 | Suprimida | TSH 0,05, T4 libre y T3 total normales | Activa, escalamiento 2 |
 | COND-M2-TI-004#03 | Biotina | TSH 0,08, biotina en el cuestionario | Bloqueada; pide repetir sin biotina |
 | COND-M2-TI-004#04 | Negativo · PDF ejemplos | TSH 2,10 | No activa |
 | COND-M2-TI-005#01 | Manifiesto | TSH \< 0,01, T4 libre 2,9 | Activa, escalamiento 2 |
-| COND-M2-TI-005#02 | T3-toxicosis | TSH 0,02, T4 libre 1,5 (normal), T3 libre 6,1 (alta) | Activa, variante T3-toxicosis |
+| COND-M2-TI-005#02 | T3-toxicosis | TSH 0,02, T4 libre 1,5 (normal), T3 total 245 (alta) | Activa, variante T3-toxicosis |
 | COND-M2-TI-005#03 | Con levotiroxina | TSH 0,03, T4 libre 2,1, toma levotiroxina | Bloqueada; vista médica: posible sobredosificación |
 | COND-M2-TI-005#04 | Negativo | TSH 1,8 | No activa |
 | COND-M2-TI-006#01 | Positivo | Embarazo de 10 semanas, TSH 4,8 | Activa, coincidencia alta, escalamiento 2 |

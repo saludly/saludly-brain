@@ -16,8 +16,8 @@ parameter_type: measured_analyte
 tipo_resultado: numérico
 unidad_canonica: ng/dL
 specimen: Suero
-nivel_catalogo: refleja
-panel: refleja
+nivel_catalogo: con patrón
+panel: estándar
 sexo: ambos
 alimenta:
 - COND-M2-TI-001
@@ -28,7 +28,7 @@ alimenta:
 - COND-M2-TI-006
 combine_with:
 - tsh
-- free_t3
+- total_t3
 - anti_tpo
 tier: 1
 status: COMPLETO
@@ -38,13 +38,15 @@ requires_professional_review: false
 source_version: 2026-09
 normalizado: '2026-10-06'
 fuentes_estado: 'según la ficha original: fuentes marcadas como verificadas por su autor, sin reverificar en la normalización'
-notas_decision: []
+notas_decision:
+- 'Desde el 22 de octubre de 2026 va en el panel estándar, para todas las personas, junto con la TSH (decisión de Carlos). Antes era refleja.'
 ---
 
 # T4 libre (Tiroxina libre)
 
 ## Notas de decisión de Saludly (6 de octubre de 2026)
 
+- Desde el 22 de octubre de 2026 va en el panel estándar, para todas las personas, junto con la TSH (decisión de Carlos). Antes era refleja.
 - Reglas que usan esta ficha: COND-M2-TI-001, COND-M2-TI-002, COND-M2-TI-003, COND-M2-TI-004, COND-M2-TI-005, COND-M2-TI-006. Si esta ficha y una regla dicen cosas distintas, manda la regla.
 
 ## A. Identificación
@@ -83,7 +85,7 @@ Relevantes: embarazo (los rangos de referencia cambian por trimestre), medicamen
 
 ## G. Relaciones con otros biomarcadores
 
-- `interpret_together_with`: TSH (obligatorio, siempre), T3 libre (si hay sospecha de hipertiroidismo), Anti-TPO (si hay sospecha autoinmune).
+- `interpret_together_with`: TSH (obligatorio, siempre), T3 total (si hay sospecha de hipertiroidismo), Anti-TPO (si hay sospecha autoinmune).
 - `cannot_conclude`: causa de la disfunción tiroidea (autoinmune vs otra) sin anticuerpos.
 
 ## H. Tendencias
@@ -100,7 +102,7 @@ Se solicita junto a TSH en el mismo contexto de cribado — no tiene indicación
 
 ### Pruebas complementarias posibles
 
-Anti-TPO si hay sospecha autoinmune; T3 libre si hay sospecha de hipertiroidismo con T4 libre normal (T3-toxicosis, poco frecuente pero descrita).
+Anti-TPO si hay sospecha autoinmune; T3 total si hay sospecha de hipertiroidismo con T4 libre normal (T3-toxicosis, poco frecuente pero descrita).
 
 ## K. Cuándo no interpretar y cuándo escalar
 
@@ -136,7 +138,7 @@ rag_tags:
 use_when:
   - "TSH está alterada y se requiere clasificar subclínico vs manifiesto"
 
-combine_with: [tsh, free_t3, anti_tpo]
+combine_with: [tsh, total_t3, anti_tpo]
 
 do_not_use_alone:
   - "clasificación de disfunción tiroidea sin TSH concurrente"
