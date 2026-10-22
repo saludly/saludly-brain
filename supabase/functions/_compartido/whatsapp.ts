@@ -11,17 +11,37 @@ async function enviar(cuerpo: Record<string, unknown>) {
   return r.ok;
 }
 
-/** Plantilla aprobada (la única forma de escribir primero); los parámetros llenan {{1}}, {{2}}… del cuerpo. */
-export const enviarPlantilla = (a: string, plantilla: string, parametros: string | string[]) =>
-  enviar({
+/**
+ * El mismo texto de cada plantilla (como se envió a Meta), para mandarlo como texto libre si la plantilla todavía
+ * no está aprobada: Meta lo entrega si el paciente escribió al número en las últimas 24 horas.
+ */
+const TEXTOS: Record<string, (p: string[]) => string> = {
+  registro_completo: ([n]) =>
+    `Hola, ${n} 👋 Tu registro en Saludly está completo. En tu app encuentras los datos para el pago de tu paquete. Cuando lo hagas, envíanos por este chat la captura del comprobante y te avisamos apenas lo confirmemos.`,
+  pago_confirmado: ([n]) => `¡Listo, ${n}! ✅ Confirmamos tu pago. Ya puedes agendar la visita de la enfermera desde tu app: https://app.saludly.online`,
+  cita_agendada: ([n, f]) =>
+    `Hola, ${n} 📅 Tu visita con la enfermera de Saludly quedó agendada para el ${f}. Recuerda estar en ayunas. Si necesitas cambiarla, escríbenos por aquí.`,
+  resultados_listos: ([n]) => `Hola, ${n} 👋 Tus resultados de Saludly ya están listos y un médico los revisó. Entra a tu app para ver tu informe y tu plan: https://app.saludly.online`,
+  enlace_medico: ([n, e]) =>
+    `Hola, ${n} 👩‍⚕️ Este es el resumen de tus resultados para tu médico. En tu próxima consulta, muéstrale este enlace: ${e}\nSolo lo puede abrir quien tenga el enlace; no lo compartas con nadie más.`,
+  visita_agendar: ([n]) =>
+    `¡Hola, ${n}! 👋 Ya tenemos tus respuestas en Saludly. Ahora agendemos la visita de la enfermera para tomar tu muestra: es de lunes a viernes, entre las 7 y las 11 de la mañana, y debes estar en ayunas. Responde este mensaje con el día que te queda mejor.`,
+};
+
+/**
+ * Plantilla aprobada (la única forma de escribir primero); los parámetros llenan {{1}}, {{2}}… del cuerpo.
+ * Si Meta la rechaza (por ejemplo, porque aún está en revisión), intenta el mismo texto como mensaje libre.
+ */
+export async function enviarPlantilla(a: string, plantilla: string, parametros: string | string[]) {
+  const p = [parametros].flat();
+  const ok = await enviar({
     to: a,
     type: "template",
-    template: {
-      name: plantilla,
-      language: { code: "es" },
-      components: [{ type: "body", parameters: [parametros].flat().map((text) => ({ type: "text", text })) }],
-    },
+    template: { name: plantilla, language: { code: "es" }, components: [{ type: "body", parameters: p.map((text) => ({ type: "text", text })) }] },
   });
+  if (ok || !TEXTOS[plantilla]) return ok;
+  return enviarTexto(a, TEXTOS[plantilla]!(p));
+}
 
 /** Texto libre: solo llega dentro de las 24 horas siguientes al último mensaje del paciente. */
 export const enviarTexto = (a: string, texto: string) => enviar({ to: a, type: "text", text: { body: texto } });

@@ -30,6 +30,13 @@ export function Pago() {
         .then(() => supabase.functions.invoke("avisar-registro"));
   }, [s, navigate]);
 
+  // Si el WhatsApp de registro no salió (por ejemplo, la plantilla aún no estaba aprobada), se reintenta al volver aquí.
+  // La función no lo repite si ya se envió.
+  const pagoPendiente = s.pago?.estado === "pendiente";
+  useEffect(() => {
+    if (pagoPendiente) void supabase.functions.invoke("avisar-registro");
+  }, [pagoPendiente]);
+
   useEffect(() => {
     void supabase
       .from("configuracion")
