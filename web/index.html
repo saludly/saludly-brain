@@ -29,6 +29,18 @@
 .sl-wa-burbuja{max-width:86%;padding:10px 12px 8px;border-radius:14px;font-size:13.5px;line-height:1.45;color:#111B21;background:#FFFFFF;box-shadow:0 1px 1px rgba(0,0,0,.08)}
 .sl-wa-burbuja small{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:2px}
 @media (max-width:900px){.sl-wa-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+/* Celular y tabletas: el desenfoque del vidrio es caro al hacer scroll; se cambia por blanco casi opaco */
+@media (max-width:900px),(hover:none){
+.sl-glass,.sl-ben-card,.sl-wa-item,.sl-camino-vidrio{-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
+.sl-ben-card,.sl-wa-item,.sl-camino-vidrio{background:rgba(255,255,255,.88) !important}
+.sl-glass{background:rgba(255,255,255,.82) !important}
+}
+@media (max-width:600px){
+.sl-memb-photo.sl-camino{padding:10px !important;border-radius:28px !important}
+.sl-camino-vidrio{padding:22px 20px !important;border-radius:22px !important}
+.sl-camino-vidrio li{gap:12px !important}
+.sl-camino-vidrio li > span{width:28px !important;height:28px !important;font-size:13px !important}
+}
 @media (prefers-reduced-motion:reduce){#sl-carga{display:none}.sl-logo,.sl-logo img{animation:none}}
 </style>
 </head>
@@ -232,9 +244,9 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <source src="./assets/portada.mp4" type="video/mp4">
 </video>
 </div>
-<div class="sl-glow" aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 64%; pointer-events: none; mix-blend-mode: multiply; overflow: hidden">
-<div class="sl-glow-warm" style="position: absolute; inset: 0; background: radial-gradient(42% 46% at 30% 56%, rgba(232,206,150,0.72) 0%, rgba(240,222,182,0.38) 45%, rgba(253,253,253,0) 100%), radial-gradient(30% 34% at 58% 30%, rgba(238,214,168,0.42) 0%, rgba(253,253,253,0) 100%)"></div>
-<div class="sl-glow-cool" style="position: absolute; inset: 0; opacity: 0; background: radial-gradient(42% 46% at 30% 56%, rgba(43,158,240,0.36) 0%, rgba(140,200,246,0.22) 45%, rgba(253,253,253,0) 100%), radial-gradient(30% 34% at 58% 30%, rgba(43,158,240,0.22) 0%, rgba(253,253,253,0) 100%)"></div>
+<div class="sl-glow" aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 100%; pointer-events: none; mix-blend-mode: multiply; overflow: hidden">
+<div class="sl-glow-warm" style="position: absolute; inset: 0; background: radial-gradient(55% 60% at 22% 58%, rgba(120,192,248,0.62) 0%, rgba(170,214,250,0.32) 45%, rgba(253,253,253,0) 100%), radial-gradient(45% 50% at 78% 28%, rgba(150,205,250,0.45) 0%, rgba(253,253,253,0) 100%)"></div>
+<div class="sl-glow-cool" style="position: absolute; inset: 0; opacity: 0; background: radial-gradient(55% 60% at 28% 52%, rgba(22,112,184,0.42) 0%, rgba(43,158,240,0.24) 45%, rgba(253,253,253,0) 100%), radial-gradient(45% 50% at 72% 32%, rgba(43,158,240,0.34) 0%, rgba(253,253,253,0) 100%)"></div>
 </div>
 <div class="sl-hero-copy" style="gap: 22px">
 <h1 class="sl-display" style="margin: 0; font-size: clamp(40px, 4.6vw, 72px); line-height: 1.0; font-weight: 600; letter-spacing: -0.03em; max-width: 11ch">Salud preventiva en tu bolsillo</h1>
@@ -535,8 +547,7 @@ a{color:#1670B8}a:hover{color:#0A2236}
 
 <section id="sl-edad" class="sl-sec" aria-labelledby="sl-edad-t" style="position: relative; overflow: hidden; background: #FAFBFD; padding: 120px 24px; border-top: 1px solid #EDF1F5">
 <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
-<div class="sl-glow-warm" style="position: absolute; inset: -6%; background: radial-gradient(38% 42% at 22% 30%, rgba(228,196,128,0.85) 0%, rgba(236,212,160,0.42) 45%, rgba(250,251,253,0) 100%), radial-gradient(34% 40% at 80% 72%, rgba(232,200,138,0.72) 0%, rgba(250,251,253,0) 100%), radial-gradient(28% 32% at 56% 18%, rgba(240,214,166,0.55) 0%, rgba(250,251,253,0) 100%)"></div>
-<div class="sl-glow-cool" style="position: absolute; inset: -6%; opacity: 0; background: radial-gradient(38% 42% at 22% 30%, rgba(43,158,240,0.5) 0%, rgba(120,190,245,0.28) 45%, rgba(250,251,253,0) 100%), radial-gradient(34% 40% at 80% 72%, rgba(43,158,240,0.45) 0%, rgba(250,251,253,0) 100%), radial-gradient(28% 32% at 56% 18%, rgba(43,158,240,0.32) 0%, rgba(250,251,253,0) 100%)"></div>
+<div style="position: absolute; inset: -6%; background: radial-gradient(38% 42% at 22% 30%, rgba(120,192,248,0.55) 0%, rgba(170,214,250,0.28) 45%, rgba(250,251,253,0) 100%), radial-gradient(34% 40% at 80% 72%, rgba(43,158,240,0.32) 0%, rgba(250,251,253,0) 100%), radial-gradient(28% 32% at 56% 18%, rgba(150,205,250,0.4) 0%, rgba(250,251,253,0) 100%)"></div>
 </div>
 <div style="position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 <h2 id="sl-edad-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 500; letter-spacing: -0.03em">Tu edad biológica.</h2>
@@ -726,8 +737,8 @@ a{color:#1670B8}a:hover{color:#0A2236}
 
 <section id="agendar" class="sl-sec" aria-labelledby="sl-memb-t" style="background: #FFFFFF; padding: 112px 24px; border-top: 1px solid #EDF1F5">
 <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 48px 80px; align-items: center">
-<div class="sl-memb-photo" style="position: relative; border-radius: 36px; overflow: hidden; padding: clamp(28px, 4vw, 44px); background: radial-gradient(50% 50% at 15% 10%, rgba(43,158,240,0.16), rgba(43,158,240,0) 70%), radial-gradient(45% 45% at 90% 90%, rgba(37,211,102,0.12), rgba(37,211,102,0) 70%), #F4F8FC">
-<div style="border-radius: 28px; padding: clamp(22px, 3vw, 32px); background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 18px 40px rgba(10,34,54,0.06)">
+<div class="sl-memb-photo sl-camino" style="position: relative; border-radius: 36px; overflow: hidden; padding: clamp(28px, 4vw, 44px); background: radial-gradient(50% 50% at 15% 10%, rgba(43,158,240,0.16), rgba(43,158,240,0) 70%), radial-gradient(45% 45% at 90% 90%, rgba(37,211,102,0.12), rgba(37,211,102,0) 70%), #F4F8FC">
+<div class="sl-camino-vidrio" style="border-radius: 28px; padding: clamp(22px, 3vw, 32px); background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 18px 40px rgba(10,34,54,0.06)">
 <img src="./assets/marca/saludly-azul.svg" alt="Saludly" style="height: 40px; width: auto">
 <p style="margin: 14px 0 22px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3E5266">Tu camino en Saludly</p>
 <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px">
@@ -877,7 +888,8 @@ class Component extends DCLogic {
   _startCycle() {
     clearInterval(this._cyc);
     if (this._reduce || (this.props.autoCycle === false)) return;
-    this._cyc = setInterval(() => this.setState({ cycle: (this.state.cycle + 1) % 5 }), 3200);
+    // Solo avanza con la sección en pantalla: cada avance vuelve a pintar toda la página.
+    this._cyc = setInterval(() => { if (this._cicloVisible) this.setState({ cycle: (this.state.cycle + 1) % 5 }); }, 3200);
   }
 
   _wire() {
@@ -898,6 +910,8 @@ class Component extends DCLogic {
         });
       });
       this._io.observe(sentinel);
+      const ciclo = document.getElementById('sl-ciclo');
+      if (ciclo) { this._cio2 = new IntersectionObserver((es) => { this._cicloVisible = es[0].isIntersecting; }); this._cio2.observe(ciclo); }
       this._so = new IntersectionObserver((entries) => {
         entries.forEach((en) => {
           if (en.isIntersecting && en.target.id !== this.state.section) this.setState({ section: en.target.id });
