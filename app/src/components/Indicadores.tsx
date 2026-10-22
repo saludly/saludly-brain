@@ -54,7 +54,8 @@ function TarjetaHallazgo({ h }: { h: Hallazgo }) {
 export function Indicadores() {
   const { informe } = useInforme();
   const p = informe.paciente;
-  const res = informe.resultados.filter((r) => r.estado !== "no_medido");
+  // "En rango" se cuenta sobre los del laboratorio: los calculados por Saludly no tienen rango.
+  const res = informe.resultados.filter((r) => r.estado !== "no_medido" && r.estado !== "calculado");
   const enRango = res.filter((r) => estadoDe(r.clase) === "en_rango").length;
   const eb = informe.edad_biologica;
 

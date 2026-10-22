@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import { Marca } from "@/components/Comunes";
+import C from "@/lib/contenido.json";
 
 /**
  * Lo que ve el médico del paciente al abrir app.saludly.online/m/<enlace> (sin cuenta: el enlace es la llave).
@@ -13,7 +14,15 @@ import { Marca } from "@/components/Comunes";
 type Vista = any;
 
 const FUERA = new Set(["bajo", "alto", "critico", "alterado", "limitrofe"]);
-const CLASE: Record<string, string> = { bajo: "Bajo", alto: "Alto", critico: "Crítico", alterado: "Alterado", limitrofe: "Limítrofe", en_rango: "En rango" };
+const CLASE: Record<string, string> = { bajo: "Bajo", alto: "Alto", critico: "Crítico", alterado: "Alterado", limitrofe: "Limítrofe", en_rango: "En rango", calculado: "Calculado" };
+
+/** Los biomarcadores que calcula Saludly (trazabilidad.calculados), como filas sin intervalo del laboratorio. */
+function filasCalculadas(calc: Record<string, number | null> | undefined): Vista[] {
+  const nombres = C.calculados as Record<string, { nombre: string; unidad: string }>;
+  return Object.entries(calc ?? {})
+    .filter(([k, x]) => x !== null && nombres[k])
+    .map(([k, x]) => ({ nombre: nombres[k]!.nombre, valor: String(x).replace(".", ","), unidad: nombres[k]!.unidad, intervalo: null, clase: "calculado", estado: "calculado", seccion: "CALCULADOS POR SALUDLY" }));
+}
 const COINCIDENCIA: Record<string, string> = { alta: "Coincidencia alta", moderada: "Coincidencia moderada", baja: "Coincidencia baja" };
 
 function fecha(iso?: string | null) {
@@ -114,7 +123,7 @@ export function VistaMedico() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/vista-medico?e=${encodeURIComponent(slug)}`)
       .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then(setV)
+      .then((d) => setV({ ...d, resultados: [...d.resultados, ...filasCalculadas(d.calculados)] }))
       .catch(() => setError(true));
   }, [slug]);
 

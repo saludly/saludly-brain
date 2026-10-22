@@ -63,6 +63,7 @@ Deno.serve(async (req) => {
     reflejas_pendientes: m.reflejas_pendientes ?? [],
     datos_faltantes: m.datos_faltantes ?? [],
     paciente_reporta: c.data ?? null,
+    calculados: inf.trazabilidad?.calculados ?? {},
     resultados: (inf.resultados ?? []).map((r: J) => ({
       nombre: r.nombre,
       valor: r.valor_original ?? r.valor,

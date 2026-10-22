@@ -7,6 +7,7 @@ import { useInforme } from "@/lib/contexto";
 export function Cuerpo() {
   const { informe } = useInforme();
   const res = informe.resultados.filter((r) => r.estado !== "no_medido");
+  const calculados = res.filter((r) => r.estado === "calculado").length;
   const cuenta = (e: string) => res.filter((r) => estadoDe(r.clase) === e).length;
   const enRango = cuenta("en_rango");
   const fuera = cuenta("fuera");
@@ -28,7 +29,7 @@ export function Cuerpo() {
             medido.
           </h1>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted">
-            {res.length} resultados analizados. Cada uno se compara con el rango de referencia de tu laboratorio.
+            {res.length} biomarcadores analizados: {res.length - calculados} de tu laboratorio, cada uno frente a su rango de referencia, y {calculados} calculados por Saludly.
           </p>
           <div className="mt-8 max-w-sm rounded-3xl border border-rule bg-background px-6 py-5 shadow-[0_16px_40px_-32px_rgba(20,30,60,0.55)]">
             <dl className="flex flex-wrap items-start gap-x-8 gap-y-4">

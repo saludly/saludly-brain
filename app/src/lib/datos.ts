@@ -4,6 +4,7 @@
  * cuando exista la cuenta del paciente, el informe vendrá de Supabase con el mismo contrato.
  */
 import type { Clase, Escalamiento, Informe, Resultado } from "./informe";
+import C from "./contenido.json";
 
 const EJEMPLOS = import.meta.glob<Informe>("../../../codigo/pipeline/ejemplos/INF-*.json", { eager: true, import: "default" });
 
@@ -14,6 +15,35 @@ export const CASOS: { id: string; nombre: string }[] = [
   { id: "LCD-2026-100126", nombre: "Mujer con hallazgos digestivos" },
 ];
 
+export const SECCION_CALCULADOS = "CALCULADOS POR SALUDLY";
+
+/**
+ * Agrega a los resultados los biomarcadores que calcula Saludly (trazabilidad.calculados del informe), con su nombre
+ * y unidad del Knowledge Base. No traen intervalo del laboratorio ni se clasifican en rango o fuera: se muestran como
+ * "Calculado" (los umbrales los aplica el motor dentro de cada condición). Solo los del panel "calculado" con valor.
+ */
+export function conCalculados(inf: Informe): Informe {
+  const valores = inf.trazabilidad?.calculados ?? {};
+  const nombres = C.calculados as Record<string, { nombre: string; unidad: string }>;
+  const ya = new Set(inf.resultados.map((r) => r.biomarker_id));
+  const extra: Resultado[] = Object.entries(valores)
+    .filter(([k, v]) => v !== null && nombres[k] && !ya.has(k))
+    .map(([k, v]) => ({
+      biomarker_id: k,
+      nombre: nombres[k]!.nombre,
+      valor: v,
+      valor_original: String(v).replace(".", ","),
+      unidad: nombres[k]!.unidad || null,
+      intervalo: null,
+      clase: "calculado",
+      estado: "calculado",
+      motivo: null,
+      seccion: SECCION_CALCULADOS,
+      refleja: false,
+    }));
+  return extra.length ? { ...inf, resultados: [...inf.resultados, ...extra] } : inf;
+}
+
 export function informeDeEjemplo(orden: string): Informe {
   const par = Object.entries(EJEMPLOS).find(([ruta]) => ruta.includes(orden)) ?? Object.entries(EJEMPLOS)[0];
   if (!par) throw new Error("No hay informes de ejemplo en codigo/pipeline/ejemplos");
@@ -21,10 +51,11 @@ export function informeDeEjemplo(orden: string): Informe {
 }
 
 /** Estado visual de un resultado. Saludly no usa "óptimo" ni rangos sin fuente: se compara con el intervalo del laboratorio. */
-export type Estado = "en_rango" | "fuera" | "pronto" | "sin_lectura";
+export type Estado = "en_rango" | "fuera" | "pronto" | "sin_lectura" | "calculado";
 
 export function estadoDe(clase: Clase): Estado {
   if (clase === "en_rango") return "en_rango";
+  if (clase === "calculado") return "calculado";
   if (clase === "critico") return "pronto";
   if (clase === "bajo" || clase === "alto" || clase === "limitrofe" || clase === "alterado") return "fuera";
   return "sin_lectura";
@@ -35,6 +66,7 @@ export const ETIQUETA: Record<Estado, string> = {
   fuera: "Fuera de rango",
   pronto: "Atención pronta",
   sin_lectura: "Sin lectura",
+  calculado: "Calculado",
 };
 
 export const PUNTO: Record<Estado, string> = {
@@ -42,6 +74,7 @@ export const PUNTO: Record<Estado, string> = {
   fuera: "bg-attention",
   pronto: "bg-critical",
   sin_lectura: "bg-ink-faint",
+  calculado: "bg-primary/50",
 };
 
 export const TEXTO: Record<Estado, string> = {
@@ -49,6 +82,7 @@ export const TEXTO: Record<Estado, string> = {
   fuera: "text-attention",
   pronto: "text-critical",
   sin_lectura: "text-ink-faint",
+  calculado: "text-ink-muted",
 };
 
 export const SUAVE: Record<Estado, string> = {
@@ -56,6 +90,7 @@ export const SUAVE: Record<Estado, string> = {
   fuera: "bg-attention-soft text-attention",
   pronto: "bg-critical-soft text-critical",
   sin_lectura: "bg-surface text-ink-faint",
+  calculado: "bg-surface text-ink-muted",
 };
 
 /** Escalamiento del hallazgo → estado de color (0 y 1 son cosas para cuidar; 2 y 3 piden consulta). */
@@ -118,7 +153,7 @@ export const SISTEMAS: { nombre: string; secciones: RegExp; top: string; left: s
   { nombre: "Sangre", secciones: /HEMATOLOGÍA|HIERRO|INMUNOLOGÍA|COAGULACIÓN/, top: "64%", left: "48%", lado: "izq" },
 ];
 
-const ORDEN: Record<Estado, number> = { sin_lectura: 0, en_rango: 1, fuera: 2, pronto: 3 };
+const ORDEN: Record<Estado, number> = { sin_lectura: 0, calculado: 0, en_rango: 1, fuera: 2, pronto: 3 };
 
 export function estadoDeSistema(resultados: Resultado[], secciones: RegExp): Estado | null {
   const de = resultados.filter((r) => r.seccion && secciones.test(r.seccion)).map((r) => estadoDe(r.clase));

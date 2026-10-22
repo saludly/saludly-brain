@@ -18,7 +18,8 @@ export function Bienvenida() {
   if (informe.estado === "retenido_hasta_llamada") return <Retenido />;
 
   const p = informe.paciente;
-  const res = informe.resultados.filter((r) => r.estado !== "no_medido");
+  // Solo los del laboratorio: los calculados por Saludly no tienen rango, así que no cuentan en "en rango".
+  const res = informe.resultados.filter((r) => r.estado !== "no_medido" && r.estado !== "calculado");
   const enRango = res.filter((r) => estadoDe(r.clase) === "en_rango").length;
   const eb = informe.edad_biologica;
   const pasos = PASOS.filter((_, i) => i !== 1 || eb); // sin edad biológica, se salta ese paso

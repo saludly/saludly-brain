@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
-import { CASOS, informeDeEjemplo } from "./datos";
+import { CASOS, conCalculados, informeDeEjemplo } from "./datos";
 import type { Informe } from "./informe";
 import { useSesion } from "./sesion";
 
@@ -43,7 +43,7 @@ export function InformeProvider({ children }: { children: ReactNode }) {
     : s.informe
       ? [s.informe, "propio"]
       : [informeDeEjemplo(caso), "demo"];
-  return <Ctx.Provider value={{ informe, origen, caso, cambiarCaso, revisar }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ informe: conCalculados(informe), origen, caso, cambiarCaso, revisar }}>{children}</Ctx.Provider>;
 }
 
 export function useInforme() {

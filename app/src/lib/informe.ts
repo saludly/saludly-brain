@@ -7,7 +7,8 @@
  */
 
 /** Clase de un resultado. "critico" solo con bandera del laboratorio o umbral de guía; nunca "óptimo". */
-export type Clase = "en_rango" | "bajo" | "alto" | "limitrofe" | "critico" | "alterado" | "no_interpretable" | null;
+/** "calculado": lo calcula Saludly con los otros resultados (TyG, HOMA-IR…); no trae intervalo del laboratorio. */
+export type Clase = "en_rango" | "bajo" | "alto" | "limitrofe" | "critico" | "alterado" | "no_interpretable" | "calculado" | null;
 
 /** 0 nada · 1 próximo control (3 meses) · 2 consulta en 2 a 4 semanas · 3 llamada del equipo médico el mismo día */
 export type Escalamiento = 0 | 1 | 2 | 3;
@@ -56,7 +57,7 @@ export interface Resultado {
   unidad: string | null;
   intervalo: string | null;       // texto del laboratorio, por ejemplo "13,5 – 17,5"
   clase: Clase;
-  estado: string;                 // medido | menor_que_limite | mayor_que_limite | cualitativo | invalido | no_medido
+  estado: string;                 // medido | menor_que_limite | mayor_que_limite | cualitativo | invalido | no_medido | calculado
   motivo: string | null;          // por qué no se interpreta
   seccion: string | null;
   refleja: boolean;

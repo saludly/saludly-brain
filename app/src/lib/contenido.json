@@ -145,6 +145,76 @@
    }
   ]
  },
+ "calculados": {
+  "ag_ratio": {
+   "nombre": "Relación Albúmina/Globulina",
+   "unidad": ""
+  },
+  "apob_apoa1_ratio": {
+   "nombre": "Relación ApoB/ApoA1",
+   "unidad": ""
+  },
+  "bun_creatinine_ratio": {
+   "nombre": "Relación BUN/Creatinina",
+   "unidad": ""
+  },
+  "egfr": {
+   "nombre": "eGFR",
+   "unidad": "mL/min/1,73 m²"
+  },
+  "globulin": {
+   "nombre": "Globulinas",
+   "unidad": "g/dL"
+  },
+  "homa_ir": {
+   "nombre": "HOMA-IR",
+   "unidad": ""
+  },
+  "inr": {
+   "nombre": "INR",
+   "unidad": ""
+  },
+  "mentzer_index": {
+   "nombre": "Índice de Mentzer",
+   "unidad": ""
+  },
+  "nlr": {
+   "nombre": "Relación neutrófilos/linfocitos",
+   "unidad": ""
+  },
+  "non_hdl_c": {
+   "nombre": "Colesterol no-HDL",
+   "unidad": "mg/dL"
+  },
+  "phenoage": {
+   "nombre": "Edad biológica (PhenoAge)",
+   "unidad": "años"
+  },
+  "remnant_cholesterol": {
+   "nombre": "Colesterol remanente",
+   "unidad": "mg/dL"
+  },
+  "tc_hdl_ratio": {
+   "nombre": "Relación colesterol total/HDL",
+   "unidad": ""
+  },
+  "testosterone_free": {
+   "nombre": "Testosterona Libre",
+   "unidad": "pg/mL"
+  },
+  "tg_hdl_ratio": {
+   "nombre": "Relación triglicéridos/HDL",
+   "unidad": ""
+  },
+  "transferrin_saturation": {
+   "nombre": "Saturación de transferrina",
+   "unidad": "%"
+  },
+  "tyg_index": {
+   "nombre": "Índice triglicéridos-glucosa (TyG)",
+   "unidad": ""
+  }
+ },
  "actividad": {
   "texto": "¿Cuánto te mueves en una semana normal?",
   "opciones": [

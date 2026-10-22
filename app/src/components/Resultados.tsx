@@ -85,6 +85,7 @@ const GUIA = {
   fuera: "Tu resultado está fuera del rango de referencia. Un solo examen no basta para sacar conclusiones: revisa en tu informe qué puede significar y qué puedes hacer.",
   pronto: "El laboratorio marcó este resultado para revisarlo pronto. Nuestro equipo médico se comunica contigo.",
   sin_lectura: "Este resultado no se pudo interpretar con seguridad. Tu médico lo revisa.",
+  calculado: "Saludly lo calcula con tus otros resultados. No tiene un rango del laboratorio: lo leemos junto con el resto de tu informe y tu médico lo interpreta contigo.",
 };
 
 export function DetalleResultado({ r, onClose }: { r: Resultado | null; onClose: () => void }) {
