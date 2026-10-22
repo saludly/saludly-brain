@@ -776,7 +776,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this._tries = 0;
     this._labels = {
-      'sl-hero': 'Chequeo preventivo en casa',
+      'sl-hero': 'Inicio',
       'sl-panel': '100+ biomarcadores',
       'sl-como': 'Cómo funciona',
       'sl-medimos': 'Qué medimos',
@@ -977,7 +977,7 @@ class Component extends DCLogic {
     wv.wStatusBg = nOn === 4 ? '#E3F7EE' : '#EEF2F6';
     wv.wStatusInk = nOn === 4 ? '#0B6B4A' : '#52667A';
     const labels = this._labels || {};
-    const label = (!s.scrolled && s.narrow) ? 'Saludly' : (labels[s.section] || 'Saludly');
+    const label = (!s.scrolled && s.narrow) ? 'Inicio' : (labels[s.section] || 'Inicio');
 
     const ok = { status: 'En rango', pillBg: '#C7F0DF', pillInk: '#0B4A33' };
     const rev = { status: 'Revisar', pillBg: '#FFDCCD', pillInk: '#7A2A0C' };
