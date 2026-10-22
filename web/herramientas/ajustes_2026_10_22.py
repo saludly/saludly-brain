@@ -12,6 +12,8 @@ Quinta ronda (22 de octubre de 2026): modo oscuro, portada sin botón de play, s
    fondo del <video> (sin atributo poster), sin el botón de play de iOS (modo de bajo consumo) y, si el navegador
    bloquea la reproducción, arranca al primer toque. Videos a 1280×960: de 9 MB a menos de 2 MB.
 3. Sin backdrop-filter en ninguna pantalla (antes solo en el celular): el vidrio pasa a blanco casi opaco.
+4. Las animaciones y el video corren aunque el teléfono pida reducir movimiento (lo activa el ahorro de batería
+   en muchos Android), y el video que toca (claro u oscuro) lo confirma el JS.
 
 Uso: python web/herramientas/ajustes_2026_10_22.py   (una sola vez, sobre la versión del commit c2c5e31)
 Los videos nuevos deben estar en assets/ (se generan con ffmpeg, ver VIDEOS al final).
@@ -221,6 +223,13 @@ def ajustar_index(t):
           ['touchend', 'click', 'keydown'].forEach((e) => document.addEventListener(e, otraVez, { passive: true }));
         });
       }""")
+    # El video que toca se elige con JS: navegadores Android viejos ignoran media en <source> y tomarían el oscuro
+    viejo = "      v.muted = true;"
+    assert t.count(viejo) == 1
+    t = t.replace(viejo, viejo + """
+      const quiero = matchMedia('""" + OSCURO + """').matches ? 'portada-oscura-1280.mp4'
+        : v.canPlayType('video/webm; codecs="vp9"') ? 'portada-1280.webm' : 'portada-1280.mp4';
+      if (!v.currentSrc.endsWith(quiero)) { v.src = './assets/' + quiero; v.load(); }""")
     # Sin desenfoque en ninguna pantalla: el vidrio pasa a blanco casi opaco (antes solo en el celular)
     viejo = "/* Celular y tabletas: el desenfoque del vidrio es caro al hacer scroll; se cambia por blanco casi opaco */\n@media (max-width:900px),(hover:none){"
     assert viejo in t
@@ -251,6 +260,10 @@ for archivo in ARCHIVOS[1:] + ARCHIVOS[:1]:
     t = open(ruta, encoding="utf-8").read()
     if archivo == "index.html":
         t = ajustar_index(t)
+    # Animaciones siempre: muchos Android activan "reducir movimiento" con el ahorro de batería y la página
+    # pausaba el video y congelaba las animaciones (decisión de Carlos del 22 oct 2026)
+    t = re.sub(r"window\.matchMedia\('\(prefers-reduced-motion: reduce\)'\)\.matches", "false", t)
+    t = re.sub(r"@media \(prefers-reduced-motion: ?reduce\)", "@media not all", t)
     VARS.clear()
     ATRIBUTOS.clear()
     t, mapa_js = procesar(t)

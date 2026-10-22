@@ -39,7 +39,7 @@ body{margin:0}
 @keyframes p2-blink{50%{opacity:0}}
 .p2-live{animation:p2-live 1.2s ease-in-out infinite}
 @keyframes p2-live{50%{opacity:.35}}
-@media (prefers-reduced-motion: reduce){.p2-flow,.p2-spin,.p2-pulse,.p2-dot,.p2-caret,.p2-live{animation:none}}
+@media not all{.p2-flow,.p2-spin,.p2-pulse,.p2-dot,.p2-caret,.p2-live{animation:none}}
 </style>
 </helmet>
 <div style="width: 800px; height: 800px; position: relative; overflow: hidden; background: var(--o-fondo-ffffff, #FFFFFF); font-family: Manrope, 'Helvetica Neue', Helvetica, sans-serif; color: var(--o-texto-0f1b2a, #0F1B2A)">
@@ -168,7 +168,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     var reduce = false;
-    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    try { reduce = false; } catch (e) {}
     this.reduce = reduce;
     if (reduce) { this.forceUpdate(); return; }
     var self = this;

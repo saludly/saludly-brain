@@ -91,7 +91,7 @@ window.slC=(function(){var m={'#0A0F14':'#E7EBEF','#0A2236':'#D6E3EE','#0B4A33':
 .sl-camino-vidrio li{gap:12px !important}
 .sl-camino-vidrio li > span{width:28px !important;height:28px !important;font-size:13px !important}
 }
-@media (prefers-reduced-motion:reduce){#sl-carga{display:none}.sl-logo,.sl-logo img{animation:none}}
+@media not all{#sl-carga{display:none}.sl-logo,.sl-logo img{animation:none}}
 </style>
 </head>
 <body>
@@ -229,7 +229,7 @@ a{color:var(--o-texto-1670b8, #1670B8)}a:hover{color:var(--o-texto-0a2236, #0A22
 .sl-root h1{font-size:36px !important}
 .sl-root h2{font-size:32px !important}
 }
-@media (prefers-reduced-motion:reduce){
+@media not all{
 .sl-island,.sl-layer,.sl-tile,.sl-ben-card{transition:none !important}
 .sl-parts i,.sl-dz-track,.dz-rise,.dz-p1,.dz-g1,.dz-p2,.dz-g2,.dz-hold,.dz-p3,.dz-g3,.dz-ring,.sl-ticker-track,.sl-pulse,.sl-progress,.sl-marquee-track,.sl-glow-warm,.sl-glow-cool{animation:none}
 .sl-marquee{overflow-x:auto}
@@ -865,7 +865,7 @@ class Component extends DCLogic {
       this._onMq();
       if (this._mq.addEventListener) this._mq.addEventListener('change', this._onMq);
     } catch (e) {}
-    try { this._reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this._reduce = false; }
+    try { this._reduce = false; } catch (e) { this._reduce = false; }
     this._startCycle();
     this._wire();
     this._fitSteps();
@@ -978,6 +978,9 @@ class Component extends DCLogic {
     const v = document.getElementById('sl-video');
     if (v) {
       v.muted = true;
+      const quiero = matchMedia('(prefers-color-scheme: dark) and (hover: none) and (pointer: coarse)').matches ? 'portada-oscura-1280.mp4'
+        : v.canPlayType('video/webm; codecs="vp9"') ? 'portada-1280.webm' : 'portada-1280.mp4';
+      if (!v.currentSrc.endsWith(quiero)) { v.src = './assets/' + quiero; v.load(); }
       v.loop = this.props.loopVideo ?? true;
       if (this._reduce) { v.pause(); }
       else {

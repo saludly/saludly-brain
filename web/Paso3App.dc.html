@@ -24,7 +24,7 @@ window.slC=(function(){var m={'#10161E':'#E2E6EB','#2B9EF0':'#4AACF2','#C3CBD5':
 body{margin:0}
 .p3-ripple{animation:p3-ripple .7s ease-out infinite}
 @keyframes p3-ripple{0%{transform:scale(.6);opacity:.45}100%{transform:scale(2.4);opacity:0}}
-@media (prefers-reduced-motion: reduce){.p3-ripple{animation:none}}
+@media not all{.p3-ripple{animation:none}}
 </style>
 </helmet>
 <div style="width: 800px; height: 800px; position: relative; overflow: hidden; background: var(--o-fondo-ffffff, #FFFFFF); font-family: Manrope, 'Helvetica Neue', Helvetica, sans-serif; color: var(--o-texto-10161e, #10161E)">
@@ -151,7 +151,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     var reduce = false;
-    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    try { reduce = false; } catch (e) {}
     this.reduce = reduce;
     if (reduce) { this.forceUpdate(); return; }
     var self = this;
