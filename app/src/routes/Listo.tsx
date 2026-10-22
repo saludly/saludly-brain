@@ -65,9 +65,14 @@ export function Listo() {
               Mi enfermera está aquí
             </button>
           )}
-          <button type="button" onClick={() => void s.salir()} className="mt-10 text-sm text-ink-faint underline-offset-4 hover:underline">
-            Cerrar sesión
-          </button>
+          <div className="mt-10 flex gap-6 text-sm">
+            <button type="button" onClick={() => void navigate({ to: "/perfil" })} className="text-optimal underline-offset-4 hover:underline">
+              Mi perfil
+            </button>
+            <button type="button" onClick={() => void s.salir()} className="text-ink-faint underline-offset-4 hover:underline">
+              Cerrar sesión
+            </button>
+          </div>
         </section>
       </div>
     </main>

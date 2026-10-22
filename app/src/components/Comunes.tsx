@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { CASOS } from "@/lib/datos";
 import { useInforme } from "@/lib/contexto";
+import { useSesion } from "@/lib/sesion";
 
 export function Marca({ derecha }: { derecha?: string }) {
   return (
@@ -14,20 +15,25 @@ export function Marca({ derecha }: { derecha?: string }) {
 /** Rutas que muestran un informe. Por ahora usan los informes de ejemplo. */
 export const RUTAS_INFORME = ["/recorrido", "/panel", "/plan"];
 
-const ITEMS: { label: string; to: "/panel" | "/plan"; hash?: string }[] = [
+const ITEMS: { label: string; to: "/panel" | "/plan" | "/perfil"; hash?: string }[] = [
   { label: "INICIO", to: "/panel" },
   { label: "MI PLAN", to: "/plan" },
   { label: "RESULTADOS", to: "/panel", hash: "resultados" },
+  { label: "PERFIL", to: "/perfil" },
 ];
 
 export function NavFlotante() {
   const { pathname, hash } = useRouterState({ select: (s) => s.location });
-  if (!RUTAS_INFORME.includes(pathname) || pathname === "/recorrido") return null; // el recorrido y el registro no muestran el menú
-  const activo = ITEMS.findIndex((i) => (i.hash ? pathname === "/panel" && hash === i.hash : i.to === pathname && !hash));
+  const s = useSesion();
+  // El menú va en el informe (no en el recorrido) y en el perfil cuando ya hay informe. PERFIL solo con sesión (no en la demo).
+  const enPerfil = pathname === "/perfil" && !!s.informe;
+  if ((!RUTAS_INFORME.includes(pathname) || pathname === "/recorrido") && !enPerfil) return null;
+  const items = ITEMS.filter((i) => i.to !== "/perfil" || !!s.sesion);
+  const activo = items.findIndex((i) => (i.hash ? pathname === "/panel" && hash === i.hash : i.to === pathname && !hash));
   return (
     <div className="pointer-events-none sticky top-3 z-40 flex justify-center px-3 sm:top-4 sm:px-4">
       <nav className="pointer-events-auto flex max-w-full items-center gap-0.5 overflow-x-auto rounded-full bg-ink/95 p-1 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur sm:gap-1 sm:p-1.5">
-        {ITEMS.map((item, idx) => (
+        {items.map((item, idx) => (
           <Link
             key={item.label}
             to={item.to}

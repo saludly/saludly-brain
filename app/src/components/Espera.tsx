@@ -1,4 +1,5 @@
-import { Phone } from "lucide-react";
+import { Phone, UserRound } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { GROSOR_Y, TRAZO_Y } from "@/lib/trazo_y";
 
 /**
@@ -7,7 +8,10 @@ import { GROSOR_Y, TRAZO_Y } from "@/lib/trazo_y";
  */
 export function Espera() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background px-6">
+    <main className="relative flex min-h-screen flex-col items-center justify-center bg-background px-6">
+      <Link to="/perfil" aria-label="Mi perfil" className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-rule text-ink-muted">
+        <UserRound className="h-5 w-5" strokeWidth={1.6} />
+      </Link>
       <svg viewBox="0 0 981.45 1248.02" className="h-40 w-auto" role="img" aria-label="Saludly está esperando tus resultados">
         <path d={TRAZO_Y} pathLength={1} className="trazo-espera" fill="none" stroke="#2793ff" strokeWidth={GROSOR_Y} strokeLinecap="round" strokeLinejoin="round" />
       </svg>
