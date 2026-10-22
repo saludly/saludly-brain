@@ -123,6 +123,8 @@ ATRIBUTOS = {}  # (atributo, valor, es_texto) -> color oscuro
 def zonas_fijas(t):
     """Rangos que se quedan como están: menú flotante, luces de la portada y pie de página."""
     marcas = [('<div style="position: sticky; top: 0; height: 0; z-index: 50">', '<section id="sl-hero"'),
+              # Ficha del paso 1: el tubo se distingue mejor sobre blanco (Carlos, 22 oct 2026); su texto sí cambia
+              ('<div id="sl-step-1"', '<div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">'),
               ('<div class="sl-glow"', '<div class="sl-hero-copy"'),
               ("<footer", "</footer>")]
     r = []
@@ -179,7 +181,7 @@ def bloque_oscuro(extra=""):
     vars_ = "".join(f"{k}:{v};" for k, v in sorted(VARS.items()))
     attrs = []
     for (attr, valor, es_texto), nuevo in sorted(ATRIBUTOS.items()):
-        sel = f'[{attr}="{valor}"]'
+        sel = f'[{attr}="{valor}"]:not(#sl-step-1 *)'
         attrs.append(f"{'text' + sel + ',tspan' + sel if es_texto else sel + ':not(text):not(tspan)'}{{{attr}:{nuevo}}}")
     return ("<style>/* Modo oscuro (generado por herramientas/ajustes_2026_10_22.py) */\n"
             "@media " + OSCURO + "{\n:root{color-scheme:dark;" + vars_ + "}\n" + "\n".join(attrs) + extra + "\n}\n</style>\n")
@@ -264,6 +266,10 @@ for archivo in ARCHIVOS[1:] + ARCHIVOS[:1]:
     # pausaba el video y congelaba las animaciones (decisión de Carlos del 22 oct 2026)
     t = re.sub(r"window\.matchMedia\('\(prefers-reduced-motion: reduce\)'\)\.matches", "false", t)
     t = re.sub(r"@media \(prefers-reduced-motion: ?reduce\)", "@media not all", t)
+    if archivo == "Paso1Tubo.dc.html":  # va en la ficha del paso 1, que se queda clara
+        open(ruta, "w", encoding="utf-8", newline="").write(t)
+        print(f"{archivo}: sin modo oscuro (ficha clara)")
+        continue
     VARS.clear()
     ATRIBUTOS.clear()
     t, mapa_js = procesar(t)
