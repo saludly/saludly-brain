@@ -3,14 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FDFDFD" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta name="description" content="Saludly: chequeo preventivo a domicilio en Bogotá con más de 100 biomarcadores, un informe claro y acompañamiento por WhatsApp.">
 <title>Saludly · Salud preventiva en tu bolsillo</title>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
+<style>/* Modo oscuro (generado por herramientas/ajustes_2026_10_22.py) */
+@media (prefers-color-scheme:dark){
+:root{color-scheme:dark;--o-borde-000000:#F2F2F2;--o-borde-11161d:#E3E6EB;--o-borde-2b9ef0:#4AACF2;--o-borde-b9c6d3:#3A4754;--o-borde-bfddf6:#163A58;--o-borde-cbd5df:#303B46;--o-borde-cfe3f7:#15304B;--o-borde-dce3ea:#263039;--o-borde-e1e8ef:#212C37;--o-borde-e3e8ee:#232B34;--o-borde-e6ebf0:#212932;--o-borde-edf1f5:#1C252D;--o-borde-eef1f4:#1E252B;--o-borde-f0d5c8:#4E2D1D;--o-borde-f3e0d2:#472D1A;--o-borde-ffffff-07:rgba(26,26,26,0.7);--o-borde-ffffff-085:rgba(26,26,26,0.85);--o-borde-ffffff-09:rgba(26,26,26,0.9);--o-borde-ffffff-85:rgba(26,26,26,.85);--o-fondo-000000-006:rgba(0,0,0,0.06);--o-fondo-075e54:#075E54;--o-fondo-0a0f14:#0A0F14;--o-fondo-0a2236:#0A2236;--o-fondo-0f1b2a-0:rgba(15,27,42,0);--o-fondo-0f1b2a-016:rgba(15,27,42,0.16);--o-fondo-1576c2:#1576C2;--o-fondo-1670b8:#1670B8;--o-fondo-1670b8-008:rgba(22,112,184,0.08);--o-fondo-1a2e44:#1A2E44;--o-fondo-1c232d:#1C232D;--o-fondo-1dc48a:#1DC48A;--o-fondo-25d366-0:rgba(37,211,102,0);--o-fondo-25d366-010:rgba(37,211,102,0.10);--o-fondo-25d366-012:rgba(37,211,102,0.12);--o-fondo-2b9ef0:#2B9EF0;--o-fondo-2b9ef0-0:rgba(43,158,240,0);--o-fondo-2b9ef0-010:rgba(43,158,240,0.10);--o-fondo-2b9ef0-012:rgba(43,158,240,0.12);--o-fondo-2b9ef0-016:rgba(43,158,240,0.16);--o-fondo-2b9ef0-032:rgba(43,158,240,0.32);--o-fondo-2b9ef0-06:rgba(43,158,240,0.6);--o-fondo-56b2f3:#56B2F3;--o-fondo-5b6776:#5B6776;--o-fondo-6c7fe0:#6C7FE0;--o-fondo-78c0f8-055:rgba(120,192,248,0.55);--o-fondo-8a96a3:#8A96A3;--o-fondo-96cdfa-04:rgba(5,60,105,0.4);--o-fondo-9fb0c0:#3F5060;--o-fondo-aad6fa-028:rgba(5,49,85,0.28);--o-fondo-b9c6d3:#2C3946;--o-fondo-cfe6f8:#061B2B;--o-fondo-d3e3f3:#0B1928;--o-fondo-dde5ec:#11181F;--o-fondo-e3f7ee:#071911;--o-fondo-e6ebf0:#0D1216;--o-fondo-e7f2fd:#020C16;--o-fondo-e8355b:#E8355B;--o-fondo-e8f8f1:#06150E;--o-fondo-e9edf2:#0C0F14;--o-fondo-eceff2:#0C0E11;--o-fondo-eef2f6:#080C0F;--o-fondo-eef4fa:#050A0F;--o-fondo-eef4fa-0:rgba(5,10,15,0);--o-fondo-efe7de:#1E160E;--o-fondo-f1f4f7:#070A0D;--o-fondo-f1f5f9-072:rgba(5,9,13,0.72);--o-fondo-f2f5f8:#06090C;--o-fondo-f2f6fa:#05080C;--o-fondo-f3f5f8:#06080B;--o-fondo-f4f7fa:#05070A;--o-fondo-f4f8fc:#03060A;--o-fondo-f5f7f9:#050709;--o-fondo-f7f9fb:#040507;--o-fondo-f7fafd:#020407;--o-fondo-fafbfd:#020304;--o-fondo-fafbfd-0:rgba(2,3,4,0);--o-fondo-fbede6:#170A04;--o-fondo-fcf2ea:#130A03;--o-fondo-fdfdfd:#020202;--o-fondo-ff6b35:#FF6B35;--o-fondo-ff6b35-0:rgba(255,107,53,0);--o-fondo-ff6b35-055:rgba(255,107,53,0.55);--o-fondo-ff6b8a:#FF6B8A;--o-fondo-ffe6da:#210B00;--o-fondo-ffffff:#131313;--o-fondo-ffffff-0:rgba(19,19,19,0);--o-fondo-ffffff-012:rgba(19,19,19,0.12);--o-fondo-ffffff-022:rgba(19,19,19,0.22);--o-fondo-ffffff-025:rgba(19,19,19,0.25);--o-fondo-ffffff-038:rgba(19,19,19,0.38);--o-fondo-ffffff-055:rgba(19,19,19,0.55);--o-fondo-ffffff-062:rgba(19,19,19,0.62);--o-fondo-ffffff-6:rgba(19,19,19,.6);--o-fondo-ffffff-82:rgba(19,19,19,.82);--o-fondo-ffffff-88:rgba(19,19,19,.88);--o-texto-000000:#F2F2F2;--o-texto-04192b:#DAE7F3;--o-texto-0a0f14:#E7EBEF;--o-texto-0a2236:#D6E3EE;--o-texto-0b6b4a:#C0E9DB;--o-texto-0e5a99:#4DA6EF;--o-texto-0f1b2a:#DCE3EC;--o-texto-10161e:#E2E6EB;--o-texto-111111:#EAEAEA;--o-texto-111b21:#E1E7EB;--o-texto-128c7e:#53E9D8;--o-texto-1576c2:#50A8EC;--o-texto-1670b8:#52A7EA;--o-texto-2f4357:#C8D1D9;--o-texto-3e4955:#C9CDD2;--o-texto-3e5266:#C1C9D1;--o-texto-4e5966:#C1C5CA;--o-texto-52667a:#B8BFC7;--o-texto-5b6776:#B9BDC3;--o-texto-667781:#B4BABD;--o-texto-6b7785:#B2B6BB;--o-texto-6b7a89:#B0B5BB;--o-texto-8794a3:#A1A7AF;--o-texto-9a3a12:#EB7F51;--o-texto-a63e12:#EC7F50;--o-texto-aeb8c4:#AEB8C4;--o-texto-b4461a:#E77F56;--o-texto-c24a17:#EA7F52;--o-texto-c3cbd5:#C3CBD5;--o-texto-ffffff:#FFFFFF;--o-texto-ffffff-09:rgba(255,255,255,0.9);}
+text[fill="#0D0D0D"],tspan[fill="#0D0D0D"]{fill:#ECECEC}
+text[fill="#3E5266"],tspan[fill="#3E5266"]{fill:#C1C9D1}
+[fill="#C4D0DB"]:not(text):not(tspan){fill:#24303B}
+[fill="#FFFFFF"]:not(text):not(tspan){fill:#131313}
+[stop-color="#9AA6B1"]:not(text):not(tspan){stop-color:#4E5A65}
+[stop-color="#AEB9C3"]:not(text):not(tspan){stop-color:#3C4751}
+[stop-color="#D3DAE0"]:not(text):not(tspan){stop-color:#1C2228}
+[stop-color="#D3DAE1"]:not(text):not(tspan){stop-color:#1B2128}
+[stop-color="#DCE2E7"]:not(text):not(tspan){stop-color:#161B20}
+[stop-color="#DCE2E8"]:not(text):not(tspan){stop-color:#151A20}
+[stop-color="#E6EBEF"]:not(text):not(tspan){stop-color:#0E1316}
+[stop-color="#F2F5F7"]:not(text):not(tspan){stop-color:#070A0C}
+[stop-color="#F3F5F7"]:not(text):not(tspan){stop-color:#07090B}
+[stop-color="#F4F6F8"]:not(text):not(tspan){stop-color:#06080A}
+[stop-color="#F6F8FA"]:not(text):not(tspan){stop-color:#050608}
+[stop-color="#FFFFFF"]:not(text):not(tspan){stop-color:#131313}
+[stop-color="#ffffff"]:not(text):not(tspan){stop-color:#131313}
+[stroke="#06213a"]:not(text):not(tspan){stroke:#D4E3F0}
+[stroke="#0A2236"]:not(text):not(tspan){stroke:#D6E3EE}
+[stroke="#1670B8"]:not(text):not(tspan){stroke:#52A7EA}
+[stroke="#1DC48A"]:not(text):not(tspan){stroke:#56E6B4}
+[stroke="#2793ff"]:not(text):not(tspan){stroke:#3D9EFF}
+[stroke="#2B9EF0"]:not(text):not(tspan){stroke:#4AACF2}
+[stroke="#8C99A5"]:not(text):not(tspan){stroke:#9FA6AD}
+[stroke="#B7D8F3"]:not(text):not(tspan){stroke:#193E5D}
+[stroke="#C24A17"]:not(text):not(tspan){stroke:#EA7F52}
+[stroke="#C4CDD5"]:not(text):not(tspan){stroke:#39424B}
+[stroke="#C4CFDA"]:not(text):not(tspan){stroke:#34404C}
+[stroke="#D3DCE5"]:not(text):not(tspan){stroke:#2A3641}
+[stroke="#E3E8EE"]:not(text):not(tspan){stroke:#232B34}
+[stroke="#ECEEF1"]:not(text):not(tspan){stroke:#22262B}
+[stroke="#FFFFFF"]:not(text):not(tspan){stroke:#1A1A1A}
+[stroke="#ffffff"]:not(text):not(tspan){stroke:#1A1A1A}
+body,#sl-hero{background:#000000 !important}
+#sl-island{background:#111418 !important;border-color:rgba(255,255,255,0.14) !important;box-shadow:0 12px 32px rgba(0,0,0,0.6) !important}
+#sl-hero #sl-video{background-image:url(./assets/portada-poster-oscura-1280.jpg)}
+.sl-glow{mix-blend-mode:screen !important;opacity:.42}
+.sl-btn-black{background:#FFFFFF !important;color:#0A0F14 !important}
+.sl-btn-black:hover{background:#E6EDF3 !important}
+.sl-btn-outline:hover{background:rgba(255,255,255,0.08) !important}
+footer{background:#0A0D11 !important;border-top:1px solid rgba(255,255,255,0.08)}
+}
+</style>
+<script>/* Colores del JS en modo oscuro (generado por herramientas/ajustes_2026_10_22.py) */
+window.slC=(function(){var m={'#0A0F14':'#E7EBEF','#0A2236':'#D6E3EE','#0B4A33':'#CEECE1','#0B6B4A':'#C0E9DB','#0E5A99':'#4DA6EF','#10161E':'#E2E6EB','#1576C2':'#50A8EC','#1DC48A':'#56E6B4','#2B9EF0':'#4AACF2','#52667A':'#B8BFC7','#5B6776':'#B9BDC3','#6B7785':'#B2B6BB','#7A2A0C':'#EE7A4F','#9ED2F8':'#073B61','#9FB0C0':'#3F5060','#A63E12':'#EC7F50','#B7C0CA':'#353E48','#B9DDF9':'#05263F','#BDEBD7':'#14422E','#C3CBD5':'#2A323C','#C7F0DF':'#0E3223','#CBD5DF':'#202A34','#D6DDE4':'#181F25','#E08A3C':'#E49B58','#E3F7EE':'#071911','#E6EBF0':'#0D1216','#E8F8F1':'#06150E','#EAF5FE':'#010B13','#EEF2F6':'#080C0F','#F0C9A8':'#57300F','#F4F6F8':'#06080A','#FFDCCD':'#2D0E00','ciclo#0A2236':'#2B9EF0'},q=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):{matches:false};return function(c,k){return q.matches&&m[(k||'')+c.toUpperCase()]||c;};})();</script>
 <script src="./support.js"></script>
 <style>
 /* Pantalla de carga: la "y" se dibuja de punta a punta y luego se abre la página */
-#sl-carga{position:fixed;inset:0;z-index:9999;background:#FFFFFF;display:flex;align-items:center;justify-content:center;animation:sl-carga-fuera .5s ease 1.9s forwards}
+#sl-carga{position:fixed;inset:0;z-index:9999;background:var(--o-fondo-ffffff, #FFFFFF);display:flex;align-items:center;justify-content:center;animation:sl-carga-fuera .5s ease 1.9s forwards}
 #sl-carga svg{height:140px;width:auto}
 #sl-carga path{stroke-dasharray:1 3;stroke-dashoffset:1.03;animation:sl-carga-trazo 1.5s cubic-bezier(.65,0,.35,1) .15s forwards}
 @keyframes sl-carga-trazo{to{stroke-dashoffset:0}}
@@ -25,15 +76,15 @@
 @keyframes sl-logo-palabra{0%,90.5%{opacity:0}92%,98%{opacity:1}99%,100%{opacity:0}}
 /* WhatsApp */
 .sl-wa-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
-.sl-wa-item{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:22px;background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);box-shadow:0 12px 30px rgba(10,34,54,.05)}
-.sl-wa-burbuja{max-width:86%;padding:10px 12px 8px;border-radius:14px;font-size:13.5px;line-height:1.45;color:#111B21;background:#FFFFFF;box-shadow:0 1px 1px rgba(0,0,0,.08)}
-.sl-wa-burbuja small{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:2px}
+.sl-wa-item{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:22px;background:var(--o-fondo-ffffff-6, rgba(255,255,255,.6));border:1px solid var(--o-borde-ffffff-85, rgba(255,255,255,.85));box-shadow:0 12px 30px rgba(10,34,54,.05)}
+.sl-wa-burbuja{max-width:86%;padding:10px 12px 8px;border-radius:14px;font-size:13.5px;line-height:1.45;color:var(--o-texto-111b21, #111B21);background:var(--o-fondo-ffffff, #FFFFFF);box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.sl-wa-burbuja small{display:block;text-align:right;font-size:10.5px;color:var(--o-texto-667781, #667781);margin-top:2px}
 @media (max-width:900px){.sl-wa-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
-/* Celular y tabletas: el desenfoque del vidrio es caro al hacer scroll; se cambia por blanco casi opaco */
-@media (max-width:900px),(hover:none){
-.sl-glass,.sl-ben-card,.sl-wa-item,.sl-camino-vidrio{-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
-.sl-ben-card,.sl-wa-item,.sl-camino-vidrio{background:rgba(255,255,255,.88) !important}
-.sl-glass{background:rgba(255,255,255,.82) !important}
+/* En todas las pantallas: el desenfoque del vidrio es caro al hacer scroll (y sobre el video); se cambia por blanco casi opaco */
+@media all{
+.sl-glass,.sl-ben-card,.sl-wa-item,.sl-camino-vidrio{}
+.sl-ben-card,.sl-wa-item,.sl-camino-vidrio{background:var(--o-fondo-ffffff-88, rgba(255,255,255,.88)) !important}
+.sl-glass{background:var(--o-fondo-ffffff-82, rgba(255,255,255,.82)) !important}
 }
 @media (max-width:600px){
 .sl-memb-photo.sl-camino{padding:10px !important;border-radius:28px !important}
@@ -58,13 +109,15 @@ setTimeout(function () { var c = document.getElementById('sl-carga'); if (c) c.r
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600;700&amp;family=Funnel+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>[hidden]{display:none !important}
-body{margin:0;background:#FDFDFD}
-a{color:#1670B8}a:hover{color:#0A2236}
+body{margin:0;background:var(--o-fondo-fdfdfd, #FDFDFD)}
+a{color:var(--o-texto-1670b8, #1670B8)}a:hover{color:var(--o-texto-0a2236, #0A2236)}
 .sl-root{font-family:"Funnel Sans","Helvetica Neue",Helvetica,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .sl-display{font-family:"Funnel Display","Funnel Sans","Helvetica Neue",Helvetica,system-ui,sans-serif}
 .sl-root section{scroll-margin-top:84px}
-.sl-root a:focus-visible,.sl-root button:focus-visible{outline:2px solid #2B9EF0;outline-offset:3px}
+.sl-root a:focus-visible,.sl-root button:focus-visible{outline:2px solid var(--o-borde-2b9ef0, #2B9EF0);outline-offset:3px}
 .sl-hero-media{aspect-ratio:16/9}
+#sl-video{background:url(./assets/portada-poster-1280.jpg) 0 0/100% 100% no-repeat}
+#sl-video::-webkit-media-controls,#sl-video::-webkit-media-controls-panel,#sl-video::-webkit-media-controls-start-playback-button,#sl-video::-webkit-media-controls-overlay-play-button{display:none !important;-webkit-appearance:none;opacity:0 !important}
 .sl-hero-copy{position:absolute;top:0;bottom:0;left:7%;width:40%;display:flex;flex-direction:column;justify-content:center}
 .sl-glow-warm{animation:slWarm 16s ease-in-out infinite alternate}
 .sl-glow-cool{animation:slCool 16s ease-in-out infinite alternate}
@@ -73,18 +126,18 @@ a{color:#1670B8}a:hover{color:#0A2236}
 .sl-navlinks{display:flex}
 .sl-parts{position:relative;display:block;width:26px;height:26px}
 .sl-parts i{position:absolute;border-radius:50%}
-.sl-parts i:nth-child(1){left:3px;top:4px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift1 2.58s ease-in-out -0.31s infinite}
-.sl-parts i:nth-child(2){left:14px;top:2px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift2 2.83s ease-in-out -0.46s infinite}
-.sl-parts i:nth-child(3){left:9px;top:9px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift3 2.31s ease-in-out -1.2s infinite}
-.sl-parts i:nth-child(4){left:19px;top:8px;width:3px;height:3px;background:#FF6B35;animation:slDrift4 3.67s ease-in-out -2.4s infinite}
-.sl-parts i:nth-child(5){left:2px;top:15px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift1 3.42s ease-in-out -0.67s infinite}
-.sl-parts i:nth-child(6){left:12px;top:16px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift2 3.06s ease-in-out -0.83s infinite}
-.sl-parts i:nth-child(7){left:20px;top:18px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift3 2.48s ease-in-out -0.32s infinite}
-.sl-parts i:nth-child(8){left:7px;top:21px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift4 2.54s ease-in-out -2.78s infinite}
-.sl-parts i:nth-child(9){left:16px;top:12px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift1 3.53s ease-in-out -2.42s infinite}
-.sl-parts i:nth-child(10){left:5px;top:10px;width:3px;height:3px;background:#FF6B35;animation:slDrift2 3.48s ease-in-out -0.58s infinite}
-.sl-parts i:nth-child(11){left:22px;top:3px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift3 2.7s ease-in-out -1.88s infinite}
-.sl-parts i:nth-child(12){left:11px;top:4px;width:2.4px;height:2.4px;background:#2B9EF0;animation:slDrift4 3.37s ease-in-out -2.56s infinite}
+.sl-parts i:nth-child(1){left:3px;top:4px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift1 2.58s ease-in-out -0.31s infinite}
+.sl-parts i:nth-child(2){left:14px;top:2px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift2 2.83s ease-in-out -0.46s infinite}
+.sl-parts i:nth-child(3){left:9px;top:9px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift3 2.31s ease-in-out -1.2s infinite}
+.sl-parts i:nth-child(4){left:19px;top:8px;width:3px;height:3px;background:var(--o-fondo-ff6b35, #FF6B35);animation:slDrift4 3.67s ease-in-out -2.4s infinite}
+.sl-parts i:nth-child(5){left:2px;top:15px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift1 3.42s ease-in-out -0.67s infinite}
+.sl-parts i:nth-child(6){left:12px;top:16px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift2 3.06s ease-in-out -0.83s infinite}
+.sl-parts i:nth-child(7){left:20px;top:18px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift3 2.48s ease-in-out -0.32s infinite}
+.sl-parts i:nth-child(8){left:7px;top:21px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift4 2.54s ease-in-out -2.78s infinite}
+.sl-parts i:nth-child(9){left:16px;top:12px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift1 3.53s ease-in-out -2.42s infinite}
+.sl-parts i:nth-child(10){left:5px;top:10px;width:3px;height:3px;background:var(--o-fondo-ff6b35, #FF6B35);animation:slDrift2 3.48s ease-in-out -0.58s infinite}
+.sl-parts i:nth-child(11){left:22px;top:3px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift3 2.7s ease-in-out -1.88s infinite}
+.sl-parts i:nth-child(12){left:11px;top:4px;width:2.4px;height:2.4px;background:var(--o-fondo-2b9ef0, #2B9EF0);animation:slDrift4 3.37s ease-in-out -2.56s infinite}
 @keyframes slDrift1{0%,100%{transform:translate(0,0);opacity:.35}50%{transform:translate(3px,-4px);opacity:1}}
 @keyframes slDrift2{0%,100%{transform:translate(0,0);opacity:.9}50%{transform:translate(-4px,3px);opacity:.3}}
 @keyframes slDrift3{0%,100%{transform:translate(0,0);opacity:.5}33%{transform:translate(2px,3px);opacity:1}66%{transform:translate(-3px,-1px);opacity:.4}}
@@ -101,7 +154,7 @@ a{color:#1670B8}a:hover{color:#0A2236}
 .sl-tile{transition:transform .45s cubic-bezier(.32,.72,0,1),background-color .35s ease,box-shadow .35s ease}
 .sl-cycle-list{display:none}
 .sl-logo{filter:grayscale(1);opacity:.55}
-.sl-glass{-webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%)}
+.sl-glass{}
 .sl-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%)}
 .sl-marquee-track{display:flex;gap:20px;width:max-content;animation:slMarq 48s linear infinite;will-change:transform}
 .sl-marquee:hover .sl-marquee-track{animation-play-state:paused}
@@ -123,9 +176,9 @@ a{color:#1670B8}a:hover{color:#0A2236}
 .dz-ring{transform-box:fill-box;transform-origin:center;animation:dzRing 1.8s ease-out infinite}
 @keyframes dzRing{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.5);opacity:0}}
 .sl-dz-paused .sl-dz-track,.sl-dz-paused .sl-chart *{animation-play-state:paused !important}
-.sl-btn-outline-blue:hover{background:#1670B8;color:#FFFFFF}
+.sl-btn-outline-blue:hover{background:var(--o-fondo-1670b8, #1670B8);color:var(--o-texto-ffffff, #FFFFFF)}
 .sl-ben-card{transition:transform .35s cubic-bezier(.32,.72,0,1),box-shadow .35s ease}
-.sl-ben-card:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(22,112,184,0.14);border-color:#BFDDF6 !important}
+.sl-ben-card:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(22,112,184,0.14);border-color:var(--o-borde-bfddf6, #BFDDF6) !important}
 .sl-ben-feat{grid-column:span 2}
 @media (max-width:1080px){
 .sl-ben-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
@@ -134,9 +187,9 @@ a{color:#1670B8}a:hover{color:#0A2236}
 @media (max-width:640px){
 .sl-ben-grid{grid-template-columns:minmax(0,1fr) !important}
 }
-.sl-btn-black:hover{background:#1A2E44;color:#FFFFFF}
-.sl-btn-outline:hover{background:rgba(0,0,0,0.06);color:#000000}
-.sl-btn-primary:hover{background:#56B2F3;color:#04192B}
+.sl-btn-black:hover{background:var(--o-fondo-1a2e44, #1A2E44);color:var(--o-texto-ffffff, #FFFFFF)}
+.sl-btn-outline:hover{background:var(--o-fondo-000000-006, rgba(0,0,0,0.06));color:var(--o-texto-000000, #000000)}
+.sl-btn-primary:hover{background:var(--o-fondo-56b2f3, #56B2F3);color:var(--o-texto-04192b, #04192B)}
 .sl-btn-white:hover{background:#E6EDF3;color:#0A0F14}
 .sl-link-row:hover{color:#7CC4F7}
 @media (max-width:1024px){
@@ -184,7 +237,7 @@ a{color:#1670B8}a:hover{color:#0A2236}
 }
 </style>
 </helmet>
-<div class="sl-root" style="position: relative; background: #FDFDFD; color: #0A2236; min-width: 0">
+<div class="sl-root" style="position: relative; background: var(--o-fondo-fdfdfd, #FDFDFD); color: var(--o-texto-0a2236, #0A2236); min-width: 0">
 
 <div style="position: sticky; top: 0; height: 0; z-index: 50">
 <div id="sl-island" class="sl-island" style="position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: {{islandW}}; height: {{islandH}}; border-radius: {{islandR}}; background: #000000; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 12px 32px rgba(10,34,54,0.28); overflow: hidden; transition: width 0.55s cubic-bezier(0.32,0.72,0,1), height 0.55s cubic-bezier(0.32,0.72,0,1), border-radius 0.55s cubic-bezier(0.32,0.72,0,1)">
@@ -236,12 +289,13 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 </div>
 
-<section id="sl-hero" aria-label="Portada" style="position: relative; background: #FDFDFD">
+<section id="sl-hero" aria-label="Portada" style="position: relative; background: var(--o-fondo-fdfdfd, #FDFDFD)">
 <div id="sl-sentinel" aria-hidden="true" style="position: absolute; top: 72px; left: 0; width: 1px; height: 1px"></div>
 <div class="sl-hero-media" style="position: relative; width: 100%">
-<video id="sl-video" poster="./assets/portada-poster.jpg" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="auto" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; display: block; pointer-events: none">
-<source src="./assets/portada.webm" type="video/webm">
-<source src="./assets/portada.mp4" type="video/mp4">
+<video id="sl-video" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="auto" disablepictureinpicture="disablepictureinpicture" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; display: block; pointer-events: none">
+<source src="./assets/portada-oscura-1280.mp4" type="video/mp4" media="(prefers-color-scheme: dark)">
+<source src="./assets/portada-1280.webm" type="video/webm">
+<source src="./assets/portada-1280.mp4" type="video/mp4">
 </video>
 </div>
 <div class="sl-glow" aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 100%; pointer-events: none; mix-blend-mode: multiply; overflow: hidden">
@@ -250,9 +304,9 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 <div class="sl-hero-copy" style="gap: 22px">
 <h1 class="sl-display" style="margin: 0; font-size: clamp(40px, 4.6vw, 72px); line-height: 1.0; font-weight: 600; letter-spacing: -0.03em; max-width: 11ch">Salud preventiva en tu bolsillo</h1>
-<p style="margin: 0; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.5; color: #3E5266; max-width: 34ch">Una muestra de sangre en tu casa y una IA médica que lee más de 100 biomarcadores en conjunto, para encontrar a tiempo lo que puedes prevenir con tu médico.</p>
+<p style="margin: 0; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.5; color: var(--o-texto-3e5266, #3E5266); max-width: 34ch">Una muestra de sangre en tu casa y una IA médica que lee más de 100 biomarcadores en conjunto, para encontrar a tiempo lo que puedes prevenir con tu médico.</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 10px">
-<a href="https://app.saludly.online/entrar" class="sl-btn-black" style="display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 52px; padding: 0 28px; box-sizing: border-box; border-radius: 26px; background: #0A2236; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none; margin-right: 12px">Empezar</a><a href="#sl-medimos" class="sl-btn-outline" style="display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 52px; padding: 0 28px; box-sizing: border-box; border-radius: 26px; background: transparent; border: 1.5px solid #000000; color: #000000; font-size: 16px; font-weight: 600; text-decoration: none">Ver demo</a>
+<a href="https://app.saludly.online/entrar" class="sl-btn-black" style="display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 52px; padding: 0 28px; box-sizing: border-box; border-radius: 26px; background: var(--o-fondo-0a2236, #0A2236); color: var(--o-texto-ffffff, #FFFFFF); font-size: 16px; font-weight: 600; text-decoration: none; margin-right: 12px">Empezar</a><a href="#sl-medimos" class="sl-btn-outline" style="display: inline-flex; align-items: center; justify-content: center; min-width: 180px; height: 52px; padding: 0 28px; box-sizing: border-box; border-radius: 26px; background: transparent; border: 1.5px solid var(--o-borde-000000, #000000); color: var(--o-texto-000000, #000000); font-size: 16px; font-weight: 600; text-decoration: none">Ver demo</a>
 </div>
 </div>
 </section>
@@ -261,14 +315,14 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 40px 72px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 18px">
 <h2 id="sl-panel-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 600; letter-spacing: -0.03em">100+ biomarcadores</h2>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E5266; max-width: 38ch">Metabolismo, corazón, riñón, hígado, tiroides, sangre y vitaminas. Una visita, un panel completo.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--o-texto-3e5266, #3E5266); max-width: 38ch">Metabolismo, corazón, riñón, hígado, tiroides, sangre y vitaminas. Una visita, un panel completo.</p>
 </div>
-<div class="sl-ticker-wrap sl-ticker-grid" aria-hidden="true" style="position: relative; height: 360px; border-radius: 28px; background: rgba(241,245,249,0.72); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); border: 1px solid #E1E8EF; overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding: 0 28px">
+<div class="sl-ticker-wrap sl-ticker-grid" aria-hidden="true" style="position: relative; height: 360px; border-radius: 28px; background: var(--o-fondo-f1f5f9-072, rgba(241,245,249,0.72)); border: 1px solid var(--o-borde-e1e8ef, #E1E8EF); overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding: 0 28px">
 <div class="sl-ticker" style="overflow: hidden">
 <div class="sl-ticker-track" style="display: flex; flex-direction: column">
 <sc-for list="{{tickerA}}" as="item" hint-placeholder-count="12">
-<div style="position: relative; display: flex; align-items: flex-end; height: 58px; padding-bottom: 8px; box-sizing: border-box; border-bottom: 1.5px solid #B9C6D3">
-<span class="sl-display" style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; letter-spacing: -0.01em; color: #0A2236; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 72%">{{item.name}}</span>
+<div style="position: relative; display: flex; align-items: flex-end; height: 58px; padding-bottom: 8px; box-sizing: border-box; border-bottom: 1.5px solid var(--o-borde-b9c6d3, #B9C6D3)">
+<span class="sl-display" style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 72%">{{item.name}}</span>
 <span style="position: absolute; top: 12px; right: 0; font-size: 11px; font-weight: 600; line-height: 1; padding: 4px 7px; border-radius: 4px; color: {{item.pillInk}}; background: {{item.pillBg}}">{{item.status}}</span>
 </div>
 </sc-for>
@@ -277,8 +331,8 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <div class="sl-ticker sl-ticker-b" style="overflow: hidden">
 <div class="sl-ticker-track sl-rev" style="display: flex; flex-direction: column">
 <sc-for list="{{tickerB}}" as="item" hint-placeholder-count="12">
-<div style="position: relative; display: flex; align-items: flex-end; height: 58px; padding-bottom: 8px; box-sizing: border-box; border-bottom: 1.5px solid #B9C6D3">
-<span class="sl-display" style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; letter-spacing: -0.01em; color: #0A2236; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 72%">{{item.name}}</span>
+<div style="position: relative; display: flex; align-items: flex-end; height: 58px; padding-bottom: 8px; box-sizing: border-box; border-bottom: 1.5px solid var(--o-borde-b9c6d3, #B9C6D3)">
+<span class="sl-display" style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 72%">{{item.name}}</span>
 <span style="position: absolute; top: 12px; right: 0; font-size: 11px; font-weight: 600; line-height: 1; padding: 4px 7px; border-radius: 4px; color: {{item.pillInk}}; background: {{item.pillBg}}">{{item.status}}</span>
 </div>
 </sc-for>
@@ -288,53 +342,53 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 </section>
 
-<section id="sl-como" class="sl-sec" aria-labelledby="sl-como-t" style="background: #FDFDFD; padding: 40px 24px 120px">
+<section id="sl-como" class="sl-sec" aria-labelledby="sl-como-t" style="background: var(--o-fondo-fdfdfd, #FDFDFD); padding: 40px 24px 120px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <h2 id="sl-como-t" class="sl-display" style="margin: 0; text-align: center; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em">Cómo funciona</h2>
 <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px 28px">
 <li style="display: flex; flex-direction: column; gap: 14px">
-<div id="sl-step-1" style="position: relative; width: 100%; aspect-ratio: {{s1A}}; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E6EBF0; box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
+<div id="sl-step-1" style="position: relative; width: 100%; aspect-ratio: {{s1A}}; border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff, #FFFFFF); border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
 <div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{s1T}}">
 <dc-import name="Paso1Tubo" hint-size="800px,800px"></dc-import>
 </div>
-<span class="sl-display" aria-label="Paso 1" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: #8794A3">1</span>
+<span class="sl-display" aria-label="Paso 1" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: var(--o-texto-8794a3, #8794A3)">1</span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">
-<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #111111">Agenda y toma en casa</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #111111">Eliges día y hora en la app. Una enfermera certificada llega con el kit clínico de Saludly.</p>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: var(--o-texto-111111, #111111)">Agenda y toma en casa</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: var(--o-texto-111111, #111111)">Eliges día y hora en la app. Una enfermera certificada llega con el kit clínico de Saludly.</p>
 </div>
 </li>
 <li style="display: flex; flex-direction: column; gap: 14px">
-<div id="sl-step-2" style="position: relative; width: 100%; aspect-ratio: {{s2A}}; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E6EBF0; box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
+<div id="sl-step-2" style="position: relative; width: 100%; aspect-ratio: {{s2A}}; border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff, #FFFFFF); border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
 <div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{s2T}}">
 <dc-import name="Paso2Agente" hint-size="800px,800px"></dc-import>
 </div>
-<span class="sl-display" aria-label="Paso 2" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: #8794A3">2</span>
+<span class="sl-display" aria-label="Paso 2" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: var(--o-texto-8794a3, #8794A3)">2</span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">
-<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #111111">Laboratorio e interpretación</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #111111">Un laboratorio clínico aliado en Bogotá procesa tu panel. Saludly IA lee los resultados en conjunto.</p>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: var(--o-texto-111111, #111111)">Laboratorio e interpretación</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: var(--o-texto-111111, #111111)">Un laboratorio clínico aliado en Bogotá procesa tu panel. Saludly IA lee los resultados en conjunto.</p>
 </div>
 </li>
 <li style="display: flex; flex-direction: column; gap: 14px">
-<div id="sl-step-3" style="position: relative; width: 100%; aspect-ratio: {{s3A}}; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E6EBF0; box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
+<div id="sl-step-3" style="position: relative; width: 100%; aspect-ratio: {{s3A}}; border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff, #FFFFFF); border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); box-shadow: 0 18px 40px rgba(15,27,42,0.07)">
 <div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{s3T}}">
 <dc-import name="Paso3App" hint-size="800px,800px"></dc-import>
 </div>
-<span class="sl-display" aria-label="Paso 3" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: #8794A3">3</span>
+<span class="sl-display" aria-label="Paso 3" style="position: absolute; left: 18px; top: 16px; z-index: 1; font-size: 15px; font-weight: 600; line-height: 1; color: var(--o-texto-8794a3, #8794A3)">3</span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 4px 0">
-<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #111111">Recibes tu informe</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #111111">En la app, en pocos días hábiles, con prioridades claras y qué revisar con un profesional.</p>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: var(--o-texto-111111, #111111)">Recibes tu informe</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: var(--o-texto-111111, #111111)">En la app, en pocos días hábiles, con prioridades claras y qué revisar con un profesional.</p>
 </div>
 </li>
 </ol>
 </div>
 </section>
 
-<section id="sl-medimos" class="sl-sec" aria-labelledby="sl-medimos-t" style="background: #FFFFFF; padding: 120px 24px; border-top: 1px solid #EDF1F5">
+<section id="sl-medimos" class="sl-sec" aria-labelledby="sl-medimos-t" style="background: var(--o-fondo-ffffff, #FFFFFF); padding: 120px 24px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5)">
 <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 56px 80px; align-items: center">
-<div id="sl-qm" style="justify-self: center; position: relative; width: 100%; max-width: 600px; aspect-ratio: {{qmA}}; overflow: hidden; background: #FFFFFF">
+<div id="sl-qm" style="justify-self: center; position: relative; width: 100%; max-width: 600px; aspect-ratio: {{qmA}}; overflow: hidden; background: var(--o-fondo-ffffff, #FFFFFF)">
 <div style="position: absolute; left: 0; top: 0; width: 800px; height: 800px; transform-origin: 0 0; transform: {{qmT}}">
 <dc-import name="QueMedimos" hint-size="800px,800px"></dc-import>
 </div>
@@ -343,116 +397,116 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <div class="sl-qm-text" style="display: flex; flex-direction: column; gap: 22px">
 <h2 id="sl-medimos-t" class="sl-display" style="margin: 0; font-size: clamp(38px, 4.4vw, 64px); line-height: 1.0; font-weight: 600; letter-spacing: -0.03em">Qué medimos</h2>
 <h3 class="sl-display" style="margin: 0; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.15; font-weight: 500; letter-spacing: -0.015em; max-width: 20ch">IA que explica tus resultados, con fuentes verificables.</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E5266; max-width: 42ch">Saludly IA se apoya en guías clínicas internacionales y literatura revisada por pares, y cada interpretación cita su fuente. No diagnostica: te muestra qué conversar con tu médico.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--o-texto-3e5266, #3E5266); max-width: 42ch">Saludly IA se apoya en guías clínicas internacionales y literatura revisada por pares, y cada interpretación cita su fuente. No diagnostica: te muestra qué conversar con tu médico.</p>
 <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px">
-<h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #0A2236">Guías de 12 especialidades detrás de tu informe</h4>
+<h4 style="margin: 0; font-size: 15px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Guías de 12 especialidades detrás de tu informe</h4>
 <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px">
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Medicina general</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Medicina interna</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Medicina familiar</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Endocrinología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Cardiología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Nefrología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Gastroenterología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Hematología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Ginecología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Urología</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Geriatría</li>
-<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EDF1F5; font-size: 15px; color: #2F4357"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: #2B9EF0; flex-shrink: 0"></span>Nutrición y dietética</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Medicina general</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Medicina interna</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Medicina familiar</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Endocrinología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Cardiología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Nefrología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Gastroenterología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Hematología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Ginecología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Urología</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Geriatría</li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--o-borde-edf1f5, #EDF1F5); font-size: 15px; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: var(--o-fondo-2b9ef0, #2B9EF0); flex-shrink: 0"></span>Nutrición y dietética</li>
 </ul>
 </div>
 </div>
 </div>
 </section>
 
-<section id="sl-wear" hidden class="sl-sec" aria-labelledby="sl-wear-t" style="background: #FDFDFD; padding: 96px 24px">
-<div class="sl-wear-box" style="max-width: 1200px; margin: 0 auto; border-radius: 36px; background: linear-gradient(150deg, #F3F5F8 0%, #E9EDF2 55%, #EEF2F6 100%); border: 1px solid #E3E8EE; padding: clamp(24px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 48px 64px; align-items: center">
+<section id="sl-wear" hidden class="sl-sec" aria-labelledby="sl-wear-t" style="background: var(--o-fondo-fdfdfd, #FDFDFD); padding: 96px 24px">
+<div class="sl-wear-box" style="max-width: 1200px; margin: 0 auto; border-radius: 36px; background: linear-gradient(150deg, var(--o-fondo-f3f5f8, #F3F5F8) 0%, var(--o-fondo-e9edf2, #E9EDF2) 55%, var(--o-fondo-eef2f6, #EEF2F6) 100%); border: 1px solid var(--o-borde-e3e8ee, #E3E8EE); padding: clamp(24px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 48px 64px; align-items: center">
 
-<div class="sl-wear-panel" style="justify-self: center; width: 100%; max-width: 440px; border-radius: 28px; background: #FFFFFF; box-shadow: 0 30px 60px rgba(10,34,54,0.10); padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div class="sl-wear-panel" style="justify-self: center; width: 100%; max-width: 440px; border-radius: 28px; background: var(--o-fondo-ffffff, #FFFFFF); box-shadow: 0 30px 60px rgba(10,34,54,0.10); padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-<span class="sl-display" style="font-size: 18px; font-weight: 600; color: #0A0F14">Conexiones</span>
+<span class="sl-display" style="font-size: 18px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Conexiones</span>
 <span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 14px; background: {{wStatusBg}}; color: {{wStatusInk}}; font-size: 12.5px; font-weight: 600"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 3px; background: currentColor"></span>{{wStatus}}</span>
 </div>
-<div style="border-radius: 18px; background: #F5F7F9">
+<div style="border-radius: 18px; background: var(--o-fondo-f5f7f9, #F5F7F9)">
 <div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; ">
-<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(160deg,#FF6B8A,#E8355B); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(160deg,var(--o-fondo-ff6b8a, #FF6B8A),var(--o-fondo-e8355b, #E8355B)); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
 <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Apple Salud o Health Connect</span>
-<span style="font-size: 12.5px; color: #6B7A89">{{w0Sub}}</span>
+<span style="font-size: 15px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Apple Salud o Health Connect</span>
+<span style="font-size: 12.5px; color: var(--o-texto-6b7a89, #6B7A89)">{{w0Sub}}</span>
 </div>
 <button type="button" role="switch" aria-checked="{{w0On}}" aria-label="Apple Salud o Health Connect" onClick="{{w0Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w0Bg}}; cursor: pointer; transition: background .25s ease">
-<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w0X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: var(--o-fondo-ffffff, #FFFFFF); box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w0X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
 </button>
-</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid #E6EBF0;">
-<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: #1C232D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="7" y="6" width="10" height="12" rx="3"></rect><path d="M9 6l1-3h4l1 3M9 18l1 3h4l1-3"></path></svg></span>
+</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid var(--o-borde-e6ebf0, #E6EBF0);">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: var(--o-fondo-1c232d, #1C232D); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="7" y="6" width="10" height="12" rx="3"></rect><path d="M9 6l1-3h4l1 3M9 18l1 3h4l1-3"></path></svg></span>
 <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Reloj</span>
-<span style="font-size: 12.5px; color: #6B7A89">{{w1Sub}}</span>
+<span style="font-size: 15px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Reloj</span>
+<span style="font-size: 12.5px; color: var(--o-texto-6b7a89, #6B7A89)">{{w1Sub}}</span>
 </div>
 <button type="button" role="switch" aria-checked="{{w1On}}" aria-label="Reloj" onClick="{{w1Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w1Bg}}; cursor: pointer; transition: background .25s ease">
-<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w1X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: var(--o-fondo-ffffff, #FFFFFF); box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w1X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
 </button>
-</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid #E6EBF0;">
-<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: #1C232D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><circle cx="12" cy="12" r="6.5"></circle><circle cx="12" cy="12" r="2.5"></circle></svg></span>
+</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid var(--o-borde-e6ebf0, #E6EBF0);">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: var(--o-fondo-1c232d, #1C232D); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><circle cx="12" cy="12" r="6.5"></circle><circle cx="12" cy="12" r="2.5"></circle></svg></span>
 <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Anillo</span>
-<span style="font-size: 12.5px; color: #6B7A89">{{w2Sub}}</span>
+<span style="font-size: 15px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Anillo</span>
+<span style="font-size: 12.5px; color: var(--o-texto-6b7a89, #6B7A89)">{{w2Sub}}</span>
 </div>
 <button type="button" role="switch" aria-checked="{{w2On}}" aria-label="Anillo" onClick="{{w2Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w2Bg}}; cursor: pointer; transition: background .25s ease">
-<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w2X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: var(--o-fondo-ffffff, #FFFFFF); box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w2X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
 </button>
-</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid #E6EBF0;">
-<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: #5B6776; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4"></rect><path d="M9 10a3 3 0 0 1 6 0"></path><path d="M12 10l1.5-1.5"></path></svg></span>
+</div><div style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-top: 1px solid var(--o-borde-e6ebf0, #E6EBF0);">
+<span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: var(--o-fondo-5b6776, #5B6776); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4"></rect><path d="M9 10a3 3 0 0 1 6 0"></path><path d="M12 10l1.5-1.5"></path></svg></span>
 <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; font-weight: 600; color: #0A0F14">Báscula inteligente</span>
-<span style="font-size: 12.5px; color: #6B7A89">{{w3Sub}}</span>
+<span style="font-size: 15px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Báscula inteligente</span>
+<span style="font-size: 12.5px; color: var(--o-texto-6b7a89, #6B7A89)">{{w3Sub}}</span>
 </div>
 <button type="button" role="switch" aria-checked="{{w3On}}" aria-label="Báscula inteligente" onClick="{{w3Tog}}" style="flex-shrink: 0; position: relative; width: 46px; height: 28px; padding: 0; border: 0; border-radius: 14px; background: {{w3Bg}}; cursor: pointer; transition: background .25s ease">
-<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w3X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
+<span style="position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 11px; background: var(--o-fondo-ffffff, #FFFFFF); box-shadow: 0 1px 3px rgba(0,0,0,0.2); transform: translateX({{w3X}}); transition: transform .25s cubic-bezier(.32,.72,0,1)"></span>
 </button>
 </div>
 </div>
-<span style="font-size: 12px; font-weight: 600; color: #6B7A89; padding-top: 4px">Lo que Saludly IA suma a tu informe</span>
+<span style="font-size: 12px; font-weight: 600; color: var(--o-texto-6b7a89, #6B7A89); padding-top: 4px">Lo que Saludly IA suma a tu informe</span>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t0Op}}; transition: opacity .3s ease">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #1DC48A"></span>Pasos</span>
+<div style="padding: 14px 16px; border-radius: 16px; border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); background: var(--o-fondo-ffffff, #FFFFFF); display: flex; flex-direction: column; gap: 6px; opacity: {{t0Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-1dc48a, #1DC48A)"></span>Pasos</span>
 <span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t0C}}; font-variant-numeric: tabular-nums">{{t0V}}</span>
-</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t1Op}}; transition: opacity .3s ease">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #6C7FE0"></span>Sueño</span>
+</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); background: var(--o-fondo-ffffff, #FFFFFF); display: flex; flex-direction: column; gap: 6px; opacity: {{t1Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-6c7fe0, #6C7FE0)"></span>Sueño</span>
 <span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t1C}}; font-variant-numeric: tabular-nums">{{t1V}}</span>
-</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t2Op}}; transition: opacity .3s ease">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #FF6B35"></span>Variabilidad cardiaca</span>
+</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); background: var(--o-fondo-ffffff, #FFFFFF); display: flex; flex-direction: column; gap: 6px; opacity: {{t2Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-ff6b35, #FF6B35)"></span>Variabilidad cardiaca</span>
 <span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t2C}}; font-variant-numeric: tabular-nums">{{t2V}}</span>
-</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid #E6EBF0; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px; opacity: {{t3Op}}; transition: opacity .3s ease">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2F4357"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: #9FB0C0"></span>Peso</span>
+</div><div style="padding: 14px 16px; border-radius: 16px; border: 1px solid var(--o-borde-e6ebf0, #E6EBF0); background: var(--o-fondo-ffffff, #FFFFFF); display: flex; flex-direction: column; gap: 6px; opacity: {{t3Op}}; transition: opacity .3s ease">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--o-texto-2f4357, #2F4357)"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-9fb0c0, #9FB0C0)"></span>Peso</span>
 <span class="sl-display" style="font-size: 22px; font-weight: 600; color: {{t3C}}; font-variant-numeric: tabular-nums">{{t3V}}</span>
 </div>
 </div>
-<div style="display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 22px; border: 1.5px dashed #CBD5DF; color: #8794A3; font-size: 14px; font-weight: 600">+ Agregar un dispositivo</div>
+<div style="display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 22px; border: 1.5px dashed var(--o-borde-cbd5df, #CBD5DF); color: var(--o-texto-8794a3, #8794A3); font-size: 14px; font-weight: 600">+ Agregar un dispositivo</div>
 </div>
 
 <div class="sl-wear-text" style="display: flex; flex-direction: column; gap: 20px">
-<span style="align-self: flex-start; padding: 5px 12px; border-radius: 14px; background: #FFFFFF; border: 1px solid #DCE3EA; font-size: 13px; font-weight: 600; color: #1670B8">Opcional · recomendado</span>
-<h2 id="sl-wear-t" class="sl-display" style="margin: 0; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.025em; color: #0A0F14">Tu muestra es la base.<br>Tu reloj suma contexto.</h2>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E5266; max-width: 46ch">No necesitas un wearable para usar Saludly: tu informe sale de tus 100+ biomarcadores. Si conectas tu reloj, anillo o báscula, Saludly IA suma sueño, actividad, variabilidad cardiaca y peso para leer tus resultados con más contexto y precisión.</p>
-<ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #E1E8EF">
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #E1E8EF"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: #0A0F14">Conecta con un toque</span><span style="font-size: 14.5px; line-height: 1.5; color: #52667A">Sueño, frecuencia cardiaca y actividad llegan solos a tu app.</span></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #E1E8EF"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-5 4 10 2-5h4"></path></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: #0A0F14">Datos de todos los días</span><span style="font-size: 14.5px; line-height: 1.5; color: #52667A">Tu panel muestra un momento; tu reloj muestra cómo vives entre tomas.</span></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #E1E8EF"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"></rect><circle cx="16" cy="12" r="2"></circle></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: #0A0F14">Tú decides qué se comparte</span><span style="font-size: 14.5px; line-height: 1.5; color: #52667A">Activa o desactiva cada tipo de dato cuando quieras.</span></div></li>
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 14px; background: var(--o-fondo-ffffff, #FFFFFF); border: 1px solid var(--o-borde-dce3ea, #DCE3EA); font-size: 13px; font-weight: 600; color: var(--o-texto-1670b8, #1670B8)">Opcional · recomendado</span>
+<h2 id="sl-wear-t" class="sl-display" style="margin: 0; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.025em; color: var(--o-texto-0a0f14, #0A0F14)">Tu muestra es la base.<br>Tu reloj suma contexto.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--o-texto-3e5266, #3E5266); max-width: 46ch">No necesitas un wearable para usar Saludly: tu informe sale de tus 100+ biomarcadores. Si conectas tu reloj, anillo o báscula, Saludly IA suma sueño, actividad, variabilidad cardiaca y peso para leer tus resultados con más contexto y precisión.</p>
+<ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--o-borde-e1e8ef, #E1E8EF)">
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid var(--o-borde-e1e8ef, #E1E8EF)"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Conecta con un toque</span><span style="font-size: 14.5px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Sueño, frecuencia cardiaca y actividad llegan solos a tu app.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid var(--o-borde-e1e8ef, #E1E8EF)"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-5 4 10 2-5h4"></path></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Datos de todos los días</span><span style="font-size: 14.5px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Tu panel muestra un momento; tu reloj muestra cómo vives entre tomas.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid var(--o-borde-e1e8ef, #E1E8EF)"><span aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2236" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"></rect><circle cx="16" cy="12" r="2"></circle></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Tú decides qué se comparte</span><span style="font-size: 14.5px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Activa o desactiva cada tipo de dato cuando quieras.</span></div></li>
 </ul>
 <div style="display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 12px; font-weight: 600; color: #6B7A89">Compatible con</span>
-<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px"><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Apple Salud</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Health Connect</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Samsung Health</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Fitbit</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Garmin</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Oura</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">WHOOP</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Polar</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: #8794A3">Xiaomi</li></ul>
+<span style="font-size: 12px; font-weight: 600; color: var(--o-texto-6b7a89, #6B7A89)">Compatible con</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px"><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Apple Salud</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Health Connect</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Samsung Health</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Fitbit</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Garmin</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Oura</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">WHOOP</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Polar</li><li class="sl-display" style="font-size: 15px; font-weight: 600; color: var(--o-texto-8794a3, #8794A3)">Xiaomi</li></ul>
 </div>
 </div>
 
 </div>
 </section>
 
-<section id="sl-prevenir" class="sl-sec {{dzClass}}" aria-labelledby="sl-prevenir-t" style="background: #F7F9FB; padding: 112px 0 96px; border-top: 1px solid #EDF1F5; overflow: hidden">
+<section id="sl-prevenir" class="sl-sec {{dzClass}}" aria-labelledby="sl-prevenir-t" style="background: var(--o-fondo-f7f9fb, #F7F9FB); padding: 112px 0 96px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5); overflow: hidden">
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center">
-<h2 id="sl-prevenir-t" class="sl-display" style="margin: 0; font-size: clamp(32px, 4vw, 56px); line-height: 1.06; font-weight: 500; letter-spacing: -0.03em; max-width: 22ch">Señales tempranas de <em style="font-style: italic; color: #1670B8">condiciones que se pueden prevenir</em></h2>
-<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; font-size: 15px; color: #2F4357">
+<h2 id="sl-prevenir-t" class="sl-display" style="margin: 0; font-size: clamp(32px, 4vw, 56px); line-height: 1.06; font-weight: 500; letter-spacing: -0.03em; max-width: 22ch">Señales tempranas de <em style="font-style: italic; color: var(--o-texto-1670b8, #1670B8)">condiciones que se pueden prevenir</em></h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; font-size: 15px; color: var(--o-texto-2f4357, #2F4357)">
 <li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.6 2.6L16 9.5"></path></svg>Establece tu línea base</li>
 <li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.6 2.6L16 9.5"></path></svg>Seguimiento en cada toma</li>
 <li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.6 2.6L16 9.5"></path></svg>Mira cómo cambia tu cuerpo</li>
@@ -464,14 +518,14 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <div class="sl-dz-row" style="position: absolute; left: 0; right: 0; top: 118px; overflow: hidden">
 <div class="sl-dz-track" style="display: flex; width: max-content">
 <sc-for list="{{dzA}}" as="z" hint-placeholder-count="16">
-<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-size: clamp(16px, 1.4vw, 19px); color: #52667A; white-space: nowrap">{{z.name}}<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 3px; background: #B9C6D3"></span></span>
+<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-size: clamp(16px, 1.4vw, 19px); color: var(--o-texto-52667a, #52667A); white-space: nowrap">{{z.name}}<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 3px; background: var(--o-fondo-b9c6d3, #B9C6D3)"></span></span>
 </sc-for>
 </div>
 </div>
 <div class="sl-dz-row" style="position: absolute; left: 0; right: 0; top: 172px; overflow: hidden">
 <div class="sl-dz-track sl-rev" style="display: flex; width: max-content">
 <sc-for list="{{dzB}}" as="z" hint-placeholder-count="16">
-<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-size: clamp(16px, 1.4vw, 19px); color: #52667A; white-space: nowrap">{{z.name}}<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 3px; background: #B9C6D3"></span></span>
+<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-size: clamp(16px, 1.4vw, 19px); color: var(--o-texto-52667a, #52667A); white-space: nowrap">{{z.name}}<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 3px; background: var(--o-fondo-b9c6d3, #B9C6D3)"></span></span>
 </sc-for>
 </div>
 </div>
@@ -480,7 +534,7 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <sc-for list="{{dzAll}}" as="z" hint-placeholder-count="16"><li>{{z.name}}</li></sc-for>
 </ul>
 
-<figure class="sl-glass" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(380px, 88%); aspect-ratio: 380 / 270; margin: 0; border-radius: 26px; background: linear-gradient(140deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.22) 100%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.9); overflow: hidden">
+<figure class="sl-glass" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(380px, 88%); aspect-ratio: 380 / 270; margin: 0; border-radius: 26px; background: linear-gradient(140deg, var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)) 0%, var(--o-fondo-ffffff-022, rgba(255,255,255,0.22)) 100%); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.9); overflow: hidden">
 <svg class="sl-chart" viewBox="0 0 380 270" width="100%" height="100%" role="img" aria-label="Ejemplo: un biomarcador fuera del rango de referencia vuelve al rango en las siguientes tomas.">
 <defs>
 <linearGradient id="dzIn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1DC48A" stop-opacity="0.16"></stop><stop offset="1" stop-color="#1DC48A" stop-opacity="0"></stop></linearGradient>
@@ -514,29 +568,29 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 8px 24px 0; text-align: center">
-<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #52667A; max-width: 60ch">Saludly no diagnostica. Identifica señales en tus biomarcadores para revisar con un profesional de salud.</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: var(--o-texto-52667a, #52667A); max-width: 60ch">Saludly no diagnostica. Identifica señales en tus biomarcadores para revisar con un profesional de salud.</p>
 </div>
 </section>
 
-<section id="sl-respaldo" hidden class="sl-sec" aria-label="Instituciones y médicos aliados" style="background: #FDFDFD; padding: 96px 0 112px">
+<section id="sl-respaldo" hidden class="sl-sec" aria-label="Instituciones y médicos aliados" style="background: var(--o-fondo-fdfdfd, #FDFDFD); padding: 96px 0 112px">
 <div style="display: flex; flex-direction: column; gap: 56px">
 <ul class="sl-logos" aria-label="Instituciones aliadas" style="list-style: none; margin: 0 auto; padding: 0 24px; width: 100%; max-width: 1200px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 40px">
-<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
-<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
-<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
-<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: #6B7A89">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: var(--o-texto-6b7a89, #6B7A89)">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: var(--o-texto-6b7a89, #6B7A89)">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: var(--o-texto-6b7a89, #6B7A89)">[LOGO INSTITUCIÓN]</li>
+<li class="sl-logo sl-display" style="font-size: 20px; font-weight: 600; color: var(--o-texto-6b7a89, #6B7A89)">[LOGO INSTITUCIÓN]</li>
 </ul>
 <div class="sl-marquee" aria-label="Médicos que participan">
 <div class="sl-marquee-track">
 <sc-for list="{{doctorsLoop}}" as="d" hint-placeholder-count="12">
 <figure class="sl-doc" style="flex: 0 0 auto; width: 260px; margin: 0; display: flex; flex-direction: column; gap: 14px">
-<div class="sl-doc-photo" style="position: relative; width: 260px; height: 340px; border-radius: 24px; overflow: hidden; background: #DDE5EC">
+<div class="sl-doc-photo" style="position: relative; width: 260px; height: 340px; border-radius: 24px; overflow: hidden; background: var(--o-fondo-dde5ec, #DDE5EC)">
 <div aria-hidden="true" style="position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center"><svg width="210" height="270" viewBox="0 0 220 290" fill="#C4D0DB"><circle cx="110" cy="92" r="52"></circle><path d="M10 290c0-70 45-122 100-122s100 52 100 122z"></path></svg></div>
-<span style="position: absolute; top: 16px; left: 16px; font-size: 12px; color: #52667A">[FOTO DEL MÉDICO]</span>
+<span style="position: absolute; top: 16px; left: 16px; font-size: 12px; color: var(--o-texto-52667a, #52667A)">[FOTO DEL MÉDICO]</span>
 </div>
 <figcaption style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px">
-<span style="font-size: 16px; font-weight: 600; line-height: 1.3; color: #0A2236">{{d.name}}</span>
-<span style="font-size: 14px; line-height: 1.4; color: #52667A">{{d.spec}}</span>
+<span style="font-size: 16px; font-weight: 600; line-height: 1.3; color: var(--o-texto-0a2236, #0A2236)">{{d.name}}</span>
+<span style="font-size: 14px; line-height: 1.4; color: var(--o-texto-52667a, #52667A)">{{d.spec}}</span>
 </figcaption>
 </figure>
 </sc-for>
@@ -545,46 +599,46 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 </section>
 
-<section id="sl-edad" class="sl-sec" aria-labelledby="sl-edad-t" style="position: relative; overflow: hidden; background: #FAFBFD; padding: 120px 24px; border-top: 1px solid #EDF1F5">
+<section id="sl-edad" class="sl-sec" aria-labelledby="sl-edad-t" style="position: relative; overflow: hidden; background: var(--o-fondo-fafbfd, #FAFBFD); padding: 120px 24px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5)">
 <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
-<div style="position: absolute; inset: -6%; background: radial-gradient(38% 42% at 22% 30%, rgba(120,192,248,0.55) 0%, rgba(170,214,250,0.28) 45%, rgba(250,251,253,0) 100%), radial-gradient(34% 40% at 80% 72%, rgba(43,158,240,0.32) 0%, rgba(250,251,253,0) 100%), radial-gradient(28% 32% at 56% 18%, rgba(150,205,250,0.4) 0%, rgba(250,251,253,0) 100%)"></div>
+<div style="position: absolute; inset: -6%; background: radial-gradient(38% 42% at 22% 30%, var(--o-fondo-78c0f8-055, rgba(120,192,248,0.55)) 0%, var(--o-fondo-aad6fa-028, rgba(170,214,250,0.28)) 45%, var(--o-fondo-fafbfd-0, rgba(250,251,253,0)) 100%), radial-gradient(34% 40% at 80% 72%, var(--o-fondo-2b9ef0-032, rgba(43,158,240,0.32)) 0%, var(--o-fondo-fafbfd-0, rgba(250,251,253,0)) 100%), radial-gradient(28% 32% at 56% 18%, var(--o-fondo-96cdfa-04, rgba(150,205,250,0.4)) 0%, var(--o-fondo-fafbfd-0, rgba(250,251,253,0)) 100%)"></div>
 </div>
 <div style="position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 <h2 id="sl-edad-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 500; letter-spacing: -0.03em">Tu edad biológica.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #2F4357; max-width: 52ch">No es la edad de tu cédula: es una estimación a partir de tus marcadores de metabolismo, inflamación y función de órganos.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: var(--o-texto-2f4357, #2F4357); max-width: 52ch">No es la edad de tu cédula: es una estimación a partir de tus marcadores de metabolismo, inflamación y función de órganos.</p>
 <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 28px">
-<div aria-hidden="true" style="opacity: 0.55; position: absolute; left: 6%; top: -6%; width: 46%; aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,53,0.55) 0%, rgba(255,107,53,0) 68%); pointer-events: none"></div>
-<div aria-hidden="true" style="opacity: 0.55; position: absolute; right: 2%; bottom: -8%; width: 52%; aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle, rgba(43,158,240,0.6) 0%, rgba(43,158,240,0) 68%); pointer-events: none"></div>
-<div class="sl-glass" style="position: relative; aspect-ratio: 1 / 1; border-radius: 34px; padding: clamp(24px, 3vw, 36px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.12) 100%); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25)">
+<div aria-hidden="true" style="opacity: 0.55; position: absolute; left: 6%; top: -6%; width: 46%; aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle, var(--o-fondo-ff6b35-055, rgba(255,107,53,0.55)) 0%, var(--o-fondo-ff6b35-0, rgba(255,107,53,0)) 68%); pointer-events: none"></div>
+<div aria-hidden="true" style="opacity: 0.55; position: absolute; right: 2%; bottom: -8%; width: 52%; aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle, var(--o-fondo-2b9ef0-06, rgba(43,158,240,0.6)) 0%, var(--o-fondo-2b9ef0-0, rgba(43,158,240,0)) 68%); pointer-events: none"></div>
+<div class="sl-glass" style="position: relative; aspect-ratio: 1 / 1; border-radius: 34px; padding: clamp(24px, 3vw, 36px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, var(--o-fondo-ffffff-038, rgba(255,255,255,0.38)) 0%, var(--o-fondo-ffffff-012, rgba(255,255,255,0.12)) 100%); border: 1px solid var(--o-borde-ffffff-07, rgba(255,255,255,0.7)); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25)">
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3E5266">Edad biológica estimada</span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--o-texto-3e5266, #3E5266)">Edad biológica estimada</span>
 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#C24A17" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="15.5"></circle><path d="M10 18.5h3.5l2-5 3 8 2-4h3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: baseline; gap: 8px"><span class="sl-display" style="font-size: clamp(72px, 8vw, 112px); line-height: 0.88; font-weight: 500; letter-spacing: -0.04em; color: #C24A17; font-variant-numeric: tabular-nums">{{edadTxt}}</span><span style="font-size: 18px; color: #3E5266">años</span></div>
-<span style="font-size: 16px; line-height: 1.5; color: #2F4357; max-width: 30ch">4 años por debajo de la edad cronológica.</span>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="sl-display" style="font-size: clamp(72px, 8vw, 112px); line-height: 0.88; font-weight: 500; letter-spacing: -0.04em; color: var(--o-texto-c24a17, #C24A17); font-variant-numeric: tabular-nums">{{edadTxt}}</span><span style="font-size: 18px; color: var(--o-texto-3e5266, #3E5266)">años</span></div>
+<span style="font-size: 16px; line-height: 1.5; color: var(--o-texto-2f4357, #2F4357); max-width: 30ch">4 años por debajo de la edad cronológica.</span>
 </div>
 </div>
-<div class="sl-glass" style="position: relative; aspect-ratio: 1 / 1; border-radius: 34px; padding: clamp(24px, 3vw, 36px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.12) 100%); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25)">
+<div class="sl-glass" style="position: relative; aspect-ratio: 1 / 1; border-radius: 34px; padding: clamp(24px, 3vw, 36px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, var(--o-fondo-ffffff-038, rgba(255,255,255,0.38)) 0%, var(--o-fondo-ffffff-012, rgba(255,255,255,0.12)) 100%); border: 1px solid var(--o-borde-ffffff-07, rgba(255,255,255,0.7)); box-shadow: 0 30px 60px rgba(10,34,54,0.12), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25)">
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3E5266">Resultados en rango</span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--o-texto-3e5266, #3E5266)">Resultados en rango</span>
 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#1670B8" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="15.5"></circle><path d="M10 18.5h3.5l2-5 3 8 2-4h3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: baseline; gap: 8px"><span class="sl-display" style="font-size: clamp(72px, 8vw, 112px); line-height: 0.88; font-weight: 500; letter-spacing: -0.04em; color: #1670B8; font-variant-numeric: tabular-nums">{{scoreTxt}}</span><span style="font-size: 18px; color: #3E5266">/100</span></div>
-<span style="font-size: 16px; line-height: 1.5; color: #2F4357; max-width: 30ch">Cuántos de tus biomarcadores están dentro del rango de referencia de tu laboratorio.</span>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="sl-display" style="font-size: clamp(72px, 8vw, 112px); line-height: 0.88; font-weight: 500; letter-spacing: -0.04em; color: var(--o-texto-1670b8, #1670B8); font-variant-numeric: tabular-nums">{{scoreTxt}}</span><span style="font-size: 18px; color: var(--o-texto-3e5266, #3E5266)">/100</span></div>
+<span style="font-size: 16px; line-height: 1.5; color: var(--o-texto-2f4357, #2F4357); max-width: 30ch">Cuántos de tus biomarcadores están dentro del rango de referencia de tu laboratorio.</span>
 </div>
 </div>
 </div>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2F4357; max-width: 62ch">Cifras de ejemplo. La edad biológica es una referencia para conversar con tu médico, no un diagnóstico. Metodología: PhenoAge, con los resultados de tu laboratorio.</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--o-texto-2f4357, #2F4357); max-width: 62ch">Cifras de ejemplo. La edad biológica es una referencia para conversar con tu médico, no un diagnóstico. Metodología: PhenoAge, con los resultados de tu laboratorio.</p>
 </div>
 </section>
 
-<section id="sl-ciclo" class="sl-sec" aria-labelledby="sl-ciclo-t" style="background: #FDFDFD; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<section id="sl-ciclo" class="sl-sec" aria-labelledby="sl-ciclo-t" style="background: var(--o-fondo-fdfdfd, #FDFDFD); padding: 112px 24px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5)">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 40px">
 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
 <h2 id="sl-ciclo-t" class="sl-display" style="margin: 0; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em">Prevención que se repite</h2>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E5266; max-width: 46ch">Medir una vez dice cómo estás. Medir de nuevo cada 12 meses dice si lo que cambiaste funciona.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--o-texto-3e5266, #3E5266); max-width: 46ch">Medir una vez dice cómo estás. Medir de nuevo cada 12 meses dice si lo que cambiaste funciona.</p>
 </div>
 
 <div id="sl-cycle-fit" class="sl-cycle-fit" style="position: relative; width: 100%; max-width: 620px; --cyc-s: {{cycT}}">
@@ -598,27 +652,27 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <path d="M-1.4 -1.4 L0 0 L-1.4 1.4" fill="none" stroke="#2B9EF0" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(27.7 19.3) rotate(324)"></path>
 </svg>
 <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46%; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<span class="sl-display" style="font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -0.02em; color: #1670B8">Saludly</span>
-<span style="font-size: 15px; line-height: 1.5; color: #3E5266; min-height: 4.5em" aria-live="polite">{{cycleText}}</span>
+<span class="sl-display" style="font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -0.02em; color: var(--o-texto-1670b8, #1670B8)">Saludly</span>
+<span style="font-size: 15px; line-height: 1.5; color: var(--o-texto-3e5266, #3E5266); min-height: 4.5em" aria-live="polite">{{cycleText}}</span>
 </div>
 
-<button type="button" onClick="{{c0}}" class="sl-tile" aria-pressed="{{c0p}}" style="position: absolute; left: 50%; top: 12%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c0bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c0s}}); box-shadow: {{c0sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<button type="button" onClick="{{c0}}" class="sl-tile" aria-pressed="{{c0p}}" style="position: absolute; left: 50%; top: 12%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c0bg}}; color: var(--o-texto-ffffff, #FFFFFF); transform: translate(-50%, -50%) scale({{c0s}}); box-shadow: {{c0sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v13a2 2 0 0 0 4 0V3"></path><path d="M10 11h4"></path></svg>
 <span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Toma de muestra</span>
 </button>
-<button type="button" onClick="{{c1}}" class="sl-tile" aria-pressed="{{c1p}}" style="position: absolute; left: 86.1%; top: 38.3%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c1bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c1s}}); box-shadow: {{c1sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<button type="button" onClick="{{c1}}" class="sl-tile" aria-pressed="{{c1p}}" style="position: absolute; left: 86.1%; top: 38.3%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c1bg}}; color: var(--o-texto-ffffff, #FFFFFF); transform: translate(-50%, -50%) scale({{c1s}}); box-shadow: {{c1sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16"></path><path d="M8 15l3-4 3 2 4-6"></path></svg>
 <span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Récord de biomarcadores</span>
 </button>
-<button type="button" onClick="{{c2}}" class="sl-tile" aria-pressed="{{c2p}}" style="position: absolute; left: 72.3%; top: 80.7%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c2bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c2s}}); box-shadow: {{c2sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<button type="button" onClick="{{c2}}" class="sl-tile" aria-pressed="{{c2p}}" style="position: absolute; left: 72.3%; top: 80.7%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c2bg}}; color: var(--o-texto-ffffff, #FFFFFF); transform: translate(-50%, -50%) scale({{c2s}}); box-shadow: {{c2sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
 <span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Resultados de prevención</span>
 </button>
-<button type="button" onClick="{{c3}}" class="sl-tile" aria-pressed="{{c3p}}" style="position: absolute; left: 27.7%; top: 80.7%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c3bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c3s}}); box-shadow: {{c3sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<button type="button" onClick="{{c3}}" class="sl-tile" aria-pressed="{{c3p}}" style="position: absolute; left: 27.7%; top: 80.7%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c3bg}}; color: var(--o-texto-ffffff, #FFFFFF); transform: translate(-50%, -50%) scale({{c3s}}); box-shadow: {{c3sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"></path></svg>
 <span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Recomendaciones</span>
 </button>
-<button type="button" onClick="{{c4}}" class="sl-tile" aria-pressed="{{c4p}}" style="position: absolute; left: 13.9%; top: 38.3%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c4bg}}; color: #FFFFFF; transform: translate(-50%, -50%) scale({{c4s}}); box-shadow: {{c4sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
+<button type="button" onClick="{{c4}}" class="sl-tile" aria-pressed="{{c4p}}" style="position: absolute; left: 13.9%; top: 38.3%; width: 23%; aspect-ratio: 6 / 5; margin: 0; padding: 12px; border: 0; border-radius: 22px; background: {{c4bg}}; color: var(--o-texto-ffffff, #FFFFFF); transform: translate(-50%, -50%) scale({{c4s}}); box-shadow: {{c4sh}}; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; text-align: left; font: inherit; cursor: pointer">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"></path><path d="M10 13v3a4 4 0 0 0 8 0v-2"></path><circle cx="18" cy="12" r="2"></circle></svg>
 <span style="font-size: clamp(12px, 1.3vw, 15px); font-weight: 600; line-height: 1.2">Consulta médica</span>
 </button>
@@ -626,76 +680,76 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 
 <ol class="sl-cycle-list" style="list-style: none; margin: 0; padding: 0; width: 100%; flex-direction: column; gap: 10px">
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">1</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Toma de muestra</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Una enfermera certificada toma tus muestras en casa.</span></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">2</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Récord de biomarcadores</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Tus resultados quedan guardados en la app, toma tras toma.</span></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">3</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Resultados de prevención</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Qué está bien, qué merece atención y qué patrones aparecen.</span></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">4</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Recomendaciones</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Hábitos concretos. Suplementos, solo si tu médico los indica.</span></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: #1670B8; color: #FFFFFF"><span class="sl-display" style="font-weight: 600">5</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Consulta médica</span><span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9)">Llevas el informe a un profesional y defines el seguimiento. Y vuelves a medir.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF)"><span class="sl-display" style="font-weight: 600">1</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Toma de muestra</span><span style="font-size: 14px; line-height: 1.5; color: var(--o-texto-ffffff-09, rgba(255,255,255,0.9))">Una enfermera certificada toma tus muestras en casa.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF)"><span class="sl-display" style="font-weight: 600">2</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Récord de biomarcadores</span><span style="font-size: 14px; line-height: 1.5; color: var(--o-texto-ffffff-09, rgba(255,255,255,0.9))">Tus resultados quedan guardados en la app, toma tras toma.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF)"><span class="sl-display" style="font-weight: 600">3</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Resultados de prevención</span><span style="font-size: 14px; line-height: 1.5; color: var(--o-texto-ffffff-09, rgba(255,255,255,0.9))">Qué está bien, qué merece atención y qué patrones aparecen.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF)"><span class="sl-display" style="font-weight: 600">4</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Recomendaciones</span><span style="font-size: 14px; line-height: 1.5; color: var(--o-texto-ffffff-09, rgba(255,255,255,0.9))">Hábitos concretos. Suplementos, solo si tu médico los indica.</span></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF)"><span class="sl-display" style="font-weight: 600">5</span><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600">Consulta médica</span><span style="font-size: 14px; line-height: 1.5; color: var(--o-texto-ffffff-09, rgba(255,255,255,0.9))">Llevas el informe a un profesional y defines el seguimiento. Y vuelves a medir.</span></div></li>
 </ol>
 </div>
 </section>
 
-<section id="sl-beneficios" class="sl-sec" aria-labelledby="sl-ben-t" style="background: radial-gradient(38% 45% at 12% 18%, rgba(43,158,240,0.12), rgba(43,158,240,0) 70%), radial-gradient(40% 50% at 88% 85%, rgba(43,158,240,0.10), rgba(43,158,240,0) 70%), #F7FAFD; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<section id="sl-beneficios" class="sl-sec" aria-labelledby="sl-ben-t" style="background: radial-gradient(38% 45% at 12% 18%, var(--o-fondo-2b9ef0-012, rgba(43,158,240,0.12)), var(--o-fondo-2b9ef0-0, rgba(43,158,240,0)) 70%), radial-gradient(40% 50% at 88% 85%, var(--o-fondo-2b9ef0-010, rgba(43,158,240,0.10)), var(--o-fondo-2b9ef0-0, rgba(43,158,240,0)) 70%), var(--o-fondo-f7fafd, #F7FAFD); padding: 112px 24px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5)">
 <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <h2 id="sl-ben-t" class="sl-display" style="margin: 0; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em; max-width: 18ch">Lo que ganas con Saludly</h2>
 <div class="sl-ben-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px">
-<article class="sl-ben-card sl-ben-feat" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
-<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Edad biológica</span><span style="font-size: 12px; color: #6B7A89">Toma 2</span></div><div style="display: flex; align-items: baseline; gap: 6px"><span class="sl-display" style="font-size: 30px; font-weight: 600; color: #0A0F14">41,2</span><span style="font-size: 12px; color: #6B7A89">años</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">−4 años</span></div><svg viewBox="0 0 220 50" width="100%" height="50" aria-hidden="true"><path d="M0 40 C40 38 60 30 90 28 S150 18 220 10" fill="none" stroke="#1DC48A" stroke-width="2"></path><circle cx="220" cy="10" r="3.5" fill="#1DC48A"></circle></svg></div></div>
+<article class="sl-ben-card sl-ben-feat" style="border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: var(--o-fondo-ffffff-025, rgba(255,255,255,0.25))"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: var(--o-fondo-ffffff, #FFFFFF); border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Edad biológica</span><span style="font-size: 12px; color: var(--o-texto-6b7a89, #6B7A89)">Toma 2</span></div><div style="display: flex; align-items: baseline; gap: 6px"><span class="sl-display" style="font-size: 30px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">41,2</span><span style="font-size: 12px; color: var(--o-texto-6b7a89, #6B7A89)">años</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-e3f7ee, #E3F7EE); color: var(--o-texto-0b6b4a, #0B6B4A); font-size: 11px; font-weight: 600">−4 años</span></div><svg viewBox="0 0 220 50" width="100%" height="50" aria-hidden="true"><path d="M0 40 C40 38 60 30 90 28 S150 18 220 10" fill="none" stroke="#1DC48A" stroke-width="2"></path><circle cx="220" cy="10" r="3.5" fill="#1DC48A"></circle></svg></div></div>
 <div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
-<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 0-9-9"></path><path d="M12 7v5l3 2"></path></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: var(--o-fondo-1670b8-008, rgba(22,112,184,0.08)); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 0-9-9"></path><path d="M12 7v5l3 2"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Cuida tu longevidad</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Sigue tu edad biológica toma tras toma y cuida a tiempo lo que más pesa en tus años con salud.</p>
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236)">Cuida tu longevidad</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Sigue tu edad biológica toma tras toma y cuida a tiempo lo que más pesa en tus años con salud.</p>
 </div>
 </div>
 </article>
-<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
-<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Señales a revisar</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #FFE6DA; color: #9A3A12; font-size: 11px; font-weight: 600">2 nuevas</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #FF6B35; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Glucosa y HbA1c</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #FFE6DA; color: #9A3A12; font-size: 11px; font-weight: 600">Revisar</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #FF6B35; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Perfil de lípidos</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #FFE6DA; color: #9A3A12; font-size: 11px; font-weight: 600">Revisar</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #1DC48A; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Tiroides</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">En rango</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 7px; height: 7px; border-radius: 4px; background: #1DC48A; flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: #2F4357">Riñón</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">En rango</span></div></div></div>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: var(--o-fondo-ffffff-025, rgba(255,255,255,0.25))"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: var(--o-fondo-ffffff, #FFFFFF); border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Señales a revisar</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-ffe6da, #FFE6DA); color: var(--o-texto-9a3a12, #9A3A12); font-size: 11px; font-weight: 600">2 nuevas</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-ff6b35, #FF6B35); flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Glucosa y HbA1c</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-ffe6da, #FFE6DA); color: var(--o-texto-9a3a12, #9A3A12); font-size: 11px; font-weight: 600">Revisar</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-ff6b35, #FF6B35); flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Perfil de lípidos</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-ffe6da, #FFE6DA); color: var(--o-texto-9a3a12, #9A3A12); font-size: 11px; font-weight: 600">Revisar</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-1dc48a, #1DC48A); flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Tiroides</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-e3f7ee, #E3F7EE); color: var(--o-texto-0b6b4a, #0B6B4A); font-size: 11px; font-weight: 600">En rango</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 7px; height: 7px; border-radius: 4px; background: var(--o-fondo-1dc48a, #1DC48A); flex-shrink: 0"></span><span style="flex-grow: 1; font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Riñón</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-e3f7ee, #E3F7EE); color: var(--o-texto-0b6b4a, #0B6B4A); font-size: 11px; font-weight: 600">En rango</span></div></div></div>
 <div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
-<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: var(--o-fondo-1670b8-008, rgba(22,112,184,0.08)); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Prevención a tiempo</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Señales tempranas de glucosa, corazón, riñón e hígado antes de que aparezcan síntomas.</p>
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236)">Prevención a tiempo</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Señales tempranas de glucosa, corazón, riñón e hígado antes de que aparezcan síntomas.</p>
 </div>
 </div>
 </article>
-<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
-<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Ferritina</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">En rango</span></div><div style="display: flex; align-items: baseline; gap: 6px"><span class="sl-display" style="font-size: 30px; font-weight: 600; color: #0A0F14">38</span><span style="font-size: 12px; color: #6B7A89">ng/mL</span></div><div style="position: relative; height: 14px"><div style="position: absolute; left: 0; right: 0; top: 5px; height: 4px; border-radius: 2px; background: #ECEFF2"></div><div style="position: absolute; left: 18%; width: 60%; top: 5px; height: 4px; border-radius: 2px; background: #CFE6F8"></div><div style="position: absolute; left: 34%; top: 0; width: 14px; height: 14px; margin-left: -7px; border-radius: 7px; background: #2B9EF0; box-shadow: 0 0 0 3px #FFFFFF"></div></div><div style="display: flex; justify-content: space-between; font-size: 11px; color: #8794A3"><span>Bajo</span><span>Rango de referencia</span><span>Alto</span></div><span style="font-size: 12px; line-height: 1.4; color: #3E5266">Reserva de hierro: se lee junto a hemoglobina y VCM.</span></div></div>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: var(--o-fondo-ffffff-025, rgba(255,255,255,0.25))"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: var(--o-fondo-ffffff, #FFFFFF); border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Ferritina</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-e3f7ee, #E3F7EE); color: var(--o-texto-0b6b4a, #0B6B4A); font-size: 11px; font-weight: 600">En rango</span></div><div style="display: flex; align-items: baseline; gap: 6px"><span class="sl-display" style="font-size: 30px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">38</span><span style="font-size: 12px; color: var(--o-texto-6b7a89, #6B7A89)">ng/mL</span></div><div style="position: relative; height: 14px"><div style="position: absolute; left: 0; right: 0; top: 5px; height: 4px; border-radius: 2px; background: var(--o-fondo-eceff2, #ECEFF2)"></div><div style="position: absolute; left: 18%; width: 60%; top: 5px; height: 4px; border-radius: 2px; background: var(--o-fondo-cfe6f8, #CFE6F8)"></div><div style="position: absolute; left: 34%; top: 0; width: 14px; height: 14px; margin-left: -7px; border-radius: 7px; background: var(--o-fondo-2b9ef0, #2B9EF0); box-shadow: 0 0 0 3px #FFFFFF"></div></div><div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--o-texto-8794a3, #8794A3)"><span>Bajo</span><span>Rango de referencia</span><span>Alto</span></div><span style="font-size: 12px; line-height: 1.4; color: var(--o-texto-3e5266, #3E5266)">Reserva de hierro: se lee junto a hemoglobina y VCM.</span></div></div>
 <div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
-<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4M12 16h.01"></path></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: var(--o-fondo-1670b8-008, rgba(22,112,184,0.08)); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4M12 16h.01"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Conoce tu cuerpo</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Cada biomarcador frente a su rango de referencia, explicado en lenguaje claro.</p>
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236)">Conoce tu cuerpo</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Cada biomarcador frente a su rango de referencia, explicado en lenguaje claro.</p>
 </div>
 </div>
 </article>
-<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
-<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Tu meta de la semana</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">5 de 7</span></div><span style="font-size: 13px; color: #2F4357">Caminar 30 minutos al día</span><div style="display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 5px"><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>L</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>M</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>M</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #F1F4F7"></span>J</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>V</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #1DC48A"></span>S</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #8794A3"><span style="width: 100%; height: 26px; border-radius: 7px; background: #F1F4F7"></span>D</span></div><div style="display: flex; justify-content: space-between; font-size: 12px; color: #52667A"><span>Próximo control</span><span style="font-weight: 600; color: #0A0F14">en 12 meses</span></div></div></div>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: var(--o-fondo-ffffff-025, rgba(255,255,255,0.25))"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: var(--o-fondo-ffffff, #FFFFFF); border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Tu meta de la semana</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-e3f7ee, #E3F7EE); color: var(--o-texto-0b6b4a, #0B6B4A); font-size: 11px; font-weight: 600">5 de 7</span></div><span style="font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Caminar 30 minutos al día</span><div style="display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 5px"><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-1dc48a, #1DC48A)"></span>L</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-1dc48a, #1DC48A)"></span>M</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-1dc48a, #1DC48A)"></span>M</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-f1f4f7, #F1F4F7)"></span>J</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-1dc48a, #1DC48A)"></span>V</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-1dc48a, #1DC48A)"></span>S</span><span style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--o-texto-8794a3, #8794A3)"><span style="width: 100%; height: 26px; border-radius: 7px; background: var(--o-fondo-f1f4f7, #F1F4F7)"></span>D</span></div><div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--o-texto-52667a, #52667A)"><span>Próximo control</span><span style="font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">en 12 meses</span></div></div></div>
 <div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
-<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="0.8"></circle></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: var(--o-fondo-1670b8-008, rgba(22,112,184,0.08)); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="0.8"></circle></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Metas claras</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Objetivos semanales concretos y tu próximo control en 12 meses para ver qué cambió.</p>
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236)">Metas claras</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Objetivos semanales concretos y tu próximo control en 12 meses para ver qué cambió.</p>
 </div>
 </div>
 </article>
-<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
-<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Para tu consulta</span><span style="font-size: 12px; color: #6B7A89">Medicina general</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; background: #1DC48A; display: flex; align-items: center; justify-content: center"><svg width="9" height="9" viewBox="0 0 12 12"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 13px; color: #2F4357">Mostrar glucosa y HbA1c</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; background: #1DC48A; display: flex; align-items: center; justify-content: center"><svg width="9" height="9" viewBox="0 0 12 12"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 13px; color: #2F4357">Preguntar por el perfil de lípidos</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #EEF1F4"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; border: 1.5px solid #CBD5DF; display: flex; align-items: center; justify-content: center"></span><span style="font-size: 13px; color: #2F4357">Definir el próximo control</span></div><span style="align-self: flex-start; margin-top: 2px; padding: 6px 12px; border-radius: 14px; background: #0A0F14; color: #FFFFFF; font-size: 11.5px; font-weight: 600">Compartir informe</span></div></div>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: var(--o-fondo-ffffff-025, rgba(255,255,255,0.25))"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: var(--o-fondo-ffffff, #FFFFFF); border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Para tu consulta</span><span style="font-size: 12px; color: var(--o-texto-6b7a89, #6B7A89)">Medicina general</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; background: var(--o-fondo-1dc48a, #1DC48A); display: flex; align-items: center; justify-content: center"><svg width="9" height="9" viewBox="0 0 12 12"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Mostrar glucosa y HbA1c</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; background: var(--o-fondo-1dc48a, #1DC48A); display: flex; align-items: center; justify-content: center"><svg width="9" height="9" viewBox="0 0 12 12"><path d="M2.5 6.2 L5 8.6 L9.6 3.6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Preguntar por el perfil de lípidos</span></div><div style="display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid var(--o-borde-eef1f4, #EEF1F4)"><span style="width: 16px; height: 16px; border-radius: 8px; flex-shrink: 0; border: 1.5px solid var(--o-borde-cbd5df, #CBD5DF); display: flex; align-items: center; justify-content: center"></span><span style="font-size: 13px; color: var(--o-texto-2f4357, #2F4357)">Definir el próximo control</span></div><span style="align-self: flex-start; margin-top: 2px; padding: 6px 12px; border-radius: 14px; background: var(--o-fondo-0a0f14, #0A0F14); color: var(--o-texto-ffffff, #FFFFFF); font-size: 11.5px; font-weight: 600">Compartir informe</span></div></div>
 <div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
-<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"></path><path d="M10 13v3a4 4 0 0 0 8 0v-2"></path><circle cx="18" cy="12" r="2"></circle></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: var(--o-fondo-1670b8-008, rgba(22,112,184,0.08)); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"></path><path d="M10 13v3a4 4 0 0 0 8 0v-2"></path><circle cx="18" cy="12" r="2"></circle></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Decide con tu médico</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Llega a consulta con un informe ordenado y las preguntas correctas. Saludly no diagnostica.</p>
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236)">Decide con tu médico</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Llega a consulta con un informe ordenado y las preguntas correctas. Saludly no diagnostica.</p>
 </div>
 </div>
 </article>
-<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
-<div style="position: relative; padding: 22px 22px 0; background: rgba(255,255,255,0.25)"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: #FFFFFF; border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #0A0F14">Tu toma en casa</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: #E3F7EE; color: #0B6B4A; font-size: 11px; font-weight: 600">Confirmada</span></div><div style="display: flex; flex-direction: column; gap: 2px"><span class="sl-display" style="font-size: 22px; font-weight: 600; color: #0A0F14">Mañana, 7:30 a. m.</span><span style="font-size: 12px; color: #6B7A89">En ayunas · Bogotá</span></div><div style="display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; background: #F5F7F9"><span style="width: 30px; height: 30px; border-radius: 15px; background: #2B9EF0; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M9 3h6M10 3v13a2 2 0 0 0 4 0V3"></path></svg></span><div style="display: flex; flex-direction: column"><span style="font-size: 12.5px; font-weight: 600; color: #0A0F14">Enfermera certificada</span><span style="font-size: 11px; color: #6B7A89">Kit clínico Saludly</span></div></div></div></div>
+<article class="sl-ben-card" style="border-radius: 28px; overflow: hidden; background: var(--o-fondo-ffffff-055, rgba(255,255,255,0.55)); border: 1px solid var(--o-borde-ffffff-085, rgba(255,255,255,0.85)); box-shadow: 0 18px 40px rgba(10,34,54,0.06); display: flex; flex-direction: column">
+<div style="position: relative; padding: 22px 22px 0; background: var(--o-fondo-ffffff-025, rgba(255,255,255,0.25))"><div style="height: 176px; overflow: hidden; border-radius: 20px 20px 0 0; background: var(--o-fondo-ffffff, #FFFFFF); border: 0; box-shadow: 0 12px 28px rgba(10,34,54,0.10); padding: 14px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent)"><div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Tu toma en casa</span><span style="flex-shrink: 0; padding: 3px 8px; border-radius: 10px; background: var(--o-fondo-e3f7ee, #E3F7EE); color: var(--o-texto-0b6b4a, #0B6B4A); font-size: 11px; font-weight: 600">Confirmada</span></div><div style="display: flex; flex-direction: column; gap: 2px"><span class="sl-display" style="font-size: 22px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Mañana, 7:30 a. m.</span><span style="font-size: 12px; color: var(--o-texto-6b7a89, #6B7A89)">En ayunas · Bogotá</span></div><div style="display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; background: var(--o-fondo-f5f7f9, #F5F7F9)"><span style="width: 30px; height: 30px; border-radius: 15px; background: var(--o-fondo-2b9ef0, #2B9EF0); display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M9 3h6M10 3v13a2 2 0 0 0 4 0V3"></path></svg></span><div style="display: flex; flex-direction: column"><span style="font-size: 12.5px; font-weight: 600; color: var(--o-texto-0a0f14, #0A0F14)">Enfermera certificada</span><span style="font-size: 11px; color: var(--o-texto-6b7a89, #6B7A89)">Kit clínico Saludly</span></div></div></div></div>
 <div style="padding: 20px 22px 24px; display: flex; gap: 14px; align-items: flex-start; background: transparent">
-<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: rgba(22,112,184,0.08); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-5H9v5H5a1 1 0 0 1-1-1z"></path></svg></span>
+<span aria-hidden="true" style="flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: var(--o-fondo-1670b8-008, rgba(22,112,184,0.08)); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1670B8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-5H9v5H5a1 1 0 0 1-1-1z"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #0A2236">Todo desde tu casa</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #52667A">Una enfermera certificada va a tu casa con el kit clínico de Saludly. Sin filas ni traslados.</p>
+<h3 class="sl-display" style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--o-texto-0a2236, #0A2236)">Todo desde tu casa</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Una enfermera certificada va a tu casa con el kit clínico de Saludly. Sin filas ni traslados.</p>
 </div>
 </div>
 </article>
@@ -703,24 +757,24 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 </section>
 
-<section id="sl-whatsapp" class="sl-sec" aria-labelledby="sl-wa-t" style="background: radial-gradient(40% 50% at 85% 20%, rgba(37,211,102,0.10), rgba(37,211,102,0) 70%), radial-gradient(40% 50% at 10% 85%, rgba(43,158,240,0.10), rgba(43,158,240,0) 70%), #F7FAFD; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<section id="sl-whatsapp" class="sl-sec" aria-labelledby="sl-wa-t" style="background: radial-gradient(40% 50% at 85% 20%, var(--o-fondo-25d366-010, rgba(37,211,102,0.10)), var(--o-fondo-25d366-0, rgba(37,211,102,0)) 70%), radial-gradient(40% 50% at 10% 85%, var(--o-fondo-2b9ef0-010, rgba(43,158,240,0.10)), var(--o-fondo-2b9ef0-0, rgba(43,158,240,0)) 70%), var(--o-fondo-f7fafd, #F7FAFD); padding: 112px 24px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5)">
 <div class="sl-wa-grid" style="max-width: 1100px; margin: 0 auto">
 <div style="display: flex; flex-direction: column; gap: 22px">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #128C7E">Por WhatsApp</p>
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--o-texto-128c7e, #128C7E)">Por WhatsApp</p>
 <h2 id="sl-wa-t" class="sl-display" style="margin: 0; font-size: clamp(34px, 3.8vw, 54px); line-height: 1.04; font-weight: 600; letter-spacing: -0.03em; max-width: 16ch">Te acompañamos todos los días.</h2>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3E5266; max-width: 46ch">Tu informe no se queda en la app. Por WhatsApp te escribimos lo que necesitas, pensado con tus resultados, tus metas, tus alergias y tu dieta.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--o-texto-3e5266, #3E5266); max-width: 46ch">Tu informe no se queda en la app. Por WhatsApp te escribimos lo que necesitas, pensado con tus resultados, tus metas, tus alergias y tu dieta.</p>
 <div style="display: flex; flex-direction: column; gap: 12px">
-<div class="sl-wa-item"><span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: rgba(37,211,102,0.12); display: flex; align-items: center; justify-content: center; font-size: 20px">💡</span><div><h3 class="sl-display" style="margin: 0; font-size: 18px; font-weight: 600; color: #0A2236">Recomendaciones para ti</h3><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: #52667A">Cambios concretos de alimentación, actividad y sueño, elegidos según lo que salió en tu informe.</p></div></div>
-<div class="sl-wa-item"><span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: rgba(37,211,102,0.12); display: flex; align-items: center; justify-content: center; font-size: 20px">🥗</span><div><h3 class="sl-display" style="margin: 0; font-size: 18px; font-weight: 600; color: #0A2236">Una receta cada día</h3><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: #52667A">Recetas colombianas fáciles, con sus nutrientes calculados y sin lo que no puedes o no quieres comer.</p></div></div>
-<div class="sl-wa-item"><span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: rgba(37,211,102,0.12); display: flex; align-items: center; justify-content: center; font-size: 20px">🩺</span><div><h3 class="sl-display" style="margin: 0; font-size: 18px; font-weight: 600; color: #0A2236">Cuándo ver a tu médico</h3><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: #52667A">Si algo merece consulta, te lo decimos con un plazo claro y un enlace con tu resumen para tu médico.</p></div></div>
+<div class="sl-wa-item"><span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: var(--o-fondo-25d366-012, rgba(37,211,102,0.12)); display: flex; align-items: center; justify-content: center; font-size: 20px">💡</span><div><h3 class="sl-display" style="margin: 0; font-size: 18px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Recomendaciones para ti</h3><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Cambios concretos de alimentación, actividad y sueño, elegidos según lo que salió en tu informe.</p></div></div>
+<div class="sl-wa-item"><span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: var(--o-fondo-25d366-012, rgba(37,211,102,0.12)); display: flex; align-items: center; justify-content: center; font-size: 20px">🥗</span><div><h3 class="sl-display" style="margin: 0; font-size: 18px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Una receta cada día</h3><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Recetas colombianas fáciles, con sus nutrientes calculados y sin lo que no puedes o no quieres comer.</p></div></div>
+<div class="sl-wa-item"><span aria-hidden="true" style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: var(--o-fondo-25d366-012, rgba(37,211,102,0.12)); display: flex; align-items: center; justify-content: center; font-size: 20px">🩺</span><div><h3 class="sl-display" style="margin: 0; font-size: 18px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Cuándo ver a tu médico</h3><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--o-texto-52667a, #52667A)">Si algo merece consulta, te lo decimos con un plazo claro y un enlace con tu resumen para tu médico.</p></div></div>
 </div>
-<p style="margin: 0; font-size: 13px; color: #52667A">Solo si lo autorizas. Escribe BAJA cuando quieras y dejamos de escribirte.</p>
+<p style="margin: 0; font-size: 13px; color: var(--o-texto-52667a, #52667A)">Solo si lo autorizas. Escribe BAJA cuando quieras y dejamos de escribirte.</p>
 </div>
 <div style="justify-self: center; width: 100%; max-width: 340px">
-<div style="border-radius: 40px; padding: 10px; background: #0A0F14; box-shadow: 0 30px 60px rgba(10,34,54,0.22)">
-<div style="border-radius: 31px; overflow: hidden; background: #EFE7DE">
-<div style="display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: #075E54; color: #FFFFFF">
-<span style="width: 34px; height: 34px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><img src="./assets/marca/y-azul.svg" alt="" style="height: 22px; width: auto"></span>
+<div style="border-radius: 40px; padding: 10px; background: var(--o-fondo-0a0f14, #0A0F14); box-shadow: 0 30px 60px rgba(10,34,54,0.22)">
+<div style="border-radius: 31px; overflow: hidden; background: var(--o-fondo-efe7de, #EFE7DE)">
+<div style="display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: var(--o-fondo-075e54, #075E54); color: var(--o-texto-ffffff, #FFFFFF)">
+<span style="width: 34px; height: 34px; border-radius: 50%; background: var(--o-fondo-ffffff, #FFFFFF); display: flex; align-items: center; justify-content: center"><img src="./assets/marca/y-azul.svg" alt="" style="height: 22px; width: auto"></span>
 <div><div style="font-size: 15px; font-weight: 600">Saludly</div><div style="font-size: 11.5px; opacity: 0.8">Cuenta de empresa</div></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 12px 20px">
@@ -735,25 +789,25 @@ a{color:#1670B8}a:hover{color:#0A2236}
 </div>
 </section>
 
-<section id="agendar" class="sl-sec" aria-labelledby="sl-memb-t" style="background: #FFFFFF; padding: 112px 24px; border-top: 1px solid #EDF1F5">
+<section id="agendar" class="sl-sec" aria-labelledby="sl-memb-t" style="background: var(--o-fondo-ffffff, #FFFFFF); padding: 112px 24px; border-top: 1px solid var(--o-borde-edf1f5, #EDF1F5)">
 <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 48px 80px; align-items: center">
-<div class="sl-memb-photo sl-camino" style="position: relative; border-radius: 36px; overflow: hidden; padding: clamp(28px, 4vw, 44px); background: radial-gradient(50% 50% at 15% 10%, rgba(43,158,240,0.16), rgba(43,158,240,0) 70%), radial-gradient(45% 45% at 90% 90%, rgba(37,211,102,0.12), rgba(37,211,102,0) 70%), #F4F8FC">
-<div class="sl-camino-vidrio" style="border-radius: 28px; padding: clamp(22px, 3vw, 32px); background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 18px 40px rgba(10,34,54,0.06)">
+<div class="sl-memb-photo sl-camino" style="position: relative; border-radius: 36px; overflow: hidden; padding: clamp(28px, 4vw, 44px); background: radial-gradient(50% 50% at 15% 10%, var(--o-fondo-2b9ef0-016, rgba(43,158,240,0.16)), var(--o-fondo-2b9ef0-0, rgba(43,158,240,0)) 70%), radial-gradient(45% 45% at 90% 90%, var(--o-fondo-25d366-012, rgba(37,211,102,0.12)), var(--o-fondo-25d366-0, rgba(37,211,102,0)) 70%), var(--o-fondo-f4f8fc, #F4F8FC)">
+<div class="sl-camino-vidrio" style="border-radius: 28px; padding: clamp(22px, 3vw, 32px); background: var(--o-fondo-ffffff-062, rgba(255,255,255,0.62)); border: 1px solid var(--o-borde-ffffff-09, rgba(255,255,255,0.9)); box-shadow: 0 18px 40px rgba(10,34,54,0.06)">
 <img src="./assets/marca/saludly-azul.svg" alt="Saludly" style="height: 40px; width: auto">
-<p style="margin: 14px 0 22px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3E5266">Tu camino en Saludly</p>
+<p style="margin: 14px 0 22px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--o-texto-3e5266, #3E5266)">Tu camino en Saludly</p>
 <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px">
-<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: #1670B8; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span><div><div style="font-size: 16px; font-weight: 600; color: #0A2236">Creas tu cuenta y pagas</div><div style="font-size: 14px; line-height: 1.45; color: #52667A">Con Google, en un minuto. Pagas por transferencia Bre-B.</div></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: #1670B8; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">2</span><div><div style="font-size: 16px; font-weight: 600; color: #0A2236">Respondes tus preguntas</div><div style="font-size: 14px; line-height: 1.45; color: #52667A">Tus metas, tu actividad, tus alergias y tus medicamentos.</div></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: #1670B8; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">3</span><div><div style="font-size: 16px; font-weight: 600; color: #0A2236">La enfermera va a tu casa</div><div style="font-size: 14px; line-height: 1.45; color: #52667A">Eliges día y hora en la app. Toma de muestra en ayunas.</div></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: #1670B8; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">4</span><div><div style="font-size: 16px; font-weight: 600; color: #0A2236">Recibes tu informe</div><div style="font-size: 14px; line-height: 1.45; color: #52667A">Revisado por un médico, con tu plan en 3 pasos.</div></div></li>
-<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: #1670B8; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">5</span><div><div style="font-size: 16px; font-weight: 600; color: #0A2236">Te acompañamos por WhatsApp</div><div style="font-size: 14px; line-height: 1.45; color: #52667A">Recomendaciones, recetas y cuándo ver a tu médico.</div></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span><div><div style="font-size: 16px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Creas tu cuenta y pagas</div><div style="font-size: 14px; line-height: 1.45; color: var(--o-texto-52667a, #52667A)">Con Google, en un minuto. Pagas por transferencia Bre-B.</div></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">2</span><div><div style="font-size: 16px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Respondes tus preguntas</div><div style="font-size: 14px; line-height: 1.45; color: var(--o-texto-52667a, #52667A)">Tus metas, tu actividad, tus alergias y tus medicamentos.</div></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">3</span><div><div style="font-size: 16px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">La enfermera va a tu casa</div><div style="font-size: 14px; line-height: 1.45; color: var(--o-texto-52667a, #52667A)">Eliges día y hora en la app. Toma de muestra en ayunas.</div></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">4</span><div><div style="font-size: 16px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Recibes tu informe</div><div style="font-size: 14px; line-height: 1.45; color: var(--o-texto-52667a, #52667A)">Revisado por un médico, con tu plan en 3 pasos.</div></div></li>
+<li style="display: flex; gap: 14px; align-items: flex-start"><span class="sl-display" style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--o-fondo-1670b8, #1670B8); color: var(--o-texto-ffffff, #FFFFFF); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center">5</span><div><div style="font-size: 16px; font-weight: 600; color: var(--o-texto-0a2236, #0A2236)">Te acompañamos por WhatsApp</div><div style="font-size: 14px; line-height: 1.45; color: var(--o-texto-52667a, #52667A)">Recomendaciones, recetas y cuándo ver a tu médico.</div></div></li>
 </ol>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 22px">
 <h2 id="sl-memb-t" class="sl-display" style="margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; font-weight: 600; letter-spacing: -0.03em; max-width: 14ch">Membresía Saludly</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #52667A; max-width: 38ch">Mide, actúa con tu médico y vuelve a medir para ver qué cambió.</p>
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px"><span class="sl-display" style="font-size: clamp(44px, 11vw, 56px); line-height: 1; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap">10 cupos</span><span style="font-size: 15px; color: #52667A">de lanzamiento en Bogotá</span></div>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: var(--o-texto-52667a, #52667A); max-width: 38ch">Mide, actúa con tu médico y vuelve a medir para ver qué cambió.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px"><span class="sl-display" style="font-size: clamp(44px, 11vw, 56px); line-height: 1; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap">10 cupos</span><span style="font-size: 15px; color: var(--o-texto-52667a, #52667A)">de lanzamiento en Bogotá</span></div>
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
 <li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>100+ biomarcadores en tu panel de sangre</li>
 <li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Toma a domicilio con enfermera certificada</li>
@@ -762,8 +816,8 @@ a{color:#1670B8}a:hover{color:#0A2236}
 <li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Resultados en pocos días hábiles, revisados por un médico</li>
 <li style="display: flex; gap: 12px; align-items: center; font-size: 16px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="11" fill="#0A2236"></circle><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Seguimiento sugerido con un profesional de salud</li>
 </ul>
-<a href="https://app.saludly.online/entrar" class="sl-btn-black" style="display: flex; align-items: center; justify-content: center; height: 56px; max-width: 420px; border-radius: 28px; background: #0A2236; color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: none">Empezar</a>
-<span style="font-size: 13px; color: #52667A">Solo en Bogotá. El valor lo ves en la app al crear tu cuenta. <a href="https://app.saludly.online/privacidad" style="color: inherit">Política de datos</a></span>
+<a href="https://app.saludly.online/entrar" class="sl-btn-black" style="display: flex; align-items: center; justify-content: center; height: 56px; max-width: 420px; border-radius: 28px; background: var(--o-fondo-0a2236, #0A2236); color: var(--o-texto-ffffff, #FFFFFF); font-size: 17px; font-weight: 600; text-decoration: none">Empezar</a>
+<span style="font-size: 13px; color: var(--o-texto-52667a, #52667A)">Solo en Bogotá. El valor lo ves en la app al crear tu cuenta. <a href="https://app.saludly.online/privacidad" style="color: inherit">Política de datos</a></span>
 </div>
 </div>
 </section>
@@ -927,7 +981,13 @@ class Component extends DCLogic {
       v.muted = true;
       v.loop = this.props.loopVideo ?? true;
       if (this._reduce) { v.pause(); }
-      else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else {
+        const p = v.play();
+        if (p && p.catch) p.catch(() => {
+          const otraVez = () => { v.play().catch(() => {}); ['touchend', 'click', 'keydown'].forEach((e) => document.removeEventListener(e, otraVez)); };
+          ['touchend', 'click', 'keydown'].forEach((e) => document.addEventListener(e, otraVez, { passive: true }));
+        });
+      }
     }
   }
 
@@ -974,7 +1034,7 @@ class Component extends DCLogic {
     const wv = {};
     for (let i = 0; i < 4; i++) {
       wv['w' + i + 'On'] = wOn[i] ? 'true' : 'false';
-      wv['w' + i + 'Bg'] = wOn[i] ? '#1DC48A' : '#CBD5DF';
+      wv['w' + i + 'Bg'] = wOn[i] ? slC('#1DC48A') : slC('#CBD5DF');
       wv['w' + i + 'X'] = wOn[i] ? '18px' : '0px';
       wv['w' + i + 'Sub'] = wOn[i] ? wSubOn[i] : 'Desconectado';
       wv['w' + i + 'Tog'] = () => { const n = (this.state.wOn || [true, true, true, false]).slice(); n[i] = !n[i]; this.setState({ wOn: n }); };
@@ -983,18 +1043,18 @@ class Component extends DCLogic {
     const tileVal = ['8.214', '7 h 19', '48 ms', '68,4 kg'];
     for (let i = 0; i < 4; i++) {
       wv['t' + i + 'V'] = tileOn[i] ? tileVal[i] : 'Apagado';
-      wv['t' + i + 'C'] = tileOn[i] ? '#0A0F14' : '#9FB0C0';
+      wv['t' + i + 'C'] = tileOn[i] ? slC('#0A0F14') : slC('#9FB0C0');
       wv['t' + i + 'Op'] = tileOn[i] ? '1' : '0.6';
     }
     const nOn = wOn.filter(Boolean).length;
     wv.wStatus = nOn === 4 ? 'Todo sincronizado' : nOn === 0 ? 'Sin dispositivos' : nOn + ' de 4 conectados';
-    wv.wStatusBg = nOn === 4 ? '#E3F7EE' : '#EEF2F6';
-    wv.wStatusInk = nOn === 4 ? '#0B6B4A' : '#52667A';
+    wv.wStatusBg = nOn === 4 ? slC('#E3F7EE') : slC('#EEF2F6');
+    wv.wStatusInk = nOn === 4 ? slC('#0B6B4A') : slC('#52667A');
     const labels = this._labels || {};
     const label = (!s.scrolled && s.narrow) ? 'Inicio' : (labels[s.section] || 'Inicio');
 
-    const ok = { status: 'En rango', pillBg: '#C7F0DF', pillInk: '#0B4A33' };
-    const rev = { status: 'Revisar', pillBg: '#FFDCCD', pillInk: '#7A2A0C' };
+    const ok = { status: 'En rango', pillBg: slC('#C7F0DF'), pillInk: slC('#0B4A33') };
+    const rev = { status: 'Revisar', pillBg: slC('#FFDCCD'), pillInk: slC('#7A2A0C') };
     const mk = (arr) => arr.map(([name, st]) => ({ name, status: st.status, pillBg: st.pillBg, pillInk: st.pillInk }));
     const a = mk([['Vitamina D', ok], ['TSH', ok], ['T4 libre', ok], ['Creatinina', ok], ['Ferritina', rev], ['HbA1c', rev], ['Colesterol LDL', rev], ['ApoB', ok], ['Lipoproteína(a)', ok], ['Vitamina B12', ok]]);
     const b = mk([['Insulina', ok], ['Triglicéridos', ok], ['Colesterol HDL', ok], ['Hemoglobina', ok], ['Plaquetas', ok], ['ALT', ok], ['AST', ok], ['Sodio', ok], ['Potasio', ok], ['Glucosa', rev]]);
@@ -1014,9 +1074,9 @@ class Component extends DCLogic {
         left: (d.x / 200 * 100).toFixed(2) + '%',
         top: (d.y / 470 * 100).toFixed(2) + '%',
         labelPos: d.side === 'r' ? 'left: 26px' : 'right: 26px',
-        dotColor: sel ? '#FF6B35' : '#2B9EF0',
+        dotColor: sel ? '#FF6B35' : slC('#2B9EF0'),
         dotClass: sel ? 'sl-pulse' : '',
-        labelColor: sel ? '#0A2236' : '#52667A',
+        labelColor: sel ? slC('#0A2236') : slC('#52667A'),
         labelWeight: sel ? '700' : '500',
         pressed: sel ? 'true' : 'false',
         pick: () => this.setState({ sys: d.id })
@@ -1034,7 +1094,7 @@ class Component extends DCLogic {
     const tile = (i) => {
       const on = s.cycle === i;
       return {
-        bg: on ? '#0A2236' : '#1670B8',
+        bg: on ? slC('#0A2236', 'ciclo') : '#1670B8',
         sc: on ? '1.08' : '1',
         sh: on ? '0 18px 36px rgba(10,34,54,0.28)' : '0 6px 14px rgba(22,112,184,0.18)',
         p: on ? 'true' : 'false',
