@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { MessageCircle, Salad, Share2, Stethoscope } from "lucide-react";
+import { Check, ChevronDown, Globe, HeartPulse, MessageCircle, ScrollText, Search, Share2, ShieldCheck } from "lucide-react";
 import { BotonGoogle } from "@/components/BotonGoogle";
-import { Marca } from "@/components/Comunes";
-import { Campo, Opcion, Pantalla, Titulo, claseEntrada } from "@/components/Formulario";
+import { Opcion } from "@/components/Formulario";
+import { BotonChico, Ficha, PantallaPre, claseFicha } from "@/components/FlujoPre";
 import { leerOrigen } from "@/lib/origen";
 import { GROSOR_Y, TRAZO_Y } from "@/lib/trazo_y";
-import { VERSION_AUTORIZACION_PRE, siguientePaso, supabase, useSesion } from "@/lib/sesion";
+import { VERSION_AUTORIZACION_PRE, siguientePaso, supabase, useSesion, type Preregistro as DatosPre } from "@/lib/sesion";
 import C from "@/lib/contenido.json";
 
 /**
  * Preventa: pre-registro gratis (tabla preregistros). Sin documento, dirección ni datos clínicos.
- * Sin sesión: qué es Saludly y la semana de prueba, y el botón de Google.
- * Con sesión: datos básicos, 3 metas (con "Otro"), semana de prueba (alergias y dieta para las recetas) y autorización.
- * Al final: escribir "hola" por WhatsApp para empezar la semana de prueba y el enlace para invitar amigos.
+ * Portada: logo, imagen, título y Google (o correo). Con sesión, 6 pantallas al estilo de un onboarding de celular
+ * (FlujoPre): quién eres → cumpleaños → dónde vives → objetivo → alergias → términos.
+ * Al final: escribir "hola" por WhatsApp para empezar la semana de recetas e invitar a alguien.
  * El anticipo no va aquí: lo pide el WhatsApp al terminar la semana.
+ * En desarrollo, /preregistro?demo (y &paso=1..6 o demo=listo) muestra las pantallas sin cuenta, con datos de ejemplo.
  */
 
 const LOCALIDADES = [
@@ -23,7 +24,12 @@ const LOCALIDADES = [
   "Rafael Uribe Uribe", "Ciudad Bolívar", "Sumapaz", "Municipio cercano a Bogotá", "Fuera de Bogotá",
 ];
 
+const MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
 const OTRO = "otro";
+
+const params = new URLSearchParams(window.location.search);
+const DEMO = import.meta.env.DEV && params.has("demo");
 
 function alternar(lista: string[], id: string, maximo?: number) {
   if (lista.includes(id)) return lista.filter((x) => x !== id);
@@ -39,71 +45,50 @@ function edadDe(fecha: string) {
   return hoy.getFullYear() - a - (hoy.getMonth() + 1 < m || (hoy.getMonth() + 1 === m && hoy.getDate() < d) ? 1 : 0);
 }
 
-function hoyISO() {
-  const h = new Date();
-  return `${h.getFullYear()}-${String(h.getMonth() + 1).padStart(2, "0")}-${String(h.getDate()).padStart(2, "0")}`;
+/** Fecha AAAA-MM-DD si el día existe en ese mes y año; si no, "". */
+function fechaDe(dia: string, mes: string, anio: string) {
+  const d = Number(dia), m = Number(mes), a = Number(anio);
+  if (!d || !m || anio.length !== 4) return "";
+  const f = new Date(a, m - 1, d);
+  if (f.getFullYear() !== a || f.getMonth() !== m - 1 || f.getDate() !== d) return "";
+  return `${a}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 }
 
-function Presentacion() {
+function Portada() {
   const [error, setError] = useState<string | null>(null);
   return (
-    <main className="min-h-screen bg-background">
-      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 py-8">
-        <Marca derecha="Pre-registro" />
-        <section className="rise mt-12">
-          <h1 className="text-3xl font-light tracking-tight text-ink">Conoce tu salud antes de que te avise.</h1>
-          <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            Saludly es un estudio preventivo de sangre en Bogotá: más de 100 marcadores, la toma en tu casa y un informe en palabras claras que revisa un médico. No es un diagnóstico.
-          </p>
-          <div className="mt-8 space-y-3">
-            {[
-              { icono: Salad, t: "Una semana de recetas y recomendaciones de salud gratis", d: "Durante 7 días te mandamos por WhatsApp una receta saludable y un consejo de salud. Sin tarjeta y sin compromiso." },
-              { icono: Stethoscope, t: "Tu lugar en la lista", d: "Cuando abramos los cupos en Bogotá te avisaremos primero, con los beneficios exclusivos para los primeros." },
-            ].map(({ icono: Icono, t, d }) => (
-              <div key={t} className="flex gap-4 rounded-2xl bg-surface p-4">
-                <Icono className="mt-0.5 h-5 w-5 shrink-0 text-optimal" />
-                <div>
-                  <p className="text-sm text-ink">{t}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-ink-muted">{d}</p>
-                </div>
-              </div>
-            ))}
+    <main className="min-h-screen bg-white">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 pb-8 pt-6">
+        <img src="/marca/saludly.svg" alt="Saludly" className="mx-auto h-10 w-auto" />
+        <section className="rise flex flex-1 flex-col justify-center py-6">
+          <img src="/preregistro/salmon.png" alt="Sartén con un filete de salmón y dos medios limones" width={1280} height={960} className="mx-auto w-full max-w-[22rem] mix-blend-multiply [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent),linear-gradient(to_bottom,transparent,#000_8%,#000_92%,transparent)]" />
+          <div className="mt-4 text-center">
+            <h1 className="text-balance text-[28px] font-normal leading-tight tracking-tight text-ink">Una receta y recomendaciones saludables al día, 7 días gratis.</h1>
+            <p className="mx-auto mt-3 max-w-[22rem] text-pretty text-base leading-relaxed text-ink-muted">
+              Te llega por WhatsApp con un consejo de salud. Y quedas de primero en la lista de Saludly en Bogotá.
+            </p>
           </div>
-          <div className="mt-8">
-            <BotonGoogle texto="signup_with" alError={setError} />
-          </div>
-          {error && <p className="mt-4 rounded-xl bg-critical-soft px-4 py-2 text-sm text-critical">{error}</p>}
-          <a href="/entrar" className="mt-4 block text-center text-sm text-optimal underline-offset-4 hover:underline">
+        </section>
+        <div>
+          {error && <p className="mb-3 rounded-xl bg-critical-soft px-4 py-2 text-center text-sm text-critical">{error}</p>}
+          <BotonGoogle texto="signup_with" alError={setError} />
+          <a href="/entrar" className="mt-4 block text-center text-[15px] text-ink-muted underline-offset-4 hover:underline">
             Prefiero usar mi correo
           </a>
-          <p className="mt-8 text-center text-xs text-ink-faint">
-            Toma 1 minuto. Lee cómo cuidamos tus datos en la{" "}
+          <p className="mt-5 text-center text-xs text-ink-faint">
+            Es gratis. Lee cómo cuidamos tus datos en la{" "}
             <a href="/privacidad" target="_blank" rel="noreferrer" className="underline">
               política de datos
             </a>
             .
           </p>
-        </section>
+        </div>
       </div>
     </main>
   );
 }
 
-/** Para quien entró con otra cuenta de Google: cierra la sesión y vuelve a la presentación. */
-function OtraCuenta() {
-  const s = useSesion();
-  return (
-    <p className="mt-6 text-center text-xs text-ink-faint">
-      Entraste como {s.sesion?.user.email}.{" "}
-      <button type="button" onClick={() => void s.salir()} className="text-optimal underline-offset-4 hover:underline">
-        Usar otra cuenta
-      </button>
-    </p>
-  );
-}
-
-function YaInscrito() {
-  const s = useSesion();
+function Listo({ datos }: { datos: Pick<DatosPre, "nombre" | "codigo"> }) {
   const [whatsapp, setWhatsapp] = useState<string | null>(null);
   const [copiado, setCopiado] = useState(false);
   useEffect(() => {
@@ -114,87 +99,83 @@ function YaInscrito() {
       .maybeSingle()
       .then(({ data }) => setWhatsapp(data?.valor ?? null));
   }, []);
-  const p = s.preregistro!;
-  const nombre = p.nombre.split(" ")[0];
-  const mensaje = p.quiere_prueba
-    ? `Hola, soy ${p.nombre}. Quiero empezar mi semana de prueba en Saludly. Mi código es ${p.codigo}.`
-    : `Hola, soy ${p.nombre}. Ya me pre-registré en Saludly. Mi código es ${p.codigo}.`;
-  const enlace = `${window.location.origin}/preregistro?ref=amigo-${p.codigo}`;
+  const nombre = datos.nombre.split(" ")[0];
+  const mensaje = `Hola, soy ${datos.nombre}. Quiero empezar mi semana de recetas en Saludly. Mi código es ${datos.codigo}.`;
+  const enlace = `${window.location.origin}/preregistro?ref=amigo-${datos.codigo}`;
   const invitar = async () => {
-    const texto = "Me inscribí en Saludly, un estudio preventivo de sangre en Bogotá. Tienen una semana de prueba gratis por WhatsApp:";
+    const texto = "Me inscribí en Saludly: 7 días de recetas y recomendaciones saludables gratis por WhatsApp. Inscríbete aquí:";
     try {
-      if (navigator.share) return await navigator.share({ text: texto, url: enlace });
+      if (navigator.share) return await navigator.share({ title: "Saludly", text: texto, url: enlace });
       await navigator.clipboard.writeText(`${texto} ${enlace}`);
       setCopiado(true);
     } catch {
-      /* compartir cancelado o sin portapapeles: el enlace queda visible */
+      /* compartir cancelado o sin portapapeles */
     }
   };
   return (
-    <main className="min-h-screen bg-background">
-      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 py-8">
-        <Marca derecha="Pre-registro" />
-        <section className="rise mt-10">
-          {/* La "y" de Saludly se dibuja de punta a punta, como en la espera de resultados. */}
-          <svg viewBox="0 0 981.45 1248.02" className="mx-auto h-28 w-auto" role="img" aria-label="Saludly">
-            <path d={TRAZO_Y} pathLength={1} className="trazo-espera" fill="none" stroke="#2793ff" strokeWidth={GROSOR_Y} strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <h1 className="mt-10 text-3xl font-light tracking-tight text-ink">¡Ya estás en la lista, {nombre}!</h1>
-          <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            {p.quiere_prueba
-              ? "Último paso: escríbenos por WhatsApp para empezar tu semana de prueba. Así sabemos que el número es tuyo y te llega la primera receta."
-              : "Te avisaremos por WhatsApp cuando abramos los cupos en Bogotá. Escríbenos para guardar nuestro número."}
-          </p>
-          {whatsapp && (
-            <a
-              href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 flex w-full items-center justify-center gap-3 rounded-full bg-optimal px-6 py-4 text-base text-primary-foreground"
-            >
-              <MessageCircle className="h-5 w-5" />
-              {p.quiere_prueba ? "Empezar mi semana por WhatsApp" : "Escribir a Saludly por WhatsApp"}
-            </a>
-          )}
-          <div className="mt-10 rounded-2xl bg-surface p-5">
-            <p className="text-sm text-ink">¿Conoces a alguien a quien le sirva?</p>
-            <p className="mt-1 text-xs leading-relaxed text-ink-muted">Compártele tu enlace y tendrás mejores beneficios.</p>
-            <p className="mt-3 break-all font-mono text-xs text-ink-faint">{enlace}</p>
-            <button type="button" onClick={() => void invitar()} className="mt-4 flex items-center gap-2 rounded-full border border-rule px-5 py-2.5 text-sm text-ink">
-              <Share2 className="h-4 w-4" />
-              {copiado ? "Copiado" : "Invitar"}
-            </button>
-          </div>
-          <OtraCuenta />
-        </section>
+    <main className="min-h-screen bg-white">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 py-10 text-center">
+        {/* La "y" de Saludly se dibuja de punta a punta, sin parar. */}
+        <svg viewBox="0 0 981.45 1248.02" className="mx-auto h-44 w-auto" role="img" aria-label="Saludly">
+          <path d={TRAZO_Y} pathLength={1} className="trazo-espera" fill="none" stroke="#2793ff" strokeWidth={GROSOR_Y} strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <h1 className="mt-10 text-balance text-[30px] font-normal leading-tight tracking-tight text-ink">¡Ya estás en la lista, {nombre}!</h1>
+        <p className="mx-auto mt-3 max-w-[22rem] text-pretty text-[17px] leading-relaxed text-ink-muted">
+          Escríbenos por WhatsApp para empezar tu semana de recetas. Así sabemos que el número es tuyo y te llega la primera receta con recomendaciones y hábitos saludables.
+        </p>
+        <a
+          href={whatsapp ? `https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}` : undefined}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-9 flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-4 text-base text-white"
+        >
+          <MessageCircle className="h-5 w-5" />
+          Empezar mi semana por WhatsApp
+        </a>
+        <button type="button" onClick={() => void invitar()} className="mt-3 flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[#f2f4f7] px-4 text-[14px] whitespace-nowrap text-ink">
+          <Share2 className="h-5 w-5" />
+          {copiado ? "Enlace copiado" : "Invita a alguien a quien le sirva como a ti"}
+        </button>
       </div>
     </main>
+  );
+}
+
+/** Fila de los términos: ícono en cuadro gris y texto; abre la política de datos. */
+function Termino({ icono, children }: { icono: ReactNode; children: ReactNode }) {
+  return (
+    <a href="/privacidad" target="_blank" rel="noreferrer" className="flex items-center gap-4 py-3">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#f2f4f7] text-ink">{icono}</span>
+      <span className="text-base leading-snug text-ink">{children}</span>
+    </a>
   );
 }
 
 export function Preregistro() {
   const s = useSesion();
   const navigate = useNavigate();
-  const [paso, setPaso] = useState(1);
-  const [nombre, setNombre] = useState("");
-  const [celular, setCelular] = useState("");
-  const [nacimiento, setNacimiento] = useState("");
-  const [sexo, setSexo] = useState<"hombre" | "mujer" | "">("");
-  const [localidad, setLocalidad] = useState("");
-  const [metas, setMetas] = useState<string[]>([]);
+  const ejemplo = DEMO;
+  const [paso, setPaso] = useState(Math.min(6, Math.max(1, Number(params.get("paso")) || 1)));
+  const [nombre, setNombre] = useState(ejemplo ? "Ana María Rojas" : "");
+  const [celular, setCelular] = useState(ejemplo ? "3001234567" : "");
+  const [sexo, setSexo] = useState<"hombre" | "mujer" | "">(ejemplo ? "mujer" : "");
+  const [dia, setDia] = useState(ejemplo ? "14" : "");
+  const [mes, setMes] = useState(ejemplo ? "3" : "");
+  const [anio, setAnio] = useState(ejemplo ? "1988" : "");
+  const [localidad, setLocalidad] = useState(ejemplo ? "Chapinero" : "");
+  const [buscar, setBuscar] = useState("");
+  const [metas, setMetas] = useState<string[]>(ejemplo ? ["salud_general", "bajar_peso"] : []);
   const [otro, setOtro] = useState("");
-  const [quierePrueba, setQuierePrueba] = useState<boolean | null>(null);
   const [alergias, setAlergias] = useState<string[]>([]);
-  const [sinAlergias, setSinAlergias] = useState(false);
-  const [dieta, setDieta] = useState<string | null>(null);
-  const [aceptaDatos, setAceptaDatos] = useState(false);
-  const [aceptaContacto, setAceptaContacto] = useState(false);
+  const [sinAlergias, setSinAlergias] = useState(ejemplo);
+  const [acepta, setAcepta] = useState(ejemplo);
   const [ocupado, setOcupado] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [demoListo, setDemoListo] = useState(DEMO && params.get("demo") === "listo");
 
   // Pacientes, clientes y el equipo siguen su propio flujo.
   useEffect(() => {
-    if (s.cargando || !s.sesion) return;
+    if (DEMO || s.cargando || !s.sesion) return;
     const ir = siguientePaso(s);
     if (ir !== "/preregistro") void navigate({ to: ir });
   }, [s, navigate]);
@@ -205,16 +186,31 @@ export function Preregistro() {
     if (typeof n === "string") setNombre((x) => x || n);
   }, [s.sesion]);
 
-  if (s.cargando) return <div className="min-h-screen bg-background" />;
-  if (!s.sesion) return <Presentacion />;
-  if (s.preregistro) return <YaInscrito />;
+  // Localidades que coinciden con la búsqueda; la elegida va de primera, separada de las demás.
+  const lista = useMemo(() => {
+    const sinTilde = (t: string) => t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const filtradas = LOCALIDADES.filter((l) => sinTilde(l).includes(sinTilde(buscar.trim())));
+    return localidad && filtradas.includes(localidad) ? [localidad, ...filtradas.filter((l) => l !== localidad)] : filtradas;
+  }, [buscar, localidad]);
 
+  if (DEMO && demoListo) return <Listo datos={{ nombre, codigo: "a1b2c3" }} />;
+  if (!DEMO) {
+    if (s.cargando) return <div className="min-h-screen bg-white" />;
+    if (!s.sesion) return <Portada />;
+    if (s.preregistro) return <Listo datos={s.preregistro} />;
+  }
+  if (DEMO && params.get("demo") === "portada") return <Portada />;
+
+  const nacimiento = fechaDe(dia, mes, anio);
   const edad = edadDe(nacimiento);
-  const datosValidos = nombre.trim().length >= 3 && /^3\d{9}$/.test(celular) && edad >= 18 && edad <= 110 && localidad !== "";
+  const datosValidos = nombre.trim().length >= 3 && /^3\d{9}$/.test(celular);
+  const fechaValida = !!nacimiento && edad >= 18 && edad <= 110;
   const metasValidas = metas.length > 0 && (!metas.includes(OTRO) || otro.trim().length >= 3);
-  const pruebaValida = quierePrueba === false || (quierePrueba === true && dieta !== null && (sinAlergias || alergias.length > 0));
+  const alergiasValidas = sinAlergias || alergias.length > 0;
+  const cambiarCuenta = <BotonChico onClick={() => void s.salir()}>Salir</BotonChico>;
 
   const inscribir = async () => {
+    if (DEMO) return setDemoListo(true);
     setOcupado(true);
     setError(null);
     const { fuente, referido_por } = leerOrigen();
@@ -227,11 +223,11 @@ export function Preregistro() {
       localidad,
       objetivos: metas,
       objetivo_otro: metas.includes(OTRO) ? otro.trim() : null,
-      alergias: quierePrueba ? alergias : [],
-      dieta: quierePrueba ? dieta : null,
-      quiere_prueba: quierePrueba === true,
+      alergias,
+      dieta: null,
+      quiere_prueba: true,
       acepta_datos: true,
-      acepta_contacto: aceptaContacto,
+      acepta_contacto: true,
       version_autorizacion: VERSION_AUTORIZACION_PRE,
       agente: navigator.userAgent.slice(0, 300),
       fuente,
@@ -244,149 +240,176 @@ export function Preregistro() {
 
   if (paso === 1)
     return (
-      <Pantalla paso={1} total={4} etiqueta="Tus datos" boton="Continuar" puedeSeguir={datosValidos} onSeguir={() => setPaso(2)}>
-        <Titulo texto="Solo lo básico. No te pedimos documento ni dirección.">Cuéntanos quién eres.</Titulo>
-        <OtraCuenta />
-        <div className="mt-8 space-y-5">
-          <Campo etiqueta="Nombre">
-            <input autoComplete="name" value={nombre} onChange={(e) => setNombre(e.target.value)} className={claseEntrada} />
-          </Campo>
-          <Campo etiqueta="Celular con WhatsApp" ayuda="Ahí te llega la semana de prueba.">
-            <div className="flex gap-2">
-              <span className="rounded-2xl border border-rule bg-surface px-4 py-3.5 text-base text-ink-muted">+57</span>
-              <input inputMode="tel" autoComplete="tel-national" value={celular} onChange={(e) => setCelular(e.target.value.replace(/\D/g, "").slice(0, 10))} className={claseEntrada} placeholder="300 123 4567" />
-            </div>
-          </Campo>
-          <Campo etiqueta="Fecha de nacimiento" ayuda={nacimiento && !Number.isNaN(edad) ? (edad < 18 ? "Saludly es solo para mayores de 18 años." : `Tienes ${edad} años.`) : undefined}>
-            <input type="date" autoComplete="bday" min="1900-01-01" max={hoyISO()} value={nacimiento} onChange={(e) => setNacimiento(e.target.value)} className={claseEntrada} />
-          </Campo>
-          <Campo etiqueta="Sexo" ayuda="Opcional. Nos ayuda a elegir tus consejos.">
-            <select value={sexo} onChange={(e) => setSexo(e.target.value as "hombre" | "mujer" | "")} className={claseEntrada}>
+      <PantallaPre paso={1} titulo="Cuéntanos quién eres" boton="Siguiente" puedeSeguir={datosValidos} onSeguir={() => setPaso(2)} derecha={cambiarCuenta}>
+        <div className="grid gap-3">
+          <Ficha etiqueta="Nombre">
+            <input autoComplete="name" value={nombre} onChange={(e) => setNombre(e.target.value)} className={claseFicha} />
+          </Ficha>
+          <Ficha etiqueta="Celular con WhatsApp">
+            <span className="text-ink-muted">+57</span>
+            <input inputMode="tel" autoComplete="tel-national" value={celular} onChange={(e) => setCelular(e.target.value.replace(/\D/g, "").slice(0, 10))} className={claseFicha} placeholder="300 123 4567" />
+          </Ficha>
+          <Ficha etiqueta="Sexo (opcional)">
+            <select value={sexo} onChange={(e) => setSexo(e.target.value as "hombre" | "mujer" | "")} className={claseFicha}>
               <option value="">Prefiero no decirlo</option>
-              <option value="hombre">Masculino</option>
               <option value="mujer">Femenino</option>
+              <option value="hombre">Masculino</option>
             </select>
-          </Campo>
-          <Campo etiqueta="¿En qué localidad vives?">
-            <select value={localidad} onChange={(e) => setLocalidad(e.target.value)} className={claseEntrada}>
-              <option value="" disabled>
-                Elige una opción
-              </option>
-              {LOCALIDADES.map((l) => (
-                <option key={l} value={l}>
-                  {l}
-                </option>
-              ))}
-            </select>
-          </Campo>
+            <ChevronDown className="h-5 w-5 shrink-0 text-ink-muted" />
+          </Ficha>
         </div>
-      </Pantalla>
+      </PantallaPre>
     );
 
   if (paso === 2)
     return (
-      <Pantalla paso={2} total={4} etiqueta="Tus metas" boton="Continuar" puedeSeguir={metasValidas} onSeguir={() => setPaso(3)} onAtras={() => setPaso(1)}>
-        <Titulo texto="Elige hasta 3. Con ellas escogemos tus recetas y consejos.">¿Para qué quieres Saludly?</Titulo>
-        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">{metas.length} de 3 elegidas</p>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2">
-          {C.objetivos.map((o) => (
-            <Opcion key={o.id} multiple activa={metas.includes(o.id)} onClick={() => setMetas(alternar(metas, o.id, 3))} texto={o.nombre} />
-          ))}
-          <Opcion multiple activa={metas.includes(OTRO)} onClick={() => setMetas(alternar(metas, OTRO, 3))} texto="Otro" nota="Escríbelo con tus palabras." />
+      <PantallaPre paso={2} titulo="¿Cuándo es tu cumpleaños?" boton="Siguiente" puedeSeguir={fechaValida} onSeguir={() => setPaso(3)} onAtras={() => setPaso(1)} derecha={cambiarCuenta}>
+        <div className="grid grid-cols-[1fr_1.7fr_1.3fr] gap-3">
+          <Ficha etiqueta="Día">
+            <input inputMode="numeric" autoComplete="bday-day" value={dia} onChange={(e) => setDia(e.target.value.replace(/\D/g, "").slice(0, 2))} className={claseFicha} placeholder="20" />
+          </Ficha>
+          <Ficha etiqueta="Mes">
+            <select autoComplete="bday-month" value={mes} onChange={(e) => setMes(e.target.value)} className={claseFicha}>
+              <option value="" disabled>
+                Elige
+              </option>
+              {MESES.map((m, i) => (
+                <option key={m} value={String(i + 1)}>
+                  {m}
+                </option>
+              ))}
+            </select>
+          </Ficha>
+          <Ficha etiqueta="Año">
+            <input inputMode="numeric" autoComplete="bday-year" value={anio} onChange={(e) => setAnio(e.target.value.replace(/\D/g, "").slice(0, 4))} className={claseFicha} placeholder="1990" />
+          </Ficha>
         </div>
-        {metas.includes(OTRO) && (
-          <div className="mt-5">
-            <Campo etiqueta="¿Cuál es tu otra meta?">
-              <input value={otro} maxLength={200} onChange={(e) => setOtro(e.target.value)} className={claseEntrada} placeholder="Por ejemplo: controlar el estrés" />
-            </Campo>
-          </div>
-        )}
-      </Pantalla>
+        {nacimiento && edad < 18 && <p className="mt-4 text-sm text-critical">Saludly es solo para mayores de 18 años.</p>}
+        {dia && mes && anio.length === 4 && !nacimiento && <p className="mt-4 text-sm text-critical">Revisa la fecha: ese día no existe.</p>}
+      </PantallaPre>
     );
 
   if (paso === 3)
     return (
-      <Pantalla paso={3} total={4} etiqueta="Semana de prueba" boton="Continuar" puedeSeguir={pruebaValida} onSeguir={() => setPaso(4)} onAtras={() => setPaso(2)}>
-        <Titulo texto="7 días, una receta saludable y un consejo de salud cada día por WhatsApp. Gratis.">¿Quieres tu semana de prueba?</Titulo>
-        <div className="mt-6 grid gap-3">
-          <Opcion activa={quierePrueba === true} onClick={() => setQuierePrueba(true)} texto="Sí, quiero mi semana de prueba" />
-          <Opcion activa={quierePrueba === false} onClick={() => setQuierePrueba(false)} texto="No por ahora, solo avísenme cuando abran los cupos" />
+      <PantallaPre paso={3} titulo="¿Dónde vives?" boton="Siguiente" puedeSeguir={localidad !== ""} onSeguir={() => setPaso(4)} onAtras={() => setPaso(2)} derecha={cambiarCuenta}>
+        <label className="flex items-center gap-3 rounded-[22px] bg-[#f2f4f7] px-5 py-4">
+          <Search className="h-5 w-5 shrink-0 text-ink-muted" />
+          <input value={buscar} onChange={(e) => setBuscar(e.target.value)} className={claseFicha} placeholder="Buscar localidad" aria-label="Buscar localidad" />
+        </label>
+        <ul className="mt-4">
+          {lista.map((l, i) => {
+            const activa = l === localidad;
+            return (
+              <li key={l} className={activa && i === 0 && lista.length > 1 ? "border-b border-rule" : ""}>
+                <button type="button" onClick={() => setLocalidad(l)} aria-pressed={activa} className="flex w-full items-center gap-4 py-3.5 text-left">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#eaf3ff] text-sm font-medium text-[#2793ff]">
+                    {l
+                      .split(" ")
+                      .filter((p) => p.length > 2)
+                      .slice(0, 2)
+                      .map((p) => p[0])
+                      .join("")}
+                  </span>
+                  <span className="flex-1 text-[17px] text-ink">{l}</span>
+                  <span className={`grid h-6 w-6 place-items-center rounded-full border-2 ${activa ? "border-ink" : "border-rule"}`}>{activa && <span className="h-3 w-3 rounded-full bg-ink" />}</span>
+                </button>
+              </li>
+            );
+          })}
+          {lista.length === 0 && <li className="py-4 text-sm text-ink-muted">No encontramos esa localidad.</li>}
+        </ul>
+      </PantallaPre>
+    );
+
+  if (paso === 4)
+    return (
+      <PantallaPre
+        paso={4}
+        titulo="¿Cuál es tu objetivo?"
+        texto="Elige hasta 3. Con ellos escogemos tus recetas y consejos."
+        boton="Siguiente"
+        puedeSeguir={metasValidas}
+        onSeguir={() => setPaso(5)}
+        onAtras={() => setPaso(3)}
+        derecha={cambiarCuenta}
+      >
+        <div className="grid gap-3">
+          {C.objetivos.map((o) => (
+            <Opcion key={o.id} multiple activa={metas.includes(o.id)} onClick={() => setMetas(alternar(metas, o.id, 3))} texto={o.nombre} />
+          ))}
+          <Opcion multiple activa={metas.includes(OTRO)} onClick={() => setMetas(alternar(metas, OTRO, 3))} texto="Otro" />
+          {metas.includes(OTRO) && (
+            <Ficha etiqueta="¿Cuál es tu otro objetivo?">
+              <input value={otro} maxLength={200} onChange={(e) => setOtro(e.target.value)} className={claseFicha} placeholder="Por ejemplo: controlar el estrés" />
+            </Ficha>
+          )}
         </div>
-        {quierePrueba && (
-          <>
-            <h2 className="mt-10 text-lg font-light text-ink">{C.alergias.texto}</h2>
-            <p className="mt-1 text-sm text-ink-muted">Tus recetas no incluirán lo que no puedes comer.</p>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {C.alergias.opciones.map((o) => (
-                <Opcion
-                  key={o.id}
-                  multiple
-                  activa={alergias.includes(o.id)}
-                  onClick={() => {
-                    setAlergias(alternar(alergias, o.id));
-                    setSinAlergias(false);
-                  }}
-                  texto={o.texto}
-                />
-              ))}
-              <Opcion
-                multiple
-                activa={sinAlergias}
-                onClick={() => {
-                  setSinAlergias(!sinAlergias);
-                  setAlergias([]);
-                }}
-                texto="No tengo alergias ni intolerancias"
-              />
-            </div>
-            <h2 className="mt-10 text-lg font-light text-ink">{C.dieta.texto}</h2>
-            <div className="mt-4 grid gap-3">
-              {C.dieta.opciones.map((o) => (
-                <Opcion key={o.id} activa={dieta === o.id} onClick={() => setDieta(o.id)} texto={o.texto} />
-              ))}
-            </div>
-          </>
-        )}
-      </Pantalla>
+      </PantallaPre>
+    );
+
+  if (paso === 5)
+    return (
+      <PantallaPre
+        paso={5}
+        titulo="Solo para saber qué recomendarte, dinos si tienes alergias"
+        texto="Tus recetas no incluirán lo que no puedes comer."
+        boton="Siguiente"
+        puedeSeguir={alergiasValidas}
+        onSeguir={() => setPaso(6)}
+        onAtras={() => setPaso(4)}
+        derecha={cambiarCuenta}
+      >
+        <div className="grid gap-3">
+          <Opcion
+            multiple
+            activa={sinAlergias}
+            onClick={() => {
+              setSinAlergias(!sinAlergias);
+              setAlergias([]);
+            }}
+            texto="No tengo alergias"
+          />
+          {C.alergias.opciones.map((o) => (
+            <Opcion
+              key={o.id}
+              multiple
+              activa={alergias.includes(o.id)}
+              onClick={() => {
+                setAlergias(alternar(alergias, o.id));
+                setSinAlergias(false);
+              }}
+              texto={o.texto}
+            />
+          ))}
+        </div>
+      </PantallaPre>
     );
 
   return (
-    <Pantalla paso={4} total={4} etiqueta="Tus datos son privados" boton="Inscribirme" puedeSeguir={aceptaDatos && (!quierePrueba || aceptaContacto)} ocupado={ocupado} onSeguir={() => void inscribir()} onAtras={() => setPaso(3)} error={error}>
-      <Titulo>Antes de inscribirte: tus datos.</Titulo>
-      <div className="mt-6 space-y-4 text-sm leading-relaxed text-ink-muted">
-        <p>
-          <strong className="font-medium text-ink">Qué datos.</strong> Tu nombre, correo, celular, fecha de nacimiento, sexo si nos lo das, localidad y tus metas. Si pides la semana de prueba, también tus alergias y tu tipo de alimentación: son datos sensibles y no estás obligado a darlos.
-        </p>
-        <p>
-          <strong className="font-medium text-ink">Para qué.</strong> Para enviarte la semana de prueba, avisarte cuando abramos los cupos en Bogotá con el precio, y saber cuántas personas están interesadas y de dónde llegan. No los vendemos ni los usamos para publicidad de otros.
-        </p>
-        <p>
-          <strong className="font-medium text-ink">Servidores fuera de Colombia.</strong> Usamos proveedores con servidores en otros países (Supabase, Vercel, Google y Meta), que guardan tus datos solo por cuenta de Saludly.
-        </p>
-        <p>
-          <strong className="font-medium text-ink">Tus derechos.</strong> Puedes conocer, corregir y borrar tus datos, o retirar esta autorización, escribiendo a carlos@saludly.online. Lee la{" "}
-          <a href="/privacidad" target="_blank" rel="noreferrer" className="text-primary underline">
-            Política de tratamiento de datos
-          </a>
-          .
-        </p>
+    <PantallaPre
+      paso={6}
+      titulo="Revisa y acepta los términos"
+      texto="Al marcar la casilla confirmas que tienes 18 años o más y aceptas recibir por WhatsApp y correo tu semana de recetas y novedades. Te das de baja escribiendo «BAJA»."
+      boton="Aceptar y continuar"
+      puedeSeguir={acepta}
+      ocupado={ocupado}
+      onSeguir={() => void inscribir()}
+      onAtras={() => setPaso(5)}
+      derecha={cambiarCuenta}
+      error={error}
+      encimaBoton={
+        <button type="button" onClick={() => setAcepta((v) => !v)} aria-pressed={acepta} className="flex items-center gap-3 rounded-[20px] bg-[#f2f4f7] px-6 py-3.5 text-[17px] text-ink">
+          {acepta ? "Aceptado" : "Acepto"}
+          <span className={`grid h-6 w-6 place-items-center rounded-md border-2 ${acepta ? "border-ink bg-ink text-white" : "border-ink/30"}`}>{acepta && <Check className="h-4 w-4" strokeWidth={3} />}</span>
+        </button>
+      }
+    >
+      <div className="grid gap-1">
+        <Termino icono={<ShieldCheck className="h-6 w-6" />}>Autorización de tratamiento de datos (Ley 1581)</Termino>
+        <Termino icono={<HeartPulse className="h-6 w-6" />}>Tus alergias son datos sensibles: solo para tus recetas</Termino>
+        <Termino icono={<Globe className="h-6 w-6" />}>Servidores fuera de Colombia (Supabase, Vercel, Google y Meta)</Termino>
+        <Termino icono={<ScrollText className="h-6 w-6" />}>Tus derechos: conocer, corregir o borrar tus datos</Termino>
       </div>
-      <div className="mt-8 grid gap-3">
-        <Opcion
-          multiple
-          activa={aceptaDatos}
-          onClick={() => setAceptaDatos((v) => !v)}
-          texto="Tengo 18 años o más y autorizo a Saludly a tratar mis datos para lo descrito, incluida su transmisión a servidores fuera de Colombia."
-          nota="Obligatoria para inscribirte."
-        />
-        <Opcion
-          multiple
-          activa={aceptaContacto}
-          onClick={() => setAceptaContacto((v) => !v)}
-          texto="Quiero recibir por WhatsApp y correo la semana de prueba, el aviso de apertura, el precio y los beneficios de Saludly."
-          nota={quierePrueba ? "Necesaria para enviarte la semana de prueba. Puedes darte de baja escribiendo «BAJA»." : "Opcional. Puedes darte de baja escribiendo «BAJA»."}
-        />
-      </div>
-    </Pantalla>
+    </PantallaPre>
   );
 }

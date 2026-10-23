@@ -67,7 +67,7 @@ export function BotonGoogle({ texto = "continue_with", alError }: { texto?: "con
         });
         window.google.accounts.id.renderButton(caja.current, {
           type: "standard",
-          theme: "filled_blue",
+          theme: "filled_black",
           size: "large",
           shape: "pill",
           text: texto,
