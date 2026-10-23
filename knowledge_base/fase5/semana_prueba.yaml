@@ -1,0 +1,133 @@
+# Semana de prueba de la preventa (pre-registro gratis): 7 días por WhatsApp, 4 envíos al día (5 los días de cortisol).
+# Lo arma codigo/informe/semana_prueba.py para cada persona del pre-registro, con sus objetivos (hasta 3, en el orden en
+# que los eligió; si solo eligió "Otro", salud_general), sus alergias y su código (cada persona recibe recetas
+# distintas, siempre las mismas para ella). Decisión de Carlos del 23 oct 2026: le llegan todos los consejos de sus
+# objetivos (consejos_objetivos.yaml), dos por objetivo al día, agrupados en dos mensajes para no llenarla de notificaciones.
+#   07:00  consejos de la mañana: uno por objetivo, en un solo mensaje.
+#   09:00  receta: nutricion.plan_recetas() del catálogo aprobado, sin las recetas con sus alérgenos, y una pregunta con botones.
+#   13:00  cortisol, días 1, 3, 5 y 7: el de cada objetivo y, si faltan, los de cortisol_general.
+#   18:00  "solo tu examen lo dice": un dato que solo responde el examen de sangre y una pregunta con botones (objetivo principal).
+#   19:30  consejos de la tarde: uno por objetivo, en un solo mensaje (días 1 a 6; el día 7 cierra con el anticipo).
+# Cada objetivo tiene 12 o 13 consejos para 13 espacios (7 mañanas y 6 tardes); los de turno "tarde" van a las 7:30 p. m.
+# Estilo Gary Vaynerchuk: los días 1 a 6 se da valor sin pedir nada; el día 7 se pide (el anticipo).
+# Las preguntas son sobre la persona y se responden con un toque. Botones de respuesta rápida de WhatsApp: hasta 3 por
+# mensaje y 20 caracteres cada uno; dentro de la ventana de 24 horas no necesitan aprobación de Meta.
+# Cada toque abre otra vez la ventana de 24 horas. Si al enviar la ventana está cerrada, sale la plantilla
+# recordatorio_dia (máximo una al día) y, cuando la toca, le llega lo pendiente de ese día.
+# estado_revision: pendiente (la aprueba Carlos)
+
+estado_revision: pendiente
+anticipo_valor: 49000
+horarios: {manana: "07:00", receta: "09:00", cortisol: "13:00", examen: "18:00", tarde: "19:30"}
+dias_cortisol: [1, 3, 5, 7]
+# Día 1: empieza cuando escribe "hola". Antes de las 4 p. m.: bienvenida y consejos de la mañana de una vez, receta
+# 2 horas después, cortisol a la 1 p. m. (o con la receta, si ya pasó), el dato del examen a las 6 p. m. y los consejos
+# de la tarde a las 7:30. Desde las 4 p. m.: bienvenida, consejos de la mañana y receta de una vez; cortisol y dato del
+# examen 2 horas después, y los consejos de la tarde con ellos (si eso pasa de las 9 p. m., le llega al otro día a las 7 a. m.).
+dia_1: "Antes de las 4 p. m.: todo el mismo día. Desde las 4 p. m.: consejos de la mañana y receta de una vez; cortisol, dato del examen y consejos de la tarde 2 horas después, nunca después de las 9 p. m."
+
+familias:
+  general: [salud_general, prevenir, condicion_existente]
+  peso: [bajar_peso]
+  deporte: [masa_muscular, rendimiento, maraton, atletico]
+  energia: [energia_sueno]
+  envejecer: [envejecer_saludable]
+
+# {nombre}: primer nombre · {objetivos}: "tu objetivo: …" o "tus objetivos: …, … y …" · {sin_alergias}: frase de alergias o vacío
+bienvenida: "¡Hola, {nombre}! 🌱 Qué bueno tenerte en Saludly. Durante 7 días te acompaño con {objetivos}. A las 7 de la mañana te llegan tus consejos, a las 9 tu receta, a las 6 de la tarde algo que solo cuenta tu sangre y a las 7:30 de la noche más consejos. Día de por medio, a la 1, uno para bajarle al estrés.{sin_alergias} Si en algún momento no quieres recibir más, escribe BAJA."
+
+# 13:00 · días de cortisol. Primero el de cada objetivo de la persona (consejos_objetivos.yaml); si eligió menos de 3,
+# estos completan los 4 días. Hábitos para todos: sin examen no se cita ningún valor.
+cortisol_general:
+  - "Reírte también es salud: en varios estudios, un rato de risa bajó el cortisol en ese momento. Esta noche pon ese video o esa serie que siempre te saca una carcajada."
+  - "Pasar un rato entre árboles se asocia con un cortisol más bajo. Cuando puedas esta semana, camina 20 minutos por un parque con árboles y deja el celular en el bolsillo."
+  - "Lo que más evidencia tiene contra el estrés es la atención plena practicada por varias semanas: en 39 estudios bajó el cortisol. Empieza con 5 minutos al día: siéntate, respira y fíjate en lo que sientes sin juzgarlo."
+
+# Respuesta cuando toca un botón. Los botones marcados como interés (lista de abajo) reciben la otra respuesta.
+respuesta_boton: "¡Gracias por contarme, {nombre}! 🙌 Mañana a las 7 te llega tu consejo."
+respuesta_interes: "Eso es justo lo que mide el estudio de Saludly 🩸 El último día de tu semana te cuento cómo hacértelo."
+botones_interes: ["Quiero saberlo", "Quiero saber", "Quiero verlo", "Cuéntame más", "Quiero saber el mío"]
+
+# 09:00 · pregunta después de la receta (va en un mensaje aparte: la receta pasa del límite de texto de un mensaje con botones)
+preguntas_receta:
+  1: {texto: "¿Te animas a prepararla hoy?", botones: ["¡Hoy la hago! 👨‍🍳", "Mañana sí", "No es para mí"]}
+  2: {texto: "¿Con quién vas a probarla?", botones: ["Solo para mí", "Con mi familia", "Con mi pareja"]}
+  3: {texto: "¿A qué hora te queda más fácil cocinar?", botones: ["En la mañana", "Al mediodía", "En la noche"]}
+  4: {texto: "¿Cómo te fue con las recetas de estos días?", botones: ["¡Me encantaron!", "Más o menos", "No he cocinado"]}
+  5: {texto: "Si pudieras pedir, ¿qué recetas te gustaría recibir más?", botones: ["Más rápidas", "Con más proteína", "Más económicas"]}
+  6: {texto: "¿Esta va para tu lista de favoritas?", botones: ["¡Sí, guardada! ⭐", "Puede ser", "No es lo mío"]}
+  7: {texto: "Es la última receta de tu semana. ¿Te gustaría seguir recibiendo recetas?", botones: ["¡Sí, quiero más!", "Cada semana", "Por ahora no"]}
+
+# 18:00 · lo que solo responde el examen de sangre, con su pregunta. Nombra solo biomarcadores del panel estándar.
+# El día 7 la pregunta la reemplaza el cierre.
+ganchos:
+  general:
+    - {biomarcadores: [ldl_c], texto: "El colesterol puede estar alto durante años sin dar ningún síntoma. La única forma de saberlo es un examen de sangre.", pregunta: "¿Sabes cómo tienes el colesterol hoy?", botones: ["No tengo idea", "Hace años no", "Me lo medí hace poco"]}
+    - {biomarcadores: [glucose], texto: "La glucosa en ayunas muestra cómo maneja tu cuerpo el azúcar. Puedes sentirte muy bien y tenerla fuera de rango: solo el examen lo dice.", pregunta: "¿Cuándo te mediste la glucosa por última vez?", botones: ["Este año", "Hace años", "Nunca"]}
+    - {biomarcadores: [alt, ggt], texto: "El hígado trabaja en silencio. Las enzimas ALT y GGT muestran si está trabajando de más mucho antes de que se note.", pregunta: "Si tu hígado pudiera hablarte, ¿qué crees que te diría?", botones: ["Que voy bien", "Que baje el ritmo", "Ni idea 🤷"]}
+    - {biomarcadores: [creatinine], texto: "Tus riñones filtran tu sangre todo el día. Con la creatinina se calcula qué tan bien lo hacen, y eso no se siente: se mide.", pregunta: "¿Sabías que el trabajo de tus riñones se puede medir en un examen de sangre?", botones: ["No sabía", "Sí sabía", "Quiero saber el mío"]}
+    - {biomarcadores: [vitamin_d], texto: "La vitamina D cuida tus huesos y tus músculos. Se puede tener baja sin sentir nada en particular: solo el examen lo muestra.", pregunta: "¿Cuánto sol te da a la semana?", botones: ["Casi nada", "Un poco", "Bastante ☀️"]}
+    - {biomarcadores: [hemoglobin], texto: "La hemoglobina dice si tu sangre lleva bien el oxígeno. En Bogotá, por la altura, se compara con un límite más alto que al nivel del mar.", pregunta: "¿Sabías que en Bogotá la hemoglobina se compara con otro límite?", botones: ["No sabía", "Sí sabía", "Cuéntame más"]}
+    - {biomarcadores: [], texto: "Con una sola muestra de sangre, Saludly revisa más de 80 valores a la vez: corazón, azúcar, hígado, riñón, tiroides y vitaminas."}
+  peso:
+    - {biomarcadores: [glucose], texto: "Dos personas con el mismo peso pueden tener la glucosa muy distinta. Lo que pasa por dentro solo lo muestra un examen de sangre.", pregunta: "¿Te has medido la glucosa en el último año?", botones: ["Sí", "No", "No me acuerdo"]}
+    - {biomarcadores: [insulin], texto: "La insulina es la llave que mete el azúcar en tus células. Si tu cuerpo necesita mucha para lograrlo, bajar de peso cuesta más. Tu examen la mide.", pregunta: "¿Sientes que te cuesta bajar de peso más que a otras personas?", botones: ["Sí, mucho", "A veces", "No"]}
+    - {biomarcadores: [tsh], texto: "La tiroides marca el ritmo de tu metabolismo. Su hormona, la TSH, ayuda a entender por qué a algunas personas les cuesta más bajar de peso.", pregunta: "¿Alguna vez te han revisado la tiroides?", botones: ["Sí", "Nunca", "No sé"]}
+    - {biomarcadores: [triglycerides], texto: "Los triglicéridos son la grasa que circula en tu sangre y suben con el azúcar y el alcohol. Tu examen dice en qué nivel están los tuyos.", pregunta: "¿Cada cuánto tomas gaseosa o trago?", botones: ["Casi nunca", "Algunas veces", "Casi todos los días"]}
+    - {biomarcadores: [hba1c], texto: "La hemoglobina glicada es como el promedio de tu azúcar de los últimos 3 meses: no cambia por lo que comiste ayer. Solo el examen la muestra.", pregunta: "¿Sabías que un examen puede ver tu azúcar de los últimos 3 meses?", botones: ["No sabía", "Sí sabía", "Quiero verlo"]}
+    - {biomarcadores: [alt, ggt], texto: "El hígado puede guardar grasa sin avisar. Las enzimas ALT y GGT muestran si está trabajando de más.", pregunta: "¿Sabías que el hígado puede guardar grasa sin que se note por fuera?", botones: ["No sabía", "Sí sabía", "Quiero saber"]}
+    - {biomarcadores: [hdl_c], texto: "El colesterol HDL es el que ayuda a limpiar tus arterias, y moverte lo sube. Tu examen dice cómo está el tuyo."}
+  deporte:
+    - {biomarcadores: [ferritin], texto: "La ferritina es la reserva de hierro de tu cuerpo. Si está baja, te cansas antes aunque entrenes igual. Tu examen la mide.", pregunta: "¿Te pasa que te cansas antes de terminar el entrenamiento?", botones: ["Seguido", "A veces", "Casi nunca"]}
+    - {biomarcadores: [hemoglobin], texto: "La hemoglobina lleva el oxígeno a tus músculos. En Bogotá, por la altura, se compara con un límite más alto que al nivel del mar.", pregunta: "¿Sabías que en Bogotá la hemoglobina se compara con otro límite?", botones: ["No sabía", "Sí sabía", "Cuéntame más"]}
+    - {biomarcadores: [ck_cpk], texto: "La CK sube cuando el músculo se esfuerza mucho. Verla ayuda a saber si te estás recuperando bien entre entrenamientos.", pregunta: "¿Cuántos días a la semana entrenas?", botones: ["Pocos días", "Casi a diario", "Todos los días"]}
+    - {biomarcadores: [vitamin_d], texto: "La vitamina D ayuda a tus músculos y a tus huesos. Se puede tener baja sin sentir nada: solo el examen lo dice.", pregunta: "¿Entrenas más al aire libre o bajo techo?", botones: ["Al aire libre", "Bajo techo", "Las dos"]}
+    - {biomarcadores: [vitamin_b12], texto: "La vitamina B12 ayuda a formar los glóbulos rojos que llevan el oxígeno. Tu examen muestra si te está alcanzando.", pregunta: "¿Comes carne, huevo o lácteos casi todos los días?", botones: ["Sí", "A veces", "Poco o nada"]}
+    - {biomarcadores: [albumin, total_protein], texto: "La albúmina y la proteína total muestran cómo están las proteínas en tu sangre, la materia prima de tus músculos.", pregunta: "¿Sientes que comes suficiente proteína para tu entrenamiento?", botones: ["Sí", "No sé", "Creo que no"]}
+    - {biomarcadores: [magnesium], texto: "El magnesio participa en cada contracción de tus músculos. Tu examen muestra si tienes suficiente."}
+  energia:
+    - {biomarcadores: [ferritin], texto: "El cansancio tiene muchas causas. Algunas se ven en la sangre, como la reserva de hierro, que se llama ferritina.", pregunta: "¿A qué hora del día te sientes con menos energía?", botones: ["En la mañana", "Después de almorzar", "En la tarde"]}
+    - {biomarcadores: [tsh], texto: "La tiroides es como el termostato del cuerpo: si va lenta, todo va lento. Tu examen mide su hormona, la TSH.", pregunta: "¿Te da frío más que a los demás o te cansas sin razón?", botones: ["Sí, seguido", "A veces", "No"]}
+    - {biomarcadores: [vitamin_b12, folate], texto: "La vitamina B12 y el folato ayudan a formar la sangre que lleva energía a todo tu cuerpo. Tu examen muestra cómo están.", pregunta: "¿Te cuesta concentrarte en la tarde?", botones: ["Sí, mucho", "A veces", "Casi nunca"]}
+    - {biomarcadores: [glucose], texto: "Los bajones de energía después de comer pueden tener que ver con cómo manejas el azúcar. Tu glucosa en ayunas da una pista.", pregunta: "¿Te da sueño después de almorzar?", botones: ["Casi siempre", "A veces", "Nunca"]}
+    - {biomarcadores: [vitamin_d], texto: "La vitamina D cuida tus huesos y tus músculos. Se puede tener baja sin sentir nada en particular: solo el examen lo muestra.", pregunta: "¿Cuánto sol te da a la semana?", botones: ["Casi nada", "Un poco", "Bastante ☀️"]}
+    - {biomarcadores: [hemoglobin], texto: "La hemoglobina lleva el oxígeno por tu cuerpo. En Bogotá, por la altura, se compara con un límite más alto que al nivel del mar.", pregunta: "¿Sabías que en Bogotá la hemoglobina se compara con otro límite?", botones: ["No sabía", "Sí sabía", "Cuéntame más"]}
+    - {biomarcadores: [], texto: "Dormir y comer bien ayudan mucho, pero hay cosas que solo cuenta la sangre. Tu examen las junta todas en un solo informe."}
+  envejecer:
+    - {biomarcadores: [], texto: "Tu edad de la cédula no siempre es la de tu cuerpo. Con tu examen calculamos tu edad biológica a partir de 9 valores de tu sangre.", pregunta: "¿Cuántos años crees que tiene tu cuerpo por dentro?", botones: ["Menos que yo", "Los mismos", "Más que yo"]}
+    - {biomarcadores: [ldl_c], texto: "El colesterol LDL se va pegando en las arterias con los años, como el sarro en una tubería. Tu examen dice cómo está el tuyo.", pregunta: "¿Hace cuánto no te mides el colesterol?", botones: ["Menos de un año", "Más de un año", "Nunca"]}
+    - {biomarcadores: [creatinine], texto: "Los riñones pierden fuerza poco a poco y sin avisar. Tu examen calcula qué tan bien están filtrando.", pregunta: "¿Alguna vez te han revisado cómo están tus riñones?", botones: ["Sí", "Nunca", "No sé"]}
+    - {biomarcadores: [vitamin_b12], texto: "Con los años el cuerpo absorbe peor la vitamina B12. Tu examen muestra si te está alcanzando.", pregunta: "¿Sientes que te cansas más que hace unos años?", botones: ["Sí", "Un poco", "No"]}
+    - {biomarcadores: [vitamin_d], texto: "La vitamina D cuida tus huesos y tus músculos. Se puede tener baja sin sentir nada: solo el examen lo dice.", pregunta: "¿Cuánto sol te da a la semana?", botones: ["Casi nada", "Un poco", "Bastante ☀️"]}
+    - {biomarcadores: [albumin], texto: "La albúmina es una proteína que fabrica tu hígado y muestra cómo está tu nutrición por dentro.", pregunta: "¿Sientes que comes bien todos los días?", botones: ["Casi siempre", "A veces", "Me cuesta"]}
+    - {biomarcadores: [apob], texto: "La ApoB cuenta cuántas partículas de colesterol circulan por tus arterias. Ayuda a ver el cuidado del corazón con más detalle."}
+
+# Los consejos de cada objetivo están en consejos_objetivos.yaml (aprobados por Carlos el 23 oct 2026).
+
+# Día 7, 18:00: el dato del examen, el cierre y el anticipo. {valor}: anticipo en pesos.
+# El precio del estudio y la llave Bre-B están pendientes de Carlos.
+cierre: "🎉 {nombre}, terminaste tu semana de recetas Saludly. Ya viste lo que puedes hacer desde la cocina; lo que pasa por dentro solo lo cuenta tu sangre. Puedes apartar tu cupo para el estudio con un anticipo de {valor}: se descuenta del estudio y, si cambias de opinión, te lo devolvemos."
+cierre_botones: ["Quiero mi cupo", "Cuéntame más", "Ahora no"]
+aviso_condicion_existente: "Lo que te mandamos estos días no reemplaza las indicaciones de tu médico tratante."
+
+# Plantillas para Meta: lo único que se puede mandar si la persona lleva más de 24 horas sin escribir ni tocar un botón.
+# Los {{n}} son variables de una sola línea. Categoría MARKETING (Meta la puede reclasificar al revisarla).
+plantillas:
+  - nombre: bienvenida_semana
+    categoria: MARKETING
+    cuando: "El día después del pre-registro, si la persona todavía no escribió hola."
+    cuerpo: "¡Hola, {{1}}! 🌱 Ya estás en la lista de Saludly. Tu semana de recetas gratis está lista para empezar. Toca el botón y te llega la primera hoy mismo."
+    ejemplo: ["Ana"]
+    botones: ["Empezar mi semana"]
+  - nombre: recordatorio_dia
+    categoria: MARKETING
+    cuando: "Días 2 a 7, en el primer envío del día que encuentre la ventana cerrada (máximo una vez al día). Al tocar el botón le llega lo pendiente de ese día."
+    cuerpo: "Hola, {{1}} 👋 Tienes {{2}} esperándote en Saludly. Toca el botón para verlo."
+    ejemplo: ["Ana", "tu receta de hoy: ajiaco liviano de pollo"]
+    botones: ["Ver ahora"]
+  - nombre: cierre_semana
+    categoria: MARKETING
+    cuando: "Día 7 a las 6 p. m., si la ventana está cerrada."
+    cuerpo: "🎉 {{1}}, terminaste tu semana de recetas Saludly. Lo que pasa por dentro solo lo cuenta tu sangre. ¿Quieres saber cómo apartar tu cupo para el estudio?"
+    ejemplo: ["Ana"]
+    botones: ["Quiero saber", "Ahora no"]

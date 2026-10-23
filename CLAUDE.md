@@ -33,6 +33,8 @@ knowledge_base/          fuente de verdad clínica, legible por máquina
   fase5/                 contenido para el paciente (Fase 5), de tú (Carlos lo confirmó el 21 oct 2026): ESQUEMAS.md (formatos y reglas de lenguaje), objetivos.yaml (los 10),
                          filtros.yaml (alergias, dieta y medicamentos: preguntas de la PWA y reglas, aprobadas el 20 oct 2026),
                          frases_prohibidas.yaml (generado), redaccion/<ID>.yaml (119 textos por hallazgo y modulos.yaml),
+                         consejos_objetivos.yaml (125 consejos por objetivo + cortisol, de la investigación del 23 oct 2026 en docs/03_investigacion_clinica/objetivos/, aprobados por Carlos),
+                         semana_prueba.yaml (semana gratis por WhatsApp de la preventa; la arma codigo/informe/semana_prueba.py),
                          recomendaciones/<tipo>_a|b.yaml (189), recetas/alimentos.yaml (140) y desayunos|meriendas|almuerzos|cenas.yaml (190)
 codigo/
   requirements.txt       pdfplumber, pyyaml (reportlab solo para el generador de PDF)

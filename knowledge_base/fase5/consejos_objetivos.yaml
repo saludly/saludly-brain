@@ -1,0 +1,849 @@
+# Consejos por objetivo para la semana de prueba (y, más adelante, para el seguimiento por WhatsApp).
+# Salen de la investigación del 23 oct 2026 (docs/03_investigacion_clinica/objetivos/): intereses de la comunidad y
+# recomendaciones de expertos con Perplexity. Carlos aprobó todos los textos el 23 oct 2026, con estas reglas:
+#   - dato técnico breve y después un ejemplo simple; como máximo una cifra de estudio por mensaje;
+#   - suplementos solo con "pregúntale a tu médico" y sin dosis; nada de diagnósticos (pasa por el control de salida);
+#   - el cortisol se trata con hábitos para todos; si hay examen y sale fuera de rango, se cita el valor y lo revisa el médico.
+# respaldo: fuerte (guía o metaanálisis), moderada (ensayos o consenso), comunidad (popular, poca evidencia), mito (para corregirlo).
+# turno: tarde = habla de la noche y va en el envío de las 7:30 p. m.; manana = va en el de las 7 a. m.; cualquiera = donde quepa.
+# dato: el respaldo técnico para el médico revisor; no se le envía al paciente.
+estado_revision: aprobada
+aprobada_por: Carlos, 23 oct 2026
+objetivos:
+  maraton:
+    emoji: 🏃
+    consejos:
+    - id: zona_2_y_el_80_20
+      tema: Zona 2 y el 80/20
+      respaldo: moderada
+      turno: cualquiera
+      texto: Casi 8 de cada 10 kilómetros de tu semana deberían ser suaves, a un ritmo en el que puedas conversar en frases completas. Si hoy no puedes hablar con quien corre a tu lado, vas más rápido de
+        lo que tu plan necesita.
+      dato: 'Seiler: los fondistas hacen cerca de 80 % del volumen a intensidad baja; zona 2 ≈ 60–70 % de la FC máxima o test del habla. No es una cuota exacta.'
+    - id: geles_y_carbohidratos_por_hora
+      tema: Geles y carbohidratos por hora
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'En una salida de más de una hora tu cuerpo rinde mejor con 30 a 60 gramos de carbohidrato por hora. Un banano mediano tiene cerca de 25 g y un bocadillo pequeño unos 20: pruébalos en tus salidas
+        largas, nunca por primera vez el día de la carrera.'
+      dato: 'World Athletics / ACSM: 30–60 g/h en esfuerzos de 1–2,5 h; hasta 90 g/h en más de 2,5 h, mezclando glucosa y fructosa, entrenando el intestino antes.'
+    - id: taper
+      tema: Taper
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Las dos semanas antes de la carrera baja tus kilómetros casi a la mitad, pero no dejes de hacer algún tramo rápido. Llegar descansado vale más que un último entrenamiento largo.
+      dato: 'Metaanálisis de Bosquet (27 estudios): taper de unas 2 semanas, volumen −41 a −60 %, manteniendo intensidad y frecuencia.'
+    - id: la_tirada_larga
+      tema: La tirada larga
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'No necesitas correr 42 km antes de la carrera: la mayoría de planes llega a 30 o 32 km en la salida más larga. Lo que más pesa en tu resultado es la constancia de toda la semana, no un solo
+        domingo heroico.'
+      dato: 'Los planes suelen tocar techo en 30–32 km; Fokkema 2020: no pareció necesario pasar de 35 km. El volumen semanal pesa más que una sola tirada.'
+    - id: la_regla_del_10
+      tema: La regla del 10 %
+      respaldo: fuerte
+      turno: cualquiera
+      texto: La famosa regla de subir 10 % por semana no evitó lesiones en un estudio con 532 corredores. Más que el porcentaje, cuida no subir kilómetros, velocidad y cuestas en la misma semana.
+      dato: 'Ensayo con 532 corredores novatos: 20,8 % frente a 20,3 % de lesiones con y sin la regla (p = 0,90). Lo prudente es no subir varias cargas a la vez.'
+    - id: fuerza_para_corredores
+      tema: Fuerza para corredores
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Dos sesiones de fuerza por semana (sentadillas, zancadas, pantorrillas) hacen que gastes menos energía en cada zancada. Es como cambiarle el motor a uno más eficiente: mismo ritmo, menos esfuerzo.'
+      dato: 'Metaanálisis 2022: cargas pesadas mejoran la economía de carrera (g = −0,32). Ojo: un ensayo en primeros maratonistas no redujo lesiones (7,1 % vs 7,3 %).'
+    - id: el_muro_del_km_30
+      tema: El muro del km 30
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'El ''muro'' no le llega a todo el mundo: casi siempre se arma por salir muy rápido y comer poco en carrera. Si los primeros 10 km se te hacen ''demasiado fáciles'', vas bien.'
+      dato: 'Revisión integradora: glucógeno bajo, salida rápida, calor, hidratación y molestias digestivas. El km 30 fijo es un mito.'
+    - id: ritmo_parejo_o_negative_split
+      tema: Ritmo parejo o negative split
+      respaldo: moderada
+      turno: cualquiera
+      texto: Salir 'ganando tiempo' casi siempre se paga después. Escoge un ritmo que puedas sostener los 42 km y, si te sobra energía, úsala en los últimos 10.
+      dato: 'Análisis de parciales: quienes corrieron parejo promediaron 3:37 frente a 4:36 de quienes se cayeron en la segunda mitad (asociación, no causa).'
+    - id: zapatillas_con_placa_de_carbono
+      tema: Zapatillas con placa de carbono
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Las 'super zapatillas' ahorran entre 1 y 4 % de energía, menos si corres despacio. Valen la pena para el día de la carrera; para entrenar, tus zapatillas de siempre hacen el trabajo.
+      dato: 'Metaanálisis: −2,75 % de costo energético (1–4,5 %); en recreativos lentos, 0,9–1,4 % y algunos no mejoran. No es solo la placa: espuma y geometría.'
+    - id: rodilla_del_corredor_y_fascitis
+      tema: Rodilla del corredor y fascitis
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Un dolor que te obliga a cambiar la forma de correr no es 'parte del entrenamiento'. Si empeora de una semana a otra, baja la carga y consúltalo antes de que te saque de la carrera.
+      dato: 'Revisión sistemática: incidencia de dolor patelofemoral 6,3 % y fascitis 6,1 %. Dolor que cambia la zancada o empeora requiere valoración.'
+    - id: hidratacion_y_sodio
+      tema: Hidratación y sodio
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Pésate antes y después de una salida larga: cada kilo que pierdes es más o menos un litro de sudor. Con eso sabes cuánto beber; tomar de más también es peligroso.'
+      dato: 'ACSM: no beber más de lo que se suda (hiponatremia); 0,4–0,8 L/h como punto de partida; perder más de 2 % del peso puede afectar el rendimiento.'
+    - id: entrenar_a_2_600_m
+      tema: Entrenar a 2.600 m
+      respaldo: moderada
+      turno: cualquiera
+      texto: Entrenar a 2.600 metros hace que cada kilómetro te cueste más que al nivel del mar. Guíate por el esfuerzo y no por los ritmos de un plan hecho para otra ciudad; si corres la carrera abajo,
+        ese día te vas a sentir más liviano.
+      dato: 'En hipoxia el VO2 máx cae cerca de 1 % por cada 100 m sobre 1.500 m (recién llegados). Quien viene de baja altitud: bajar volumen hasta 50 % los primeros 3–7 días.'
+    - id: hierro_ferritina_y_comer_suficiente_red_
+      tema: Hierro, ferritina y comer suficiente (RED-S)
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Los fondistas gastan más hierro que el resto. Tu examen de Saludly mide tu ferritina, tu reserva de hierro: es uno de los datos que más le importan a alguien que corre largo.'
+      dato: 'Ferritina < 30 µg/L: umbral frecuente de reservas bajas; no suplementar a ciegas. Consenso IOC REDs 2023: comer poco para lo que se entrena afecta hueso, hormonas y rendimiento.'
+    cortisol:
+      texto: 'Una salida larga sube tu cortisol por unas horas, y eso es normal. Lo que no ayuda es entrenar con el tanque vacío: evita las salidas largas en ayunas y no recortes los carbohidratos en las
+        semanas de más kilómetros.'
+      dato: Una sesión larga sube el cortisol unas horas (normal). Dietas bajas en carbohidratos por menos de 3 semanas lo elevan en reposo (SMD 0,41) y el ayuno lo eleva; RED-S no se diagnostica con cortisol.
+  masa_muscular:
+    emoji: 💪
+    consejos:
+    - id: proteina_al_dia
+      tema: Proteína al día
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Para ganar músculo apunta a unos 1,6 gramos de proteína por kilo de peso al día: si pesas 70 kg, son unos 110 g. Tres huevos, una pechuga y un plato de lentejas ya te dan más de la mitad.'
+      dato: 'ISSN: 1,4–2,0 g/kg/día; Morton (49 estudios): el beneficio se estabiliza cerca de 1,6 g/kg/día.'
+    - id: proteina_por_comida_y_la_ventana_anaboli
+      tema: Proteína por comida y la 'ventana anabólica'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'La ''ventana de 30 minutos'' es un mito: lo que cuenta es repartir la proteína en 3 o 4 comidas. Si almorzaste bien antes de entrenar, no tienes que salir corriendo por un batido.'
+      dato: 'ISSN: 20–40 g por toma (≈ 0,25–0,4 g/kg) cada 3–4 h; el total del día pesa más que la hora exacta.'
+    - id: series_por_musculo_a_la_semana
+      tema: Series por músculo a la semana
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Cada músculo necesita unas 10 series exigentes por semana para crecer, repartidas en 2 días. Por ejemplo: 3 series de sentadilla y 2 de zancadas el lunes, y lo mismo el jueves, ya son 10 para
+        tus piernas.'
+      dato: 'ACSM 2026 y Schoenfeld: punto de partida ≈ 10 series exigentes por músculo y semana; 12–20 si te recuperas bien; principiantes 6–10.'
+    - id: llegar_al_fallo
+      tema: ¿Llegar al fallo?
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'No necesitas llegar al fallo en cada serie: para cuando sientas que te quedan 1 o 2 repeticiones con buena técnica. Así creces igual y llegas fresco a la siguiente sesión.'
+      dato: 'Metaanálisis 2022 y Refalo 2024: terminar con 1–3 repeticiones en reserva funciona; fallar en todas las series no es necesario y acumula fatiga.'
+    - id: el_rango_magico_de_repeticiones
+      tema: El rango 'mágico' de repeticiones
+      respaldo: fuerte
+      turno: cualquiera
+      texto: El músculo crece con 6 o con 20 repeticiones, siempre que las últimas cuesten de verdad. Escoge el rango que te deje usar buena técnica y subir poco a poco.
+      dato: 'Metaanálisis de 45 estudios: hipertrofia similar con cargas de 30 a 100 % de 1RM si la serie es exigente; práctico 6–15 repeticiones.'
+    - id: sobrecarga_progresiva
+      tema: Sobrecarga progresiva
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Primero sube repeticiones y después peso: si haces 3 series de 12 con buena técnica dos sesiones seguidas, súbele un poquito a la carga y vuelve a empezar en 8.'
+      dato: 'ACSM: cuando superas 1–2 repeticiones el objetivo dos sesiones seguidas, sube la carga 2–10 %. Progresión doble: primero repeticiones, después peso.'
+    - id: frecuencia_por_musculo
+      tema: Frecuencia por músculo
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'No hay una rutina ''perfecta'': torso-pierna, cuerpo completo o push-pull sirven si completas tu volumen semanal. Escoge la que puedas cumplir con tu horario.'
+      dato: Con el volumen igualado la frecuencia no cambia la hipertrofia; 2 veces por semana facilita repartir el volumen.
+    - id: creatina
+      tema: Creatina
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'La creatina es el suplemento con más estudios para ganar fuerza y músculo, y el kilo que sube al inicio es agua dentro del músculo, no grasa. Si te interesa, pregúntale a tu médico: también
+        puede mover tu creatinina en el examen.'
+      dato: 'ISSN: monohidrato 3–5 g/día sin carga (satura en ≈ 4 semanas); segura en sanos a dosis estudiadas. Sube algo el peso por agua dentro del músculo y puede subir la creatinina del examen.'
+    - id: cuanto_comer_de_mas_volumen
+      tema: Cuánto comer de más (volumen)
+      respaldo: moderada
+      turno: cualquiera
+      texto: Para crecer sin acumular grasa basta con comer un poco más de lo normal y subir unos 200 a 300 gramos por semana. Si la cintura crece más rápido que tus cargas, estás comiendo de más.
+      dato: Superávit conservador de 5–10 %; ganar 0,25–0,5 % del peso por semana. En un ensayo, superávits grandes sumaron sobre todo grasa.
+    - id: recomposicion_corporal
+      tema: Recomposición corporal
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Si estás empezando, puedes ganar músculo y perder grasa al mismo tiempo, y la báscula casi no se mueve. Mide tu cintura y anota tus cargas: ahí se ve el cambio.'
+      dato: Ocurre sobre todo en principiantes, en quien vuelve a entrenar o con más grasa; mejor medir cintura, fuerza y fotos que solo la báscula.
+    - id: mujeres_y_fuerza
+      tema: Mujeres y fuerza
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Hombres y mujeres ganan músculo en proporción parecida con el mismo entrenamiento. Levantar pesado te hace más fuerte y firme, no 'grande' de la noche a la mañana.
+      dato: 'Metaanálisis (29 estudios): ganancia relativa de músculo similar entre sexos; no hay que usar cargas livianas por ser mujer ni ajustar todo al ciclo.'
+    - id: proteina_en_polvo_y_bcaa
+      tema: Proteína en polvo y BCAA
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'La proteína en polvo es solo comida práctica: si con huevos, pollo, lácteos y leguminosas llegas a tu meta, no la necesitas. Los BCAA no suman si ya comes suficiente proteína.'
+      dato: 'ISSN: el polvo es comodidad, no requisito; BCAA no añaden nada si la proteína total es suficiente.'
+    - id: descanso_entre_series
+      tema: Descanso entre series
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Entre series de sentadilla o peso muerto descansa 2 a 3 minutos: si vuelves antes de recuperarte, haces menos repeticiones y el músculo recibe menos estímulo.'
+      dato: 'Singer 2024: 2–3 min en ejercicios grandes, 1–2 min en aislamiento; descansar más puede dar una pequeña ventaja.'
+    cortisol:
+      texto: 'El pico de cortisol después de entrenar no se ''come'' tu músculo: es parte normal del esfuerzo. Lo que sí frena tu crecimiento es dormir poco: en un estudio, 5 noches de 4 horas bajaron casi
+        una quinta parte la construcción de músculo.'
+      dato: 'Mito del ''cortisol que se come el músculo'': el pico agudo tras entrenar es normal y no predice la hipertrofia. Lo que sí está medido: 5 noches de 4 horas bajaron ≈ 19 % la síntesis de proteína
+        muscular.'
+  bajar_peso:
+    emoji: ⚖️
+    consejos:
+    - id: deficit_calorico_y_metas
+      tema: Déficit calórico y metas
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Bajar entre medio kilo y un kilo por semana es lo que mejor se mantiene. Si pesas 80 kg, perder 4 a 8 kg ya cambia tu azúcar, tu presión y tu hígado.
+      dato: 'ADA: déficit inicial de 500–750 kcal/día; meta de salud 5–10 % del peso inicial; 0,45–0,9 kg por semana (CDC).'
+    - id: proteina_para_no_perder_musculo
+      tema: Proteína para no perder músculo
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Cuando comes menos, la proteína protege tu músculo y te quita el hambre. Pon una porción en cada comida: huevo en el desayuno, pollo o pescado al almuerzo, fríjoles o queso en la cena.'
+      dato: 'Metaanálisis (24 ensayos, 1.063 personas): más proteína en déficit conservó 0,43 kg más de masa magra y quitó 0,87 kg más de grasa. Rango 1,2–1,6 g/kg.'
+    - id: fuerza_mientras_bajas
+      tema: Fuerza mientras bajas
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Las pesas casi no mueven la báscula, pero hacen que lo que pierdas sea grasa y no músculo. Dos sesiones por semana bastan; mide tu cintura para ver el cambio.
+      dato: 'Metaanálisis 2025: añadir fuerza no cambia la báscula (−0,32 kg) pero conserva masa magra (SMD 0,40) y quita más grasa (SMD −0,36).'
+    - id: caminar_mas_minutos
+      tema: Caminar más minutos
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Cada media hora más de caminata a la semana se asocia, en promedio, con medio kilo y medio centímetro de cintura menos. Suma 10 minutos después del almuerzo y ya vas en camino.
+      dato: 'Jayedi 2024 (116 ensayos): cada 30 min/semana extra de aeróbico ≈ −0,52 kg y −0,56 cm de cintura. Meta 150, progresar a 200–300 min/semana.'
+    - id: ayuno_intermitente
+      tema: Ayuno intermitente
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'El ayuno intermitente funciona igual que comer menos de otra forma: no tiene un efecto especial. Úsalo solo si te acomoda; si te da más hambre en la noche, no es para ti.'
+      dato: 'Cochrane 2026 (22 ensayos, 1.995 adultos): poca o ninguna diferencia frente al consejo habitual.'
+    - id: glp_1_ozempic_y_mounjaro
+      tema: 'GLP-1: Ozempic y Mounjaro'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Los medicamentos tipo Ozempic funcionan, pero solo con un médico que te los formule y te acompañe. Si los usas, la fuerza y la proteína son las que cuidan tu músculo mientras bajas.
+      dato: 'SURMOUNT-1 (tirzepatida, 72 semanas): −16 a −22,5 %. STEP-1: un año después de suspender semaglutida se recuperaron 2/3 de lo perdido. Solo con prescripción.'
+    - id: pasos_y_neat
+      tema: Pasos y NEAT
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Los pasos de la casa, la oficina y las escaleras cuentan. No necesitas 10.000: súmale 2.000 a lo que ya haces y sostenlo un mes.'
+      dato: El movimiento no planeado (NEAT) varía 150–500 kcal/día entre personas; 10.000 pasos no es un umbral oficial.
+    - id: hambre_despues_de_bajar
+      tema: Hambre después de bajar
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Que te dé más hambre al bajar de peso es normal: el cuerpo se defiende. Llena medio plato de verduras y agrega proteína: así comes buen volumen sin pasarte.'
+      dato: Por cada kilo perdido, el gasto baja ≈ 20–30 kcal/día y el apetito sube ≈ 100 kcal/día.
+    - id: estancamiento
+      tema: Estancamiento
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'El peso de un día engaña: el agua, la sal o el ciclo lo mueven hasta un kilo. Pésate a la misma hora y mira el promedio de la semana antes de cambiar algo.'
+      dato: 'Mayo Clinic / NCBI: el cuerpo más liviano gasta menos; agua, sal y ciclo mueven el peso. Mirar la tendencia de varias semanas.'
+    - id: alcohol
+      tema: Alcohol
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Una cerveza tiene casi las mismas calorías que un pan, y además te abre el apetito. Si sales, alterna cada trago con agua y decide antes cuántos te vas a tomar.
+      dato: El alcohol aporta 7 kcal/g (casi como la grasa) y abre el apetito; la regla de 'no quemas grasa por 72 horas' no tiene base.
+    - id: grasa_localizada
+      tema: Grasa localizada
+      respaldo: mito
+      turno: cualquiera
+      texto: 'Los abdominales fortalecen tu abdomen, pero no queman la grasa de esa zona: la grasa baja de todo el cuerpo a la vez. Lo que más ayuda es comer un poco menos y moverte más cada día.'
+      dato: 'Metaanálisis (13 estudios, 1.158 personas): reducción localizada nula (efecto −0,03).'
+    - id: sueno_y_hambre
+      tema: Sueño y hambre
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Dormir una hora más te puede quitar las ganas de picar: en un estudio, la gente comió casi 270 calorías menos al día, como un paquete de papas. Esta semana adelanta tu hora de dormir 30 minutos.'
+      dato: 'Ensayo en 80 adultos que dormían < 6,5 h: dormir 1,2 h más redujo la ingesta ≈ 270 kcal/día en 2 semanas.'
+    - id: jugos_y_corrientazo
+      tema: Jugos y corrientazo
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'No tienes que dejar el arroz ni la arepa: en el corrientazo escoge un solo acompañamiento (arroz, papa o plátano) y pide más ensalada. Y cambia el jugo por la fruta entera.'
+      dato: 'Minsalud y OMS: fruta entera mejor que jugo; no prohibir almidones, sino no acumular varios en el mismo plato.'
+    cortisol:
+      texto: 'La ''barriga de cortisol'' de las redes no es un diagnóstico: la grasa abdominal tiene muchas causas. Lo que sí hace el estrés es despertarte antojos; cuando te pase, para dos minutos, respira
+        lento y pregúntate si es hambre o cansancio.'
+      dato: '''Cortisol belly'' es viral y no sirve para diagnosticar; el ayuno sube el cortisol, el déficit moderado no lo eleva de forma sostenida; mindfulness no añadió pérdida de peso en un ensayo de
+        194 personas. El estrés sí cambia antojos y sueño.'
+  rendimiento:
+    emoji: ⚡
+    consejos:
+    - id: periodizar_o_no
+      tema: Periodizar o no
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si buscas fuerza, organiza tu entrenamiento en bloques: unas semanas de más volumen y otras de más peso. Variar cada día no es lo mismo que progresar.'
+      dato: 'Metaanálisis (35 estudios): con igual volumen, periodizar mejora más el 1RM (ES 0,31); en hipertrofia no hay diferencia clara.'
+    - id: semana_de_descarga
+      tema: Semana de descarga
+      respaldo: moderada
+      turno: cualquiera
+      texto: No hace falta descansar una semana completa cada mes por calendario. Baja el volumen cuando notes cansancio que no se va, molestias o estancamiento.
+      dato: 'Ensayo (39 entrenados): una semana de cese total no mejoró nada. Descargar es para manejar fatiga, no una regla fija.'
+    - id: sobreentrenado_o_solo_cansado
+      tema: ¿Sobreentrenado o solo cansado?
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Un mal día no es sobreentrenamiento. Si tu rendimiento baja durante dos semanas y además duermes mal o estás de mal genio, baja la carga y revisa sueño y comida.
+      dato: 'Consenso ECSS/ACSM: caída persistente del rendimiento y del ánimo que no se resuelve con descanso breve; ningún examen único lo diagnostica.'
+    - id: hrv_y_readiness_del_reloj
+      tema: HRV y 'readiness' del reloj
+      respaldo: fuerte
+      turno: cualquiera
+      texto: La variabilidad cardiaca de tu reloj sirve para ver tendencias de varios días, no para decidir con el dato de una noche. Si el reloj dice 'descansa' pero te sientes bien, haz el calentamiento
+        y decide ahí.
+      dato: 'Metaanálisis: entrenar guiado por HRV no mejora de forma significativa el rendimiento ni el VO2 (SMD 0,20). Sirve la tendencia, no el dato de una noche.'
+    - id: carbohidratos_segun_la_carga
+      tema: Carbohidratos según la carga
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Los días de entreno fuerte tu cuerpo necesita más carbohidrato que los de descanso. Dos o tres horas antes, un plato con arroz, papa o arepa te da gasolina para rendir.
+      dato: 'IOC: 3–5 g/kg/día (ligero), 5–7 (≈ 1 h/día), 6–10 (1–3 h/día). Antes de una sesión exigente: 1–4 g/kg entre 1 y 4 h antes.'
+    - id: recuperar_entre_dos_sesiones
+      tema: Recuperar entre dos sesiones
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si entrenas dos veces el mismo día, come carbohidrato apenas termines la primera sesión. Si la siguiente es mañana, no corras: con tus comidas normales recuperas.'
+      dato: 'ISSN: 1,0–1,2 g/kg/h de carbohidrato las primeras 3–4 h si hay otra sesión exigente el mismo día; si es al día siguiente, basta el total diario.'
+    - id: cafeina_antes_de_entrenar
+      tema: Cafeína antes de entrenar
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Un tinto una hora antes de entrenar te puede dar un empujón real. Si entrenas de noche, sáltatelo: perder sueño te quita más rendimiento del que el café te da.'
+      dato: 'ISSN: 3–6 mg/kg unos 60 min antes; AIS: el efecto se estabiliza cerca de 3 mg/kg. Puede quitar sueño si se entrena tarde.'
+    - id: creatina
+      tema: Creatina
+      respaldo: fuerte
+      turno: cualquiera
+      texto: La creatina es de los pocos suplementos con evidencia fuerte para esfuerzos cortos e intensos, y no hace falta 'ciclarla'. Si te interesa, consúltalo con tu médico.
+      dato: 'AIS grupo A e ISSN: monohidrato 3–5 g/día; no se cicla; la hora no importa.'
+    - id: sueno_del_deportista
+      tema: Sueño del deportista
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Dormir es tu suplemento más barato: en atletas, sumar entre 45 minutos y casi 2 horas de sueño mejoró su rendimiento. Prueba esta semana acostarte media hora antes.'
+      dato: 'Consenso BJSM: 7–9 h; en atletas que dormían ≈ 7 h, extender el sueño 46–113 min mejoró algunos resultados.'
+    - id: hierro_y_ferritina
+      tema: Hierro y ferritina
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Puedes tener la hemoglobina bien y las reservas de hierro bajas, y eso también cansa. Tu examen de Saludly mide ambas cosas; no tomes hierro sin que tu médico vea el resultado.
+      dato: 'Ferritina < 30 µg/L: umbral frecuente de reservas bajas aun sin anemia; no hay un ''óptimo deportivo'' universal (70 o 100 es mito).'
+    - id: wearables_y_sueno
+      tema: Wearables y sueño
+      respaldo: moderada
+      turno: cualquiera
+      texto: Tu reloj tiende a contar más sueño del que duermes y adivina las fases. Úsalo para ver si te acuestas a la misma hora, no para preocuparte por los minutos de sueño profundo.
+      dato: 'Estudio en atletas máster: Garmin sumó ≈ 126 min más de sueño que la actigrafía de referencia. Las fases son estimaciones.'
+    - id: hidratacion_en_la_sesion
+      tema: Hidratación en la sesión
+      respaldo: fuerte
+      turno: cualquiera
+      texto: En una sesión de gimnasio de una hora, el agua basta. Las bebidas con sales son para salidas largas o días de mucho sudor.
+      dato: 'NATA: evitar perder más de 2 % del peso y no ganar peso por beber; 1 kg perdido ≈ 1 L. Electrolitos en esfuerzos largos o de mucho sudor.'
+    - id: suplementos_que_si_y_que_no
+      tema: Suplementos que sí y que no
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'De todos los suplementos de la tienda, solo un puñado tiene estudios serios para rendir. Antes de gastar, revisa sueño, comida y carga: ahí está la mayor parte de tu mejora.'
+      dato: 'AIS grupo A: cafeína, creatina, beta-alanina, nitrato y bicarbonato en contextos concretos; quemadores, ''test boosters'' y BCAA con proteína suficiente no tienen respaldo.'
+    cortisol:
+      texto: 'Entrenar fuerte sube tu cortisol, y eso es parte de mejorar. El problema es no darle tiempo al cuerpo de bajarlo: después de un día duro, el siguiente debe ser suave, y tu noche de sueño es
+        la que cierra la recuperación.'
+      dato: 'Consenso ECSS/ACSM: la relación testosterona/cortisol refleja la carga pero no diagnostica sobreentrenamiento; el cortisol en reposo no separa a sobreentrenados de no sobreentrenados. El mensaje
+        es carga y recuperación.'
+  atletico:
+    emoji: 🤸
+    consejos:
+    - id: saltar_mas_pliometria
+      tema: Saltar más (pliometría)
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Dos días por semana de saltos cortos (unos 30 aterrizajes en total) mejoran tu salto en unas 8 semanas. Calidad antes que cantidad: si aterrizas pesado, ya es hora de parar.'
+      dato: 'Metaanálisis: +salto vertical (ES 0,49) en ≈ 8,5 semanas. Empezar con 1–2 días/semana y 20–40 aterrizajes por sesión, descansando bien.'
+    - id: velocidad_y_sprint
+      tema: Velocidad y sprint
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Para ser más rápido hay que correr rápido: 6 piques de 20 metros, caminando de regreso para recuperarte del todo. Si el último es más lento que el primero, ya terminaste.'
+      dato: 'Pliometría mejora sprint (SMD −0,59) como complemento; lo más específico es esprintar: 4–8 carreras de 5–20 m con descanso completo.'
+    - id: agilidad_real
+      tema: Agilidad real
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'La escalera de coordinación entrena tus pies, pero la agilidad del partido es reaccionar. Pídele a alguien que te señale hacia dónde salir: eso se parece más a la cancha.'
+      dato: 'Revisión SAQ: mejora el cambio de dirección preplanificado, no la agilidad reactiva (reaccionar a una señal).'
+    - id: movilidad
+      tema: Movilidad
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Hacer sentadillas profundas y lentas te da tanta movilidad como estirar. Si quieres estirar, 30 segundos por posición, dos o tres veces por semana, es suficiente.
+      dato: 'Metaanálisis (11 estudios): la fuerza en rango completo mejora la movilidad igual que estirar (ES −0,22). ACSM: 2–3 días, 10–30 s por estiramiento, 2–4 repeticiones.'
+    - id: estirar_previene_lesiones
+      tema: ¿Estirar previene lesiones?
+      respaldo: mito
+      turno: cualquiera
+      texto: Antes de jugar, mejor un calentamiento con trote, saltos suaves y cambios de dirección que quedarte estirando quieto. Los estiramientos largos déjalos para después.
+      dato: 'Revisión: el estiramiento estático no previene lesiones (RR 0,93, no significativo). El calentamiento neuromuscular sí las redujo en deportistas jóvenes (IRR 0,64).'
+    - id: fuerza_y_cardio_a_la_vez
+      tema: Fuerza y cardio a la vez
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Puedes hacer pesas y cardio la misma semana sin perder músculo. Si te importa la explosividad, sepáralos al menos 3 horas o hazlos en días distintos.
+      dato: 'Metaanálisis (43 estudios): combinar no afecta la hipertrofia ni la fuerza máxima, pero sí un poco la potencia (SMD −0,28) si es en la misma sesión; separarlas ≥ 3 h lo evita.'
+    - id: vo2_max
+      tema: VO2 máx
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Una sesión de intervalos por semana (por ejemplo 4 bloques de 4 minutos fuertes) sube tu capacidad aeróbica. El VO2 que muestra tu reloj es un estimado: compáralo solo contigo mismo, en Bogotá.'
+      dato: 'Metaanálisis (31 estudios, 1.119 adultos): el HIIT subió el VO2 máx ≈ 3,9 mL/kg/min. El reloj estima; en Bogotá compara solo contra tus propias pruebas.'
+    - id: potencia_con_pesas
+      tema: Potencia con pesas
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Para ser explosivo usa pesos moderados y muévelos lo más rápido que puedas, pocas repeticiones y con buen descanso. Si la barra se vuelve lenta, la serie ya terminó.
+      dato: 'ACSM 2026: cargas de 30–70 % de 1RM movidas lo más rápido posible, 3–5 series de 3–5, con 3–5 min de descanso.'
+    - id: verse_atletico_tonificar
+      tema: Verse atlético (tonificar)
+      respaldo: fuerte
+      turno: cualquiera
+      texto: '''Tonificar'' es tener un poco más de músculo y un poco menos de grasa. Eso se logra con pesas que cuesten y proteína en cada comida, no con cientos de repeticiones livianas.'
+      dato: Fuerza + proteína 1,4–2,0 g/kg conservan músculo y quitan grasa; 'tonificar' es tener músculo y menos grasa, no repeticiones altas.
+    - id: calistenia
+      tema: Calistenia
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Las flexiones bien progresadas te dan casi el mismo pecho que el press de banca. Si no tienes gimnasio, el parque también sirve: lo importante es que cada semana te cueste un poco más.'
+      dato: 'Ensayo pequeño: flexiones y press de banca con carga equiparada dieron fuerza y músculo similares.'
+    - id: equilibrio
+      tema: Equilibrio
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Practica en una pierna lo que haces en tu deporte: cepillarte los dientes en un pie mejora el equilibrio, pero los aterrizajes y giros de tu deporte se entrenan haciéndolos.'
+      dato: 'Revisión (13 artículos): el entrenamiento en una pierna mejora el equilibrio, pero la mejora es específica de la tarea.'
+    - id: jugar_mejor_no_solo_verse_fuerte
+      tema: Jugar mejor, no solo verse fuerte
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Estar fuerte no te hace mejor jugando: la coordinación se gana jugando. Agrégale a tu semana un partido, una clase de baile o un deporte con balón.'
+      dato: La agilidad y la coordinación dependen de practicar la tarea; un circuito genérico no reemplaza el deporte.
+    cortisol:
+      texto: Los nervios antes de un partido son tu cortisol preparándote para rendir, no un problema. Si te pasan factura, cinco respiraciones lentas, soltando el aire más largo de lo que lo tomas, te
+        bajan las revoluciones.
+      dato: 'El HIIT sube el cortisol de forma aguda y transitoria (metaanálisis): no es dañino. Para nervios antes de competir, la respiración lenta tiene evidencia moderada; un ''protocolo anticortisol''
+        universal no.'
+  energia_sueno:
+    emoji: 😴
+    consejos:
+    - id: hora_fija_para_levantarse
+      tema: Hora fija para levantarse
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Lo primero no es acostarte temprano, es levantarte a la misma hora todos los días, también el sábado. Tu reloj interno se ordena desde la mañana.
+      dato: 'AASM / NSF: 7–9 h; fijar primero la hora de levantarse, también el fin de semana, con variación de 30–60 min como máximo.'
+    - id: hora_de_corte_del_cafe
+      tema: Hora de corte del café
+      respaldo: fuerte
+      turno: manana
+      texto: 'El tinto de las 3 de la tarde todavía está en tu cuerpo a las 10 de la noche. Si te acuestas a las 10, tómate el último antes de la 1: la cafeína le quita en promedio 45 minutos a tu noche.'
+      dato: 'Metaanálisis (24 estudios): la cafeína quita ≈ 45 min de sueño; un café de ≈ 107 mg, al menos 8,8 h antes de dormir; un preentreno de ≈ 217 mg, 13,2 h antes.'
+    - id: esperar_90_minutos_para_el_cafe
+      tema: Esperar 90 minutos para el café
+      respaldo: comunidad
+      turno: cualquiera
+      texto: La regla de esperar 90 minutos para el café es más moda que ciencia. Lo que sí protege tu sueño es cuánta cafeína tomas y a qué hora es la última.
+      dato: Popular por Huberman; no hay guía que lo respalde ni evidencia de que evite el bajón de la tarde.
+    - id: luz_de_la_manana
+      tema: Luz de la mañana
+      respaldo: moderada
+      turno: manana
+      texto: Media hora de luz de día en la mañana (caminando al trabajo o tomando el tinto en la ventana) le avisa a tu cuerpo que es de día y te ayuda a tener sueño más temprano en la noche.
+      dato: 'NIOSH/CDC: ≈ 30 min al aire libre; estudio observacional: cada 30 min de sol antes de las 10 a. m. adelantó 23 min el punto medio del sueño. Nunca mirar al sol.'
+    - id: siestas
+      tema: Siestas
+      respaldo: moderada
+      turno: manana
+      texto: Una siesta de 15 a 20 minutos después del almuerzo te recarga sin dañar tu noche. Si duermes más de media hora, despiertas más pesado.
+      dato: 'Mayo Clinic: 20–30 min; NIOSH: menos de 20 min da alerta un par de horas sin dañar la noche.'
+    - id: alcohol_y_sueno
+      tema: Alcohol y sueño
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'El trago te ayuda a quedarte dormido, pero te quita el sueño reparador: con dos tragos ya baja tu sueño REM, el de los sueños. Si vas a tomar, que sea temprano y no como pastilla para dormir.'
+      dato: 'Metaanálisis: con ≤ 0,5 g/kg (≈ 2 tragos) ya baja el sueño REM; AASM: evitarlo 4–6 h antes de acostarse.'
+    - id: magnesio_y_melatonina
+      tema: Magnesio y melatonina
+      respaldo: moderada
+      turno: cualquiera
+      texto: El magnesio y la melatonina tienen menos evidencia de lo que dicen las redes. Antes de comprarlos, prueba dos semanas con hora fija, café temprano y sin pantalla en la cama.
+      dato: 'NCCIH: evidencia limitada y contradictoria para magnesio; AASM no recomienda melatonina para el insomnio crónico (sí para jet lag y turnos).'
+    - id: pantallas_y_luz_azul
+      tema: Pantallas y luz azul
+      respaldo: fuerte
+      turno: tarde
+      texto: 'Deja el celular 30 minutos antes de dormir, no solo por la luz: un video o un chat te mantienen la cabeza encendida. Pon el cargador lejos de la cama.'
+      dato: 'CDC: apagar dispositivos al menos 30 min antes; la luz azul no es la única causa: también el contenido que te activa.'
+    - id: insomnio_que_no_se_va
+      tema: Insomnio que no se va
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si llevas meses durmiendo mal al menos tres noches por semana, los trucos de higiene del sueño no alcanzan. Existe una terapia corta y muy efectiva para eso: coméntaselo a tu médico.'
+      dato: 'AASM: 3 noches por semana durante 3 meses o más = insomnio crónico; la terapia cognitivo-conductual (TCC-I, 4–8 sesiones) es primera línea; la higiene del sueño sola no basta.'
+    - id: ronquidos_y_apnea
+      tema: Ronquidos y apnea
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Roncar fuerte y despertarte cansado aunque duermas 8 horas puede ser una señal de que tu respiración se corta de noche. Si alguien te ha visto hacer pausas al respirar, cuéntaselo a tu médico.
+      dato: 'NHLBI / AASM: ronquido fuerte con pausas, ahogos o somnolencia de día merecen estudio de sueño; un reloj no la descarta.'
+    - id: cansancio_hierro_b12_tiroides
+      tema: 'Cansancio: hierro, B12, tiroides'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: El cansancio que no se quita durmiendo puede venir de las reservas de hierro, la B12 o la tiroides. Tu examen de Saludly revisa las tres; si alguna sale fuera de rango, te lo explicamos.
+      dato: 'Ferritina < 30 ng/mL puede dar fatiga aun sin anemia; NICE: fatiga inexplicada es motivo para revisar B12; también TSH según síntomas.'
+    - id: moverte_para_dormir_mejor
+      tema: Moverte para dormir mejor
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Cuatro caminatas rápidas de 30 minutos por semana mejoran tu sueño en unas 10 semanas. Si entrenar de noche te acelera, termina el ejercicio intenso unas horas antes de acostarte.
+      dato: 'Metaanálisis (58 ensayos, 5.008 personas): el ejercicio mejora la calidad del sueño; prometedor ≈ 4 sesiones/semana de hasta 30 min por 9–10 semanas.'
+    - id: el_reloj_y_el_sueno_profundo
+      tema: El reloj y el sueño profundo
+      respaldo: comunidad
+      turno: cualquiera
+      texto: 'Si te sientes descansado, una mala puntuación del reloj no significa que dormiste mal. Fíjate en la hora a la que te acuestas y te levantas: eso sí lo mide bien.'
+      dato: Los relojes estiman fases a partir de movimiento y pulso; no equivalen a una polisomnografía.
+    cortisol:
+      texto: 'Tu cortisol sube al despertar para darte energía y baja en la noche para dejarte dormir. Si tomas café tarde o te acuestas a horas distintas, ese ritmo se desordena: protege la noche con el
+        último tinto antes de la 1 y una hora fija de levantarte.'
+      dato: El cortisol sube normal al despertar (pico 30–45 min, CAR) y baja en la noche. La cafeína lo sube de forma aguda (menos en quien toma a diario); la falta de sueño severa lo eleva en la tarde.
+        Cortisol matutino aislado no explica el cansancio (AASM, Endocrine Society).
+  envejecer_saludable:
+    emoji: 🌿
+    consejos:
+    - id: vo2_max_y_condicion_fisica
+      tema: VO2 máx y condición física
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Tu condición física es de los mejores predictores de cómo vas a envejecer: cada escalón que subes se asocia con más años de vida sana. Subir escaleras sin ahogarte es un buen primer termómetro.'
+      dato: 'Metaanálisis (42 estudios, 3,8 millones de observaciones): cada 1 MET más de condición física se asocia con menor mortalidad (RR 0,86). Es asociación, no promesa.'
+    - id: fuerza_y_sarcopenia
+      tema: Fuerza y sarcopenia
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Nunca es tarde para ganar fuerza: el músculo responde a cualquier edad. Levantarte de una silla 10 veces sin usar las manos es un ejercicio que puedes hacer hoy mismo.'
+      dato: 'OMS: fuerza 2+ días/semana; mayores de 65 con riesgo de caída: actividad de equilibrio y fuerza 3+ días.'
+    - id: proteina_en_mayores
+      tema: Proteína en mayores
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Con los años el músculo necesita más proteína para mantenerse. Procura que cada comida principal tenga una porción: un huevo con queso en el desayuno, carne o pescado al almuerzo, fríjoles
+        en la cena.'
+      dato: 'PROT-AGE / ESPEN: 1,0–1,2 g/kg/día en mayores sanos; ESCEO: 20–25 g de proteína de calidad en cada comida principal.'
+    - id: hueso_y_densitometria
+      tema: Hueso y densitometría
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Caminar es bueno, pero el hueso se fortalece con algo de impacto y peso: subir escaleras, cargar el mercado, saltos suaves si tu cuerpo lo permite.'
+      dato: 'USPSTF: densitometría en mujeres de 65+ y posmenopáusicas con riesgo; el hueso responde a fuerza, impacto y equilibrio.'
+    - id: cerebro_y_demencia
+      tema: Cerebro y demencia
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Casi la mitad de los casos de demencia se relacionan con cosas que se pueden cambiar: la presión, el movimiento, el azúcar, la soledad y hasta oír bien. Cuidar tu presión hoy es cuidar tu
+        memoria mañana.'
+      dato: 'Comisión Lancet 2024: cerca de 45 % de los casos de demencia se relaciona con 14 factores modificables (presión, inactividad, diabetes, aislamiento, audición y visión no tratadas, LDL alto).'
+    - id: edad_biologica
+      tema: Edad biológica
+      respaldo: moderada
+      turno: cualquiera
+      texto: Tu edad biológica de Saludly sale de tus propios exámenes de sangre y es una estimación, no un diagnóstico. Lo útil es verla moverse en tu próximo control cuando cambias hábitos.
+      dato: Los relojes epigenéticos comerciales aún no sirven para decisiones clínicas individuales (revisión 2025). PhenoAge usa análisis de sangre comunes; es una estimación poblacional.
+    - id: nmn_nad_y_suplementos_antiaging
+      tema: NMN, NAD+ y suplementos antiaging
+      respaldo: mito
+      turno: cualquiera
+      texto: Los suplementos 'antienvejecimiento' como el NMN suben un número en sangre, pero no han demostrado hacerte vivir más ni mejor. Ese dinero rinde más en zapatos para caminar.
+      dato: 'Metaanálisis (12 ensayos, 513 personas): el NMN sube el NAD en sangre pero no mejoró resultados clínicos ni físicos. No hay evidencia de más años de vida en humanos.'
+    - id: omega_3_y_vitamina_d
+      tema: Omega-3 y vitamina D
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'En el estudio más grande que se ha hecho, la vitamina D y el omega-3 no protegieron a personas sanas del cáncer ni del infarto. Si tu examen muestra una deficiencia, eso sí se trata: tu médico
+        te dice cómo.'
+      dato: 'VITAL (25.871 adultos): vitamina D y omega-3 no mostraron beneficio general en cáncer ni corazón; se tratan si hay deficiencia o indicación.'
+    - id: menopausia_musculo_y_hueso
+      tema: Menopausia, músculo y hueso
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'En la menopausia el hueso y el músculo se pierden más rápido, y la fuerza es tu mejor aliada. Si los calores o el insomnio te afectan, hay tratamientos que funcionan: háblalo con tu médico.'
+      dato: 'The Menopause Society: la terapia hormonal es lo más eficaz para los síntomas y protege el hueso; no se inicia para prevenir demencia ni infarto (USPSTF).'
+    - id: lp_a_el_colesterol_que_se_hereda
+      tema: 'Lp(a): el colesterol que se hereda'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: La Lp(a) es un tipo de colesterol que heredas de tus papás y casi no cambia con la dieta. Basta con medirla una vez en la vida, y tu examen de Saludly la incluye.
+      dato: 'ACC/AHA 2026: medirla al menos una vez en la vida adulta; ≥ 50 mg/dL o ≥ 125 nmol/L se asocia con más riesgo cardiovascular; depende casi solo de la genética.'
+    - id: conexion_social
+      tema: Conexión social
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Ver a tus amigos también es salud: el aislamiento está entre los factores que más pesan en la memoria con los años. Esta semana llama o almuerza con alguien que no ves hace rato.'
+      dato: 'Comisión Lancet: el aislamiento está entre los 14 factores modificables de demencia; el apoyo de un amigo amortigua la respuesta al estrés.'
+    - id: lo_minimo_que_mas_rinde
+      tema: Lo mínimo que más rinde
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'El salto más grande en salud no es de deportista a atleta: es de no moverte a moverte. Llegar a 150 minutos de caminata rápida por semana es donde más ganas.'
+      dato: 'Metaanálisis BJSM 2023: pasar de inactivo a ≈ 150 min/semana es donde más baja la mortalidad; después el beneficio extra es menor.'
+    cortisol:
+      texto: 'El estrés de largo plazo le pasa factura al hueso, al sueño y a la memoria. Una de las cosas que mejor lo amortigua está estudiada: pasar tiempo con alguien de confianza. Agenda un plan con
+        un amigo esta semana.'
+      dato: El exceso sostenido de cortisol (Cushing, corticoides) sí daña hueso y músculo; la relación del estrés cotidiano con memoria e inmunidad es observacional. Encaja la conexión social y el movimiento.
+  salud_general:
+    emoji: 💚
+    consejos:
+    - id: pasos_diarios
+      tema: Pasos diarios
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'No necesitas 10.000 pasos para notar el cambio: el beneficio crece sobre todo hasta unos 8.000. Si hoy caminas 4.000, tu meta de este mes son 6.000.'
+      dato: 'Metaanálisis (15 cohortes): el beneficio se estabiliza en 8.000–10.000 pasos/día en menores de 60; no es una cifra oficial.'
+    - id: cuanto_ejercicio_a_la_semana
+      tema: Cuánto ejercicio a la semana
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Con 30 minutos de caminata rápida 5 días a la semana cumples la meta de la OMS, y puedes partirlos en tres caminatas de 10. El gimnasio es opcional.
+      dato: 'OMS: 150–300 min/semana moderado o 75–150 vigoroso, más fuerza 2+ días; cualquier actividad es mejor que nada.'
+    - id: fuerza_sin_gimnasio
+      tema: Fuerza sin gimnasio
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Caminar cuida tu corazón, pero tus músculos necesitan fuerza dos veces por semana: sentadillas en una silla, flexiones en la pared y subir escaleras ya cuentan.'
+      dato: 'OMS: fuerza de los grandes músculos 2+ días/semana; ACSM: 1–2 series de 8–12 repeticiones por ejercicio para empezar.'
+    - id: fibra_y_frutas_y_verduras
+      tema: Fibra y frutas y verduras
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Tu meta son 5 porciones de fruta y verdura al día y fríjoles o lentejas al menos dos veces por semana. Un plato de lentejas te da casi un tercio de la fibra que necesitas.
+      dato: 'OMS: ≥ 25 g/día de fibra y ≥ 400 g/día de frutas y verduras; GABA Colombia: leguminosas al menos 2 veces por semana.'
+    - id: proteina_para_quien_no_entrena
+      tema: Proteína para quien no entrena
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si no entrenas fuerte, con unos 0,8 gramos de proteína por kilo estás cubierto: para 70 kg, unos 56 g, que salen de un huevo, una porción de pollo y un vaso de leche.'
+      dato: 'OMS/FAO: 0,8–0,83 g/kg/día cubre a la mayoría de adultos sanos (≈ 56 g para 70 kg); el 1 g por libra es para otros objetivos.'
+    - id: ultraprocesados
+      tema: Ultraprocesados
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'Cuando la comida viene de paquete, sin darte cuenta comes de más: en un estudio, unas 500 calorías extra al día. No es prohibir todo, es que la mayoría de tu plato venga de la plaza y no del
+        paquete.'
+      dato: 'Ensayo NIH: con dieta ultraprocesada la gente comió ≈ 500 kcal/día más y subió ≈ 0,9 kg. No todo lo procesado es dañino.'
+    - id: ocho_vasos_de_agua
+      tema: ¿Ocho vasos de agua?
+      respaldo: moderada
+      turno: cualquiera
+      texto: 'La regla de los 8 vasos es un mito: la sopa, la fruta y hasta el tinto cuentan. Bebe cuando tengas sed y prefiere el agua a la gaseosa.'
+      dato: 'Academias de EE. UU.: 2,7 L (mujeres) y 3,7 L (hombres) de agua TOTAL, incluida la de los alimentos (≈ 20 %); no hay cifra extra por vivir en Bogotá.'
+    - id: alcohol_moderado
+      tema: Alcohol 'moderado'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'La copa de vino ''para el corazón'' es un mito: no existe una cantidad de alcohol que sea buena para la salud. Si tomas, menos siempre es mejor.'
+      dato: 'OMS: no hay un nivel de consumo sin riesgo; los riesgos empiezan desde niveles bajos; menos es mejor.'
+    - id: sal_y_azucar
+      tema: Sal y azúcar
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Una gaseosa personal ya trae casi todo el azúcar libre que deberías comer en un día. Cambiarla por agua con limón es de los cambios que más rinden.
+      dato: 'OMS: sal < 5 g/día (una cucharadita) y azúcares libres < 10 % de la energía (≈ 50 g, ideal 25 g); una gaseosa de 400 mL trae cerca de 40 g.'
+    - id: suplementos_y_multivitaminicos
+      tema: Suplementos y multivitamínicos
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Un multivitamínico no reemplaza un plato variado y no ha demostrado prevenir enfermedades en personas sanas. Tu examen de Saludly te dice si te falta algo de verdad.
+      dato: 'USPSTF: evidencia insuficiente para multivitamínicos en sanos; no betacaroteno ni vitamina E para prevenir. Se suplementa una deficiencia confirmada.'
+    - id: chequeos_por_edad
+      tema: Chequeos por edad
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Además de tu sangre, hay chequeos que te tocan por edad: la citología o la prueba de VPH, y la mamografía o la de colon según tus años. Revisa con tu EPS cuál te corresponde.'
+      dato: 'Minsalud: citología 25–29 años; ADN-VPH 30–65 cada 5 años; mamografía 50–69 cada 2 años; colon desde los 50 (guía de gastroenterología 2025: 45).'
+    - id: presion_arterial
+      tema: Presión arterial
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Tu presión es uno de los datos que más dicen de tu salud y no duele medirla. Para que sea confiable: 5 minutos sentado, sin café antes y con el brazo apoyado a la altura del corazón.'
+      dato: 'AHA: óptima < 120/80; una lectura aislada no diagnostica; medir tras 5 min sentado, sin café ni cigarrillo 30 min antes, 2 lecturas.'
+    cortisol:
+      texto: 'El estrés del día a día se maneja mejor con prácticas cortas que con grandes cambios: cuando sientas la presión, detente, nombra lo que sientes y respira lento un minuto. Moverte con regularidad
+        también se asocia con un cortisol más bajo.'
+      dato: La OMS propone prácticas breves de anclaje (notar y nombrar lo que sientes, respirar lento, volver al presente). El ejercicio regular se asocia con cortisol más bajo (metaanálisis SMD −0,37).
+  prevenir:
+    emoji: 🛡️
+    consejos:
+    - id: que_examenes_cada_ano
+      tema: ¿Qué exámenes cada año?
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Prevenir no es hacerse todos los exámenes cada año, es hacerse los correctos a tiempo. Los que miden tu azúcar, tu colesterol y tus riñones son la base, y ya los tienes en tu examen.
+      dato: 'Resolución 3280: tamización cardiometabólica (glucemia, lípidos, creatinina) cada 5 años según riesgo; más pruebas no es más prevención.'
+    - id: hba1c_y_prediabetes
+      tema: HbA1c y prediabetes
+      respaldo: fuerte
+      turno: cualquiera
+      texto: La HbA1c es el promedio de tu azúcar de los últimos 3 meses. Entre 5,7 y 6,4 % es una zona de alerta en la que todavía puedes devolverte con hábitos.
+      dato: 'ADA: HbA1c 5,7–6,4 % = rango de prediabetes; ≥ 6,5 % = rango de diabetes (se confirma). Con prediabetes, control al menos anual.'
+    - id: hba1c_en_la_altura
+      tema: HbA1c en la altura
+      respaldo: moderada
+      turno: cualquiera
+      texto: Vivir a 2.600 metros puede mover un poco tu HbA1c, por eso tu médico la mira junto con tu glucosa en ayunas. Si una dice una cosa y la otra otra, se confirma con otra prueba.
+      dato: 'Diabetes Care: a más de 2.500 m la HbA1c puede diferir; no hay ajuste oficial colombiano. Si no concuerda con la glucosa, confirmar con glucosa o curva.'
+    - id: programa_de_prevencion_de_diabetes
+      tema: Programa de prevención de diabetes
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Con prediabetes, bajar entre 5 y 7 % de tu peso y caminar 150 minutos a la semana es la combinación con más evidencia para que tu azúcar no siga subiendo.
+      dato: 'Diabetes Prevention Program: bajar 5–7 % del peso y 150 min/semana de actividad redujo 58 % la aparición de diabetes (71 % en mayores de 60).'
+    - id: sensores_de_glucosa_sin_diabetes
+      tema: Sensores de glucosa sin diabetes
+      respaldo: mito
+      turno: cualquiera
+      texto: Que tu azúcar suba después de comer es normal; un sensor en alguien sin diabetes suele generar más ansiedad que información. Tu HbA1c y tu glucosa en ayunas cuentan la historia completa.
+      dato: 'ADA 2026: no hay evidencia para usar sensores continuos en personas sin diabetes; los picos después de comer en sanos tienen poca interpretación clínica.'
+    - id: apob_y_lp_a
+      tema: ApoB y Lp(a)
+      respaldo: fuerte
+      turno: cualquiera
+      texto: El LDL cuenta cuánto colesterol llevan tus partículas; la ApoB cuenta cuántas partículas hay, y eso es lo que tapa las arterias. Tu examen de Saludly mide las dos.
+      dato: 'ACC/AHA 2026: Lp(a) al menos una vez (≥ 50 mg/dL o ≥ 125 nmol/L ≈ 1,4 veces más riesgo); ApoB útil con triglicéridos altos, diabetes o LDL discordante.'
+    - id: presion_en_casa
+      tema: Presión en casa
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Una presión alta en el consultorio no te define: los nervios la suben. Mídela en casa en la mañana y en la noche, dos veces seguidas, durante una semana, y lleva el promedio a tu médico.'
+      dato: 'Guía colombiana 2025: una toma elevada no basta; confirmar en casa con equipo validado: mañana y noche, 2 mediciones separadas por 2 min, varios días.'
+    - id: higado_graso_y_fib_4
+      tema: Hígado graso y FIB-4
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Tus transaminasas pueden salir normales y aun así haber grasa en el hígado. Por eso Saludly calcula un índice con tu edad, tus enzimas y tus plaquetas que dice si hace falta mirar más.
+      dato: 'AASLD: ALT y AST normales no lo descartan; FIB-4 < 1,3 bajo riesgo de fibrosis, ≥ 1,3 evaluar más, > 2,67 derivar. Saludly calcula el FIB-4.'
+    - id: cancer_de_colon_45_o_50
+      tema: 'Cáncer de colon: ¿45 o 50?'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'La prueba de colon se empieza entre los 45 y los 50 años. Si ves sangre en la deposición, no esperes a la edad: eso se consulta ya.'
+      dato: 'Minsalud: desde los 50 (sangre oculta cada 2 años o colonoscopia cada 10); guía colombiana de gastroenterología 2025: desde los 45. Sangrado = consulta, no tamizaje.'
+    - id: pruebas_que_detectan_todo
+      tema: Pruebas 'que detectan todo'
+      respaldo: mito
+      turno: cualquiera
+      texto: Las resonancias de cuerpo entero y los exámenes 'multicáncer' encuentran muchas cosas que no son nada y llevan a más pruebas. Los tamizajes por edad son los que sí han salvado vidas.
+      dato: 'NCI: no hay ensayos que muestren que reduzcan la mortalidad; generan hallazgos incidentales y más procedimientos.'
+    - id: alcohol_y_cancer
+      tema: Alcohol y cáncer
+      respaldo: fuerte
+      turno: cualquiera
+      texto: El alcohol está ligado a cánceres de mama, hígado y colon, y no hay una cantidad 'segura'. Si quieres un solo cambio preventivo, tomar menos es de los que más pesan.
+      dato: 'OMS/IARC: no hay nivel seguro para cáncer; vinculado a mama, hígado y colon. WCRF: para prevenir cáncer, mejor no beber.'
+    - id: vacunas_que_previenen_cancer
+      tema: Vacunas que previenen cáncer
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Hay dos vacunas que previenen cáncer: la del VPH y la de la hepatitis B. Si tienes hijos entre 9 y 17 años, la del VPH es una sola dosis y es gratis en el plan nacional.'
+      dato: 'Minsalud: VPH una dosis de 9 a 17 años; VPH y hepatitis B previenen cánceres; vacunarse no reemplaza el tamizaje de cuello uterino.'
+    cortisol:
+      texto: 'El estrés no es solo mental: sube tu presión y te empuja a comer y dormir peor. Diez minutos de caminata o de respiración lenta al día no reemplazan tus controles, pero te ayudan a sostener
+        los hábitos que sí previenen.'
+      dato: No hay evidencia de que bajar el cortisol prevenga diabetes o infartos; la AHA presenta la meditación como complemento, nunca sustituto. Mensaje de estrés como apoyo para sostener hábitos.
+  condicion_existente:
+    emoji: 🩺
+    consejos:
+    - id: puedo_dejar_el_medicamento_si_mejore
+      tema: ¿Puedo dejar el medicamento si mejoré?
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si tus exámenes mejoraron, es probable que sea porque el tratamiento y tus hábitos están funcionando juntos. Lleva los resultados a tu médico: él decide si se ajusta algo.'
+      dato: 'Guías: los cambios de dosis los decide el equipo tratante; mejorar suele ser porque el tratamiento y los hábitos están funcionando juntos.'
+    - id: levotiroxina_cafe_y_desayuno
+      tema: 'Levotiroxina: café y desayuno'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Si te formularon levotiroxina, tómala solo con agua y espera 30 a 60 minutos para el tinto y el desayuno. Si tomas calcio o hierro, sepáralos unas 4 horas.
+      dato: 'AACE: con agua, en ayunas, 30–60 min antes del desayuno; FDA: separar 4 h de calcio y hierro. TSH 4–8 semanas después de un cambio.'
+    - id: biotina_y_examen_de_tiroides
+      tema: Biotina y examen de tiroides
+      respaldo: fuerte
+      turno: cualquiera
+      texto: La biotina (muy común en suplementos para el pelo y las uñas) puede alterar tu examen de tiroides. Por eso en Saludly te preguntamos si la tomas antes de leer tus resultados.
+      dato: 'FDA: la biotina puede falsear TSH y T4; suspenderla al menos 2 días antes del examen (con aval médico). Saludly pregunta por la biotina.'
+    - id: sal_y_presion
+      tema: Sal y presión
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Tu límite es una cucharadita de sal al día en total, y gran parte ya viene escondida: un solo cubo de caldo puede traer casi todo el límite del día. Cocina con ajo, cebolla, cilantro y limón
+        en vez del cubo.'
+      dato: 'Guía colombiana de hipertensión: < 2 g de sodio/día (≈ 5 g de sal); cubos de caldo, embutidos y sopas de sobre traen mucho.'
+    - id: medir_la_presion_en_casa
+      tema: Medir la presión en casa
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Mídete la presión una semana: dos tomas en la mañana y dos en la noche, después de 5 minutos sentado. Tu médico necesita el promedio, no una lectura suelta.'
+      dato: 'ESC: equipo validado, 5 min de reposo, 2 tomas separadas 1–2 min, mañana y tarde, 3–7 días; promedio ≥ 135/85 en casa ≈ 140/90 en consulta.'
+    - id: glucosa_en_casa
+      tema: Glucosa en casa
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si te mides la glucosa, anota también qué comiste: así ves qué platos te suben más. Tu meta exacta la define tu médico según tu caso.'
+      dato: 'ADA / NIDDK: para muchos adultos 80–130 mg/dL antes de comer y < 180 mg/dL 1–2 h después; HbA1c < 7 % como meta frecuente, siempre individual.'
+    - id: ejercicio_con_diabetes
+      tema: Ejercicio con diabetes
+      respaldo: fuerte
+      turno: cualquiera
+      texto: Una caminata de 10 a 15 minutos después del almuerzo ayuda a que tu azúcar suba menos. Si usas insulina, lleva algo dulce por si te baja.
+      dato: 'ADA 2026: 150 min/semana en 3+ días, no más de 2 días seguidos sin actividad, fuerza 2–3 días, moverse cada 30 min sentado. Con insulina o sulfonilureas, planear por riesgo de bajones.'
+    - id: estatinas_y_dolor_muscular
+      tema: Estatinas y dolor muscular
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si sientes dolor muscular con la estatina, no la dejes por tu cuenta: muchas veces el dolor tiene otra causa y, si es por el medicamento, hay otras opciones. Coméntaselo a tu médico.'
+      dato: 'ACC: síntomas musculares en 5–20 %, muchas veces por otra causa; rabdomiólisis ≈ 1 por 10.000 personas-año; hay alternativas, no suspender solo.'
+    - id: metformina_y_b12
+      tema: Metformina y B12
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Si tomas metformina hace años, vale la pena revisar tu B12: con el tiempo puede bajar y causar hormigueo en los pies. Tu examen de Saludly la incluye.'
+      dato: 'ADA: considerar medir B12 periódicamente con metformina a largo plazo, sobre todo con hormigueo o anemia.'
+    - id: higado_graso_cuanto_bajar
+      tema: 'Hígado graso: cuánto bajar'
+      respaldo: fuerte
+      turno: cualquiera
+      texto: 'Con hígado graso, cada kilo cuenta: bajar el 5 % de tu peso ya saca grasa del hígado, y entre 7 y 10 % baja la inflamación. Si pesas 80 kg, son 4 a 8 kilos.'
+      dato: 'EASL 2024: bajar ≥ 5 % reduce grasa hepática; 7–10 % mejora inflamación; ≥ 10 % mejora fibrosis.'
+    - id: suplementos_para_el_higado
+      tema: Suplementos para el hígado
+      respaldo: mito
+      turno: cualquiera
+      texto: Ningún té ni suplemento 'limpia' el hígado, y algunos pueden hacerle daño. Lo que sí funciona es bajar de peso poco a poco, moverte y dejar el alcohol.
+      dato: 'Mayo Clinic / EASL: no hay suplementos que reviertan el hígado graso; algunos pueden lesionarlo. Las estatinas sí se pueden usar en muchas personas con hígado graso.'
+    - id: relajacion_y_presion
+      tema: Relajación y presión
+      respaldo: moderada
+      turno: tarde
+      texto: Respirar lento unos minutos al día puede bajar un poco tu presión, como un complemento de tu tratamiento. Prueba inhalar en 4 tiempos y soltar en 6, durante 5 minutos antes de dormir.
+      dato: 'Metaanálisis en red 2025: control respiratorio ≈ −6,65 mmHg y meditación ≈ −7,71 mmHg de sistólica a corto plazo, con certeza muy baja. Complemento, nunca reemplazo.'
+    cortisol:
+      texto: Vivir con una condición cansa, y ese estrés también cuenta en tu presión y tu azúcar. Darte cinco minutos al día para respirar lento es parte de cuidarte, igual que tu medicamento.
+      dato: En hipertensión, respiración lenta y meditación tienen efecto pequeño a corto plazo; en diabetes, la ADA recomienda atención psicosocial del malestar por la enfermedad. Nunca cambiar medicación
+        por 'bajar el cortisol'.
