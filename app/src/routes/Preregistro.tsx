@@ -30,6 +30,8 @@ const OTRO = "otro";
 
 const params = new URLSearchParams(window.location.search);
 const DEMO = import.meta.env.DEV && params.has("demo");
+/** Se volvió de Google con la cuenta en la dirección: mientras Supabase la lee (y la borra de ahí), no se muestra la portada otra vez. */
+const vuelveDeGoogle = () => /access_token|refresh_token/.test(window.location.hash);
 
 function alternar(lista: string[], id: string, maximo?: number) {
   if (lista.includes(id)) return lista.filter((x) => x !== id);
@@ -196,7 +198,7 @@ export function Preregistro() {
   if (DEMO && demoListo) return <Listo datos={{ nombre, codigo: "a1b2c3" }} />;
   if (!DEMO) {
     if (s.cargando) return <div className="min-h-screen bg-white" />;
-    if (!s.sesion) return <Portada />;
+    if (!s.sesion) return vuelveDeGoogle() ? <div className="min-h-screen bg-white" /> : <Portada />;
     if (s.preregistro) return <Listo datos={s.preregistro} />;
   }
   if (DEMO && params.get("demo") === "portada") return <Portada />;

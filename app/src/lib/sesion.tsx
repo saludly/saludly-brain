@@ -5,7 +5,7 @@
  * Como el equipo puede leer los datos de todos, cada consulta de la sesión filtra por el propio usuario.
  */
 import { createClient, type Session } from "@supabase/supabase-js";
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import type { Informe } from "./informe";
 
 export const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
@@ -172,16 +172,25 @@ export function SesionProvider({ children }: { children: ReactNode }) {
     setPreventa(k.data?.valor === "si");
   }, []);
 
+  // Datos de la cuenta que ya se cargaron (o se están cargando). La sesión solo se publica cuando sus datos están listos:
+  // si no, al volver de Google se alcanzaba a ver /registro medio segundo antes de saber que es preventa.
+  const cargados = useRef<{ id: string | null; listo: Promise<void> } | null>(null);
+
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data }) => {
-      setSesion(data.session);
-      await cargarDatos(data.session);
-      setCargando(false);
-    });
-    const { data } = supabase.auth.onAuthStateChange((_evento, s) => {
+    const aplicar = async (s: Session | null) => {
+      const id = s?.user.id ?? null;
+      if (cargados.current?.id !== id) {
+        setCargando(true);
+        cargados.current = { id, listo: cargarDatos(s) };
+      }
+      const actual = cargados.current;
+      await actual.listo;
+      if (cargados.current !== actual) return; // cambió de cuenta mientras cargaba
       setSesion(s);
-      void cargarDatos(s);
-    });
+      setCargando(false);
+    };
+    supabase.auth.getSession().then(({ data }) => void aplicar(data.session));
+    const { data } = supabase.auth.onAuthStateChange((_evento, s) => void aplicar(s));
     return () => data.subscription.unsubscribe();
   }, [cargarDatos]);
 
