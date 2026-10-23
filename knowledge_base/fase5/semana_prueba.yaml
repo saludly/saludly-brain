@@ -122,7 +122,7 @@ plantillas:
   - nombre: recordatorio_dia
     categoria: MARKETING
     cuando: "Días 2 a 7, en el primer envío del día que encuentre la ventana cerrada (máximo una vez al día). Al tocar el botón le llega lo pendiente de ese día."
-    cuerpo: "Hola, {{1}} 👋 Tienes {{2}} esperándote en Saludly. Toca el botón para verlo."
+    cuerpo: "Hola, {{1}} 👋 Tienes {{2}} esperándote en Saludly. Recuerda responder lo que leas para continuar con tu mejoría de salud en 7 días."
     ejemplo: ["Ana", "tu receta de hoy: ajiaco liviano de pollo"]
     botones: ["Ver ahora"]
   - nombre: cierre_semana

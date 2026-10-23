@@ -51,6 +51,7 @@ codigo/
   lector_pdf/            lector como módulo independiente (Fase 3), con sus propias pruebas
   herramientas/          generar_indice.py (00_INDEX.json y sus copias) · generar_solicitud_laboratorio.py (PDF para el laboratorio)
                          · generar_frases_prohibidas.py · validar_fase5.py (valida todo knowledge_base/fase5)
+                         · plantillas_whatsapp.py (lista, crea las de la semana de prueba y copia plantillas de una WABA a otra)
   informe/               Fase 5: redactar.py (informe en 6 partes, vista médica, WhatsApp), recomendar.py (orden 07.4),
                          nutricion.py (nutrientes de recetas, metas y receta del día), control_salida.py, contenido.py
   pipeline/              saludly.py: PDF → lector → motor → informe JSON + Markdown (ver codigo/pipeline/README.md)
