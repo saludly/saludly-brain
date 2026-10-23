@@ -4,7 +4,8 @@ import C from "@/lib/contenido.json";
 
 /**
  * Panel de la preventa (solo el equipo): cuántos se inscribieron, de dónde llegan (?ref=), sus metas y "Otro",
- * la lista completa para el seguimiento por WhatsApp, descarga en CSV y "Pasar a cliente" (sigue el flujo con pago).
+ * la lista completa para el seguimiento por WhatsApp, descarga en CSV, "Pasar a cliente" (sigue el flujo con pago)
+ * y "Eliminar" para los de prueba (preregistro_borrar: borra la cuenta completa, con confirmación).
  */
 interface Fila {
   id: string;
@@ -111,6 +112,8 @@ export function Preregistros() {
   const [filas, setFilas] = useState<Fila[] | null>(null);
   const [buscar, setBuscar] = useState("");
   const [ocupado, setOcupado] = useState<string | null>(null);
+  const [borrando, setBorrando] = useState<string | null>(null);
+  const [aviso, setAviso] = useState<string | null>(null);
 
   const cargar = useCallback(async () => {
     const { data } = await supabase.from("preregistros").select("*").order("creado", { ascending: false });
@@ -147,6 +150,15 @@ export function Preregistros() {
     setOcupado(f.id);
     await supabase.rpc("preregistro_estado", { p_id: f.id, p_estado: estado });
     setOcupado(null);
+    void cargar();
+  };
+
+  const eliminar = async (f: Fila) => {
+    setOcupado(f.id);
+    const { error } = await supabase.rpc("preregistro_borrar", { p_id: f.id });
+    setOcupado(null);
+    setBorrando(null);
+    setAviso(error ? `No se pudo eliminar a ${f.nombre}: ${error.message}` : `Eliminado: ${f.nombre}.`);
     void cargar();
   };
 
@@ -193,6 +205,8 @@ export function Preregistros() {
         </div>
       )}
 
+      {aviso && <p className="mt-6 rounded-xl bg-surface px-4 py-3 text-sm text-ink">{aviso}</p>}
+
       <input value={buscar} onChange={(e) => setBuscar(e.target.value)} placeholder="Buscar por nombre, celular, correo, localidad u origen" className="mt-6 w-full rounded-2xl border border-rule bg-background px-4 py-3 text-sm text-ink outline-none focus:border-optimal" />
 
       <div className="mt-3 space-y-2">
@@ -225,7 +239,23 @@ export function Preregistros() {
                   Pasar a cliente
                 </button>
               )}
+              <button type="button" disabled={ocupado === f.id} onClick={() => setBorrando(f.id)} className="rounded-full border border-rule px-4 py-2 text-xs text-critical disabled:opacity-40">
+                Eliminar
+              </button>
             </div>
+            {borrando === f.id && (
+              <div className="flex w-full flex-wrap items-center justify-between gap-3 rounded-xl bg-critical-soft px-4 py-3">
+                <p className="text-sm text-ink">¿Eliminar a {f.nombre}? Se borra su cuenta y su pre-registro. No se puede deshacer.</p>
+                <div className="flex gap-2">
+                  <button type="button" onClick={() => setBorrando(null)} className="rounded-full border border-rule bg-background px-4 py-2 text-xs text-ink">
+                    Cancelar
+                  </button>
+                  <button type="button" disabled={ocupado === f.id} onClick={() => void eliminar(f)} className="rounded-full bg-critical px-4 py-2 text-xs text-white disabled:opacity-40">
+                    {ocupado === f.id ? "Eliminando…" : "Sí, eliminar"}
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
