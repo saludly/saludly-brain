@@ -9,6 +9,7 @@ import { Panel } from "@/routes/Panel";
 import { Plan } from "@/routes/Plan";
 import { Entrar } from "@/routes/Entrar";
 import { Registro } from "@/routes/Registro";
+import { Preregistro } from "@/routes/Preregistro";
 import { Pago } from "@/routes/Pago";
 import { Perfil } from "@/routes/Perfil";
 import { Cuestionario } from "@/routes/Cuestionario";
@@ -18,6 +19,7 @@ import { Medico } from "@/routes/Medico";
 import { Privacidad } from "@/routes/Privacidad";
 import { VistaMedico } from "@/routes/VistaMedico";
 import { SesionProvider, siguientePaso, useSesion } from "@/lib/sesion";
+import { guardarOrigen } from "@/lib/origen";
 
 /** Entrada de la PWA: lleva al paciente al paso que le falta. */
 function Inicio() {
@@ -74,6 +76,7 @@ const raiz = createRootRoute({
 const rutas = [
   createRoute({ getParentRoute: () => raiz, path: "/", component: Inicio }),
   createRoute({ getParentRoute: () => raiz, path: "/entrar", component: Entrar }),
+  createRoute({ getParentRoute: () => raiz, path: "/preregistro", component: Preregistro }),
   createRoute({ getParentRoute: () => raiz, path: "/registro", component: Registro }),
   createRoute({ getParentRoute: () => raiz, path: "/pago", component: Pago }),
   createRoute({ getParentRoute: () => raiz, path: "/cuestionario", component: Cuestionario }),
@@ -95,6 +98,8 @@ declare module "@tanstack/react-router" {
     router: typeof router;
   }
 }
+
+guardarOrigen();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
+import { BotonGoogle } from "@/components/BotonGoogle";
 import { Marca } from "@/components/Comunes";
 import { Campo, claseEntrada } from "@/components/Formulario";
 import { siguientePaso, supabase, useSesion } from "@/lib/sesion";
@@ -19,12 +20,6 @@ export function Entrar() {
     if (!s.cargando && s.sesion) void navigate({ to: siguientePaso(s) });
   }, [s, navigate]);
 
-  const conGoogle = async () => {
-    setError(null);
-    const { error } = await supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: `${window.location.origin}/registro` } });
-    if (error) setError("El ingreso con Google todavía no está activo. Por ahora, usa tu correo.");
-  };
-
   const conCorreo = async () => {
     setError(null);
     setAviso(null);
@@ -32,7 +27,7 @@ export function Entrar() {
     if (clave.length < 8) return setError("La contraseña debe tener al menos 8 caracteres.");
     setOcupado(true);
     if (modo === "crear") {
-      const { data, error } = await supabase.auth.signUp({ email: correo, password: clave, options: { emailRedirectTo: `${window.location.origin}/registro` } });
+      const { data, error } = await supabase.auth.signUp({ email: correo, password: clave, options: { emailRedirectTo: `${window.location.origin}/` } });
       if (error) setError(error.message.includes("registered") ? "Ese correo ya tiene cuenta. Elige «Ya tengo cuenta»." : "No pudimos crear la cuenta. Intenta de nuevo.");
       else if (!data.session) setAviso("Te enviamos un correo para confirmar tu cuenta. Ábrelo y toca el enlace para continuar.");
     } else {
@@ -54,19 +49,9 @@ export function Entrar() {
               : "Entra con el correo con el que creaste tu cuenta."}
           </p>
 
-          <button
-            type="button"
-            onClick={conGoogle}
-            className="mt-8 flex w-full items-center justify-center gap-3 rounded-full border border-rule px-6 py-4 text-sm text-ink transition-colors hover:border-ink/25"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
-              <path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-1.9 3.3-4.8 3.3-8z" />
-              <path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.6-2.7c-1 .7-2.2 1.1-3.7 1.1-2.9 0-5.3-1.9-6.2-4.5H2.1v2.8A11 11 0 0 0 12 23z" />
-              <path fill="#FBBC05" d="M5.8 14.2a6.6 6.6 0 0 1 0-4.3V7.1H2.1a11 11 0 0 0 0 9.9l3.7-2.8z" />
-              <path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2.1 7.1l3.7 2.8C6.7 7.3 9.1 5.4 12 5.4z" />
-            </svg>
-            Continuar con Google
-          </button>
+          <div className="mt-8">
+            <BotonGoogle alError={setError} />
+          </div>
 
           <div className="my-7 flex items-center gap-3 text-[11px] uppercase tracking-[0.16em] text-ink-faint">
             <span className="h-px flex-1 bg-rule" />o con tu correo<span className="h-px flex-1 bg-rule" />

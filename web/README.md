@@ -22,7 +22,7 @@ No abras index.html con doble clic: el navegador bloquea las animaciones por fil
 ## Dónde vive (desde el 21 de octubre de 2026)
 Esta carpeta `web/` del proyecto es la fuente de saludly.online (proyecto `saludlyia` en Vercel; la copia vieja estaba en
 el escritorio, en "Pagina web de saludly"). Para publicar: `cd web && vercel deploy --prod`.
-Los botones "Empezar" llevan a https://app.saludly.online/entrar. Los cambios de ese día están en herramientas/ajustes_2026_10_21.py.
+Los botones "Empezar" llevan a https://app.saludly.online/entrar (desde el 22 oct 2026, al pre-registro: /preregistro con el ?ref= de la visita o ref=web). Los cambios de ese día están en herramientas/ajustes_2026_10_21.py.
 
 ## Modo oscuro (desde el 22 de octubre de 2026)
 La página se ve oscura solo en celulares y tabletas con el modo oscuro activo; en el computador siempre se ve clara

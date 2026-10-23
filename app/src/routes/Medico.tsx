@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Marca } from "@/components/Comunes";
+import { Preregistros } from "@/components/Preregistros";
 import { PLAZO, SUAVE, estadoDeEscalamiento, fechaLarga } from "@/lib/datos";
 import { useInforme } from "@/lib/contexto";
 import { supabase, useSesion } from "@/lib/sesion";
@@ -198,6 +199,8 @@ function ConfigPago() {
     ["pago_valor", "Valor del paquete", "$000.000"],
     ["pago_titular", "Titular de la cuenta", "Nombre que verá el paciente"],
     ["whatsapp_saludly", "WhatsApp de Saludly", "Con indicativo, sin +: 57300…"],
+    ["anticipo_valor", "Anticipo de la preventa", "$50.000"],
+    ["preventa", "Pre-registro activo (si / no)", "si"],
   ];
 
   useEffect(() => {
@@ -216,7 +219,7 @@ function ConfigPago() {
   return (
     <section className="mt-4">
       <button type="button" onClick={() => setAbierta((x) => !x)} className="text-sm text-optimal underline-offset-4 hover:underline">
-        {abierta ? "Cerrar datos de pago" : "Datos de pago (llave Bre-B y valor)"}
+        {abierta ? "Cerrar datos de pago" : "Datos de pago y preventa (llave Bre-B, valores)"}
       </button>
       {abierta && (
         <div className="mt-3 grid gap-3 rounded-2xl bg-surface p-4 sm:grid-cols-2">
@@ -361,6 +364,7 @@ export function Medico() {
   const [filas, setFilas] = useState<Fila[] | null>(null);
   const [abierta, setAbierta] = useState<Fila | null>(null);
   const [subiendo, setSubiendo] = useState<string | null>(null);  // id del paciente, o "todos" para la carga general
+  const [vista, setVista] = useState<"pacientes" | "preregistros">("preregistros");
 
   const cargar = useCallback(async () => {
     const [p, c, v, i, g] = await Promise.all([
@@ -383,15 +387,50 @@ export function Medico() {
 
   useEffect(() => {
     if (s.cargando) return;
-    if (!s.esEquipo) void navigate({ to: "/" });
-    else void cargar();
-  }, [s.cargando, s.esEquipo, navigate, cargar]);
+    if (!s.sesion) void navigate({ to: "/entrar" });
+    else if (s.esEquipo) void cargar();
+  }, [s.cargando, s.sesion, s.esEquipo, navigate, cargar]);
+
+  // Entró con una cuenta que no es del equipo (por ejemplo, una de prueba): se lo decimos y le dejamos cambiarla.
+  if (!s.cargando && s.sesion && !s.esEquipo)
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-background px-6">
+        <div className="max-w-sm text-center">
+          <h1 className="text-2xl font-light text-ink">Esta cuenta no tiene acceso al panel.</h1>
+          <p className="mt-3 text-sm text-ink-muted">Entraste como {s.sesion.user.email}. El panel es solo para el equipo de Saludly.</p>
+          <button type="button" onClick={() => void s.salir().then(() => navigate({ to: "/entrar" }))} className="mt-6 rounded-full bg-optimal px-5 py-2.5 text-sm text-primary-foreground">
+            Entrar con otra cuenta
+          </button>
+        </div>
+      </main>
+    );
 
   return (
     <main className="min-h-screen bg-background">
       <div className="mx-auto max-w-5xl px-6 py-8 sm:px-10">
         <Marca derecha="Administración" />
-        {abierta ? (
+        {!abierta && (
+          <nav className="mt-8 flex gap-2">
+            {(
+              [
+                ["preregistros", "Pre-registros"],
+                ["pacientes", "Pacientes del piloto"],
+              ] as const
+            ).map(([k, t]) => (
+              <button
+                key={k}
+                type="button"
+                onClick={() => setVista(k)}
+                className={`rounded-full px-4 py-2 text-sm transition-colors ${vista === k ? "bg-ink text-background" : "border border-rule text-ink-muted hover:text-ink"}`}
+              >
+                {t}
+              </button>
+            ))}
+          </nav>
+        )}
+        {!abierta && vista === "preregistros" ? (
+          <Preregistros />
+        ) : abierta ? (
           <Revision
             fila={abierta}
             alVolver={() => {

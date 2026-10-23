@@ -44,7 +44,7 @@ export function Registro() {
   useEffect(() => {
     if (s.cargando) return;
     if (!s.sesion) void navigate({ to: "/entrar" });
-    else if (s.paciente && s.autorizado) void navigate({ to: siguientePaso(s) });
+    else if ((s.paciente && s.autorizado) || siguientePaso(s) === "/preregistro") void navigate({ to: siguientePaso(s) });
     else if (s.paciente) {
       setNombre(s.paciente.nombre);
       setTipoDocumento(s.paciente.tipo_documento);
@@ -54,6 +54,12 @@ export function Registro() {
       setNacimiento(s.paciente.fecha_nacimiento ?? "");
       setSexo(s.paciente.sexo);
       setPaso(2);
+    } else if (s.preregistro) {
+      // Viene de la preventa: ya dio estos datos en el pre-registro.
+      setNombre((n) => n || s.preregistro!.nombre);
+      setCelular((c) => c || s.preregistro!.celular_whatsapp.slice(2));
+      setNacimiento((f) => f || s.preregistro!.fecha_nacimiento);
+      setSexo((x) => x || (s.preregistro!.sexo ?? ""));
     }
   }, [s, navigate]);
 

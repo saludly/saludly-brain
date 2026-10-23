@@ -11,6 +11,8 @@ import type { Informe } from "./informe";
 export const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
 
 export const VERSION_AUTORIZACION = "AUT-2026-10-v1";
+/** Autorización del pre-registro (preventa): datos básicos, metas y, si los da, alergias y dieta para las recetas. */
+export const VERSION_AUTORIZACION_PRE = "AUT-PRE-2026-10-v1";
 
 /** CC: cédula de ciudadanía · CE: cédula de extranjería · PPT: Permiso por Protección Temporal · PA: pasaporte. */
 export type TipoDocumento = "CC" | "CE" | "PPT" | "PA";
@@ -54,6 +56,17 @@ export interface Pago {
   nota: string | null;
 }
 
+/** Pre-registro de la preventa (tabla preregistros). estado "cliente": Carlos lo pasó al flujo completo con pago. */
+export interface Preregistro {
+  nombre: string;
+  celular_whatsapp: string;
+  fecha_nacimiento: string;
+  sexo: "hombre" | "mujer" | null;
+  codigo: string;
+  estado: "registrado" | "cliente" | "baja";
+  quiere_prueba: boolean;
+}
+
 export interface Visita {
   presion_sistolica: number | null;
   presion_diastolica: number | null;
@@ -92,6 +105,9 @@ interface Valor {
   visita: Visita | null;
   informe: Informe | null;
   pago: Pago | null;
+  preregistro: Preregistro | null;
+  /** configuracion.preventa = "si": quien no es paciente ni cliente hace el pre-registro en vez del registro completo. */
+  preventa: boolean;
   /** El paciente vio la pantalla de pago y eligió seguir con las preguntas mientras confirmamos. */
   pagoVisto: boolean;
   marcarPagoVisto: () => void;
@@ -113,6 +129,8 @@ export function SesionProvider({ children }: { children: ReactNode }) {
   const [esEquipo, setEsEquipo] = useState(false);
   const [pago, setPago] = useState<Pago | null>(null);
   const [pagoVisto, setPagoVisto] = useState(false);
+  const [preregistro, setPreregistro] = useState<Preregistro | null>(null);
+  const [preventa, setPreventa] = useState(false);
 
   const cargarDatos = useCallback(async (s: Session | null) => {
     if (!s) {
@@ -123,6 +141,7 @@ export function SesionProvider({ children }: { children: ReactNode }) {
       setInforme(null);
       setEsEquipo(false);
       setPago(null);
+      setPreregistro(null);
       return;
     }
     const yo = s.user.id;
@@ -131,7 +150,7 @@ export function SesionProvider({ children }: { children: ReactNode }) {
     } catch {
       /* sin almacenamiento: se vuelve a mostrar la pantalla de pago */
     }
-    const [p, a, c, v, i, e, g] = await Promise.all([
+    const [p, a, c, v, i, e, g, r, k] = await Promise.all([
       supabase.from("pacientes").select("*").eq("id", yo).maybeSingle(),
       supabase.from("autorizaciones").select("id").eq("paciente_id", yo).eq("version", VERSION_AUTORIZACION).limit(1),
       supabase.from("cuestionarios").select("*").eq("paciente_id", yo).maybeSingle(),
@@ -139,6 +158,8 @@ export function SesionProvider({ children }: { children: ReactNode }) {
       supabase.from("informes").select("informe").eq("paciente_id", yo).eq("estado", "aprobado").order("creado", { ascending: false }).limit(1),
       supabase.rpc("es_equipo"),
       supabase.from("pagos").select("codigo, estado, nota").eq("paciente_id", yo).maybeSingle(),
+      supabase.from("preregistros").select("nombre, celular_whatsapp, fecha_nacimiento, sexo, codigo, estado, quiere_prueba").eq("id", yo).maybeSingle(),
+      supabase.from("configuracion").select("valor").eq("clave", "preventa").maybeSingle(),
     ]);
     setPaciente((p.data as Paciente | null) ?? null);
     setAutorizado((a.data?.length ?? 0) > 0);
@@ -147,6 +168,8 @@ export function SesionProvider({ children }: { children: ReactNode }) {
     setInforme(((i.data?.[0] as { informe: Informe } | undefined)?.informe) ?? null);
     setEsEquipo(e.data === true);
     setPago((g.data as Pago | null) ?? null);
+    setPreregistro((r.data as Preregistro | null) ?? null);
+    setPreventa(k.data?.valor === "si");
   }, []);
 
   useEffect(() => {
@@ -175,7 +198,7 @@ export function SesionProvider({ children }: { children: ReactNode }) {
     await supabase.auth.signOut();
   }, []);
 
-  return <Ctx.Provider value={{ cargando, sesion, paciente, autorizado, cuestionario, visita, informe, pago, pagoVisto, marcarPagoVisto, esEquipo, recargar, salir }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ cargando, sesion, paciente, autorizado, cuestionario, visita, informe, pago, preregistro, preventa, pagoVisto, marcarPagoVisto, esEquipo, recargar, salir }}>{children}</Ctx.Provider>;
 }
 
 export function useSesion() {
@@ -185,9 +208,12 @@ export function useSesion() {
 }
 
 /** A qué pantalla debe ir el paciente según lo que ya completó. */
-export function siguientePaso(v: Valor): "/entrar" | "/registro" | "/pago" | "/cuestionario" | "/listo" | "/recorrido" | "/medico" {
+export function siguientePaso(v: Valor): "/entrar" | "/preregistro" | "/registro" | "/pago" | "/cuestionario" | "/listo" | "/recorrido" | "/medico" {
   if (!v.sesion) return "/entrar";
-  if (v.esEquipo && !v.paciente) return "/medico";
+  // El equipo entra siempre a su panel (aunque haya probado el flujo como paciente).
+  if (v.esEquipo) return "/medico";
+  // Preventa: el que no es paciente hace el pre-registro, salvo que Carlos ya lo haya pasado a cliente.
+  if (!v.paciente && v.preventa && v.preregistro?.estado !== "cliente") return "/preregistro";
   if (!v.paciente || !v.autorizado) return "/registro";
   // El pago se muestra después del registro; el cuestionario se puede responder mientras Carlos lo confirma.
   if (!v.pago || (v.pago.estado === "pendiente" && !v.pagoVisto) || v.pago.estado === "rechazado") return "/pago";
