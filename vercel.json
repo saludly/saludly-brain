@@ -1,0 +1,11 @@
+{
+  "framework": null,
+  "installCommand": "npm --prefix app ci",
+  "buildCommand": "npm --prefix app run build && rm -f app/dist/assets/*.map && bash app/armar_lib.sh .",
+  "outputDirectory": "app/dist",
+  "functions": {
+    "api/procesar.py": { "includeFiles": "saludly_lib/**", "maxDuration": 60 }
+  },
+  "rewrites": [{ "source": "/((?!api/|assets/|iconos/|marca/|sw.js|manifest.webmanifest|favicon.ico).*)", "destination": "/index.html" }],
+  "headers": [{ "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }]
+}

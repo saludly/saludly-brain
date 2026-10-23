@@ -31,3 +31,4 @@ app/node_modules/
 app/dist/
 app/.vercel/
 app/despliegue/
+saludly_lib/
