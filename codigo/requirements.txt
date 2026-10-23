@@ -2,3 +2,5 @@ pdfplumber
 pyyaml
 # solo para regenerar los PDF de ejemplo (pdf_ejemplo/generar_pdf_ejemplo.py)
 reportlab
+# solo para la consulta web interna con fuentes (codigo/herramientas/consultar_web.py)
+perplexityai
