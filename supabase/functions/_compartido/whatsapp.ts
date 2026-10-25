@@ -46,6 +46,14 @@ export async function enviarPlantilla(a: string, plantilla: string, parametros: 
 /** Texto libre: solo llega dentro de las 24 horas siguientes al último mensaje del paciente. */
 export const enviarTexto = (a: string, texto: string) => enviar({ to: a, type: "text", text: { body: texto } });
 
+/** Texto libre con botones de respuesta rápida (hasta 3, de 20 caracteres); cada id vuelve en el webhook al tocarlo. */
+export const enviarBotones = (a: string, texto: string, botones: { id: string; titulo: string }[]) =>
+  enviar({
+    to: a,
+    type: "interactive",
+    interactive: { type: "button", body: { text: texto }, action: { buttons: botones.map((b) => ({ type: "reply", reply: { id: b.id, title: b.titulo } })) } },
+  });
+
 export const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type" };
 export const responder = (estado: number, cuerpo: Record<string, unknown>) =>
   new Response(JSON.stringify(cuerpo), { status: estado, headers: { ...CORS, "Content-Type": "application/json" } });

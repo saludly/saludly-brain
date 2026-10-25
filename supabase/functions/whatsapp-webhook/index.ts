@@ -11,6 +11,8 @@
  */
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { enviarTexto } from "../_compartido/whatsapp.ts";
+import { contenido as SEMANA, primerNombre, respuestaBoton } from "../_compartido/semana.ts";
+import { arrancar, CAMPOS, entregar, type Pre } from "../_compartido/semana_envios.ts";
 
 const APP = "https://app.saludly.online";
 const MENU =
@@ -52,6 +54,66 @@ async function guardarComprobante(admin: any, pacienteId: string, mediaId: strin
   return ruta;
 }
 
+/**
+ * Semana de prueba (preventa): si el número es de una persona del pre-registro que no pasó a cliente, la atiende aquí.
+ * "hola" o "Empezar mi semana" arranca su semana; un botón de la semana se guarda en semana_respuestas y recibe su
+ * respuesta; "Ver ahora" (plantilla recordatorio_dia) y cualquier mensaje le entregan lo que estaba esperando.
+ * Devuelve false si el número no es del pre-registro (sigue el flujo de pacientes).
+ */
+// deno-lint-ignore no-explicit-any
+async function semanaPrueba(admin: any, m: any, de: string, texto: string) {
+  const { data } = await admin.from("preregistros").select(CAMPOS).eq("celular_whatsapp", de).order("creado", { ascending: false }).limit(1).maybeSingle();
+  const p = data as Pre | null;
+  if (!p || p.estado === "cliente") return false;
+  const ahora = new Date().toISOString();
+  await admin.from("preregistros").update({ ultimo_mensaje: ahora }).eq("id", p.id);
+  p.ultimo_mensaje = ahora;
+  const nombre = primerNombre(p.nombre);
+  const boton = m.interactive?.button_reply as { id: string; title: string } | undefined;
+  const k = boton ? "semana" : clave(texto);
+  await admin.from("whatsapp_mensajes").insert({ preregistro_id: p.id, celular: de, texto: texto.slice(0, 1000), opcion: k });
+
+  if (k === "baja") {
+    await admin.from("preregistros").update({ estado: "baja", actualizado: ahora }).eq("id", p.id);
+    await admin.from("semana_envios").update({ estado: "cancelado" }).eq("preregistro_id", p.id).in("estado", ["pendiente", "esperando"]);
+    await enviarTexto(de, RESPUESTAS.baja!(nombre));
+    return true;
+  }
+  if (p.estado === "baja") {
+    if (k === "alta") await admin.from("preregistros").update({ estado: "registrado", actualizado: ahora }).eq("id", p.id);
+    await enviarTexto(de, k === "alta" ? RESPUESTAS.alta!(nombre) : SEMANA.respuesta_otro.replace("{nombre}", nombre));
+    return true;
+  }
+
+  // Botón de un mensaje de la semana (id sp:día:orden:k) o de una plantilla (cierre_semana)
+  const plantilla = m.type === "button" ? (m.button?.text as string) : "";
+  const tocado = boton?.title ?? (plantilla && plantilla !== "Ver ahora" && plantilla !== "Empezar mi semana" ? plantilla : "");
+  if (tocado) {
+    const dia = boton ? Number(boton.id.split(":")[1]) || p.prueba_dia : 7;
+    const r = respuestaBoton(tocado, dia, p.nombre);
+    await admin.from("semana_respuestas").insert({ preregistro_id: p.id, dia, boton: tocado, interes: r.interes });
+    if (r.cupo) await admin.from("preregistros").update({ anticipo_estado: "pedido" }).eq("id", p.id);
+    if (r.texto) await enviarTexto(de, r.texto);
+    await entregar(admin, p);
+    return true;
+  }
+
+  const empezar = plantilla === "Empezar mi semana" || k === "hola";
+  if (empezar && !p.prueba_inicio && p.quiere_prueba) {
+    await arrancar(admin, p);
+    await entregar(admin, p);
+    return true;
+  }
+  const enviados = await entregar(admin, p);
+  if (enviados || plantilla === "Ver ahora") return true;
+  if (empezar && p.prueba_inicio) {
+    const { count } = await admin.from("semana_envios").select("id", { count: "exact", head: true }).eq("preregistro_id", p.id).eq("estado", "pendiente");
+    if (count) { await enviarTexto(de, SEMANA.respuesta_hola_en_curso.replace("{nombre}", nombre)); return true; }
+  }
+  await enviarTexto(de, SEMANA.respuesta_otro.replace("{nombre}", nombre));
+  return true;
+}
+
 async function firmaValida(req: Request, cuerpo: string) {
   const secreto = Deno.env.get("WHATSAPP_APP_SECRET");
   if (!secreto) return true;
@@ -78,6 +140,7 @@ Deno.serve(async (req) => {
         const de: string = m.from;
         const texto: string = m.text?.body ?? m.button?.text ?? m.interactive?.button_reply?.title ?? "";
         const { data: p } = await admin.from("pacientes").select("id, nombre").eq("celular_whatsapp", de).order("creado", { ascending: false }).limit(1).maybeSingle();
+        if (!p && !(m.image ?? m.document) && (await semanaPrueba(admin, m, de, texto))) continue;
         const nombre = p?.nombre?.trim().split(/\s+/)[0] ?? "";
 
         // Una imagen o un PDF es el comprobante de pago: se guarda en privado y Carlos lo confirma en el panel.

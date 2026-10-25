@@ -48,6 +48,25 @@ respuesta_boton: "¡Gracias por contarme, {nombre}! 🙌 Mañana a las 7 te lleg
 respuesta_interes: "Eso es justo lo que mide el estudio de Saludly 🩸 El último día de tu semana te cuento cómo hacértelo."
 botones_interes: ["Quiero saberlo", "Quiero saber", "Quiero verlo", "Cuéntame más", "Quiero saber el mío"]
 
+# Respuestas que necesita el programador de envíos (24 oct 2026, por aprobar con Carlos).
+# El día 7 ya no hay "mañana a las 7": la pregunta de la receta y los botones del cierre llevan su propia respuesta.
+respuesta_boton_dia7: "¡Gracias por contarme, {nombre}! 🙌 Hoy a las 6 de la tarde te cuento cómo seguir."
+# Botones del cierre (día 7) y de la plantilla cierre_semana. "Quiero mi cupo" marca el anticipo como pedido.
+respuestas_cierre:
+  "Quiero mi cupo": "¡Qué bien, {nombre}! 🙌 Una persona del equipo de Saludly te escribe hoy por aquí para apartar tu cupo."
+  "Cuéntame más": "Con gusto, {nombre} 🩸 Una persona del equipo de Saludly te escribe hoy por aquí y te cuenta cómo es el estudio."
+  "Ahora no": "Listo, {nombre}. Gracias por hacer la semana con Saludly 🌱 Si más adelante quieres tu examen, escríbenos por aquí."
+# "hola" cuando la semana ya empezó, y cualquier otra cosa que escriba (la lee una persona del equipo en el panel).
+respuesta_hola_en_curso: "¡Hola, {nombre}! 🌱 Tu semana con Saludly sigue en marcha: tu próximo mensaje te llega a la hora de siempre."
+respuesta_otro: "Recibimos tu mensaje, {nombre} 🙌 Una persona del equipo de Saludly te responde muy pronto."
+# {{2}} de la plantilla recordatorio_dia, según el primer envío que quedó esperando. {receta}: nombre de la receta.
+recordatorio_que:
+  manana: "tus consejos de hoy"
+  receta: "tu receta de hoy: {receta}"
+  cortisol: "un consejo para bajarle al estrés"
+  examen: "algo que solo cuenta tu sangre"
+  tarde: "tus consejos de la tarde"
+
 # 09:00 · pregunta después de la receta (va en un mensaje aparte: la receta pasa del límite de texto de un mensaje con botones)
 preguntas_receta:
   1: {texto: "¿Te animas a prepararla hoy?", botones: ["¡Hoy la hago! 👨‍🍳", "Mañana sí", "No es para mí"]}

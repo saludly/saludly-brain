@@ -59,6 +59,10 @@ codigo/
   rag/                   fragmentar, vectorizar (Ollama bge-m3), probar_busqueda y subir a Supabase
   whatsapp/enviar.py     envío por la API oficial de WhatsApp (lee WHATSAPP_TOKEN y WHATSAPP_PHONE_NUMBER_ID del .env; pasa por el control de salida)
   whatsapp/avisar.py     avisa por WhatsApp a los pacientes con informe aprobado y sin aviso (--simular para ver sin enviar)
+supabase/functions/      funciones de la app; semana-programador (pg_cron cada 5 min) manda la semana de prueba desde el +57 301 130 7944.
+                         Su contenido es _compartido/semana.json: si cambia semana_prueba.yaml, consejos_objetivos.yaml o las recetas,
+                         `python codigo/herramientas/exportar_semana.py --esperado x.json`, `node supabase/functions/_compartido/probar_semana.ts x.json`
+                         (iguales al Python), `node supabase/functions/_compartido/probar_envios.ts` y volver a publicar semana-programador y whatsapp-webhook (--no-verify-jwt)
 app/                     Fase 6: app del paciente (Vite + React + TanStack Router + Tailwind), traída del dashboard de Lovable con la misma experiencia.
                          Flujo del paciente: / → /entrar (Supabase Auth: Google o correo) → /registro (datos + autorización AUT-2026-10-v1) → /cuestionario (6 pasos) → /listo
                          → /visita ("Mi enfermera está aquí": presión, cintura, cadera, peso, talla) → informe aprobado en /recorrido, /panel, /plan.

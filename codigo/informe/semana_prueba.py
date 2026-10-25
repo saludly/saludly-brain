@@ -173,7 +173,11 @@ def validar(C, S):
                 if not g.get("pregunta"): errores.append(f"ganchos {fam} día {k + 1}: sin pregunta")
                 _botones(f"ganchos {fam} día {k + 1}", g.get("botones") or [], errores)
     textos = [("bienvenida", S["bienvenida"]), ("cierre", S["cierre"]), ("aviso", S["aviso_condicion_existente"]),
-              ("respuesta", S["respuesta_boton"]), ("respuesta de interés", S["respuesta_interes"])]
+              ("respuesta", S["respuesta_boton"]), ("respuesta de interés", S["respuesta_interes"]), ("respuesta día 7", S["respuesta_boton_dia7"]),
+              ("hola en curso", S["respuesta_hola_en_curso"]), ("respuesta a otro", S["respuesta_otro"])]
+    textos += [(f"cierre «{b}»", t) for b, t in S["respuestas_cierre"].items()] + [(f"recordatorio {k}", t) for k, t in S["recordatorio_que"].items()]
+    for b in S["cierre_botones"] + [b for p in S["plantillas"] if p["nombre"] == "cierre_semana" for b in p["botones"]]:
+        if b not in S["respuestas_cierre"] and b != "Quiero saber": errores.append(f"cierre: el botón «{b}» no tiene respuesta")
     textos += [(f"{obj} consejo {c['id']}", c["texto"]) for obj, po in S["por_objetivo"].items() for c in po["consejos"]]
     textos += [(f"{obj} cortisol", po["cortisol"]["texto"]) for obj, po in S["por_objetivo"].items()]
     textos += [(f"cortisol general {k + 1}", t) for k, t in enumerate(S["cortisol_general"])]
