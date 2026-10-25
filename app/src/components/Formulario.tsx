@@ -90,11 +90,12 @@ export function Opcion({ activa, onClick, texto, nota, multiple }: { activa: boo
     <button
       type="button"
       onClick={onClick}
-      aria-pressed={activa}
-      className={`rounded-2xl border p-4 text-left transition-all duration-300 ${activa ? "border-optimal bg-optimal-soft" : "border-rule hover:border-ink/20"}`}
+      role={multiple ? "checkbox" : "radio"}
+      aria-checked={activa}
+      className={`rounded-2xl border p-4 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-marca/50 ${activa ? "border-optimal bg-optimal-soft" : "border-rule hover:border-ink/20"}`}
     >
       <span className="flex items-center justify-between gap-3">
-        <span className="text-sm text-ink">{texto}</span>
+        <span className="text-base text-ink">{texto}</span>
         <span
           className={`flex h-5 w-5 shrink-0 items-center justify-center border text-[10px] ${multiple ? "rounded-md" : "rounded-full"} ${
             activa ? "border-optimal bg-optimal text-primary-foreground" : "border-rule text-transparent"
@@ -103,7 +104,7 @@ export function Opcion({ activa, onClick, texto, nota, multiple }: { activa: boo
           ✓
         </span>
       </span>
-      {nota && <span className="mt-1 block text-xs text-ink-muted">{nota}</span>}
+      {nota && <span className="mt-1 block text-base text-ink-muted">{nota}</span>}
     </button>
   );
 }

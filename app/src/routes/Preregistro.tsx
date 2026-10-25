@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Check, ChevronDown, Globe, HeartPulse, MessageCircle, ScrollText, Search, Share2, ShieldCheck } from "lucide-react";
+import { Check, ChevronDown, Copy, Globe, HeartPulse, MessageCircle, ScrollText, Search, Share2, ShieldCheck } from "lucide-react";
 import { BotonGoogle } from "@/components/BotonGoogle";
 import { Opcion } from "@/components/Formulario";
-import { BotonChico, Ficha, PantallaPre, claseFicha } from "@/components/FlujoPre";
+import { Ficha, PantallaPre, claseFicha } from "@/components/FlujoPre";
 import { leerOrigen } from "@/lib/origen";
 import { GROSOR_Y, TRAZO_Y } from "@/lib/trazo_y";
 import { VERSION_AUTORIZACION_PRE, siguientePaso, supabase, useSesion, type Preregistro as DatosPre } from "@/lib/sesion";
@@ -13,7 +13,9 @@ import C from "@/lib/contenido.json";
  * Preventa: pre-registro gratis (tabla preregistros). Sin documento, dirección ni datos clínicos.
  * Portada: logo, imagen, título y Google (o correo). Con sesión, 6 pantallas al estilo de un onboarding de celular
  * (FlujoPre): quién eres → cumpleaños → dónde vives → objetivo → alergias → términos.
- * Al final: escribir "hola" por WhatsApp para empezar la semana de recetas e invitar a alguien.
+ * Al final: un consejo breve de su objetivo y escribir "hola" por WhatsApp para recibir la primera receta (el premio), e invitar a alguien.
+ * Cada paso se guarda en el navegador (borrador por cuenta) para que nadie pierda lo que escribió si cierra la app.
+ * Menores de edad: pueden inscribirse (Carlos, 24 oct 2026); los términos les piden que su mamá, papá o acudiente esté de acuerdo.
  * El anticipo no va aquí: lo pide el WhatsApp al terminar la semana.
  * En desarrollo, /preregistro?demo (y &paso=1..6 o demo=listo) muestra las pantallas sin cuenta, con datos de ejemplo.
  */
@@ -35,6 +37,15 @@ function celularValido(indicativo: string, numero: string) {
 const MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
 const OTRO = "otro";
+
+/** Número de WhatsApp de Saludly si no se puede leer de configuracion (para que el botón final nunca quede muerto). */
+const WHATSAPP_SALUDLY = "573011307944";
+
+/** Navegadores dentro de Facebook, Instagram o Messenger: Google no deja iniciar sesión ahí. */
+const enFacebook = () => /FBAN|FBAV|FB_IAB|FBIOS|Instagram|Messenger/i.test(navigator.userAgent);
+
+/** Borrador del pre-registro en este navegador, por cuenta. */
+const claveBorrador = (id: string) => `saludly-pre-${id}`;
 
 const params = new URLSearchParams(window.location.search);
 const DEMO = import.meta.env.DEV && params.has("demo");
@@ -64,8 +75,43 @@ function fechaDe(dia: string, mes: string, anio: string) {
   return `${a}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 }
 
+/** Dentro de Facebook: cómo abrir la misma página (con su ?ref=) en Chrome o Safari. */
+function AvisoFacebook() {
+  const [copiado, setCopiado] = useState(false);
+  const url = window.location.href;
+  const android = /Android/i.test(navigator.userAgent);
+  const copiar = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiado(true);
+    } catch {
+      /* sin portapapeles */
+    }
+  };
+  return (
+    <div role="alert" className="mb-4 rounded-[22px] bg-ficha px-5 py-4 text-left">
+      <p className="text-base text-ink">Estás dentro de Facebook y Google no deja entrar desde aquí.</p>
+      <p className="mt-1 text-base text-ink-muted">
+        {android ? "Ábrela en Chrome y sigue desde allá." : "Toca los tres puntos (···) de arriba y elige «Abrir en el navegador»."}
+      </p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {android && (
+          <a href={`intent://${url.replace(/^https?:\/\//, "")}#Intent;scheme=https;package=com.android.chrome;end`} className="rounded-full bg-ink px-4 py-2.5 text-base text-white">
+            Abrir en Chrome
+          </a>
+        )}
+        <button type="button" onClick={() => void copiar()} className="flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-base text-ink">
+          <Copy className="h-4 w-4" />
+          {copiado ? "Enlace copiado" : "Copiar enlace"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Portada() {
   const [error, setError] = useState<string | null>(null);
+  const facebook = enFacebook() || (DEMO && params.has("facebook"));
   return (
     <main className="min-h-screen bg-white">
       <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 pb-8 pt-6">
@@ -75,17 +121,18 @@ function Portada() {
           <div className="mt-4 text-center">
             <h1 className="text-balance text-[28px] font-normal leading-tight tracking-tight text-ink">Una receta y recomendaciones saludables al día, 7 días gratis.</h1>
             <p className="mx-auto mt-3 max-w-[22rem] text-pretty text-base leading-relaxed text-ink-muted">
-              Te llega por WhatsApp con un consejo de salud. Y quedas de primero en la lista de Saludly en Bogotá.
+              Te llega por WhatsApp con un consejo de salud. Al terminar, puedes apartar tu examen de sangre con enfermera a domicilio en Bogotá.
             </p>
           </div>
         </section>
         <div>
-          {error && <p className="mb-3 rounded-xl bg-critical-soft px-4 py-2 text-center text-sm text-critical">{error}</p>}
+          {facebook && <AvisoFacebook />}
+          {error && !facebook && <p role="alert" className="mb-3 rounded-xl bg-critical-soft px-4 py-2 text-center text-base text-critical">{error}</p>}
           <BotonGoogle texto="signup_with" alError={setError} />
           <a href="/entrar" className="mt-4 block text-center text-[15px] text-ink-muted underline-offset-4 hover:underline">
             Prefiero usar mi correo
           </a>
-          <p className="mt-5 text-center text-xs text-ink-faint">
+          <p className="mt-5 text-center text-base text-ink-muted">
             Es gratis. Lee cómo cuidamos tus datos en la{" "}
             <a href="/privacidad" target="_blank" rel="noreferrer" className="underline">
               política de datos
@@ -98,8 +145,14 @@ function Portada() {
   );
 }
 
-function Listo({ datos }: { datos: Pick<DatosPre, "nombre" | "codigo"> }) {
-  const [whatsapp, setWhatsapp] = useState<string | null>(null);
+/** El consejo breve del primer objetivo que eligió (con "Otro" o sin objetivo conocido, el de salud general). */
+function consejoDe(objetivos: string[]) {
+  const o = C.objetivos.find((x) => objetivos.includes(x.id)) ?? C.objetivos.find((x) => x.id === "salud_general")!;
+  return { objetivo: o.nombre, consejo: o.consejo_inicio };
+}
+
+function Listo({ datos }: { datos: Pick<DatosPre, "nombre" | "codigo" | "objetivos"> }) {
+  const [whatsapp, setWhatsapp] = useState(WHATSAPP_SALUDLY);
   const [copiado, setCopiado] = useState(false);
   useEffect(() => {
     void supabase
@@ -107,9 +160,10 @@ function Listo({ datos }: { datos: Pick<DatosPre, "nombre" | "codigo"> }) {
       .select("valor")
       .eq("clave", "whatsapp_saludly")
       .maybeSingle()
-      .then(({ data }) => setWhatsapp(data?.valor ?? null));
+      .then(({ data }) => data?.valor && setWhatsapp(data.valor));
   }, []);
   const nombre = datos.nombre.split(" ")[0];
+  const { objetivo, consejo } = consejoDe(datos.objetivos ?? []);
   const mensaje = `Hola, soy ${datos.nombre}. Quiero empezar mi semana de recetas en Saludly. Mi código es ${datos.codigo}.`;
   const enlace = `${window.location.origin}/preregistro?ref=amigo-${datos.codigo}`;
   const invitar = async () => {
@@ -126,24 +180,28 @@ function Listo({ datos }: { datos: Pick<DatosPre, "nombre" | "codigo"> }) {
     <main className="min-h-screen bg-white">
       <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 py-10 text-center">
         {/* La "y" de Saludly se dibuja de punta a punta, sin parar. */}
-        <svg viewBox="0 0 981.45 1248.02" className="mx-auto h-44 w-auto" role="img" aria-label="Saludly">
-          <path d={TRAZO_Y} pathLength={1} className="trazo-espera" fill="none" stroke="#2793ff" strokeWidth={GROSOR_Y} strokeLinecap="round" strokeLinejoin="round" />
+        <svg viewBox="0 0 981.45 1248.02" className="mx-auto h-32 w-auto" role="img" aria-label="Saludly">
+          <path d={TRAZO_Y} pathLength={1} className="trazo-espera" fill="none" stroke="var(--marca)" strokeWidth={GROSOR_Y} strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <h1 className="mt-10 text-balance text-[30px] font-normal leading-tight tracking-tight text-ink">¡Ya estás en la lista, {nombre}!</h1>
-        <p className="mx-auto mt-3 max-w-[22rem] text-pretty text-[17px] leading-relaxed text-ink-muted">
-          Escríbenos por WhatsApp para empezar tu semana de recetas. Así sabemos que el número es tuyo y te llega la primera receta con recomendaciones y hábitos saludables.
+        <h1 className="mt-8 text-balance text-[30px] font-normal leading-tight tracking-tight text-ink">¡Ya estás en la lista, {nombre}!</h1>
+        <figure className="mt-6 rounded-[22px] bg-ficha px-5 py-4 text-left">
+          <figcaption className="text-base text-ink-muted">Tu primer consejo · {objetivo}</figcaption>
+          <blockquote className="mt-1 text-pretty text-[17px] leading-relaxed text-ink">{consejo}</blockquote>
+        </figure>
+        <p className="mx-auto mt-6 max-w-[22rem] text-pretty text-[17px] leading-relaxed text-ink-muted">
+          Tu primera receta ya está lista. Escríbenos por WhatsApp y te llega con el resto de tu semana.
         </p>
         <a
-          href={whatsapp ? `https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}` : undefined}
+          href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}`}
           target="_blank"
           rel="noreferrer"
-          className="mt-9 flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-4 text-base text-white"
+          className="mt-7 flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-whatsapp px-4 text-lg text-white"
         >
           <MessageCircle className="h-5 w-5" />
-          Empezar mi semana por WhatsApp
+          Recibir mi primera receta
         </a>
-        <button type="button" onClick={() => void invitar()} className="mt-3 flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[#f2f4f7] px-4 text-[14px] whitespace-nowrap text-ink">
-          <Share2 className="h-5 w-5" />
+        <button type="button" onClick={() => void invitar()} className="mt-3 flex min-h-14 w-full items-center justify-center gap-2.5 rounded-full bg-ficha px-5 py-3 text-base text-ink">
+          <Share2 className="h-5 w-5 shrink-0" />
           {copiado ? "Enlace copiado" : "Invita a alguien a quien le sirva como a ti"}
         </button>
       </div>
@@ -155,7 +213,7 @@ function Listo({ datos }: { datos: Pick<DatosPre, "nombre" | "codigo"> }) {
 function Termino({ icono, children }: { icono: ReactNode; children: ReactNode }) {
   return (
     <a href="/privacidad" target="_blank" rel="noreferrer" className="flex items-center gap-4 py-3">
-      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#f2f4f7] text-ink">{icono}</span>
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-ficha text-ink">{icono}</span>
       <span className="text-base leading-snug text-ink">{children}</span>
     </a>
   );
@@ -183,6 +241,41 @@ export function Preregistro() {
   const [ocupado, setOcupado] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [demoListo, setDemoListo] = useState(DEMO && params.get("demo") === "listo");
+  const uid = s.sesion?.user.id;
+  const borradorLeido = useRef(false);
+
+  // Recupera el borrador de esta cuenta (si cerró la app a mitad de camino) y después lo guarda en cada cambio.
+  useEffect(() => {
+    if (DEMO || !uid || borradorLeido.current) return;
+    borradorLeido.current = true;
+    try {
+      const b = JSON.parse(localStorage.getItem(claveBorrador(uid)) ?? "null");
+      if (!b) return;
+      setPaso(b.paso ?? 1);
+      if (b.nombre) setNombre(b.nombre);
+      setIndicativo(b.indicativo ?? "57");
+      setCelular(b.celular ?? "");
+      setSexo(b.sexo ?? "");
+      setDia(b.dia ?? "");
+      setMes(b.mes ?? "");
+      setAnio(b.anio ?? "");
+      setLocalidad(b.localidad ?? "");
+      setMetas(b.metas ?? []);
+      setOtro(b.otro ?? "");
+      setAlergias(b.alergias ?? []);
+      setSinAlergias(!!b.sinAlergias);
+    } catch {
+      /* sin almacenamiento o borrador dañado: empieza de cero */
+    }
+  }, [uid]);
+  useEffect(() => {
+    if (DEMO || !uid || !borradorLeido.current) return;
+    try {
+      localStorage.setItem(claveBorrador(uid), JSON.stringify({ paso, nombre, indicativo, celular, sexo, dia, mes, anio, localidad, metas, otro, alergias, sinAlergias }));
+    } catch {
+      /* sin almacenamiento */
+    }
+  }, [uid, paso, nombre, indicativo, celular, sexo, dia, mes, anio, localidad, metas, otro, alergias, sinAlergias]);
 
   // Pacientes, clientes y el equipo siguen su propio flujo.
   useEffect(() => {
@@ -204,7 +297,7 @@ export function Preregistro() {
     return localidad && filtradas.includes(localidad) ? [localidad, ...filtradas.filter((l) => l !== localidad)] : filtradas;
   }, [buscar, localidad]);
 
-  if (DEMO && demoListo) return <Listo datos={{ nombre, codigo: "a1b2c3" }} />;
+  if (DEMO && demoListo) return <Listo datos={{ nombre, codigo: "a1b2c3", objetivos: metas }} />;
   if (!DEMO) {
     if (s.cargando) return <div className="min-h-screen bg-white" />;
     if (!s.sesion) return vuelveDeGoogle() ? <div className="min-h-screen bg-white" /> : <Portada />;
@@ -214,11 +307,26 @@ export function Preregistro() {
 
   const nacimiento = fechaDe(dia, mes, anio);
   const edad = edadDe(nacimiento);
-  const datosValidos = nombre.trim().length >= 3 && celularValido(indicativo, celular);
-  const fechaValida = !!nacimiento && edad >= 18 && edad <= 110;
+  const nombreValido = nombre.trim().length >= 3;
+  const datosValidos = nombreValido && celularValido(indicativo, celular);
+  const fechaValida = !!nacimiento && edad >= 0 && edad <= 110;
+  const menor = fechaValida && edad < 18;
   const metasValidas = metas.length > 0 && (!metas.includes(OTRO) || otro.trim().length >= 3);
   const alergiasValidas = sinAlergias || alergias.length > 0;
-  const cambiarCuenta = <BotonChico onClick={() => void s.salir()}>Salir</BotonChico>;
+
+  // Lo que dice encima del botón gris mientras no deja seguir
+  const motivoDatos = !nombreValido
+    ? "Escribe tu nombre para seguir."
+    : indicativo === "57"
+      ? "Escribe tu celular de WhatsApp: 10 números que empiezan por 3."
+      : "Escribe el indicativo de tu país y tu número de WhatsApp.";
+  const motivoFecha =
+    dia && mes && anio.length === 4 && !nacimiento
+      ? "Revisa la fecha: ese día no existe."
+      : nacimiento && !fechaValida
+        ? "Revisa el año de tu cumpleaños."
+        : "Escribe el día, el mes y el año en que naciste.";
+  const motivoMetas = metas.length === 0 ? "Elige al menos un objetivo para seguir." : "Escribe cuál es tu otro objetivo.";
 
   const inscribir = async () => {
     if (DEMO) return setDemoListo(true);
@@ -245,13 +353,18 @@ export function Preregistro() {
       referido_por,
     });
     setOcupado(false);
-    if (error) return setError("No pudimos guardar tu inscripción. Revisa tu conexión e intenta de nuevo.");
+    if (error) return setError("No pudimos guardar tu inscripción. Revisa tu conexión e intenta de nuevo: lo que escribiste sigue aquí.");
+    try {
+      localStorage.removeItem(claveBorrador(s.sesion!.user.id));
+    } catch {
+      /* ignorar */
+    }
     await s.recargar();
   };
 
   if (paso === 1)
     return (
-      <PantallaPre paso={1} titulo="Cuéntanos quién eres" boton="Siguiente" puedeSeguir={datosValidos} onSeguir={() => setPaso(2)} derecha={cambiarCuenta}>
+      <PantallaPre paso={1} titulo="Cuéntanos quién eres" boton="Siguiente" puedeSeguir={datosValidos} onSeguir={() => setPaso(2)} motivo={motivoDatos}>
         <div className="grid gap-3">
           <Ficha etiqueta="Nombre">
             <input autoComplete="name" value={nombre} onChange={(e) => setNombre(e.target.value)} className={claseFicha} />
@@ -279,7 +392,7 @@ export function Preregistro() {
               placeholder={indicativo === "57" ? "300 123 4567" : "Número sin el indicativo"}
             />
           </Ficha>
-          {indicativo !== "57" && <p className="-mt-1 px-2 text-xs text-ink-muted">¿Vives fuera de Colombia? Escribe el indicativo de tu país (por ejemplo, 1 para Estados Unidos o 34 para España) y tu número sin el cero inicial.</p>}
+          {indicativo !== "57" && <p className="-mt-1 px-2 text-base text-ink-muted">¿Vives fuera de Colombia? Escribe el indicativo de tu país (por ejemplo, 1 para Estados Unidos o 34 para España) y tu número sin el cero inicial.</p>}
           <Ficha etiqueta="Sexo (opcional)">
             <select value={sexo} onChange={(e) => setSexo(e.target.value as "hombre" | "mujer" | "")} className={claseFicha}>
               <option value="">Prefiero no decirlo</option>
@@ -294,7 +407,7 @@ export function Preregistro() {
 
   if (paso === 2)
     return (
-      <PantallaPre paso={2} titulo="¿Cuándo es tu cumpleaños?" boton="Siguiente" puedeSeguir={fechaValida} onSeguir={() => setPaso(3)} onAtras={() => setPaso(1)} derecha={cambiarCuenta}>
+      <PantallaPre paso={2} titulo="¿Cuándo es tu cumpleaños?" boton="Siguiente" puedeSeguir={fechaValida} onSeguir={() => setPaso(3)} onAtras={() => setPaso(1)} motivo={motivoFecha}>
         <div className="grid grid-cols-[1fr_1.7fr_1.3fr] gap-3">
           <Ficha etiqueta="Día">
             <input inputMode="numeric" autoComplete="bday-day" value={dia} onChange={(e) => setDia(e.target.value.replace(/\D/g, "").slice(0, 2))} className={claseFicha} placeholder="20" />
@@ -315,39 +428,34 @@ export function Preregistro() {
             <input inputMode="numeric" autoComplete="bday-year" value={anio} onChange={(e) => setAnio(e.target.value.replace(/\D/g, "").slice(0, 4))} className={claseFicha} placeholder="1990" />
           </Ficha>
         </div>
-        {nacimiento && edad < 18 && <p className="mt-4 text-sm text-critical">Saludly es solo para mayores de 18 años.</p>}
-        {dia && mes && anio.length === 4 && !nacimiento && <p className="mt-4 text-sm text-critical">Revisa la fecha: ese día no existe.</p>}
       </PantallaPre>
     );
 
   if (paso === 3)
     return (
-      <PantallaPre paso={3} titulo="¿Dónde vives?" boton="Siguiente" puedeSeguir={localidad !== ""} onSeguir={() => setPaso(4)} onAtras={() => setPaso(2)} derecha={cambiarCuenta}>
-        <label className="flex items-center gap-3 rounded-[22px] bg-[#f2f4f7] px-5 py-4">
+      <PantallaPre paso={3} titulo="¿Dónde vives?" boton="Siguiente" puedeSeguir={localidad !== ""} onSeguir={() => setPaso(4)} onAtras={() => setPaso(2)} motivo="Elige dónde vives para seguir.">
+        <label className="flex items-center gap-3 rounded-[22px] bg-ficha px-5 py-4 focus-within:ring-2 focus-within:ring-marca/50">
           <Search className="h-5 w-5 shrink-0 text-ink-muted" />
           <input value={buscar} onChange={(e) => setBuscar(e.target.value)} className={claseFicha} placeholder="Buscar localidad" aria-label="Buscar localidad" />
         </label>
-        <ul className="mt-4">
+        <ul className="mt-4" role="radiogroup" aria-label="Localidad">
           {lista.map((l, i) => {
             const activa = l === localidad;
             return (
               <li key={l} className={activa && i === 0 && lista.length > 1 ? "border-b border-rule" : ""}>
-                <button type="button" onClick={() => setLocalidad(l)} aria-pressed={activa} className="flex w-full items-center gap-4 py-3.5 text-left">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#eaf3ff] text-sm font-medium text-[#2793ff]">
-                    {l
-                      .split(" ")
-                      .filter((p) => p.length > 2)
-                      .slice(0, 2)
-                      .map((p) => p[0])
-                      .join("")}
-                  </span>
+                <label className="flex w-full cursor-pointer items-center gap-4 py-4 text-left">
+                  <input type="radio" name="localidad" value={l} checked={activa} onChange={() => setLocalidad(l)} className="peer sr-only" />
                   <span className="flex-1 text-[17px] text-ink">{l}</span>
-                  <span className={`grid h-6 w-6 place-items-center rounded-full border-2 ${activa ? "border-ink" : "border-rule"}`}>{activa && <span className="h-3 w-3 rounded-full bg-ink" />}</span>
-                </button>
+                  <span
+                    className={`grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 peer-focus-visible:ring-2 peer-focus-visible:ring-marca/50 ${activa ? "border-ink" : "border-ink/25"}`}
+                  >
+                    {activa && <span className="h-3 w-3 rounded-full bg-ink" />}
+                  </span>
+                </label>
               </li>
             );
           })}
-          {lista.length === 0 && <li className="py-4 text-sm text-ink-muted">No encontramos esa localidad.</li>}
+          {lista.length === 0 && <li className="py-4 text-base text-ink-muted">No encontramos esa localidad.</li>}
         </ul>
       </PantallaPre>
     );
@@ -362,7 +470,7 @@ export function Preregistro() {
         puedeSeguir={metasValidas}
         onSeguir={() => setPaso(5)}
         onAtras={() => setPaso(3)}
-        derecha={cambiarCuenta}
+        motivo={motivoMetas}
       >
         <div className="grid gap-3">
           {C.objetivos.map((o) => (
@@ -388,7 +496,7 @@ export function Preregistro() {
         puedeSeguir={alergiasValidas}
         onSeguir={() => setPaso(6)}
         onAtras={() => setPaso(4)}
-        derecha={cambiarCuenta}
+        motivo="Elige tus alergias o marca «No tengo alergias»."
       >
         <div className="grid gap-3">
           <Opcion
@@ -420,19 +528,28 @@ export function Preregistro() {
     <PantallaPre
       paso={6}
       titulo="Revisa y acepta los términos"
-      texto="Al marcar la casilla confirmas que tienes 18 años o más y aceptas recibir por WhatsApp y correo tu semana de recetas y novedades. Te das de baja escribiendo «BAJA»."
+      texto={
+        menor
+          ? "Como tienes menos de 18 años, al marcar la casilla confirmas que tu mamá, papá o acudiente está de acuerdo y aceptas recibir por WhatsApp y correo tu semana de recetas y novedades. Te das de baja escribiendo «BAJA»."
+          : "Al marcar la casilla confirmas que tienes 18 años o más y aceptas recibir por WhatsApp y correo tu semana de recetas y novedades. Te das de baja escribiendo «BAJA»."
+      }
       boton="Aceptar y continuar"
       puedeSeguir={acepta}
       ocupado={ocupado}
       onSeguir={() => void inscribir()}
       onAtras={() => setPaso(5)}
-      derecha={cambiarCuenta}
+      motivo="Marca la casilla «Acepto» para terminar."
       error={error}
       encimaBoton={
-        <button type="button" onClick={() => setAcepta((v) => !v)} aria-pressed={acepta} className="flex items-center gap-3 rounded-[20px] bg-[#f2f4f7] px-6 py-3.5 text-[17px] text-ink">
+        <label className="flex cursor-pointer items-center gap-3 rounded-[20px] bg-ficha px-6 py-3.5 text-[17px] text-ink">
+          <input type="checkbox" checked={acepta} onChange={(e) => setAcepta(e.target.checked)} className="peer sr-only" />
           {acepta ? "Aceptado" : "Acepto"}
-          <span className={`grid h-6 w-6 place-items-center rounded-md border-2 ${acepta ? "border-ink bg-ink text-white" : "border-ink/30"}`}>{acepta && <Check className="h-4 w-4" strokeWidth={3} />}</span>
-        </button>
+          <span
+            className={`grid h-6 w-6 place-items-center rounded-md border-2 peer-focus-visible:ring-2 peer-focus-visible:ring-marca/50 ${acepta ? "border-ink bg-ink text-white" : "border-ink/30"}`}
+          >
+            {acepta && <Check className="h-4 w-4" strokeWidth={3} />}
+          </span>
+        </label>
       }
     >
       <div className="grid gap-1">

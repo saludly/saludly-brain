@@ -1,42 +1,54 @@
 # Los 10 objetivos del plan (documento 07, sección 07.4). El paciente elige 3 en la PWA.
 # El objetivo nunca cambia hallazgos, umbrales ni escalamientos: solo ordena "Qué puedes hacer" y el tono.
+# consejo_inicio: consejo breve de la pantalla final del pre-registro (24 oct 2026, pedido por Carlos), resumido de
+# consejos_objetivos.yaml (aprobados el 23 oct 2026). Para "Otro" se usa el de salud_general.
 - id: salud_general
   nombre: "Mejorar mi salud en general"
   destaca: []
   enfoque: "Equilibrio entre alimentación, actividad, sueño y hábitos"
+  consejo_inicio: "Con 30 minutos de caminata rápida 5 días a la semana cumples la meta de la OMS, y puedes partirlos en tres caminatas de 10."
 - id: prevenir
   nombre: "Prevenir enfermedades"
   destaca: [ldl_c, apob, lpa, glucose, hba1c, egfr, alt, ggt]
   enfoque: "Hábitos que bajan el riesgo y controles a tiempo"
+  consejo_inicio: "Prevenir no es hacerse todos los exámenes cada año, sino los correctos a tiempo: los de azúcar, colesterol y riñones son la base."
 - id: condicion_existente
   nombre: "Cuidar una condición que ya tengo"
   destaca: []
   enfoque: "Seguimiento con tu médico tratante; nunca reemplaza tu tratamiento"
+  consejo_inicio: "Tu límite es una cucharadita de sal al día en total, y mucha ya viene escondida: un cubo de caldo puede traer casi todo el límite."
 - id: bajar_peso
   nombre: "Bajar de peso"
   destaca: [glucose, hba1c, insulin, homa_ir, tyg_index, triglycerides, hdl_c, tsh, alt, ggt]
   enfoque: "Alimentación, actividad diaria y sueño"
+  consejo_inicio: "Pon una porción de proteína en cada comida: protege tu músculo y te quita el hambre. Bajar de medio a un kilo por semana es lo que mejor se mantiene."
 - id: masa_muscular
   nombre: "Aumentar mi masa muscular"
   destaca: [total_protein, albumin, testosterone_total, shbg, ck_cpk, vitamin_d, creatinine, cystatin_c]
   enfoque: "Proteína en la dieta, entrenamiento de fuerza y recuperación"
+  consejo_inicio: "Reparte la proteína en 3 o 4 comidas al día: eso cuenta más que la famosa ventana de 30 minutos después de entrenar."
 - id: rendimiento
   nombre: "Mejorar mi rendimiento o entrenamiento"
   destaca: [hemoglobin, ferritin, serum_iron, vitamin_b12, folate, magnesium, ck_cpk]
   enfoque: "Recuperación, alimentación alrededor del entrenamiento e hidratación"
+  consejo_inicio: "Los días de entreno fuerte tu cuerpo pide más carbohidrato: dos o tres horas antes, un plato con arroz, papa o arepa."
 - id: maraton
   nombre: "Correr una maratón o carrera larga"
   destaca: [hemoglobin, ferritin, serum_iron, sodium, vitamin_b12, magnesium]
   enfoque: "Hidratación y sales, hierro en la dieta, progresión de carga"
+  consejo_inicio: "Casi 8 de cada 10 kilómetros de tu semana deberían ser suaves, a un ritmo en el que puedas conversar en frases completas."
 - id: atletico
   nombre: "Ser más atlético"
   destaca: [total_protein, testosterone_total, ck_cpk, hemoglobin, ferritin, vitamin_d]
   enfoque: "Fuerza, resistencia y descanso"
+  consejo_inicio: "Para ser más rápido hay que correr rápido: 6 piques de 20 metros, caminando de regreso para recuperarte del todo."
 - id: energia_sueno
   nombre: "Tener más energía y dormir mejor"
   destaca: [hemoglobin, ferritin, tsh, vitamin_b12, folate, glucose, vitamin_d, cortisol]
   enfoque: "Sueño, horarios de comida y actividad"
+  consejo_inicio: "Levántate a la misma hora todos los días, también el sábado: tu reloj interno se ordena desde la mañana."
 - id: envejecer_saludable
   nombre: "Envejecer de forma saludable"
   destaca: [phenoage, ldl_c, apob, egfr, vitamin_b12, albumin, vitamin_d]
   enfoque: "Fuerza, alimentación y controles preventivos"
+  consejo_inicio: "Nunca es tarde para ganar fuerza: levantarte de una silla 10 veces sin usar las manos ya es un buen ejercicio."

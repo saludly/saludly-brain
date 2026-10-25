@@ -52,6 +52,10 @@
   --color-attention-soft: var(--attention-soft);
   --color-critical: var(--critical);
   --color-critical-soft: var(--critical-soft);
+
+  --color-ficha: var(--ficha);
+  --color-marca: var(--marca);
+  --color-whatsapp: var(--whatsapp);
 }
 
 :root {
@@ -91,6 +95,11 @@
   --attention-soft: oklch(0.76 0.13 66 / 14%);
   --critical: oklch(0.58 0.17 44);
   --critical-soft: oklch(0.58 0.17 44 / 12%);
+
+  /* Pre-registro y botones de marca (ver app/DESIGN.md) */
+  --ficha: #f2f4f7; /* fondo de las fichas, la búsqueda y los botones grises */
+  --marca: #2793ff; /* azul del logo: la "y" animada */
+  --whatsapp: #25d366; /* solo para los botones que abren WhatsApp */
 }
 
 @layer base {

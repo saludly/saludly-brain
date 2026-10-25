@@ -63,6 +63,7 @@ export interface Preregistro {
   fecha_nacimiento: string;
   sexo: "hombre" | "mujer" | null;
   codigo: string;
+  objetivos: string[];
   estado: "registrado" | "cliente" | "baja";
   quiere_prueba: boolean;
 }
@@ -158,7 +159,7 @@ export function SesionProvider({ children }: { children: ReactNode }) {
       supabase.from("informes").select("informe").eq("paciente_id", yo).eq("estado", "aprobado").order("creado", { ascending: false }).limit(1),
       supabase.rpc("es_equipo"),
       supabase.from("pagos").select("codigo, estado, nota").eq("paciente_id", yo).maybeSingle(),
-      supabase.from("preregistros").select("nombre, celular_whatsapp, fecha_nacimiento, sexo, codigo, estado, quiere_prueba").eq("id", yo).maybeSingle(),
+      supabase.from("preregistros").select("nombre, celular_whatsapp, fecha_nacimiento, sexo, codigo, objetivos, estado, quiere_prueba").eq("id", yo).maybeSingle(),
       supabase.from("configuracion").select("valor").eq("clave", "preventa").maybeSingle(),
     ]);
     setPaciente((p.data as Paciente | null) ?? null);

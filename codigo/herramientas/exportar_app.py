@@ -16,7 +16,7 @@ def _y(nombre): return yaml.safe_load(open(os.path.join(F5, nombre), encoding="u
 
 
 def main():
-    objetivos = [dict(id=o["id"], nombre=o["nombre"], enfoque=o.get("enfoque")) for o in _y("objetivos.yaml")]
+    objetivos = [dict(id=o["id"], nombre=o["nombre"], enfoque=o.get("enfoque"), consejo_inicio=o.get("consejo_inicio")) for o in _y("objetivos.yaml")]
     filtros = _y("filtros.yaml")["preguntas"]
     indice = json.load(open(os.path.join(RAIZ, "knowledge_base", "00_INDEX.json"), encoding="utf-8"))["biomarcadores"]
     calculados = {k: dict(nombre=v["nombre"], unidad="" if "sin unidad" in (v.get("unidad") or "") else v.get("unidad") or "")

@@ -51,7 +51,7 @@ export function ParaTuMedico() {
         </div>
       </div>
       <div className="mt-5 grid gap-2 sm:grid-cols-3">
-        <a href={whatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm text-white">
+        <a href={whatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm text-white">
           Enviar por WhatsApp
         </a>
         <button type="button" onClick={() => void copiar()} className="flex items-center justify-center gap-2 rounded-full border border-rule bg-background px-5 py-3 text-sm text-ink">

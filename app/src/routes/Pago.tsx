@@ -117,7 +117,7 @@ export function Pago() {
             <p className="mt-8 rounded-2xl bg-optimal-soft p-4 text-sm text-ink">✓ Recibimos tu comprobante. Lo estamos revisando.</p>
           ) : (
             whatsapp && (
-              <a href={whatsapp} target="_blank" rel="noreferrer" className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-base text-white">
+              <a href={whatsapp} target="_blank" rel="noreferrer" className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 text-base text-white">
                 Enviar comprobante por WhatsApp
               </a>
             )
