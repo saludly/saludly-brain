@@ -1,0 +1,339 @@
+<title>Plan de grupos Facebook</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: una columna de lectura; calendario con pestañas por día y tarjetas de grupo con el mensaje listo para copiar */
+:root{
+  --bg:#f6f8f7; --surface:#ffffff; --fg:#17231f; --muted:#5d6b66; --line:#dbe3e0;
+  --accent:#0f6b57; --accent-soft:#e2f1ec; --salmon:#e8735a; --salmon-soft:#fdece7;
+  --warn:#9a5b00; --warn-soft:#fff3dc;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101715; --surface:#17211e; --fg:#e6eeeb; --muted:#9aaba5; --line:#2a3833;
+  --accent:#5cc4a8; --accent-soft:#183a31; --salmon:#f0937d; --salmon-soft:#3a221c;
+  --warn:#f2b45a; --warn-soft:#352812; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101715; --surface:#17211e; --fg:#e6eeeb; --muted:#9aaba5; --line:#2a3833;
+  --accent:#5cc4a8; --accent-soft:#183a31; --salmon:#f0937d; --salmon-soft:#3a221c;
+  --warn:#f2b45a; --warn-soft:#352812; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,5vw,40px);font-weight:700}
+h2{font-size:24px;font-weight:700}
+h3{font-size:18px;font-weight:600}
+p{margin:0}
+.lead{color:var(--muted);max-width:65ch;margin-top:10px}
+section{display:flex;flex-direction:column;gap:16px}
+.note{background:var(--warn-soft);color:var(--fg);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.note b{color:var(--warn)}
+.advisors{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.adv .who{font-family:var(--display);font-weight:700}
+.adv .where{font-size:13px;color:var(--accent);font-weight:600}
+.adv p{font-size:14px;color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{font:600 15px var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.tab:focus-visible,.btn:focus-visible{outline:2px solid var(--salmon);outline-offset:2px}
+.daynote{color:var(--muted);font-size:14px}
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;grid-template-columns:44px 1fr;gap:4px 14px}
+.slot{grid-row:span 3;width:44px;height:44px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font:700 15px var(--display);display:flex;align-items:center;justify-content:center}
+.card h3 a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.card h3 a:hover{border-color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pill{font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px}
+.pub{background:var(--accent-soft);color:var(--accent)}
+.priv{background:var(--salmon-soft);color:var(--salmon)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-width:0}
+.ref{font:13px ui-monospace,Consolas,monospace;color:var(--muted);overflow-wrap:anywhere;min-width:0}
+.btn{font:600 14px var(--body);padding:7px 12px;border-radius:8px;border:1px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--bg)}
+.warn{font-size:13px;color:var(--warn)}
+.msgs{display:flex;flex-direction:column;gap:14px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+summary{cursor:pointer;padding:14px 16px;display:flex;gap:12px;align-items:baseline;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary .k{font:700 14px var(--display);color:var(--accent);min-width:28px}
+summary .t{font-weight:600}
+summary .a{font-size:13px;color:var(--muted);margin-left:auto;text-align:right}
+.body{padding:0 16px 16px;display:flex;flex-direction:column;gap:10px}
+.why{font-size:14px;color:var(--muted);max-width:65ch}
+.text{white-space:pre-wrap;background:var(--bg);border-radius:8px;padding:14px;font-size:15px;max-width:68ch}
+.text mark{background:var(--warn-soft);color:var(--warn);padding:0 2px}
+ol.q{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:65ch}
+ul.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:68ch}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl{overflow-x:auto}
+td,th{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+td a{color:var(--accent)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:14px}
+@media (max-width:520px){.card{grid-template-columns:1fr}.slot{grid-row:auto}summary{flex-wrap:wrap}summary .a{margin-left:0;text-align:left;width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Pre-registro en 21 grupos de Facebook</h1>
+    <p class="lead">7 grupos por día durante 3 días. Cada día tiene los mismos 7 mensajes, uno por tipo de grupo, y cada grupo lleva su propio enlace con <code>?ref=</code> para ver en el panel cuál trae más registros. Todos los grupos están en Bogotá o son de Colombia, y los revisé uno por uno el 24 de octubre de 2026 (miembros, si es público o privado y, donde Facebook lo mostró, cuántas publicaciones tiene al mes).</p>
+  </header>
+
+  <div class="note">
+    <p><b>Ya pedí entrar a todos los grupos (24 de octubre en la noche).</b> Eres miembro de los 7 del día 1 y de todos los públicos; 6 privados esperan aprobación. Día 1 domingo 25, día 2 lunes 26 y día 3 martes 27, entre 7 y 9 de la mañana o entre 7 y 9 de la noche. En Teusaquillo me importa tienes 2 publicaciones esperando aprobación del administrador.</p>
+    <p><b>Los mensajes 1 y 2 cuentan tu historia</b> (tu abuela y por qué emprendiste) y saludan a los vecinos del barrio de cada grupo. El botón Copiar ya pone el nombre del barrio.</p>
+  </div>
+
+  <section>
+    <h2>Quién arma qué</h2>
+    <div class="advisors">
+      <div class="adv"><span class="who">Russell Brunson</span><span class="where">Mensajes 1 y 2 · grupos de barrio</span><p>Tu historia de emprendedor: el momento en que viste el problema y por qué decidiste hacer algo. En un grupo de vecinos la gente apoya a la persona antes que a la oferta.</p></div>
+      <div class="adv"><span class="who">Gary Vee</span><span class="where">Mensaje 3 y el tono de todos</span><p>Dar antes de pedir: el mensaje 3 regala un consejo útil antes de invitar. También pone las reglas de ejecución: entrar al grupo, comentar y responder rápido.</p></div>
+      <div class="adv"><span class="who">Alex Hormozi</span><span class="where">Mensajes 4 y 7 · runners y peso</span><p>La oferta concreta: qué resultado quieres, cuánto esfuerzo pide, qué te llega cada día, que es gratis y que puedes decir que no te sirvió.</p></div>
+      <div class="adv"><span class="who">Seth Godin</span><span class="where">Mensajes 5 y 6 · mamás y cirugías</span><p>Entrar con permiso a comunidades cerradas: hablar como alguien del grupo, decir lo que no eres, invitar a pocas personas y aceptar un no.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Calendario</h2>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <p class="daynote" id="daynote"></p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <h2>Los 7 mensajes</h2>
+    <p class="lead" style="margin-top:0">Sin emojis ni signos de exclamación. El botón Copiar de cada grupo en el calendario ya pone el enlace de ese grupo; aquí el enlace aparece como {enlace}.</p>
+    <div class="msgs" id="msgs"></div>
+  </section>
+
+  <section>
+    <h2>Tu historia, según Russell</h2>
+    <p class="lead" style="margin-top:0">Tu abuela murió de hipertensión; se la encontraron tarde porque nunca se hacía exámenes, y sufrió muchos años. Has dedicado tu vida a cuidar a tu familia, y por eso emprendiste: quieres que la gente se sienta más saludable siguiendo los consejos. El mensaje 1 la cuenta completa, el 2 en una frase y el 5 menciona que cuidas a tu familia. No dice que vives en cada barrio: en un grupo de vecinos alguien lo pregunta y, si no es cierto, se pierde la confianza.</p>
+    <p class="lead" style="margin-top:0">Estas son las preguntas que usamos, por si quieres ampliarla más adelante:</p>
+    <ol class="q">
+      <li>¿Por qué empezaste Saludly? ¿Hubo un momento concreto, tuyo o de alguien cercano, en que un examen, una enfermedad o un susto te hizo pensar que esto tenía que existir?</li>
+      <li>¿Has tenido tu propia pelea con el peso, la energía o los hábitos? ¿Qué intentaste que no funcionó y qué sí?</li>
+      <li>¿Qué te frustra de cómo funciona la salud aquí: citas que tardan, exámenes que nadie explica, dietas de redes?</li>
+      <li>¿Qué relación tienes con Teusaquillo, Chapinero, Suba o el norte? ¿Vives, viviste o trabajas en alguno de esos barrios?</li>
+      <li>¿Qué quieres que sienta una persona al terminar la semana gratis?</li>
+      <li>¿Hay algo de ti que la gente debería saber para confiar: tu edad, si tienes hijos, a qué te dedicabas antes?</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Reglas para publicar</h2>
+    <ul class="rules">
+      <li>Lee las reglas de cada grupo antes. Chapinero me importa expulsa a quien publique lo mismo seguido, y Colombian Runners tiene una regla 1 que hay que leer completa porque puede prohibir la publicidad.</li>
+      <li>Antes de publicar, comenta con algo útil en dos o tres publicaciones del grupo. Facebook muestra más tus publicaciones si ya participaste.</li>
+      <li>Deja 20 o 30 minutos entre un grupo y otro. Siete publicaciones con el mismo enlace en pocos minutos pueden parecer spam.</li>
+      <li>Si un grupo no permite enlaces o el administrador rechaza la publicación, publícala sin enlace y pon el enlace en el primer comentario.</li>
+      <li>Responde cada comentario en la primera hora. Si alguien pregunta algo de salud puntual, dile que lo hablen por WhatsApp; en el grupo no se dan diagnósticos.</li>
+      <li>Wikimamás, Mujeres en Bici y algunos grupos de cirugía pueden ser solo para mujeres. Si no te aceptan, usa un grupo de reserva.</li>
+      <li>En los grupos de cirugía no opines sobre cirujanos ni procedimientos. Tu tema es cuidar el peso después, nada más.</li>
+      <li>Después del día 3, mira en el panel cuántos pre-registros trajo cada <code>ref</code>. Los 3 mejores grupos son a los que vuelves la otra semana con un mensaje nuevo.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Grupos de reserva y descartados</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Grupo</th><th>Miembros</th><th>Para qué sirve</th></tr></thead>
+      <tbody id="backup"></tbody>
+    </table></div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const BASE = "https://app.saludly.online/preregistro?ref=";
+const MSG = [
+ {k:"M1", t:"Historia de vecino", a:"Russell Brunson", tipo:"Grupos “me importa”",
+  why:"Grupos grandes de localidad. La gente reacciona a una persona con nombre y una razón. La historia va primero, la invitación al final y la petición de compartir cierra.",
+  text:`Hola, vecinos de {barrio}. Me llamo Carlos y quiero contarles en qué ando, porque necesito su ayuda.
+
+Mi abuela murió de hipertensión. Cuando se la encontraron ya era tarde: nunca se hacía exámenes y pasó muchos años sufriendo con esa enfermedad. Toda mi vida me he dedicado a cuidar a mi familia, y con ella entendí que cuidarse a tiempo cambia todo.
+
+Por eso emprendí Saludly, un proyecto de salud preventiva aquí en Bogotá. Quiero que las personas se sientan más saludables con consejos claros que se puedan cumplir en el día a día, sin dietas de moda.
+
+Antes de lanzarlo quiero probarlo con vecinos de verdad. Durante siete días te llegan por WhatsApp consejos y una receta al día, según lo que quieras lograr: bajar de peso, tener más energía o comer mejor. Es gratis y no te pido tarjeta ni nada parecido.
+
+Si te interesa, te inscribes aquí en dos minutos: {enlace}
+
+Si conocen a alguien a quien le pueda servir, les agradezco que se lo pasen. Cualquier pregunta la respondo por aquí.`},
+ {k:"M2", t:"Pregunta y vecino del norte", a:"Russell + Gary", tipo:"Barrios del norte",
+  why:"Abre con una situación que todos han vivido para que la gente se reconozca. Es más corto que el 1 porque estos grupos son de clasificados y se lee rápido.",
+  text:`Buenas, vecinos. Les hago una pregunta.
+
+¿A cuántos les ha pasado que el lunes arrancan con toda la intención de comer mejor y el miércoles ya se cayó todo? Es normal, y por eso casi ninguna dieta dura.
+
+Soy Carlos, emprendedor de Bogotá. Empecé este proyecto por mi abuela: murió de hipertensión y se la encontraron cuando ya era tarde. Desde entonces quiero ayudar a que la gente se cuide antes, con consejos que sí quepan en la rutina de uno: el trabajo, el trancón, la casa.
+
+Busco vecinos de {barrio} que quieran probarlo primero. Es una semana gratis por WhatsApp: cada día te llegan consejos cortos y una receta fácil según tu objetivo.
+
+El registro toma dos minutos: {enlace}
+
+Gracias a los administradores por dejarme compartirlo.`},
+ {k:"M3", t:"Primero un consejo", a:"Gary Vee", tipo:"Barrios centro y occidente",
+  why:"Regala algo útil antes de pedir. Quien no se inscribe igual se lleva el consejo, y eso hace que el grupo vea la publicación como aporte y no como anuncio.",
+  text:`Hola a todos. Les dejo un consejo que a mucha gente le sirve y casi nadie aplica: en el almuerzo, sirve primero la mitad del plato con verdura y después lo demás. No es una dieta, es un orden, y ayuda a comer menos sin quedarse con hambre.
+
+Soy Carlos y estoy empezando un emprendimiento aquí en Bogotá para ayudar a bajar de peso con consejos así de sencillos. Antes de lanzarlo quiero que lo prueben vecinos de verdad y me digan qué les sirve y qué no.
+
+Son siete días por WhatsApp, consejos y una receta al día, gratis. Si quieres participar: {enlace}
+
+Si tienes alguna duda, me la dejas en los comentarios y te respondo.`},
+ {k:"M4", t:"Oferta para corredores", a:"Alex Hormozi", tipo:"Runners",
+  why:"Habla del resultado que quiere un corredor (correr más liviano, recuperarse, tener energía), dice exactamente qué recibe, cuánto cuesta (nada) y quita el riesgo pidiendo que digan si no sirvió.",
+  text:`Hola, corredores. Una pregunta para los que están entrenando para una 10K o una media: ¿están comiendo para correr mejor o solo para no tener hambre?
+
+Mucha gente cree que con entrenar basta, pero lo que uno come antes y después de un fondo cambia mucho cómo responde el cuerpo, y más con la altura de Bogotá.
+
+Soy Carlos, emprendedor de aquí, y estoy armando un proyecto de nutrición y salud preventiva. Antes de lanzarlo quiero probarlo con gente que entrena de verdad.
+
+La propuesta es esta: una semana gratis por WhatsApp con consejos y una receta al día según tu objetivo, ya sea bajar unos kilos para correr más liviano, recuperarte mejor o llegar con más energía a los entrenos. Recetas fáciles, con cosas que se consiguen en cualquier supermercado. No pagas nada ni dejas tarjeta.
+
+Inscripción: {enlace}
+
+Si al final de la semana no te sirvió, dímelo. Eso también me ayuda mucho.`},
+ {k:"M5", t:"Con permiso, para mamás", a:"Seth Godin", tipo:"Mamás",
+  why:"Pregunta en vez de afirmar, reconoce que el grupo es un espacio de apoyo, invita a pocas y deja la puerta abierta para decir que no. En grupos de mamás eso pesa más que cualquier oferta.",
+  text:`Hola, mamás. Les escribo con respeto, porque sé que este es un espacio para apoyarnos.
+
+¿Les pasa que entre el trabajo, la casa y los niños, lo último de la lista son ustedes? ¿Y que cuando por fin hay un rato aparece en redes una dieta distinta cada semana y ya no saben a quién creerle?
+
+Soy Carlos, emprendedor aquí en Bogotá. Toda mi vida me he dedicado a cuidar a mi familia, y ahora estoy armando un proyecto de salud preventiva pensado justo para eso: consejos cortos y recetas fáciles que quepan en un día de mamá, sin dietas extremas.
+
+Busco un grupo pequeño de mamás que quieran probarlo primero y decirme con sinceridad qué les sirve. Son siete días por WhatsApp, unos mensajes cortos al día, gratis. En el registro me cuentas si tienes alguna alergia para tenerla en cuenta.
+
+Si te animas: {enlace}
+
+Y si no es el momento, igual gracias por leer.`},
+ {k:"M6", t:"Cuidar el resultado", a:"Seth Godin + Hormozi", tipo:"Cirugías",
+  why:"Dice desde el principio lo que no eres (no vendes fajas ni procedimientos, no reemplazas al cirujano) y ofrece una sola cosa concreta: cuidar el peso después de la recuperación. Ofrece borrarlo si el administrador no está de acuerdo.",
+  text:`Hola. Sé que este grupo es para compartir experiencias de cirugía, así que voy al punto y con respeto.
+
+Una duda que aparece seguido en grupos como este es cómo mantener el resultado cuando termina la recuperación, porque si la alimentación vuelve a ser la de antes, el cuerpo también lo nota.
+
+Soy Carlos, emprendedor en Bogotá, y estoy armando un proyecto de salud preventiva para ayudar a cuidar el peso con consejos claros y recetas sencillas. No reemplaza a tu cirujano ni tus controles, y no vendo fajas, cremas ni procedimientos. Si estás en recuperación, primero van las indicaciones de tu médico.
+
+Busco personas que quieran probarlo gratis durante una semana: cada día te llegan por WhatsApp consejos y una receta según tu objetivo.
+
+Si te interesa: {enlace}
+
+Si a los administradores no les parece adecuado, lo borro sin problema.`},
+ {k:"M7", t:"Sin dietas raras", a:"Hormozi + Gary", tipo:"Peso, fitness y mujeres activas",
+  why:"La oferta en pocas líneas para grupos donde se publica mucho, y una pregunta al final para que la gente comente. Los comentarios hacen que Facebook muestre la publicación a más personas.",
+  text:`Hola. Les comparto algo en lo que estoy trabajando, por si a alguien le sirve.
+
+Soy Carlos, emprendedor de Bogotá. Estoy montando un proyecto para ayudar a bajar de peso sin dietas raras ni productos milagro: consejos que se puedan cumplir y recetas con comida normal, de la que hay en cualquier tienda.
+
+Antes de lanzarlo quiero probarlo con un grupo de personas. Durante siete días te llegan por WhatsApp consejos y una receta diaria según tu meta. Es gratis.
+
+Para inscribirte: {enlace}
+
+Y una pregunta para los comentarios: ¿qué es lo que más se les dificulta a la hora de bajar de peso? Leo todas las respuestas.`}
+];
+// d: día, s: índice del mensaje (0-6)
+const G = [
+ {d:1,s:0,n:"SUBA ME IMPORTA",u:"https://www.facebook.com/groups/187377328590021",m:"32,9 mil",act:"4.248 publicaciones al mes",p:"pub",ref:"fb-suba-meimporta",b:"Suba"},
+ {d:1,s:1,n:"Yo vivo en Colina Campestre y Mazurén",u:"https://www.facebook.com/groups/colinacampestre",m:"28,9 mil",act:"6.220 publicaciones al mes",p:"pub",ref:"fb-colina-mazuren",b:"Colina Campestre y Mazurén"},
+ {d:1,s:2,n:"Yo vivo en la zona Salitre, Modelia, Quinta Paredes",u:"https://www.facebook.com/groups/860129304133341",m:"14,8 mil",act:"1.699 publicaciones al mes",p:"pub",ref:"fb-salitre-modelia"},
+ {d:1,s:3,n:"adidas Runners Bogotá",u:"https://www.facebook.com/groups/adidasrunnersbogota",m:"22,7 mil",act:"148 publicaciones al mes",p:"pub",ref:"fb-adidas-runners",w:"Es el grupo de una marca. Si el administrador lo rechaza, usa Mamas fit and runners de la lista de reserva."},
+ {d:1,s:4,n:"Mamás, amigas y planes en Bogotá",u:"https://www.facebook.com/groups/1445456217271090",m:"675",act:"95 publicaciones al mes, creciendo",p:"pub",ref:"fb-mamas-planes"},
+ {d:1,s:5,n:"experiencias cirugía plástica colombia",u:"https://www.facebook.com/groups/3070038899912504",m:"1,4 mil",act:"29 publicaciones al mes",p:"pub",ref:"fb-experiencias-cirugia-colombia",w:"Es el grupo de cirugía público con más movimiento que encontré en Colombia; los de Bogotá casi no tienen."},
+ {d:1,s:6,n:"KENNEDY BOGOTA",u:"https://www.facebook.com/groups/377311661805015",m:"35,4 mil",act:"7.384 publicaciones al mes",p:"pub",ref:"fb-kennedy",w:"Se publica muchísimo y tu post baja rápido: responde comentarios para mantenerlo arriba."},
+ {d:2,s:0,n:"Teusaquillo me importa",u:"https://www.facebook.com/groups/838104396306305",m:"69,5 mil",act:"1.231 publicaciones al mes",p:"priv",ref:"fb-teusaquillo-meimporta",b:"Teusaquillo"},
+ {d:2,s:1,n:"Yo vivo en Usaquén y Cedritos",u:"https://www.facebook.com/groups/1004079704218150",m:"18,5 mil",act:"164 publicaciones al mes",p:"pub",ref:"fb-usaquen-cedritos",b:"Usaquén y Cedritos",w:"Regla: máximo 2 publicaciones por semana por persona."},
+ {d:2,s:2,n:"Vecinos Chapinero Alto",u:"https://www.facebook.com/groups/979000068864142",m:"18,3 mil",act:"1.616 publicaciones al mes",p:"pub",ref:"fb-chapinero-alto"},
+ {d:2,s:3,n:"COLOMBIAN RUNNERS",u:"https://www.facebook.com/groups/colombianrunners",m:"13,9 mil",act:"149 publicaciones al mes",p:"pub",ref:"fb-colombian-runners",w:"Permite autopromoción si tiene que ver con running."},
+ {d:2,s:4,n:"WikiMamás (Bogotá)",u:"https://www.facebook.com/groups/606654993026623",m:"2,4 mil",act:"137 publicaciones al mes",p:"priv",ref:"fb-wikimamas",w:"Misma administradora de Wikimamás Colombia, que prohíbe promociones: si te aceptan, lee las reglas antes de publicar."},
+ {d:2,s:5,n:"EXPERIENCIAS EN CIRUGÍAS PLÁSTICAS",u:"https://www.facebook.com/groups/336904958191589",m:"12,4 mil",p:"priv",ref:"fb-experiencias-cirugias"},
+ {d:2,s:6,n:"MUJERES en BICI - Bogotá",u:"https://www.facebook.com/groups/mujeresbici",m:"2,5 mil",p:"priv",ref:"fb-mujeres-bici",w:"Puede ser solo para mujeres."},
+ {d:3,s:0,n:"Chapinero me importa",u:"https://www.facebook.com/groups/862091327553895",m:"32,2 mil",act:"2.142 publicaciones al mes",p:"priv",ref:"fb-chapinero-meimporta",b:"Chapinero",w:"Regla: publicar solo temas de Chapinero y no repetir."},
+ {d:3,s:1,n:"Vecinos Colina Las Villas Prado Mazurén Niza",u:"https://www.facebook.com/groups/lasvillasprado",m:"9,1 mil",act:"388 publicaciones al mes",p:"pub",ref:"fb-villas-niza",b:"Colina, Niza y Mazurén"},
+ {d:3,s:2,n:"Vecinos Galerías, Alfonso López y Palermo (Teusaquillo)",u:"https://www.facebook.com/groups/688357254601249",m:"14,4 mil",act:"2.830 publicaciones al mes",p:"pub",ref:"fb-galerias-palermo"},
+ {d:3,s:3,n:"Run Colina Campestre",u:"https://www.facebook.com/groups/runcolinacampestre",m:"496",p:"priv",ref:"fb-run-colina",w:"Pequeño pero de vecinos que corren en el norte."},
+ {d:3,s:4,n:"consejos de mamás a mamás",u:"https://www.facebook.com/groups/3031361416998312",m:"115,1 mil",act:"10.000 publicaciones al mes",p:"pub",ref:"fb-consejos-mamas",w:"No es solo de Bogotá: quien sea de otra ciudad igual recibe la semana. No tiene regla contra la promoción."},
+ {d:3,s:5,n:"Cirugías Estéticas, Recomienda tu cirujano",u:"https://www.facebook.com/groups/358448074931761",m:"4,3 mil",p:"priv",ref:"fb-recomienda-cirujano"},
+ {d:3,s:6,n:"Fitness bogotá",u:"https://www.facebook.com/groups/2211989829029808",m:"4,2 mil",act:"277 publicaciones al mes",p:"pub",ref:"fb-fitness-bogota"}
+];
+const BACKUP = [
+ ["Vecinos Barrio Teusaquillo (Palermo, Javeriana, La Soledad)","https://www.facebook.com/groups/606097460041201","11,6 mil","Reserva para el mensaje 3"],
+ ["yo vivo en la Felicidad, Modelia, Hayuelos, Salitre, Fontibón","https://www.facebook.com/groups/1151534785880550","7,4 mil","Reserva para el mensaje 3"],
+ ["Comunidad Barrio Normandía y alrededores","https://www.facebook.com/groups/933924054831254","6,9 mil","Reserva para el mensaje 3"],
+ ["Vecinos Cedritos, Colina Campestre y Mazurén","https://www.facebook.com/groups/1333096737141035","4,4 mil","Reserva para el mensaje 2"],
+ ["Barrio Cedritos - Bogotá (privado, 206 publicaciones al mes)","https://www.facebook.com/groups/3078396519074103","3,1 mil","Reserva para el mensaje 2"],
+ ["Consejos y experiencias en Cirugía Plástica (privado)","https://www.facebook.com/groups/consejoscirugiaplastica","1,9 mil","Reserva para el mensaje 6"],
+ ["experiencias cirugía plástica colombia","https://www.facebook.com/groups/3070038899912504","1,4 mil","Reserva para el mensaje 6"],
+ ["Recetas Saludables","https://www.facebook.com/groups/901805907449170","452,8 mil","Reserva para el mensaje 7. Enorme pero no es de Bogotá"],
+ ["Consejos para mamás primerizas","https://www.facebook.com/groups/consejosparamamasprimerizasbebeslactanciaembarazo","564,3 mil","Reserva para el mensaje 5. Muchas preguntan cómo bajar de peso después del parto, pero no es de Bogotá"],
+ ["Mamas fit and runners","https://www.facebook.com/groups/195652827558793","311","Reserva para el mensaje 4 o 5. No dice de qué país es"],
+ ["perder peso Colombia","https://www.facebook.com/groups/787791065274664","1,7 mil","Reserva para el mensaje 7. 267 publicaciones al mes"],
+ ["Body Fitness Bogotá","https://www.facebook.com/groups/521571921334841","2,3 mil","Reserva para el mensaje 7. Ya eres miembro, pero el administrador es de Cali"],
+ ["Recomendaciones de Especialistas Cirugía Estética","https://www.facebook.com/groups/814926109063531","2 mil","Sacado: solo 2 publicaciones en el último mes"],
+ ["Wikimamás Colombia","https://www.facebook.com/groups/wikimamascolombia","9 mil","Sacado: prohíbe promociones y pide responder si eres mamá"],
+ ["ENTRE MAMÁS · Madres Primerizas Colombia · Usaditos Bogotá","https://www.facebook.com/groups/715597727607866","14 mil · 4,6 mil · 65 mil","Descartados: prohíben autopromoción o enlaces (ENTRE MAMÁS además es de Ecuador)"],
+ ["Loc@s Por El Running","https://www.facebook.com/groups/200940240664504","7,3 mil","Descartado: es de Cali y prohíbe autopromoción"],
+ ["Cirugía Plástica (112,6 mil)","https://www.facebook.com/groups/2098405310437718","—","Descartado: es de México"],
+ ["Bogotá Me Importa · Usaquén Me Importa","https://www.facebook.com/groups/1648738413127651","142 · 552","Descartados: muy pequeños"],
+ ["Runners Bogotá MIT · Reto Bajar de Peso Colombia","https://www.facebook.com/groups/229852957382395","701 · 14","Descartados: sin actividad"]
+];
+
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const plain = (s, link, barrio) => s.replace(/\[\[|\]\]/g,"").replace("{enlace}", link).replace("{barrio}", barrio || "Bogotá");
+const marked = (s) => esc(s).replace(/\[\[(.+?)\]\]/g,"<mark>[$1]</mark>");
+
+function toast(t){const el=document.getElementById("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>el.hidden=true,1800)}
+async function copy(text, label){
+  try{await navigator.clipboard.writeText(text);toast(label+" copiado")}
+  catch(e){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast(label+" copiado")}catch(_){toast("Selecciona y copia a mano")}ta.remove()}
+}
+
+const DAYS = {1:"Día 1 · domingo 25", 2:"Día 2 · lunes 26", 3:"Día 3 · martes 27"};
+const NOTES = {1:"Ya eres miembro de los 7.",2:"Ya eres miembro de Teusaquillo me importa y de los públicos; WikiMamás, Experiencias en cirugías y Mujeres en Bici esperan aprobación.",3:"Ya eres miembro de los públicos; Chapinero me importa, Run Colina y Recomienda tu cirujano esperan aprobación."};
+let day = 1;
+try{const h=location.hash.replace("#","");if(/^dia[123]$/.test(h))day=+h.slice(3)}catch(e){}
+
+function renderTabs(){
+  const t=document.getElementById("tabs");t.innerHTML="";
+  [1,2,3].forEach(d=>{const b=document.createElement("button");b.className="tab";b.id="tab"+d;b.setAttribute("role","tab");b.setAttribute("aria-selected",d===day);b.textContent=DAYS[d];b.onclick=()=>{day=d;render()};t.appendChild(b)});
+}
+function render(){
+  renderTabs();
+  document.getElementById("daynote").textContent=NOTES[day];
+  const c=document.getElementById("cards");c.innerHTML="";
+  G.filter(g=>g.d===day).forEach(g=>{
+    const m=MSG[g.s], link=BASE+g.ref;
+    const el=document.createElement("div");el.className="card";
+    el.innerHTML=`<div class="slot">${m.k}</div>
+      <h3><a href="${g.u}" target="_blank" rel="noopener">${esc(g.n)}</a></h3>
+      <div class="meta"><span class="pill ${g.p}">${g.p==="pub"?"Público":"Privado"}</span><span>${g.m} miembros</span>${g.act?`<span>${g.act}</span>`:""}<span>${m.t} · ${m.a}</span></div>
+      <div class="row"><button class="btn solid" type="button">Copiar mensaje</button><button class="btn" type="button">Copiar enlace</button><span class="ref">${link}</span></div>
+      ${g.w?`<p class="warn" style="grid-column:2">${esc(g.w)}</p>`:""}`;
+    const [b1,b2]=el.querySelectorAll("button");
+    b1.onclick=()=>copy(plain(m.text,link,g.b),"Mensaje");
+    b2.onclick=()=>copy(link,"Enlace");
+    c.appendChild(el);
+  });
+}
+function renderMsgs(){
+  const box=document.getElementById("msgs");
+  MSG.forEach((m,i)=>{
+    const d=document.createElement("details");if(i===0)d.open=true;
+    const gs=G.filter(g=>g.s===i).map(g=>g.n).join(" · ");
+    d.innerHTML=`<summary><span class="k">${m.k}</span><span class="t">${m.t}</span><span class="a">${m.a} · ${m.tipo}</span></summary>
+      <div class="body"><p class="why">${esc(m.why)}</p><p class="why"><b>Va en:</b> ${esc(gs)}</p><div class="text">${marked(m.text)}</div></div>`;
+    box.appendChild(d);
+  });
+}
+function renderBackup(){
+  document.getElementById("backup").innerHTML=BACKUP.map(b=>`<tr><td><a href="${b[1]}" target="_blank" rel="noopener">${esc(b[0])}</a></td><td>${b[2]}</td><td>${esc(b[3])}</td></tr>`).join("");
+}
+render();renderMsgs();renderBackup();
+</script>

@@ -1,0 +1,155 @@
+<title>Capturas del día 1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Color+Emoji&display=swap">
+<style>
+/* Layout: tres capturas de pantalla de iPhone lado a lado, cada una con su nota; la página es solo la mesa de revisión */
+:root{
+  --bg:#eef1f0; --fg:#18211e; --muted:#5b6964; --card:#ffffff; --line:#d7dedb; --accent:#0f6b57;
+  --ui:"Inter","SF Pro Text",-apple-system,"Segoe UI",system-ui,sans-serif;
+  --emoji:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111816;--fg:#e5ece9;--muted:#9aa9a4;--card:#18211e;--line:#2a3833;--accent:#5cc4a8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111816;--fg:#e5ece9;--muted:#9aa9a4;--card:#18211e;--line:#2a3833;--accent:#5cc4a8;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui)}
+.wrap{max-width:1360px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:24px}
+h1{font-size:28px;margin:0;text-wrap:balance}
+.lead{color:var(--muted);max-width:70ch;margin:8px 0 0;line-height:1.5}
+.row{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
+.item{display:flex;flex-direction:column;gap:12px;width:402px;max-width:100%}
+.item h2{font-size:17px;margin:0}
+.item p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.shot-box{width:100%;aspect-ratio:402/874;position:relative;overflow:hidden}
+.scaler{position:absolute;top:0;left:0;width:402px;height:874px;transform-origin:0 0}
+
+/* ===== Pantalla de iPhone (402 × 874 pt) con WhatsApp en tema claro ===== */
+.phone{width:402px;height:874px;position:relative;overflow:hidden;background:#efeae2;font-family:var(--ui);color:#111b21;-webkit-font-smoothing:antialiased}
+.phone .wall{position:absolute;inset:0;background-color:#efeae2;background-image:var(--doodle);background-size:260px 260px;opacity:1}
+.status{position:absolute;top:0;left:0;right:0;height:54px;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 50px;font:600 17px/1 var(--ui);letter-spacing:-.2px}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:125px;height:37px;border-radius:20px;background:#000}
+.sicons{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:0;left:0;right:0;height:108px;background:rgba(246,245,243,.94);backdrop-filter:blur(20px);z-index:4;border-bottom:.5px solid rgba(0,0,0,.12)}
+.nav{position:absolute;top:54px;left:0;right:0;height:54px;display:flex;align-items:center;padding:0 14px 0 8px;gap:8px;z-index:5}
+.back{display:flex;align-items:center;gap:2px;font:400 17px var(--ui);color:#000}
+.back .n{background:#e9e9eb;border-radius:12px;padding:2px 8px;font-size:15px;font-weight:500}
+.avatar{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;border:.5px solid rgba(0,0,0,.08);flex:0 0 auto}
+.who{flex:1;min-width:0;line-height:1.15}
+.who b{display:block;font:600 17px var(--ui);letter-spacing:-.3px}
+.who span{font-size:12.5px;color:#667781}
+.acts{display:flex;gap:22px;align-items:center}
+.chat{position:absolute;top:108px;left:0;right:0;bottom:0;padding:8px 0 0;display:flex;flex-direction:column;gap:3px;z-index:1}
+.chip{align-self:center;background:#fff;color:#54656f;font:500 12.5px var(--ui);padding:5px 12px;border-radius:8px;margin:8px 0 6px;box-shadow:0 1px .5px rgba(11,20,26,.13)}
+.b{position:relative;max-width:318px;padding:6px 9px 8px 10px;border-radius:9px;font-size:16.2px;line-height:1.32;white-space:normal;overflow-wrap:break-word;box-shadow:0 1px .5px rgba(11,20,26,.13);letter-spacing:-.15px}
+.b .e{font-family:var(--emoji);font-size:15px}
+.b b{font-weight:600}
+.in{align-self:flex-start;margin-left:16px;background:#fff;border-top-left-radius:0}
+.out{align-self:flex-end;margin-right:16px;background:#d9fdd3;border-top-right-radius:0}
+.in.tail::before{content:"";position:absolute;left:-8px;top:0;border-width:0 9px 10px 0;border-style:solid;border-color:transparent #fff transparent transparent}
+.out.tail::before{content:"";position:absolute;right:-8px;top:0;border-width:0 0 10px 9px;border-style:solid;border-color:transparent transparent transparent #d9fdd3}
+.in:not(.tail),.out:not(.tail){border-radius:9px}
+.t{float:right;margin:8px 0 -5px 10px;font-size:11.5px;color:#667781;line-height:1;display:inline-flex;gap:3px;align-items:center;position:relative;top:4px}
+.gap{height:6px}
+.bottom{position:absolute;left:0;right:0;bottom:0;height:88px;background:rgba(246,245,243,.96);backdrop-filter:blur(20px);border-top:.5px solid rgba(0,0,0,.12);z-index:4}
+.bar{position:absolute;top:8px;left:12px;right:12px;height:38px;display:flex;align-items:center;gap:12px}
+.field{flex:1;height:36px;border-radius:18px;background:#fff;border:.5px solid rgba(0,0,0,.15);display:flex;align-items:center;justify-content:flex-end;padding:0 10px}
+.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:139px;height:5px;border-radius:3px;background:#000}
+.down{position:absolute;right:14px;bottom:100px;width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);z-index:4;display:flex;align-items:center;justify-content:center}
+.down i{position:absolute;top:-6px;right:-4px;background:#25d366;color:#fff;font:700 11.5px/18px var(--ui);min-width:18px;height:18px;border-radius:9px;text-align:center;font-style:normal;padding:0 5px}
+</style>
+
+<div class="wrap">
+  <div class="row" id="row"></div>
+</div>
+
+<script>
+const ICON = `<svg width="24" height="30" viewBox="0 0 981.45 1248.02"><path fill="#2793ff" d="M929.47,936.45c7.28-30.46-4.89-52.84-35-61.5-53.62-15.42-105.37-36.09-157.71-55.09-6.72-2.46-8.06-5.06-6-11.83,5.34-17.3,10-34.79,14.54-52.32,21.47-83.38,40.15-167.38,52.84-252.56,1.89-12.63,7.22-18.82,18.55-24.48,68.14-33.92,122.63-82.18,151.62-154.3,20.05-49.9,18.52-99.14-13.68-144.45-49-69-141.46-70.09-191-2.12-18.28,25.06-26.85,54.33-32.52,84.48-8.62,45.71-10.45,92.22-16.49,138.25-1.15,8.85-4.34,11.88-12.89,13.11-72.48,10.5-135.83-9-190.77-56.95-14.2-12.36-14.14-12.28.69-24.22,55.34-44.54,99.26-97.16,114.32-168.66,10.41-49.43,0-94.16-37.74-129.59-41-38.49-109.81-45-163.11-17.13C371,45.34,345.18,92.82,334.94,150.35c-9.17,51.62-.05,101.44,19,149.57,3.79,9.56,1.67,12.46-7,15.84-87.43,34.4-195.84,48.54-289.53,38-29.25-3.3-53.63,13.91-57,40.59-3.15,24.9,13,53.07,45.17,56.65,116.91,13,247-5.75,354.68-52,7.95-3.42,12.46-3.41,18.81,3.56,72.41,79.39,162.41,116.61,269.84,110.55,10-.56,8.2,4.27,7.17,10.16-10.79,60.87-23.32,121.37-38.14,181.38-5.89,23.89-12.66,47.55-18.52,71.44-1.94,7.83-5,10.52-13.25,7.89-10-3.23-20.48-5.27-30.83-7.5-61.7-13.23-123.9-18.55-186-4.69-106.27,23.7-182.79,83.75-216.15,189.62-26.13,82.94-5.15,157.05,52.6,221.23,17.11,19,38.42,32.48,60.44,44.94l15.16,6.33c2.25-.42,4.13.35,6,1.25h0a32.5,32.5,0,0,0,3.61,1.64c12.56,4.36,25.07,8.41,38.51,10,37.77,4.37,73.7-3,108.36-16.84,57.44-22.92,101.36-62.6,135.61-113.39,32.18-47.75,53-100.85,72.29-154.67q6.93-19.27,13.48-38.68c2.38-7,6.57-8.54,13.45-5.6,15.71,6.67,31.85,12.31,47.81,18.33,35.52,13.4,71.64,24.8,108,35.56,10.44,3.09,20.71,2.64,31.21-.74,13.74-4.43,22.15-14,27.94-26.48l1.58-3.79A23,23,0,0,1,929.47,936.45ZM836.72,246.53a8.92,8.92,0,0,1,.42-.94c4.82-8.94,10.83-18.82,20.78-19.9,12.54-1.36,19,11.17,22.93,22,5.6,15.46,1.62,30.69-4.71,44.72-12.82,28.49-33,51.32-59.67,72C822.42,323.2,821.27,283.5,836.72,246.53Zm-395.36,8.13c-13-39.2-18.07-78.58-1.52-118,10.39-24.75,34.75-40,59.78-38.55,21.36,1.27,33,14.14,32,35.55-.58,12.82-4.7,24.72-9.71,36.43-16.13,35.29-41.83,62.64-71.88,86.41C446,259.69,443.39,260.74,441.36,254.66ZM296,1086.3c-28.9-55.89-16.35-107.43,21.79-154.22,36.95-45.31,87.14-64.09,143.71-69.17,47.59-4.26,93.89,3.89,140,14.43,6.16,1.41,5.29,4.54,3.92,8.89-10.2,31.91-21,63.59-39.35,108.17-11.22,28.3-32.19,67.71-64,100.21-25.17,25.67-55,43.65-90.88,50.41C359.06,1154.83,318.77,1130.36,296,1086.3Z"/></svg>`;
+const SVGI = {
+  signal:`<svg width="19" height="12" viewBox="0 0 19 12"><rect x="0" y="8" width="3.2" height="4" rx="1" fill="#000"/><rect x="5" y="5.5" width="3.2" height="6.5" rx="1" fill="#000"/><rect x="10" y="3" width="3.2" height="9" rx="1" fill="#000"/><rect x="15" y="0" width="3.2" height="12" rx="1" fill="#000"/></svg>`,
+  wifi:`<svg width="17" height="12" viewBox="0 0 17 12"><path d="M8.5 2.3c2.4 0 4.6.9 6.3 2.5l1.2-1.2C14 1.6 11.4.6 8.5.6S3 1.6 1 3.6l1.2 1.2C3.9 3.2 6.1 2.3 8.5 2.3zm0 3.4c1.5 0 2.9.6 3.9 1.5l1.2-1.2c-1.4-1.3-3.2-2-5.1-2s-3.7.7-5.1 2l1.2 1.2c1-.9 2.4-1.5 3.9-1.5zm0 3.4c.6 0 1.2.2 1.6.6L8.5 11.3 6.9 9.7c.4-.4 1-.6 1.6-.6z" fill="#000"/></svg>`,
+  battery:`<svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.8" fill="none" stroke="#000" stroke-opacity=".38"/><rect x="2" y="2" width="16.5" height="9" rx="2.4" fill="#000"/><path d="M25 4.5v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" fill="#000" fill-opacity=".4"/></svg>`,
+  chevron:`<svg width="12" height="20" viewBox="0 0 12 20"><path d="M10 2 2 10l8 8" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  video:`<svg width="26" height="18" viewBox="0 0 26 18"><rect x="1" y="2" width="16" height="14" rx="3.5" fill="none" stroke="#000" stroke-width="1.8"/><path d="M18 7.2 24 3.6v10.8L18 10.8z" fill="none" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  phone:`<svg width="20" height="20" viewBox="0 0 24 24"><path d="M6.6 2.8 9.2 2.3l2 4.6-2.1 1.7a12 12 0 0 0 6.3 6.3l1.7-2.1 4.6 2-.5 2.6c-.2 1-1.1 1.7-2.1 1.7C10.3 19.1 4.9 13.7 4.9 4.9c0-1 .7-1.9 1.7-2.1z" fill="none" stroke="#000" stroke-width="1.7" stroke-linejoin="round"/></svg>`,
+  plus:`<svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3v16M3 11h16" stroke="#000" stroke-width="2" stroke-linecap="round"/></svg>`,
+  sticker:`<svg width="20" height="20" viewBox="0 0 20 20"><path d="M17.5 11.5V5.5a3 3 0 0 0-3-3h-9a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h6m6.5-6-6.5 6m6.5-6h-3.5a3 3 0 0 0-3 3V17.5" fill="none" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/></svg>`,
+  camera:`<svg width="24" height="20" viewBox="0 0 24 20"><path d="M3.5 5h3.2l1.6-2.4h7.4L17.3 5h3.2A1.5 1.5 0 0 1 22 6.5v10a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 16.5v-10A1.5 1.5 0 0 1 3.5 5z" fill="none" stroke="#000" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="3.8" fill="none" stroke="#000" stroke-width="1.7"/></svg>`,
+  mic:`<svg width="16" height="22" viewBox="0 0 16 22"><rect x="4.5" y="1" width="7" height="12.5" rx="3.5" fill="none" stroke="#000" stroke-width="1.7"/><path d="M1.5 10a6.5 6.5 0 0 0 13 0M8 16.5V21" fill="none" stroke="#000" stroke-width="1.7" stroke-linecap="round"/></svg>`,
+  down:`<svg width="16" height="10" viewBox="0 0 16 10"><path d="m2 2 6 6 6-6" fill="none" stroke="#54656f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  checks:`<svg width="17" height="11" viewBox="0 0 17 11"><path d="m1 6 3.2 3.2L10.5 1.5M7.5 8.6l.7.6 6.3-7.7" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+};
+
+// Fondo tipo garabatos de WhatsApp (dibujado aquí, trazos muy suaves)
+const doodle = (()=>{const c="%23000",o="0.065";const s=`<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'><g fill='none' stroke='${c}' stroke-opacity='${o}' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M22 30c6-10 20-10 22 2 2 10-12 18-22 26-10-8-24-16-22-26 2-12 16-12 22-2z'/><circle cx='92' cy='26' r='12'/><path d='M86 24h2M96 24h2M86 31c3 3 9 3 12 0'/><path d='M150 18l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z'/><rect x='200' y='14' width='34' height='24' rx='5'/><path d='M206 22h22M206 29h14'/><path d='M20 92c10-14 30-14 38 0'/><path d='M24 98h30l-4 20H28z'/><path d='M96 80v34M86 90l10-10 10 10'/><circle cx='150' cy='98' r='16'/><path d='M140 98h20M150 88v20'/><path d='M196 84c14 0 24 10 24 24h-48c0-14 10-24 24-24zM192 84l4-8 4 8'/><path d='M230 120c8 0 12 6 12 12s-6 12-12 12'/><path d='M18 170l14-24 14 24z'/><circle cx='32' cy='162' r='3'/><path d='M80 150c0 20 30 20 30 0M80 150h30'/><path d='M140 146c10 0 18 8 18 18s-8 18-18 18-18-8-18-18'/><path d='M140 154v10l6 6'/><path d='M190 150h40v26h-40zM190 150l20 14 20-14'/><path d='M20 220c8-12 20-12 28 0s20 12 28 0'/><path d='M100 206c-6 6-6 18 0 24M112 206c6 6 6 18 0 24M106 204v28'/><circle cx='160' cy='222' r='6'/><circle cx='176' cy='212' r='4'/><circle cx='174' cy='232' r='3'/><path d='M206 206l20 30M226 206l-20 30'/><path d='M238 236c4-6 12-6 16 0'/></g></svg>`;return `url("data:image/svg+xml;utf8,${s}")`})();
+document.documentElement.style.setProperty("--doodle", doodle);
+
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const EMO = /(\p{Extended_Pictographic}(?:️|‍\p{Extended_Pictographic})*)/gu;
+const fmt = s => esc(s).replace(new RegExp(EMO.source+" ?","gu"),"").replace(/ +([.,])/g,"$1").replace(/\*([^*\n]+)\*/g,"<b>$1</b>").replace(/\n/g,"<br>");
+
+function bubble(m){
+  if(m.chip) return `<div class="chip">${m.chip}</div>`;
+  if(m.gap) return `<div class="gap"></div>`;
+  const cls = (m.out?"out":"in")+(m.tail?" tail":"");
+  const t = `<span class="t">${m.h}${m.out?SVGI.checks:""}</span>`;
+  return `<div class="b ${cls}">${fmt(m.x)}${t}</div>`;
+}
+function phone(s){
+  return `<div class="phone">
+    <div class="wall"></div>
+    <div class="top"></div>
+    <div class="status"><span>${s.hora}</span><div class="island"></div><span class="sicons">${SVGI.signal}${SVGI.wifi}${SVGI.battery}</span></div>
+    <div class="nav"><span class="back">${SVGI.chevron}<span class="n">${s.unread}</span></span>
+      <span class="avatar">${ICON}</span>
+      <span class="who"><b>Saludly</b><span>Cuenta de empresa</span></span>
+      <span class="acts">${SVGI.video}${SVGI.phone}</span></div>
+    <div class="chat" style="${s.abajo?"top:auto;bottom:96px;justify-content:flex-end":`top:${108 - (s.scroll||0)}px`}">${s.msgs.map(bubble).join("")}</div>
+    ${s.down?`<div class="down">${SVGI.down}${s.down>0?`<i>${s.down}</i>`:""}</div>`:""}
+    <div class="bottom"><div class="bar">${SVGI.plus}<div class="field">${SVGI.sticker}</div>${SVGI.camera}${SVGI.mic}</div><div class="home"></div></div>
+  </div>`;
+}
+
+const BIENV = (n,o)=>`¡Hola, ${n}! 🌱 Qué bueno tenerte en Saludly. Durante 7 días te acompaño con ${o}. A las 7 de la mañana te llegan tus consejos, a las 9 tu receta, a las 6 de la tarde algo que solo cuenta tu sangre y a las 7:30 de la noche más consejos. Día de por medio, a la 1, uno para bajarle al estrés. Si en algún momento no quieres recibir más, escribe BAJA.`;
+
+const SHOTS = [
+ {id:"runners", titulo:"Runners", para:"Mensaje 4 · adidas Runners, Colombian Runners, Run Colina",
+  nota:"Andrés eligió maratón y rendimiento. Escribió anoche a las 9:14, recibió la bienvenida, y su día 1 empezó hoy a las 7 con los consejos de la mañana: el 80/20 de los kilómetros suaves y el entrenamiento por bloques.",
+  hora:"7:03", unread:3, abajo:true, msgs:[
+   {chip:"Ayer"},
+   {out:true,tail:true,h:"9:14 p.m.",x:"Hola, soy Andrés. Quiero empezar mi semana de recetas en Saludly. Mi código es 4f9c2a."},
+   {gap:1},
+   {in:true,tail:true,h:"9:14 p.m.",x:BIENV("Andrés","tus objetivos: correr una maratón o carrera larga y mejorar tu rendimiento o entrenamiento")},
+   {chip:"Hoy"},
+   {in:true,tail:true,h:"7:00 a.m.",x:"*Día 1 de 7* · Tus consejos de la mañana\n\n🏃 *Correr una maratón o carrera larga*\nCasi 8 de cada 10 kilómetros de tu semana deberían ser suaves, a un ritmo en el que puedas conversar en frases completas. Si hoy no puedes hablar con quien corre a tu lado, vas más rápido de lo que tu plan necesita.\n\n⚡ *Mejorar mi rendimiento o entrenamiento*\nSi buscas fuerza, organiza tu entrenamiento en bloques: unas semanas de más volumen y otras de más peso. Variar cada día no es lo mismo que progresar."}
+  ]},
+ {id:"mamas", titulo:"Mamás", para:"Mensaje 5 · Mamás amigas y planes, WikiMamás, consejos de mamás a mamás",
+  nota:"Laura eligió bajar de peso y dormir mejor. Es la receta del día 1 que le tocó: albóndigas con avena en salsa de tomate y pasta integral, con calorías y proteína por porción. La captura está tomada subiendo un poco en el chat, por eso aparece la flecha para bajar.",
+  hora:"9:04", unread:1, scroll:0, down:1, msgs:[
+   {chip:"Hoy"},
+   {in:true,tail:true,h:"9:00 a.m.",x:"🍽️ *Receta del día: Albóndigas de res en salsa de tomate con pasta integral*\nAlmuerzo · 40 min · 2 porciones\n\n*Por porción:* 571 kcal · proteína 40 g · carbohidratos 60 g · grasa 21 g · fibra 10 g · sodio 1.014 mg\n\n*Ingredientes*\n• 1/2 libra de carne molida magra 90/10 (cruda)\n• 1 clara (clara de huevo)\n• 2 cucharadas de avena en hojuelas (cruda)\n• 1 taza de salsa de tomate natural\n• 2 tazas escasas de pasta integral cocida\n• 1/2 cebolla (cebolla cabezona)\n• 1 diente de ajo\n• 1 puñado de perejil\n• 2 tazas de espinaca\n• 2 cucharaditas de aceite de oliva\n• una pizca de sal\n\n*Preparación*\n1. Mezcla la carne con la clara, la avena, la mitad del ajo y perejil picado.\n2. Forma albóndigas pequeñas y dóralas en el aceite.\n3. Agrega la cebolla, el resto del ajo y la salsa de tomate, tapa y cocina 15 minutos.\n4. Añade la espinaca al final, ajusta la sal y sirve sobre la pasta.\n\n💡 La avena en las albóndigas reemplaza el pan rallado y suma fibra."}
+  ]},
+ {id:"peso", titulo:"Bajar de peso", para:"Mensajes 3 y 7 · grupos de barrio (centro y occidente), Kennedy, Mujeres en Bici, Fitness bogotá",
+  nota:"Diana eligió bajar de peso. Se ven su consejo de las 7 (medio kilo a un kilo por semana) y la receta de las 9: ensalada de pollo, mazorca y aguacate, que sigue hacia abajo.",
+  hora:"9:02", unread:2, scroll:0, down:1, msgs:[
+   {chip:"Hoy"},
+   {in:true,tail:true,h:"7:00 a.m.",x:"*Día 1 de 7* · Tus consejos de la mañana\n\n⚖️ *Bajar de peso*\nBajar entre medio kilo y un kilo por semana es lo que mejor se mantiene. Si pesas 80 kg, perder 4 a 8 kg ya cambia tu azúcar, tu presión y tu hígado."},
+   {gap:1},
+   {in:true,tail:true,h:"9:00 a.m.",x:"🍽️ *Receta del día: Ensalada completa de pollo, mazorca y aguacate*\nAlmuerzo · 25 min · 2 porciones\n\n*Por porción:* 524 kcal · proteína 42 g · carbohidratos 49 g · grasa 21 g · fibra 10 g · sodio 336 mg\n\n*Ingredientes*\n• 1 pechuga grande (pechuga de pollo sin piel (cruda))\n• 1 taza de granos (mazorca tierna (granos))\n• 3 tazas de lechuga\n• 1 tomate grande (tomate chonto)\n• 1 zanahoria rallada\n• 1/2 aguacate\n• 1 papa grande (papa cocida)\n• 1 limón\n• 1 cucharada de aceite de oliva\n• 1 pizca de orégano seco\n• una pizca de sal\n\n*Preparación*\n1. Asa la pechuga con orégano y córtala en tiras.\n2. Mezcla lechuga, tomate, zanahoria, mazorca y papa en cubos.\n3. Agrega el pollo y el aguacate.\n4. Aliña con limón, aceite de oliva y una pizca de sal.\n\n💡 Una ensalada es almuerzo completo cuando lleva proteína, un carbohidrato y grasa buena."}
+  ]}
+];
+
+const row = document.getElementById("row");
+const solo = new URLSearchParams(location.search).get("shot");
+if (solo) {
+  // Modo exportación: una sola pantalla a 402 × 874, sin nada alrededor
+  document.body.innerHTML = phone(SHOTS.find(s => s.id === solo));
+  document.body.style.margin = "0";
+  document.body.style.background = "#efeae2";
+}
+else SHOTS.forEach(s=>{
+  const el=document.createElement("div");el.className="item";el.id=s.id;
+  el.innerHTML=`<div class="shot-box"><div class="scaler">${phone(s)}</div></div><p>${s.titulo}</p>`;
+  row.appendChild(el);
+});
+function fit(){document.querySelectorAll(".shot-box").forEach(b=>{b.querySelector(".scaler").style.transform=`scale(${b.clientWidth/402})`})}
+fit();addEventListener("resize",fit);
+</script>

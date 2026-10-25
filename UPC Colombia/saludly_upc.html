@@ -1,0 +1,670 @@
+<title>Saludly y la UPC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: informe clínico de una columna (68ch) con paneles anchos para datos; papel de laboratorio frío, tinta azul petróleo, ámbar para lo que es supuesto */
+:root{
+  --bg:#f4f6f6; --paper:#ffffff; --fg:#14212a; --muted:#56646d; --faint:#8a979e;
+  --line:#dbe2e4; --soft:#e9eff0;
+  --accent:#0d6b77; --accent-soft:#d9eef0; --accent-ink:#0a5560;
+  --amber:#a8650a; --amber-soft:#fbefd9;
+  --bar:#0d6b77; --bar2:#7fb8bf;
+  --crit:#b63a3a;
+  --f-display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --w-text:44rem; --w-wide:68rem;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1417; --paper:#151d21; --fg:#e4ebed; --muted:#a3b1b7; --faint:#71818a;
+  --line:#26333a; --soft:#1b262b;
+  --accent:#4fb4c0; --accent-soft:#16343a; --accent-ink:#8fd3db;
+  --amber:#e3a548; --amber-soft:#33270f;
+  --bar:#4fb4c0; --bar2:#2b6d75; --crit:#e07070; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e1417; --paper:#151d21; --fg:#e4ebed; --muted:#a3b1b7; --faint:#71818a;
+  --line:#26333a; --soft:#1b262b;
+  --accent:#4fb4c0; --accent-soft:#16343a; --accent-ink:#8fd3db;
+  --amber:#e3a548; --amber-soft:#33270f;
+  --bar:#4fb4c0; --bar2:#2b6d75; --crit:#e07070; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16.5px;line-height:1.62;padding-inline:clamp(16px,4vw,40px);padding-block:0 64px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:600}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+.wrap{max-width:var(--w-wide);margin-inline:auto}
+.text{max-width:var(--w-text)}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Encabezado */
+.masthead{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;align-items:baseline;padding-block:18px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--f-display);font-weight:700;font-size:1.1rem;letter-spacing:.01em}
+.brand span{color:var(--accent)}
+nav.toc{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.88rem}
+nav.toc a{color:var(--muted);text-decoration:none}
+nav.toc a:hover{color:var(--fg);text-decoration:underline}
+
+/* Portada */
+.hero{padding-block:56px 40px;display:grid;gap:28px}
+.hero h1{font-size:clamp(2.2rem,5.6vw,3.9rem);font-weight:600;letter-spacing:-.01em;max-width:18ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.18rem;color:var(--muted);max-width:var(--w-text)}
+.answer{display:grid;gap:14px;max-width:var(--w-text);padding:0;margin:0;list-style:none;counter-reset:a}
+.answer li{display:grid;grid-template-columns:2.2rem 1fr;gap:4px 12px;counter-increment:a}
+.answer li::before{content:counter(a);font-family:var(--f-mono);font-size:.85rem;color:var(--accent-ink);background:var(--accent-soft);border-radius:50%;width:1.9rem;height:1.9rem;display:grid;place-items:center;margin-top:.1rem}
+.answer b{font-weight:600}
+.oneliner{font-family:var(--f-display);font-size:1.3rem;line-height:1.4;border-left:3px solid var(--accent);padding:4px 0 4px 18px;max-width:var(--w-text)}
+
+/* Indicadores */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stat{background:var(--paper);padding:18px 18px 16px;display:grid;gap:4px;align-content:start}
+.stat .v{font-family:var(--f-display);font-size:2rem;font-weight:600;line-height:1.05}
+.stat .l{font-size:.9rem;color:var(--muted)}
+.stat .s{font-family:var(--f-mono);font-size:.7rem;color:var(--faint);letter-spacing:.03em}
+
+section.block{padding-block:56px 8px;display:grid;grid-template-columns:minmax(0,1fr);gap:22px;scroll-margin-top:12px}
+.hero{grid-template-columns:minmax(0,1fr)}
+section.block > *,.hero > *{min-width:0}
+.sec-head{display:grid;gap:8px}
+.prose{display:grid;gap:14px}
+
+/* Conversatorios */
+.talks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.talk{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.talk .who{font-size:.85rem;color:var(--muted)}
+.talk h3{font-size:1.08rem}
+.talk .idea{font-size:.95rem}
+.talk .for{font-size:.9rem;background:var(--accent-soft);border-radius:6px;padding:8px 10px}
+.talk .for b{color:var(--accent-ink);font-weight:600}
+.talk a{font-size:.82rem;font-family:var(--f-mono)}
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 28px;max-width:var(--w-wide)}
+.themes div{border-top:1px solid var(--line);padding-top:10px;font-size:.94rem}
+.themes b{display:block;font-weight:600;margin-bottom:2px}
+
+/* Cadena del problema */
+.chain{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;counter-reset:c}
+.step{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 12px 14px;display:grid;gap:6px;align-content:start;counter-increment:c;min-width:0}
+.step::before{content:counter(c);font-family:var(--f-mono);font-size:.72rem;color:var(--faint)}
+.step b{font-size:.95rem;font-weight:600;line-height:1.3}
+.step span{font-size:.84rem;color:var(--muted);line-height:1.45}
+.step.hit{border-color:var(--accent);background:var(--accent-soft)}
+.step.cost{border-color:color-mix(in srgb,var(--crit) 45%,var(--line))}
+.chain-legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.86rem;color:var(--muted)}
+.chain-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1px solid var(--accent);background:var(--accent-soft)}
+.chain-legend i.c{border-color:color-mix(in srgb,var(--crit) 45%,var(--line));background:var(--paper)}
+@media (max-width:860px){.chain{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.facts{display:grid;gap:8px;padding-left:1.1rem;margin:0}
+.facts li::marker{color:var(--accent)}
+
+/* Dolores */
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{font:inherit;font-size:.95rem;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--fg);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.pains{display:grid;gap:10px}
+.pain{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pain > div{padding:14px 16px;min-width:0}
+.pain .p{border-right:1px solid var(--line)}
+.pain .p small,.pain .r small{display:block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.pain .r{background:color-mix(in srgb,var(--accent-soft) 55%,var(--paper))}
+.pain .src{font-size:.82rem;color:var(--muted);margin-top:6px}
+@media (max-width:640px){.pain{grid-template-columns:1fr}.pain .p{border-right:0;border-bottom:1px solid var(--line)}}
+.note{font-size:.95rem;border:1px dashed var(--line);border-radius:8px;padding:12px 14px;color:var(--muted);max-width:var(--w-text)}
+.note b{color:var(--fg)}
+
+/* Palancas */
+.levers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.lever{border-top:3px solid var(--accent);padding-top:12px;display:grid;gap:8px;align-content:start}
+.lever .k{font-family:var(--f-mono);font-size:.72rem;color:var(--faint)}
+.lever p{font-size:.92rem}
+.lever .m{font-size:.82rem;color:var(--muted)}
+.lever.q{border-top-color:var(--line)}
+
+/* Modelo */
+.model{background:var(--paper);border:1px solid var(--line);border-radius:12px;display:grid;grid-template-columns:minmax(0,22rem) minmax(0,1fr);overflow:hidden}
+.controls{padding:20px;border-right:1px solid var(--line);display:grid;gap:18px;align-content:start;background:var(--soft)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper)}
+.seg button{font:inherit;font-size:.88rem;padding:8px 4px;border:0;background:transparent;color:var(--fg);cursor:pointer}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--paper)}
+.field{display:grid;gap:6px}
+.field label{display:flex;justify-content:space-between;gap:10px;font-size:.9rem}
+.field output{font-family:var(--f-mono);font-size:.85rem;color:var(--accent-ink)}
+.field .hint{font-size:.78rem;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.results{padding:20px 22px;display:grid;gap:20px;min-width:0}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.big div{display:grid;gap:2px}
+.big .v{font-family:var(--f-display);font-size:1.9rem;font-weight:600;line-height:1.1}
+.big .l{font-size:.86rem;color:var(--muted)}
+.big .v.hl{color:var(--accent-ink)}
+.chart-title{font-size:.95rem;font-weight:600}
+.chart-sub{font-size:.82rem;color:var(--muted)}
+#bars{width:100%;height:auto;display:block;overflow:visible}
+#bars text{font-family:var(--f-body);fill:var(--fg)}
+#bars .lbl{font-size:13px}
+#bars .val{font-size:12.5px;font-family:var(--f-mono);fill:var(--muted)}
+#bars .grid{stroke:var(--line);stroke-width:1}
+#bars .b{fill:var(--bar)}
+#bars .hit{fill:transparent;cursor:default}
+#bars g.row:hover .b{fill:var(--accent-ink)}
+.meter{display:grid;gap:8px}
+.meter .track{position:relative;height:14px;background:var(--soft);border-radius:4px;border:1px solid var(--line);overflow:hidden}
+.meter .fill{position:absolute;inset:0 auto 0 0;background:var(--bar);border-radius:3px 0 0 3px;transition:width .35s ease}
+.meter .cap{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);font-family:var(--f-mono)}
+.tip{position:fixed;pointer-events:none;z-index:9;background:var(--fg);color:var(--bg);font-size:.82rem;line-height:1.45;padding:8px 10px;border-radius:6px;max-width:280px;box-shadow:0 6px 20px rgb(0 0 0/.18)}
+@media (max-width:820px){.model{grid-template-columns:1fr}.controls{border-right:0;border-bottom:1px solid var(--line)}}
+.assume{font-size:.84rem;color:var(--muted);display:grid;gap:6px}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;padding:1px 6px;border-radius:4px;background:var(--amber-soft);color:var(--amber);vertical-align:1px}
+
+.read{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.read div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start}
+.read b{font-weight:600}
+.read p{font-size:.93rem;color:var(--muted)}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.88rem}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;background:var(--soft);font-size:.82rem}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+details{max-width:var(--w-wide)}
+summary{cursor:pointer;font-weight:600;font-size:.95rem;padding-block:6px}
+
+.upc-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.upc-flow div{display:grid;gap:6px;align-content:start;border-left:2px solid var(--accent);padding-left:14px}
+.upc-flow b{font-family:var(--f-display);font-size:1.08rem;font-weight:600}
+.upc-flow p{font-size:.93rem;color:var(--muted)}
+@media (max-width:700px){.upc-flow{grid-template-columns:1fr}}
+
+/* Futuro */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px 32px}
+.why div{display:grid;gap:6px}
+.why b{font-family:var(--f-display);font-size:1.15rem;font-weight:600}
+.why p{font-size:.95rem;color:var(--muted)}
+.pitch{display:grid;gap:10px}
+.pitch figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:4px 18px}
+.pitch figcaption{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);padding-top:.25rem}
+.pitch blockquote{margin:0;font-family:var(--f-display);font-size:1.08rem;line-height:1.45}
+@media (max-width:600px){.pitch figure{grid-template-columns:1fr}}
+
+.todo{display:grid;gap:10px;padding:0;margin:0;list-style:none;max-width:var(--w-text)}
+.todo li{display:grid;grid-template-columns:1.2rem 1fr;gap:10px;font-size:.96rem}
+.todo li::before{content:"";width:12px;height:12px;border:1.5px solid var(--amber);border-radius:3px;margin-top:.42rem}
+
+.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;font-size:.88rem}
+.sources ol,.sources ul{margin:6px 0 0;padding-left:1.2rem;display:grid;gap:6px}
+.sources p{color:var(--muted);margin-top:8px}
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="brand">Saludly<span>.</span> Brain</div>
+    <nav class="toc" aria-label="Secciones">
+      <a href="#conversatorios">Conversatorios</a>
+      <a href="#problema">El problema</a>
+      <a href="#dolores">Dolores</a>
+      <a href="#palancas">Palancas</a>
+      <a href="#modelo">Modelo de ahorro</a>
+      <a href="#futuro">El futuro</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Informe estratégico · Bogotá, 12 de octubre de 2026</div>
+    <h1>¿Cómo ayuda Saludly a bajar el costo de la <em>UPC</em>?</h1>
+    <p class="lede">Análisis de los 7 Conversatorios ADRES y del producto Saludly Brain: los dolores del paciente, del médico y de la institución, cómo los ataca Saludly y cuánto podría ahorrar una EPS.</p>
+    <ol class="answer">
+      <li><span><b>Encuentra antes las crónicas que ya existen y nadie ha visto</b> (diabetes, riñón, riesgo cardiovascular, hígado graso, anemia, tiroides), cuando controlarlas es barato, y evita que lleguen tarde a diálisis, a un infarto o a una amputación.</span></li>
+      <li><span><b>Convierte un examen que el sistema ya paga en una decisión.</b> Lee el PDF del laboratorio, evalúa más de 100 biomarcadores con reglas clínicas, le dice al médico a quién atender primero y le explica al paciente qué hacer.</span></li>
+      <li><span><b>Deja datos limpios, trazables y comparables</b>, que es lo que necesita un pagador para pagar por resultados y no por actividades.</span></li>
+    </ol>
+    <p class="oneliner">Saludly no le vende más exámenes a la EPS: le saca valor a los que ya paga y frena la curva de costo de las crónicas.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><span class="v num">35–40%</span><span class="l">de los colombianos tiene una condición crónica; será el 50% en 10 años</span><span class="s">DR. FABIÁN CARDONA</span></div>
+      <div class="stat" role="listitem"><span class="v num">60–70%</span><span class="l">del gasto en salud se va en pacientes crónicos</span><span class="s">DR. FABIÁN CARDONA</span></div>
+      <div class="stat" role="listitem"><span class="v num">+3,5%</span><span class="l">de UPC al año harían falta solo para el crecimiento de las crónicas</span><span class="s">DR. FABIÁN CARDONA</span></div>
+      <div class="stat" role="listitem"><span class="v num">$1.658.912</span><span class="l">UPC contributiva por afiliado en 2026 ($1.541.706 en el subsidiado)</span><span class="s">RESOLUCIÓN 2764 DE 2025</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="conversatorios">
+    <div class="sec-head">
+      <div class="eyebrow">01 · La evidencia</div>
+      <h2>Qué dicen los 7 conversatorios</h2>
+      <p class="text" style="color:var(--muted)">La lista #ConversatoriosADRES ("el camino para ser un pagador inteligente") reúne siete conversaciones conducidas por Daniel Garavito, asesor de innovación y analítica de la ADRES. Se analizaron las transcripciones completas.</p>
+    </div>
+    <div class="talks">
+      <article class="talk">
+        <div class="who">Dr. Fabián Cardona · Corporación de Centros Expertos</div>
+        <h3>Las condiciones crónicas y la generación de valor</h3>
+        <p class="idea">Las crónicas crecen el doble de rápido que en los países de referencia y consumen la mayor parte del gasto. Los pacientes llegan tarde, y dejar de buscarlos para que alcance la plata sale más caro.</p>
+        <p class="for"><b>Para Saludly:</b> es el corazón del caso. Encontrar temprano al paciente crónico que ya existe.</p>
+        <a href="https://www.youtube.com/watch?v=zDyf4mEWEgo" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+      <article class="talk">
+        <div class="who">Dr. Luis Pino · oncólogo, Oxler</div>
+        <h3>IA para un sistema predictivo y resolutivo</h3>
+        <p class="idea">Prevenir es economía conductual: la gente no percibe su riesgo. El modelo "médico industrial" deja al médico con consultas de minutos y 20 pacientes en planilla.</p>
+        <p class="for"><b>Para Saludly:</b> el informe traduce el riesgo al caso del paciente, y la vista médica le ahorra minutos al médico.</p>
+        <a href="https://www.youtube.com/watch?v=qG6zP3zGRY8" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+      <article class="talk">
+        <div class="who">Dr. Walberto Buelvas · MediSinú IPS, Córdoba</div>
+        <h3>Tecnología y generación de valor</h3>
+        <p class="idea">Los datos llevan confianza. Ya ve pacientes de 45 a 50 años con tres crónicas. Los costos indirectos superan al costo médico, y la evidencia viene de pacientes de otros países.</p>
+        <p class="for"><b>Para Saludly:</b> reglas ajustadas a Colombia y medición de desenlaces para pagar por valor.</p>
+        <a href="https://www.youtube.com/watch?v=jI1ri51yACE" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+      <article class="talk">
+        <div class="who">Mario Cortés · director de HL7 Colombia</div>
+        <h3>El costo de que los datos no dialoguen</h3>
+        <p class="idea">No interoperar cuesta entre $23.000 y $72.000 por paciente al año. Colombia ya intercambia resúmenes de 3,5 millones de pacientes; el riesgo es ser interoperable sin ser inteligente.</p>
+        <p class="for"><b>Para Saludly:</b> ser la capa inteligente que convierte el resultado en una acción priorizada.</p>
+        <a href="https://www.youtube.com/watch?v=EjRUysxsXuo" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+      <article class="talk">
+        <div class="who">Natalia Ortega · codirectora de HL7 Colombia</div>
+        <h3>Ética y responsabilidad en el uso de IA</h3>
+        <p class="idea">La IA es apoyo a la decisión, no un oráculo. Exige trazabilidad, explicabilidad, datos de calidad y consentimiento; los datos históricos traen sesgos.</p>
+        <p class="for"><b>Para Saludly:</b> umbrales en código auditable y LLM solo para redactar. Es la "caja de cristal" que se pide.</p>
+        <a href="https://www.youtube.com/watch?v=_afEdjVAghc" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+      <article class="talk">
+        <div class="who">Dr. Gustavo Mery · OPS/OMS</div>
+        <h3>Sostenibilidad basada en evidencia</h3>
+        <p class="idea">Colombia financia bien su sistema y tiene un gasto de bolsillo bajo, pero el 25% reporta barreras de acceso. Los sistemas que más rinden apuestan por la atención primaria.</p>
+        <p class="for"><b>Para Saludly:</b> llevar la lectura experta al primer contacto, que es atención primaria aumentada.</p>
+        <a href="https://www.youtube.com/watch?v=h8FLzaRRBHI" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+      <article class="talk">
+        <div class="who">Dr. Jorge Toro · Unión de IPS</div>
+        <h3>Redefiniendo el vínculo ADRES-IPS</h3>
+        <p class="idea">Crisis de caja: 32 billones de deuda, cartera a más de 200 días y giros irregulares. Se habla más de plata que de salud. La auditoría con IA es bienvenida.</p>
+        <p class="for"><b>Para Saludly:</b> no arregla la liquidez, pero ayuda a que la conversación vuelva a los resultados en salud.</p>
+        <a href="https://www.youtube.com/watch?v=ri5BV0UXyq4" target="_blank" rel="noopener">Ver el conversatorio ↗</a>
+      </article>
+    </div>
+    <h3 style="margin-top:8px">Lo que se repite en todas las conversaciones</h3>
+    <div class="themes">
+      <div><b>El tsunami de las crónicas</b>Crece más rápido que en los países de referencia y se lleva la mayor parte del gasto.</div>
+      <div><b>Pagar por valor</b>Bonificar desenlaces, pacientes controlados y hospitalizaciones evitadas, no actividades.</div>
+      <div><b>Datos de calidad primero</b>Sin datos confiables no hay pago inteligente ni IA segura.</div>
+      <div><b>El paciente activo</b>Llega con preguntas de ChatGPT y cambia cuando entiende qué gana.</div>
+      <div><b>Eficiencia antes que más plata</b>"Más recursos" es la solución simple y equivocada.</div>
+      <div><b>Latinoamérica junta</b>Mismo idioma, mismos problemas y una red de fondos públicos de salud.</div>
+    </div>
+  </section>
+
+  <section class="block" id="problema">
+    <div class="sec-head">
+      <div class="eyebrow">02 · El problema de fondo</div>
+      <h2>El sistema encuentra tarde al paciente crónico y paga por lo que hace, no por lo que logra</h2>
+    </div>
+    <div class="chain" role="list" aria-label="Cadena que vuelve cara a una enfermedad crónica">
+      <div class="step" role="listitem"><b>Factores de riesgo</b><span>Sobrepeso, glucosa o presión que suben, sin síntomas.</span></div>
+      <div class="step hit" role="listitem"><b>Enfermedad oculta</b><span>Cerca de 1 de cada 3 diabéticos no lo sabe. El riñón no duele hasta muy tarde.</span></div>
+      <div class="step hit" role="listitem"><b>Examen sin leer</b><span>El laboratorio se toma, pero llega como PDF a una consulta de minutos.</span></div>
+      <div class="step" role="listitem"><b>Diagnóstico tardío</b><span>El paciente llega cuando ya hay daño de órgano.</span></div>
+      <div class="step cost" role="listitem"><b>Complicación</b><span>Diálisis (~$25 millones al año), infarto, ACV, amputación.</span></div>
+      <div class="step cost" role="listitem"><b>Costo social</b><span>Incapacidad, discapacidad y un familiar que deja de trabajar.</span></div>
+    </div>
+    <div class="chain-legend"><span><i></i>Donde actúa Saludly</span><span><i class="c"></i>Donde se va el dinero</span></div>
+    <ul class="facts text">
+      <li>Las crónicas explican el <b>70% de las muertes</b> y el <b>71% de la muerte prematura evitable</b> (Cardona).</li>
+      <li>Los pacientes de la Cuenta de Alto Costo se <b>duplicaron en 5 años</b>; en los países de referencia eso tomaba entre 20 y 30 años (Cardona).</li>
+      <li>La Cuenta de Alto Costo reportó <b>1.502.681 personas con enfermedad renal crónica</b> en 2024-2025, frente a 991.212 en 2022-2023.</li>
+      <li>Cerca del <b>20% de lo que se invierte en salud es desperdicio</b>: exámenes repetidos, trámites inútiles, esperas (Cardona).</li>
+    </ul>
+  </section>
+
+  <section class="block" id="dolores">
+    <div class="sec-head">
+      <div class="eyebrow">03 · Los tres dolores</div>
+      <h2>Qué le duele a cada uno y cómo responde Saludly</h2>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Actor">
+      <button class="tab" role="tab" id="t-pac" aria-selected="true" aria-controls="p-pac">Paciente</button>
+      <button class="tab" role="tab" id="t-med" aria-selected="false" aria-controls="p-med">Médico</button>
+      <button class="tab" role="tab" id="t-ins" aria-selected="false" aria-controls="p-ins">Institución</button>
+    </div>
+    <div class="pains" role="tabpanel" id="p-pac" aria-labelledby="t-pac">
+      <div class="pain"><div class="p"><small>Dolor</small>Se entera tarde: la enfermedad no duele hasta que ya hizo daño.<div class="src">Cardona, Buelvas</div></div><div class="r"><small>Saludly</small>El motor encuentra patrones tempranos (prediabetes, TFG que cae, riesgo cardiovascular, hígado graso) en un examen de sangre de rutina.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>No entiende el resultado ni qué hacer con él.<div class="src">Cardona, Pino</div></div><div class="r"><small>Saludly</small>Informe en idioma paciente: qué es, por qué le aparece con sus valores, qué tan claro es el riesgo y qué falta confirmar. Nunca un diagnóstico.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Busca orientación confiable sobre hábitos y encuentra ruido en internet.<div class="src">Cardona, Pino</div></div><div class="r"><small>Saludly</small>Recomendaciones atadas a sus hallazgos y a los 3 objetivos que elige, más una receta al día por WhatsApp con nutrientes calculados.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>No percibe su riesgo: "eso le pasa a otro".<div class="src">Pino</div></div><div class="r"><small>Saludly</small>El riesgo se explica con sus propios valores y con lo que gana si actúa, en lenguaje positivo.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Repite la historia y los exámenes en cada cita.<div class="src">Cortés, Garavito</div></div><div class="r"><small>Saludly</small>El informe y los datos estructurados viajan con el paciente hasta la vista del médico.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Paga costos indirectos: incapacidad, discapacidad, el cuidador que deja de trabajar.<div class="src">Buelvas</div></div><div class="r"><small>Saludly</small>Evitar la complicación protege también el ingreso de la familia.</div></div>
+    </div>
+    <div class="pains" role="tabpanel" id="p-med" aria-labelledby="t-med" hidden>
+      <div class="pain"><div class="p"><small>Dolor</small>Consultas de minutos con 20 pacientes en planilla.<div class="src">Pino</div></div><div class="r"><small>Saludly</small>Vista médica que ordena los hallazgos por gravedad, con escalamiento y canal sugerido: lo urgente sale primero.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Decide con datos viejos o incompletos.<div class="src">Cortés</div></div><div class="r"><small>Saludly</small>El resultado se lee el mismo día, con 25 cálculos hechos (TFG CKD-EPI, SCORE2 Colombia, FIB-4, HOMA-IR, TyG) y su trazabilidad.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>No sabe si su intervención funcionó.<div class="src">Buelvas</div></div><div class="r"><small>Saludly</small>Cada control repite la lectura con las mismas reglas, así que se compara el antes y el después.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Desconfía de la IA: sesgos, responsabilidad y explicabilidad.<div class="src">Ortega</div></div><div class="r"><small>Saludly</small>Los umbrales los evalúa el código con reglas escritas y versionadas; el LLM solo redacta. Cada hallazgo muestra qué valor lo disparó y la decisión es del médico.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>La evidencia viene de pacientes de otros países.<div class="src">Buelvas</div></div><div class="r"><small>Saludly</small>Hemoglobina corregida por la altitud de Bogotá, SCORE2 recalibrado para Colombia y guías colombianas.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>El paciente llega "diagnosticado" por ChatGPT.<div class="src">Cardona, Garavito</div></div><div class="r"><small>Saludly</small>El paciente llega con un informe serio que lo prepara para la consulta en lugar de confundirlo.</div></div>
+    </div>
+    <div class="pains" role="tabpanel" id="p-ins" aria-labelledby="t-ins" hidden>
+      <div class="pain"><div class="p"><small>Dolor</small>El tsunami de crónicas empuja la UPC un 3,5% al año.<div class="src">Cardona</div></div><div class="r"><small>Saludly</small>Detección temprana y control de las condiciones que más gastan: diabetes, riñón y cardiovascular.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Las crónicas llegan tarde y caras, y la EPS prefiere no buscarlas.<div class="src">Cardona</div></div><div class="r"><small>Saludly</small>Cambia la ecuación: encontrarlas pronto cuesta menos que pagar la complicación.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Datos de mala calidad que no sirven para pagar por resultados.<div class="src">Ortega, Cortés, Buelvas</div></div><div class="r"><small>Saludly</small>Salida estructurada con estados claros (no medido, no detectable, menor que el límite, inválido). Nunca inventa un cero.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Pagar por valor exige medir desenlaces y pacientes controlados.<div class="src">Cardona, Buelvas, Pino</div></div><div class="r"><small>Saludly</small>Indicadores por cohorte: cuántos están en meta, cuántos mejoraron y cuántos escalaron.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Desperdicio: exámenes repetidos y trámites.<div class="src">Cardona, Cortés</div></div><div class="r"><small>Saludly</small>Un solo panel bien leído reemplaza órdenes sueltas y repetidas.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Faltan especialistas en el territorio.<div class="src">Cardona, Pino</div></div><div class="r"><small>Saludly</small>Lleva la lectura experta al primer nivel y deriva solo lo que lo necesita.</div></div>
+      <div class="pain"><div class="p"><small>Dolor</small>Riesgo legal y de privacidad.<div class="src">Ortega</div></div><div class="r"><small>Saludly</small>Hacia el LLM solo van edad, sexo y valores; nunca nombre ni documento (Ley 1581).</div></div>
+    </div>
+    <p class="note"><b>Lo que Saludly no resuelve:</b> la crisis de liquidez, la deuda acumulada, los giros irregulares, la tarifa del talento humano ni el diseño del aseguramiento. Decirlo en cada reunión da credibilidad.</p>
+  </section>
+
+  <section class="block" id="palancas">
+    <div class="sec-head">
+      <div class="eyebrow">04 · Cómo baja el costo</div>
+      <h2>Cinco palancas de ahorro</h2>
+      <p class="text" style="color:var(--muted)">Cada palanca sale de condiciones que el motor ya evalúa. El modelo cuantifica las cuatro primeras; la quinta queda como beneficio cualitativo para no inflar la cifra.</p>
+    </div>
+    <div class="levers">
+      <div class="lever"><span class="k">M1 · METABÓLICO</span><h3>Diabetes a tiempo</h3><p>Encuentra glucosa, HbA1c, HOMA-IR y TyG alterados en quien no sabe que los tiene.</p><span class="m">Ahorra en complicaciones renales, cardiovasculares, oculares y de pie diabético.</span></div>
+      <div class="lever"><span class="k">M2 · RENAL</span><h3>Riñón protegido</h3><p>TFG con CKD-EPI 2021, cruce con diabetes e hipertensión, confirmación con cistatina C.</p><span class="m">Ahorra entradas a diálisis (~$25 millones al año por paciente).</span></div>
+      <div class="lever"><span class="k">M1 · CARDIOVASCULAR</span><h3>Corazón y vasos</h3><p>SCORE2 recalibrado para Colombia, dislipidemias severas, Lp(a) y presión de la enfermera.</p><span class="m">Ahorra infartos, ACV y hospitalizaciones evitables.</span></div>
+      <div class="lever"><span class="k">TODA LA SALIDA</span><h3>Menos desperdicio</h3><p>Un panel leído, priorizado y estructurado en vez de órdenes sueltas.</p><span class="m">Ahorra exámenes duplicados, consultas para "traer el resultado" y digitación.</span></div>
+      <div class="lever q"><span class="k">M2 · M3 · M4</span><h3>Hallazgos que cambian el manejo</h3><p>Anemia ajustada por altitud, tiroides, hígado graso con FIB-4, B12 y hierro.</p><span class="m">No se cuantifica en el modelo.</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="modelo">
+    <div class="sec-head">
+      <div class="eyebrow">05 · Modelo de ahorro</div>
+      <h2>Cuánto podría ahorrar una EPS con 100.000 afiliados en Bogotá</h2>
+      <p class="text" style="color:var(--muted)">Los valores marcados <span class="tag">SUPUESTO</span> son provisionales y sirven para ordenar la conversación con una EPS; no son resultados medidos. Mueva los controles para ver cómo cambia el ahorro.</p>
+    </div>
+    <div class="model">
+      <div class="controls">
+        <div class="field">
+          <span class="eyebrow">Escenario</span>
+          <div class="seg" role="group" aria-label="Escenario">
+            <button type="button" data-s="c" aria-pressed="false">Conservador</button>
+            <button type="button" data-s="m" aria-pressed="true">Medio</button>
+            <button type="button" data-s="o" aria-pressed="false">Optimista</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="in-n">Afiliados adultos <output id="o-n" class="num"></output></label>
+          <input type="range" id="in-n" min="10000" max="1000000" step="10000" value="100000">
+        </div>
+        <div class="field">
+          <label for="in-c">Con lectura Saludly al año <output id="o-c" class="num"></output></label>
+          <input type="range" id="in-c" min="5" max="90" step="5" value="50">
+          <span class="hint">Parte de los afiliados cuyo laboratorio pasa por Saludly. <span class="tag">SUPUESTO</span></span>
+        </div>
+        <div class="field">
+          <label for="in-f">Focalización en población de riesgo <output id="o-f" class="num"></output></label>
+          <input type="range" id="in-f" min="1" max="2.5" step="0.1" value="1">
+          <span class="hint">Multiplica los hallazgos si se prioriza a mayores de 40 años con factores de riesgo. <span class="tag">SUPUESTO</span></span>
+        </div>
+        <div class="assume" id="assume"></div>
+      </div>
+      <div class="results">
+        <div class="big">
+          <div><span class="v num hl" id="r-total"></span><span class="l">ahorro bruto al año</span></div>
+          <div><span class="v num" id="r-per"></span><span class="l">por persona tamizada: el costo máximo de Saludly para no costarle plata a la EPS</span></div>
+          <div><span class="v num" id="r-pool"></span><span class="l">de la prima UPC total de la población</span></div>
+        </div>
+        <div>
+          <div class="chart-title">Ahorro anual por palanca</div>
+          <div class="chart-sub">Millones de pesos colombianos. Pase el cursor por una barra para ver el cálculo.</div>
+          <svg id="bars" role="img" aria-label="Ahorro anual por palanca"></svg>
+        </div>
+        <div class="meter">
+          <div class="chart-title">Frente al crecimiento anual de costo por crónicas (+3,5% de UPC)</div>
+          <div class="track" aria-hidden="true"><div class="fill" id="m-fill"></div></div>
+          <div class="cap"><span id="m-left"></span><span id="m-right"></span></div>
+        </div>
+      </div>
+    </div>
+    <details>
+      <summary>Ver los tres escenarios en tabla</summary>
+      <div class="table-wrap" style="margin-top:10px">
+        <table id="scen-table"></table>
+      </div>
+    </details>
+    <div class="read">
+      <div><b>El examen ya está pagado</b><p>Si la EPS tuviera que pagar un panel nuevo para todos, el ahorro de un año no alcanzaría. El caso funciona porque la ruta de promoción y mantenimiento ya financia el laboratorio: Saludly cobra la lectura, la priorización y el seguimiento.</p></div>
+      <div><b>Focalizar multiplica</b><p>En mayores de 40 años con factores de riesgo, la diabetes y la ERC ocultas son más frecuentes. Si los hallazgos se duplican, el ahorro clínico también.</p></div>
+      <div><b>El año 1 es un piso</b><p>Un diabético controlado sigue ahorrando cada año, y el modelo no cuenta los costos indirectos (incapacidad, cuidador), que según Buelvas superan al costo médico.</p></div>
+    </div>
+    <h3>Cómo llega el ahorro a la UPC</h3>
+    <div class="upc-flow">
+      <div><span class="eyebrow">Primero</span><b>La siniestralidad de la EPS</b><p>Cada complicación evitada es gasto que no ocurre dentro de la misma UPC. Para una EPS cerca o por encima del 100% de siniestralidad, eso es margen.</p></div>
+      <div><span class="eyebrow">Después</span><b>La UPC del país</b><p>El Ministerio calcula la UPC con el gasto reportado. Si las crónicas se controlan antes, el gasto crece menos y baja la presión para subirla.</p></div>
+      <div><span class="eyebrow">Por último</span><b>El modelo de pago</b><p>Con datos de desenlace, la EPS paga a la IPS por pacientes controlados y Saludly puede cobrar con una parte variable atada a resultados.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="futuro">
+    <div class="sec-head">
+      <div class="eyebrow">06 · La tesis</div>
+      <h2>Por qué Saludly es el futuro de la salud y viene de Latinoamérica</h2>
+    </div>
+    <div class="why">
+      <div><b>Nace donde está el problema</b><p>Colombia tiene una de las transiciones epidemiológicas más rápidas de la región y datos que pocos países tienen: ADRES, Cuenta de Alto Costo, facturación electrónica e historia clínica interoperable con 3,5 millones de pacientes.</p></div>
+      <div><b>Está hecho para nuestra gente</b><p>Altitud de Bogotá, SCORE2 recalibrado para Colombia, guías colombianas y Ley 1581. Evidencia que representa a la población colombiana, como pide Buelvas.</p></div>
+      <div><b>Es IA responsable por diseño</b><p>Los umbrales los decide el código, nada es un diagnóstico, no se inventan datos y decide el médico. Es la auditoría con explicabilidad que busca la ADRES.</p></div>
+      <div><b>Llega antes que la complicación</b><p>Los sistemas pasan de curar a prevenir y predecir. Saludly trabaja en la etapa más barata de la enfermedad.</p></div>
+      <div><b>Escala a la región</b><p>Latinoamérica comparte idioma, transición demográfica y enfermedades. La ADRES ya trabaja con los fondos de Brasil, México, Perú, Uruguay y Chile.</p></div>
+      <div><b>Habla con el paciente donde ya está</b><p>Informe claro, recomendaciones y una receta al día por WhatsApp, el canal que usa todo el país.</p></div>
+    </div>
+    <h3>El mensaje según quién escucha</h3>
+    <div class="pitch">
+      <figure><figcaption>A una EPS</figcaption><blockquote>Usted ya paga los exámenes de tamizaje. Saludly los convierte en pacientes encontrados a tiempo, priorizados y controlados, y le entrega los datos para negociar por resultados.</blockquote></figure>
+      <figure><figcaption>A un inversionista</figcaption><blockquote>Unos 20 millones de colombianos tienen una condición crónica y serán la mitad del país en 10 años. Saludly es la capa inteligente sobre el laboratorio, construida para la población latinoamericana, en una región de más de 650 millones de personas con el mismo problema.</blockquote></figure>
+      <figure><figcaption>A un médico</figcaption><blockquote>Saludly no decide por usted. Le entrega el laboratorio leído, calculado y ordenado por gravedad, con la regla que disparó cada hallazgo, para que atienda primero lo urgente.</blockquote></figure>
+      <figure><figcaption>A la ADRES</figcaption><blockquote>Saludly produce el dato estructurado y trazable que un pagador inteligente necesita para pagar por salud y no por actividades.</blockquote></figure>
+    </div>
+  </section>
+
+  <section class="block" id="pendiente">
+    <div class="sec-head">
+      <div class="eyebrow">07 · Lo que falta demostrar</div>
+      <h2>Para que el modelo deje de ser un supuesto</h2>
+    </div>
+    <ul class="todo">
+      <li><span><b>Un piloto con desenlaces:</b> 5.000 a 10.000 afiliados de Bogotá con un grupo de comparación, midiendo a 12 y 24 meses pacientes nuevos detectados, pacientes en meta, hospitalizaciones y costo por afiliado.</span></li>
+      <li><span><b>El costo real de Saludly por persona</b>, para compararlo con el punto de equilibrio que da el modelo.</span></li>
+      <li><span><b>El PDF real del laboratorio</b>, para ajustar el lector, que hoy funciona con PDF de ejemplo.</span></li>
+      <li><span><b>La consulta legal sobre el INVIMA</b> (software como dispositivo médico) y el tratamiento de datos.</span></li>
+      <li><span><b>El alcance del MVP:</b> solo sangre y solo Bogotá. La orina está en pausa, y con ella la albuminuria para la detección renal.</span></li>
+      <li><span><b>La conexión con HL7 FHIR</b> y la historia clínica interoperable (Resolución 1888 de 2025), para que el dato viaje con el paciente. Hoy no está construida.</span></li>
+      <li><span><b>La periodicidad exacta</b> de los laboratorios que financia la ruta de promoción y mantenimiento (Resolución 3280 de 2018), porque de eso depende que el examen "ya esté pagado".</span></li>
+    </ul>
+  </section>
+
+  <section class="block" id="fuentes">
+    <div class="sec-head">
+      <div class="eyebrow">08 · Fuentes</div>
+      <h2>De dónde sale cada cifra</h2>
+    </div>
+    <div class="sources">
+      <div>
+        <h3>Conversatorios ADRES</h3>
+        <ol>
+          <li><a href="https://www.youtube.com/watch?v=_afEdjVAghc" target="_blank" rel="noopener">Ética, confiabilidad y responsabilidad en el uso de IA</a> · Natalia Ortega</li>
+          <li><a href="https://www.youtube.com/watch?v=qG6zP3zGRY8" target="_blank" rel="noopener">IA para un sistema de salud predictivo y resolutivo</a> · Dr. Luis Pino</li>
+          <li><a href="https://www.youtube.com/watch?v=zDyf4mEWEgo" target="_blank" rel="noopener">Las condiciones crónicas y la generación de valor en salud</a> · Dr. Fabián Cardona</li>
+          <li><a href="https://www.youtube.com/watch?v=h8FLzaRRBHI" target="_blank" rel="noopener">Sostenibilidad basada en evidencia</a> · Dr. Gustavo Mery</li>
+          <li><a href="https://www.youtube.com/watch?v=ri5BV0UXyq4" target="_blank" rel="noopener">Redefiniendo el vínculo ADRES-IPS</a> · Dr. Jorge Toro</li>
+          <li><a href="https://www.youtube.com/watch?v=jI1ri51yACE" target="_blank" rel="noopener">Tecnología y generación de valor en el sistema de salud</a> · Dr. Walberto Buelvas</li>
+          <li><a href="https://www.youtube.com/watch?v=EjRUysxsXuo" target="_blank" rel="noopener">Interoperabilidad: el costo de que los datos no dialoguen</a> · Mario Cortés</li>
+        </ol>
+        <p>Las cifras de los invitados salen de las transcripciones automáticas de YouTube; conviene confirmarlas con sus presentaciones antes de usarlas en un documento formal.</p>
+      </div>
+      <div>
+        <h3>Cifras públicas</h3>
+        <ul>
+          <li>UPC 2026, Resolución 2764 de 2025: <a href="https://actualicese.com/upc-2026-en-colombia/" target="_blank" rel="noopener">Actualícese</a>, <a href="https://www.portafolio.co/economia/gobierno/la-upc-para-el-2026-aumento-16-48-para-el-regimen-subsidiado-y-9-03-para-el-contributivo-485505" target="_blank" rel="noopener">Portafolio</a></li>
+          <li>Giros de UPC 2026: <a href="https://www.minsalud.gov.co/Comunicaciones/noticias/2026/Paginas/gonierno-a-girado-mas-de-34-billones-de-upc.aspx" target="_blank" rel="noopener">Ministerio de Salud</a></li>
+          <li>ERC, Cuenta de Alto Costo 2025: <a href="https://consultorsalud.com/?p=341889" target="_blank" rel="noopener">Consultorsalud</a></li>
+          <li>Costo de la diálisis: <a href="https://apidspace.javeriana.edu.co/server/api/core/bitstreams/e8b6a931-0a60-4a82-8e8a-90b9fa6860ba/content" target="_blank" rel="noopener">Pontificia Universidad Javeriana</a></li>
+          <li>Diabetes no diagnosticada: <a href="https://www.inderscience.com/filter.php?aid=48724" target="_blank" rel="noopener">Encuesta Nacional de Salud 2007</a>, <a href="https://www.eluniversal.com.co/viernes/2022/08/24/la-mitad-de-los-pacientes-con-diabetes-no-conoce-su-diagnostico/" target="_blank" rel="noopener">El Universal</a></li>
+          <li>Hipertensión no diagnosticada: <a href="https://rcientificas.uninorte.edu.co/index.php/salud/article/download/10188/214421444043/214421448760?inline=1" target="_blank" rel="noopener">Universidad del Norte</a></li>
+          <li>Eficiencia del gasto en Colombia: <a href="https://publications.iadb.org/es/en-que-gastan-los-paises-sus-recursos-en-salud-el-caso-de-colombia" target="_blank" rel="noopener">BID</a></li>
+        </ul>
+        <p>En los conversatorios se citan "4,5 años de esperanza de vida" perdidos por ineficiencia; en las publicaciones del BID que se encontraron la cifra regional es de 3 a 4 años. Conviene verificarla antes de citarla.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Saludly · Bogotá, Colombia · Informe preparado el 12 de octubre de 2026</span>
+    <span>Ningún contenido de este informe es un diagnóstico. Las decisiones clínicas son del médico.</span>
+  </footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+  // Supuestos por escenario (todos provisionales salvo los marcados con fuente)
+  const S = {
+    c:{cob:30, dmCost:350000, ercRed:.20, cvRed:.15, cvCost:30e6, dupCost:23000, dupShare:.15},
+    m:{cob:50, dmCost:600000, ercRed:.30, cvRed:.25, cvCost:40e6, dupCost:47000, dupShare:.25},
+    o:{cob:70, dmCost:900000, ercRed:.40, cvRed:.35, cvCost:50e6, dupCost:72000, dupShare:.35}
+  };
+  const FIX = {upc:1658912, dmPrev:.027, ercPrev:.01, ercProg:.006, dialysis:100e6, cvPrev:.05, cvRate:.015, growth:.035};
+  const NAMES = {c:"Conservador", m:"Medio", o:"Optimista"};
+
+  const $ = id => document.getElementById(id);
+  const fmt = new Intl.NumberFormat("es-CO",{maximumFractionDigits:0});
+  const fmt1 = new Intl.NumberFormat("es-CO",{maximumFractionDigits:1, minimumFractionDigits:1});
+  const money = v => "$" + fmt.format(Math.round(v));
+  const mill = v => v >= 1e12 ? "$" + fmt1.format(v/1e12) + " billones" : (v >= 1e9 ? "$" + fmt.format(v/1e6) + " millones" : "$" + fmt.format(v/1e6) + " millones");
+  const pct = v => (v*100 < 10 ? fmt1.format(v*100) : fmt.format(v*100)) + "%";
+
+  let scen = "m";
+
+  function calc(n, cobPct, focus, p){
+    const t = n * cobPct/100;
+    const dmCases = t * FIX.dmPrev * focus;
+    const ercCases = t * FIX.ercPrev * focus;
+    const cvCases = t * FIX.cvPrev * focus;
+    const dm = dmCases * p.dmCost;
+    const ercPer = FIX.ercProg * p.ercRed * FIX.dialysis;
+    const erc = ercCases * ercPer;
+    const cvPer = FIX.cvRate * p.cvRed * p.cvCost;
+    const cv = cvCases * cvPer;
+    const dup = t * p.dupCost * p.dupShare;
+    const total = dm + erc + cv + dup;
+    const pool = n * FIX.upc;
+    return {t, dmCases, ercCases, cvCases, ercPer, cvPer, rows:[
+      {k:"Diabetes a tiempo", v:dm, how: fmt.format(Math.round(dmCases)) + " diabéticos detectados × " + money(p.dmCost) + " evitados por caso al año"},
+      {k:"Riñón protegido", v:erc, how: fmt.format(Math.round(ercCases)) + " casos de ERC × " + money(ercPer) + " (0,6% de progresión × " + pct(p.ercRed) + " de reducción × $100 millones de diálisis)"},
+      {k:"Corazón y vasos", v:cv, how: fmt.format(Math.round(cvCases)) + " personas de alto riesgo × " + money(cvPer) + " (1,5% de eventos × " + pct(p.cvRed) + " de reducción × " + mill(p.cvCost) + " por evento)"},
+      {k:"Menos desperdicio", v:dup, how: fmt.format(Math.round(t)) + " tamizados × " + money(p.dupCost) + " de costo de no interoperar × " + pct(p.dupShare) + " atribuible a Saludly"}
+    ], total, pool, per: t ? total/t : 0, share: total/pool, ofGrowth: total/(pool*FIX.growth)};
+  }
+
+  // Gráfico de barras horizontales
+  const svg = $("bars"), tip = $("tip");
+  function draw(rows){
+    const W = 640, rowH = 46, top = 6, labelW = 150, right = 120, H = top + rows.length*rowH + 22;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    const max = Math.max(...rows.map(r=>r.v), 1);
+    const nice = niceMax(max/1e6);
+    const plotW = W - labelW - right;
+    const x = v => labelW + (v/1e6)/nice * plotW;
+    let g = "";
+    const ticks = 4;
+    for(let i=0;i<=ticks;i++){
+      const tv = nice*i/ticks, tx = labelW + plotW*i/ticks;
+      g += '<line class="grid" x1="'+tx+'" x2="'+tx+'" y1="'+top+'" y2="'+(H-20)+'"/>';
+      g += '<text class="val" x="'+tx+'" y="'+(H-4)+'" text-anchor="'+(i===0?"start":"middle")+'">'+fmt.format(tv)+'</text>';
+    }
+    rows.forEach((r,i)=>{
+      const y = top + i*rowH + 10, bh = 22, w = Math.max(x(r.v)-labelW, 2);
+      g += '<g class="row" data-i="'+i+'">';
+      g += '<text class="lbl" x="0" y="'+(y+bh/2+4)+'">'+r.k+'</text>';
+      g += '<path class="b" d="'+barPath(labelW, y, w, bh, 4)+'"/>';
+      g += '<text class="val" x="'+(labelW+w+8)+'" y="'+(y+bh/2+4)+'">'+mill(r.v)+'</text>';
+      g += '<rect class="hit" x="0" y="'+(y-10)+'" width="'+W+'" height="'+rowH+'"/>';
+      g += '</g>';
+    });
+    svg.innerHTML = g;
+    svg.querySelectorAll("g.row").forEach(el=>{
+      const r = rows[+el.dataset.i];
+      el.addEventListener("mousemove", e=>{ tip.hidden=false; tip.innerHTML = "<b>"+r.k+": "+mill(r.v)+"</b><br>"+r.how; place(e); });
+      el.addEventListener("mouseleave", ()=>{ tip.hidden=true; });
+    });
+  }
+  function place(e){
+    const pad=14, w=tip.offsetWidth, h=tip.offsetHeight;
+    let lx = e.clientX + pad, ly = e.clientY + pad;
+    if(lx + w > window.innerWidth - 8) lx = e.clientX - w - pad;
+    if(ly + h > window.innerHeight - 8) ly = e.clientY - h - pad;
+    tip.style.left = lx+"px"; tip.style.top = ly+"px";
+  }
+  function barPath(x,y,w,h,r){ r=Math.min(r,w); return "M"+x+","+y+"H"+(x+w-r)+"Q"+(x+w)+","+y+" "+(x+w)+","+(y+r)+"V"+(y+h-r)+"Q"+(x+w)+","+(y+h)+" "+(x+w-r)+","+(y+h)+"H"+x+"Z"; }
+  function niceMax(v){ const e=Math.pow(10,Math.floor(Math.log10(v))); const f=v/e; const n = f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10; return n*e; }
+
+  function render(){
+    const n = +$("in-n").value, c = +$("in-c").value, f = +$("in-f").value;
+    $("o-n").textContent = fmt.format(n);
+    $("o-c").textContent = c + "%";
+    $("o-f").textContent = "×" + fmt1.format(f);
+    const p = S[scen];
+    const r = calc(n, c, f, p);
+    $("r-total").textContent = mill(r.total);
+    $("r-per").textContent = money(r.per);
+    $("r-pool").textContent = pct(r.share);
+    draw(r.rows);
+    const g = Math.min(r.ofGrowth, 1);
+    $("m-fill").style.width = (g*100) + "%";
+    $("m-left").textContent = "Saludly absorbe " + pct(r.ofGrowth);
+    $("m-right").textContent = "crecimiento: " + mill(r.pool*FIX.growth) + " al año";
+    $("assume").innerHTML =
+      "<span><b>Supuestos del escenario " + NAMES[scen].toLowerCase() + "</b></span>" +
+      "<span>Diabetes sin diagnóstico: 2,7% de los tamizados · costo evitado " + money(p.dmCost) + " por caso al año <span class='tag'>SUPUESTO</span></span>" +
+      "<span>ERC sin diagnóstico: 1% · reducción de progresión " + pct(p.ercRed) + " · diálisis $25,1 millones al año × 4 años</span>" +
+      "<span>Riesgo cardiovascular alto: 5% · 1,5% de eventos al año · reducción " + pct(p.cvRed) + " · " + mill(p.cvCost) + " por evento <span class='tag'>SUPUESTO</span></span>" +
+      "<span>No interoperar: " + money(p.dupCost) + " por paciente al año (HL7 Colombia) · " + pct(p.dupShare) + " atribuible a Saludly <span class='tag'>SUPUESTO</span></span>" +
+      "<span>UPC contributiva 2026: $1.658.912</span>";
+  }
+
+  function table(){
+    const n = 100000;
+    const res = ["c","m","o"].map(k=>calc(n, S[k].cob, 1, S[k]));
+    const head = "<thead><tr><th>100.000 afiliados, sin focalizar</th>" + ["c","m","o"].map(k=>"<th class='n'>"+NAMES[k]+"</th>").join("") + "</tr></thead>";
+    const line = (label, fn) => "<tr><td>"+label+"</td>" + res.map(r=>"<td class='n'>"+fn(r)+"</td>").join("") + "</tr>";
+    let body = "<tbody>";
+    body += line("Personas tamizadas", r=>fmt.format(r.t));
+    ["Diabetes a tiempo","Riñón protegido","Corazón y vasos","Menos desperdicio"].forEach((k,i)=>{ body += line(k, r=>mill(r.rows[i].v)); });
+    body += line("<b>Ahorro bruto al año</b>", r=>"<b>"+mill(r.total)+"</b>");
+    body += line("Frente a la prima UPC total", r=>pct(r.share));
+    body += line("<b>Frente al crecimiento por crónicas</b>", r=>"<b>"+pct(r.ofGrowth)+"</b>");
+    body += line("Ahorro por persona tamizada", r=>money(r.per));
+    $("scen-table").innerHTML = head + body + "</tbody>";
+  }
+
+  document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click", ()=>{
+    scen = b.dataset.s;
+    document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed", x===b ? "true":"false"));
+    $("in-c").value = S[scen].cob;
+    render();
+  }));
+  ["in-n","in-c","in-f"].forEach(id=>$(id).addEventListener("input", render));
+
+  // Pestañas de dolores
+  const tabs = [...document.querySelectorAll(".tab")];
+  tabs.forEach(t=>t.addEventListener("click", ()=>{
+    tabs.forEach(x=>{ const on = x===t; x.setAttribute("aria-selected", on); $(x.getAttribute("aria-controls")).hidden = !on; });
+  }));
+
+  render(); table();
+})();
+</script>

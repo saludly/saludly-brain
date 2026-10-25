@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Saludly · Pitch deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  @page { size: 1920px 1080px; margin: 0; }
+  :root {
+    --azul: #2793FF;        /* azul del logo */
+    --azul-hondo: #1667C9;
+    --tinta: #0B2A55;       /* texto principal: azul muy oscuro */
+    --tinta-suave: #4A6488;
+    --azul-300: #8EC6FF;
+    --azul-100: #D7EAFF;
+    --azul-50: #F1F7FF;
+    --blanco: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Figtree", system-ui, sans-serif;
+    color: var(--tinta);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .slide {
+    width: 1920px; height: 1080px; position: relative; overflow: hidden;
+    padding: 110px 130px 90px; background: var(--blanco);
+    page-break-after: always; break-after: page;
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .slide.azul { background: var(--azul); color: var(--blanco); }
+
+  h1, h2 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
+    letter-spacing: -0.035em; line-height: 0.98;
+  }
+  h2 { font-size: 104px; max-width: 1500px; }
+  h3 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+    font-size: 40px; letter-spacing: -0.02em; line-height: 1.1;
+  }
+  p { font-size: 30px; line-height: 1.42; }
+  .bajada { font-size: 36px; line-height: 1.35; color: var(--tinta-suave); margin-top: 34px; max-width: 1250px; }
+  .azul .bajada { color: rgba(255,255,255,.9); }
+
+  /* pie de página: logo pequeño y número */
+  .pie {
+    position: absolute; left: 130px; right: 130px; bottom: 54px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 22px; color: var(--tinta-suave);
+  }
+  .pie img { height: 34px; }
+  .azul .pie { color: rgba(255,255,255,.8); }
+
+  /* ---------- 1. Portada ---------- */
+  .portada { padding: 0; display: flex; }
+  .portada .izq { padding: 110px 0 90px 130px; width: 1400px; display: flex; flex-direction: column; justify-content: space-between; position: relative; z-index: 2; }
+  .portada .logo { width: 300px; }
+  .portada h1 { font-size: 116px; max-width: 1300px; }
+  .portada .bajada { font-size: 38px; max-width: 980px; margin-top: 40px; }
+  .portada .evento { font-size: 24px; color: rgba(255,255,255,.85); }
+  .slide .y, .slide .y2 { position: absolute; fill: #fff; pointer-events: none; }
+  .portada .y { right: 110px; top: 170px; width: 560px; opacity: .2; }
+  .portada .y2 { right: 560px; top: 120px; width: 170px; opacity: .32; }
+
+  /* ---------- 2. Problema ---------- */
+  .problema { display: grid; grid-template-columns: 1fr 640px; gap: 110px; }
+  .problema h2 { font-size: 96px; }
+  .puntos { margin-top: 64px; display: grid; gap: 34px; max-width: 900px; }
+  .punto { display: grid; grid-template-columns: 14px 1fr; gap: 28px; }
+  .punto::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--azul); margin-top: 14px; }
+  .punto h3 { font-size: 36px; margin-bottom: 6px; }
+  .punto p { color: var(--tinta-suave); font-size: 28px; }
+
+  .hoja {
+    align-self: center; background: var(--azul-50); border: 2px solid var(--azul-100);
+    border-radius: 18px; padding: 40px 44px; font-size: 23px; transform: rotate(2deg);
+  }
+  .hoja .cab { display: flex; justify-content: space-between; color: var(--tinta-suave); font-size: 19px; padding-bottom: 18px; border-bottom: 2px solid var(--azul-100); margin-bottom: 10px; }
+  .fila { display: grid; grid-template-columns: 1fr 160px 150px; padding: 10px 0; color: #7d93b2; border-bottom: 1px solid #e3eefb; }
+  .fila span:nth-child(2), .fila span:nth-child(3) { text-align: right; font-variant-numeric: tabular-nums; }
+  .fila.ojo { color: var(--tinta); font-weight: 700; }
+  .fila.ojo span:nth-child(2) { color: var(--azul-hondo); }
+  .hoja .nota { margin-top: 22px; font-size: 21px; color: var(--tinta-suave); font-style: italic; }
+
+  /* ---------- 3. Solución ---------- */
+  .pasos { margin-top: 90px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 34px; position: relative; }
+  .pasos::before { content: ""; position: absolute; left: 40px; right: 40px; top: 39px; height: 4px; background: var(--azul-100); }
+  .paso { position: relative; }
+  .paso .n {
+    width: 80px; height: 80px; border-radius: 50%; background: var(--blanco); border: 4px solid var(--azul);
+    display: grid; place-items: center; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 36px; color: var(--azul);
+    position: relative;
+  }
+  .paso:nth-child(3) .n { background: var(--azul); color: #fff; }
+  .paso h3 { margin-top: 34px; font-size: 34px; }
+  .paso p { margin-top: 12px; font-size: 25px; color: var(--tinta-suave); line-height: 1.4; }
+  .destacado-ia { margin-top: 70px; background: var(--azul-50); border-radius: 18px; padding: 30px 40px; font-size: 28px; max-width: 1400px; }
+  .destacado-ia b { color: var(--azul-hondo); }
+
+  /* ---------- 4. Producto (mockups) ---------- */
+  .producto { display: grid; grid-template-columns: 560px 1fr; gap: 70px; padding-right: 0; }
+  .producto h2 { font-size: 110px; }
+  .producto .bajada { font-size: 34px; }
+  .medicos {
+    margin-top: 36px; display: flex; gap: 22px; align-items: center;
+    font-size: 28px; font-weight: 600; color: var(--tinta);
+  }
+  .medicos .seis { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 96px; color: var(--azul); line-height: 1; letter-spacing: -0.04em; }
+  .leyenda { margin-top: 34px; display: grid; gap: 16px; font-size: 24px; color: var(--tinta-suave); line-height: 1.4; }
+  .leyenda b { color: var(--tinta); }
+  .sintetico { margin-top: 16px; font-size: 19px; color: #8aa0bd; }
+
+  .escena { position: relative; height: 880px; margin-top: -30px; }
+  .cel { position: absolute; width: 340px; height: 720px; background: #10294d; border-radius: 52px; padding: 12px; box-shadow: 0 50px 90px -30px rgba(11,42,85,.5); }
+  .cel .pantalla { width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #fff; }
+  .cel img { width: 100%; display: block; }
+  .cel.uno { left: -50px; top: 90px; }
+  .cel.dos { left: 320px; top: 30px; }
+  .cel.tres { left: 690px; top: 90px; }
+  .cel.tres .pantalla { background: #efeae2; }
+
+  /* ---------- 5. Confianza (azul) ---------- */
+  .confianza { display: grid; grid-template-columns: 1fr 640px; gap: 120px; }
+  .confianza h2 { font-size: 118px; }
+  .confianza .y { right: -90px; top: -110px; width: 360px; opacity: .14; }
+  .confianza .y2 { display: none; }
+  .cifras { align-self: center; display: grid; gap: 0; }
+  .cifra { display: grid; grid-template-columns: 200px 1fr; align-items: baseline; padding: 22px 0; border-bottom: 2px solid rgba(255,255,255,.28); }
+  .cifra:last-child { border-bottom: none; }
+  .cifra b { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 72px; letter-spacing: -0.03em; line-height: 1; }
+  .cifra span { font-size: 26px; line-height: 1.3; }
+
+  /* ---------- 6. Competencia ---------- */
+  .tabla { margin-top: 30px; width: 100%; border-collapse: collapse; font-size: 26px; }
+  .tabla th { text-align: center; font-weight: 600; font-size: 23px; color: var(--tinta-suave); padding: 0 16px 16px; width: 220px; line-height: 1.25; vertical-align: bottom; }
+  .tabla th:first-child { text-align: left; width: auto; }
+  .tabla td { padding: 11px 16px; border-top: 2px solid var(--azul-50); text-align: center; }
+  .tabla td:first-child { text-align: left; }
+  .tabla td:first-child b { display: block; font-size: 30px; }
+  .tabla td:first-child span { font-size: 21px; color: var(--tinta-suave); }
+  .si, .no { display: inline-block; width: 30px; height: 30px; border-radius: 50%; vertical-align: middle; }
+  .si { background: var(--azul); }
+  .no { border: 3px solid var(--azul-100); }
+  .medio { display: inline-block; width: 30px; height: 30px; border-radius: 50%; vertical-align: middle; border: 3px solid var(--azul); background: linear-gradient(90deg, var(--azul) 50%, transparent 50%); }
+  .tabla tr.nosotros td { background: var(--azul-50); }
+  .tabla tr.nosotros td:first-child { border-radius: 16px 0 0 16px; }
+  .tabla tr.nosotros td:last-child { border-radius: 0 16px 16px 0; }
+  .tabla tr.nosotros b { color: var(--azul-hondo); }
+  .clave { margin-top: 18px; font-size: 20px; color: var(--tinta-suave); display: flex; gap: 34px; align-items: center; }
+  .clave i { display: inline-block; width: 20px; height: 20px; border-radius: 50%; vertical-align: -3px; margin-right: 8px; }
+
+  /* ---------- 7. Modelo y plan ---------- */
+  .modelo-grid { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+  .caja { border-radius: 22px; padding: 40px 44px; }
+  .caja.paciente { background: var(--azul); color: #fff; }
+  .caja.eps { background: var(--azul-50); }
+  .caja .quien { font-size: 24px; font-weight: 600; opacity: .9; }
+  .caja .precio { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 92px; letter-spacing: -0.04em; line-height: 1; margin: 14px 0 6px; }
+  .caja .precio small { font-size: 34px; letter-spacing: -0.01em; font-weight: 700; }
+  .caja ul { margin-top: 20px; }
+  .caja li { list-style: none; font-size: 25px; line-height: 1.35; padding: 7px 0 7px 26px; position: relative; }
+  .caja li::before { content: ""; position: absolute; left: 0; top: 18px; width: 10px; height: 10px; border-radius: 50%; background: currentColor; opacity: .8; }
+  .caja.eps h3 { font-size: 50px; margin: 14px 0 6px; line-height: 1.05; }
+  .caja.eps p { font-size: 25px; color: var(--tinta-suave); margin-top: 14px; }
+  .ya { margin-top: 44px; display: flex; gap: 18px; flex-wrap: wrap; align-items: center; font-size: 24px; }
+  .ya .t { font-weight: 700; margin-right: 6px; }
+  .chip { border: 2px solid var(--azul-100); border-radius: 99px; padding: 10px 22px; color: var(--tinta); }
+
+  /* ---------- 8. Equipo ---------- */
+  .equipo-grid { margin-top: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+  .persona { display: grid; grid-template-columns: 300px 1fr; gap: 44px; align-items: start; }
+  .persona img { width: 300px; height: 360px; object-fit: cover; border-radius: 22px; background: var(--azul-50); }
+  .persona h3 { font-size: 50px; }
+  .persona .rol { font-size: 28px; color: var(--azul-hondo); font-weight: 700; margin: 8px 0 22px; }
+  .persona p { font-size: 26px; color: var(--tinta-suave); line-height: 1.42; }
+  .persona p + p { margin-top: 14px; }
+
+  /* ---------- 9. Ask (azul) ---------- */
+  .ask .monto { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 240px; letter-spacing: -0.05em; line-height: .85; }
+  .ask .monto small { font-size: 90px; letter-spacing: -0.02em; margin-right: 18px; vertical-align: 70px; }
+  .ask h2 { font-size: 64px; letter-spacing: -0.025em; line-height: 1.08; margin-top: 30px; max-width: 1400px; font-weight: 700; }
+  .ask .como { font-size: 30px; margin-top: 22px; max-width: 1300px; color: rgba(255,255,255,.9); }
+  .usos { margin-top: 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; max-width: 1500px; }
+  .usos div { border-top: 3px solid rgba(255,255,255,.55); padding-top: 22px; }
+  .usos h3 { font-size: 36px; }
+  .usos p { font-size: 24px; margin-top: 10px; color: rgba(255,255,255,.88); line-height: 1.4; }
+  .contacto { position: absolute; left: 130px; right: 130px; bottom: 80px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .contacto img { height: 92px; }
+  .contacto a { color: #fff; text-decoration: none; }
+  .contacto .datos { text-align: right; font-size: 32px; line-height: 1.45; font-weight: 600; }
+  .ask .y { right: 130px; top: 110px; width: 380px; opacity: .18; }
+  .ask .y2 { right: 430px; top: 90px; width: 120px; opacity: .3; }
+</style>
+</head>
+<body>
+
+<!-- 1. Portada -->
+<section class="slide azul portada">
+  <div class="izq">
+    <img class="logo" src="img/logo-blanco.png" alt="Saludly">
+    <div>
+      <h1>Tus exámenes de sangre, por fin explicados</h1>
+      <p class="bajada">Saludly lee tu laboratorio con reglas clínicas, te dice qué merece atención y te acompaña un año por WhatsApp para prevenir.</p>
+    </div>
+    <div class="evento">Simulacro de Demo Day, Reto Ronda 0<br>Bogotá, octubre de 2026</div>
+  </div>
+  <svg class="y" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C50 27.6 72.4 50 100 50C72.4 50 50 72.4 50 100C50 72.4 27.6 50 0 50C27.6 50 50 27.6 50 0Z"/></svg><svg class="y2" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C50 27.6 72.4 50 100 50C72.4 50 50 72.4 50 100C50 72.4 27.6 50 0 50C27.6 50 50 27.6 50 0Z"/></svg>
+</section>
+
+<!-- 2. Problema -->
+<section class="slide problema">
+  <div>
+    <h2>Te entregan 100 números y nadie te los explica</h2>
+    <div class="puntos">
+      <div class="punto"><div><h3>El resultado llega lleno de siglas</h3><p>Ferritina, VCM, ALT, TSH. El paciente no sabe qué está bien, qué no y qué hacer.</p></div></div>
+      <div class="punto"><div><h3>La consulta tarda semanas</h3><p>Mientras tanto, el PDF se queda en el correo y nadie le hace seguimiento.</p></div></div>
+      <div class="punto"><div><h3>Las señales tempranas se pierden</h3><p>Un hierro bajo o una glucosa limítrofe se pueden atender a tiempo, si alguien los ve.</p></div></div>
+    </div>
+  </div>
+  <div class="hoja" aria-hidden="true">
+    <div class="cab"><span>Resultados de laboratorio</span><span>Valor · Referencia</span></div>
+    <div class="fila"><span>Hematocrito</span><span>34,1 %</span><span>36,0 – 46,0</span></div>
+    <div class="fila ojo"><span>VCM</span><span>76,1 fL</span><span>80,0 – 100,0</span></div>
+    <div class="fila"><span>Hemoglobina</span><span>11,0 g/dL</span><span>12,0 – 16,0</span></div>
+    <div class="fila"><span>RDW</span><span>17,2 %</span><span>11,5 – 14,5</span></div>
+    <div class="fila ojo"><span>Ferritina</span><span>6 ng/mL</span><span>13 – 150</span></div>
+    <div class="fila"><span>Sat. transferrina</span><span>6,9 %</span><span>15 – 50</span></div>
+    <div class="fila"><span>Folato</span><span>2,8 ng/mL</span><span>&gt; 3,9</span></div>
+    <div class="fila ojo"><span>ALT</span><span>52 U/L</span><span>10 – 35</span></div>
+    <div class="fila"><span>AST</span><span>41 U/L</span><span>10 – 35</span></div>
+    <div class="fila"><span>25-OH vitamina D</span><span>14,2 ng/mL</span><span>30 – 100</span></div>
+    <div class="fila"><span>Anti-tTG IgA</span><span>86 U/mL</span><span>&lt; 7,0</span></div>
+    <p class="nota">¿Y ahora qué hago con esto?</p>
+  </div>
+  <div class="pie"><img src="img/logo-azul.png" alt="Saludly"><span>2</span></div>
+</section>
+
+<!-- 3. Solución -->
+<section class="slide">
+  <h2>Saludly convierte tu laboratorio en un plan para prevenir</h2>
+  <div class="pasos">
+    <div class="paso"><div class="n">1</div><h3>Toma en casa</h3><p>Una enfermera toma la muestra y mide presión, cintura, peso y talla.</p></div>
+    <div class="paso"><div class="n">2</div><h3>Laboratorio aliado</h3><p>Procesa un panel de sangre con más de 100 biomarcadores.</p></div>
+    <div class="paso"><div class="n">3</div><h3>Análisis Saludly</h3><p>Evalúa cada valor con reglas clínicas y guías colombianas.</p></div>
+    <div class="paso"><div class="n">4</div><h3>Revisión médica</h3><p>Un médico revisa los hallazgos antes de que lleguen al paciente.</p></div>
+    <div class="paso"><div class="n">5</div><h3>Un año contigo</h3><p>Informe claro, recomendaciones y una receta al día por WhatsApp.</p></div>
+  </div>
+  <p class="destacado-ia">El paciente elige sus 3 objetivos, por ejemplo tener más energía o prevenir diabetes, y <b>las recomendaciones se ordenan según lo que a él le importa.</b></p>
+  <div class="pie"><img src="img/logo-azul.png" alt="Saludly"><span>3</span></div>
+</section>
+
+<!-- 4. Producto -->
+<section class="slide producto">
+  <div>
+    <h2>El demo ya está listo</h2>
+    <p class="bajada">Y lo vamos a probar con médicos reales antes de llegar a los primeros pacientes.</p>
+    <div class="medicos"><span class="seis">6</span><span>médicos en conversación<br>para hacer las pruebas</span></div>
+    <div class="leyenda">
+      <div><b>Inicio:</b> tu cuerpo, con cada sistema marcado según tus resultados.</div>
+      <div><b>Biomarcadores:</b> cada valor frente a su rango, con lo que hay que revisar.</div>
+      <div><b>WhatsApp:</b> los mensajes, recomendaciones y recetas que recibe el paciente.</div>
+    </div>
+    <p class="sintetico">Capturas del demo con un caso de prueba sintético.</p>
+  </div>
+
+  <div class="escena" aria-hidden="true">
+    <div class="cel uno"><div class="pantalla"><img src="img/cap_inicio.png" alt=""></div></div>
+    <div class="cel dos"><div class="pantalla"><img src="img/cap_bio.png" alt=""></div></div>
+    <div class="cel tres"><div class="pantalla"><img src="img/cap_whatsapp.png" alt=""></div></div>
+  </div>
+  <div class="pie"><img src="img/logo-azul.png" alt="Saludly"><span>4</span></div>
+</section>
+
+<!-- 5. Confianza -->
+<section class="slide azul confianza">
+  <div style="position:relative; z-index:2">
+    <h2>La IA redacta. Las reglas clínicas deciden.</h2>
+    <p class="bajada">Un chatbot solo no es confiable para leer exámenes. En Saludly, cada umbral lo evalúa código escrito con guías clínicas; la IA solo pone en palabras lo que el motor ya decidió. Nada es un diagnóstico y el médico tiene la última palabra.</p>
+  </div>
+  <div class="cifras">
+    <div class="cifra"><b>144</b><span>biomarcadores con ficha clínica</span></div>
+    <div class="cifra"><b>86</b><span>condiciones evaluadas con reglas</span></div>
+    <div class="cifra"><b>31</b><span>relaciones entre resultados</span></div>
+    <div class="cifra"><b>15</b><span>reglas de seguridad para valores críticos</span></div>
+    <div class="cifra"><b>662</b><span>pruebas automáticas que pasan</span></div>
+  </div>
+  <svg class="y" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C50 27.6 72.4 50 100 50C72.4 50 50 72.4 50 100C50 72.4 27.6 50 0 50C27.6 50 50 27.6 50 0Z"/></svg><svg class="y2" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C50 27.6 72.4 50 100 50C72.4 50 50 72.4 50 100C50 72.4 27.6 50 0 50C27.6 50 50 27.6 50 0Z"/></svg>
+  <div class="pie"><img src="img/logo-blanco.png" alt="Saludly"><span>5</span></div>
+</section>
+
+<!-- 6. Competencia -->
+<section class="slide">
+  <h2>Superpower lo hace en EE. UU. Saludly lo hace para Colombia</h2>
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Opera en Colombia</th>
+        <th>Explica cada resultado</th>
+        <th>Acompañamiento en WhatsApp</th>
+        <th>Acompaña todo el año</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="nosotros">
+        <td><b>Saludly</b><span>Toma en casa, médico revisor y WhatsApp</span></td>
+        <td><i class="si"></i></td><td><i class="si"></i></td><td><i class="si"></i></td><td><i class="si"></i></td>
+      </tr>
+      <tr>
+        <td><b>Superpower</b><span>Más de 100 biomarcadores con membresía en EE. UU.</span></td>
+        <td><i class="no"></i></td><td><i class="si"></i></td><td><i class="no"></i></td><td><i class="si"></i></td>
+      </tr>
+      <tr>
+        <td><b>Laboratorio tradicional</b><span>Entrega el PDF y ahí termina</span></td>
+        <td><i class="si"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td>
+      </tr>
+      <tr>
+        <td><b>Chequeo ejecutivo</b><span>Una consulta al año, costosa</span></td>
+        <td><i class="si"></i></td><td><i class="medio"></i></td><td><i class="no"></i></td><td><i class="no"></i></td>
+      </tr>
+      <tr>
+        <td><b>Apps de bienestar</b><span>Consejos generales, sin tus exámenes</span></td>
+        <td><i class="si"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="medio"></i></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="clave"><span><i style="background:var(--azul)"></i>Sí</span><span><i style="border:3px solid var(--azul); background:linear-gradient(90deg,var(--azul) 50%,transparent 50%)"></i>En parte</span><span><i style="border:3px solid var(--azul-100)"></i>No</span></div>
+  <div class="pie"><img src="img/logo-azul.png" alt="Saludly"><span>6</span></div>
+</section>
+
+<!-- 7. Modelo de negocio -->
+<section class="slide">
+  <h2>Cobramos al paciente hoy y a la EPS mañana</h2>
+  <div class="modelo-grid">
+    <div class="caja paciente">
+      <div class="quien">Paciente particular, pago anual</div>
+      <div class="precio">$490.000 <small>COP</small></div>
+      <ul>
+        <li>Exámenes de sangre con más de 100 biomarcadores</li>
+        <li>Visita de la enfermera en casa</li>
+        <li>Informe revisado por un médico</li>
+        <li>Recomendaciones y una receta al día por WhatsApp, todo el año</li>
+      </ul>
+    </div>
+    <div class="caja eps">
+      <div class="quien">EPS y aseguradoras</div>
+      <h3>Leer y hacer seguimiento a los exámenes que ya pagan</h3>
+      <p>Las EPS ya pagan exámenes en la ruta de promoción y mantenimiento. Saludly los convierte en detección temprana y seguimiento, para atender a tiempo lo que después sale más caro.</p>
+    </div>
+  </div>
+  <div class="ya"><span class="t">Lo que ya tenemos:</span><span class="chip">Laboratorio clínico aliado</span><span class="chip">Demo funcionando</span><span class="chip">6 médicos en conversación</span><span class="chip">Servicio a domicilio validado en 2025</span></div>
+  <div class="pie"><img src="img/logo-azul.png" alt="Saludly"><span>7</span></div>
+</section>
+
+<!-- 8. Equipo -->
+<section class="slide">
+  <h2>Sabemos vender salud y construir producto</h2>
+  <div class="equipo-grid">
+    <div class="persona">
+      <img src="img/carlos.png" alt="Carlos Araujo">
+      <div>
+        <h3>Carlos Araujo</h3>
+        <div class="rol">CEO y fundador</div>
+        <p>Fundé Saludly en 2025: laboratorio clínico y enfermería a domicilio en Bogotá.</p>
+        <p>Trabajé en marketing médico con 10 de los mejores doctores del país, así que sé cómo vender salud.</p>
+        <p>Hice el producto yo mismo: Saludly, que hoy está en demo.</p>
+      </div>
+    </div>
+    <div class="persona">
+      <img src="img/felix.png" alt="Felix Cabrita">
+      <div>
+        <h3>Felix Cabrita</h3>
+        <div class="rol">CTO</div>
+        <p>10 años como desarrollador full stack.</p>
+        <p>Asesoró la creación del cerebro del agente de IA de Saludly y lidera la tecnología para pasar del demo a la operación con pacientes.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pie"><img src="img/logo-azul.png" alt="Saludly"><span>8</span></div>
+</section>
+
+<!-- 9. Ask -->
+<section class="slide azul ask">
+  <div class="monto"><small>USD</small>25.000</div>
+  <h2>Pre-semilla para llegar a 100 pacientes y a nuestra primera EPS en 3 meses</h2>
+  <p class="como">Los médicos aliados recomiendan Saludly a sus pacientes, y con 100 casos reales abrimos la conversación con las EPS.</p>
+  <div class="usos">
+    <div><h3>IA</h3><p>Tokens para leer, redactar y acompañar a cada paciente.</p></div>
+    <div><h3>Pilotos con pacientes</h3><p>Pruebas de bajo costo con los médicos aliados.</p></div>
+    <div><h3>Comercial</h3><p>Médicos que recomiendan Saludly y nos abren la puerta a las EPS.</p></div>
+  </div>
+  <div class="contacto">
+    <img src="img/logo-blanco.png" alt="Saludly">
+    <div class="datos"><a href="mailto:carlos@saludly.online">carlos@saludly.online</a><br><a href="https://saludly.online">https://saludly.online</a></div>
+  </div>
+  <svg class="y" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C50 27.6 72.4 50 100 50C72.4 50 50 72.4 50 100C50 72.4 27.6 50 0 50C27.6 50 50 27.6 50 0Z"/></svg><svg class="y2" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C50 27.6 72.4 50 100 50C72.4 50 50 72.4 50 100C50 72.4 27.6 50 0 50C27.6 50 50 27.6 50 0Z"/></svg>
+</section>
+
+</body>
+</html>

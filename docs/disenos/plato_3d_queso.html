@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plato Saludly 3D</title>
+<style>
+  html, body { margin: 0; height: 100%; background: transparent; }
+  body.ver { background: #ffffff; }
+  #escena { width: 100vmin; height: 100vmin; margin: 0 auto; }
+  canvas { display: block; width: 100% !important; height: 100% !important; }
+</style>
+</head>
+<body>
+<div id="escena"></div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+/*
+ * Plato de desayuno 3D, reconstruido de la referencia (img2threejs: análisis → bloques → forma → material → luz).
+ * Cambio pedido: sin pan; en su lugar, una cuña de queso con huecos.
+ * Disposición (vista desde el frente, x a la derecha, z hacia la cámara):
+ *   atrás-izquierda aguacate · atrás-derecha queso · izquierda fríjoles · centro crema
+ *   adelante-izquierda huevo · derecha dos salchichas en diagonal · adelante-derecha banano.
+ */
+import * as THREE from "three";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+
+const verFondo = new URLSearchParams(location.search).has("fondo");
+if (verFondo) document.body.classList.add("ver");
+
+const caja = document.getElementById("escena");
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(0x000000, 0);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+caja.appendChild(renderer.domElement);
+
+const escena = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+escena.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+const camara = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+camara.position.set(0, 8.6, 10.6);
+camara.lookAt(0, 0.1, 0.05);
+
+// Luz: llave suave arriba-izquierda-frente, relleno a la derecha y contraluz rosado que dibuja el borde del plato.
+escena.add(new THREE.HemisphereLight(0xffffff, 0x8a6a60, 0.35));
+const llave = new THREE.DirectionalLight(0xfff4ea, 2.2);
+llave.position.set(-4, 9, 6);
+llave.castShadow = true;
+llave.shadow.mapSize.set(2048, 2048);
+Object.assign(llave.shadow.camera, { left: -4.5, right: 4.5, top: 4.5, bottom: -4.5, near: 1, far: 30 });
+llave.shadow.radius = 5;
+llave.shadow.bias = -0.0005;
+escena.add(llave);
+const relleno = new THREE.DirectionalLight(0xe8f0ff, 0.6);
+relleno.position.set(6, 4, 3);
+escena.add(relleno);
+const contraluz = new THREE.DirectionalLight(0xffb08a, 0.55);
+contraluz.position.set(1, 2.5, -7);
+escena.add(contraluz);
+
+// Material de "juguete brillante": color saturado, barniz y reflejos del ambiente.
+const mat = (color, o = {}) =>
+  new THREE.MeshPhysicalMaterial({ color, roughness: 0.32, clearcoat: 0.8, clearcoatRoughness: 0.18, envMapIntensity: 0.75, ...o });
+const malla = (geo, m, sombra = true) => {
+  const x = new THREE.Mesh(geo, m);
+  x.castShadow = sombra;
+  x.receiveShadow = true;
+  return x;
+};
+let semilla = 11;
+const azar = () => (semilla = (semilla * 16807) % 2147483647) / 2147483647;
+
+const raiz = new THREE.Group();
+escena.add(raiz);
+
+/* ---------- Plato: fondo plano y ancho, borde bajo y redondeado ---------- */
+const perfilPlato = [[0, 0.02], [2.55, 0.02], [2.78, 0.06], [3.05, 0.2], [3.22, 0.31], [3.3, 0.33], [3.33, 0.3], [3.28, 0.25], [3.05, 0.17], [2.7, 0.1], [2.45, 0.08], [0, 0.08]]
+  .map(([x, y]) => new THREE.Vector2(x, y));
+raiz.add(malla(new THREE.LatheGeometry(perfilPlato, 128), mat(0xa04a26, { roughness: 0.42, clearcoat: 0.5 })));
+const PISO = 0.08;
+
+/* ---------- Huevo frito ---------- */
+{
+  const forma = new THREE.Shape();
+  const n = 96;
+  for (let i = 0; i <= n; i++) {
+    const a = (i / n) * Math.PI * 2;
+    const r = 1.0 + 0.09 * Math.sin(a * 4 + 0.4) + 0.05 * Math.sin(a * 7 + 1.2) + 0.035 * Math.cos(a * 11);
+    const x = Math.cos(a) * r * 1.22, y = Math.sin(a) * r * 0.95;
+    i ? forma.lineTo(x, y) : forma.moveTo(x, y);
+  }
+  const clara = malla(new THREE.ExtrudeGeometry(forma, { depth: 0.02, bevelEnabled: true, bevelThickness: 0.11, bevelSize: 0.13, bevelSegments: 10, curveSegments: 96 }), mat(0xfbfaf7, { roughness: 0.22, clearcoat: 1 }));
+  clara.rotation.x = -Math.PI / 2;
+  clara.position.y = PISO + 0.11;
+  const yema = malla(new THREE.SphereGeometry(0.56, 64, 40), mat(0xf4a00c, { roughness: 0.12, clearcoat: 1, clearcoatRoughness: 0.05, envMapIntensity: 1 }));
+  yema.scale.set(1.04, 0.56, 1);
+  yema.position.set(0.05, PISO + 0.24, 0.0);
+  const huevo = new THREE.Group();
+  huevo.add(clara, yema);
+  huevo.position.set(-0.85, 0, 1.15);
+  raiz.add(huevo);
+}
+
+/* ---------- Aguacate: medio, de pie e inclinado hacia atrás, cara cortada al frente ---------- */
+{
+  const puntos = [[0, 0], [0.5, 0.05], [0.78, 0.28], [0.9, 0.62], [0.88, 0.98], [0.74, 1.32], [0.56, 1.62], [0.4, 1.86], [0.22, 2.04], [0, 2.12]];
+  const contorno = new THREE.SplineCurve(puntos.map(([x, y]) => new THREE.Vector2(x, y))).getPoints(80).map((v) => [Math.max(0, v.x), v.y]);
+  contorno[0] = [0, 0];
+  contorno[contorno.length - 1] = [0, 2.12];
+  const shell = malla(new THREE.LatheGeometry(contorno.map(([x, y]) => new THREE.Vector2(x, y)), 64, 0, Math.PI), mat(0x2c5a1c, { roughness: 0.4, clearcoat: 0.6, side: THREE.DoubleSide }));
+  const capa = (escala, color, x) => {
+    const s = new THREE.Shape();
+    const cy = 0.98;
+    const p = contorno.map(([r, y]) => [r * escala, cy + (y - cy) * escala]);
+    p.forEach(([r, y], i) => (i ? s.lineTo(r, y) : s.moveTo(r, y)));
+    [...p].reverse().forEach(([r, y]) => s.lineTo(-r, y));
+    const m = malla(new THREE.ShapeGeometry(s, 48), mat(color, { roughness: 0.3, clearcoat: 0.7, side: THREE.DoubleSide }), false);
+    m.rotation.y = -Math.PI / 2;
+    m.position.x = x;
+    return m;
+  };
+  const pulpa = new THREE.Group();
+  // Cáscara visible como borde, luego la pulpa de verde a amarillo claro hacia el centro.
+  [[1.0, 0x2c5a1c], [0.94, 0x6fa834], [0.88, 0xa6cc4f], [0.8, 0xcadb6c], [0.68, 0xdfe68a]].forEach(([e, c], i) => pulpa.add(capa(e, c, -0.002 - i * 0.002)));
+  const pepa = malla(new THREE.SphereGeometry(0.4, 48, 32), mat(0x8a4628, { roughness: 0.16, clearcoat: 1, clearcoatRoughness: 0.08 }));
+  pepa.scale.set(0.7, 1, 1);
+  pepa.position.set(-0.06, 0.78, 0);
+  const aguacate = new THREE.Group();
+  aguacate.add(shell, pulpa, pepa);
+  aguacate.rotation.y = Math.PI / 2; // la cara mira a la cámara
+  const soporte = new THREE.Group();
+  soporte.add(aguacate);
+  soporte.rotation.set(-0.85, 0.25, 0.15); // se recuesta hacia atrás
+  soporte.position.set(-0.7, PISO + 0.1, -1.1);
+  raiz.add(soporte);
+}
+
+/* ---------- Queso (en lugar del pan): cuña amarilla con huecos ---------- */
+{
+  const tri = new THREE.Shape();
+  tri.moveTo(0, 0);
+  tri.lineTo(1.75, 0);
+  tri.lineTo(0.25, 1.05);
+  tri.closePath();
+  const alto = 0.78;
+  const cuerpo = malla(new THREE.ExtrudeGeometry(tri, { depth: alto, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05, bevelSegments: 4 }), mat(0xf5c33b, { roughness: 0.38, clearcoat: 0.45 }));
+  cuerpo.rotation.x = -Math.PI / 2;
+  const queso = new THREE.Group();
+  queso.add(cuerpo);
+  const hueco = (r) => new THREE.CircleGeometry(r, 32);
+  const mHueco = mat(0xd9951c, { roughness: 0.55, clearcoat: 0.1 });
+  const mBorde = mat(0xfbd768, { roughness: 0.4, clearcoat: 0.3 });
+  const poner = (x, y, z, r, rx, ry) => {
+    const borde = malla(hueco(r * 1.18), mBorde, false);
+    const h = malla(hueco(r), mHueco, false);
+    [borde, h].forEach((m, i) => {
+      m.position.set(x, y, z);
+      m.rotation.set(rx, ry, 0);
+      m.translateZ(0.003 + i * 0.002);
+      queso.add(m);
+    });
+  };
+  // Cara de arriba (y = alto + bisel) y cara del frente (z = 0.05).
+  [[0.45, 0.25, 0.11], [0.95, 0.2, 0.08], [0.55, 0.62, 0.07], [1.25, 0.12, 0.05], [0.32, 0.85, 0.05]].forEach(([x, y, r]) => poner(x, alto + 0.05, -y, r, -Math.PI / 2, 0));
+  [[0.35, 0.3, 0.1], [0.85, 0.52, 0.07], [1.3, 0.25, 0.08], [0.6, 0.12, 0.05]].forEach(([x, y, r]) => poner(x, y, 0.05, r, 0, 0));
+  queso.position.set(0.55, PISO, -0.95);
+  queso.rotation.y = 0.32;
+  raiz.add(queso);
+}
+
+/* ---------- Fríjoles rojos: elipsoides arriñonados, brillantes, en un montón ovalado ---------- */
+{
+  const geo = new THREE.CapsuleGeometry(0.175, 0.2, 12, 28);
+  geo.rotateZ(Math.PI / 2);
+  const pos = geo.attributes.position;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i);
+    pos.setY(i, pos.getY(i) * 0.82);
+    pos.setZ(i, pos.getZ(i) + 0.3 * x * x); // apenas arriñonado
+  }
+  geo.computeVertexNormals();
+  const m = mat(0xa8150f, { roughness: 0.14, clearcoat: 1, clearcoatRoughness: 0.06 });
+  const grupo = new THREE.Group();
+  let colocados = 0;
+  const hechos = [];
+  for (let k = 0; k < 900 && colocados < 17; k++) {
+    const a = azar() * Math.PI * 2, r = Math.sqrt(azar());
+    const x = Math.cos(a) * r * 0.8, z = Math.sin(a) * r * 0.62;
+    const capa0 = r < 0.4 && colocados > 12 ? 1 : 0;
+    if (hechos.some(([hx, hz, hc]) => hc === capa0 && Math.hypot(hx - x, hz - z) < 0.33)) continue;
+    hechos.push([x, z, capa0]);
+    const f = malla(geo, m);
+    const capa = capa0;
+    f.position.set(x, PISO + 0.15 + capa * 0.26, z);
+    f.rotation.set((azar() - 0.5) * 0.25, azar() * Math.PI * 2, (azar() - 0.5) * 0.3);
+    grupo.add(f);
+    colocados++;
+  }
+  grupo.position.set(-2.05, 0, -0.25);
+  raiz.add(grupo);
+}
+
+/* ---------- Crema: copo en espiral con estrías (boquilla de estrella) ---------- */
+{
+  const perfil = [[0, 0], [0.56, 0], [0.62, 0.07], [0.6, 0.15], [0.5, 0.22], [0.5, 0.28], [0.4, 0.36], [0.38, 0.42], [0.26, 0.5], [0.22, 0.56], [0.12, 0.64], [0.05, 0.7], [0, 0.72]]
+    .map(([x, y]) => new THREE.Vector2(x, y));
+  const geo = new THREE.LatheGeometry(perfil, 96);
+  const pos = geo.attributes.position;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+    const r = Math.hypot(x, z);
+    if (r < 1e-4) continue;
+    const a = Math.atan2(z, x);
+    const k = 1 + 0.07 * Math.cos(8 * a + y * 9);
+    pos.setXYZ(i, (x / r) * r * k, y, (z / r) * r * k);
+  }
+  geo.computeVertexNormals();
+  const crema = malla(geo, mat(0xfdfcf8, { roughness: 0.2, clearcoat: 1 }));
+  crema.position.set(0.05, PISO, -0.2);
+  raiz.add(crema);
+}
+
+/* ---------- Salchichas: gruesas, apenas curvas, con cortes diagonales ---------- */
+{
+  const largo = 1.75, radio = 0.32;
+  const base = new THREE.CapsuleGeometry(radio, largo, 16, 40);
+  base.rotateZ(Math.PI / 2);
+  const p = base.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i);
+    p.setZ(i, p.getZ(i) + 0.16 * Math.pow(x / (largo / 2 + radio), 2));
+  }
+  base.computeVertexNormals();
+  const mPiel = mat(0xc9442a, { roughness: 0.22, clearcoat: 1, clearcoatRoughness: 0.1 });
+  const mCorte = mat(0x7d1f12, { roughness: 0.5, clearcoat: 0.2 });
+  const mLabio = mat(0xe0704f, { roughness: 0.3, clearcoat: 0.6 });
+  const corte = new THREE.SphereGeometry(1, 24, 12);
+  [[1.7, 0.15], [2.45, 0.55]].forEach(([x, z]) => {
+    const s = new THREE.Group();
+    s.add(malla(base, mPiel));
+    [-0.6, -0.15, 0.3, 0.72].forEach((dx) => {
+      const curva = 0.16 * Math.pow(dx / (largo / 2 + radio), 2);
+      const labio = malla(corte, mLabio, false);
+      labio.scale.set(0.1, 0.06, 0.34);
+      labio.position.set(dx + 0.02, radio - 0.035, curva - 0.02);
+      labio.rotation.y = 0.55;
+      const c = malla(corte, mCorte, false);
+      c.scale.set(0.065, 0.06, 0.3);
+      c.position.set(dx, radio - 0.02, curva - 0.02);
+      c.rotation.y = 0.55;
+      s.add(labio, c);
+    });
+    s.position.set(x, PISO + radio, z);
+    s.rotation.y = 0.72; // de arriba-derecha a abajo-izquierda
+    raiz.add(s);
+  });
+}
+
+/* ---------- Rodajas de banano: discos de borde redondo, cáscara más oscura y estrella al centro ---------- */
+{
+  const r = 0.36, h = 0.16;
+  const perfil = [[0, 0], [r - 0.04, 0], [r, 0.03], [r + 0.005, h / 2], [r, h - 0.03], [r - 0.04, h], [0, h]].map(([x, y]) => new THREE.Vector2(x, y));
+  const disco = new THREE.LatheGeometry(perfil, 48);
+  const mDisco = mat(0xf1c64a, { roughness: 0.35, clearcoat: 0.6 });
+  const mCara = mat(0xf8de8a, { roughness: 0.3, clearcoat: 0.6 });
+  const mCentro = mat(0xfbe9b0, { roughness: 0.3, clearcoat: 0.5 });
+  const mRaya = mat(0xc8a25a, { roughness: 0.5, clearcoat: 0.1 });
+  const cara = new THREE.CircleGeometry(r - 0.05, 48);
+  const centro = new THREE.CircleGeometry(0.11, 24);
+  const raya = new THREE.PlaneGeometry(0.012, 0.11);
+  [[0.45, 2.1, 0, 0], [1.15, 1.95, 0.05, 0.1], [1.75, 1.55, 0, 0], [1.25, 1.35, 0.1, 0.15], [2.1, 1.05, 0, 0]].forEach(([x, z, sube, inclina]) => {
+    const g = new THREE.Group();
+    g.add(malla(disco, mDisco));
+    const c = malla(cara, mCara, false);
+    c.rotation.x = -Math.PI / 2; c.position.y = h + 0.002;
+    const cc = malla(centro, mCentro, false);
+    cc.rotation.x = -Math.PI / 2; cc.position.y = h + 0.003;
+    g.add(c, cc);
+    for (let k = 0; k < 5; k++) {
+      const a = (k / 5) * Math.PI * 2;
+      const l = malla(raya, mRaya, false);
+      l.rotation.set(-Math.PI / 2, 0, a);
+      l.position.set(Math.sin(a) * 0.05, h + 0.004, Math.cos(a) * 0.05);
+      g.add(l);
+    }
+    g.position.set(x, PISO + sube, z);
+    g.rotation.set(inclina, azar() * 3, (azar() - 0.5) * 0.08);
+    raiz.add(g);
+  });
+}
+
+raiz.position.set(-0.05, 0, 0);
+raiz.children[0].scale.set(0.9, 1, 0.9); // el plato, un poco más chico frente a la comida
+raiz.rotation.y = 0;
+
+function medir() {
+  const w = caja.clientWidth, h = caja.clientHeight;
+  renderer.setSize(w, h, false);
+  camara.aspect = w / h;
+  camara.updateProjectionMatrix();
+}
+medir();
+addEventListener("resize", medir);
+renderer.render(escena, camara);
+renderer.setAnimationLoop(() => renderer.render(escena, camara));
+window.listo = true;
+</script>
+</body>
+</html>
