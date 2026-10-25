@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/sesion";
 
 /**
  * Conversaciones de WhatsApp (solo el equipo): cada número con lo que escribió la persona y lo que le mandó Saludly
  * (el bot, la semana de prueba y las plantillas), como en un chat. Lo saliente se guarda desde el 24 oct 2026.
  * De los pre-registros muestra en qué día de la semana va, si mostró interés o pidió su cupo, y lo próximo programado.
- * Se actualiza sola cada 30 segundos. Es solo lectura: responderle a alguien se hace desde otra herramienta.
+ * En vivo (Supabase Realtime). Es solo lectura: responderle a alguien se hace desde otra herramienta.
  */
 interface Mensaje {
   id: number;
@@ -96,11 +96,29 @@ export function Conversaciones() {
     setInteres(new Set((re.data ?? []).map((r) => r.preregistro_id as string)));
   }, []);
 
+  // En vivo: cada mensaje que entra o sale aparece al instante (Supabase Realtime); cada minuto se recarga todo
+  // por si se perdió alguno o cambió el estado de la semana.
   useEffect(() => {
     void cargar();
-    const t = setInterval(() => void cargar(), 30_000);
-    return () => clearInterval(t);
+    const canal = supabase
+      .channel("whatsapp-en-vivo")
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "whatsapp_mensajes" }, (c) => {
+        const m = c.new as Mensaje;
+        setMensajes((xs) => (xs && !xs.some((x) => x.id === m.id) ? [...xs, m] : xs));
+      })
+      .subscribe();
+    const t = setInterval(() => void cargar(), 60_000);
+    return () => {
+      clearInterval(t);
+      void supabase.removeChannel(canal);
+    };
   }, [cargar]);
+
+  // Al abrir un chat o llegar un mensaje, baja hasta el último
+  const fondo = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (fondo.current) fondo.current.scrollTop = fondo.current.scrollHeight;
+  }, [abierto, mensajes?.length]);
 
   // Un chat por número, el más reciente arriba. Si el número es de un paciente y de un pre-registro, manda el paciente.
   const chats = useMemo(() => {
@@ -133,7 +151,7 @@ export function Conversaciones() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 className="text-2xl font-light text-ink">Conversaciones de WhatsApp</h2>
-          <p className="mt-1 text-sm text-ink-muted">Lo que escriben las personas y lo que les manda Saludly desde el +57 301 130 7944. Se actualiza cada 30 segundos.</p>
+          <p className="mt-1 text-sm text-ink-muted">Lo que escriben las personas y lo que les manda Saludly desde el +57 301 130 7944. En vivo: cada mensaje aparece apenas entra o sale.</p>
         </div>
         <button type="button" onClick={() => void cargar()} className="rounded-full border border-rule px-4 py-2 text-sm text-ink">Actualizar</button>
       </div>
@@ -184,7 +202,7 @@ export function Conversaciones() {
                 </div>
                 <Etiquetas p={chat.persona} />
               </div>
-              <div className="flex max-h-[65vh] flex-col gap-3 overflow-y-auto bg-surface/40 px-4 py-5">
+              <div ref={fondo} className="flex max-h-[65vh] flex-col gap-3 overflow-y-auto bg-surface/40 px-4 py-5">
                 {chat.ms.map((m) => <Burbuja key={m.id} m={m} />)}
               </div>
               {proximos.length > 0 && (
