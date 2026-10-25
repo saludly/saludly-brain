@@ -32,7 +32,16 @@ interface Programado {
   estado: string;
 }
 
-const ENVIO: Record<string, string> = { manana: "Consejos de la mañana", receta: "Receta", cortisol: "Bájale al estrés", examen: "Solo tu examen lo dice", tarde: "Consejos de la tarde" };
+// Un envío puede ser varios mensajes seguidos (la receta y su pregunta con botones): en "Lo próximo" va una línea por envío
+const ENVIO: Record<string, string> = { manana: "Consejos de la mañana", receta: "Receta y pregunta", cortisol: "Bájale al estrés", examen: "Solo tu examen lo dice", tarde: "Consejos de la tarde" };
+function porEnvio(filas: Programado[]) {
+  const grupos: Programado[] = [];
+  for (const f of filas) {
+    const g = grupos[grupos.length - 1];
+    if (!g || g.dia !== f.dia || g.envio !== f.envio || g.programado !== f.programado) grupos.push(f);
+  }
+  return grupos;
+}
 const hora = (t: string) => new Date(t).toLocaleString("es-CO", { timeZone: "America/Bogota", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
 
 /** *negrita* de WhatsApp en negrita; el resto, tal cual. */
@@ -132,7 +141,7 @@ export function Conversaciones() {
   }, [mensajes, personas, buscar]);
 
   const chat = chats.find((c) => c.celular === abierto) ?? null;
-  const proximos = chat?.persona?.tipo === "preregistro" ? programados.filter((p) => p.preregistro_id === chat.persona!.id).slice(0, 4) : [];
+  const proximos = chat?.persona?.tipo === "preregistro" ? porEnvio(programados.filter((p) => p.preregistro_id === chat.persona!.id)).slice(0, 5) : [];
 
   if (!mensajes) return <p className="mt-8 text-sm text-ink-muted">Cargando conversaciones…</p>;
 
