@@ -81,11 +81,11 @@ td a{color:var(--accent)}
 <div class="wrap">
   <header>
     <h1>Pre-registro en 21 grupos de Facebook</h1>
-    <p class="lead">7 grupos por día durante 3 días. Cada día tiene los mismos 7 mensajes, uno por tipo de grupo, y cada grupo lleva su propio enlace con <code>?ref=</code> para ver en el panel cuál trae más registros. Todos los grupos están en Bogotá o son de Colombia, y los revisé uno por uno el 24 de octubre de 2026 (miembros, si es público o privado y, donde Facebook lo mostró, cuántas publicaciones tiene al mes).</p>
+    <p class="lead">7 grupos por día durante 3 días. Cada tipo de grupo tiene su mensaje (8 en total; el de call center va el día 2 y el día 3), y cada grupo lleva su propio enlace con <code>?ref=</code> para ver en el panel cuál trae más registros. Todos los grupos están en Bogotá o son de Colombia, y los revisé uno por uno el 24 de octubre de 2026 (miembros, si es público o privado y, donde Facebook lo mostró, cuántas publicaciones tiene al mes).</p>
   </header>
 
   <div class="note">
-    <p><b>Ya pedí entrar a todos los grupos (24 de octubre en la noche).</b> Eres miembro de los 7 del día 1 y de todos los públicos; 6 privados esperan aprobación. Día 1 domingo 25, día 2 lunes 26 y día 3 martes 27, entre 7 y 9 de la mañana o entre 7 y 9 de la noche. En Teusaquillo me importa tienes 2 publicaciones esperando aprobación del administrador.</p>
+    <p><b>Ya pedí entrar a todos los grupos (24 de octubre en la noche).</b> Eres miembro de los 7 del día 1 y de todos los públicos; 4 privados esperan aprobación (Chapinero me importa, WikiMamás, Experiencias en cirugías y Recomienda tu cirujano). Día 1 domingo 25, día 2 lunes 26 y día 3 martes 27, entre 7 y 9 de la mañana o entre 7 y 9 de la noche. En Teusaquillo me importa tienes 2 publicaciones esperando aprobación del administrador.</p>
     <p><b>Los mensajes 1 y 2 cuentan tu historia</b> (tu abuela y por qué emprendiste) y saludan a los vecinos del barrio de cada grupo. El botón Copiar ya pone el nombre del barrio.</p>
   </div>
 
@@ -107,7 +107,7 @@ td a{color:var(--accent)}
   </section>
 
   <section>
-    <h2>Los 7 mensajes</h2>
+    <h2>Los 8 mensajes</h2>
     <p class="lead" style="margin-top:0">Sin emojis ni signos de exclamación. El botón Copiar de cada grupo en el calendario ya pone el enlace de ese grupo; aquí el enlace aparece como {enlace}.</p>
     <div class="msgs" id="msgs"></div>
   </section>
@@ -237,7 +237,18 @@ Antes de lanzarlo quiero probarlo con un grupo de personas. Durante siete días 
 
 Para inscribirte: {enlace}
 
-Y una pregunta para los comentarios: ¿qué es lo que más se les dificulta a la hora de bajar de peso? Leo todas las respuestas.`}
+Y una pregunta para los comentarios: ¿qué es lo que más se les dificulta a la hora de bajar de peso? Leo todas las respuestas.`},
+ {k:"M8", t:"Yo también estuve en call center", a:"Russell + Gary", tipo:"Call center",
+  why:"Tu historia real: trabajaste en call center antes de emprender. Habla como alguien de la tribu (la diadema, el turno, la campaña) y une eso con lo de tu abuela. No inventa detalles de tu trabajo: si alguien pregunta en qué campaña estabas, respóndelo tú.",
+  text:`Hola a todos. Les escribo porque yo también estuve de este lado de la diadema. Antes de emprender trabajé en call center, y conozco bien lo que es pasar el turno sentado, comer a deshoras y llegar a la casa sin energía para nada.
+
+Me salí para emprender Saludly, un proyecto de salud preventiva aquí en Bogotá. La razón fue mi abuela: murió de hipertensión y se la encontraron cuando ya era tarde, porque nunca se hacía exámenes. No quiero que eso le pase a nadie más.
+
+Para empezar estoy regalando una semana por WhatsApp: cada día te llegan consejos cortos, de los que se leen en un descanso, y una receta según lo que quieras lograr: bajar de peso, tener más energía o dormir mejor. Es gratis y no te pido tarjeta.
+
+Si te interesa: {enlace}
+
+Y si a alguien de la campaña le sirve, compártanselo. Cualquier pregunta la respondo por aquí.`}
 ];
 // d: día, s: índice del mensaje (0-6)
 const G = [
@@ -254,11 +265,11 @@ const G = [
  {d:2,s:3,n:"COLOMBIAN RUNNERS",u:"https://www.facebook.com/groups/colombianrunners",m:"13,9 mil",act:"149 publicaciones al mes",p:"pub",ref:"fb-colombian-runners",w:"Permite autopromoción si tiene que ver con running."},
  {d:2,s:4,n:"WikiMamás (Bogotá)",u:"https://www.facebook.com/groups/606654993026623",m:"2,4 mil",act:"137 publicaciones al mes",p:"priv",ref:"fb-wikimamas",w:"Misma administradora de Wikimamás Colombia, que prohíbe promociones: si te aceptan, lee las reglas antes de publicar."},
  {d:2,s:5,n:"EXPERIENCIAS EN CIRUGÍAS PLÁSTICAS",u:"https://www.facebook.com/groups/336904958191589",m:"12,4 mil",p:"priv",ref:"fb-experiencias-cirugias"},
- {d:2,s:6,n:"MUJERES en BICI - Bogotá",u:"https://www.facebook.com/groups/mujeresbici",m:"2,5 mil",p:"priv",ref:"fb-mujeres-bici",w:"Puede ser solo para mujeres."},
+ {d:2,s:7,n:"Call Center Bogotá",u:"https://www.facebook.com/groups/8032585276815927",m:"14,4 mil",act:"264 publicaciones al mes",p:"pub",ref:"fb-callcenter-bogota",w:"Ya eres miembro. Sin reglas en contra: el grupo habla de “todo lo relacionado al mundo call center en Bogotá”."},
  {d:3,s:0,n:"Chapinero me importa",u:"https://www.facebook.com/groups/862091327553895",m:"32,2 mil",act:"2.142 publicaciones al mes",p:"priv",ref:"fb-chapinero-meimporta",b:"Chapinero",w:"Regla: publicar solo temas de Chapinero y no repetir."},
  {d:3,s:1,n:"Vecinos Colina Las Villas Prado Mazurén Niza",u:"https://www.facebook.com/groups/lasvillasprado",m:"9,1 mil",act:"388 publicaciones al mes",p:"pub",ref:"fb-villas-niza",b:"Colina, Niza y Mazurén"},
  {d:3,s:2,n:"Vecinos Galerías, Alfonso López y Palermo (Teusaquillo)",u:"https://www.facebook.com/groups/688357254601249",m:"14,4 mil",act:"2.830 publicaciones al mes",p:"pub",ref:"fb-galerias-palermo"},
- {d:3,s:3,n:"Run Colina Campestre",u:"https://www.facebook.com/groups/runcolinacampestre",m:"496",p:"priv",ref:"fb-run-colina",w:"Pequeño pero de vecinos que corren en el norte."},
+ {d:3,s:7,n:"ofertas call center Colombia",u:"https://www.facebook.com/groups/568346041672320",m:"57,3 mil",act:"2.045 publicaciones al mes",p:"pub",ref:"fb-ofertas-callcenter",w:"Ya eres miembro y tienes 1 publicación esperando aprobación del administrador: mira qué pasa con esa antes de publicar esta."},
  {d:3,s:4,n:"consejos de mamás a mamás",u:"https://www.facebook.com/groups/3031361416998312",m:"115,1 mil",act:"10.000 publicaciones al mes",p:"pub",ref:"fb-consejos-mamas",w:"No es solo de Bogotá: quien sea de otra ciudad igual recibe la semana. No tiene regla contra la promoción."},
  {d:3,s:5,n:"Cirugías Estéticas, Recomienda tu cirujano",u:"https://www.facebook.com/groups/358448074931761",m:"4,3 mil",p:"priv",ref:"fb-recomienda-cirujano"},
  {d:3,s:6,n:"Fitness bogotá",u:"https://www.facebook.com/groups/2211989829029808",m:"4,2 mil",act:"277 publicaciones al mes",p:"pub",ref:"fb-fitness-bogota"}
@@ -274,6 +285,10 @@ const BACKUP = [
  ["Recetas Saludables","https://www.facebook.com/groups/901805907449170","452,8 mil","Reserva para el mensaje 7. Enorme pero no es de Bogotá"],
  ["Consejos para mamás primerizas","https://www.facebook.com/groups/consejosparamamasprimerizasbebeslactanciaembarazo","564,3 mil","Reserva para el mensaje 5. Muchas preguntan cómo bajar de peso después del parto, pero no es de Bogotá"],
  ["Mamas fit and runners","https://www.facebook.com/groups/195652827558793","311","Reserva para el mensaje 4 o 5. No dice de qué país es"],
+ ["MUJERES en BICI - Bogotá (privado, solicitud pendiente)","https://www.facebook.com/groups/mujeresbici","2,5 mil","Reserva para el mensaje 7 si te aceptan. Salió por Call Center Bogotá"],
+ ["Run Colina Campestre (privado, solicitud pendiente)","https://www.facebook.com/groups/runcolinacampestre","496","Reserva para el mensaje 4 si te aceptan. Salió por ofertas call center Colombia"],
+ ["Parche Call Center Colombia","https://www.facebook.com/groups/318538015217678","88,1 mil","Reserva para el mensaje 8. Ya te uniste, pero para publicar hay que aceptar sus reglas y prohíben la autopromoción salvo “ofertas exclusivas para el grupo”: escríbele antes al administrador"],
+ ["Call Center Ofertas Si HAY · Trabajo Bogotá Call Center","https://www.facebook.com/groups/621613669866380","106 mil · 23 mil","Descartados: prohíben la autopromoción"],
  ["perder peso Colombia","https://www.facebook.com/groups/787791065274664","1,7 mil","Reserva para el mensaje 7. 267 publicaciones al mes"],
  ["Body Fitness Bogotá","https://www.facebook.com/groups/521571921334841","2,3 mil","Reserva para el mensaje 7. Ya eres miembro, pero el administrador es de Cali"],
  ["Recomendaciones de Especialistas Cirugía Estética","https://www.facebook.com/groups/814926109063531","2 mil","Sacado: solo 2 publicaciones en el último mes"],
@@ -296,7 +311,7 @@ async function copy(text, label){
 }
 
 const DAYS = {1:"Día 1 · domingo 25", 2:"Día 2 · lunes 26", 3:"Día 3 · martes 27"};
-const NOTES = {1:"Ya eres miembro de los 7.",2:"Ya eres miembro de Teusaquillo me importa y de los públicos; WikiMamás, Experiencias en cirugías y Mujeres en Bici esperan aprobación.",3:"Ya eres miembro de los públicos; Chapinero me importa, Run Colina y Recomienda tu cirujano esperan aprobación."};
+const NOTES = {1:"Ya eres miembro de los 7.",2:"Ya eres miembro de Teusaquillo me importa y de los públicos; WikiMamás y Experiencias en cirugías esperan aprobación.",3:"Ya eres miembro de los públicos; Chapinero me importa y Recomienda tu cirujano esperan aprobación."};
 let day = 1;
 try{const h=location.hash.replace("#","");if(/^dia[123]$/.test(h))day=+h.slice(3)}catch(e){}
 
