@@ -4,7 +4,9 @@
  * Meta llama aquí con cada mensaje que recibe el número de Saludly.
  * - GET: verificación del webhook (hub.verify_token = WHATSAPP_VERIFY_TOKEN).
  * - POST: guarda el mensaje en whatsapp_mensajes y responde con un texto fijo según lo que escribió:
- *   1 agendar · 2 resultados · 3 hablar con una persona · BAJA dejar de recibir mensajes · cualquier otra cosa, el menú.
+ *   BAJA deja de recibir mensajes, ALTA vuelve a recibirlos; cualquier otra cosa la responde una persona del equipo.
+ *   Sin menú de números (Carlos, 25 oct 2026: no funcionaba). Quien no es paciente ni del pre-registro recibe el enlace
+ *   del Demo Week.
  * Las respuestas no dan valores ni interpretan resultados: eso solo lo ve el paciente en la app.
  * Se publica sin verificación de sesión (--no-verify-jwt): Meta no manda token de Supabase. La firma de Meta
  * se revisa con WHATSAPP_APP_SECRET cuando está configurado.
@@ -15,25 +17,17 @@ import { contenido as SEMANA, primerNombre, respuestaBoton } from "../_compartid
 import { arrancar, CAMPOS, entregar, type Pre } from "../_compartido/semana_envios.ts";
 
 const APP = "https://app.saludly.online";
-const MENU =
-  "Escribe el número de lo que necesitas:\n1️⃣ Agendar o cambiar la visita de la enfermera\n2️⃣ Ver mis resultados\n3️⃣ Hablar con una persona de Saludly\n\nSi no quieres recibir más mensajes, escribe BAJA.";
-
 const RESPUESTAS: Record<string, (nombre: string) => string> = {
-  hola: (n) => `¡Hola${n ? `, ${n}` : ""}! 👋 Soy el asistente de Saludly.\n\n${MENU}`,
-  otro: (n) => `Recibimos tu mensaje${n ? `, ${n}` : ""} 🙌 Una persona del equipo de Saludly te responde muy pronto.\n\n${MENU}`,
-  "1": () =>
-    "📅 Las visitas son de lunes a viernes, entre las 7 y las 11 de la mañana, y debes estar en ayunas. Escríbenos el día y la hora que te quedan mejor y te confirmamos hoy mismo.",
-  "2": () => `🔎 Tus resultados aparecen en tu app cuando un médico los revisa: ${APP}\nSi todavía no están, te escribimos apenas estén listos.`,
-  "3": () => "🙋 Listo, una persona del equipo de Saludly te va a escribir pronto por este chat.",
+  hola: (n) => `¡Hola${n ? `, ${n}` : ""}! 👋 Recibimos tu mensaje. Una persona del equipo de Saludly te responde muy pronto.`,
+  otro: (n) => `Recibimos tu mensaje${n ? `, ${n}` : ""} 🙌 Una persona del equipo de Saludly te responde muy pronto.`,
+  // A un número que no es paciente ni está en el pre-registro
+  nuevo: () => `¡Hola! 👋 Este es el WhatsApp de Saludly. Para empezar tu Demo Week gratis, regístrate aquí y te llega todo por este chat: ${APP}/preregistro`,
   baja: () => "Listo, no te enviaremos más mensajes por WhatsApp. Si cambias de opinión, escribe ALTA.",
   alta: (n) => `¡Bienvenido de nuevo${n ? `, ${n}` : ""}! Volverás a recibir los avisos de Saludly por WhatsApp.`,
 };
 
 function clave(texto: string) {
   const t = texto.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
-  if (/^1\b|agendar|visita|cita/.test(t)) return "1";
-  if (/^2\b|resultado/.test(t)) return "2";
-  if (/^3\b|persona|asesor|humano/.test(t)) return "3";
   if (/^baja\b|^stop\b|^no mas\b/.test(t)) return "baja";
   if (/^alta\b/.test(t)) return "alta";
   if (!t || /^(hola|buenas|buenos|buen dia|hi|hello|menu|inicio|ayuda)\b/.test(t)) return "hola";
@@ -63,7 +57,7 @@ async function guardarComprobante(admin: any, pacienteId: string, mediaId: strin
 // deno-lint-ignore no-explicit-any
 async function semanaPrueba(admin: any, m: any, de: string, texto: string) {
   const { data } = await admin.from("preregistros").select(CAMPOS).eq("celular_whatsapp", de).order("creado", { ascending: false }).limit(1).maybeSingle();
-  const p = data as Pre | null;
+  const p = (data as Pre | null) ?? (await porCodigo(admin, de, texto));
   if (!p || p.estado === "cliente") return false;
   const ahora = new Date().toISOString();
   await admin.from("preregistros").update({ ultimo_mensaje: ahora }).eq("id", p.id);
@@ -115,6 +109,27 @@ async function semanaPrueba(admin: any, m: any, de: string, texto: string) {
   return true;
 }
 
+/** El código del pre-registro que trae el mensaje del botón de la app ("Mi código es ff4722"). */
+const codigoDe = (texto: string) => texto.match(/c[oó]digo es ([a-z0-9]{6})/i)?.[1]?.toLowerCase();
+
+/**
+ * Pre-registro por código cuando el número no coincide (25 oct 2026: en Venezuela, México o Argentina el número que
+ * escribió la persona no siempre es el que manda WhatsApp, p. ej. con un 0 de más o sin el 1 de México). Si el código
+ * existe, el número es del mismo país (mismos 2 primeros dígitos) y la semana no ha empezado, se guarda el número real
+ * de WhatsApp para que la semana le llegue a ese chat.
+ */
+// deno-lint-ignore no-explicit-any
+async function porCodigo(admin: any, de: string, texto: string): Promise<Pre | null> {
+  const codigo = codigoDe(texto);
+  if (!codigo) return null;
+  const { data } = await admin.from("preregistros").select(CAMPOS).eq("codigo", codigo).maybeSingle();
+  const p = data as Pre | null;
+  if (!p || p.prueba_inicio || p.celular_whatsapp.slice(0, 2) !== de.slice(0, 2)) return null;
+  const { error } = await admin.from("preregistros").update({ celular_whatsapp: de }).eq("id", p.id);
+  if (error) { console.error("no se pudo corregir el número", error.message); return null; }
+  return { ...p, celular_whatsapp: de };
+}
+
 /**
  * Freno contra otros bots (24 oct 2026: el bot de otra empresa y el nuestro se respondieron 218 veces en 36 minutos).
  * Si un número mandó más de 5 mensajes en los últimos 10 minutos, se guardan pero no se responden.
@@ -154,7 +169,7 @@ async function numeroDe(admin: any, m: any, valor: any, texto: string): Promise<
     const { data } = await admin.from("preregistros").select("celular_whatsapp").eq("whatsapp_user_id", usuario).maybeSingle();
     if (data) return data.celular_whatsapp;
   }
-  const codigo = texto.match(/c[oó]digo es ([a-z0-9]{6})/i)?.[1]?.toLowerCase();
+  const codigo = codigoDe(texto);
   if (codigo) {
     const { data } = await admin.from("preregistros").select("id, celular_whatsapp").eq("codigo", codigo).maybeSingle();
     if (data) {
@@ -222,7 +237,7 @@ Deno.serve(async (req) => {
         if (p && (k === "baja" || k === "alta")) {
           await admin.from("pacientes").update({ whatsapp_baja: k === "baja" ? new Date().toISOString() : null }).eq("id", p.id);
         }
-        await enviarTexto(de, RESPUESTAS[k]!(nombre));
+        await enviarTexto(de, (p || k === "baja" || k === "alta" ? RESPUESTAS[k] : RESPUESTAS.nuevo)!(nombre));
       }
     }
   }
