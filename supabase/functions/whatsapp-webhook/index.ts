@@ -134,6 +134,22 @@ async function yaRespondidoHoy(admin: any, de: string) {
   return (count ?? 0) > 1;
 }
 
+/**
+ * El número de quien escribe. A veces Meta no manda `from` (24 oct 2026, Milena: personas con nombre de usuario de
+ * WhatsApp): entonces se toma de contacts[].wa_id y, si tampoco está, del código del pre-registro que trae el mensaje
+ * del botón de la app ("Mi código es ff4722"). Si no se puede saber, queda en los registros de la función para revisarlo.
+ */
+// deno-lint-ignore no-explicit-any
+async function numeroDe(admin: any, m: any, valor: any, texto: string): Promise<string | null> {
+  const n = m.from ?? valor?.contacts?.find((c: { wa_id?: string }) => c.wa_id)?.wa_id;
+  if (n) return n;
+  console.error("mensaje sin número", JSON.stringify({ mensaje: m, contactos: valor?.contacts }).slice(0, 1500));
+  const codigo = texto.match(/c[oó]digo es ([a-z0-9]{6})/i)?.[1]?.toLowerCase();
+  if (!codigo) return null;
+  const { data } = await admin.from("preregistros").select("celular_whatsapp").eq("codigo", codigo).maybeSingle();
+  return data?.celular_whatsapp ?? null;
+}
+
 async function firmaValida(req: Request, cuerpo: string) {
   const secreto = Deno.env.get("WHATSAPP_APP_SECRET");
   if (!secreto) return true;
@@ -157,8 +173,9 @@ Deno.serve(async (req) => {
   for (const entrada of datos.entry ?? []) {
     for (const cambio of entrada.changes ?? []) {
       for (const m of cambio.value?.messages ?? []) {
-        const de: string = m.from;
         const texto: string = m.text?.body ?? m.button?.text ?? m.interactive?.button_reply?.title ?? "";
+        const de = await numeroDe(admin, m, cambio.value, texto);
+        if (!de) continue;
         const { data: p } = await admin.from("pacientes").select("id, nombre").eq("celular_whatsapp", de).order("creado", { ascending: false }).limit(1).maybeSingle();
         if (!p && !(m.image ?? m.document) && (await semanaPrueba(admin, m, de, texto))) continue;
         const nombre = p?.nombre?.trim().split(/\s+/)[0] ?? "";
