@@ -90,6 +90,23 @@ td a{color:var(--accent)}
   </div>
 
   <section>
+    <h2>Cambio para los días 2 y 3 · por aprobar</h2>
+    <p class="lead" style="margin-top:0">Las capturas de WhatsApp armadas no funcionaron bien y la gente le tiene miedo a un enlace que no conoce. Desde el día 2: mensajes más cortos (máximo 3 párrafos) que dicen que en la foto se ve lo que abre el enlace, y un carrusel de imágenes reales.</p>
+    <div class="row" style="align-items:flex-start;gap:16px">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px;width:180px;max-width:100%">
+        <img src="registro_portada.png" alt="Primera pantalla del pre-registro de Saludly en un iPhone" style="width:100%;border:1px solid var(--line);border-radius:8px">
+        <figcaption class="daynote">1. Lo que abre el enlace: la portada real del registro, tomada como iPhone.</figcaption>
+      </figure>
+      <div style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:220px">
+        <p><b>2. Tu perfil de Instagram @saludly.</b> Captura desde tu iPhone, con la app abierta en el perfil (logo, 311 seguidores, la biografía con el enlace al registro).</p>
+        <p><b>3. Una historia destacada</b> (por ejemplo “Recomendaciones”), también desde tu iPhone.</p>
+        <p class="warn">Instagram no deja ver las historias destacadas sin iniciar sesión y yo no puedo entrar a tu cuenta, así que las capturas 2 y 3 las tomas tú y las dejas en <code>docs/disenos/capturas_whatsapp/</code>.</p>
+        <p class="daynote">Mientras llegan, cada publicación puede salir solo con la portada del registro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Quién arma qué</h2>
     <div class="advisors">
       <div class="adv"><span class="who">Russell Brunson</span><span class="where">Mensajes 1 y 2 · grupos de barrio</span><p>Tu historia de emprendedor: el momento en que viste el problema y por qué decidiste hacer algo. En un grupo de vecinos la gente apoya a la persona antes que a la oferta.</p></div>
@@ -165,100 +182,60 @@ const BASE = "https://app.saludly.online/preregistro?ref=";
 const MSG = [
  {k:"M1", t:"Historia de vecino", a:"Russell Brunson", tipo:"Grupos “me importa”",
   why:"Grupos grandes de localidad. La gente reacciona a una persona con nombre y una razón. La historia va primero, la invitación al final y la petición de compartir cierra.",
-  text:`Hola, vecinos de {barrio}. Me llamo Carlos y quiero contarles en qué ando, porque necesito su ayuda.
+  text:`Hola, vecinos de {barrio}. Soy Carlos y estoy emprendiendo Saludly por mi abuela, que murió de hipertensión. Se la encontraron tarde porque nunca se hacía exámenes.
 
-Mi abuela murió de hipertensión. Cuando se la encontraron ya era tarde: nunca se hacía exámenes y pasó muchos años sufriendo con esa enfermedad. Toda mi vida me he dedicado a cuidar a mi familia, y con ella entendí que cuidarse a tiempo cambia todo.
+Estoy regalando una semana de consejos y una receta diaria por WhatsApp para bajar de peso, tener más energía o dormir mejor. Es gratis y te inscribes aquí {enlace}
 
-Por eso emprendí Saludly, un proyecto de salud preventiva aquí en Bogotá. Quiero que las personas se sientan más saludables con consejos claros que se puedan cumplir en el día a día, sin dietas de moda.
-
-Antes de lanzarlo quiero probarlo con vecinos de verdad. Durante siete días te llegan por WhatsApp consejos y una receta al día, según lo que quieras lograr: bajar de peso, tener más energía o comer mejor. Es gratis y no te pido tarjeta ni nada parecido.
-
-Si te interesa, te inscribes aquí en dos minutos: {enlace}
-
-Si conocen a alguien a quien le pueda servir, les agradezco que se lo pasen. Cualquier pregunta la respondo por aquí.`},
+En la foto les muestro lo que abre el link, y en Instagram nos encuentran como @saludly. Si conocen a alguien a quien le sirva, compártanlo.`},
  {k:"M2", t:"Pregunta y vecino del norte", a:"Russell + Gary", tipo:"Barrios del norte",
   why:"Abre con una situación que todos han vivido para que la gente se reconozca. Es más corto que el 1 porque estos grupos son de clasificados y se lee rápido.",
-  text:`Buenas, vecinos. Les hago una pregunta.
+  text:`Buenas, vecinos de {barrio}. ¿A cuántos les pasa que el lunes arrancan a comer mejor y el miércoles ya se cayó todo?
 
-¿A cuántos les ha pasado que el lunes arrancan con toda la intención de comer mejor y el miércoles ya se cayó todo? Es normal, y por eso casi ninguna dieta dura.
+Soy Carlos y por mi abuela, que murió de hipertensión, estoy creando Saludly. Estoy regalando una semana de consejos cortos y una receta diaria por WhatsApp, gratis. Inscripción en dos minutos {enlace}
 
-Soy Carlos, emprendedor de Bogotá. Empecé este proyecto por mi abuela: murió de hipertensión y se la encontraron cuando ya era tarde. Desde entonces quiero ayudar a que la gente se cuide antes, con consejos que sí quepan en la rutina de uno: el trabajo, el trancón, la casa.
-
-Busco vecinos de {barrio} que quieran probarlo primero. Es una semana gratis por WhatsApp: cada día te llegan consejos cortos y una receta fácil según tu objetivo.
-
-El registro toma dos minutos: {enlace}
-
-Gracias a los administradores por dejarme compartirlo.`},
+En la foto ven lo que abre el link. Gracias a los administradores por dejarme compartirlo.`},
  {k:"M3", t:"Primero un consejo", a:"Gary Vee", tipo:"Barrios centro y occidente",
   why:"Regala algo útil antes de pedir. Quien no se inscribe igual se lleva el consejo, y eso hace que el grupo vea la publicación como aporte y no como anuncio.",
-  text:`Hola a todos. Les dejo un consejo que a mucha gente le sirve y casi nadie aplica: en el almuerzo, sirve primero la mitad del plato con verdura y después lo demás. No es una dieta, es un orden, y ayuda a comer menos sin quedarse con hambre.
+  text:`Un consejo que casi nadie aplica: en el almuerzo sirve primero medio plato de verdura y después lo demás. Ayuda a comer menos sin quedarse con hambre.
 
-Soy Carlos y estoy empezando un emprendimiento aquí en Bogotá para ayudar a bajar de peso con consejos así de sencillos. Antes de lanzarlo quiero que lo prueben vecinos de verdad y me digan qué les sirve y qué no.
+Soy Carlos, de Bogotá, y estoy regalando una semana de consejos así y una receta diaria por WhatsApp. Es gratis {enlace}
 
-Son siete días por WhatsApp, consejos y una receta al día, gratis. Si quieres participar: {enlace}
-
-Si tienes alguna duda, me la dejas en los comentarios y te respondo.`},
+En la foto les muestro lo que abre el link. Si tienen dudas, me las dejan en los comentarios.`},
  {k:"M4", t:"Oferta para corredores", a:"Alex Hormozi", tipo:"Runners",
   why:"Habla del resultado que quiere un corredor (correr más liviano, recuperarse, tener energía), dice exactamente qué recibe, cuánto cuesta (nada) y quita el riesgo pidiendo que digan si no sirvió.",
-  text:`Hola, corredores. Una pregunta para los que están entrenando para una 10K o una media: ¿están comiendo para correr mejor o solo para no tener hambre?
+  text:`Corredores, ¿están comiendo para correr mejor o solo para no tener hambre? Lo que uno come antes y después de un fondo cambia mucho, y más con la altura de Bogotá.
 
-Mucha gente cree que con entrenar basta, pero lo que uno come antes y después de un fondo cambia mucho cómo responde el cuerpo, y más con la altura de Bogotá.
+Soy Carlos y estoy regalando una semana de consejos y una receta diaria por WhatsApp según tu objetivo: correr más liviano, recuperarte mejor o tener más energía. Gratis y sin tarjeta {enlace}
 
-Soy Carlos, emprendedor de aquí, y estoy armando un proyecto de nutrición y salud preventiva. Antes de lanzarlo quiero probarlo con gente que entrena de verdad.
-
-La propuesta es esta: una semana gratis por WhatsApp con consejos y una receta al día según tu objetivo, ya sea bajar unos kilos para correr más liviano, recuperarte mejor o llegar con más energía a los entrenos. Recetas fáciles, con cosas que se consiguen en cualquier supermercado. No pagas nada ni dejas tarjeta.
-
-Inscripción: {enlace}
-
-Si al final de la semana no te sirvió, dímelo. Eso también me ayuda mucho.`},
+En la foto ves lo que abre el link. Si al final no te sirvió, dímelo.`},
  {k:"M5", t:"Con permiso, para mamás", a:"Seth Godin", tipo:"Mamás",
   why:"Pregunta en vez de afirmar, reconoce que el grupo es un espacio de apoyo, invita a pocas y deja la puerta abierta para decir que no. En grupos de mamás eso pesa más que cualquier oferta.",
-  text:`Hola, mamás. Les escribo con respeto, porque sé que este es un espacio para apoyarnos.
+  text:`Hola, mamás. ¿Les pasa que entre el trabajo, la casa y los niños lo último de la lista son ustedes?
 
-¿Les pasa que entre el trabajo, la casa y los niños, lo último de la lista son ustedes? ¿Y que cuando por fin hay un rato aparece en redes una dieta distinta cada semana y ya no saben a quién creerle?
+Soy Carlos, de Bogotá. Toda mi vida me he dedicado a cuidar a mi familia, y ahora estoy regalando una semana de consejos cortos y una receta fácil al día por WhatsApp. Es gratis {enlace}
 
-Soy Carlos, emprendedor aquí en Bogotá. Toda mi vida me he dedicado a cuidar a mi familia, y ahora estoy armando un proyecto de salud preventiva pensado justo para eso: consejos cortos y recetas fáciles que quepan en un día de mamá, sin dietas extremas.
-
-Busco un grupo pequeño de mamás que quieran probarlo primero y decirme con sinceridad qué les sirve. Son siete días por WhatsApp, unos mensajes cortos al día, gratis. En el registro me cuentas si tienes alguna alergia para tenerla en cuenta.
-
-Si te animas: {enlace}
-
-Y si no es el momento, igual gracias por leer.`},
+En la foto les muestro lo que abre el link. Y si no es el momento, igual gracias por leer.`},
  {k:"M6", t:"Cuidar el resultado", a:"Seth Godin + Hormozi", tipo:"Cirugías",
   why:"Dice desde el principio lo que no eres (no vendes fajas ni procedimientos, no reemplazas al cirujano) y ofrece una sola cosa concreta: cuidar el peso después de la recuperación. Ofrece borrarlo si el administrador no está de acuerdo.",
-  text:`Hola. Sé que este grupo es para compartir experiencias de cirugía, así que voy al punto y con respeto.
+  text:`Hola. Una duda que aparece mucho en grupos como este es cómo mantener el resultado cuando termina la recuperación.
 
-Una duda que aparece seguido en grupos como este es cómo mantener el resultado cuando termina la recuperación, porque si la alimentación vuelve a ser la de antes, el cuerpo también lo nota.
+Soy Carlos, de Bogotá, y estoy regalando una semana de consejos y una receta diaria por WhatsApp para cuidar el peso. No reemplaza a tu cirujano y no vendo fajas ni procedimientos {enlace}
 
-Soy Carlos, emprendedor en Bogotá, y estoy armando un proyecto de salud preventiva para ayudar a cuidar el peso con consejos claros y recetas sencillas. No reemplaza a tu cirujano ni tus controles, y no vendo fajas, cremas ni procedimientos. Si estás en recuperación, primero van las indicaciones de tu médico.
-
-Busco personas que quieran probarlo gratis durante una semana: cada día te llegan por WhatsApp consejos y una receta según tu objetivo.
-
-Si te interesa: {enlace}
-
-Si a los administradores no les parece adecuado, lo borro sin problema.`},
+En la foto ves lo que abre el link. Si a los administradores no les parece adecuado, lo borro.`},
  {k:"M7", t:"Sin dietas raras", a:"Hormozi + Gary", tipo:"Peso, fitness y mujeres activas",
   why:"La oferta en pocas líneas para grupos donde se publica mucho, y una pregunta al final para que la gente comente. Los comentarios hacen que Facebook muestre la publicación a más personas.",
-  text:`Hola. Les comparto algo en lo que estoy trabajando, por si a alguien le sirve.
+  text:`Les comparto algo por si a alguien le sirve. Estoy regalando una semana de consejos y una receta diaria por WhatsApp para bajar de peso sin dietas raras ni productos milagro. Es gratis {enlace}
 
-Soy Carlos, emprendedor de Bogotá. Estoy montando un proyecto para ayudar a bajar de peso sin dietas raras ni productos milagro: consejos que se puedan cumplir y recetas con comida normal, de la que hay en cualquier tienda.
+En la foto ven lo que abre el link, y en Instagram nos encuentran como @saludly.
 
-Antes de lanzarlo quiero probarlo con un grupo de personas. Durante siete días te llegan por WhatsApp consejos y una receta diaria según tu meta. Es gratis.
-
-Para inscribirte: {enlace}
-
-Y una pregunta para los comentarios: ¿qué es lo que más se les dificulta a la hora de bajar de peso? Leo todas las respuestas.`},
+¿Qué es lo que más se les dificulta para bajar de peso? Leo todos los comentarios.`},
  {k:"M8", t:"Yo también estuve en call center", a:"Russell + Gary", tipo:"Call center",
   why:"Tu historia real: trabajaste en call center antes de emprender. Habla como alguien de la tribu (la diadema, el turno, la campaña) y une eso con lo de tu abuela. No inventa detalles de tu trabajo: si alguien pregunta en qué campaña estabas, respóndelo tú.",
-  text:`Hola a todos. Les escribo porque yo también estuve de este lado de la diadema. Antes de emprender trabajé en call center, y conozco bien lo que es pasar el turno sentado, comer a deshoras y llegar a la casa sin energía para nada.
+  text:`Yo también estuve de este lado de la diadema. Antes de emprender trabajé en call center y sé lo que es el turno sentado, comer a deshoras y llegar a la casa sin energía.
 
-Me salí para emprender Saludly, un proyecto de salud preventiva aquí en Bogotá. La razón fue mi abuela: murió de hipertensión y se la encontraron cuando ya era tarde, porque nunca se hacía exámenes. No quiero que eso le pase a nadie más.
+Me salí para crear Saludly por mi abuela, que murió de hipertensión y se la encontraron tarde. Estoy regalando una semana de consejos cortos y una receta diaria por WhatsApp, gratis {enlace}
 
-Para empezar estoy regalando una semana por WhatsApp: cada día te llegan consejos cortos, de los que se leen en un descanso, y una receta según lo que quieras lograr: bajar de peso, tener más energía o dormir mejor. Es gratis y no te pido tarjeta.
-
-Si te interesa: {enlace}
-
-Y si a alguien de la campaña le sirve, compártanselo. Cualquier pregunta la respondo por aquí.`}
+En la foto ven lo que abre el link. Si a alguien de la campaña le sirve, compártanselo.`}
 ];
 // d: día, s: índice del mensaje (0-6)
 const G = [
