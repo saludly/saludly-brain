@@ -18,11 +18,19 @@ import C from "@/lib/contenido.json";
  * En desarrollo, /preregistro?demo (y &paso=1..6 o demo=listo) muestra las pantallas sin cuenta, con datos de ejemplo.
  */
 
+// "Fuera de Bogotá" va de primera para quien se inscribe desde otra ciudad o desde el exterior (24 oct 2026).
 const LOCALIDADES = [
-  "Usaquén", "Chapinero", "Santa Fe", "San Cristóbal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibón", "Engativá",
+  "Fuera de Bogotá", "Usaquén", "Chapinero", "Santa Fe", "San Cristóbal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibón", "Engativá",
   "Suba", "Barrios Unidos", "Teusaquillo", "Los Mártires", "Antonio Nariño", "Puente Aranda", "La Candelaria",
-  "Rafael Uribe Uribe", "Ciudad Bolívar", "Sumapaz", "Municipio cercano a Bogotá", "Fuera de Bogotá",
+  "Rafael Uribe Uribe", "Ciudad Bolívar", "Sumapaz", "Municipio cercano a Bogotá",
 ];
+
+/** Celular con indicativo, solo dígitos. Colombia (+57): 10 dígitos que empiezan por 3; otros países: de 6 a 13. */
+function celularValido(indicativo: string, numero: string) {
+  if (!/^[1-9]\d{0,3}$/.test(indicativo)) return false;
+  if (indicativo === "57") return /^3\d{9}$/.test(numero);
+  return /^\d{6,13}$/.test(numero) && (indicativo + numero).length <= 15;
+}
 
 const MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -159,6 +167,7 @@ export function Preregistro() {
   const ejemplo = DEMO;
   const [paso, setPaso] = useState(Math.min(6, Math.max(1, Number(params.get("paso")) || 1)));
   const [nombre, setNombre] = useState(ejemplo ? "Ana María Rojas" : "");
+  const [indicativo, setIndicativo] = useState("57");
   const [celular, setCelular] = useState(ejemplo ? "3001234567" : "");
   const [sexo, setSexo] = useState<"hombre" | "mujer" | "">(ejemplo ? "mujer" : "");
   const [dia, setDia] = useState(ejemplo ? "14" : "");
@@ -205,7 +214,7 @@ export function Preregistro() {
 
   const nacimiento = fechaDe(dia, mes, anio);
   const edad = edadDe(nacimiento);
-  const datosValidos = nombre.trim().length >= 3 && /^3\d{9}$/.test(celular);
+  const datosValidos = nombre.trim().length >= 3 && celularValido(indicativo, celular);
   const fechaValida = !!nacimiento && edad >= 18 && edad <= 110;
   const metasValidas = metas.length > 0 && (!metas.includes(OTRO) || otro.trim().length >= 3);
   const alergiasValidas = sinAlergias || alergias.length > 0;
@@ -219,7 +228,7 @@ export function Preregistro() {
     const { error } = await supabase.from("preregistros").insert({
       nombre: nombre.trim(),
       correo: s.sesion!.user.email ?? null,
-      celular_whatsapp: `57${celular}`,
+      celular_whatsapp: `${indicativo}${celular}`,
       fecha_nacimiento: nacimiento,
       sexo: sexo || null,
       localidad,
@@ -248,9 +257,29 @@ export function Preregistro() {
             <input autoComplete="name" value={nombre} onChange={(e) => setNombre(e.target.value)} className={claseFicha} />
           </Ficha>
           <Ficha etiqueta="Celular con WhatsApp">
-            <span className="text-ink-muted">+57</span>
-            <input inputMode="tel" autoComplete="tel-national" value={celular} onChange={(e) => setCelular(e.target.value.replace(/\D/g, "").slice(0, 10))} className={claseFicha} placeholder="300 123 4567" />
+            <span className="text-ink-muted">+</span>
+            <input
+              id="indicativo"
+              inputMode="numeric"
+              autoComplete="tel-country-code"
+              aria-label="Indicativo del país"
+              value={indicativo}
+              onChange={(e) => setIndicativo(e.target.value.replace(/\D/g, "").replace(/^0+/, "").slice(0, 4))}
+              className={claseFicha.replace("w-full", "flex-none")}
+              style={{ width: `${Math.max(2, indicativo.length) + 0.6}ch` }}
+            />
+            <span className="h-6 w-px shrink-0 bg-rule" />
+            <input
+              id="celular"
+              inputMode="tel"
+              autoComplete="tel-national"
+              value={celular}
+              onChange={(e) => setCelular(e.target.value.replace(/\D/g, "").slice(0, indicativo === "57" ? 10 : 13))}
+              className={claseFicha}
+              placeholder={indicativo === "57" ? "300 123 4567" : "Número sin el indicativo"}
+            />
           </Ficha>
+          {indicativo !== "57" && <p className="-mt-1 px-2 text-xs text-ink-muted">¿Vives fuera de Colombia? Escribe el indicativo de tu país (por ejemplo, 1 para Estados Unidos o 34 para España) y tu número sin el cero inicial.</p>}
           <Ficha etiqueta="Sexo (opcional)">
             <select value={sexo} onChange={(e) => setSexo(e.target.value as "hombre" | "mujer" | "")} className={claseFicha}>
               <option value="">Prefiero no decirlo</option>
