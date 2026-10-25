@@ -8,7 +8,30 @@ async function enviar(cuerpo: Record<string, unknown>) {
     body: JSON.stringify({ messaging_product: "whatsapp", ...cuerpo }),
   });
   if (!r.ok) console.error("Meta respondió", r.status, (await r.text()).slice(0, 400));
+  await guardarSaliente(cuerpo, r.ok);
   return r.ok;
+}
+
+/** Deja en whatsapp_mensajes lo que se envió (o se intentó), para verlo como chat en /medico. Si falla, no detiene el envío. */
+// deno-lint-ignore no-explicit-any
+async function guardarSaliente(c: any, ok: boolean) {
+  const url = Deno.env.get("SUPABASE_URL"), llave = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!url || !llave) return;
+  const tipo = c.type === "interactive" ? "botones" : c.type === "template" ? "plantilla" : "texto";
+  const texto = c.type === "interactive"
+    ? `${c.interactive.body.text}\n[${c.interactive.action.buttons.map((b: { reply: { title: string } }) => b.reply.title).join(" | ")}]`
+    : c.type === "template"
+      ? `Plantilla ${c.template.name}: ${(c.template.components?.[0]?.parameters ?? []).map((p: { text: string }) => p.text).join(" · ")}`
+      : c.text?.body ?? "";
+  try {
+    await fetch(`${url}/rest/v1/whatsapp_mensajes`, {
+      method: "POST",
+      headers: { apikey: llave, Authorization: `Bearer ${llave}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({ celular: c.to, texto: texto.slice(0, 4000), opcion: ok ? tipo : `fallo_${tipo}`, direccion: "saliente" }),
+    });
+  } catch (e) {
+    console.error("no se guardó el mensaje saliente", e);
+  }
 }
 
 /**

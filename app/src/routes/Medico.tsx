@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Marca } from "@/components/Comunes";
 import { Preregistros } from "@/components/Preregistros";
+import { Conversaciones } from "@/components/Conversaciones";
 import { PLAZO, SUAVE, estadoDeEscalamiento, fechaLarga } from "@/lib/datos";
 import { useInforme } from "@/lib/contexto";
 import { supabase, useSesion } from "@/lib/sesion";
@@ -364,7 +365,7 @@ export function Medico() {
   const [filas, setFilas] = useState<Fila[] | null>(null);
   const [abierta, setAbierta] = useState<Fila | null>(null);
   const [subiendo, setSubiendo] = useState<string | null>(null);  // id del paciente, o "todos" para la carga general
-  const [vista, setVista] = useState<"pacientes" | "preregistros">("preregistros");
+  const [vista, setVista] = useState<"pacientes" | "preregistros" | "conversaciones">("preregistros");
 
   const cargar = useCallback(async () => {
     const [p, c, v, i, g] = await Promise.all([
@@ -414,6 +415,7 @@ export function Medico() {
             {(
               [
                 ["preregistros", "Pre-registros"],
+                ["conversaciones", "Conversaciones"],
                 ["pacientes", "Pacientes del piloto"],
               ] as const
             ).map(([k, t]) => (
@@ -430,6 +432,8 @@ export function Medico() {
         )}
         {!abierta && vista === "preregistros" ? (
           <Preregistros />
+        ) : !abierta && vista === "conversaciones" ? (
+          <Conversaciones />
         ) : abierta ? (
           <Revision
             fila={abierta}

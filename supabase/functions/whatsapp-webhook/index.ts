@@ -72,6 +72,7 @@ async function semanaPrueba(admin: any, m: any, de: string, texto: string) {
   const boton = m.interactive?.button_reply as { id: string; title: string } | undefined;
   const k = boton ? "semana" : clave(texto);
   await admin.from("whatsapp_mensajes").insert({ preregistro_id: p.id, celular: de, texto: texto.slice(0, 1000), opcion: k });
+  if (await enRafaga(admin, de)) return true;
 
   if (k === "baja") {
     await admin.from("preregistros").update({ estado: "baja", actualizado: ahora }).eq("id", p.id);
@@ -112,6 +113,25 @@ async function semanaPrueba(admin: any, m: any, de: string, texto: string) {
   }
   await enviarTexto(de, SEMANA.respuesta_otro.replace("{nombre}", nombre));
   return true;
+}
+
+/**
+ * Freno contra otros bots (24 oct 2026: el bot de otra empresa y el nuestro se respondieron 218 veces en 36 minutos).
+ * Si un número mandó más de 5 mensajes en los últimos 10 minutos, se guardan pero no se responden.
+ */
+// deno-lint-ignore no-explicit-any
+async function enRafaga(admin: any, de: string) {
+  const { count } = await admin.from("whatsapp_mensajes").select("id", { count: "exact", head: true })
+    .eq("celular", de).eq("direccion", "entrante").gt("recibido", new Date(Date.now() - 10 * 60_000).toISOString());
+  return (count ?? 0) > 5;
+}
+
+/** Un número que no es paciente ni pre-registro recibe como máximo una respuesta al día. */
+// deno-lint-ignore no-explicit-any
+async function yaRespondidoHoy(admin: any, de: string) {
+  const { count } = await admin.from("whatsapp_mensajes").select("id", { count: "exact", head: true })
+    .eq("celular", de).eq("direccion", "entrante").gt("recibido", new Date(Date.now() - 24 * 3600_000).toISOString());
+  return (count ?? 0) > 1;
 }
 
 async function firmaValida(req: Request, cuerpo: string) {
@@ -164,6 +184,8 @@ Deno.serve(async (req) => {
 
         const k = clave(texto);
         await admin.from("whatsapp_mensajes").insert({ paciente_id: p?.id ?? null, celular: de, texto: texto.slice(0, 1000), opcion: k });
+        if (await enRafaga(admin, de)) continue;
+        if (!p && (await yaRespondidoHoy(admin, de))) continue;
         if (p && (k === "baja" || k === "alta")) {
           await admin.from("pacientes").update({ whatsapp_baja: k === "baja" ? new Date().toISOString() : null }).eq("id", p.id);
         }

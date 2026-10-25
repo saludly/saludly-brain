@@ -7,7 +7,8 @@
  */
 // deno-lint-ignore no-explicit-any
 const G = globalThis as any;
-G.Deno ??= { env: { get: () => "prueba" } };
+// Sin SUPABASE_URL: los salientes no se guardan en whatsapp_mensajes (aquí solo se cuentan los envíos a Meta)
+G.Deno ??= { env: { get: (k: string) => (k.startsWith("SUPABASE_") ? undefined : "prueba") } };
 // deno-lint-ignore no-explicit-any
 const enviados: any[] = [];
 G.fetch = async (_url: string, init: { body: string }) => {
