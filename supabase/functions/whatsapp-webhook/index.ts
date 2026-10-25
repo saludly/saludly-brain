@@ -135,19 +135,35 @@ async function yaRespondidoHoy(admin: any, de: string) {
 }
 
 /**
- * El número de quien escribe. A veces Meta no manda `from` (24 oct 2026, Milena: personas con nombre de usuario de
- * WhatsApp): entonces se toma de contacts[].wa_id y, si tampoco está, del código del pre-registro que trae el mensaje
- * del botón de la app ("Mi código es ff4722"). Si no se puede saber, queda en los registros de la función para revisarlo.
+ * El número de quien escribe. A las personas con nombre de usuario (@) de WhatsApp, Meta no les manda `from` sino su
+ * identificador para Saludly (from_user_id o contacts[].user_id, p. ej. "CO.2548721515610901"; 24 oct 2026, Milena).
+ * Se busca en este orden: from, contacts[].wa_id, el identificador ya guardado en preregistros.whatsapp_user_id, y el
+ * código del pre-registro que trae el mensaje del botón de la app ("Mi código es ff4722"), que además deja guardado el
+ * identificador para reconocerla en los botones y mensajes siguientes. Si no se puede saber, queda en los registros.
  */
 // deno-lint-ignore no-explicit-any
 async function numeroDe(admin: any, m: any, valor: any, texto: string): Promise<string | null> {
-  const n = m.from ?? valor?.contacts?.find((c: { wa_id?: string }) => c.wa_id)?.wa_id;
-  if (n) return n;
-  console.error("mensaje sin número", JSON.stringify({ mensaje: m, contactos: valor?.contacts }).slice(0, 1500));
+  const contacto = valor?.contacts?.[0] ?? {};
+  const usuario: string | undefined = m.from_user_id ?? contacto.user_id;
+  const n: string | undefined = m.from ?? contacto.wa_id;
+  if (n) {
+    if (usuario) await admin.from("preregistros").update({ whatsapp_user_id: usuario }).eq("celular_whatsapp", n).is("whatsapp_user_id", null);
+    return n;
+  }
+  if (usuario) {
+    const { data } = await admin.from("preregistros").select("celular_whatsapp").eq("whatsapp_user_id", usuario).maybeSingle();
+    if (data) return data.celular_whatsapp;
+  }
   const codigo = texto.match(/c[oó]digo es ([a-z0-9]{6})/i)?.[1]?.toLowerCase();
-  if (!codigo) return null;
-  const { data } = await admin.from("preregistros").select("celular_whatsapp").eq("codigo", codigo).maybeSingle();
-  return data?.celular_whatsapp ?? null;
+  if (codigo) {
+    const { data } = await admin.from("preregistros").select("id, celular_whatsapp").eq("codigo", codigo).maybeSingle();
+    if (data) {
+      if (usuario) await admin.from("preregistros").update({ whatsapp_user_id: usuario }).eq("id", data.id);
+      return data.celular_whatsapp;
+    }
+  }
+  console.error("mensaje sin número", JSON.stringify({ mensaje: m, contactos: valor?.contacts }).slice(0, 1500));
+  return null;
 }
 
 async function firmaValida(req: Request, cuerpo: string) {
