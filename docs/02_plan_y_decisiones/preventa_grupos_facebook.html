@@ -90,20 +90,19 @@ td a{color:var(--accent)}
   </div>
 
   <section>
-    <h2>Cambio para los días 2 y 3 · por aprobar</h2>
-    <p class="lead" style="margin-top:0">Las capturas de WhatsApp armadas no funcionaron bien y la gente le tiene miedo a un enlace que no conoce. Desde el día 2: mensajes más cortos (máximo 3 párrafos) que dicen que en la foto se ve lo que abre el enlace, y un carrusel de imágenes reales.</p>
+    <h2>Demo Week · cambio para los días 2 y 3 (por aprobar)</h2>
+    <p class="lead" style="margin-top:0">Mensajes de 2 párrafos, directos, con pocas comas y puntos, que llaman a la acción rápido. Imágenes reales en vez de capturas armadas: la portada del registro (para que no le tengan miedo al link) y tu perfil de Instagram.</p>
     <div class="row" style="align-items:flex-start;gap:16px">
-      <figure style="margin:0;display:flex;flex-direction:column;gap:6px;width:180px;max-width:100%">
-        <img src="registro_portada.png" alt="Primera pantalla del pre-registro de Saludly en un iPhone" style="width:100%;border:1px solid var(--line);border-radius:8px">
-        <figcaption class="daynote">1. Lo que abre el enlace: la portada real del registro, tomada como iPhone.</figcaption>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px;width:170px;max-width:100%">
+        <img src="registro_portada.png" alt="Portada del pre-registro de Saludly en un iPhone" style="width:100%;border:1px solid var(--line);border-radius:8px">
+        <figcaption class="daynote">Lo que abre el link</figcaption>
       </figure>
-      <div style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:220px">
-        <p><b>2. Tu perfil de Instagram @saludly.</b> Captura desde tu iPhone, con la app abierta en el perfil (logo, 311 seguidores, la biografía con el enlace al registro).</p>
-        <p><b>3. Una historia destacada</b> (por ejemplo “Recomendaciones”), también desde tu iPhone.</p>
-        <p class="warn">Instagram no deja ver las historias destacadas sin iniciar sesión y yo no puedo entrar a tu cuenta, así que las capturas 2 y 3 las tomas tú y las dejas en <code>docs/disenos/capturas_whatsapp/</code>.</p>
-        <p class="daynote">Mientras llegan, cada publicación puede salir solo con la portada del registro.</p>
-      </div>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px;width:260px;max-width:100%">
+        <img src="instagram_perfil.png" alt="Perfil de Instagram @saludly con la biografía del Demo Week" style="width:100%;border:1px solid var(--line);border-radius:8px">
+        <figcaption class="daynote">Tu perfil @saludly, recortado hasta el link</figcaption>
+      </figure>
     </div>
+    <p class="warn">Las historias destacadas no se usan: son de 2022 (la fecha se ve) y una es de un médico preguntando cómo atraer pacientes con redes. Junto a un mensaje de bajar de peso parecería que esos médicos recomiendan el Demo Week.</p>
   </section>
 
   <section>
@@ -181,61 +180,45 @@ Tú q eres mi amigo de Facebook entra aquí y completa el pre registro https://a
 const BASE = "https://app.saludly.online/preregistro?ref=";
 const MSG = [
  {k:"M1", t:"Historia de vecino", a:"Russell Brunson", tipo:"Grupos “me importa”",
-  why:"Grupos grandes de localidad. La gente reacciona a una persona con nombre y una razón. La historia va primero, la invitación al final y la petición de compartir cierra.",
-  text:`Hola, vecinos de {barrio}. Soy Carlos y estoy emprendiendo Saludly por mi abuela, que murió de hipertensión. Se la encontraron tarde porque nunca se hacía exámenes.
+  why:"Grupos grandes de localidad. La gente reacciona a una persona con nombre y una razón. La historia va primero, la invitación al final y la petición de compartir cierra. Fotos: perfil de Instagram + portada del registro.",
+  text:`Vecinos de {barrio} soy emprendedor y necesito su ayuda probando mi sistema para bajar de peso. Lo creé por mi abuela que murió de hipertensión y se la encontraron muy tarde
 
-Estoy regalando una semana de consejos y una receta diaria por WhatsApp para bajar de peso, tener más energía o dormir mejor. Es gratis y te inscribes aquí {enlace}
-
-En la foto les muestro lo que abre el link, y en Instagram nos encuentran como @saludly. Si conocen a alguien a quien le sirva, compártanlo.`},
+Es gratis y no tienes que poner tarjeta ni casi datos. Por WhatsApp te enviamos recetas y consejos durante una semana de prueba y al final no pagas nada, solo decides si sigues gratis. Entra aquí {enlace}`},
  {k:"M2", t:"Pregunta y vecino del norte", a:"Russell + Gary", tipo:"Barrios del norte",
-  why:"Abre con una situación que todos han vivido para que la gente se reconozca. Es más corto que el 1 porque estos grupos son de clasificados y se lee rápido.",
-  text:`Buenas, vecinos de {barrio}. ¿A cuántos les pasa que el lunes arrancan a comer mejor y el miércoles ya se cayó todo?
+  why:"Abre con una situación que todos han vivido para que la gente se reconozca. Es más corto que el 1 porque estos grupos son de clasificados y se lee rápido. Fotos: perfil de Instagram + portada del registro.",
+  text:`Vecinos de {barrio} les pido un favor. Soy emprendedor y estoy probando mi sistema para bajar de peso, lo hago por mi abuela que murió de hipertensión sin saberlo a tiempo
 
-Soy Carlos y por mi abuela, que murió de hipertensión, estoy creando Saludly. Estoy regalando una semana de consejos cortos y una receta diaria por WhatsApp, gratis. Inscripción en dos minutos {enlace}
-
-En la foto ven lo que abre el link. Gracias a los administradores por dejarme compartirlo.`},
+Es una Demo Week gratis por WhatsApp con recetas y consejos, sin tarjeta y casi sin datos. Al final no pagas nada y decides si sigues gratis. Te inscribes aquí {enlace}`},
  {k:"M3", t:"Primero un consejo", a:"Gary Vee", tipo:"Barrios centro y occidente",
-  why:"Regala algo útil antes de pedir. Quien no se inscribe igual se lleva el consejo, y eso hace que el grupo vea la publicación como aporte y no como anuncio.",
-  text:`Un consejo que casi nadie aplica: en el almuerzo sirve primero medio plato de verdura y después lo demás. Ayuda a comer menos sin quedarse con hambre.
+  why:"Regala algo útil antes de pedir. Quien no se inscribe igual se lleva el consejo, y eso hace que el grupo vea la publicación como aporte y no como anuncio. Fotos: portada del registro + perfil de Instagram.",
+  text:`Si quieres bajar de peso empieza por esto, en el almuerzo sirve primero medio plato de verdura y después lo demás
 
-Soy Carlos, de Bogotá, y estoy regalando una semana de consejos así y una receta diaria por WhatsApp. Es gratis {enlace}
-
-En la foto les muestro lo que abre el link. Si tienen dudas, me las dejan en los comentarios.`},
+Soy emprendedor y te regalo una Demo Week por WhatsApp con más consejos y recetas así. No pones tarjeta ni pagas nada y al final decides si sigues gratis {enlace}`},
  {k:"M4", t:"Oferta para corredores", a:"Alex Hormozi", tipo:"Runners",
-  why:"Habla del resultado que quiere un corredor (correr más liviano, recuperarse, tener energía), dice exactamente qué recibe, cuánto cuesta (nada) y quita el riesgo pidiendo que digan si no sirvió.",
-  text:`Corredores, ¿están comiendo para correr mejor o solo para no tener hambre? Lo que uno come antes y después de un fondo cambia mucho, y más con la altura de Bogotá.
+  why:"Habla del resultado que quiere un corredor (correr más liviano, recuperarse, tener energía), dice exactamente qué recibe, cuánto cuesta (nada) y quita el riesgo pidiendo que digan si no sirvió. Foto: portada del registro.",
+  text:`Corredores si quieren llegar más livianos y con más energía a la próxima carrera esto les sirve. Soy emprendedor y estoy probando mi sistema de recetas y consejos según tu objetivo
 
-Soy Carlos y estoy regalando una semana de consejos y una receta diaria por WhatsApp según tu objetivo: correr más liviano, recuperarte mejor o tener más energía. Gratis y sin tarjeta {enlace}
-
-En la foto ves lo que abre el link. Si al final no te sirvió, dímelo.`},
+Es una Demo Week gratis por WhatsApp y sin tarjeta. Al final no pagas nada y decides si sigues gratis o paras {enlace}`},
  {k:"M5", t:"Con permiso, para mamás", a:"Seth Godin", tipo:"Mamás",
-  why:"Pregunta en vez de afirmar, reconoce que el grupo es un espacio de apoyo, invita a pocas y deja la puerta abierta para decir que no. En grupos de mamás eso pesa más que cualquier oferta.",
-  text:`Hola, mamás. ¿Les pasa que entre el trabajo, la casa y los niños lo último de la lista son ustedes?
+  why:"Pregunta en vez de afirmar, reconoce que el grupo es un espacio de apoyo, invita a pocas y deja la puerta abierta para decir que no. En grupos de mamás eso pesa más que cualquier oferta. Foto: portada del registro.",
+  text:`Mamás sé que entre los niños la casa y el trabajo lo último de la lista son ustedes. Toda mi vida he cuidado a mi familia y por eso quiero regalarles una semana para ustedes
 
-Soy Carlos, de Bogotá. Toda mi vida me he dedicado a cuidar a mi familia, y ahora estoy regalando una semana de consejos cortos y una receta fácil al día por WhatsApp. Es gratis {enlace}
-
-En la foto les muestro lo que abre el link. Y si no es el momento, igual gracias por leer.`},
+Por WhatsApp les llegan recetas fáciles y consejos cortos, gratis y sin tarjeta. Al final no pagan nada y deciden si siguen gratis {enlace}`},
  {k:"M6", t:"Cuidar el resultado", a:"Seth Godin + Hormozi", tipo:"Cirugías",
-  why:"Dice desde el principio lo que no eres (no vendes fajas ni procedimientos, no reemplazas al cirujano) y ofrece una sola cosa concreta: cuidar el peso después de la recuperación. Ofrece borrarlo si el administrador no está de acuerdo.",
-  text:`Hola. Una duda que aparece mucho en grupos como este es cómo mantener el resultado cuando termina la recuperación.
+  why:"Dice desde el principio lo que no eres (no vendes fajas ni procedimientos, no reemplazas al cirujano) y ofrece una sola cosa concreta: cuidar el peso después de la recuperación. Ofrece borrarlo si el administrador no está de acuerdo. Foto: portada del registro.",
+  text:`Si ya te operaste o lo estás pensando lo más difícil es mantener el resultado y la comida pesa mucho en eso
 
-Soy Carlos, de Bogotá, y estoy regalando una semana de consejos y una receta diaria por WhatsApp para cuidar el peso. No reemplaza a tu cirujano y no vendo fajas ni procedimientos {enlace}
-
-En la foto ves lo que abre el link. Si a los administradores no les parece adecuado, lo borro.`},
+Soy emprendedor y te regalo una Demo Week por WhatsApp con recetas y consejos para cuidar el peso. Es gratis y sin tarjeta, no reemplaza a tu cirujano y al final decides si sigues gratis {enlace}`},
  {k:"M7", t:"Sin dietas raras", a:"Hormozi + Gary", tipo:"Peso, fitness y mujeres activas",
-  why:"La oferta en pocas líneas para grupos donde se publica mucho, y una pregunta al final para que la gente comente. Los comentarios hacen que Facebook muestre la publicación a más personas.",
-  text:`Les comparto algo por si a alguien le sirve. Estoy regalando una semana de consejos y una receta diaria por WhatsApp para bajar de peso sin dietas raras ni productos milagro. Es gratis {enlace}
+  why:"La oferta en pocas líneas para grupos donde se publica mucho, y una pregunta al final para que la gente comente. Los comentarios hacen que Facebook muestre la publicación a más personas. Fotos: portada del registro + perfil de Instagram.",
+  text:`Si llevas tiempo intentando bajar de peso y nada te funciona no estás solo. Soy emprendedor y estoy probando mi sistema con recetas y consejos que sí se pueden cumplir
 
-En la foto ven lo que abre el link, y en Instagram nos encuentran como @saludly.
-
-¿Qué es lo que más se les dificulta para bajar de peso? Leo todos los comentarios.`},
+Es una Demo Week gratis por WhatsApp, sin tarjeta y casi sin datos. Al final no pagas nada y decides si sigues gratis {enlace}`},
  {k:"M8", t:"Yo también estuve en call center", a:"Russell + Gary", tipo:"Call center",
-  why:"Tu historia real: trabajaste en call center antes de emprender. Habla como alguien de la tribu (la diadema, el turno, la campaña) y une eso con lo de tu abuela. No inventa detalles de tu trabajo: si alguien pregunta en qué campaña estabas, respóndelo tú.",
-  text:`Yo también estuve de este lado de la diadema. Antes de emprender trabajé en call center y sé lo que es el turno sentado, comer a deshoras y llegar a la casa sin energía.
+  why:"Tu historia real: trabajaste en call center antes de emprender. Habla como alguien de la tribu (la diadema, el turno, la campaña) y une eso con lo de tu abuela. No inventa detalles de tu trabajo: si alguien pregunta en qué campaña estabas, respóndelo tú. Fotos: perfil de Instagram + portada del registro.",
+  text:`Yo también estuve en call center y sé lo que es el turno sentado comiendo a deshoras. Me salí para emprender por mi abuela que murió de hipertensión sin saberlo a tiempo
 
-Me salí para crear Saludly por mi abuela, que murió de hipertensión y se la encontraron tarde. Estoy regalando una semana de consejos cortos y una receta diaria por WhatsApp, gratis {enlace}
-
-En la foto ven lo que abre el link. Si a alguien de la campaña le sirve, compártanselo.`}
+Hoy les regalo mi Demo Week por WhatsApp con recetas y consejos para bajar de peso, gratis y sin tarjeta. Al final no pagas nada y decides si sigues gratis {enlace}`}
 ];
 // d: día, s: índice del mensaje (0-6)
 const G = [
