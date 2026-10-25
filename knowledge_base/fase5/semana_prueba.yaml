@@ -20,11 +20,12 @@ estado_revision: pendiente
 anticipo_valor: 49000
 horarios: {manana: "07:00", receta: "09:00", cortisol: "13:00", examen: "18:00", tarde: "19:30"}
 dias_cortisol: [1, 3, 5, 7]
-# Día 1: empieza cuando escribe "hola". Antes de las 4 p. m.: bienvenida y consejos de la mañana de una vez, receta
-# 2 horas después, cortisol a la 1 p. m. (o con la receta, si ya pasó), el dato del examen a las 6 p. m. y los consejos
-# de la tarde a las 7:30. Desde las 4 p. m.: bienvenida, consejos de la mañana y receta de una vez; cortisol y dato del
-# examen 2 horas después, y los consejos de la tarde con ellos (si eso pasa de las 9 p. m., le llega al otro día a las 7 a. m.).
-dia_1: "Antes de las 4 p. m.: todo el mismo día. Desde las 4 p. m.: consejos de la mañana y receta de una vez; cortisol, dato del examen y consejos de la tarde 2 horas después, nunca después de las 9 p. m."
+# Día 1: empieza cuando escribe "hola" y la bienvenida le llega de una vez. Nada del día 1 se corre al día siguiente
+# (Carlos, 24 oct 2026). Antes de las 7 a. m.: el resto del día 1, hoy con los horarios fijos. De 7 a. m. a 4 p. m.:
+# consejos de la mañana de una vez, receta 2 horas después, cortisol a la 1 p. m. (o con la receta, si ya pasó), el dato
+# del examen a las 6 p. m. y los consejos de la tarde a las 7:30. De 4 p. m. a 7:30 p. m.: lo que ya pasó de hora, de una
+# vez, y lo demás a su hora. Desde las 7:30 p. m. (después del último envío): solo la bienvenida; el día 1 empieza mañana.
+dia_1: "Bienvenida al escribir hola. Antes de las 7:30 p. m., el día 1 es hoy: lo que ya pasó de hora llega de una vez y lo demás a su hora. Desde las 7:30 p. m., solo la bienvenida y el día 1 empieza mañana a las 7 a. m."
 
 familias:
   general: [salud_general, prevenir, condicion_existente]

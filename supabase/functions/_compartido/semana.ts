@@ -164,21 +164,24 @@ function aLas(base: Date, hhmm: string, dias = 0) {
 const max = (a: Date, b: Date) => (a > b ? a : b);
 
 /**
- * Hora de cada envío. Días 2 a 7: los horarios fijos. Día 1 (empieza al escribir hola), según semana_prueba.yaml > dia_1:
- * antes de las 4 p. m., bienvenida y consejos de una vez, receta 2 horas después, cortisol a la 1 p. m. o con la receta,
- * examen a las 6 p. m. y consejos de la tarde a las 7:30; desde las 4 p. m., consejos y receta de una vez y lo demás
- * 2 horas después, y si eso pasa de las 9 p. m., al otro día a las 7 a. m.
+ * Hora de cada envío según semana_prueba.yaml > dia_1 (Carlos, 24 oct 2026: nada del día 1 se corre al día siguiente).
+ * La bienvenida sale siempre al escribir hola (semana() la pone en `inicio`).
+ * - Antes de las 7 a. m.: el día 1 es hoy, con los horarios fijos.
+ * - De 7 a. m. a 4 p. m.: consejos de una vez, receta 2 horas después, cortisol a la 1 p. m. o con la receta,
+ *   examen a las 6 p. m. y consejos de la tarde a las 7:30.
+ * - De 4 p. m. a 7:30 p. m.: lo que ya pasó de hora, de una vez; lo demás, a su hora.
+ * - Desde las 7:30 p. m. (después del último envío): solo la bienvenida; el día 1 empieza mañana con los horarios fijos.
+ * Días 2 a 7: los horarios fijos, un día después del anterior.
  */
 export function horaDeEnvio(inicio: Date, dia: number, envio: string): Date {
-  const h = C.horarios;
-  if (dia > 1) return aLas(inicio, h[envio], dia - 1);
+  const h = C.horarios, fija = aLas(inicio, h[envio]);
+  if (inicio >= aLas(inicio, h.tarde)) return aLas(inicio, h[envio], dia);
+  if (dia > 1 || inicio < aLas(inicio, h.manana)) return aLas(inicio, h[envio], dia - 1);
   const despues = new Date(inicio.getTime() + 2 * HORA);
   if (inicio < aLas(inicio, "16:00")) {
-    return ({ manana: inicio, receta: despues, cortisol: max(aLas(inicio, h.cortisol), despues), examen: aLas(inicio, h.examen),
-      tarde: aLas(inicio, h.tarde) } as Record<string, Date>)[envio];
+    return ({ manana: inicio, receta: despues, cortisol: max(fija, despues), examen: fija, tarde: fija } as Record<string, Date>)[envio];
   }
-  if (envio === "manana" || envio === "receta") return inicio;
-  return despues > aLas(inicio, "21:00") ? aLas(inicio, h.manana, 1) : despues;
+  return max(inicio, fija);
 }
 
 /** Todas las filas de semana_envios de una persona, desde que escribió hola. */
@@ -187,7 +190,7 @@ export async function semana(persona: Persona, inicio: Date) {
   return Array.from({ length: DIAS }, (_, k) => k + 1).flatMap((dia) =>
     mensajes(persona, dia, recetas).map((m, orden) => ({
       dia, orden, envio: m.envio, texto: m.texto, botones: m.botones,
-      programado: horaDeEnvio(inicio, dia, m.envio).toISOString(),
+      programado: (dia === 1 && orden === 0 ? inicio : horaDeEnvio(inicio, dia, m.envio)).toISOString(),
       resumen: formato(C.recordatorio_que[m.envio], { receta: recetas[dia - 1].nombre[0].toLowerCase() + recetas[dia - 1].nombre.slice(1) }),
     }))
   );

@@ -38,13 +38,22 @@ ok(hora("2026-10-26T12:30", 1, "cortisol") === iso("2026-10-26T14:30"), "día 1 
 ok(hora("2026-10-26T10:00", 1, "examen") === iso("2026-10-26T18:00"), "día 1: examen a las 6");
 ok(hora("2026-10-26T10:00", 1, "tarde") === iso("2026-10-26T19:30"), "día 1: tarde a las 7:30");
 ok(hora("2026-10-26T17:00", 1, "receta") === iso("2026-10-26T17:00"), "día 1 a las 5 p. m.: receta de una vez");
-ok(hora("2026-10-26T17:00", 1, "examen") === iso("2026-10-26T19:00"), "día 1 a las 5 p. m.: examen 2 horas después");
-ok(hora("2026-10-26T20:00", 1, "tarde") === iso("2026-10-27T07:00"), "día 1 a las 8 p. m.: lo demás al otro día a las 7");
-ok(hora("2026-10-26T23:30", 1, "manana") === iso("2026-10-26T23:30"), "día 1 a las 11:30 p. m.: bienvenida de una vez");
-ok(hora("2026-10-26T23:30", 2, "manana") === iso("2026-10-27T07:00"), "día 2: consejos a las 7");
+ok(hora("2026-10-26T17:00", 1, "cortisol") === iso("2026-10-26T17:00"), "día 1 a las 5 p. m.: cortisol de una vez");
+ok(hora("2026-10-26T17:00", 1, "examen") === iso("2026-10-26T18:00"), "día 1 a las 5 p. m.: examen a las 6, sin correrse");
+ok(hora("2026-10-26T18:30", 1, "examen") === iso("2026-10-26T18:30"), "día 1 a las 6:30 p. m.: examen de una vez");
+ok(hora("2026-10-26T18:30", 1, "tarde") === iso("2026-10-26T19:30"), "día 1 a las 6:30 p. m.: tarde a las 7:30");
+ok(hora("2026-10-26T18:30", 2, "manana") === iso("2026-10-27T07:00"), "día 2 tras empezar a las 6:30 p. m.: al otro día");
+ok(hora("2026-10-26T20:00", 1, "manana") === iso("2026-10-27T07:00"), "hola a las 8 p. m.: el día 1 empieza mañana a las 7");
+ok(hora("2026-10-26T20:00", 1, "tarde") === iso("2026-10-27T19:30"), "hola a las 8 p. m.: tarde del día 1, mañana a las 7:30 p. m.");
+ok(hora("2026-10-26T20:00", 2, "manana") === iso("2026-10-28T07:00"), "hola a las 8 p. m.: día 2 pasado mañana");
+ok(hora("2026-10-26T20:00", 7, "examen") === iso("2026-11-02T18:00"), "hola a las 8 p. m.: cierre un día después");
+ok(hora("2026-10-26T05:00", 1, "receta") === iso("2026-10-26T09:00"), "hola a las 5 a. m.: receta a las 9, no de madrugada");
+ok(hora("2026-10-26T05:00", 2, "manana") === iso("2026-10-27T07:00"), "hola a las 5 a. m.: día 2 al otro día");
 ok(hora("2026-10-26T10:00", 7, "examen") === iso("2026-11-01T18:00"), "día 7: cierre a las 6 p. m.");
 ok(hora("2026-10-26T10:00", 3, "receta") === iso("2026-10-28T09:00"), "día 3: receta a las 9");
 
+const tarde = await semana(esperado[10].persona, bog("2026-10-26T21:00"));
+ok(tarde[0].programado === iso("2026-10-26T21:00") && tarde[1].programado === iso("2026-10-27T07:00"), "hola a las 9 p. m.: solo la bienvenida hoy");
 const filas = await semana(esperado[10].persona, bog("2026-10-26T10:00"));
 ok(filas.length === esperado[10].dias.flat().length, "semana(): una fila por mensaje");
 ok(filas.every((f) => f.resumen && !f.resumen.includes("{")), "semana(): resumen de la plantilla sin variables sueltas");
