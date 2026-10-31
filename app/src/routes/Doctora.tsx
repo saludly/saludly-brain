@@ -29,7 +29,8 @@ export function Doctora() {
   const navigate = useNavigate();
   const [fichas, setFichas] = useState<Ficha[]>([]);
   const [sel, setSel] = useState<string | null>(null);
-  const [lim, setLim] = useState({ nombre: "", limite: 1.5, meseta: 4 });
+  const [lim, setLim] = useState({ nombre: "", codigo: "", limite: 1.5, meseta: 4 });
+  const [copiado, setCopiado] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [cargando, setCargando] = useState(true);
 
@@ -41,8 +42,8 @@ export function Doctora() {
 
   const cargar = useCallback(async () => {
     const [md, tr] = await Promise.all([supabase.rpc("mi_doctora"), supabase.from("tratamientos_peso").select("*")]);
-    const d = (md.data as { nombre: string; limite_semanal: number; semanas_meseta: number }[] | null)?.[0];
-    const l = { nombre: d?.nombre ?? (s.esEquipo ? "equipo Saludly" : ""), limite: Number(d?.limite_semanal ?? 1.5), meseta: d?.semanas_meseta ?? 4 };
+    const d = (md.data as { nombre: string; codigo: string; limite_semanal: number; semanas_meseta: number }[] | null)?.[0];
+    const l = { nombre: d?.nombre ?? (s.esEquipo ? "equipo Saludly" : ""), codigo: d?.codigo ?? "", limite: Number(d?.limite_semanal ?? 1.5), meseta: d?.semanas_meseta ?? 4 };
     setLim(l);
     const ts = ((tr.data as Tratamiento[] | null) ?? []).map(normalizarT);
     const ids = ts.map((t) => t.paciente_id);
@@ -99,6 +100,20 @@ export function Doctora() {
           </div>
           <button type="button" className="btn" onClick={() => void s.salir()}>Salir</button>
         </div>
+
+        {lim.codigo && (
+          <div className="cd">
+            <h3>Invite a sus pacientes</h3>
+            <p className="nota">Su código es <b style={{ color: "var(--ios-label)" }}>{lim.codigo}</b>. Cuando una paciente se registra con este enlace, le aparece aquí.</p>
+            <div className="fila" style={{ flexWrap: "wrap" }}>
+              <span className="numero" style={{ fontSize: 15 }}>app.saludly.online/?dra={lim.codigo}</span>
+              <button type="button" className="btn" onClick={() => {
+                const enlace = `https://app.saludly.online/?dra=${lim.codigo}`;
+                navigator.clipboard?.writeText(enlace).then(() => { setCopiado(true); setTimeout(() => setCopiado(false), 2000); }).catch(() => undefined);
+              }}>{copiado ? "Copiado" : "Copiar enlace"}</button>
+            </div>
+          </div>
+        )}
 
         {cargando ? <div className="cd"><p className="nota" style={{ margin: 0 }}>Cargando…</p></div> : !fichas.length ? (
           <div className="cd"><h3>Todavía no tiene pacientes</h3><p className="nota" style={{ margin: 0 }}>Cuando una paciente se registre con su código, le aparece aquí.</p></div>
