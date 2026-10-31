@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import "@/peso.css";
 import { Anillo, Tooltip } from "@/components/PesoComunes";
+import { DatosTratamiento, RegistroDoctora } from "@/components/DatosTratamiento";
 import { bullet, constancia, efectos, grafPeso, grafVel, pesas } from "@/lib/graficas";
 import { supabase, useSesion } from "@/lib/sesion";
 import type { Informe } from "@/lib/informe";
@@ -65,8 +66,14 @@ export function Doctora() {
     setSel((x) => x ?? lista.sort((a, b) => RANGO[a.alertas[0]?.s ?? "ok"] - RANGO[b.alertas[0]?.s ?? "ok"])[0]?.p.id ?? null);
     setCargando(false);
   }, [s.esEquipo]);
+  // Al abrir, al volver a la pestaña y cada 30 segundos: así se ve lo que registre o corrija la paciente.
   useEffect(() => {
-    if (!s.cargando && s.sesion) void cargar();
+    if (s.cargando || !s.sesion) return;
+    void cargar();
+    const id = setInterval(() => void cargar(), 30000);
+    const alVolver = () => document.visibilityState === "visible" && void cargar();
+    document.addEventListener("visibilitychange", alVolver);
+    return () => { clearInterval(id); document.removeEventListener("visibilitychange", alVolver); };
   }, [s.cargando, s.sesion, cargar]);
 
   const avisar = (t: string) => {
@@ -151,6 +158,8 @@ function FichaPaciente({ f, lim, correo, avisar, recargar }: { f: Ficha; lim: { 
     return { n: r.nombre.length > 14 ? r.biomarker_id.toUpperCase() : r.nombre, antes: typeof a?.valor === "number" ? a.valor : null, ahora: r.valor as number, u: r.unidad ?? "", ref: null, d: Number(r.valor) < 20 ? 1 : 0 };
   });
   const preguntas = regs.filter((r) => r.pregunta).slice(-3).map((r) => r.pregunta!);
+  const [editar, setEditar] = useState(false);
+  useEffect(() => setEditar(false), [p.id]);
   const a = f.alertas[0];
 
   const aprobar = async () => {
@@ -210,11 +219,24 @@ function FichaPaciente({ f, lim, correo, avisar, recargar }: { f: Ficha; lim: { 
         <div className="cd"><h3>Tratamiento</h3><p className="nota">{t.confirmado ? "Confirmado por usted" : "Lo escribió la paciente · por confirmar"}</p>
           <p style={{ color: "var(--ios-label)" }}>{[t.medicamento, t.dosis, t.dia_aplicacion && DIA_TEXTO[t.dia_aplicacion]].filter(Boolean).join(" · ") || "Sin medicamento registrado"}</p>
           <p>Inicio {new Date(t.fecha_inicio + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" })} · {fmt(t.peso_inicio)} kg → meta {fmt(t.peso_meta)} kg</p>
-          {!t.confirmado && <div className="acciones" style={{ marginTop: 12 }}><button type="button" className="btn pri" onClick={() => void confirmar()}>Confirmar datos</button></div>}
+          {editar ? (
+            <div style={{ marginTop: 12 }}><DatosTratamiento t={t} quien="doctora" correo={correo} alGuardar={(m) => { setEditar(false); avisar(m); void recargar(); }} alCancelar={() => setEditar(false)} /></div>
+          ) : (
+            <div className="acciones" style={{ marginTop: 12 }}>
+              {!t.confirmado && <button type="button" className="btn pri" onClick={() => void confirmar()}>Confirmar datos</button>}
+              <button type="button" className="btn" onClick={() => setEditar(true)}>Editar datos</button>
+            </div>
+          )}
         </div>
         <div className="cd"><h3>Preguntas para el control</h3><p className="nota">Las dejó la paciente en la app</p>
           {preguntas.length ? <ul>{preguntas.map((q, i) => <li key={i}>“{q}”</li>)}</ul> : <p>Ninguna.</p>}
         </div>
+      </div>
+
+      <div className="cd">
+        <h3>Registrar en la consulta</h3>
+        <p className="nota">Si la pesó o le midió la cintura hoy, guárdelo aquí. La paciente lo ve en su app.</p>
+        <RegistroDoctora pacienteId={t.paciente_id} correo={correo} alGuardar={(m) => { avisar(m); void recargar(); }} />
       </div>
 
       <div className="cd">

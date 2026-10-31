@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react
 import { useNavigate } from "@tanstack/react-router";
 import "@/peso.css";
 import { Anillo, Notificacion, Silueta, useContador } from "@/components/PesoComunes";
+import { DatosTratamiento } from "@/components/DatosTratamiento";
 import { grafPeso } from "@/lib/graficas";
 import { supabase, useSesion } from "@/lib/sesion";
 import {
@@ -54,8 +55,13 @@ export function Peso() {
     setRegs(d.registros);
     setSemana(d.semana);
   }, [yo]);
+  // Al abrir, al volver a la app y cada 30 segundos: así se ve lo que registre o corrija la doctora.
   useEffect(() => {
     void recargar();
+    const id = setInterval(() => void recargar(), 30000);
+    const alVolver = () => document.visibilityState === "visible" && void recargar();
+    document.addEventListener("visibilitychange", alVolver);
+    return () => { clearInterval(id); document.removeEventListener("visibilitychange", alVolver); };
   }, [recargar]);
   useEffect(() => {
     window.scrollTo({ top: 0 }); // con llaves: lo que devuelva scrollTo no debe llegar a React
@@ -98,7 +104,8 @@ export function Peso() {
                 <div className="card dato"><b>−{fmt(Math.max(0, t.peso_inicio - peso))} kg</b><span>desde que empezaste</span></div>
                 <div className="card dato"><b>{t.cintura_inicio != null && cintura != null ? `−${fmt(Math.max(0, t.cintura_inicio - cintura), 0)} cm` : "—"}</b><span>de cintura</span></div>
               </div>
-              <div className="card"><h3>Tu peso</h3><div dangerouslySetInnerHTML={{ __html: grafPeso(serieSemanal(t, regs), t.peso_meta) }} /></div>
+              <div className="card"><h3>Tu peso</h3><div className="grafica" dangerouslySetInnerHTML={{ __html: grafPeso(serieSemanal(t, regs), t.peso_meta) }} /></div>
+              <MisDatos t={t} alGuardar={(m) => { setAviso({ m: "✓", t: "Datos guardados", s: m, id: Date.now() }); void recargar(); }} />
             </>
           )}
           {tab === "logros" && <Logros t={t} regs={regs} examenOk={examenOk} nivel={nv} peso={peso} />}
@@ -135,6 +142,27 @@ export function Peso() {
         }}
       />
     </main>
+  );
+}
+
+function MisDatos({ t, alGuardar }: { t: Tratamiento; alGuardar: (m: string) => void }) {
+  const [editar, setEditar] = useState(false);
+  const fecha = new Date(t.fecha_inicio + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
+  return (
+    <div className="card">
+      <h3>Mis datos</h3>
+      {editar ? (
+        <DatosTratamiento t={t} quien="paciente" alGuardar={(m) => { setEditar(false); alGuardar(m); }} alCancelar={() => setEditar(false)} />
+      ) : (
+        <div style={{ display: "grid", gap: 6, fontSize: 15 }}>
+          <div className="fila"><span style={{ color: "var(--ios-2)" }}>Empezaste</span><b>{fecha} · {fmt(t.peso_inicio)} kg</b></div>
+          <div className="fila"><span style={{ color: "var(--ios-2)" }}>Tu meta</span><b>{fmt(t.peso_meta)} kg</b></div>
+          {t.cintura_inicio != null && <div className="fila"><span style={{ color: "var(--ios-2)" }}>Cintura</span><b>{fmt(t.cintura_inicio, 0)} → {t.cintura_meta != null ? fmt(t.cintura_meta, 0) : "—"} cm</b></div>}
+          <div className="fila"><span style={{ color: "var(--ios-2)" }}>Estado</span><b>{t.confirmado ? "Confirmado por tu doctora" : "Por confirmar con tu doctora"}</b></div>
+          <button type="button" className="boton sec" style={{ marginTop: 8 }} onClick={() => setEditar(true)}>Corregir mis datos</button>
+        </div>
+      )}
+    </div>
   );
 }
 

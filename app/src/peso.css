@@ -78,7 +78,7 @@
 .dato b { display: block; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .dato span { color: var(--ios-2); font-size: 13px; }
 .peso-app svg text.ley { font-size: 12px; fill: var(--ios-2); }
-.card svg { width: 100%; height: auto; display: block; overflow: visible; }
+.card .grafica svg { width: 100%; height: auto; display: block; overflow: visible; }
 .barra { height: 6px; border-radius: 3px; background: var(--ios-fill); overflow: hidden; margin-top: 10px; }
 .barra i { display: block; height: 100%; background: var(--marca); border-radius: 3px; transition: width .9s cubic-bezier(.2,.8,.2,1); }
 .medallas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 8px; }
