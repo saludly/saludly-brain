@@ -7,7 +7,9 @@ Estado: **Fase 1 en curso** (respuestas de Carlos del 30 oct 2026 anotadas abajo
 Archivos de esta línea:
 
 - [`guion_llamada.md`](guion_llamada.md): guion de la llamada de diagnóstico, mensajes de WhatsApp, objeciones y hoja de seguimiento.
-- [`oferta_una_hoja.html`](oferta_una_hoja.html): carta de Carlos a la doctora con un ejemplo del resumen antes del control, para mandar por WhatsApp después de la llamada (artifact privado https://claude.ai/artifact/Xc4Du2mswTBE1DWWXDUu19; hay que compartirlo o mandar captura). El enlace acepta el apellido: `…#Gomez` muestra "Doctora Gomez:". Rehecha el 30 oct 2026 tras la revisión de CEO: formato carta, "especialistas fundadoras" en vez de "regalo", modelo de negocio dicho de frente. Falta el apellido y la foto de Carlos.
+- [`oferta_una_hoja.html`](oferta_una_hoja.html): carta de Carlos a la doctora con un ejemplo del resumen antes del control, para mandar por WhatsApp después de la llamada (artifact privado https://claude.ai/artifact/Xc4Du2mswTBE1DWWXDUu19; hay que compartirlo o mandar captura). El enlace acepta el apellido: `…#Gomez` muestra "Doctora Gomez:". Rehecha el 30 oct 2026 tras la revisión de CEO: formato carta, "especialistas fundadoras" en vez de "regalo", modelo de negocio dicho de frente. Firma: Carlos Araujo; falta la foto (la toma el 31 oct).
+- [`demo_app_y_dashboard.md`](demo_app_y_dashboard.md): propuesta del demo (app de la paciente estilo iOS con nivel de 0 a 100 y silueta con capa de grasa; dashboard de la doctora con criterios de qué mostrar) y sus preguntas abiertas.
+- [`demo_glp1.html`](demo_glp1.html): demo clicable (artifact privado https://claude.ai/artifact/Y9qXyXvrqwfD585gxWSTst) con la vista de la paciente en iPhone y la de la doctora. Se genera desde `demo_glp1.plantilla.html` reemplazando `__FIGURA__` por `figura_mujer.webp.b64` (silueta recortada de `app/src/assets/body-female.png`). El enlace acepta `#Apellido` para el nombre de la doctora.
 
 ## La idea en una frase
 
