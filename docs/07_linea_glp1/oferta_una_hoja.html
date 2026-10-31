@@ -1,0 +1,151 @@
+<title>Carta a especialistas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+  /* Una carta del fundador en una sola columna; en el medio, la muestra del resumen que recibe la doctora antes de cada control, con formato de documento clínico. */
+  :root {
+    --bg: oklch(0.965 0.006 250);
+    --papel: #ffffff;
+    --ink: oklch(0.23 0.02 255);
+    --ink-2: oklch(0.47 0.015 255);
+    --rule: oklch(0.23 0.02 255 / 11%);
+    --marca: #2793ff;
+    --marca-suave: oklch(0.58 0.19 253 / 8%);
+    --baja: oklch(0.55 0.12 160);
+    --aviso: oklch(0.62 0.13 66);
+    --sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: oklch(0.16 0.014 255); --papel: oklch(0.2 0.017 255); --ink: oklch(0.95 0.006 250);
+      --ink-2: oklch(0.72 0.014 255); --rule: oklch(0.95 0.006 250 / 12%); --marca: #5aadff;
+      --marca-suave: oklch(0.7 0.14 253 / 13%); --baja: oklch(0.74 0.12 160); --aviso: oklch(0.78 0.13 70); color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: oklch(0.16 0.014 255); --papel: oklch(0.2 0.017 255); --ink: oklch(0.95 0.006 250);
+    --ink-2: oklch(0.72 0.014 255); --rule: oklch(0.95 0.006 250 / 12%); --marca: #5aadff;
+    --marca-suave: oklch(0.7 0.14 253 / 13%); --baja: oklch(0.74 0.12 160); --aviso: oklch(0.78 0.13 70); color-scheme: dark;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 28px;
+  }
+  .carta {
+    max-width: 680px; margin: 0 auto; background: var(--papel); border: 1px solid var(--rule); border-radius: 6px;
+    padding: clamp(24px, 6vw, 60px); display: grid; gap: 22px;
+  }
+  .membrete { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+  .logo { font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
+  .logo span { color: var(--marca); }
+  .fecha { font-size: 13.5px; color: var(--ink-2); }
+  .saludo { font-weight: 700; font-size: 18px; margin: 6px 0 0; }
+  p { margin: 0; max-width: 62ch; }
+  .carta > p + p { margin-top: -6px; }
+  ol.construimos { margin: 0; padding-left: 22px; display: grid; gap: 6px; max-width: 60ch; }
+  ol.construimos b { font-weight: 700; }
+
+  /* Muestra del resumen */
+  .resumen { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin: 6px 0; }
+  .r-cab { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 16px; background: var(--marca-suave); }
+  .r-cab b { font-size: 14px; }
+  .r-tag { font-family: var(--mono); font-size: 11px; color: var(--ink-2); border: 1px dashed var(--ink-2); border-radius: 4px; padding: 1px 7px; }
+  .r-pac { padding: 12px 16px 4px; font-size: 14px; color: var(--ink-2); }
+  .r-pac b { color: var(--ink); }
+  .r-tabla { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .r-tabla th { text-align: left; font-family: var(--sans); font-weight: 600; font-size: 13px; color: var(--ink-2); padding: 8px 16px; }
+  .r-tabla td { padding: 7px 16px; border-top: 1px solid var(--rule); white-space: nowrap; }
+  .r-tabla td:first-child { font-family: var(--sans); font-weight: 600; white-space: normal; }
+  .r-tabla .d { color: var(--baja); font-weight: 600; text-align: right; }
+  .r-notas { padding: 12px 16px 14px; border-top: 1px solid var(--rule); display: grid; gap: 6px; font-size: 14px; }
+  .r-notas div { display: grid; grid-template-columns: 9px 1fr; gap: 10px; align-items: baseline; }
+  .r-notas i { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-2); transform: translateY(-1px); }
+  .r-notas i.a { background: var(--aviso); }
+  .r-pie { padding: 10px 16px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-2); }
+  .scroll { overflow-x: auto; }
+
+  .no { font-size: 14.5px; color: var(--ink-2); border-left: 2px solid var(--rule); padding-left: 14px; max-width: 60ch; }
+  .pedido { font-weight: 700; font-size: 17px; }
+
+  .firma { display: flex; gap: 16px; align-items: center; padding-top: 18px; border-top: 1px solid var(--rule); flex-wrap: wrap; }
+  .foto { width: 64px; height: 64px; border-radius: 50%; background: var(--marca-suave); color: var(--marca); display: grid; place-items: center; font-weight: 800; font-size: 24px; flex: none; object-fit: cover; }
+  .firma-txt { display: grid; gap: 1px; min-width: 0; }
+  .firma-txt b { font-size: 17px; }
+  .firma-txt span { font-size: 14px; color: var(--ink-2); }
+  .wa { font-family: var(--mono); font-weight: 600; font-size: 15px; color: var(--ink) !important; user-select: all; }
+</style>
+
+<main class="carta">
+  <div class="membrete">
+    <div class="logo">Salud<span>ly</span></div>
+    <div class="fecha">Bogotá, noviembre de 2026</div>
+  </div>
+
+  <p class="saludo" id="saludo">Doctora:</p>
+
+  <p>La encontré en Doctoralia porque acompaña pacientes en control de peso. Soy Carlos, fundador de Saludly, una empresa de salud preventiva de Bogotá.</p>
+
+  <p>Estamos buscando <b>dos especialistas fundadoras</b> para un piloto en noviembre. Con ellas vamos a construir tres cosas:</p>
+
+  <ol class="construimos">
+    <li><b>Que sus pacientes lleguen a cada control con todo resumido</b>, como el ejemplo de abajo.</li>
+    <li><b>Seguimiento por WhatsApp entre consultas</b>, con metas semanales, para que no abandonen el tratamiento.</li>
+    <li><b>Automatizar lo que más tiempo le quite del consultorio.</b> Eso lo definimos con usted en la primera reunión.</li>
+  </ol>
+
+  <div class="resumen" aria-label="Ejemplo del resumen previo al control">
+    <div class="r-cab"><b>Resumen antes del control</b><span class="r-tag">Ejemplo · datos ficticios</span></div>
+    <div class="r-pac"><b>Paciente F, 42 años</b> · semana 10 de tratamiento · control el jueves 9:00</div>
+    <div class="scroll">
+      <table class="r-tabla">
+        <thead><tr><th></th><th>Inicio</th><th>Hoy</th><th style="text-align:right">Cambio</th></tr></thead>
+        <tbody>
+          <tr><td>Peso</td><td>88,0 kg</td><td>84,1 kg</td><td class="d">−4,4 %</td></tr>
+          <tr><td>Cintura</td><td>96 cm</td><td>92 cm</td><td class="d">−4 cm</td></tr>
+          <tr><td>HbA1c</td><td>6,1 %</td><td>5,8 %</td><td class="d">−0,3</td></tr>
+          <tr><td>Triglicéridos</td><td>182 mg/dL</td><td>151 mg/dL</td><td class="d">−31</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r-notas">
+      <div><i></i><span>Cumplió sus metas 7 de 9 semanas (caminar 30 min, proteína en el desayuno).</span></div>
+      <div><i></i><span>Reportó náuseas leves en las semanas 2 y 3; ya no las menciona.</span></div>
+      <div><i class="a"></i><span>Esta semana reporta estreñimiento. Lo trae para comentarlo con usted.</span></div>
+      <div><i class="a"></i><span>Pregunta que trae: “¿Puedo hacer ejercicio en ayunas?”</span></div>
+    </div>
+    <div class="r-pie">Saludly organiza la información. Las decisiones clínicas son suyas.</div>
+  </div>
+
+  <p>Para usted y sus pacientes no tiene costo. Nuestro negocio son los <b>exámenes de laboratorio a domicilio</b>: si una paciente quiere tomárselos con nosotros, ganamos ahí. Ella decide siempre dónde se los toma, y usted no paga ni recibe comisiones.</p>
+
+  <p>A cambio le pido dos cosas: que <b>una paciente suya</b> lo pruebe en las próximas dos semanas, con su autorización firmada, y su <b>opinión honesta</b>. Si le sirve, un testimonio.</p>
+
+  <p class="no">Lo que no hacemos: diagnosticar ni cambiar tratamientos. La app le explica a la paciente los exámenes que usted pidió, y usted los revisa antes de que ella vea algo. Los datos son de sus pacientes y los protegemos con un contrato de transmisión de datos (Ley 1581).</p>
+
+  <p>Y si quiere atraer más pacientes con sus redes, también la asesoro en qué publicar y cómo grabarlo.</p>
+
+  <p class="pedido">¿Hablamos 30 minutos esta semana? Respóndame por WhatsApp con el día que le quede mejor.</p>
+
+  <div class="firma">
+    <div class="foto" aria-hidden="true">C</div>
+    <div class="firma-txt">
+      <b>Carlos</b>
+      <span>Fundador y CEO de Saludly</span>
+      <span>WhatsApp <span class="wa">300 520 7995</span> · carlos@saludly.online</span>
+    </div>
+  </div>
+</main>
+
+<script>
+  // El enlace puede llevar el apellido de la doctora: …#Gomez o #Ruiz_Pardo → "Doctora Gomez:"
+  try {
+    const h = decodeURIComponent((location.hash || "").slice(1)).replace(/_/g, " ").trim();
+    if (/^[\p{L} .'-]{2,40}$/u.test(h)) {
+      const nombre = h.split(" ").map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(" ");
+      document.getElementById("saludo").textContent = "Doctora " + nombre + ":";
+    }
+  } catch (e) {}
+</script>

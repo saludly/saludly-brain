@@ -67,6 +67,10 @@ Resultados de la construcción del lector (Fase 3) y del motor (Fase 4): qué se
 | `Motor · Parte 3` | Condiciones M3 a M6 (175) |
 | `Motor · Parte 4` | Relaciones, seguridad y salida final (76) |
 
+### `07_linea_glp1/` · Línea GLP-1 con especialistas
+
+Estrategia abierta el 30 de octubre de 2026: 2 doctoras (endocrinólogas o especialistas en GLP-1) reciben de regalo la automatización del consultorio y asesoría en redes; la meta es 10 pacientes, sobre todo mujeres, en una versión más simple de la app. El `README.md` tiene la pizarra, las fases, los riesgos y las preguntas abiertas.
+
 ## Dónde buscar qué
 
 - **Qué hace el producto:** documentos 01 y 02
