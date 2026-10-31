@@ -97,6 +97,13 @@ def publicar(sb, pdf, orden=None, paciente_id=None, cedula=None, documento_pdf=N
         raise SystemExit("El paciente no ha firmado la autorización de datos: no se puede procesar.")
     c = sb.uno("cuestionarios", f"paciente_id=eq.{p['id']}") or {}
     v = sb.uno("visitas", f"paciente_id=eq.{p['id']}")
+    # Línea GLP-1 (Fase 6B): sin visita de la enfermera; se usan la talla del tratamiento y el último peso y cintura que registró la paciente.
+    t = sb.uno("tratamientos_peso", f"paciente_id=eq.{p['id']}&select=talla_m")
+    glp1 = bool(t) and not v
+    if glp1:
+        r = sb.pedir("GET", f"registros_peso?paciente_id=eq.{p['id']}&peso=not.is.null&select=peso,cintura&order=fecha.desc&limit=1") or []
+        rc = sb.pedir("GET", f"registros_peso?paciente_id=eq.{p['id']}&cintura=not.is.null&select=cintura&order=fecha.desc&limit=1") or []
+        v = {"talla_m": t["talla_m"], "peso_kg": r[0]["peso"] if r else None, "cintura_cm": rc[0]["cintura"] if rc else None}
     faltan = [n for n, ok in (("cuestionario completo", c.get("completo")), ("visita de la enfermera", v)) if not ok]
     if faltan and not forzar: raise SystemExit(f"Falta: {', '.join(faltan)}. Marca «publicar igual» para seguir.")
 
@@ -116,6 +123,7 @@ def publicar(sb, pdf, orden=None, paciente_id=None, cedula=None, documento_pdf=N
         avisos.append(f"Edad: la cuenta dice {p['edad']} y el PDF {inf['perfil']['edad']}; se usó la del PDF.")
     if documento_pdf: avisos.append("Prueba con PDF sintético: el documento del PDF no es el del paciente.")
     if faltan: avisos.append(f"Publicado sin: {', '.join(faltan)}.")
+    if glp1: avisos.append("Línea GLP-1: peso y cintura registrados por la paciente (sin visita de la enfermera).")
     if c.get("medicamentos_otros"): avisos.append(f"Otros medicamentos que escribió el paciente: {c['medicamentos_otros']}.")
     inf["medico"]["avisos_publicacion"] = avisos
 

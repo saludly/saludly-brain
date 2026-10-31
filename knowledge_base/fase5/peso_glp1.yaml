@@ -1,0 +1,47 @@
+# Línea GLP-1 (Fase 6B) · Disparadores semanales de "Para ti" y textos nuevos para la paciente.
+# Criterios: docs/07_linea_glp1/version_funcional.md. Lo usa codigo/informe/recomendar_peso.py.
+# El código calcula el disparador; el texto sale de aquí o de recomendaciones/*.yaml (ya aprobadas). Nunca del LLM.
+# Los textos "GLP-" son nuevos (31 oct 2026) y esperan la aprobación de Carlos como médico revisor.
+# Reglas: de tú, sin diagnóstico, sin dosis ni cambios de medicamento; "lo exacto lo define tu doctora".
+estado_revision: pendiente
+limites:
+  maximo_por_semana: 3
+  no_repetir_semanas: 3
+
+textos:
+  - id: GLP-NAU
+    tipo: alimentacion
+    titulo: "Si sientes náuseas: poco y despacio"
+    texto: "Come porciones pequeñas, despacio, y para cuando te sientas llena. Evita los fritos y las comidas muy grasosas, y no te acuestes justo después de comer."
+  - id: GLP-EST
+    tipo: alimentacion
+    titulo: "Para ir mejor al baño"
+    texto: "Toma agua durante el día, suma verduras, frutas con cáscara y avena, y camina después de comer. Si pasan varios días sin mejorar, cuéntaselo a tu doctora."
+  - id: GLP-RAP
+    tipo: alimentacion
+    titulo: "No te saltes comidas"
+    texto: "Bajar muy rápido no es mejor. Come tres veces al día aunque tengas poco apetito, con una porción de proteína en cada comida, para cuidar tu músculo y tu energía."
+  - id: GLP-MES
+    tipo: actividad
+    titulo: "Las mesetas son normales"
+    texto: "Es común que el peso se quede quieto unas semanas. Sigue con tus hábitos y suma un día más de actividad: tu cuerpo sigue cambiando aunque la báscula no se mueva."
+  - id: GLP-REG
+    tipo: habitos
+    titulo: "Registra tu peso esta semana"
+    texto: "Pésate en la mañana, en ayunas y después de ir al baño, una vez por semana. Así tú y tu doctora ven tu avance real."
+  - id: GLP-EMB
+    tipo: controles
+    titulo: "Habla con tu doctora"
+    texto: "Por lo que nos contaste, tu doctora es quien te dice qué hacer con tu tratamiento. Escríbele o pregúntale en tu próximo control."
+
+# Disparador → textos (en orden; se toma el primero que no se haya mostrado en las últimas semanas).
+# REC-* son recomendaciones ya aprobadas (knowledge_base/fase5/recomendaciones).
+disparadores:
+  alarma: []                                  # solo el mensaje de seguridad; ninguna recomendación
+  embarazo: [GLP-EMB]
+  nauseas: [GLP-NAU, REC-ALI-119]             # náuseas, acidez o poco apetito
+  estrenimiento: [GLP-EST, REC-ALI-103, REC-HID-101]
+  rapido: [GLP-RAP, REC-ALI-114]
+  meseta: [GLP-MES, REC-ACT-103]
+  sin_registro: [GLP-REG]
+  base: [REC-ALI-114, REC-ACT-103, REC-ALI-119, REC-HID-101]

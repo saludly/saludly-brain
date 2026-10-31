@@ -90,3 +90,19 @@ Lo nuevo:
 - **Doctora de la paciente de prueba:** sí tiene y entra al panel con su correo (falta el correo).
 - **Laboratorio:** ECOFAM. Falta un PDF real de ECOFAM con los datos personales tapados para ajustar el lector.
 - **Registro:** la paciente pone sus datos, su estado actual y su meta; quedan como "dato de la paciente" hasta que la doctora los confirma (ajusta la decisión del 30 oct de que la doctora los define).
+
+## Construido (31 oct 2026)
+
+- **Supabase** (migración `20261031000000_glp1_peso.sql`, ya aplicada): `doctoras`, `tratamientos_peso`, `registros_peso`, `semanas_peso`, la casilla `acepta_comerciales` en `autorizaciones` y permisos: la paciente ve lo suyo, la doctora solo a sus pacientes (las que usaron su código) y el equipo todo.
+- **App** (`app/src`): `/peso/empezar` (registro del tratamiento en 5 pasos con la autorización AUT-GLP1-2026-11-v1), `/peso` (Hoy, Progreso, Logros, Exámenes y Para ti con datos reales) y `/doctora` (panel con alertas, gráficas, aprobación del análisis, confirmación del tratamiento y publicación de la semana). El enlace de la doctora es `https://app.saludly.online/?dra=CODIGO`.
+- **Análisis del PDF**: la paciente lo sube desde Exámenes y lo analiza la función de Vercel que ya existía (`api/procesar.py`), en la nube, sin depender del PC; el PDF no se guarda. El documento del PDF tiene que ser el de la paciente. Queda "en revisión" hasta que la doctora lo aprueba.
+- **Semana**: `python codigo/informe/recomendar_peso.py` (domingo) deja el borrador de cada paciente; la doctora lo revisa y lo publica. Textos nuevos en `knowledge_base/fase5/peso_glp1.yaml`, **pendientes de aprobación**.
+
+## Para la prueba con la primera paciente
+
+1. Publicar la app en Vercel (falta: subir a GitHub o `bash app/desplegar.sh`).
+2. Crear a la doctora en Supabase: `insert into doctoras (correo, nombre, codigo) values ('correo@…', 'Dra. …', 'CODIGO');`
+3. Mandarle a la paciente el enlace `https://app.saludly.online/?dra=CODIGO`: entra con Google o correo, hace el registro y su tratamiento.
+4. La paciente sube su PDF de ECOFAM en Exámenes. Si el lector no lo lee bien (formato real distinto al de ejemplo), hay que ajustar el lector con un PDF de ECOFAM.
+5. La doctora entra a `https://app.saludly.online/doctora` con su correo, confirma los datos y aprueba el análisis.
+6. El domingo: `python codigo/informe/recomendar_peso.py`; el lunes la doctora publica la semana.

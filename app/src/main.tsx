@@ -18,8 +18,12 @@ import { Visita } from "@/routes/Visita";
 import { Medico } from "@/routes/Medico";
 import { Privacidad } from "@/routes/Privacidad";
 import { VistaMedico } from "@/routes/VistaMedico";
+import { Peso } from "@/routes/Peso";
+import { PesoEmpezar } from "@/routes/PesoEmpezar";
+import { Doctora } from "@/routes/Doctora";
 import { SesionProvider, siguientePaso, useSesion } from "@/lib/sesion";
 import { guardarOrigen } from "@/lib/origen";
+import { marcarLineaPeso } from "@/lib/peso";
 
 /** Entrada de la PWA: lleva al paciente al paso que le falta. */
 function Inicio() {
@@ -89,6 +93,10 @@ const rutas = [
   createRoute({ getParentRoute: () => raiz, path: "/recorrido", component: Bienvenida }),
   createRoute({ getParentRoute: () => raiz, path: "/panel", component: Panel }),
   createRoute({ getParentRoute: () => raiz, path: "/plan", component: Plan }),
+  // Línea GLP-1 (Fase 6B): la paciente que llega por su doctora y el panel de la doctora.
+  createRoute({ getParentRoute: () => raiz, path: "/peso", component: Peso }),
+  createRoute({ getParentRoute: () => raiz, path: "/peso/empezar", component: PesoEmpezar }),
+  createRoute({ getParentRoute: () => raiz, path: "/doctora", component: Doctora }),
 ];
 
 const router = createRouter({ routeTree: raiz.addChildren(rutas), scrollRestoration: true });
@@ -100,6 +108,12 @@ declare module "@tanstack/react-router" {
 }
 
 guardarOrigen();
+// Enlace de una doctora aliada (…/?dra=CODIGO o ?linea=peso): la paciente entra a la línea GLP-1.
+{
+  const q = new URLSearchParams(window.location.search);
+  const dra = q.get("dra")?.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 20);
+  if (dra || q.get("linea") === "peso") marcarLineaPeso(dra);
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

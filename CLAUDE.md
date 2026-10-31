@@ -69,6 +69,8 @@ app/                     Fase 6: app del paciente (Vite + React + TanStack Route
                          /medico: vista del médico (correos en la tabla `equipo`): pacientes, revisión del informe, vista previa y aprobación.
                          Informe: /recorrido, /panel, /plan, hoy con los informes de codigo/pipeline/ejemplos (demo con selector de caso). PWA: manifest, íconos y sw.js (solo en producción).
                          Tablas pacientes, autorizaciones y cuestionarios con RLS (supabase/migrations/20261021051858_pacientes_pwa.sql). Opciones del cuestionario: `python codigo/herramientas/exportar_app.py` (objetivos, filtros y cuestionario.yaml → app/src/lib/contenido.json).
+                         Línea GLP-1 (Fase 6B, docs/07_linea_glp1/): /peso/empezar, /peso (paciente estilo iOS) y /doctora (panel de la doctora aliada, tabla doctoras);
+                         enlace ?dra=CODIGO; semana con `python codigo/informe/recomendar_peso.py` (textos en knowledge_base/fase5/peso_glp1.yaml).
                          `npm --prefix app run dev` (puerto 5173) · `npm --prefix app run build`
 pdf_ejemplo/             4 PDF sintéticos (LCD-2026-100123 hombre, 100124 mujer, 100125 hombre con valor crítico y 100126 mujer con hallazgos digestivos) y generar_pdf_ejemplo.py [1 2 3 4]
 _archivo/                zips originales, versiones viejas, duplicados

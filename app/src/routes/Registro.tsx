@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Campo, Opcion, Pantalla, Titulo, claseEntrada } from "@/components/Formulario";
 import { VERSION_AUTORIZACION, siguientePaso, supabase, useSesion, type TipoDocumento } from "@/lib/sesion";
+import { esLineaPeso } from "@/lib/peso";
 
 const DOCUMENTOS: { valor: TipoDocumento; texto: string }[] = [
   { valor: "CC", texto: "Cédula de ciudadanía" },
@@ -103,7 +104,8 @@ export function Registro() {
     }
     await s.recargar();
     setOcupado(false);
-    void navigate({ to: "/pago" });
+    // Línea GLP-1 (llegó por el enlace de su doctora): sin pago; sigue con su tratamiento.
+    void navigate({ to: esLineaPeso() ? "/peso/empezar" : "/pago" });
   };
 
   if (paso === 1)
