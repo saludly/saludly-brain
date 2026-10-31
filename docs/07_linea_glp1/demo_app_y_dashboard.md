@@ -197,3 +197,16 @@ En el demo el recordatorio dice "Tu aplicación semanal · 0,5 mg · jueves, com
 - **Pies:** se quitó la sombra del piso de la silueta (la máscara de los pies se recortó con un contorno).
 - **Barra del reto en Hoy:** va de 0 a los kilos del reto, contados desde el inicio del tratamiento. Reto de 8 kg: 4 kg = 50 %, 8 kg = 100 %. Se mueve con cada registro; al cumplirlo se llena, muestra "Reto cumplido" y arranca el siguiente. Retos del demo: 8 kg, 12 kg y la meta.
 - **Exámenes en casa:** al final de la pestaña Exámenes hay una fila discreta ("¿Te toca repetir tus exámenes? Te los tomamos en casa") que abre la opción de agendar con Saludly y dice que también puede hacerlos en el laboratorio que prefiera.
+
+## Rediseño del 31 oct 2026 (Carlos)
+
+- **Hoy (paciente):** el reto se muestra como un segundo anillo al lado del nivel, sin porcentaje: adentro dice los kilos ("7,0 de 8 kg"). Al cumplirse se cierra con ✓ y arranca el siguiente.
+- **Doctora:** mismo lenguaje visual que la app de la paciente (formato iPad): "Hola, Dra.", tarjeta "Esta semana" con anillos, lista de pacientes por secciones con un anillo de avance a la meta, ficha con el anillo grande de avance y una gráfica especializada por tema:
+  - Peso semanal con la meta.
+  - Velocidad de pérdida (% por semana) con el límite que define la doctora; las semanas que lo pasan van en naranja con su texto.
+  - Cintura y grasa estimada (RFM) como barras de inicio → hoy → meta.
+  - Laboratorios antes y ahora con su referencia.
+  - Constancia: registro, aplicación y metas por semana.
+  - Efectos reportados por semana; los de alarma en rojo con la palabra "alarma".
+  - Herramientas del consultorio como lista de ajustes con interruptores.
+- Todas las gráficas muestran el dato al pasar el cursor.
