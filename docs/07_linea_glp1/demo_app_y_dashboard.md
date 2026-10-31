@@ -191,3 +191,9 @@ No es asesoría legal; son las preguntas que hay que llevarle al abogado:
 - **Domicilio del medicamento:** es otro tema (servicio farmacéutico habilitado y fórmula médica). No se mezcla con el recordatorio.
 
 En el demo el recordatorio dice "Tu aplicación semanal · 0,5 mg · jueves, como indicó tu doctora", sin nombre ni marca del medicamento.
+
+## Ajustes del 31 oct 2026 (Carlos)
+
+- **Pies:** se quitó la sombra del piso de la silueta (la máscara de los pies se recortó con un contorno).
+- **Barra del reto en Hoy:** va de 0 a los kilos del reto, contados desde el inicio del tratamiento. Reto de 8 kg: 4 kg = 50 %, 8 kg = 100 %. Se mueve con cada registro; al cumplirlo se llena, muestra "Reto cumplido" y arranca el siguiente. Retos del demo: 8 kg, 12 kg y la meta.
+- **Exámenes en casa:** al final de la pestaña Exámenes hay una fila discreta ("¿Te toca repetir tus exámenes? Te los tomamos en casa") que abre la opción de agendar con Saludly y dice que también puede hacerlos en el laboratorio que prefiera.

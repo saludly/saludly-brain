@@ -81,6 +81,17 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .siguiente b { display: block; font-size: 17px; margin-bottom: 2px; }
 .barra { height: 6px; border-radius: 3px; background: var(--ios-fill); overflow: hidden; margin-top: 10px; }
 .barra i { display: block; height: 100%; background: var(--marca); border-radius: 3px; transition: width .9s cubic-bezier(.2,.8,.2,1); }
+.reto { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.reto .barra { flex: 1; margin-top: 0; height: 8px; border-radius: 4px; }
+.reto span { font-size: 13px; font-weight: 600; color: var(--marca); font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: right; }
+.siguiente > span { color: var(--ios-2); font-size: 14px; }
+.sutil { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; border: 0; border-top: 1px solid var(--ios-sep); background: transparent; padding: 14px 4px 4px; text-align: left; color: var(--ios-label); font-size: 15px; }
+.sutil small { display: block; color: var(--ios-2); font-size: 13px; }
+.sutil svg { width: 14px; height: 14px; color: var(--ios-2); flex: none; }
+.dom { display: grid; gap: 8px; }
+.dom b { font-size: 17px; }
+.dom p { margin: 0; font-size: 15px; color: var(--ios-2); }
+.dom p.peq { font-size: 13px; }
 .boton { display: block; width: 100%; border: 0; border-radius: 14px; padding: 15px; font-size: 17px; font-weight: 600; background: var(--marca); color: #fff; text-align: center; text-decoration: none; }
 .boton.verde { background: #25d366; color: #06301a; }
 .boton.sec { background: var(--ios-fill); color: var(--marca); }
@@ -290,7 +301,8 @@ table.res .d { color: var(--ok); font-weight: 600; }
             </svg>
             <div class="num"><div><b id="nivel-num">0</b><span>de 100</span></div></div>
           </div>
-          <div class="siguiente" id="siguiente"></div>
+          <div class="siguiente" id="siguiente"><b id="sig-t"></b><span id="sig-s"></span>
+            <div class="reto"><div class="barra"><i id="sig-barra" style="width:0"></i></div><span id="sig-pct">0 %</span></div></div>
         </div>
         <button class="boton" id="abrir-registro">Registrar peso y cintura</button>
         <div class="card">
@@ -347,6 +359,13 @@ table.res .d { color: var(--ok); font-weight: 600; }
         <p class="sub" id="ex-sub">Los que pidió la Dra. Rivera · revisados el 28 de octubre</p>
         <div class="card" id="examenes"></div>
         <p class="pie-legal">Esto no es un diagnóstico. Tu doctora revisó estos resultados y los habla contigo en el control.</p>
+        <button class="sutil" id="dom-btn" aria-expanded="false" aria-controls="dom"><span>¿Te toca repetir tus exámenes?<small>Te los tomamos en casa</small></span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 2.5 4.5 4.5L5 11.5"/></svg></button>
+        <div class="card dom" id="dom" hidden>
+          <b>Exámenes en casa con Saludly</b>
+          <p id="dom-txt">Para tu próximo control tu doctora pidió: azúcar promedio (HbA1c), lípidos, tiroides (TSH) y vitamina B12.</p>
+          <p class="peq">Una enfermera va a tu casa; vas en ayunas. También puedes hacerlos en el laboratorio que prefieras.</p>
+          <button class="boton sec" id="dom-ok">Agendar toma en casa</button>
+        </div>
       </div>
 
       <!-- PARA TI -->
@@ -442,6 +461,7 @@ const LOGROS = [
   { id: "kilo", m: "1 kg", t: "Primer kilo", s: "1 kg menos", ok: () => L.inicio - L.peso >= 1, pts: 0, f: "9 ago" },
   { id: "p5", m: "5 %", t: "5 % de tu peso", s: "4,6 kg menos", ok: () => L.inicio - L.peso >= L.inicio * 0.05, pts: 0, f: "19 sep" },
   { id: "k8", m: "8 kg", t: "8 kilos menos", s: "", ok: () => L.inicio - L.peso >= 8 - 1e-9, pts: 0 },
+  { id: "k12", m: "12 kg", t: "12 kilos menos", s: "", ok: () => L.inicio - L.peso >= 12 - 1e-9, pts: 0 },
   { id: "mitad", m: "½", t: "Mitad del camino", s: "", ok: () => frac(L.peso) >= 0.5, pts: 0 },
   { id: "p10", m: "10 %", t: "10 % de tu peso", s: "", ok: () => L.inicio - L.peso >= L.inicio * 0.1, pts: 0 },
   { id: "c5", m: "−5", t: "5 cm de cintura", s: "", ok: () => L.cint0 - L.cint >= 5, pts: 0, f: "17 oct" },
@@ -460,18 +480,27 @@ function calcNivel() {
   const hab = LOGROS.filter(l => ganados.has(l.id)).reduce((a, l) => a + l.pts, 0);
   return Math.min(100, Math.round(base + hab));
 }
+// Retos de kilos: la barra va de 0 a los kilos del reto, contados desde el inicio del tratamiento
 function siguienteLogro() {
-  const faltas = [
-    { id: "k8", t: "8 kilos menos", falta: L.peso - (L.inicio - 8), u: "kg" },
-    { id: "mitad", t: "Mitad del camino", falta: L.peso - (L.inicio - (L.inicio - L.meta) / 2), u: "kg" },
-    { id: "p10", t: "10 % de tu peso", falta: L.peso - L.inicio * 0.9, u: "kg" },
-    { id: "meta", t: "Tu meta", falta: L.peso - L.meta, u: "kg" },
-  ].filter(x => !ganados.has(x.id) && x.falta > 0);
-  return faltas[0];
+  const retos = [
+    { id: "k8", t: "8 kilos menos", obj: 8 },
+    { id: "k12", t: "12 kilos menos", obj: 12 },
+    { id: "meta", t: "Llegar a tu meta", obj: L.inicio - L.meta },
+  ].map(r => ({ ...r, falta: r.obj - (L.inicio - L.peso), u: "kg" })).filter(x => !ganados.has(x.id) && x.falta > 1e-9);
+  return retos[0];
+}
+function pintaReto(s) {
+  if (!s) { $("#sig-t").textContent = "¡Llegaste a tu meta!"; $("#sig-s").textContent = "Ahora el reto es mantenerla."; $("#sig-pct").textContent = "100 %"; $("#sig-barra").style.width = "100%"; return; }
+  const logrado = Math.max(0, L.inicio - L.peso);
+  const pct = Math.max(1, Math.min(100, Math.round(logrado / s.obj * 100)));
+  $("#sig-t").textContent = "Reto: " + s.t;
+  $("#sig-s").textContent = `Llevas ${fmt(logrado)} de ${fmt(s.obj, 0)} kg. Te faltan ${fmt(s.falta)} kg.`;
+  $("#sig-pct").textContent = pct + " %";
+  requestAnimationFrame(() => requestAnimationFrame(() => { $("#sig-barra").style.width = pct + "%"; }));
 }
 
 // ---------- Hoy ----------
-function pintaNivel(animar = true) {
+function pintaNivel(animar = true, retoCumplido = null) {
   const nuevo = Math.max(L.nivel, calcNivel()); // el nivel nunca baja
   const desde = L.nivel; L.nivel = nuevo;
   $("#aro").style.strokeDashoffset = 326.73 * (1 - nuevo / 100);
@@ -482,9 +511,13 @@ function pintaNivel(animar = true) {
     requestAnimationFrame(paso);
   }
   const s = siguienteLogro();
-  $("#siguiente").innerHTML = s
-    ? `<b>Siguiente logro: ${s.t}</b>Te faltan ${fmt(s.falta)} ${s.u}. Vas muy bien.<div class="barra"><i style="width:${Math.round(frac(L.peso) * 100)}%"></i></div>`
-    : `<b>¡Llegaste a tu meta!</b>Ahora el reto es mantenerla.`;
+  if (retoCumplido && !reduce) {
+    // primero se llena el reto cumplido, después arranca el siguiente
+    $("#sig-t").textContent = "Reto cumplido: " + retoCumplido.t;
+    $("#sig-s").textContent = "¡Lo lograste!";
+    $("#sig-pct").textContent = "100 %"; $("#sig-barra").style.width = "100%";
+    setTimeout(() => { const b = $("#sig-barra"); b.style.transition = "none"; b.style.width = "0"; void b.offsetWidth; b.style.transition = ""; pintaReto(s); }, 2200);
+  } else pintaReto(s);
   $("#lg-nivel").textContent = nuevo;
   $("#lg-barra").style.width = nuevo + "%";
   $("#lg-cuenta").textContent = `${ganados.size} de ${LOGROS.length} logros`;
@@ -510,7 +543,7 @@ $("#aplicada").addEventListener("click", (e) => { e.currentTarget.classList.add(
 // ---------- Silueta con capa ----------
 const lienzo = $("#lienzo"), ctx = lienzo.getContext("2d");
 const img = new Image();
-let W = 0, H = 0, dist = null, peso = null, figuraLista = false, capaActual = null, momento = "hoy";
+let W = 0, H = 0, dist = null, peso = null, figuraLista = false, capaActual = null, momento = "hoy", capaPendiente = false;
 const TMAX = 30;
 function grosor(p, c) { return TMAX * (1 - (frac(p) + fracCint(c)) / 2); }
 img.onload = () => {
@@ -602,6 +635,11 @@ function irA(tab) {
   document.querySelectorAll(".tabbar button").forEach(b => { if (b.dataset.tab === tab) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
   document.querySelectorAll(".vista").forEach(v => v.classList.toggle("activa", v.id === "v-" + tab));
   $("#pantalla").scrollTop = 0;
+  if (tab === "progreso" && capaPendiente) { // la silueta cambia cuando la paciente la mira
+    capaPendiente = false;
+    document.querySelectorAll(".seg-ios button").forEach(x => x.setAttribute("aria-pressed", x.dataset.mom === "hoy"));
+    setTimeout(() => animaCapa(grosor(L.peso, L.cint)), 250);
+  }
 }
 document.querySelectorAll(".tabbar button").forEach(b => b.addEventListener("click", () => irA(b.dataset.tab)));
 
@@ -623,14 +661,24 @@ $("#guardar").addEventListener("click", () => {
   LOGROS.forEach(l => { if (l.ok()) ganados.add(l.id); });
   const nuevos = [...ganados].filter(id => !antes.has(id));
   cerrarHoja();
-  pintaNivel(); pintaProgreso(); pintaLogros(nuevos); pintaDoctora();
+  const reto = LOGROS.find(l => ["k8", "k12", "meta"].includes(l.id) && nuevos.includes(l.id));
+  pintaNivel(true, reto); pintaProgreso(); pintaLogros(nuevos); pintaDoctora();
+  capaPendiente = true;
   if (nuevos.length) {
     const l = LOGROS.find(x => x.id === nuevos[0]);
     $("#notif-m").textContent = l.m; $("#notif-t").textContent = "Logro: " + l.t;
     $("#notif-s").textContent = nuevos.length > 1 ? `y ${nuevos.length - 1} más. Tu nivel subió a ${L.nivel}.` : `Tu nivel subió a ${L.nivel}.`;
   } else { $("#notif-m").textContent = L.nivel; $("#notif-t").textContent = "Registro guardado"; $("#notif-s").textContent = "Tu silueta ya cambió en Progreso."; }
-  $("#notif").classList.add("on"); setTimeout(() => $("#notif").classList.remove("on"), 3200);
-  setTimeout(() => { irA("progreso"); document.querySelectorAll(".seg-ios button").forEach(x => x.setAttribute("aria-pressed", x.dataset.mom === "hoy")); animaCapa(grosor(L.peso, L.cint)); }, 900);
+  $("#notif").classList.add("on"); setTimeout(() => $("#notif").classList.remove("on"), 3600);
+});
+
+// ---------- Exámenes en casa (sutil) ----------
+$("#dom-btn").addEventListener("click", (e) => { const d = $("#dom"); d.hidden = !d.hidden; e.currentTarget.setAttribute("aria-expanded", !d.hidden); });
+$("#dom-ok").addEventListener("click", (e) => {
+  e.currentTarget.textContent = "Solicitud enviada"; e.currentTarget.disabled = true;
+  $("#notif-m").textContent = "Lab"; $("#notif-t").textContent = "Te escribimos por WhatsApp";
+  $("#notif-s").textContent = "para elegir el día de la toma en casa.";
+  $("#notif").classList.add("on"); setTimeout(() => $("#notif").classList.remove("on"), 3400);
 });
 
 // ===================== DOCTORA =====================
