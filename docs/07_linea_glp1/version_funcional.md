@@ -106,3 +106,11 @@ Lo nuevo:
 4. La paciente sube su PDF de ECOFAM en Exámenes. Si el lector no lo lee bien (formato real distinto al de ejemplo), hay que ajustar el lector con un PDF de ECOFAM.
 5. La doctora entra a `https://app.saludly.online/doctora` con su correo, confirma los datos y aprueba el análisis.
 6. El domingo: `python codigo/informe/recomendar_peso.py`; el lunes la doctora publica la semana.
+
+## Prueba con datos de ejemplo (31 oct 2026)
+
+- **Doctora de prueba:** `thecangri.info@gmail.com`, "Dra. Prueba", código **PRUEBA** (ya creada en Supabase). Enlace para la paciente: `https://app.saludly.online/?dra=PRUEBA`.
+- **PDF de ejemplo:** `pdf_ejemplo/Ejemplo_resultados_LCD-2026-100124_mujer.pdf` (sintético, 34 años, documento CC 0000000002). El motor lo analizó: 7 hallazgos (hierro bajo, ANA positivo, lipoproteína(a), IMC, TSH, colesterol, vitamina D) y 20 resultados fuera de rango; control de salida sin problemas.
+- **Semana armada por el código** con esos datos y estreñimiento reportado: GLP-EST (esta semana), REC-ALI-201 (por sus exámenes) y un consejo de energía y sueño (objetivos).
+- **Artifact del flujo:** `flujo_glp1.html` (artifact privado https://claude.ai/artifact/2Y29kBVuahVjmvhywqT1rE). Muestra el recorrido completo con esos datos: subir el PDF → aprobar → publicar la semana → la paciente lo ve.
+- En la app real, un PDF sintético solo lo puede procesar el equipo (su documento no es el de la paciente); la paciente sube el suyo.

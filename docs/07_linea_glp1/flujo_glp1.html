@@ -1,0 +1,1030 @@
+<title>Flujo GLP-1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Demo con dos vistas: la paciente en un iPhone (pestañas, hojas, avisos tipo iOS) y la doctora en un tablero de triage con la ficha al lado. */
+:root {
+  --bg: oklch(0.965 0.005 250);
+  --ink: oklch(0.23 0.02 255);
+  --ink-2: oklch(0.48 0.015 255);
+  --rule: oklch(0.23 0.02 255 / 11%);
+  --panel: #ffffff;
+  --marca: #2793ff;
+  --marca-suave: oklch(0.58 0.19 253 / 10%);
+  --alta: #e5484d; --media: #e8890c; --info: #2793ff; --baja: oklch(0.6 0.01 255); --ok: #2f9e6b;
+  --ios-bg: #f2f2f7; --ios-card: #ffffff; --ios-label: #000000; --ios-2: rgba(60,60,67,.6); --ios-sep: rgba(60,60,67,.18);
+  --ios-fill: rgba(120,120,128,.12); --ios-green: #34c759; --ios-red: #ff3b30; --ios-orange: #ff9500;
+  --capa: rgba(39,147,255,.30); --capa-borde: rgba(39,147,255,.55);
+  --bisel: #111318;
+  --sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --ios: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: oklch(0.15 0.014 255); --ink: oklch(0.95 0.006 250); --ink-2: oklch(0.72 0.014 255); --rule: oklch(0.95 0.006 250 / 12%);
+  --panel: oklch(0.2 0.017 255); --marca: #5aadff; --marca-suave: oklch(0.7 0.14 253 / 14%);
+  --ios-bg: #000000; --ios-card: #1c1c1e; --ios-label: #ffffff; --ios-2: rgba(235,235,245,.6); --ios-sep: rgba(84,84,88,.55); --ios-fill: rgba(118,118,128,.24);
+  --capa: rgba(90,173,255,.32); --capa-borde: rgba(90,173,255,.6); --bisel: #2a2d33; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: oklch(0.15 0.014 255); --ink: oklch(0.95 0.006 250); --ink-2: oklch(0.72 0.014 255); --rule: oklch(0.95 0.006 250 / 12%);
+  --panel: oklch(0.2 0.017 255); --marca: #5aadff; --marca-suave: oklch(0.7 0.14 253 / 14%);
+  --ios-bg: #000000; --ios-card: #1c1c1e; --ios-label: #ffffff; --ios-2: rgba(235,235,245,.6); --ios-sep: rgba(84,84,88,.55); --ios-fill: rgba(118,118,128,.24);
+  --capa: rgba(90,173,255,.32); --capa-borde: rgba(90,173,255,.6); --bisel: #2a2d33; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+.ficha > *, .tablero > * { min-width: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 32px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--marca); outline-offset: 2px; }
+
+/* Barra del demo */
+.demo-top { max-width: 1180px; margin: 0 auto 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.marca { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.marca span { color: var(--marca); }
+.marca small { font-weight: 500; font-size: 13px; color: var(--ink-2); margin-left: 8px; letter-spacing: 0; }
+.seg { display: inline-flex; background: var(--rule); border-radius: 10px; padding: 3px; }
+.seg button { border: 0; background: transparent; padding: 7px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.ficticio { font-family: var(--mono); font-size: 11px; color: var(--ink-2); border: 1px dashed var(--ink-2); border-radius: 4px; padding: 2px 8px; }
+
+/* ===== Paciente: iPhone ===== */
+.vista-paciente { display: flex; justify-content: center; gap: 40px; align-items: flex-start; max-width: 1180px; margin: 0 auto; }
+.guia { max-width: 300px; padding-top: 40px; display: grid; gap: 14px; color: var(--ink-2); font-size: 14px; }
+.guia h2 { color: var(--ink); font-size: 20px; letter-spacing: -0.02em; margin: 0; line-height: 1.2; }
+.guia ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.guia b { color: var(--ink); }
+.telefono { width: 390px; height: 820px; border-radius: 56px; border: 12px solid var(--bisel); background: var(--ios-bg); position: relative; overflow: hidden; flex: none;
+  box-shadow: 0 30px 60px -30px rgba(10,20,40,.45); font-family: var(--ios); color: var(--ios-label); }
+.isla { position: absolute; top: 10px; left: 50%; translate: -50% 0; width: 118px; height: 34px; background: #000; border-radius: 20px; z-index: 30; }
+.estado { position: absolute; top: 0; left: 0; right: 0; height: 52px; display: flex; justify-content: space-between; align-items: center; padding: 6px 30px 0 34px; font-weight: 600; font-size: 15px; z-index: 25; }
+.estado i { font-style: normal; letter-spacing: 1px; font-size: 12px; }
+.pantalla { position: absolute; inset: 0; overflow-y: auto; padding: 56px 16px 100px; scrollbar-width: none; }
+.pantalla::-webkit-scrollbar { display: none; }
+.vista { display: none; }
+.vista.activa { display: grid; gap: 14px; animation: entra .28s ease-out; }
+@keyframes entra { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.titulo-grande { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin: 6px 4px 0; line-height: 1.1; }
+.sub { color: var(--ios-2); font-size: 15px; margin: -10px 4px 0; }
+.card { background: var(--ios-card); border-radius: 18px; padding: 16px; }
+.card h3 { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--ios-2); text-transform: uppercase; letter-spacing: .02em; }
+.fila { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.nivel-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+.anillo { position: relative; width: 120px; height: 120px; }
+.anillo svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+.anillo .num { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
+.anillo .num b { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.anillo .num span { display: block; font-size: 12px; color: var(--ios-2); margin-top: 2px; }
+.siguiente { font-size: 15px; line-height: 1.35; }
+.siguiente b { display: block; font-size: 17px; margin-bottom: 2px; }
+.barra { height: 6px; border-radius: 3px; background: var(--ios-fill); overflow: hidden; margin-top: 10px; }
+.barra i { display: block; height: 100%; background: var(--marca); border-radius: 3px; transition: width .9s cubic-bezier(.2,.8,.2,1); }
+.reto { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.reto .barra { flex: 1; margin-top: 0; height: 8px; border-radius: 4px; }
+.reto span { font-size: 13px; font-weight: 600; color: var(--marca); font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: right; }
+.siguiente > span { color: var(--ios-2); font-size: 14px; }
+.sutil { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; border: 0; border-top: 1px solid var(--ios-sep); background: transparent; padding: 14px 4px 4px; text-align: left; color: var(--ios-label); font-size: 15px; }
+.sutil small { display: block; color: var(--ios-2); font-size: 13px; }
+.sutil svg { width: 14px; height: 14px; color: var(--ios-2); flex: none; }
+.dom { display: grid; gap: 8px; }
+.dom b { font-size: 17px; }
+.dom p { margin: 0; font-size: 15px; color: var(--ios-2); }
+.dom p.peq { font-size: 13px; }
+.boton { display: block; width: 100%; border: 0; border-radius: 14px; padding: 15px; font-size: 17px; font-weight: 600; background: var(--marca); color: #fff; text-align: center; text-decoration: none; }
+.boton.verde { background: #25d366; color: #06301a; }
+.boton.sec { background: var(--ios-fill); color: var(--marca); }
+.lista { display: grid; }
+.lista > div { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid var(--ios-sep); }
+.lista > div:first-child { border-top: 0; padding-top: 2px; }
+.check { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ios-sep); background: transparent; flex: none; display: grid; place-items: center; padding: 0; }
+.check[aria-checked="true"] { background: var(--ios-green); border-color: var(--ios-green); }
+.check svg { width: 14px; height: 14px; opacity: 0; }
+.check[aria-checked="true"] svg { opacity: 1; }
+.meta-txt { flex: 1; min-width: 0; font-size: 16px; }
+.meta-txt small { display: block; color: var(--ios-2); font-size: 13px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 0; background: var(--ios-fill); border-radius: 999px; padding: 8px 13px; font-size: 14px; font-weight: 500; }
+.chip[aria-pressed="true"] { background: var(--marca); color: #fff; }
+.chip.alarma[aria-pressed="true"] { background: var(--ios-red); }
+.aviso-alarma { background: rgba(255,59,48,.12); color: var(--ios-red); border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; margin-top: 10px; }
+.med { display: flex; gap: 12px; align-items: center; }
+.med-ico { width: 44px; height: 44px; border-radius: 12px; background: var(--marca-suave); color: var(--marca); display: grid; place-items: center; flex: none; }
+.med-ico svg { width: 24px; height: 24px; }
+.med div { flex: 1; min-width: 0; }
+.med b { display: block; font-size: 16px; }
+.med small { color: var(--ios-2); font-size: 13px; }
+.pill-btn { border: 0; border-radius: 999px; padding: 7px 14px; background: var(--ios-fill); color: var(--marca); font-weight: 600; font-size: 14px; }
+.pill-btn.hecho { background: var(--ios-green); color: #fff; }
+
+/* Silueta */
+.silueta-card { display: grid; gap: 12px; }
+.lienzo { position: relative; height: 360px; display: grid; place-items: center; }
+.lienzo canvas { height: 360px; width: auto; max-width: 100%; display: block; }
+.seg-ios { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--ios-fill); border-radius: 9px; padding: 2px; }
+.seg-ios button { border: 0; background: transparent; border-radius: 7px; padding: 6px; font-size: 13px; font-weight: 600; }
+.seg-ios button[aria-pressed="true"] { background: var(--ios-card); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+.camino { text-align: center; font-size: 17px; }
+.camino b { color: var(--marca); }
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.dato b { display: block; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.dato span { color: var(--ios-2); font-size: 13px; }
+.grafica svg { width: 100%; height: auto; display: block; }
+
+/* Logros */
+.medallas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 8px; }
+.medalla { display: grid; justify-items: center; gap: 6px; text-align: center; }
+.medalla .m { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 17px; letter-spacing: -0.02em;
+  background: radial-gradient(circle at 35% 30%, #7cc0ff, var(--marca) 70%); color: #fff; box-shadow: inset 0 -4px 0 rgba(0,0,0,.12); }
+.medalla.bloq .m { background: var(--ios-fill); color: var(--ios-2); box-shadow: none; }
+.medalla.nueva .m { animation: gana 1s cubic-bezier(.2,1.6,.4,1); }
+@keyframes gana { 0% { transform: scale(.4) rotate(-20deg); } 100% { transform: none; } }
+.medalla b { font-size: 13px; line-height: 1.2; }
+.medalla small { font-size: 11px; color: var(--ios-2); line-height: 1.2; }
+
+/* Exámenes */
+.examen { padding: 12px 0; border-top: 1px solid var(--ios-sep); display: grid; gap: 2px; }
+.examen:first-child { border-top: 0; padding-top: 0; }
+.examen .fila b { font-size: 16px; font-weight: 600; }
+.examen .valor { font-variant-numeric: tabular-nums; font-weight: 600; }
+.examen small { color: var(--ios-2); font-size: 13px; }
+.tag { font-size: 12px; font-weight: 600; border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+.tag.bien { background: rgba(52,199,89,.15); color: #1f8f43; }
+.tag.mejoro { background: rgba(39,147,255,.14); color: var(--marca); }
+.tag.hablar { background: rgba(255,149,0,.16); color: #b06400; }
+.pie-legal { font-size: 12px; color: var(--ios-2); padding: 0 4px; }
+.reco { display: grid; gap: 4px; }
+.reco small { color: var(--ios-2); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.reco b { font-size: 17px; }
+.reco p { margin: 0; color: var(--ios-2); font-size: 15px; }
+.numero { font-variant-numeric: tabular-nums; user-select: all; font-weight: 600; color: var(--ios-label); }
+
+/* Tab bar */
+.tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; padding: 6px 6px 26px; display: grid; grid-template-columns: repeat(5, 1fr); z-index: 20;
+  background: color-mix(in srgb, var(--ios-card) 82%, transparent); backdrop-filter: blur(20px) saturate(1.6); -webkit-backdrop-filter: blur(20px) saturate(1.6); border-top: 1px solid var(--ios-sep); }
+.tabbar button { border: 0; background: transparent; display: grid; justify-items: center; gap: 2px; font-size: 10px; font-weight: 500; color: var(--ios-2); padding: 4px 0; }
+.tabbar svg { width: 26px; height: 26px; }
+.tabbar button[aria-current="page"] { color: var(--marca); }
+
+/* Hoja y aviso */
+.velo { position: absolute; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .25s; z-index: 40; }
+.velo.on { opacity: 1; pointer-events: auto; }
+.hoja { position: absolute; left: 0; right: 0; bottom: 0; background: var(--ios-bg); border-radius: 22px 22px 0 0; padding: 8px 18px 34px; z-index: 41;
+  transform: translateY(105%); transition: transform .42s cubic-bezier(.2,.9,.25,1); display: grid; gap: 14px; }
+.hoja.on { transform: none; }
+.agarre { width: 38px; height: 5px; border-radius: 3px; background: var(--ios-sep); justify-self: center; }
+.hoja-cab { display: flex; justify-content: space-between; align-items: center; }
+.hoja-cab b { font-size: 17px; }
+.hoja-cab button { border: 0; background: transparent; color: var(--marca); font-size: 17px; }
+.paso { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.paso .v { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; min-width: 0; text-align: center; flex: 1; }
+.paso .v small { font-size: 17px; font-weight: 500; color: var(--ios-2); }
+.paso button { width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--ios-fill); color: var(--marca); font-size: 26px; font-weight: 500; line-height: 1; }
+.notif { position: absolute; top: 56px; left: 10px; right: 10px; z-index: 50; background: color-mix(in srgb, var(--ios-card) 92%, transparent);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 18px; padding: 12px 14px; display: flex; gap: 12px; align-items: center;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,.35); transform: translateY(-140%); transition: transform .5s cubic-bezier(.2,1.2,.3,1); }
+.notif.on { transform: none; }
+.notif .m { width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #7cc0ff, var(--marca) 70%); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 12px; flex: none; }
+.notif b { display: block; font-size: 15px; }
+.notif span { font-size: 14px; color: var(--ios-2); }
+
+/* Anillos de Hoy */
+.hoy-anillos { display: grid; gap: 14px; }
+.dos-anillos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.an { display: grid; justify-items: center; gap: 6px; }
+.an small { font-size: 13px; font-weight: 600; color: var(--ios-2); }
+.anillo .val { transition: stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1); }
+.anillo .num b { font-size: 34px; }
+#an-reto .num b { font-size: 28px; }
+.siguiente { text-align: center; }
+
+/* ===== Doctora: mismo lenguaje que la app de la paciente, en formato iPad ===== */
+.vista-doctora { max-width: 1180px; margin: 0 auto; display: grid; gap: 16px; font-family: var(--ios); color: var(--ios-label); }
+.d-cab { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; }
+.d-titulo { margin: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.d-sub { margin: 4px 0 0; color: var(--ios-2); font-size: 15px; }
+.cd { background: var(--ios-card); border-radius: 18px; padding: 18px; min-width: 0; }
+.cd h3 { margin: 0 0 2px; font-size: 17px; font-weight: 600; }
+.cd .nota { margin: 0 0 12px; font-size: 13px; color: var(--ios-2); }
+.semana { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.semana .it { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; min-width: 0; }
+.mini { position: relative; width: 64px; height: 64px; }
+.mini svg { width: 64px; height: 64px; transform: rotate(-90deg); }
+.mini .num { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
+.mini .num b { font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.mini .num span { display: none; }
+.semana .it b.t { display: block; font-size: 15px; font-weight: 600; line-height: 1.25; }
+.semana .it span.s { font-size: 13px; color: var(--ios-2); }
+.alertas-n { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 24px; font-weight: 700; background: color-mix(in srgb, var(--alta) 14%, transparent); color: var(--alta); }
+
+.d-grid { display: grid; grid-template-columns: 330px 1fr; gap: 16px; align-items: start; }
+.d-lista { padding: 8px; display: grid; gap: 2px; position: sticky; top: 12px; }
+.d-sec { font-size: 13px; font-weight: 600; color: var(--ios-2); margin: 10px 10px 4px; }
+.pac { display: grid; grid-template-columns: 44px 1fr 12px; gap: 12px; align-items: center; border: 0; background: transparent; padding: 8px 10px; border-radius: 12px; width: 100%; text-align: left; }
+.pac:hover { background: var(--ios-fill); }
+.pac[aria-current="true"] { background: var(--marca-suave); }
+.pac .mini, .pac .mini svg { width: 44px; height: 44px; }
+.pac .mini .num b { font-size: 12px; font-weight: 600; color: var(--ios-2); }
+.pac b.n { display: block; font-size: 16px; font-weight: 600; }
+.pac .e { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ios-2); }
+.pac > svg { width: 10px; height: 10px; color: var(--ios-2); }
+.punto { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.s-alta { background: var(--alta); } .s-media { background: var(--media); } .s-info { background: var(--info); } .s-baja { background: var(--baja); } .s-ok { background: var(--ok); }
+
+.d-ficha { display: grid; gap: 16px; min-width: 0; }
+.f-cab { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.f-id { display: flex; gap: 14px; align-items: center; min-width: 0; }
+.avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--marca-suave); color: var(--marca); display: grid; place-items: center; font-weight: 700; font-size: 18px; flex: none; }
+.f-id h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.f-id p { margin: 2px 0 0; font-size: 14px; color: var(--ios-2); }
+.acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { border: 0; background: var(--ios-fill); color: var(--marca); border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 14px; font-family: var(--ios); }
+.btn.pri { background: var(--marca); color: #fff; }
+.aviso-d { display: flex; gap: 10px; align-items: center; border-radius: 14px; padding: 12px 14px; font-size: 15px; font-weight: 500; }
+.aviso-d.alta { background: color-mix(in srgb, var(--alta) 12%, transparent); }
+.aviso-d.media { background: color-mix(in srgb, var(--media) 13%, transparent); }
+.aviso-d.info { background: var(--marca-suave); }
+.aviso-d b { font-weight: 700; }
+.f-hero { display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: center; }
+.f-hero .anillo { width: 150px; height: 150px; }
+.f-hero .anillo svg { width: 150px; height: 150px; }
+.f-hero .anillo .num b { font-size: 34px; }
+.f-hero-txt { display: grid; gap: 12px; min-width: 0; }
+.f-hero-txt > p { margin: 0; font-size: 15px; color: var(--ios-2); }
+.f-hero-txt > p b { color: var(--ios-label); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat { background: var(--ios-bg); border-radius: 12px; padding: 10px 12px; min-width: 0; }
+.stat b { display: block; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.stat span { font-size: 12.5px; color: var(--ios-2); }
+.graficas { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.graficas .cd svg { width: 100%; height: auto; display: block; overflow: visible; }
+.f-dos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.f-dos ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+.f-dos p { margin: 0; font-size: 15px; color: var(--ios-2); }
+.pasos-ex { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 6px; }
+.pasos-ex div { position: relative; padding-top: 22px; font-size: 13px; color: var(--ios-2); }
+.pasos-ex div::before { content: ""; position: absolute; top: 5px; left: 0; right: 0; height: 3px; background: var(--ios-fill); }
+.pasos-ex div::after { content: ""; position: absolute; top: 0; left: 0; width: 13px; height: 13px; border-radius: 50%; background: var(--ios-card); border: 2px solid var(--ios-sep); }
+.pasos-ex div.ok::before { background: var(--marca); }
+.pasos-ex div.ok::after { background: var(--marca); border-color: var(--marca); }
+.pasos-ex b { display: block; color: var(--ios-label); font-size: 14px; font-weight: 600; }
+.ajustes { display: grid; }
+.ajuste { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid var(--ios-sep); }
+.ajuste:first-child { border-top: 0; }
+.ajuste b { display: block; font-size: 16px; font-weight: 500; }
+.ajuste span { font-size: 13px; color: var(--ios-2); }
+.switch { width: 51px; height: 31px; border-radius: 16px; border: 0; background: var(--ios-fill); position: relative; flex: none; padding: 0; transition: background .2s; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.2); transition: left .25s cubic-bezier(.3,1.4,.5,1); }
+.switch[aria-checked="true"] { background: var(--ios-green); }
+.switch[aria-checked="true"]::after { left: 22px; }
+.ley { font-size: 12px; fill: var(--ios-2); }
+.tip { position: fixed; z-index: 70; pointer-events: none; background: var(--ios-card); color: var(--ios-label); border-radius: 10px; padding: 7px 10px; font: 500 13px/1.35 var(--ios);
+  box-shadow: 0 8px 24px -8px rgba(0,0,0,.35); opacity: 0; transition: opacity .12s; max-width: 220px; }
+.tip.on { opacity: 1; }
+.toast-doc { position: fixed; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); left: 50%; translate: -50% 0; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font: 600 14px var(--ios);
+  opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 60; max-width: calc(100vw - 32px); }
+.toast-doc.on { opacity: 1; }
+
+@media (max-width: 1000px) { .d-grid { grid-template-columns: 1fr; } .d-lista { position: static; } .semana { grid-template-columns: 1fr 1fr; } .guia { display: none; } }
+@media (max-width: 700px) { .graficas, .f-dos { grid-template-columns: 1fr; } .f-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; } .stats { text-align: left; } }
+@media (max-width: 480px) { .semana { grid-template-columns: 1fr; } .stats { grid-template-columns: 1fr 1fr; } .d-titulo { font-size: 28px; } }
+@media (max-width: 440px) {
+  body { padding-left: 0; padding-right: 0; padding-top: 8px; }
+  .demo-top, .vista-doctora { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .telefono { width: 100%; height: calc(100dvh - 70px); min-height: 640px; border: 0; border-radius: 0; box-shadow: none; }
+  .isla, .estado { display: none; } .pantalla { padding-top: 12px; } .notif { top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="demo-top">
+  <div class="marca">Salud<span>ly</span><small>Control de peso</small></div>
+  <div class="seg" role="group" aria-label="Vista del demo">
+    <button id="ver-paciente" aria-pressed="true">Paciente</button>
+    <button id="ver-doctora" aria-pressed="false">Doctora</button>
+  </div>
+  <span class="ficticio">Demo · datos ficticios</span>
+</div>
+
+<!-- ===================== PACIENTE ===================== -->
+<section class="vista-paciente" id="vista-paciente">
+  <aside class="guia">
+    <h2>Prueba del flujo real</h2>
+    <p style="margin:0">Datos de un PDF sintético (mujer, orden LCD-2026-100124) analizado por el motor de Saludly, y la semana armada por el código de recomendaciones.</p>
+    <ol>
+      <li>En <b>Exámenes</b>, Laura toca <b>Subir el PDF de ejemplo</b>.</li>
+      <li>Cambia a <b>Doctora</b>: Laura aparece con el examen para revisar. Aprueba el análisis.</li>
+      <li>En su ficha, revisa la semana, escribe un mensaje y toca <b>Publicar la semana</b>.</li>
+      <li>Vuelve a <b>Paciente</b>: Exámenes y Para ti ya muestran todo.</li>
+    </ol>
+  </aside>
+
+  <div class="telefono" id="telefono">
+    <div class="isla"></div>
+    <div class="estado"><span>9:41</span><i>●●● ▮</i></div>
+    <div class="notif" id="notif" role="status" aria-live="polite"><div class="m" id="notif-m">8 kg</div><div><b id="notif-t">Logro desbloqueado</b><span id="notif-s"></span></div></div>
+
+    <div class="pantalla" id="pantalla">
+      <!-- HOY -->
+      <div class="vista activa" id="v-hoy">
+        <h1 class="titulo-grande">Hola, Laura</h1>
+        <p class="sub">Viernes 30 de octubre</p>
+        <div class="card hoy-anillos">
+          <div class="dos-anillos">
+            <div class="an"><div class="anillo" id="an-nivel"></div><small>Tu nivel</small></div>
+            <div class="an"><div class="anillo" id="an-reto"></div><small id="reto-nombre">Reto</small></div>
+          </div>
+          <div class="siguiente"><b id="sig-t"></b><span id="sig-s"></span></div>
+        </div>
+        <button class="boton" id="abrir-registro">Registrar peso y cintura</button>
+        <div class="card">
+          <h3>Tu aplicación semanal</h3>
+          <div class="med">
+            <div class="med-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+            <div><b>Jueves · 0,5 mg</b><small id="med-dra">Como indicó la Dra. Rivera</small></div>
+            <button class="pill-btn" id="aplicada">Ya la apliqué</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Meta de la semana</h3>
+          <div class="lista" id="metas"></div>
+        </div>
+        <div class="card">
+          <h3>¿Cómo te sientes esta semana?</h3>
+          <div class="chips" id="sintomas"></div>
+          <div class="aviso-alarma" id="aviso-alarma" hidden>Si el dolor abdominal es fuerte y no se quita, o el vómito no para, llama a tu doctora o ve a urgencias. Ya le avisamos a la Dra. Rivera.</div>
+        </div>
+      </div>
+
+      <!-- PROGRESO -->
+      <div class="vista" id="v-progreso">
+        <h1 class="titulo-grande">Progreso</h1>
+        <div class="card silueta-card">
+          <div class="lienzo"><canvas id="lienzo" aria-label="Silueta con la capa que te falta para tu meta"></canvas></div>
+          <div class="seg-ios" role="group" aria-label="Momento">
+            <button data-mom="inicio" aria-pressed="false">Inicio</button>
+            <button data-mom="hoy" aria-pressed="true">Hoy</button>
+            <button data-mom="meta" aria-pressed="false">Meta</button>
+          </div>
+          <p class="camino" id="camino"></p>
+        </div>
+        <div class="dos">
+          <div class="card dato"><b id="d-peso"></b><span>desde agosto</span></div>
+          <div class="card dato"><b id="d-cint"></b><span>de cintura</span></div>
+        </div>
+        <div class="card grafica"><h3>Tu peso</h3><div id="graf-pac"></div></div>
+      </div>
+
+      <!-- LOGROS -->
+      <div class="vista" id="v-logros">
+        <h1 class="titulo-grande">Logros</h1>
+        <div class="card">
+          <div class="fila"><b style="font-size:17px">Nivel <span id="lg-nivel"></span></b><span style="color:var(--ios-2);font-size:14px" id="lg-cuenta"></span></div>
+          <div class="barra"><i id="lg-barra" style="width:0"></i></div>
+        </div>
+        <div class="card"><div class="medallas" id="medallas"></div></div>
+      </div>
+
+      <!-- EXÁMENES -->
+      <div class="vista" id="v-examenes">
+        <h1 class="titulo-grande">Exámenes</h1>
+        <div id="ex-zona" style="display:grid;gap:14px"></div>
+        <p class="pie-legal">Esto no es un diagnóstico. Tu doctora revisó estos resultados y los habla contigo en el control.</p>
+        <button class="sutil" id="dom-btn" aria-expanded="false" aria-controls="dom"><span>¿Te toca repetir tus exámenes?<small>Te los tomamos en casa</small></span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 2.5 4.5 4.5L5 11.5"/></svg></button>
+        <div class="card dom" id="dom" hidden>
+          <b>Exámenes en casa con Saludly</b>
+          <p id="dom-txt">Para tu próximo control tu doctora pidió: azúcar promedio (HbA1c), lípidos, tiroides (TSH) y vitamina B12.</p>
+          <p class="peq">Una enfermera va a tu casa; vas en ayunas. También puedes hacerlos en el laboratorio que prefieras.</p>
+          <button class="boton sec" id="dom-ok">Agendar toma en casa</button>
+        </div>
+      </div>
+
+      <!-- PARA TI -->
+      <div class="vista" id="v-parati">
+        <h1 class="titulo-grande">Para ti</h1>
+        <div id="semana-pac" style="display:grid;gap:14px"></div>
+        <div class="card reco">
+          <small>Receta del día</small>
+          <b>¿Quieres una receta cada día?</b>
+          <p>Te llega por WhatsApp, pensada para tus objetivos. Solo si tú nos escribes.</p>
+          <a class="boton verde" style="margin-top:10px" href="https://wa.me/573011307944?text=Hola%2C%20quiero%20la%20receta%20del%20d%C3%ADa" target="_blank" rel="noopener">Recibir la receta por WhatsApp</a>
+          <p style="font-size:13px;margin-top:6px">WhatsApp de Saludly: <span class="numero">+57 301 130 7944</span></p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="tabbar" aria-label="Secciones">
+      <button data-tab="hoy" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg>Hoy</button>
+      <button data-tab="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 9 12l4 3 7-8"/><path d="M15 7h5v5"/></svg>Progreso</button>
+      <button data-tab="logros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></svg>Logros</button>
+      <button data-tab="examenes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg>Exámenes</button>
+      <button data-tab="parati"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Para ti</button>
+    </nav>
+
+    <div class="velo" id="velo"></div>
+    <div class="hoja" id="hoja" role="dialog" aria-modal="true" aria-labelledby="hoja-t">
+      <div class="agarre"></div>
+      <div class="hoja-cab"><button id="cancelar">Cancelar</button><b id="hoja-t">Registrar</b><button id="guardar" style="font-weight:600">Guardar</button></div>
+      <div class="card"><h3>Peso de hoy</h3>
+        <div class="paso"><button data-campo="peso" data-d="-0.1" aria-label="Bajar 100 gramos">−</button><div class="v"><span id="in-peso"></span> <small>kg</small></div><button data-campo="peso" data-d="0.1" aria-label="Subir 100 gramos">+</button></div>
+      </div>
+      <div class="card"><h3>Cintura (cada 2 semanas)</h3>
+        <div class="paso"><button data-campo="cint" data-d="-0.5" aria-label="Bajar medio centímetro">−</button><div class="v"><span id="in-cint"></span> <small>cm</small></div><button data-campo="cint" data-d="0.5" aria-label="Subir medio centímetro">+</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DOCTORA ===================== -->
+<section class="vista-doctora" id="vista-doctora" hidden>
+  <div class="d-cab">
+    <div><h1 class="d-titulo" id="doc-hola">Hola, Dra. Rivera</h1><p class="d-sub">Viernes 30 de octubre · 12 pacientes en tratamiento</p></div>
+    <span class="ficticio">Pacientes ficticias</span>
+  </div>
+  <div class="cd">
+    <h3>Esta semana</h3>
+    <p class="nota">Su consultorio de un vistazo.</p>
+    <div class="semana" id="semana"></div>
+  </div>
+  <div class="d-grid">
+    <nav class="cd d-lista" id="lista-pac" aria-label="Pacientes"></nav>
+    <div class="d-ficha" id="ficha"></div>
+  </div>
+  <div class="cd">
+    <h3>Herramientas del consultorio</h3>
+    <p class="nota">Se activan en el onboarding, según lo que usted necesite.</p>
+    <div class="ajustes" id="herr"></div>
+  </div>
+</section>
+<div class="tip" id="tip" role="tooltip"></div>
+<div class="toast-doc" id="toast-doc" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+const FIGURA = "data:image/webp;base64,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";
+const fmt = (n, d = 1) => n.toLocaleString("es-CO", { minimumFractionDigits: d, maximumFractionDigits: d });
+const $ = (s) => document.querySelector(s);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Nombre de la doctora desde el enlace: …#Gomez → "Dra. Gomez"
+let DRA = "Dra. Rivera";
+try {
+  const h = decodeURIComponent((location.hash || "").slice(1)).replace(/_/g, " ").trim();
+  if (/^[\p{L} .'-]{2,40}$/u.test(h)) DRA = "Dra. " + h.split(" ").map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(" ");
+} catch (e) {}
+["#med-dra"].forEach(s => $(s).textContent = "Como indicó la " + DRA);
+
+// ---------- Datos reales del flujo ----------
+const INFORME = {"orden": "LCD-2026-100124", "fecha_toma": "2026-10-01", "escalamiento_maximo": 2, "hallazgos": [{"hallazgo_id": "H-8E7AE7-01", "titulo": "Tus resultados de hierro cuentan la misma historia", "escalamiento": 2, "nivel_lenguaje": null, "que_es": "El hierro sirve para fabricar la hemoglobina de los glóbulos rojos. Cuando falta, las reservas bajan y los glóbulos rojos salen más pequeños y desiguales.", "por_que": ["Tu ferritina, que es la reserva de hierro de tu cuerpo, salió en 7 ng/mL.", "Tu saturación de transferrina, que muestra cuánto hierro está circulando, salió en 8,8 %.", "Tu VCM, el tamaño de tus glóbulos rojos, salió en 78,2 fL, y tu RDW, que mide qué tan distintos son entre sí, en 16,4 %.", "Tu hemoglobina salió en 11,2 g/dL. En Bogotá hay menos oxígeno y el cuerpo fabrica más hemoglobina; por eso se compara con un límite más alto que a nivel del mar, y queda por debajo de lo recomendado."]}, {"hallazgo_id": "H-8E7AE7-02", "titulo": "Tus anticuerpos antinucleares (ANA) salieron positivos", "escalamiento": 2, "nivel_lenguaje": "Resultado observado", "que_es": "Los ANA son anticuerpos, unas proteínas de las defensas, que reconocen partes de las propias células. Se encuentran en muchas personas sanas.", "por_que": ["Tus anticuerpos antinucleares (ANA) salieron positivos."]}, {"hallazgo_id": "H-8E7AE7-03", "titulo": "Tu lipoproteína(a) está alta", "escalamiento": 1, "nivel_lenguaje": "Riesgo potencial", "que_es": "La lipoproteína(a) es un tipo de colesterol que depende sobre todo de lo que heredaste de tus padres, no de tus hábitos.", "por_que": ["Tu lipoproteína(a) salió en 64 mg/dL. La referencia es 50 mg/dL o 105 nmol/L, según la unidad del laboratorio."]}, {"hallazgo_id": "H-8E7AE7-04", "titulo": "Tu índice de masa corporal está por encima del rango saludable", "escalamiento": 1, "nivel_lenguaje": "Resultado observado", "que_es": "El índice de masa corporal (IMC) relaciona tu peso con tu estatura para estimar si hay exceso de grasa en el cuerpo.", "por_que": ["Con el peso y la talla que midió la enfermera, tu IMC salió en 32,4. La OMS usa 25 para sobrepeso y 30 para obesidad.", "Tu cintura midió 93 cm. Esta medida muestra si la grasa se acumula en el abdomen (en población latinoamericana se usa 90 cm en hombres y 80 cm en mujeres)."]}, {"hallazgo_id": "H-8E7AE7-05", "titulo": "Tu TSH está un poco alta, con la hormona tiroidea normal", "escalamiento": 1, "nivel_lenguaje": "Patrón compatible", "que_es": "La TSH es la hormona que le indica a la tiroides cuánto trabajar. La tiroides es una glándula del cuello que regula el gasto de energía.", "por_que": ["Tu TSH salió en 6,9 µUI/mL. La referencia es hasta 5,0 entre los 18 y los 60 años, y hasta 6,0 después de los 60."]}, {"hallazgo_id": "H-8E7AE7-06", "titulo": "Tu colesterol está por encima del valor de tamizaje", "escalamiento": 1, "nivel_lenguaje": "Riesgo potencial", "que_es": "El colesterol LDL y el no-HDL miden la grasa de la sangre que, cuando sobra, se va pegando a las paredes de las arterias.", "por_que": ["Tu colesterol LDL salió en 136 mg/dL. El valor que usamos para tamizaje es 130 mg/dL."]}, {"hallazgo_id": "H-8E7AE7-08", "titulo": "Tu vitamina D está fuera del rango", "escalamiento": 0, "nivel_lenguaje": null, "que_es": "La vitamina D ayuda a absorber el calcio y a mantener fuertes los huesos y los músculos. El cuerpo la fabrica con el sol.", "por_que": ["Tu vitamina D salió en 17,8 ng/mL, fuera del rango del laboratorio."]}], "resultados": [{"biomarker_id": "hemoglobin", "nombre": "Hemoglobina", "valor": 11.2, "valor_original": "11,2", "unidad": "g/dL", "intervalo": "12,0 – 16,0", "clase": "bajo", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "hematocrit", "nombre": "Hematocrito", "valor": 35.0, "valor_original": "35,0", "unidad": "%", "intervalo": "36,0 – 46,0", "clase": "bajo", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "erythrocytes", "nombre": "Eritrocitos", "valor": 4.3, "valor_original": "4,30", "unidad": "x10⁶/µL", "intervalo": "4,00 – 5,20", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "mcv", "nombre": "VCM (Volumen Corpuscular Medio)", "valor": 78.2, "valor_original": "78,2", "unidad": "fL", "intervalo": "80,0 – 100,0", "clase": "bajo", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "mch", "nombre": "Hemoglobina corpuscular media", "valor": 26.0, "valor_original": "26,0", "unidad": "pg", "intervalo": "27,0 – 33,0", "clase": "bajo", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "mchc", "nombre": "CHCM", "valor": 32.0, "valor_original": "32,0", "unidad": "g/dL", "intervalo": "32,0 – 36,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "rdw", "nombre": "RDW", "valor": 16.4, "valor_original": "16,4", "unidad": "%", "intervalo": "11,5 – 14,5", "clase": "alto", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "wbc", "nombre": "Leucocitos (conteo total)", "valor": 6.1, "valor_original": "6,10", "unidad": "x10³/µL", "intervalo": "4,50 – 11,00", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "neutrophils_pct", "nombre": "Neutrófilos (porcentaje)", "valor": 55.0, "valor_original": "55,0", "unidad": "%", "intervalo": "40,0 – 70,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "neutrophils_abs", "nombre": "Neutrófilos Absolutos", "valor": 3.36, "valor_original": "3,36", "unidad": "x10³/µL", "intervalo": "1,80 – 7,70", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "lymphocytes_pct", "nombre": "Linfocitos %", "valor": 35.0, "valor_original": "35,0", "unidad": "%", "intervalo": "20,0 – 45,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "lymphocytes_abs", "nombre": "Linfocitos Absolutos", "valor": 2.14, "valor_original": "2,14", "unidad": "x10³/µL", "intervalo": "1,00 – 4,80", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "monocytes_pct", "nombre": "Monocitos %", "valor": 6.0, "valor_original": "6,0", "unidad": "%", "intervalo": "2,0 – 10,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "eosinophils_pct", "nombre": "Eosinófilos %", "valor": 3.5, "valor_original": "3,5", "unidad": "%", "intervalo": "0,0 – 6,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "basophils_pct", "nombre": "Basófilos %", "valor": 0.5, "valor_original": "0,5", "unidad": "%", "intervalo": "0,0 – 2,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "platelets", "nombre": "Plaquetas", "valor": 330.0, "valor_original": "330", "unidad": "x10³/µL", "intervalo": "150 – 450", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "mpv", "nombre": "VPM", "valor": 9.6, "valor_original": "9,6", "unidad": "fL", "intervalo": "7,5 – 11,5", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "nrbc", "nombre": "NRBC (Eritroblastos circulantes)", "valor": 0.0, "valor_original": "0,0", "unidad": "/100 leucocitos", "intervalo": "0,0", "clase": "en_rango", "seccion": "HEMATOLOGÍA · HEMOGRAMA IV"}, {"biomarker_id": "pt", "nombre": "Tiempo de Protrombina", "valor": 11.8, "valor_original": "11,8", "unidad": "s", "intervalo": "10,5 – 13,5", "clase": "en_rango", "seccion": "COAGULACIÓN"}, {"biomarker_id": "inr", "nombre": "INR", "valor": 0.98, "valor_original": "0,98", "unidad": null, "intervalo": "0,85 – 1,15", "clase": "en_rango", "seccion": "COAGULACIÓN"}, {"biomarker_id": "fibrinogen", "nombre": "Fibrinógeno", "valor": 310.0, "valor_original": "310", "unidad": "mg/dL", "intervalo": "200 – 400", "clase": "en_rango", "seccion": "COAGULACIÓN"}, {"biomarker_id": "glucose", "nombre": "Glucosa en ayunas", "valor": 86.0, "valor_original": "86", "unidad": "mg/dL", "intervalo": "70 – 99", "clase": "en_rango", "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS"}, {"biomarker_id": "hba1c", "nombre": "Hemoglobina A1c (HbA1c)", "valor": 5.2, "valor_original": "5,2", "unidad": "%", "intervalo": "4,0 – 5,6", "clase": "en_rango", "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS"}, {"biomarker_id": "insulin", "nombre": "Insulina", "valor": 6.1, "valor_original": "6,1", "unidad": "µUI/mL", "intervalo": "2,6 – 24,9", "clase": "en_rango", "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS"}, {"biomarker_id": "c_peptide", "nombre": "Péptido C", "valor": 1.8, "valor_original": "1,8", "unidad": "ng/mL", "intervalo": "1,1 – 4,4", "clase": "en_rango", "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS"}, {"biomarker_id": "fructosamine", "nombre": "Fructosamina", "valor": 230.0, "valor_original": "230", "unidad": "µmol/L", "intervalo": "205 – 285", "clase": "en_rango", "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS"}, {"biomarker_id": "uric_acid", "nombre": "Ácido úrico", "valor": 4.1, "valor_original": "4,1", "unidad": "mg/dL", "intervalo": "2,4 – 5,7", "clase": "en_rango", "seccion": "QUÍMICA SANGUÍNEA · METABOLISMO DE CARBOHIDRATOS"}, {"biomarker_id": "total_cholesterol", "nombre": "Colesterol total", "valor": 214.0, "valor_original": "214", "unidad": "mg/dL", "intervalo": "\u003c 200", "clase": "alto", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "triglycerides", "nombre": "Triglicéridos", "valor": 98.0, "valor_original": "98", "unidad": "mg/dL", "intervalo": "\u003c 150", "clase": "en_rango", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "hdl_c", "nombre": "Colesterol HDL (HDL-C)", "valor": 58.0, "valor_original": "58", "unidad": "mg/dL", "intervalo": "> 50", "clase": "en_rango", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "ldl_c", "nombre": "Colesterol LDL (LDL-C)", "valor": 136.0, "valor_original": "136", "unidad": "mg/dL", "intervalo": "\u003c 130", "clase": "alto", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "apob", "nombre": "Apolipoproteína B", "valor": 92.0, "valor_original": "92", "unidad": "mg/dL", "intervalo": "60 – 117", "clase": "en_rango", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "apoa1", "nombre": "Apolipoproteína A1", "valor": 158.0, "valor_original": "158", "unidad": "mg/dL", "intervalo": "108 – 225", "clase": "en_rango", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "lpa", "nombre": "Lipoproteína(a)", "valor": 64.0, "valor_original": "64", "unidad": "mg/dL", "intervalo": "\u003c 30", "clase": "alto", "seccion": "PERFIL LIPÍDICO"}, {"biomarker_id": "sodium", "nombre": "Sodio", "valor": 138.0, "valor_original": "138", "unidad": "mmol/L", "intervalo": "136 – 145", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "chloride", "nombre": "Cloro", "valor": 104.0, "valor_original": "104", "unidad": "mmol/L", "intervalo": "98 – 107", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "bicarbonate", "nombre": "Bicarbonato / CO2", "valor": 24.0, "valor_original": "24", "unidad": "mmol/L", "intervalo": "22 – 29", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "calcium", "nombre": "Calcio Sérico", "valor": 9.2, "valor_original": "9,2", "unidad": "mg/dL", "intervalo": "8,6 – 10,2", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "phosphorus", "nombre": "Fósforo", "valor": 3.6, "valor_original": "3,6", "unidad": "mg/dL", "intervalo": "2,5 – 4,5", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "magnesium", "nombre": "Magnesio Sérico", "valor": 1.9, "valor_original": "1,9", "unidad": "mg/dL", "intervalo": "1,7 – 2,4", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "zinc", "nombre": "Zinc Sérico", "valor": 71.0, "valor_original": "71", "unidad": "µg/dL", "intervalo": "60 – 120", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "osmolality", "nombre": "Osmolalidad Sérica", "valor": 286.0, "valor_original": "286", "unidad": "mOsm/kg", "intervalo": "275 – 295", "clase": "en_rango", "seccion": "ELECTROLITOS Y MINERALES"}, {"biomarker_id": "alt", "nombre": "ALT (Alanina Aminotransferasa)", "valor": 18.0, "valor_original": "18", "unidad": "U/L", "intervalo": "10 – 35", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "ast", "nombre": "AST (Aspartato Aminotransferasa)", "valor": 20.0, "valor_original": "20", "unidad": "U/L", "intervalo": "10 – 35", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "ggt", "nombre": "Gamma-Glutamil Transferasa", "valor": 14.0, "valor_original": "14", "unidad": "U/L", "intervalo": "6 – 42", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "alp", "nombre": "Fosfatasa Alcalina", "valor": 62.0, "valor_original": "62", "unidad": "U/L", "intervalo": "35 – 104", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "bilirubin_total", "nombre": "Bilirrubina Total", "valor": 0.5, "valor_original": "0,50", "unidad": "mg/dL", "intervalo": "0,30 – 1,20", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "bilirubin_direct", "nombre": "Bilirrubina Directa", "valor": 0.1, "valor_original": "0,10", "unidad": "mg/dL", "intervalo": "0,00 – 0,30", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "total_protein", "nombre": "Proteínas totales", "valor": 7.0, "valor_original": "7,0", "unidad": "g/dL", "intervalo": "6,4 – 8,3", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "albumin", "nombre": "Albúmina", "valor": 4.3, "valor_original": "4,3", "unidad": "g/dL", "intervalo": "3,5 – 5,2", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "globulin", "nombre": "Globulinas", "valor": 2.7, "valor_original": "2,7", "unidad": "g/dL", "intervalo": "2,0 – 3,5", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "ag_ratio", "nombre": "Relación Albúmina/Globulina", "valor": 1.59, "valor_original": "1,59", "unidad": null, "intervalo": "1,10 – 2,50", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "ldh", "nombre": "Lactato Deshidrogenasa", "valor": 160.0, "valor_original": "160", "unidad": "U/L", "intervalo": "135 – 214", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "ck_cpk", "nombre": "Creatina Quinasa", "valor": 82.0, "valor_original": "82", "unidad": "U/L", "intervalo": "26 – 192", "clase": "en_rango", "seccion": "FUNCIÓN HEPÁTICA Y PROTEÍNAS"}, {"biomarker_id": "creatinine", "nombre": "Creatinina Sérica", "valor": 0.72, "valor_original": "0,72", "unidad": "mg/dL", "intervalo": "0,50 – 0,90", "clase": "en_rango", "seccion": "FUNCIÓN RENAL"}, {"biomarker_id": "egfr", "nombre": "eGFR", "valor": 112.0, "valor_original": "112", "unidad": "mL/min/1,73 m²", "intervalo": "> 60", "clase": "en_rango", "seccion": "FUNCIÓN RENAL"}, {"biomarker_id": "bun", "nombre": "BUN / Urea", "valor": 10.0, "valor_original": "10", "unidad": "mg/dL", "intervalo": "6 – 20", "clase": "en_rango", "seccion": "FUNCIÓN RENAL"}, {"biomarker_id": "bun_creatinine_ratio", "nombre": "Relación BUN/Creatinina", "valor": 13.9, "valor_original": "13,9", "unidad": null, "intervalo": "10 – 20", "clase": "en_rango", "seccion": "FUNCIÓN RENAL"}, {"biomarker_id": "tsh", "nombre": "TSH (Hormona Estimulante de Tiroides)", "valor": 6.9, "valor_original": "6,90", "unidad": "µUI/mL", "intervalo": "0,27 – 4,20", "clase": "alto", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "free_t4", "nombre": "T4 libre", "valor": 1.02, "valor_original": "1,02", "unidad": "ng/dL", "intervalo": "0,93 – 1,70", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "total_t3", "nombre": "T3 total (Triyodotironina total)", "valor": 112.0, "valor_original": "112", "unidad": "ng/dL", "intervalo": "80 – 200", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "testosterone_total", "nombre": "Testosterona Total", "valor": 32.0, "valor_original": "32", "unidad": "ng/dL", "intervalo": "8 – 48", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "shbg", "nombre": "SHBG", "valor": 62.0, "valor_original": "62", "unidad": "nmol/L", "intervalo": "24,6 – 122,0", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "fsh", "nombre": "FSH", "valor": 6.1, "valor_original": "6,1", "unidad": "mUI/mL", "intervalo": "Fase folicular 3,5 – 12,5", "clase": "no_interpretable", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "lh", "nombre": "LH", "valor": 5.4, "valor_original": "5,4", "unidad": "mUI/mL", "intervalo": "Fase folicular 2,4 – 12,6", "clase": "no_interpretable", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "estradiol", "nombre": "Estradiol", "valor": 68.0, "valor_original": "68", "unidad": "pg/mL", "intervalo": "Fase folicular 12,5 – 166,0", "clase": "no_interpretable", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "progesterone", "nombre": "Progesterona", "valor": 0.4, "valor_original": "0,4", "unidad": "ng/mL", "intervalo": "Fase folicular 0,06 – 0,89", "clase": "no_interpretable", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "prolactin", "nombre": "Prolactina", "valor": 14.2, "valor_original": "14,2", "unidad": "ng/mL", "intervalo": "4,8 – 23,3", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "dhea_s", "nombre": "DHEA-S", "valor": 180.0, "valor_original": "180", "unidad": "µg/dL", "intervalo": "98,8 – 340,0", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "cortisol", "nombre": "Cortisol", "valor": 11.6, "valor_original": "11,6", "unidad": "µg/dL", "intervalo": "6,2 – 19,4 (mañana)", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "acth", "nombre": "ACTH", "valor": 18.0, "valor_original": "18", "unidad": "pg/mL", "intervalo": "7,2 – 63,3 (mañana)", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "igf1", "nombre": "IGF-1", "valor": 205.0, "valor_original": "205", "unidad": "ng/mL", "intervalo": "115 – 307 (30 – 34 años)", "clase": "en_rango", "seccion": "TIROIDES Y HORMONAS"}, {"biomarker_id": "anti_tpo", "nombre": "Anticuerpos Anti-Peroxidasa Tiroidea", "valor": 186.0, "valor_original": "186", "unidad": "UI/mL", "intervalo": "\u003c 34", "clase": "alto", "seccion": "PRUEBAS REFLEJAS"}, {"biomarker_id": "reticulocytes_pct", "nombre": "Reticulocitos %", "valor": 1.1, "valor_original": "1,1", "unidad": "%", "intervalo": "0,5 – 2,0", "clase": "en_rango", "seccion": "PRUEBAS REFLEJAS"}, {"biomarker_id": "reticulocytes_abs", "nombre": "Reticulocitos Absolutos", "valor": 47.0, "valor_original": "47", "unidad": "x10³/µL", "intervalo": "25 – 75", "clase": "en_rango", "seccion": "PRUEBAS REFLEJAS"}, {"biomarker_id": "iga", "nombre": "Inmunoglobulina A", "valor": 210.0, "valor_original": "210", "unidad": "mg/dL", "intervalo": "70 – 400", "clase": "en_rango", "seccion": "PRUEBAS REFLEJAS"}, {"biomarker_id": "anti_ttg_iga", "nombre": "Anti-tTG IgA", "valor": 2.1, "valor_original": "2,1", "unidad": "U/mL", "intervalo": "\u003c 7,0 (negativo)", "clase": "en_rango", "seccion": "PRUEBAS REFLEJAS"}, {"biomarker_id": "methylmalonic_acid", "nombre": "Ácido metilmalónico sérico", "valor": 0.28, "valor_original": "0,28", "unidad": "µmol/L", "intervalo": "0,00 – 0,40", "clase": "en_rango", "seccion": "PRUEBAS REFLEJAS"}, {"biomarker_id": "hs_crp", "nombre": "Proteína C Reactiva ultrasensible (hs-CRP)", "valor": 0.8, "valor_original": "0,8", "unidad": "mg/L", "intervalo": "\u003c 3,0", "clase": "en_rango", "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN"}, {"biomarker_id": "esr", "nombre": "VSG", "valor": 18.0, "valor_original": "18", "unidad": "mm/h", "intervalo": "0 – 20", "clase": "en_rango", "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN"}, {"biomarker_id": "homocysteine", "nombre": "Homocisteína", "valor": 13.9, "valor_original": "13,9", "unidad": "µmol/L", "intervalo": "5,0 – 15,0", "clase": "en_rango", "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN"}, {"biomarker_id": "hs_troponin", "nombre": "Troponina cardíaca de alta sensibilidad", "valor": 3.0, "valor_original": "\u003c 3", "unidad": "ng/L", "intervalo": "\u003c 14 (percentil 99)", "clase": "en_rango", "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN"}, {"biomarker_id": "ana_hep2", "nombre": "Anticuerpos antinucleares por inmunofluorescencia indirecta en células HEp-2", "valor": "positivo", "valor_original": "Positivo 1:160", "unidad": null, "intervalo": "Negativo (\u003c 1:80)", "clase": "alterado", "seccion": "MARCADORES CARDIOVASCULARES E INFLAMACIÓN"}, {"biomarker_id": "igg", "nombre": "Inmunoglobulina G", "valor": 1050.0, "valor_original": "1050", "unidad": "mg/dL", "intervalo": "700 – 1600", "clase": "en_rango", "seccion": "INMUNOLOGÍA"}, {"biomarker_id": "igm", "nombre": "Inmunoglobulina M", "valor": 140.0, "valor_original": "140", "unidad": "mg/dL", "intervalo": "40 – 230", "clase": "en_rango", "seccion": "INMUNOLOGÍA"}, {"biomarker_id": "ferritin", "nombre": "Ferritina", "valor": 7.0, "valor_original": "7", "unidad": "ng/mL", "intervalo": "13 – 150", "clase": "bajo", "seccion": "METABOLISMO DEL HIERRO"}, {"biomarker_id": "serum_iron", "nombre": "Hierro sérico", "valor": 38.0, "valor_original": "38", "unidad": "µg/dL", "intervalo": "50 – 170", "clase": "bajo", "seccion": "METABOLISMO DEL HIERRO"}, {"biomarker_id": "tibc", "nombre": "Capacidad total de fijación de hierro", "valor": 432.0, "valor_original": "432", "unidad": "µg/dL", "intervalo": "250 – 450", "clase": "en_rango", "seccion": "METABOLISMO DEL HIERRO"}, {"biomarker_id": "transferrin", "nombre": "Transferrina", "valor": 346.0, "valor_original": "346", "unidad": "mg/dL", "intervalo": "200 – 360", "clase": "en_rango", "seccion": "METABOLISMO DEL HIERRO"}, {"biomarker_id": "transferrin_saturation", "nombre": "Saturación de transferrina", "valor": 8.8, "valor_original": "8,8", "unidad": "%", "intervalo": "15 – 50", "clase": "bajo", "seccion": "METABOLISMO DEL HIERRO"}, {"biomarker_id": "vitamin_b12", "nombre": "Vitamina B12", "valor": 262.0, "valor_original": "262", "unidad": "pg/mL", "intervalo": "197 – 771", "clase": "en_rango", "seccion": "VITAMINAS"}, {"biomarker_id": "folate", "nombre": "Folato Sérico", "valor": 6.2, "valor_original": "6,2", "unidad": "ng/mL", "intervalo": "> 3,9", "clase": "en_rango", "seccion": "VITAMINAS"}, {"biomarker_id": "vitamin_d", "nombre": "25-Hidroxivitamina D", "valor": 17.8, "valor_original": "17,8", "unidad": "ng/mL", "intervalo": "30 – 100", "clase": "bajo", "seccion": "VITAMINAS"}, {"biomarker_id": "vitamin_b6", "nombre": "Vitamina B6 (PLP)", "valor": 6.0, "valor_original": "6,0", "unidad": "µg/L", "intervalo": "5,0 – 50,0", "clase": "en_rango", "seccion": "VITAMINAS"}, {"biomarker_id": "anti_hcv", "nombre": "Anticuerpos contra el virus de la hepatitis C", "valor": "no reactivo", "valor_original": "No reactivo (0,05)", "unidad": "índice", "intervalo": "\u003c 1,00", "clase": "en_rango", "seccion": "SEROLOGÍA E INFECCIOSAS"}, {"biomarker_id": "hbsag", "nombre": "Antígeno de superficie del virus de la hepatitis B", "valor": "no reactivo", "valor_original": "No reactivo (0,28)", "unidad": "índice", "intervalo": "\u003c 1,00", "clase": "en_rango", "seccion": "SEROLOGÍA E INFECCIOSAS"}, {"biomarker_id": "anti_hbs", "nombre": "Anticuerpos contra el antígeno de superficie de hepatitis B", "valor": 85.0, "valor_original": "85", "unidad": "mUI/mL", "intervalo": "≥ 10 (inmunidad)", "clase": "en_rango", "seccion": "SEROLOGÍA E INFECCIOSAS"}, {"biomarker_id": "anti_hbc", "nombre": "Anticuerpos totales contra el antígeno core de hepatitis B", "valor": "no reactivo", "valor_original": "No reactivo (0,09)", "unidad": "índice", "intervalo": "\u003c 1,00", "clase": "en_rango", "seccion": "SEROLOGÍA E INFECCIOSAS"}, {"biomarker_id": "chagas_elisa_total", "nombre": "Anticuerpos IgG contra Trypanosoma cruzi (ELISA de antígenos totales)", "valor": "no reactivo", "valor_original": "No reactivo (0,18)", "unidad": "índice", "intervalo": "\u003c 0,90", "clase": "en_rango", "seccion": "SEROLOGÍA E INFECCIOSAS"}], "bien": [{"grupo": "COND-M4-IN-002", "nombre": "Tienes defensas contra la hepatitis B por la vacuna", "texto": "No se encontró el virus ni señales de contacto con él, y tus defensas (anti-HBs) salieron en 85 mUI/mL, un nivel que protege."}, {"grupo": "glucosa_metabolismo", "nombre": "Azúcar y metabolismo", "texto": "Tu azúcar en la sangre y la forma en que tu cuerpo la maneja están dentro de los rangos de referencia."}, {"grupo": "higado", "nombre": "Hígado", "texto": "Tus enzimas del hígado y tu bilirrubina están dentro de los rangos de referencia."}, {"grupo": "rinon", "nombre": "Riñones", "texto": "Tus riñones están filtrando dentro de lo esperado para tu edad."}, {"grupo": "inflamacion", "nombre": "Inflamación", "texto": "Tus marcadores de inflamación están dentro de los rangos de referencia."}, {"grupo": "corazon", "nombre": "Corazón y músculos", "texto": "Los marcadores de esfuerzo del corazón y de los músculos que se midieron están dentro de los rangos de referencia."}]};   // salida del motor con el PDF sintético (codigo/pipeline/saludly.generar)
+const SEMANA_ITEMS = [{"id": "GLP-EST", "tipo": "alimentacion", "titulo": "Para ir mejor al baño", "texto": "Toma agua durante el día, suma verduras, frutas con cáscara y avena, y camina después de comer. Si pasan varios días sin mejorar, cuéntaselo a tu doctora.", "por_que": "Porque esta semana marcaste estreñimiento.", "fuente": "semana"}, {"id": "REC-ALI-201", "tipo": "alimentacion", "titulo": "Suma alimentos con hierro y acompáñalos con vitamina C", "texto": "Incluye en el almuerzo y la comida lentejas, fríjoles, garbanzos, carnes rojas magras, pollo o pescado, y acompáñalos con una fruta como guayaba, naranja, mandarina o maracuyá, que ayuda a absorber el hierro.", "por_que": "El hierro de los alimentos repone poco a poco tus reservas, y la vitamina C hace que el cuerpo lo aproveche mejor.", "fuente": "examenes"}, {"id": "OBJ-energia_sueno-hora_fija_para_levantarse", "tipo": "objetivo", "titulo": "Hora fija para levantarse", "texto": "Lo primero no es acostarte temprano, es levantarte a la misma hora todos los días, también el sábado. Tu reloj interno se ordena desde la mañana.", "por_que": "Para tus objetivos.", "fuente": "objetivos"}]; // borrador de codigo/informe/recomendar_peso.armar con sus registros y su examen
+const FLUJO = { examen: "ninguno", semana: "borrador", mensaje: "", quitados: new Set() };
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const fechaToma = new Date(INFORME.fecha_toma + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long" });
+$("#aviso-alarma").textContent = "Si el dolor abdominal es fuerte y no se quita, o el vómito no para, llama a tu doctora o ve a urgencias. Ya le avisamos a la " + DRA + ".";
+$("#doc-hola").textContent = "Hola, " + DRA;
+
+// ---------- Estado de Laura (lo define la doctora: inicio y meta) ----------
+const L = { inicio: 92, meta: 74, cint0: 98, cintMeta: 84, talla: 162, peso: 85.0, cint: 93, semanasReg: 3, alarma: false, nivel: 0,
+  historia: [92, 91.1, 90.4, 89.9, 89.0, 88.6, 88.1, 87.4, 87.0, 86.3, 85.9, 85.4, 85.0] };
+const frac = (p) => Math.max(0, Math.min(1, (L.inicio - p) / (L.inicio - L.meta)));
+const fracCint = (c) => Math.max(0, Math.min(1, (L.cint0 - c) / (L.cint0 - L.cintMeta)));
+const rfm = (c) => 76 - 20 * (L.talla / c); // masa grasa relativa, mujer
+
+// Logros: los de peso y cintura ya cuentan en la base; los de hábitos suman puntos
+const LOGROS = [
+  { id: "paso", m: "1", t: "Primer paso", s: "Empezaste el tratamiento", ok: () => true, pts: 0, f: "1 ago" },
+  { id: "kilo", m: "1 kg", t: "Primer kilo", s: "1 kg menos", ok: () => L.inicio - L.peso >= 1, pts: 0, f: "9 ago" },
+  { id: "p5", m: "5 %", t: "5 % de tu peso", s: "4,6 kg menos", ok: () => L.inicio - L.peso >= L.inicio * 0.05, pts: 0, f: "19 sep" },
+  { id: "k8", m: "8 kg", t: "8 kilos menos", s: "", ok: () => L.inicio - L.peso >= 8 - 1e-9, pts: 0 },
+  { id: "k12", m: "12 kg", t: "12 kilos menos", s: "", ok: () => L.inicio - L.peso >= 12 - 1e-9, pts: 0 },
+  { id: "mitad", m: "½", t: "Mitad del camino", s: "", ok: () => frac(L.peso) >= 0.5, pts: 0 },
+  { id: "p10", m: "10 %", t: "10 % de tu peso", s: "", ok: () => L.inicio - L.peso >= L.inicio * 0.1, pts: 0 },
+  { id: "c5", m: "−5", t: "5 cm de cintura", s: "", ok: () => L.cint0 - L.cint >= 5, pts: 0, f: "17 oct" },
+  { id: "c10", m: "−10", t: "10 cm de cintura", s: "", ok: () => L.cint0 - L.cint >= 10, pts: 0 },
+  { id: "reg4", m: "4 sem", t: "4 semanas registrando", s: "", ok: () => L.semanasReg >= 4, pts: 4 },
+  { id: "semana", m: "7/7", t: "Semana completa", s: "Cumpliste tus metas", ok: () => true, pts: 3, f: "18 oct" },
+  { id: "control", m: "Dra", t: "Control cumplido", s: "Fuiste a tu control", ok: () => true, pts: 3, f: "2 oct" },
+  { id: "examen", m: "Lab", t: "Exámenes al día", s: "Tu doctora los revisó", ok: () => FLUJO.examen === "aprobado", pts: 3, f: "Hoy" },
+  { id: "meta", m: "Meta", t: "Llegaste a tu meta", s: "", ok: () => L.peso <= L.meta, pts: 0 },
+  { id: "mant", m: "4+", t: "Mantenimiento", s: "4 semanas en tu meta", ok: () => false, pts: 6 },
+];
+let ganados = new Set(LOGROS.filter(l => l.ok()).map(l => l.id));
+
+function calcNivel() {
+  const base = 30 + 42 * frac(L.peso);
+  const hab = LOGROS.filter(l => ganados.has(l.id)).reduce((a, l) => a + l.pts, 0);
+  return Math.min(100, Math.round(base + hab));
+}
+// Retos de kilos: el anillo va de 0 a los kilos del reto, contados desde el inicio del tratamiento
+const OBJ_RETO = { k8: 8, k12: 12, meta: L.inicio - L.meta };
+function siguienteLogro() {
+  const retos = [
+    { id: "k8", t: "8 kilos menos" },
+    { id: "k12", t: "12 kilos menos" },
+    { id: "meta", t: "Llegar a tu meta" },
+  ].map(r => ({ ...r, obj: OBJ_RETO[r.id], falta: OBJ_RETO[r.id] - (L.inicio - L.peso), u: "kg" })).filter(x => !ganados.has(x.id) && x.falta > 1e-9);
+  return retos[0];
+}
+
+// Anillo reutilizable (paciente y doctora)
+const CIRC = 326.73;
+function anilloHTML(color, grosor = 12) {
+  return `<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--ios-fill)" stroke-width="${grosor}"/>` +
+    `<circle class="val" cx="60" cy="60" r="52" fill="none" stroke="${color}" stroke-width="${grosor}" stroke-linecap="round" stroke-dasharray="${CIRC}" stroke-dashoffset="${CIRC}"/></svg>` +
+    `<div class="num"><div><b></b><span></span></div></div>`;
+}
+function ponAnillo(el, f, grande, chico) {
+  el.querySelector(".val").style.strokeDashoffset = CIRC * (1 - Math.max(0, Math.min(1, f)));
+  if (grande !== undefined) el.querySelector("b").textContent = grande;
+  if (chico !== undefined) el.querySelector("span").textContent = chico;
+}
+$("#an-nivel").innerHTML = anilloHTML("var(--marca)");
+$("#an-reto").innerHTML = anilloHTML("var(--ios-green)");
+
+function pintaReto(s) {
+  const el = $("#an-reto");
+  if (!s) { ponAnillo(el, 1, "✓", "meta"); $("#reto-nombre").textContent = "Tu meta"; $("#sig-t").textContent = "¡Llegaste a tu meta!"; $("#sig-s").textContent = "Ahora el reto es mantenerla."; return; }
+  const logrado = Math.max(0, L.inicio - L.peso);
+  requestAnimationFrame(() => requestAnimationFrame(() => ponAnillo(el, logrado / s.obj, fmt(logrado), `de ${fmt(s.obj, 0)} kg`)));
+  $("#reto-nombre").textContent = "Reto " + fmt(s.obj, 0) + " kg";
+  $("#sig-t").textContent = "Reto: " + s.t;
+  $("#sig-s").textContent = `Te faltan ${fmt(s.falta)} kg. Vas muy bien.`;
+}
+
+// ---------- Hoy ----------
+function pintaNivel(animar = true, retoCumplido = null) {
+  const nuevo = Math.max(L.nivel, calcNivel()); // el nivel nunca baja
+  const desde = L.nivel; L.nivel = nuevo;
+  const an = $("#an-nivel"); ponAnillo(an, nuevo / 100, undefined, "de 100");
+  const el = an.querySelector("b");
+  if (!animar || reduce) { el.textContent = nuevo; } else {
+    const t0 = performance.now();
+    const paso = (t) => { const k = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(desde + (nuevo - desde) * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(paso); };
+    requestAnimationFrame(paso);
+  }
+  $("#lg-nivel").textContent = nuevo;
+  $("#lg-barra").style.width = nuevo + "%";
+  $("#lg-cuenta").textContent = `${ganados.size} de ${LOGROS.length} logros`;
+  const s = siguienteLogro();
+  if (retoCumplido && !reduce) {
+    // primero se cierra el anillo del reto cumplido, después arranca el siguiente
+    const obj = OBJ_RETO[retoCumplido.id];
+    ponAnillo($("#an-reto"), 1, "✓", `${fmt(obj, 0)} kg`);
+    $("#sig-t").textContent = "Reto cumplido: " + retoCumplido.t;
+    $("#sig-s").textContent = "¡Lo lograste!";
+    setTimeout(() => { const v = $("#an-reto .val"); v.style.transition = "none"; v.style.strokeDashoffset = CIRC; void v.getBoundingClientRect(); v.style.transition = ""; pintaReto(s); }, 2400);
+  } else pintaReto(s);
+}
+
+const METAS = [["Caminar 30 minutos", "3 de 4 días", true], ["Proteína en el desayuno", "4 de 5 días", true], ["8 vasos de agua", "Hoy: 5 de 8", false]];
+$("#metas").innerHTML = METAS.map((m, i) => `<div><button class="check" role="checkbox" aria-checked="${m[2]}" data-i="${i}" aria-label="${m[0]}"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7.5 2.6 2.5L11 4"/></svg></button><div class="meta-txt">${m[0]}<small>${m[1]}</small></div></div>`).join("");
+$("#metas").addEventListener("click", (e) => { const b = e.target.closest(".check"); if (b) b.setAttribute("aria-checked", b.getAttribute("aria-checked") !== "true"); });
+
+const SINT = [["Bien", 0], ["Náuseas", 0], ["Estreñimiento", 0], ["Acidez", 0], ["Cansancio", 0], ["Poco apetito", 0], ["Mareo", 0], ["Dolor abdominal fuerte", 1], ["Vómito que no para", 1]];
+$("#sintomas").innerHTML = SINT.map(s => `<button class="chip${s[1] ? " alarma" : ""}" aria-pressed="false" data-alarma="${s[1]}">${s[0]}</button>`).join("");
+$("#sintomas").addEventListener("click", (e) => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true");
+  const marcadas = [...document.querySelectorAll("#sintomas .chip[aria-pressed=true]")];
+  L.alarma = marcadas.filter(c => c.dataset.alarma === "1").map(c => c.textContent);
+  L.sintomas = marcadas.map(c => c.textContent);
+  $("#aviso-alarma").hidden = !L.alarma.length;
+  pintaDoctora();
+});
+$("#aplicada").addEventListener("click", (e) => { e.currentTarget.classList.add("hecho"); e.currentTarget.textContent = "Aplicada ✓"; });
+
+// ---------- Silueta con capa ----------
+const lienzo = $("#lienzo"), ctx = lienzo.getContext("2d");
+const img = new Image();
+let W = 0, H = 0, dist = null, peso = null, figuraLista = false, capaActual = null, momento = "hoy", capaPendiente = false;
+const TMAX = 30;
+function grosor(p, c) { return TMAX * (1 - (frac(p) + fracCint(c)) / 2); }
+img.onload = () => {
+  W = img.naturalWidth; H = img.naturalHeight; lienzo.width = W; lienzo.height = H;
+  const o = document.createElement("canvas"); o.width = W; o.height = H; const oc = o.getContext("2d"); oc.drawImage(img, 0, 0);
+  const a = oc.getImageData(0, 0, W, H).data;
+  // distancia hacia afuera de la silueta (chaflán 3-4)
+  dist = new Float32Array(W * H); const INF = 1e9;
+  for (let i = 0; i < W * H; i++) dist[i] = a[i * 4 + 3] > 128 ? 0 : INF;
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const i = y * W + x; let d = dist[i]; if (!d) continue;
+    if (x > 0) d = Math.min(d, dist[i - 1] + 3); if (y > 0) { d = Math.min(d, dist[i - W] + 3); if (x > 0) d = Math.min(d, dist[i - W - 1] + 4); if (x < W - 1) d = Math.min(d, dist[i - W + 1] + 4); } dist[i] = d; }
+  for (let y = H - 1; y >= 0; y--) for (let x = W - 1; x >= 0; x--) { const i = y * W + x; let d = dist[i]; if (!d) continue;
+    if (x < W - 1) d = Math.min(d, dist[i + 1] + 3); if (y < H - 1) { d = Math.min(d, dist[i + W] + 3); if (x < W - 1) d = Math.min(d, dist[i + W + 1] + 4); if (x > 0) d = Math.min(d, dist[i + W - 1] + 4); } dist[i] = d; }
+  for (let i = 0; i < W * H; i++) dist[i] = dist[i] / 3;
+  // dónde se acumula la grasa: cintura, cadera y muslos más; cabeza, pantorrillas y pies casi nada
+  const zonas = [[0, .05], [.15, .08], [.2, .25], [.3, .6], [.4, 1], [.5, 1], [.6, .85], [.7, .4], [.8, .25], [.92, .05], [1, 0]];
+  peso = new Float32Array(H);
+  for (let y = 0; y < H; y++) { const t = y / H; let k = 0; while (k < zonas.length - 2 && zonas[k + 1][0] < t) k++;
+    const [t0, w0] = zonas[k], [t1, w1] = zonas[k + 1]; const u = Math.min(1, Math.max(0, (t - t0) / (t1 - t0))); peso[y] = w0 + (w1 - w0) * (u * u * (3 - 2 * u)); }
+  figuraLista = true; capaActual = grosor(L.peso, L.cint); dibuja(capaActual);
+};
+img.src = FIGURA;
+const colorCapa = () => getComputedStyle(document.documentElement).getPropertyValue("--capa").trim();
+function rgba(str) { const m = str.match(/[\d.]+/g); return m ? m.map(Number) : [39, 147, 255, .3]; }
+function dibuja(T) {
+  if (!figuraLista) return;
+  ctx.clearRect(0, 0, W, H);
+  const capa = ctx.createImageData(W, H), d = capa.data; const [r, g, b, al] = rgba(colorCapa());
+  for (let y = 0; y < H; y++) { const lim = T * peso[y]; if (lim < .3) continue;
+    for (let x = 0; x < W; x++) { const i = y * W + x, v = dist[i]; if (v === 0 || v > lim + 1.5) continue;
+      const borde = Math.min(1, (lim + 1.5 - v) / 1.5); const filo = v > lim - 1.2 ? 1.6 : 1; // línea más marcada en el borde de la capa
+      const k = i * 4; d[k] = r; d[k + 1] = g; d[k + 2] = b; d[k + 3] = Math.min(255, 255 * al * borde * filo); } }
+  ctx.putImageData(capa, 0, 0);
+  ctx.drawImage(img, 0, 0);
+}
+function animaCapa(hasta) {
+  const desde = capaActual ?? hasta; capaActual = hasta;
+  if (reduce) return dibuja(hasta);
+  const t0 = performance.now();
+  const paso = (t) => { const k = Math.min(1, (t - t0) / 1400); dibuja(desde + (hasta - desde) * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(paso); };
+  requestAnimationFrame(paso);
+}
+document.querySelectorAll(".seg-ios button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".seg-ios button").forEach(x => x.setAttribute("aria-pressed", x === b)); momento = b.dataset.mom;
+  animaCapa(momento === "inicio" ? TMAX : momento === "meta" ? 0 : grosor(L.peso, L.cint));
+}));
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => dibuja(capaActual));
+
+function pintaProgreso() {
+  const avance = Math.round((frac(L.peso) + fracCint(L.cint)) / 2 * 100);
+  $("#camino").innerHTML = `Llevas el <b>${avance} %</b> del camino a tu meta`;
+  $("#d-peso").textContent = "−" + fmt(L.inicio - L.peso) + " kg";
+  $("#d-cint").textContent = "−" + fmt(L.cint0 - L.cint, 0) + " cm";
+  $("#graf-pac").innerHTML = grafica(L.historia, L.meta, 320, 130, "var(--marca)", "var(--ios-2)", "var(--ios-sep)");
+}
+function grafica(serie, meta, w, h, color, txt, linea) {
+  const min = Math.min(meta, ...serie) - 1, max = Math.max(...serie) + 1, pad = 26;
+  const X = (i) => pad + (i / (serie.length - 1)) * (w - pad - 8), Y = (v) => 8 + (max - v) / (max - min) * (h - 26);
+  const pts = serie.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ");
+  const ult = serie.length - 1;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Peso de ${fmt(serie[0])} a ${fmt(serie[ult])} kg; meta ${fmt(meta, 0)} kg">
+    <line x1="${pad}" x2="${w - 8}" y1="${Y(meta)}" y2="${Y(meta)}" stroke="${linea}" stroke-dasharray="4 4" stroke-width="1.5"/>
+    <text x="${w - 8}" y="${Y(meta) - 5}" text-anchor="end" font-size="11" fill="${txt}">Meta ${fmt(meta, 0)} kg</text>
+    <polyline points="${pad},${h - 18} ${pts} ${X(ult)},${h - 18}" fill="${color}" fill-opacity=".1" stroke="none"/>
+    <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${X(ult)}" cy="${Y(serie[ult])}" r="4.5" fill="${color}"/>
+    <text x="${pad}" y="${h - 4}" font-size="11" fill="${txt}">Ago</text><text x="${w - 8}" y="${h - 4}" text-anchor="end" font-size="11" fill="${txt}">Hoy</text>
+    <text x="${pad - 4}" y="${Y(serie[0]) + 4}" text-anchor="end" font-size="11" fill="${txt}">${fmt(serie[0], 0)}</text>
+  </svg>`;
+}
+
+// ---------- Logros ----------
+function pintaLogros(nuevos = []) {
+  $("#medallas").innerHTML = LOGROS.map(l => { const ok = ganados.has(l.id);
+    let s = l.s; if (!ok) { const sl = siguienteLogro(); s = sl && sl.id === l.id ? `Te faltan ${fmt(sl.falta)} kg` : (l.id === "reg4" ? "1 semana más" : "Por ganar"); }
+    return `<div class="medalla${ok ? "" : " bloq"}${nuevos.includes(l.id) ? " nueva" : ""}"><div class="m">${l.m}</div><b>${l.t}</b><small>${ok ? (l.f || "Hoy") : s}</small></div>`; }).join("");
+}
+
+// ---------- Exámenes (paciente) ----------
+const ETQ = { en_rango: ["bien", "En tu rango"], bajo: ["hablar", "Para hablar con tu doctora"], alto: ["hablar", "Para hablar con tu doctora"], limitrofe: ["hablar", "Para hablar con tu doctora"], critico: ["hablar", "Para hablar con tu doctora"], alterado: ["hablar", "Para hablar con tu doctora"] };
+const fuera = INFORME.resultados.filter(r => ETQ[r.clase] && r.clase !== "en_rango");
+let verTodos = false;
+function pintaExamenes() {
+  const z = $("#ex-zona");
+  if (FLUJO.examen === "ninguno") {
+    z.innerHTML = `<div class="card" style="display:grid;gap:10px"><p style="margin:0;font-size:15px">Cuando subas el PDF de tu laboratorio, Saludly lo analiza y tu doctora lo revisa. Después te aparece aquí, explicado en simple.</p>
+      <button class="boton sec" id="ex-subir">Subir el PDF de ejemplo</button><small style="font-size:12px;color:var(--ios-2)">El PDF no se guarda: se lee y se borra.</small></div>`;
+    return;
+  }
+  if (FLUJO.examen === "revision") {
+    z.innerHTML = `<div class="card"><p style="margin:0;font-size:15px"><b>Recibimos tu resultado del ${fechaToma}.</b><br>Saludly ya lo analizó y la ${esc(DRA)} lo está revisando. Te avisamos cuando esté listo.</p></div>`;
+    return;
+  }
+  const todos = INFORME.resultados.filter(r => ETQ[r.clase]);
+  const lista = verTodos ? todos : fuera;
+  z.innerHTML = `<p class="sub" style="margin:-8px 4px 0">Revisados por la ${esc(DRA)} · tomados el ${fechaToma}</p>
+    <div class="card"><h3>Lo que vio Saludly</h3>${INFORME.hallazgos.map(h => `<div class="examen"><b style="font-size:16px">${esc(h.titulo)}</b><small>${esc(h.por_que[0] || h.que_es)}</small></div>`).join("")}</div>
+    <div class="seg-ios" style="grid-template-columns:1fr 1fr" role="group" aria-label="Qué resultados ver"><button data-ver="fuera" aria-pressed="${!verTodos}">Para revisar (${fuera.length})</button><button data-ver="todos" aria-pressed="${verTodos}">Todos (${todos.length})</button></div>
+    <div class="card">${lista.map(r => { const [c, t] = ETQ[r.clase];
+      return `<div class="examen"><div class="fila"><b>${esc(r.nombre)}</b><span class="tag ${c}">${t}</span></div><div class="fila"><small>${r.intervalo ? "Referencia: " + esc(r.intervalo) : ""}</small><span class="valor">${esc(r.valor_original ?? r.valor)} ${esc(r.unidad || "")}</span></div></div>`; }).join("")}</div>`;
+}
+$("#ex-zona").addEventListener("click", (e) => {
+  const v = e.target.closest("[data-ver]"); if (v) { verTodos = v.dataset.ver === "todos"; return pintaExamenes(); }
+  const b = e.target.closest("#ex-subir"); if (!b) return;
+  b.textContent = "Analizando…"; b.disabled = true;
+  setTimeout(() => {
+    FLUJO.examen = "revision"; pintaExamenes(); pintaDoctora();
+    $("#notif-m").textContent = "Lab"; $("#notif-t").textContent = "Resultado recibido"; $("#notif-s").textContent = "Tu doctora lo revisa antes de que lo veas.";
+    $("#notif").classList.add("on"); setTimeout(() => $("#notif").classList.remove("on"), 3400);
+  }, 1400);
+});
+function pintaSemanaPac() {
+  const z = $("#semana-pac");
+  if (FLUJO.semana !== "publicada") { z.innerHTML = `<div class="card"><p style="margin:0;font-size:15px;color:var(--ios-2)">Cada lunes te llegan aquí las recomendaciones de tu semana, revisadas por tu doctora.</p></div>`; return; }
+  const et = { examenes: "Por tus exámenes", objetivos: "Para tus objetivos", semana: "Esta semana" };
+  z.innerHTML = (FLUJO.mensaje ? `<div class="card reco"><small>Mensaje de la ${esc(DRA)}</small><p style="color:var(--ios-label)">${esc(FLUJO.mensaje)}</p></div>` : "") +
+    SEMANA_ITEMS.filter(i => !FLUJO.quitados.has(i.id)).map(i => `<div class="card reco"><small>${et[i.fuente] || "Esta semana"}</small><b>${esc(i.titulo)}</b><p>${esc(i.texto)}</p><p style="font-size:13px">${esc(i.por_que)}</p></div>`).join("");
+}
+
+// ---------- Pestañas ----------
+function irA(tab) {
+  document.querySelectorAll(".tabbar button").forEach(b => { if (b.dataset.tab === tab) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+  document.querySelectorAll(".vista").forEach(v => v.classList.toggle("activa", v.id === "v-" + tab));
+  $("#pantalla").scrollTop = 0;
+  if (tab === "progreso" && capaPendiente) { // la silueta cambia cuando la paciente la mira
+    capaPendiente = false;
+    document.querySelectorAll(".seg-ios button").forEach(x => x.setAttribute("aria-pressed", x.dataset.mom === "hoy"));
+    setTimeout(() => animaCapa(grosor(L.peso, L.cint)), 250);
+  }
+}
+document.querySelectorAll(".tabbar button").forEach(b => b.addEventListener("click", () => irA(b.dataset.tab)));
+
+// ---------- Hoja de registro ----------
+let borrador = {};
+const pintaBorrador = () => { $("#in-peso").textContent = fmt(borrador.peso); $("#in-cint").textContent = fmt(borrador.cint); };
+function abrirHoja() { borrador = { peso: Math.round((L.peso - 1) * 10) / 10, cint: L.cint - 1 }; pintaBorrador(); $("#velo").classList.add("on"); $("#hoja").classList.add("on"); }
+function cerrarHoja() { $("#velo").classList.remove("on"); $("#hoja").classList.remove("on"); }
+$("#abrir-registro").addEventListener("click", abrirHoja);
+$("#cancelar").addEventListener("click", cerrarHoja);
+$("#velo").addEventListener("click", cerrarHoja);
+document.querySelectorAll(".paso button").forEach(b => b.addEventListener("click", () => {
+  const c = b.dataset.campo; borrador[c] = Math.round((borrador[c] + Number(b.dataset.d)) * 10) / 10;
+  borrador.peso = Math.min(140, Math.max(40, borrador.peso)); borrador.cint = Math.min(150, Math.max(50, borrador.cint)); pintaBorrador();
+}));
+$("#guardar").addEventListener("click", () => {
+  const antes = new Set(ganados);
+  L.peso = borrador.peso; L.cint = borrador.cint; L.semanasReg += 1; L.historia.push(L.peso);
+  LOGROS.forEach(l => { if (l.ok()) ganados.add(l.id); });
+  const nuevos = [...ganados].filter(id => !antes.has(id));
+  cerrarHoja();
+  const reto = LOGROS.find(l => ["k8", "k12", "meta"].includes(l.id) && nuevos.includes(l.id));
+  pintaNivel(true, reto); pintaProgreso(); pintaLogros(nuevos); pintaDoctora();
+  capaPendiente = true;
+  if (nuevos.length) {
+    const l = LOGROS.find(x => x.id === nuevos[0]);
+    $("#notif-m").textContent = l.m; $("#notif-t").textContent = "Logro: " + l.t;
+    $("#notif-s").textContent = nuevos.length > 1 ? `y ${nuevos.length - 1} más. Tu nivel subió a ${L.nivel}.` : `Tu nivel subió a ${L.nivel}.`;
+  } else { $("#notif-m").textContent = L.nivel; $("#notif-t").textContent = "Registro guardado"; $("#notif-s").textContent = "Tu silueta ya cambió en Progreso."; }
+  $("#notif").classList.add("on"); setTimeout(() => $("#notif").classList.remove("on"), 3600);
+});
+
+// ---------- Exámenes en casa (sutil) ----------
+$("#dom-btn").addEventListener("click", (e) => { const d = $("#dom"); d.hidden = !d.hidden; e.currentTarget.setAttribute("aria-expanded", !d.hidden); });
+$("#dom-ok").addEventListener("click", (e) => {
+  e.currentTarget.textContent = "Solicitud enviada"; e.currentTarget.disabled = true;
+  $("#notif-m").textContent = "Lab"; $("#notif-t").textContent = "Te escribimos por WhatsApp";
+  $("#notif-s").textContent = "para elegir el día de la toma en casa.";
+  $("#notif").classList.add("on"); setTimeout(() => $("#notif").classList.remove("on"), 3400);
+});
+
+// ===================== DOCTORA =====================
+const LIMITE = 1.5; // % del peso por semana; lo define la doctora (supuesto provisional del demo)
+const RANGO = { alta: 0, media: 1, info: 2, baja: 3, ok: 4 };
+const SECCION = { alta: "Requieren atención", media: "Requieren atención", info: "Control esta semana", baja: "Para revisar", ok: "Al día" };
+const unos = (n, huecos = []) => Array.from({ length: n }, (_, i) => huecos.includes(i + 1) ? 0 : 1);
+const PAC = [
+  { id: "marcela", n: "Marcela Rojas", e: 38, talla: 158, meta: 82, cint0: 108, cint: 104, cintMeta: 92, s: "alta", corto: "Dolor abdominal fuerte · ayer",
+    txt: "Reportó <b>dolor abdominal fuerte</b> ayer a las 9:40 p. m. La app le indicó llamarla o ir a urgencias.",
+    serie: [101, 100.2, 99.3, 98.6, 97.8, 97.0, 96.2], efectos: { "Náuseas": [1, 2, 3], "Dolor abdominal fuerte": [6] }, alarma: ["Dolor abdominal fuerte"],
+    reg: unos(6), apl: unos(6), metas: unos(6, [2, 5]), preg: ["¿Es normal este dolor?"], med: "0,25 mg semanal · lunes", ex: [1, 1, 0, 0], control: "Sin control agendado", labs: [] },
+  { id: "laura", n: "Laura Martínez", e: 34, s: "info", efectos: { "Náuseas": [2, 3], "Estreñimiento": [12] }, alarma: [],
+    reg: unos(12, [6]), apl: unos(12), metas: unos(12, [3, 6, 9]), preg: ["¿Puedo hacer ejercicio en ayunas?"], med: "0,5 mg semanal · jueves", ex: [1, 1, 1, 1], control: "Control jue 6 nov, 9:00",
+    labs: [] },
+  { id: "sandra", n: "Sandra Pérez", e: 52, talla: 160, meta: 70, cint0: 101, cint: 96, cintMeta: 86, s: "media", corto: "Bajó 2,2 % por semana · 2 semanas",
+    txt: "Bajó <b>2,2 % por semana</b> las últimas 2 semanas. Su límite es 1,5 %.",
+    serie: [88, 87.1, 86.2, 85.3, 83.4, 81.6], efectos: { "Poco apetito": [3, 4, 5], "Cansancio": [4, 5] }, alarma: [],
+    reg: unos(5), apl: unos(5), metas: unos(5, [3, 5]), preg: [], med: "0,5 mg semanal · martes", ex: [1, 0, 0, 0], control: "Control el 12 nov", labs: [] },
+  { id: "diana", n: "Diana Castro", e: 45, talla: 165, meta: 78, cint0: 104, cint: 99, cintMeta: 88, s: "media", corto: "Sin registrar hace 16 días", sem: 10,
+    txt: "No registra datos hace <b>16 días</b>. Puede estar dejando el tratamiento.",
+    serie: [95, 94.1, 93.0, 92.2, 91.4, 90.6, 90.0, 89.4], efectos: { "Acidez": [4] }, alarma: [],
+    reg: unos(10, [9, 10]), apl: unos(10, [9, 10]), metas: unos(10, [3, 6, 8, 9, 10]), preg: [], med: "0,5 mg semanal · sábado", ex: [1, 1, 1, 0], control: "Control el 20 nov", labs: [] },
+  { id: "paola", n: "Paola Vargas", e: 34, talla: 163, meta: 68, cint0: 95, cint: 88, cintMeta: 80, s: "baja", corto: "Sin cambio de peso en 5 semanas",
+    txt: "Su peso <b>no cambia hace 5 semanas</b>.",
+    serie: [84, 83.1, 82.3, 81.5, 80.6, 79.9, 79.1, 78.4, 77.8, 77.3, 77.0, 76.8, 76.9, 76.7, 76.8, 76.8, 76.9, 76.7, 76.8, 76.8, 76.8], efectos: { "Náuseas": [1, 2] }, alarma: [],
+    reg: unos(20, [11]), apl: unos(20), metas: unos(20, [4, 9, 13, 16, 18]), preg: ["¿Por qué no sigo bajando?"], med: "1 mg semanal · domingo", ex: [1, 1, 1, 1], control: "Control el 14 nov",
+    labs: [{ n: "HbA1c", antes: 5.9, ahora: 5.5, u: "%", ref: 5.7, d: 1 }, { n: "Triglicéridos", antes: 165, ahora: 128, u: "mg/dL", ref: 150, d: 0 }] },
+  { id: "ana", n: "Ana Gutiérrez", e: 29, talla: 160, meta: 66, cint0: 90, cint: 86, cintMeta: 78, s: "ok", corto: "Al día",
+    txt: "", serie: [79, 78.3, 77.6, 77.0, 76.4, 75.9, 75.4, 74.9], efectos: { "Náuseas": [1] }, alarma: [],
+    reg: unos(7), apl: unos(7), metas: unos(7, [2]), preg: [], med: "0,5 mg semanal · miércoles", ex: [1, 1, 1, 1], control: "Control el 27 nov", labs: [] },
+];
+let sel = "laura";
+const imc = (p, t) => p / Math.pow(t / 100, 2);
+const rfmDe = (c, t) => 76 - 20 * (t / c);
+const iniciales = (n) => n.split(" ").map(x => x[0]).join("").slice(0, 2);
+const semDe = (p) => p.sem || p.serie.length - 1;
+const hoyDe = (p) => p.serie[p.serie.length - 1];
+
+function datosLaura(p) {
+  Object.assign(p, { talla: L.talla, meta: L.meta, cint0: L.cint0, cint: L.cint, cintMeta: L.cintMeta, serie: L.historia });
+  while (p.reg.length < semDe(p)) { p.reg.push(1); p.apl.push(1); p.metas.push(1); }
+  const vivos = (L.sintomas || []).filter(x => x !== "Bien");
+  p.efectosVivos = vivos; p.alarma = L.alarma || [];
+  if (p.alarma.length) { p.s = "alta"; p.corto = "Reportó hoy: " + p.alarma.join(" y ").toLowerCase(); p.txt = "Reportó hoy <b>" + p.alarma.join(" y ").toLowerCase() + "</b>. La app le indicó llamarla o ir a urgencias."; }
+  else if (FLUJO.examen === "revision") { p.s = "info"; p.corto = "Examen para revisar"; p.txt = "Laura subió su resultado del laboratorio. El análisis de Saludly <b>espera su revisión</b>."; }
+  else if (FLUJO.semana === "borrador") { p.s = "info"; p.corto = "Semana por publicar"; p.txt = "Las recomendaciones de esta semana <b>esperan su revisión</b>."; }
+  else { p.s = "info"; p.corto = "Control jue 6 nov, 9:00"; p.txt = "Control el <b>jueves 6 de noviembre a las 9:00</b>. El resumen ya está listo."; }
+  const ids = { hemoglobin: "Hemoglobina", ferritin: "Ferritina", ldl_c: "Colesterol LDL", tsh: "TSH", vitamin_d: "Vitamina D" };
+  p.labs = FLUJO.examen === "ninguno" ? [] : INFORME.resultados.filter(r => ids[r.biomarker_id] && typeof r.valor === "number").map(r => ({ n: ids[r.biomarker_id], antes: null, ahora: r.valor, u: r.unidad || "", ref: null, d: r.valor < 20 ? 1 : 0 }));
+  p.ex = [1, 1, FLUJO.examen !== "ninguno" ? 1 : 0, FLUJO.examen === "aprobado" ? 1 : 0];
+}
+
+// ---------- Gráficas (un solo tono de marca; el color de estado siempre va con su texto) ----------
+const T = (x, y, s, a = "start", extra = "") => `<text x="${x}" y="${y}" text-anchor="${a}" class="ley" ${extra}>${s}</text>`;
+function grafPeso(p) {
+  const s = p.serie, w = 380, h = 210, L0 = 34, R0 = 64, T0 = 12, B0 = 24;
+  const min = Math.floor(Math.min(p.meta, ...s) - 1), max = Math.ceil(Math.max(...s) + 1);
+  const X = (i) => L0 + i / Math.max(1, s.length - 1) * (w - L0 - R0), Y = (v) => T0 + (max - v) / (max - min) * (h - T0 - B0);
+  const ticks = [max, Math.round((max + min) / 2), min];
+  const pts = s.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ");
+  const u = s.length - 1;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Peso de ${fmt(s[0])} a ${fmt(s[u])} kg, meta ${fmt(p.meta, 0)} kg">
+    ${ticks.map(t => `<line x1="${L0}" x2="${w - R0}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--ios-sep)" stroke-width="1"/>${T(L0 - 6, Y(t) + 4, t, "end")}`).join("")}
+    <line x1="${L0}" x2="${w - R0}" y1="${Y(p.meta)}" y2="${Y(p.meta)}" stroke="var(--ios-green)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    ${T(w - R0 + 6, Y(p.meta) + 4, "Meta " + fmt(p.meta, 0))}
+    <polygon points="${X(0)},${Y(min)} ${pts} ${X(u)},${Y(min)}" fill="var(--marca)" fill-opacity=".08"/>
+    <polyline points="${pts}" fill="none" stroke="var(--marca)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${s.map((v, i) => `<circle cx="${X(i)}" cy="${Y(v)}" r="${i === u ? 5 : 3}" fill="var(--marca)" stroke="var(--ios-card)" stroke-width="2"/><circle cx="${X(i)}" cy="${Y(v)}" r="11" fill="transparent" data-tip="${i ? "Semana " + i : "Inicio"} · ${fmt(v)} kg"/>`).join("")}
+    ${T(w - R0 + 6, Y(s[u]) + 4, fmt(s[u]) + " kg", "start", 'style="font-weight:600;fill:var(--ios-label)"')}
+    ${T(L0, h - 6, "Inicio")}${T(w - R0, h - 6, "Semana " + u, "end")}
+  </svg>`;
+}
+function grafVel(p) {
+  const s = p.serie, v = s.slice(1).map((x, i) => (s[i] - x) / s[i] * 100);
+  const w = 380, h = 190, L0 = 34, R0 = 64, T0 = 14, B0 = 24, n = v.length;
+  const max = Math.max(LIMITE * 1.5, ...v) , min = Math.min(0, ...v) - 0.2;
+  const Y = (x) => T0 + (max - x) / (max - min) * (h - T0 - B0), paso = (w - L0 - R0) / n, ancho = Math.min(18, paso * 0.62);
+  const sobre = v.some(x => x > LIMITE);
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Pérdida semanal; límite ${fmt(LIMITE)} % por semana">
+    <line x1="${L0}" x2="${w - R0}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--ios-sep)"/>${T(L0 - 6, Y(0) + 4, "0", "end")}
+    ${v.map((x, i) => { const cx = L0 + paso * (i + .5), y = Math.min(Y(x), Y(0)), hh = Math.max(2, Math.abs(Y(x) - Y(0)));
+      const col = x > LIMITE ? "var(--media)" : x < 0 ? "var(--baja)" : "var(--marca)";
+      return `<rect x="${(cx - ancho / 2).toFixed(1)}" y="${y.toFixed(1)}" width="${ancho.toFixed(1)}" height="${hh.toFixed(1)}" rx="3" fill="${col}"/>` +
+        `<rect x="${(cx - paso / 2).toFixed(1)}" y="${T0}" width="${paso.toFixed(1)}" height="${h - T0 - B0}" fill="transparent" data-tip="Semana ${i + 1} · ${x >= 0 ? "bajó" : "subió"} ${fmt(Math.abs(x))} %${x > LIMITE ? " (sobre su límite)" : ""}"/>`; }).join("")}
+    <line x1="${L0}" x2="${w - R0}" y1="${Y(LIMITE)}" y2="${Y(LIMITE)}" stroke="var(--media)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    ${T(w - R0 + 6, Y(LIMITE) + 4, "Su límite")}${T(w - R0 + 6, Y(LIMITE) + 18, fmt(LIMITE) + " %/sem")}
+    ${T(L0, h - 6, "Semana 1")}${T(w - R0, h - 6, "Semana " + n, "end")}
+    ${sobre ? `<rect x="${L0 + 120}" y="${h - 15}" width="10" height="10" rx="2" fill="var(--media)"/>${T(L0 + 134, h - 6, "Sobre su límite")}` : ""}
+  </svg>`;
+}
+function bullet(filas) {
+  const w = 380, fh = 64, h = filas.length * fh + 6, L0 = 96, R0 = 20;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Cintura y grasa estimada: inicio, hoy y meta">${filas.map((f, k) => {
+    const y = 26 + k * fh, lo = f.meta - (f.ini - f.meta) * .12, hi = f.ini + (f.ini - f.meta) * .12;
+    const X = (v) => L0 + (v - lo) / (hi - lo) * (w - L0 - R0);
+    return `${T(0, y + 4, f.n, "start", 'style="font-size:14px;font-weight:600;fill:var(--ios-label)"')}
+      <line x1="${X(f.meta)}" x2="${X(f.ini)}" y1="${y}" y2="${y}" stroke="var(--ios-fill)" stroke-width="10" stroke-linecap="round"/>
+      <line x1="${X(f.hoy)}" x2="${X(f.ini)}" y1="${y}" y2="${y}" stroke="var(--marca)" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+      <line x1="${X(f.meta)}" x2="${X(f.meta)}" y1="${y - 10}" y2="${y + 10}" stroke="var(--ios-green)" stroke-width="2"/>
+      <circle cx="${X(f.hoy)}" cy="${y}" r="8" fill="var(--marca)" stroke="var(--ios-card)" stroke-width="3" data-tip="${f.n} hoy · ${fmt(f.hoy, f.d)} ${f.u}"/>
+      ${T(X(f.hoy), y - 14, "Hoy " + fmt(f.hoy, f.d) + " " + f.u, "middle", 'style="font-weight:600;fill:var(--ios-label)"')}
+      ${T(X(f.meta), y + 26, "Meta " + fmt(f.meta, f.d), "middle")}${T(X(f.ini), y + 26, "Inicio " + fmt(f.ini, f.d), "middle")}`; }).join("")}</svg>`;
+}
+function pesas(labs) {
+  const w = 380, fh = 58, h = labs.length * fh + 4, L0 = 104, R0 = 20;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Laboratorios">${labs.map((l, k) => {
+    const y = 28 + k * fh, vals = [l.antes, l.ahora, l.ref].filter(x => x != null), lo = Math.min(...vals), hi = Math.max(...vals), pad = (hi - lo) * .25 || Math.abs(hi) * .1 || 1;
+    const X = (v) => L0 + (v - (lo - pad)) / (hi - lo + 2 * pad) * (w - L0 - R0);
+    return `${T(0, y + 4, l.n, "start", 'style="font-size:13px;font-weight:600;fill:var(--ios-label)"')}
+      <line x1="${L0}" x2="${w - R0}" y1="${y}" y2="${y}" stroke="var(--ios-sep)"/>
+      ${l.antes != null ? `<line x1="${X(l.antes)}" x2="${X(l.ahora)}" y1="${y}" y2="${y}" stroke="var(--marca)" stroke-width="2.5"/><circle cx="${X(l.antes)}" cy="${y}" r="6" fill="var(--ios-card)" stroke="var(--marca)" stroke-width="2"/>` : ""}
+      <circle cx="${X(l.ahora)}" cy="${y}" r="7" fill="var(--marca)" stroke="var(--ios-card)" stroke-width="2" data-tip="${l.n} · ${fmt(l.ahora, l.d)} ${l.u}"/>
+      ${T(X(l.ahora), y - 13, fmt(l.ahora, l.d) + " " + l.u, "middle", 'style="font-weight:600;fill:var(--ios-label)"')}`; }).join("")}</svg>`;
+}
+function constancia(p) {
+  const filas = [["Registró", p.reg, "registró peso", "no registró"], ["Aplicación", p.apl, "marcó la aplicación", "sin marcar"], ["Metas", p.metas, "cumplió sus metas", "no las cumplió"]];
+  const n = p.reg.length, w = 380, L0 = 78, cel = Math.min(16, (w - L0) / n - 4), g = 4, h = filas.length * (cel + 10) + 20;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Constancia semanal">${filas.map((f, k) => { const y = k * (cel + 10);
+    return T(0, y + cel - 3, f[0], "start", 'style="font-size:13px;fill:var(--ios-label)"') + f[1].map((x, i) =>
+      `<rect x="${L0 + i * (cel + g)}" y="${y}" width="${cel}" height="${cel}" rx="4" fill="${x ? "var(--marca)" : "var(--ios-fill)"}" data-tip="Semana ${i + 1} · ${x ? f[2] : f[3]}"/>`).join(""); }).join("")}
+    ${T(L0, h - 4, "Semana 1")}${T(L0 + (n - 1) * (cel + g) + cel, h - 4, "Semana " + n, "end")}</svg>`;
+}
+function efectos(p) {
+  const e = { ...p.efectos }; const n = semDe(p);
+  (p.efectosVivos || []).forEach(x => { e[x] = [...new Set([...(e[x] || []), n])]; });
+  const filas = Object.entries(e);
+  if (!filas.length) return `<p class="nota" style="margin:0">No ha reportado efectos.</p>`;
+  const w = 380, L0 = 136, R0 = 10, fh = 28, h = filas.length * fh + 26, X = (s) => L0 + (s - 1) / Math.max(1, n - 1) * (w - L0 - R0);
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Efectos reportados por semana">${filas.map(([nom, sems], k) => { const y = 14 + k * fh, al = (p.alarma || []).includes(nom);
+    return `${T(0, y + 4, nom + (al ? " · alarma" : ""), "start", `style="font-size:13px;fill:${al ? "var(--alta)" : "var(--ios-label)"};font-weight:${al ? 600 : 400}"`)}
+      <line x1="${L0}" x2="${w - R0}" y1="${y}" y2="${y}" stroke="var(--ios-sep)"/>
+      ${sems.map(s => `<circle cx="${X(s)}" cy="${y}" r="6" fill="${al ? "var(--alta)" : "var(--marca)"}" stroke="var(--ios-card)" stroke-width="2" data-tip="${nom} · semana ${s}"/>`).join("")}`; }).join("")}
+    ${T(L0, h - 4, "Semana 1")}${T(w - R0, h - 4, "Semana " + n, "end")}</svg>`;
+}
+
+// ---------- Pantalla de la doctora ----------
+function miniAnillo(f, txt, color = "var(--marca)", g = 12) { return `<div class="mini">${anilloHTML(color, g).replace(`stroke-dashoffset="${CIRC}"`, `stroke-dashoffset="${(CIRC * (1 - Math.max(0, Math.min(1, f)))).toFixed(1)}"`).replace("<b></b>", `<b>${txt}</b>`)}</div>`; }
+function analisisCard() {
+  if (FLUJO.examen === "ninguno") return `<div class="cd"><h3>Análisis del laboratorio</h3><p class="nota" style="margin:0">Laura todavía no ha subido resultados. (En la vista Paciente: Exámenes → Subir el PDF de ejemplo.)</p></div>`;
+  const fueraTxt = fuera.map(r => `${esc(r.nombre)} ${esc(r.valor_original ?? r.valor)} ${esc(r.unidad || "")}`).join(" · ");
+  return `<div class="cd"><h3>Análisis del laboratorio</h3>
+    <p class="nota">${FLUJO.examen === "revision" ? "Espera su revisión: la paciente lo ve cuando usted lo apruebe." : "Aprobado: la paciente ya lo ve."} · Orden ${esc(INFORME.orden)} · tomado el ${fechaToma}</p>
+    ${INFORME.hallazgos.map(h => `<div style="padding:10px 0;border-top:1px solid var(--ios-sep)"><b style="font-size:15px">${esc(h.titulo)}</b><p style="margin:2px 0 0;font-size:14px;color:var(--ios-2)">${esc(h.nivel_lenguaje || "Resultado observado")}${h.escalamiento >= 2 ? " · consulta sugerida en 2 a 4 semanas" : ""} · ${esc(h.por_que.join(" "))}</p></div>`).join("")}
+    <p class="nota" style="margin-top:10px">Fuera de rango: ${fueraTxt}</p>
+    ${FLUJO.examen === "revision" ? `<div class="acciones" style="margin-top:12px"><button class="btn pri" id="aprobar-ex">Aprobar lo que ve la paciente</button></div>` : ""}</div>`;
+}
+function semanaCard() {
+  const pub = FLUJO.semana === "publicada";
+  return `<div class="cd"><h3>Recomendaciones de la semana</h3><p class="nota">Semana del 2 de noviembre · ${pub ? "publicada" : "borrador para revisar"} · armada por el código con sus registros y su examen</p>
+    ${SEMANA_ITEMS.map(i => { const q = FLUJO.quitados.has(i.id);
+      return `<div style="display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-top:1px solid var(--ios-sep);align-items:start"><div style="opacity:${q ? .4 : 1}"><b style="font-size:15px">${esc(i.titulo)}</b><p style="margin:2px 0 0;font-size:14px;color:var(--ios-2)">${esc(i.texto)}</p><p style="margin:2px 0 0;font-size:13px;color:var(--ios-2)">${esc(i.por_que)} · ${esc(i.id)}</p></div>${pub ? "" : `<button class="btn" data-quitar="${esc(i.id)}">${q ? "Volver a poner" : "Quitar"}</button>`}</div>`; }).join("")}
+    ${pub ? (FLUJO.mensaje ? `<p class="nota" style="margin-top:10px">Su mensaje: “${esc(FLUJO.mensaje)}”</p>` : "") :
+      `<label style="display:grid;gap:6px;margin-top:12px;font-size:13px;font-weight:600;color:var(--ios-2)">Su mensaje para Laura (opcional)<textarea id="msj-dra" rows="3" maxlength="600" style="border:0;border-radius:12px;background:var(--ios-fill);padding:12px;font:16px var(--ios);color:var(--ios-label)" placeholder="Por ejemplo: Vas muy bien, Laura. Nos vemos el jueves.">${esc(FLUJO.mensaje)}</textarea></label>
+       <div class="acciones" style="margin-top:12px"><button class="btn pri" id="publicar-sem">Publicar la semana</button></div>`}</div>`;
+}
+$("#ficha").addEventListener("input", (e) => { if (e.target.id === "msj-dra") FLUJO.mensaje = e.target.value; });
+$("#ficha").addEventListener("click", (e) => {
+  if (e.target.closest("#aprobar-ex")) {
+    FLUJO.examen = "aprobado"; ganados.add("examen");
+    pintaNivel(); pintaLogros(["examen"]); pintaExamenes(); pintaDoctora(); toast("Aprobado: Laura ya ve su análisis en Exámenes.");
+    return;
+  }
+  const q = e.target.closest("[data-quitar]");
+  if (q) { const id = q.dataset.quitar; if (FLUJO.quitados.has(id)) FLUJO.quitados.delete(id); else FLUJO.quitados.add(id); return pintaDoctora(); }
+  if (e.target.closest("#publicar-sem")) { FLUJO.semana = "publicada"; pintaSemanaPac(); pintaDoctora(); toast("Publicada: Laura ya la ve en Para ti."); }
+});
+function pintaDoctora() {
+  datosLaura(PAC.find(p => p.id === "laura"));
+  const lauraReg = L.semanasReg > 3 ? 1 : 0, atencion = PAC.filter(p => RANGO[p.s] <= 1).length;
+  $("#semana").innerHTML = [
+    [miniAnillo((9 + lauraReg) / 12, `${9 + lauraReg}/12`), "Registraron", "esta semana"],
+    [miniAnillo(8 / 12, "8/12"), "Ya bajaron 5 %", "o más de su peso"],
+    [miniAnillo(4 / 5, "4/5"), "Controles confirmados", "por WhatsApp"],
+    [`<div class="alertas-n">${atencion}</div>`, "Necesitan atención", "hoy"],
+  ].map(x => `<div class="it">${x[0]}<div><b class="t">${x[1]}</b><span class="s">${x[2]}</span></div></div>`).join("");
+
+  const orden = [...PAC].sort((a, b) => RANGO[a.s] - RANGO[b.s]);
+  let html = "", ult = "";
+  orden.forEach(p => { const sec = SECCION[p.s]; if (sec !== ult) { html += `<div class="d-sec">${sec}</div>`; ult = sec; }
+    const f = (p.serie[0] - hoyDe(p)) / (p.serie[0] - p.meta);
+    html += `<button class="pac" data-id="${p.id}" aria-current="${p.id === sel}">${miniAnillo(f, Math.round(f * 100) + "", "var(--marca)", 14)}
+      <span><b class="n">${p.n}</b><span class="e"><i class="punto s-${p.s}"></i>${p.corto}</span></span>
+      <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m3.5 1.5 3.5 3.5-3.5 3.5"/></svg></button>`; });
+  $("#lista-pac").innerHTML = html;
+
+  const p = PAC.find(x => x.id === sel), ini = p.serie[0], hoy = hoyDe(p), sem = semDe(p);
+  const perdido = ini - hoy, total = ini - p.meta;
+  $("#ficha").innerHTML = `
+    <div class="cd f-cab"><div class="f-id"><div class="avatar">${iniciales(p.n)}</div><div><h2>${p.n}</h2><p>${p.e} años · ${fmt(p.talla / 100, 2)} m · semana ${sem} · ${p.control}</p></div></div>
+      <div class="acciones"><button class="btn" data-demo="Resumen exportado en PDF (demo)">Exportar PDF</button><button class="btn" data-demo="Mensaje enviado por WhatsApp (demo)">WhatsApp</button></div></div>
+    ${p.txt ? `<div class="aviso-d ${p.s}"><i class="punto s-${p.s}"></i><span>${p.txt}</span></div>` : ""}
+    <div class="cd f-hero">
+      <div class="anillo" id="f-anillo">${anilloHTML("var(--marca)", 12)}</div>
+      <div class="f-hero-txt">
+        <h3 style="margin:0">Avance a la meta</h3>
+        <p>Bajó <b>${fmt(perdido)} kg (−${fmt(perdido / ini * 100)} %)</b> en ${sem} semanas. Le faltan <b>${fmt(Math.max(0, hoy - p.meta))} kg</b> para la meta de ${fmt(p.meta, 0)} kg que usted definió.</p>
+        <div class="stats">
+          <div class="stat"><b>${fmt(hoy)} kg</b><span>Peso hoy</span></div>
+          <div class="stat"><b>${fmt(imc(hoy, p.talla))}</b><span>IMC</span></div>
+          <div class="stat"><b>${fmt(rfmDe(p.cint, p.talla))} %</b><span>Grasa estimada (RFM)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="graficas">
+      <div class="cd"><h3>Peso</h3><p class="nota">Semanal, desde el inicio del tratamiento</p>${grafPeso(p)}</div>
+      <div class="cd"><h3>Velocidad de pérdida</h3><p class="nota">Porcentaje del peso que bajó cada semana</p>${grafVel(p)}</div>
+      <div class="cd"><h3>Cintura y grasa estimada</h3><p class="nota">Del inicio a la meta que usted definió</p>${bullet([
+        { n: "Cintura", ini: p.cint0, hoy: p.cint, meta: p.cintMeta, u: "cm", d: 0 },
+        { n: "Grasa (RFM)", ini: rfmDe(p.cint0, p.talla), hoy: rfmDe(p.cint, p.talla), meta: rfmDe(p.cintMeta, p.talla), u: "%", d: 1 }])}</div>
+      <div class="cd"><h3>Laboratorios</h3><p class="nota">${p.id === "laura" ? "Último resultado (PDF de ejemplo)" : "Los que usted pidió: antes y ahora"}</p>${p.labs.length ? pesas(p.labs) : `<p class="nota" style="margin:0">Sin resultados nuevos todavía.</p>`}</div>
+      <div class="cd"><h3>Constancia</h3><p class="nota">Cada cuadro es una semana</p>${constancia(p)}</div>
+      <div class="cd"><h3>Efectos reportados</h3><p class="nota">Lo que la paciente marcó cada semana</p>${efectos(p)}</div>
+    </div>
+    <div class="f-dos">
+      <div class="cd"><h3>Preguntas para el control</h3><p class="nota">Las dejó la paciente en la app</p>${p.preg.length ? `<ul>${p.preg.map(x => `<li>“${x}”</li>`).join("")}</ul>` : `<p>Ninguna.</p>`}</div>
+      <div class="cd"><h3>Medicamento</h3><p class="nota">Registrado por usted · la app solo lo recuerda</p><p style="color:var(--ios-label)">${p.med}</p></div>
+    </div>
+    ${p.id === "laura" ? analisisCard() + semanaCard() : ""}
+    <div class="cd"><h3>Exámenes</h3><p class="nota">Del pedido a su revisión</p>
+      <div class="pasos-ex">${["Pedidos", "Muestra tomada", "Resultado listo", "Revisados"].map((e, i) => `<div class="${p.ex[i] ? "ok" : ""}"><b>${e}</b>${p.ex[i] ? (p.id === "laura" ? ["2 oct", "20 oct · en casa", "24 oct", "28 oct"][i] : "Listo") : "Pendiente"}</div>`).join("")}</div>
+      ${p.id === "laura" ? "" : `<div class="acciones" style="margin-top:16px"><button class="btn pri" data-demo="Aprobado: ${p.n.split(" ")[0]} ya ve sus exámenes en la app (demo)">Aprobar lo que ve la paciente</button><button class="btn" data-demo="Solicitud de exámenes a domicilio enviada (demo)">Pedir exámenes a domicilio</button></div>`}
+    </div>`;
+  const fa = $("#f-anillo");
+  requestAnimationFrame(() => requestAnimationFrame(() => ponAnillo(fa, perdido / total, fmt(perdido), `de ${fmt(total, 0)} kg`)));
+}
+$("#lista-pac").addEventListener("click", (e) => { const b = e.target.closest(".pac"); if (!b) return; sel = b.dataset.id; pintaDoctora(); if (innerWidth < 1000) $("#ficha").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); });
+let tt; function toast(t) { const el = $("#toast-doc"); el.textContent = t; el.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => el.classList.remove("on"), 2400); }
+document.addEventListener("click", (e) => { const b = e.target.closest("[data-demo]"); if (b) toast(b.dataset.demo); });
+
+// Tooltip de las gráficas
+const tip = $("#tip");
+document.addEventListener("pointermove", (e) => {
+  const t = e.target.closest && e.target.closest("[data-tip]");
+  if (!t || !$("#vista-doctora").contains(t)) { tip.classList.remove("on"); return; }
+  tip.textContent = t.dataset.tip; tip.classList.add("on");
+  const x = Math.min(innerWidth - tip.offsetWidth - 8, e.clientX + 14), y = Math.max(8, e.clientY - tip.offsetHeight - 12);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+});
+
+const HERR = [["Confirmación de citas", "WhatsApp 48 h y 2 h antes", true], ["Recordatorio de control y exámenes", "Le avisa a la paciente cuándo le toca", true],
+  ["Cuestionario de primera consulta", "Llega lleno antes de la cita", false], ["Respuestas frecuentes", "Las escribe y aprueba usted una vez", false],
+  ["Indicaciones después de la consulta", "Le llegan a la paciente por WhatsApp", false], ["Exámenes a domicilio", "Usted los pide; Saludly agenda la toma", true],
+  ["Exportar el resumen", "PDF para su historia clínica", true], ["Contenido para redes", "Ideas a partir de preguntas frecuentes anónimas", false]];
+$("#herr").innerHTML = HERR.map((h, i) => `<div class="ajuste"><div><b id="h${i}">${h[0]}</b><span>${h[1]}</span></div><button class="switch" role="switch" aria-checked="${h[2]}" aria-labelledby="h${i}"></button></div>`).join("");
+$("#herr").addEventListener("click", (e) => { const b = e.target.closest(".switch"); if (b) b.setAttribute("aria-checked", b.getAttribute("aria-checked") !== "true"); });
+
+// ---------- Cambio de vista ----------
+function vista(v) {
+  $("#ver-paciente").setAttribute("aria-pressed", v === "p"); $("#ver-doctora").setAttribute("aria-pressed", v === "d");
+  $("#vista-paciente").hidden = v !== "p"; $("#vista-doctora").hidden = v !== "d";
+  if (v === "d") pintaDoctora();
+}
+$("#ver-paciente").addEventListener("click", () => vista("p"));
+$("#ver-doctora").addEventListener("click", () => vista("d"));
+
+// arranque
+pintaNivel(true); pintaProgreso(); pintaLogros(); pintaDoctora(); pintaExamenes(); pintaSemanaPac();
+// Laura marcó estreñimiento esta semana (por eso la semana trae ese consejo)
+{ const c = [...document.querySelectorAll("#sintomas .chip")].find(x => x.textContent === "Estreñimiento"); if (c) { c.setAttribute("aria-pressed", "true"); L.sintomas = ["Estreñimiento"]; pintaDoctora(); } }
+})();
+</script>
